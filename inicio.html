@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Agencia de Branding y Marketing Digital. Resolvemos grandes problemas con estrategia y creatividad.">
+  <title>Inicio | Agencia de Branding & Marketing</title>
+  
+  <!-- FontAwesome v6 & CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="inicio.html" class="brand-logo" aria-label="Página principal">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="white" aria-hidden="true">
+          <path d="M10 80 Q 50 10 90 80 Q 50 50 10 80 Z" />
+        </svg>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+        <a href="inicio.html" class="nav-link active" aria-current="page">inicio</a>
+        <a href="portafolio.html" class="nav-link">portafolio</a>
+        <a href="nosotros.html" class="nav-link">nosotros</a>
+        <a href="servicios.html" class="nav-link">servicios</a>
+        <a href="contacto.html" class="nav-link">contáctanos</a>
+      </nav>
+
+      <button class="search-btn" aria-label="Buscar en el sitio">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" style="position: relative; padding-top: 100px; min-height: 75vh; background: radial-gradient(circle at top, var(--bg-red-dark) 0%, var(--bg-primary) 70%); display: flex; align-items: center; justify-content: center; text-align: center;">
+      <div class="hero-container" style="width: 100%; max-width: var(--container-width); padding: 2rem;">
+        <div class="hero-banner-image" style="margin-bottom: 2rem;">
+          <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80" alt="Olas rojas abstractas en movimiento" style="width: 100%; max-height: 380px; object-fit: cover; border-radius: 8px;">
+        </div>
+        <div style="display: flex; justify-content: space-between; font-weight: 800; font-family: var(--font-heading); font-size: 1.2rem; letter-spacing: 2px;">
+          <span>DO</span>
+          <span>THINGS</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATEMENT SECTION CON IMÁGENES INLINE EN TÍTULO -->
+    <section class="statement-container">
+      <h1 class="hero-typography-title">
+        WE ARE 
+        <img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=300&q=80" alt="Boceto o ilustración" class="title-inline-img">
+        BBDO <br>
+        <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=300&q=80" alt="Apretón de manos" class="title-inline-img">
+        WE 
+        <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=300&q=80" alt="Pez betta rojo" class="title-inline-img">
+        DO <br>
+        BIG THINGS
+      </h1>
+
+      <div style="color: var(--text-muted); font-size: 1.05rem; line-height: 1.8;">
+        <p style="margin-bottom: 1.5rem;">We solve big problems with strategy and creative that make a big impact. We work with brands and marketers that have the biggest ambitions. We hire big talent and bring them big opportunities that build boundless careers.</p>
+        <p style="font-weight: 600; color: var(--text-primary); margin-bottom: 2rem;">Want to Do Big Things?</p>
+        <a href="contacto.html" class="btn-pill">Botón &rarr;</a>
+      </div>
+    </section>
+
+    <!-- BRANDS BANNER RED SECTION -->
+<!-- BRANDS BANNER RED SECTION -->
+<section class="brands-banner" style="background-color: var(--bg-red-accent); color: var(--text-primary); padding: 5rem 2rem; text-align: center;">
+  <div style="max-width: var(--container-width); margin: 0 auto;">
+    <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.8rem); font-weight: 900; line-height: 1.15; text-transform: uppercase; margin-bottom: 3rem;">
+      BRANDS <br> DESIGNED TO <br> TRANSFORM
+    </h2>
+
+    <!-- GRID DE TARJETAS CON EFECTO HOVER -->
+    <div class="brands-grid">
+      <div class="brand-card" tabindex="0">
+        <p>Driven by our purpose, we exist to make a positive difference to our people, our clients and our world.</p>
+      </div>
+      <div class="brand-card" tabindex="0">
+        <p>Driven by our purpose, we exist to make a positive difference to our people, our clients and our world.</p>
+      </div>
+      <div class="brand-card" tabindex="0">
+        <p>Driven by our purpose, we exist to make a positive difference to our people, our clients and our world.</p>
+      </div>
+    </div>
+
+    <p style="font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+      Driven by our purpose, we exist to make a positive difference to our people, our clients and our world.
+    </p>
+  </div>
+</section>
+
+    <!-- WORK SECTION (GRID FIEL AL MOCKUP) -->
+    <section class="work-section">
+      <h2 class="work-title-vertical">Work</h2>
+
+      <div class="work-grid-container">
+        <!-- Columna 1: Tarjeta Alta (Izquierda) -->
+        <article class="work-card-tall">
+          <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80" alt="Pepsi The Choice - Manos con guantes de cuero">
+          <p class="work-card-caption">PepsiThe Choice</p>
+        </article>
+
+        <!-- Columna 2: Stack de 2 Tarjetas (Derecha) -->
+        <div class="work-right-stack">
+          <article class="work-card-thumb">
+            <img src="https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?auto=format&fit=crop&w=800&q=80" alt="Budweiser American Icons - Pez betta rojo">
+            <p class="work-card-caption">Budweise American Icons</p>
+          </article>
+
+          <article class="work-card-thumb">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="McDonald's France Happy Doggy - Retrato femenino">
+            <p class="work-card-caption">McDonald's FranceHappy Doggy</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER PANORÁMICO (FULL WIDTH) -->
+    <section class="fullwidth-banner-section">
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1600&q=80" alt="Modelos en paso peatonal comprando" class="fullwidth-banner-img">
+    </section>
+
+    <!-- CALL TO ACTION (DO BIG THINGS STROKE) -->
+    <section class="cta-outline" style="padding: 4rem 2rem; text-align: center;">
+      <a href="contacto.html" class="btn-pill" style="margin-bottom: 3rem;">Botón &rarr;</a>
+      
+      <h2 style="font-family: var(--font-heading); font-size: clamp(2.5rem, 7vw, 5.5rem); font-weight: 900; text-transform: uppercase; line-height: 1;">
+        DO BIG THINGS
+      </h2>
+      <h2 style="font-family: var(--font-heading); font-size: clamp(2.5rem, 7vw, 5.5rem); font-weight: 900; text-transform: uppercase; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--text-primary);">
+        DO BIG THINGS
+      </h2>
+    </section>
+
+  </main>
+
+  <!-- FOOTER GLOBAL -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="footer-contact-text">Contact us / Join us</p>
+      <div class="footer-socials">
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">X</a>
+        <a href="#" target="_blank" rel="noopener">Facebook</a>
+        <a href="#" target="_blank" rel="noopener">Glassdoor</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MANTRA / BBDO Agency. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contáctanos - Ponte en contacto con nuestro equipo global de expertos en branding.">
+  <title>Contacto | Agencia de Branding & Marketing</title>
+  
+  <!-- FontAwesome v6 & CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER GLOBAL -->
+  <header class="site-header">
+    <div class="nav-container">
+      <a href="inicio.html" class="brand-logo" aria-label="Página principal">
+        <svg width="32" height="32" viewBox="0 0 100 100" fill="white" aria-hidden="true">
+          <path d="M10 80 Q 50 10 90 80 Q 50 50 10 80 Z" />
+        </svg>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+        <a href="inicio.html" class="nav-link">inicio</a>
+        <a href="portafolio.html" class="nav-link">portafolio</a>
+        <a href="nosotros.html" class="nav-link">nosotros</a>
+        <a href="servicios.html" class="nav-link">servicios</a>
+        <a href="contacto.html" class="nav-link active" aria-current="page">contáctanos</a>
+      </nav>
+
+      <button class="search-btn" aria-label="Buscar en el sitio">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+    <!-- HERO CONTACTO -->
+    <section class="contact-hero">
+      <h1>CONTACTO</h1>
+      <p>Get in touch with our global team of branding experts to discuss your challenge.</p>
+    </section>
+
+    <!-- FORMULARIO DE CONTACTO COMPLETO -->
+    <section class="contact-form-container">
+      <form id="fullContactForm" novalidate>
+        <div class="form-group-box">
+          <input type="text" class="form-input-box" id="firstName" placeholder="First Name" required>
+        </div>
+
+        <div class="form-group-box">
+          <input type="text" class="form-input-box" id="lastName" placeholder="Last name" required>
+        </div>
+
+        <div class="form-group-box">
+          <input type="email" class="form-input-box" id="email" placeholder="Email" required>
+        </div>
+
+        <div class="form-group-box">
+          <input type="text" class="form-input-box" placeholder="Company name (optional)">
+        </div>
+
+        <div class="form-group-box">
+          <input type="text" class="form-input-box" placeholder="Job title (optional)">
+        </div>
+
+        <div class="form-group-box">
+          <input type="text" class="form-input-box" placeholder="Country of residence (optional)">
+        </div>
+
+        <div style="margin-top: 3rem;">
+          <label class="form-label-title">DEJA UN MENSAJE</label>
+          <div class="form-group-box">
+            <textarea class="form-input-box" id="message" rows="5" placeholder="Escribe tu mensaje aquí..." required style="resize: vertical;"></textarea>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+          <button type="submit" class="btn-pill" style="min-width: 180px;">Botón</button>
+        </div>
+
+        <!-- Mensaje de Feedback -->
+        <div id="formStatus" class="form-status" aria-live="polite"></div>
+      </form>
+    </section>
+
+    <!-- BLOQUES INFORMATIVOS / FOOTER INFO -->
+    <section class="contact-info-grid">
+      <div class="info-card-box">
+        <h3>Servicios Principales</h3>
+        <ul>
+          <li>Diseño de marca</li>
+          <li>Creación de nombre</li>
+          <li>Diseño de impresos</li>
+          <li>Modelación de negocios</li>
+          <li>Consultoría de marca</li>
+          <li>Talleres y conferencias</li>
+        </ul>
+      </div>
+
+      <div class="info-card-box" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="text-align: center; margin-bottom: 1.5rem;">
+          <svg width="60" height="60" viewBox="0 0 100 100" fill="white">
+            <path d="M10 80 Q 50 10 90 80 Q 50 50 10 80 Z" />
+          </svg>
+          <p style="font-family: var(--font-heading); font-weight: 800; font-size: 0.9rem; letter-spacing: 2px; margin-top: 0.5rem;">RENAX</p>
+        </div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; text-align: center;">
+          Somos Fragtal Worldwide SAS es una consultora especializada en diseño, auditoría y posicionamiento de de marca.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER GLOBAL -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p class="footer-contact-text">Contact us / Join us</p>
+      <div class="footer-socials">
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="#" target="_blank" rel="noopener">Instagram</a>
+        <a href="#" target="_blank" rel="noopener">X</a>
+        <a href="#" target="_blank" rel="noopener">Facebook</a>
+        <a href="#" target="_blank" rel="noopener">Glassdoor</a>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 MANTRA / BBDO Agency. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
