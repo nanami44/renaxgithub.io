@@ -1012,7 +1012,7 @@ ul {
 
 
 .hero-background-shape { 
-   display: none;
+  display: block;
   position: absolute;
 
   width: 650px;
