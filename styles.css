@@ -1011,7 +1011,8 @@ ul {
 }
 
 
-.hero-background-shape {
+.hero-background-shape { 
+   display: none;
   position: absolute;
 
   width: 650px;
