@@ -452,19 +452,17 @@ const translations = {
 };
 
 
-// Cuando se pulsa el botón ESP / ENG
 if (languageBtn) {
-
     languageBtn.addEventListener("click", function () {
 
         english = !english;
 
         const language = english ? translations.en : translations.es;
 
-        // Cambiar texto del botón
+        // Cambiar el texto del botón
         languageBtn.textContent = english ? "ESP" : "ENG";
 
-        // Cambiar todos los textos marcados con data-lang
+        // Cambiar todos los textos de la página
         document.querySelectorAll("[data-lang]").forEach(function(element) {
 
             const key = element.getAttribute("data-lang");
@@ -476,8 +474,6 @@ if (languageBtn) {
         });
 
     });
-
-}
 }
 </script>
 
