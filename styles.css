@@ -1035,6 +1035,21 @@ ul {
 
   transform: rotate(-20deg);
 }
+.hero-image {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 55%;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
 
 
 .renax-hero-content {
