@@ -335,34 +335,34 @@
 
   <!-- ================= JAVASCRIPT ================= -->
 
-  <script>
+ <script>
+const navToggle = document.getElementById("navToggle");
+const navMenu = document.getElementById("navMenu");
+const languageBtn = document.getElementById("languageBtn");
 
-    const navToggle =
-      document.getElementById("navToggle");
+// Menú móvil
+if (navToggle && navMenu) {
+    navToggle.addEventListener("click", function () {
+        navMenu.classList.toggle("active");
+    });
+}
 
-    const navMenu =
-      document.getElementById("navMenu");
-
-
-    navToggle.addEventListener("click", () => {
-
-      navMenu.classList.toggle("active");
-
-    });const languageBtn = document.getElementById("languageBtn");
-
+// Botón de idioma
 let english = false;
 
-languageBtn.addEventListener("click", function () {
-    english = !english;
+if (languageBtn) {
+    languageBtn.addEventListener("click", function () {
+        english = !english;
 
-    if (english) {
-        languageBtn.textContent = "ENG";
-    } else {
-        languageBtn.textContent = "ESP";
-    }
-});
+        if (english) {
+            languageBtn.textContent = "ENG";
+        } else {
+            languageBtn.textContent = "ESP";
+        }
+    });
+}
+</script>
 
-  </script>
 
 </body>
 </html>
