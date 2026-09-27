@@ -971,6 +971,753 @@ ul {
   border: 1px solid #dc3545;
   color: #dc3545;
 }
+/* ==========================================================
+   RENAX - PAGINA INICIO
+   ========================================================== */
 
+
+/* ---------- HEADER ---------- */
+
+.language {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: white;
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: 5px 14px;
+}
+
+
+/* ---------- HERO ---------- */
+
+.renax-hero {
+  min-height: 92vh;
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 75% 45%,
+      #c8102e 0%,
+      #50000a 25%,
+      #050505 65%
+    );
+
+  padding: 130px 8% 80px;
+}
+
+
+.hero-background-shape {
+  position: absolute;
+
+  width: 650px;
+  height: 650px;
+
+  right: -200px;
+  top: 80px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255, 0, 30, 0.8),
+      rgba(120, 0, 10, 0.2),
+      transparent 70%
+    );
+
+  filter: blur(10px);
+
+  transform: rotate(-20deg);
+}
+
+
+.renax-hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+}
+
+
+.hero-small-text {
+  font-family: var(--font-heading);
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  letter-spacing: 5px;
+
+  margin-bottom: 15px;
+}
+
+
+.renax-hero h1 {
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(
+    3.5rem,
+    8vw,
+    8rem
+  );
+
+  font-weight: 900;
+
+  line-height: 0.86;
+
+  text-transform: uppercase;
+
+  letter-spacing: -4px;
+
+  margin-bottom: 25px;
+}
+
+
+.hero-subtitle {
+
+  font-family: var(--font-heading);
+
+  font-size: 1rem;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+
+  margin-bottom: 35px;
+}
+
+
+/* ---------- BOTONES ---------- */
+
+.renax-button {
+
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 12px 28px;
+
+  border: 1px solid white;
+
+  border-radius: 40px;
+
+  font-family: var(--font-heading);
+
+  font-size: 0.8rem;
+
+  font-weight: 700;
+
+  text-transform: uppercase;
+
+  transition: 0.3s ease;
+}
+
+
+.renax-button:hover {
+
+  background: white;
+
+  color: black;
+
+  transform: translateY(-3px);
+
+}
+
+
+.renax-button.small {
+
+  font-size: 0.7rem;
+
+  padding: 10px 20px;
+
+}
+
+
+.renax-button.centered {
+
+  display: flex;
+
+  width: fit-content;
+
+  margin: 50px auto 0;
+}
+
+
+/* ---------- STATEMENT ---------- */
+
+.renax-statement {
+
+  display: grid;
+
+  grid-template-columns:
+    1.4fr
+    0.6fr;
+
+  align-items: center;
+
+  gap: 40px;
+
+  padding: 100px 8%;
+
+  background: #050505;
+
+  border-top:
+    1px solid rgba(255,255,255,0.15);
+}
+
+
+.statement-main h2 {
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(
+    3rem,
+    7vw,
+    7rem
+  );
+
+  font-weight: 900;
+
+  line-height: 0.85;
+
+  text-transform: uppercase;
+
+  letter-spacing: -4px;
+}
+
+
+.statement-main h2 span {
+
+  color: var(--bg-red-accent);
+
+}
+
+
+.statement-description {
+
+  max-width: 400px;
+
+}
+
+
+.statement-description p {
+
+  color: #ccc;
+
+  font-size: 1.1rem;
+
+  line-height: 1.7;
+
+  margin-bottom: 30px;
+}
+
+
+/* ---------- HISTORIA ---------- */
+
+.history-section {
+
+  padding: 100px 8%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #f5f5f5 0%,
+      #ffffff 50%,
+      #c8102e 100%
+    );
+
+  color: #050505;
+}
+
+
+.history-section > h2 {
+
+  font-family: var(--font-heading);
+
+  font-size: clamp(
+    3rem,
+    7vw,
+    7rem
+  );
+
+  font-weight: 900;
+
+  line-height: 0.9;
+
+  text-transform: uppercase;
+
+  letter-spacing: -4px;
+
+  margin-bottom: 70px;
+}
+
+
+.history-cards {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+
+.history-cards article {
+
+  background: #050505;
+
+  color: white;
+
+  padding: 35px;
+
+  border-radius: 18px;
+
+  min-height: 220px;
+
+  transition: 0.3s ease;
+}
+
+
+.history-cards article:hover {
+
+  transform:
+    translateY(-10px);
+
+}
+
+
+.history-cards h3 {
+
+  color: #c8102e;
+
+  font-family:
+    var(--font-heading);
+
+  font-size: 1.2rem;
+
+  margin-bottom: 20px;
+}
+
+
+.history-cards p {
+
+  color: #ddd;
+
+  line-height: 1.7;
+
+}
+
+
+.history-bottom {
+
+  margin-top: 50px;
+
+  font-family: var(--font-heading);
+
+  font-weight: 600;
+
+  text-align: center;
+}
+
+
+/* ---------- WORK ---------- */
+
+.renax-work {
+
+  padding: 100px 8%;
+
+  background: #050505;
+
+}
+
+
+.work-label {
+
+  color: #c8102e;
+
+  font-family:
+    var(--font-heading);
+
+  font-size: clamp(
+    4rem,
+    10vw,
+    9rem
+  );
+
+  font-weight: 900;
+
+  writing-mode:
+    vertical-rl;
+
+  transform:
+    rotate(180deg);
+
+  float: left;
+
+  margin-right: 40px;
+}
+
+
+.work-content {
+
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    0.9fr;
+
+  gap: 30px;
+
+  max-width: 1100px;
+
+  margin: auto;
+}
+
+
+.image-placeholder {
+
+  min-height: 450px;
+
+  border-radius: 18px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #111,
+      #42000a,
+      #c8102e
+    );
+
+  font-family:
+    var(--font-heading);
+
+  font-size: 3rem;
+
+  font-weight: 900;
+
+  letter-spacing: 3px;
+}
+
+
+.image-placeholder.red {
+
+  min-height: 210px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #c8102e,
+      #68000d
+    );
+}
+
+
+.image-placeholder.dark {
+
+  min-height: 210px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #222,
+      #050505
+    );
+}
+
+
+.work-main-image p {
+
+  margin-top: 15px;
+
+  color: #aaa;
+}
+
+
+.work-side {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 25px;
+}
+
+
+.work-card h3 {
+
+  font-family:
+    var(--font-heading);
+
+  margin-top: 10px;
+}
+
+
+.work-card p {
+
+  color: #aaa;
+
+  font-size: 0.9rem;
+}
+
+
+/* ---------- CTA FINAL ---------- */
+
+.renax-final-cta {
+
+  min-height: 500px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+
+  background:
+    radial-gradient(
+      circle,
+      #c8102e 0%,
+      #400008 30%,
+      #050505 70%
+    );
+}
+
+
+.renax-final-cta h2 {
+
+  font-family:
+    var(--font-heading);
+
+  font-size: clamp(
+    4rem,
+    10vw,
+    9rem
+  );
+
+  font-weight: 900;
+
+  line-height: 0.85;
+
+  letter-spacing: -5px;
+
+  margin-bottom: 50px;
+}
+
+
+/* ---------- FOOTER ---------- */
+
+.renax-footer {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 30px;
+
+  padding: 70px 8%;
+
+  background: #050505;
+
+  border-top:
+    1px solid #222;
+}
+
+
+.footer-column {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.footer-column h3 {
+
+  font-family:
+    var(--font-heading);
+
+  color: white;
+
+  font-size: 0.9rem;
+
+  margin-bottom: 10px;
+}
+
+
+.footer-column a {
+
+  color: #aaa;
+
+  font-size: 0.85rem;
+
+  transition: 0.3s;
+}
+
+
+.footer-column a:hover {
+
+  color: #c8102e;
+
+}
+
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+
+  .language {
+    display: none;
+  }
+
+
+  .renax-hero {
+
+    min-height: 85vh;
+
+    padding:
+      120px 25px
+      60px;
+  }
+
+
+  .renax-hero h1 {
+
+    font-size:
+      clamp(3rem, 15vw, 5rem);
+
+    letter-spacing: -2px;
+  }
+
+
+  .renax-statement {
+
+    grid-template-columns: 1fr;
+
+    padding: 80px 25px;
+  }
+
+
+  .statement-main h2 {
+
+    font-size:
+      clamp(3rem, 15vw, 5rem);
+
+    letter-spacing: -2px;
+  }
+
+
+  .history-section {
+
+    padding:
+      80px 25px;
+  }
+
+
+  .history-section > h2 {
+
+    font-size:
+      clamp(3rem, 14vw, 5rem);
+
+    letter-spacing: -2px;
+  }
+
+
+  .history-cards {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .renax-work {
+
+    padding:
+      80px 25px;
+  }
+
+
+  .work-label {
+
+    float: none;
+
+    writing-mode:
+      horizontal-tb;
+
+    transform: none;
+
+    margin-bottom: 30px;
+  }
+
+
+  .work-content {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .image-placeholder {
+
+    min-height: 300px;
+  }
+
+
+  .renax-final-cta {
+
+    min-height: 400px;
+  }
+
+
+  .renax-final-cta h2 {
+
+    font-size:
+      clamp(3.5rem, 15vw, 6rem);
+
+    letter-spacing: -3px;
+  }
+
+
+  .renax-footer {
+
+    grid-template-columns: 1fr 1fr;
+
+    padding:
+      60px 25px;
+  }
+
+}
+
+
+@media (max-width: 480px) {
+
+  .renax-footer {
+
+    grid-template-columns: 1fr;
+  }
+
+}
 
 
