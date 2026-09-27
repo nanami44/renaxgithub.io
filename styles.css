@@ -1000,12 +1000,13 @@ ul {
   align-items: center;
 
   background:
-    radial-gradient(
-      circle at 75% 45%,
-      #c8102e 0%,
-      #50000a 25%,
-      #050505 65%
-    );
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,0.75) 0%,
+        rgba(0,0,0,0.35) 50%,
+        rgba(0,0,0,0.15) 100%
+    ),
+    url("luz.jpg") center center / cover no-repeat;
 
   padding: 130px 8% 80px;
 }
