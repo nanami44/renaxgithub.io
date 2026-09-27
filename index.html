@@ -62,7 +62,7 @@
 
       </nav>
 
-      <span class="language">ESP</span>
+      <button class="language" id="languageBtn" type="button">ESP</button>
 
     </div>
   </header>
@@ -348,7 +348,19 @@
 
       navMenu.classList.toggle("active");
 
-    });
+    });const languageBtn = document.getElementById("languageBtn");
+
+let english = false;
+
+languageBtn.addEventListener("click", function () {
+    english = !english;
+
+    if (english) {
+        languageBtn.textContent = "ENG";
+    } else {
+        languageBtn.textContent = "ESP";
+    }
+});
 
   </script>
 
