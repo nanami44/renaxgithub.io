@@ -1037,7 +1037,8 @@ ul {
   transform: rotate(-20deg);
 }
 .hero-image {
-    position: absolute;
+     display: none; 
+ position: absolute;
     right: 0;
     top: 50%;
     transform: translateY(-50%);
