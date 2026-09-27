@@ -346,19 +346,138 @@ if (navToggle && navMenu) {
     });
 }
 
-// Botón de idioma
+// ===============================
+// TRADUCCIÓN ESPAÑOL / INGLÉS
+// ===============================
+
 let english = false;
 
+const translations = {
+
+    es: {
+        heroSmall: "HOLA, SOMOS",
+        heroTitle: "EXPERTOS EN<br>TRANSFORMAR<br>MARCAS",
+        heroText: "Sin borrar la historia que las hace únicas.",
+        heroButton: "Ver nuestro portafolio",
+
+        statement: "VUELVE A DESTACAR<br><span>SIN PERDER</span><br>TU ESENCIA",
+        statementText: "Transformamos marcas con historia en identidades actuales, sin perder aquello que las hace únicas.",
+
+        transformButton: "TRANSFORMA TU MARCA",
+
+        historyTitle: "TU HISTORIA MERECE<br>UNA IMAGEN QUE ESTÉ A<br>SU ALTURA.",
+        historyText: "Una marca que lleva años construyendo confianza tiene algo que una marca nueva todavía no posee: historia.",
+        history1: "HISTORIA",
+        history2: "ESENCIA",
+        history3: "EVOLUCIÓN",
+
+        essenceText: "En RENAX no queremos borrarla. Queremos descubrir qué hace especial tu negocio y conservar su esencia.",
+        evolutionText: "Convertimos esa esencia en una identidad visual moderna, coherente y preparada para el presente.",
+        historyBottom: "Impulsamos la evolución de marcas con historia, conservando su esencia y proyectándolas hacia nuevas oportunidades.",
+
+        workLabel: "WORK",
+        workDescription: "Proyectos de transformación de marca",
+
+        skenziTitle: "Skenzi",
+        skenziText: "Renovación de identidad visual.",
+
+        transformationTitle: "Transformación",
+        transformationText: "Marcas que evolucionan sin perder su esencia.",
+
+        portfolioButton: "VER NUESTRO PORTAFOLIO",
+
+        finalTitle: "¿TU MARCA ESTÁ<br>LISTA?",
+        contactButton: "HABLEMOS DE TU MARCA",
+
+        footerInicio: "INICIO",
+        footerDescription: "Transformamos marcas sin borrar su historia.",
+        footerNosotros: "NOSOTROS",
+        footerWho: "Quiénes somos",
+        footerVision: "Visión",
+        footerMission: "Misión",
+        footerWhy: "¿Por qué RENAX?",
+        footerPortfolio: "PORTAFOLIO",
+        footerProjects: "Proyectos y trabajos realizados",
+        footerContact: "CONTACTO",
+        footerTalk: "Hablemos de tu proyecto"
+    },
+
+    en: {
+        heroSmall: "HELLO, WE ARE",
+        heroTitle: "EXPERTS IN<br>TRANSFORMING<br>BRANDS",
+        heroText: "Without erasing the history that makes them unique.",
+        heroButton: "View our portfolio",
+
+        statement: "STAND OUT AGAIN<br><span>WITHOUT LOSING</span><br>YOUR ESSENCE",
+        statementText: "We transform brands with history into modern identities without losing what makes them unique.",
+
+        transformButton: "TRANSFORM YOUR BRAND",
+
+        historyTitle: "YOUR STORY DESERVES<br>AN IMAGE THAT LIVES UP TO<br>ITS VALUE.",
+        historyText: "A brand that has spent years building trust has something a new brand does not yet have: history.",
+        history1: "HISTORY",
+        history2: "ESSENCE",
+        history3: "EVOLUTION",
+
+        essenceText: "At RENAX, we don't want to erase it. We want to discover what makes your business special and preserve its essence.",
+        evolutionText: "We transform that essence into a modern, coherent visual identity prepared for the present.",
+        historyBottom: "We drive the evolution of brands with history, preserving their essence and projecting them toward new opportunities.",
+
+        workLabel: "WORK",
+        workDescription: "Brand transformation projects",
+
+        skenziTitle: "Skenzi",
+        skenziText: "Visual identity renewal.",
+
+        transformationTitle: "Transformation",
+        transformationText: "Brands that evolve without losing their essence.",
+
+        portfolioButton: "VIEW OUR PORTFOLIO",
+
+        finalTitle: "IS YOUR BRAND<br>READY?",
+        contactButton: "LET'S TALK ABOUT YOUR BRAND",
+
+        footerInicio: "HOME",
+        footerDescription: "We transform brands without erasing their history.",
+        footerNosotros: "ABOUT US",
+        footerWho: "Who we are",
+        footerVision: "Vision",
+        footerMission: "Mission",
+        footerWhy: "Why RENAX?",
+        footerPortfolio: "PORTFOLIO",
+        footerProjects: "Projects and completed work",
+        footerContact: "CONTACT",
+        footerTalk: "Let's talk about your project"
+    }
+};
+
+
+// Cuando se pulsa el botón ESP / ENG
 if (languageBtn) {
+
     languageBtn.addEventListener("click", function () {
+
         english = !english;
 
-        if (english) {
-            languageBtn.textContent = "ENG";
-        } else {
-            languageBtn.textContent = "ESP";
-        }
+        const language = english ? translations.en : translations.es;
+
+        // Cambiar texto del botón
+        languageBtn.textContent = english ? "ESP" : "ENG";
+
+        // Cambiar todos los textos marcados con data-lang
+        document.querySelectorAll("[data-lang]").forEach(function(element) {
+
+            const key = element.getAttribute("data-lang");
+
+            if (language[key]) {
+                element.innerHTML = language[key];
+            }
+
+        });
+
     });
+
+}
 }
 </script>
 
