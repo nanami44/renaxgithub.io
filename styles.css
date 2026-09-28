@@ -1273,6 +1273,9 @@ overflow: hidden;
 }
 
 .history-section > h2 {
+   position: relative;
+z-index: 1;
+   
 
   font-family: var(--font-heading);
 
@@ -1296,6 +1299,8 @@ overflow: hidden;
 
 
 .history-cards {
+   position: relative;
+z-index: 1;
 
   display: grid;
 
