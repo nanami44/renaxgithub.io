@@ -1756,7 +1756,7 @@ z-index: 1;
 /* POSICIÓN FINAL DE SKENZI */
 .renax-work .work-content {
   display: grid !important;
-grid-template-columns: minmax(0, 1fr) 260px !important;
+grid-template-columns: minmax(0, 1fr) 320px;
 gap: 40px !important;
 align-items: start !important;
 }
@@ -1782,7 +1782,7 @@ align-items: start !important;
 
 .renax-work .skenzi-card img {
   width: 100%;
-height: 240px;
+height: 380px;
   object-fit: cover;
   border-radius: 22px;
   display: block;
