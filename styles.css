@@ -1785,8 +1785,8 @@ overflow: hidden;
 
 .renax-work .skenzi-card img {
   width: 100% !important;
-height: 410px;
- object-fit: contain;
+height: 410px; 
+object-fit: cover;
   border-radius: 30px;
   display: block;
 }
