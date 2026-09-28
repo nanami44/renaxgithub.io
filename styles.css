@@ -1775,15 +1775,17 @@ align-items: start !important;
 
 .renax-work .skenzi-card {
   width: 100
-   margin-left: -40px;
+  margin-left: -75px;
   background: transparent;
   padding: 0;
   border: none;
+   border-radius: 30px;
+overflow: hidden;
 }
 
 .renax-work .skenzi-card img {
-  width: 150%;
-height: 440px;
+  width: 125%;
+height: 410px;
   object-fit: cover;
   border-radius: 30px;
   display: block;
