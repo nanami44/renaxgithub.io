@@ -1753,5 +1753,55 @@ z-index: 1;
   }
 
 }
+/* POSICIÓN FINAL DE SKENZI */
+.renax-work .work-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 40px;
+  align-items: start;
+}
 
+.renax-work .work-main-image {
+  grid-column: 1;
+}
+
+.renax-work .work-side {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.renax-work .skenzi-card {
+  width: 100%;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.renax-work .skenzi-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 22px;
+  display: block;
+}
+
+.renax-work .skenzi-card h3,
+.renax-work .skenzi-card p {
+  margin-left: 0;
+}
+
+@media (max-width: 768px) {
+  .renax-work .work-content {
+    grid-template-columns: 1fr;
+  }
+
+  .renax-work .work-main-image,
+  .renax-work .work-side {
+    grid-column: 1;
+    grid-row: auto;
+  }
+}
 
