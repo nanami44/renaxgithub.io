@@ -1477,13 +1477,12 @@ z-index: 1;
   display: block;
 }
 
+
 .work-side {
-
   display: flex;
-
   flex-direction: column;
-
-  gap: 25px;
+  align-items: flex-start;
+  gap: 15px;
 }
 
 
