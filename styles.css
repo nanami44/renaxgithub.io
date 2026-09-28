@@ -1757,7 +1757,7 @@ z-index: 1;
 .renax-work .work-content {
   display: grid !important;
 grid-template-columns: minmax(0, 1fr) 320px;
-gap: 40px !important;
+gap: 20px !important;
 align-items: start !important;
 }
 
@@ -1781,8 +1781,8 @@ align-items: start !important;
 }
 
 .renax-work .skenzi-card img {
-  width: 105%;
-height: 400px;
+  width: 110%;
+height: 410px;
   object-fit: cover;
   border-radius: 22px;
   display: block;
