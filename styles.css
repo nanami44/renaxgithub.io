@@ -1484,7 +1484,12 @@ z-index: 1;
   align-items: flex-start;
   gap: 15px;
 }
-
+.skenzi-card {
+  width: 70%;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
 
 .work-card h3 {
 
