@@ -1755,10 +1755,10 @@ z-index: 1;
 }
 /* POSICIÓN FINAL DE SKENZI */
 .renax-work .work-content {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
-  gap: 40px;
-  align-items: start;
+  display: grid !important;
+grid-template-columns: minmax(0, 1fr) 260px !important;
+gap: 40px !important;
+align-items: start !important;
 }
 
 .renax-work .work-main-image {
