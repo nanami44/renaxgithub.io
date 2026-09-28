@@ -1245,7 +1245,15 @@ box-sizing: border-box;
 
   padding: 100px 8%;
 
-  background: #c8102e;
+  background:
+    linear-gradient(
+        to right,
+        #050505 0%,
+        #050505 50%,
+        #c8102e 50%,
+        #c8102e 100%
+    ) top center / 100% 280px no-repeat,
+    #c8102e;
    
 
   color: #050505;
