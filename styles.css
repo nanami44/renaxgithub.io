@@ -1774,7 +1774,7 @@ align-items: start !important;
 }
 
 .renax-work .skenzi-card {
-  width: 100%;
+  width: 135% !important;
   margin-left: -75px;
   background: transparent;
   padding: 0;
@@ -1784,7 +1784,7 @@ overflow: hidden;
 }
 
 .renax-work .skenzi-card img {
-width: 140% !important; 
+width: 100% !important; 
 height: auto;
 object-fit: contain;
   border-radius: 30px;
