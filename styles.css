@@ -1249,8 +1249,20 @@ box-sizing: border-box;
    
 
   color: #050505;
+   position: relative;
+overflow: hidden;
 }
-
+.history-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 280px;
+    background: #050505;
+    border-bottom-right-radius: 45px;
+    z-index: 0;
+}
 
 .history-section > h2 {
 
