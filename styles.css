@@ -1757,7 +1757,7 @@ z-index: 1;
 .renax-work .work-content {
   display: grid !important;
 grid-template-columns: minmax(0, 1fr) 320px;
-gap: 20px !important;
+gap: 12px !important;
 align-items: start !important;
 }
 
