@@ -1187,7 +1187,9 @@ ul {
   background: #050505;
 border: 1px solid rgba(255,255,255,0.35);
 border-radius: 45px;
-margin: 50px 4%;
+width: 92%;
+margin: 50px auto;
+box-sizing: border-box;
 }
 
 
