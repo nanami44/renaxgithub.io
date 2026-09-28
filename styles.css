@@ -982,7 +982,7 @@ ul {
   font-family: var(--font-heading);
   font-size: 0.8rem;
   font-weight: 700;
-  color: white;
+  color: #000000;
   border: 1px solid white;
   border-radius: 30px;
   padding: 5px 14px;
