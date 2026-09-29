@@ -316,7 +316,7 @@ ul {
   font-weight: 900;
   color: var(--bg-red-accent);
   writing-mode: vertical-lr;
-  transform: rotate(180deg);
+ transform: rotate(180deg) scaleY(1.25);
   text-transform: uppercase;
   user-select: none;
   line-height: 1;
