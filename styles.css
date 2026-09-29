@@ -312,7 +312,7 @@ ul {
 
 .work-title-vertical {
   font-family: var(--font-heading);
-  font-size: 12rem;
+  font-size: 20rem;
   font-weight: 900;
   color: var(--bg-red-accent);
   writing-mode: vertical-lr;
