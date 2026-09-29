@@ -1881,3 +1881,16 @@ object-fit: contain;
 .renax-work .work-main-image h3 {
     margin-top: 25px !important;
 }
+.renax-work .work-content > p {
+    display: inline-block !important;
+    width: 50% !important;
+    text-align: left !important;
+    vertical-align: middle !important;
+    margin: 25px 0 20px !important;
+}
+
+.renax-work .work-content > a.renax-button {
+    display: inline-flex !important;
+    vertical-align: middle !important;
+    margin: 25px 0 20px 40px !important;
+}
