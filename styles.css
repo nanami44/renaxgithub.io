@@ -1837,4 +1837,15 @@ object-fit: contain;
     grid-row: auto;
   }
 }
+.renax-work .work-main-image {
+    overflow: hidden;
+    border-radius: 25px;
+}
 
+.renax-work .work-main-image img {
+    transition: transform 0.4s ease;
+}
+
+.renax-work .work-main-image img:hover {
+    transform: scale(1.08);
+}
