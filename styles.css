@@ -1894,3 +1894,13 @@ object-fit: contain;
     vertical-align: middle !important;
     margin: 25px 0 20px 40px !important;
 }
+.renax-work .work-side > p {
+    width: 45% !important;
+    text-align: left !important;
+    margin: 25px 0 20px !important;
+}
+
+.renax-work .work-content > a.renax-button {
+    transform: translateY(-70px) !important;
+    margin-left: 40px !important;
+}
