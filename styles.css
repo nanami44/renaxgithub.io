@@ -1849,3 +1849,7 @@ object-fit: contain;
 .renax-work .work-main-image img:hover {
     transform: scale(1.08);
 }
+.renax-work .work-main-image img:hover {
+    transform: scale(1.12) !important;
+    transition: transform 0.4s ease !important;
+}
