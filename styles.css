@@ -1815,7 +1815,7 @@ object-fit: contain;
     display: block;
 }
 .renax-work .work-main-image img {
-    height: 650px !important;
+    height: 700px !important;
     object-fit: cover !important;
 }
 
