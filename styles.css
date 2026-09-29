@@ -1858,3 +1858,16 @@ object-fit: contain;
     transform: scale(1.12) !important;
     transition: transform 0.4s ease !important;
 }
+.renax-work .skenzi-card h3 {
+    font-size: 2rem !important;
+    text-align: center !important;
+    margin: 18px 0 8px !important;
+}
+
+.renax-work .skenzi-card p {
+    font-size: 1rem !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+    max-width: 500px;
+    margin: 0 auto !important;
+}
