@@ -1802,6 +1802,19 @@ object-fit: contain;
     object-fit: cover !important;
     border-radius: 20px !important;
 }
+.renax-work .design-card {
+    width: 200% !important;
+    margin-left: -245px !important;
+}
+
+.renax-work .design-card img {
+    width: 100% !important;
+    height: 340px !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    display: block;
+}
+
 
 .renax-work .skenzi-card h3,
 .renax-work .skenzi-card p {
