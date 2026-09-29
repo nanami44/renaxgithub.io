@@ -1771,7 +1771,7 @@ align-items: start !important;
   display: flex;
   flex-direction: column;
   align-items: stretch;
-   transform: translateX(-193px) !important;
+   transform: translateX(-160px) !important;
 }
 
 .renax-work .skenzi-card {
