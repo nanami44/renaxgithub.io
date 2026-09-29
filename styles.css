@@ -1853,3 +1853,8 @@ object-fit: contain;
     transform: scale(1.12) !important;
     transition: transform 0.4s ease !important;
 }
+.renax-work .skenzi-card img:hover,
+.renax-work .design-card img:hover {
+    transform: scale(1.12) !important;
+    transition: transform 0.4s ease !important;
+}
