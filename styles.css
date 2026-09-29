@@ -1898,7 +1898,7 @@ object-fit: contain;
     width: 400px !important;
     text-align: left !important;
     margin: 25px 0 20px !important;
-    transform: translateX(-300px) !important;
+    transform: translateX(-180px) !important;
 }
 
 .renax-work .work-content > a.renax-button {
