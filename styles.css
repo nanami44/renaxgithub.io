@@ -1814,7 +1814,10 @@ object-fit: contain;
     border-radius: 20px !important;
     display: block;
 }
-
+.renax-work .work-main-image img {
+    height: 340px !important;
+    object-fit: cover !important;
+}
 
 .renax-work .skenzi-card h3,
 .renax-work .skenzi-card p {
