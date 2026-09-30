@@ -674,7 +674,7 @@ ul {
 
 .about-manifest p {
   font-size: 1.15rem;
-  color: var(--text-muted);
+  color: #000000;
   line-height: 1.8;
   max-width: 900px;
   margin-bottom: 1.5rem;
