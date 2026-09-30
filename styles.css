@@ -1969,11 +1969,10 @@ transform: translate(20px, -20px) !important;
 }
 
 /* MISIÓN abajo a la derecha */
-.about-mission-vision .mission-card {
-    grid-column: 2;
-    grid-row: 2;
-    align-self: end;
-    justify-self: end;
+grid-column: 1;
+grid-row: 1;
+align-self: start;
+justify-self: start;
 }
 
 /* Títulos */
