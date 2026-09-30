@@ -2342,3 +2342,13 @@ justify-self: start;
     line-height: 1.7;
     margin-bottom: 20px;
 }
+/* ---------- BLOQUE NEGRO DEBAJO DE QUÉ HACEMOS ---------- */
+
+.renax-black-section {
+    width: 100%;
+    min-height: 500px;
+    background: #000000;
+    margin: 0;
+    padding: 80px 0;
+    box-sizing: border-box;
+}
