@@ -1902,7 +1902,7 @@ object-fit: contain;
 }
 
 .renax-work .work-content > a.renax-button {
-transform: translate(20px, -270px) !important;
+transform: translate(20px, -20px) !important;
 }
 .renax-work .work-main-image p {
     margin-top: 70px !important;
