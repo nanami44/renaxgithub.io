@@ -1968,13 +1968,13 @@ transform: translate(20px, -20px) !important;
     justify-self: start;
 }
 .about-mission-vision .vision-card .mission-vision-content {
-    width: 650px;
-    min-height: 320px;
-    padding: 45px 55px;
-    background: #a90000;
-    color: #ffffff;
-    border-radius: 0 70px 70px 0;
-    box-sizing: border-box;
+    width: 650px !important;
+    min-height: 320px !important;
+    padding: 45px 55px !important;
+    background: #a90000 !important;
+    color: #ffffff !important;
+    border-radius: 70px 0 0 70px !important;
+    box-sizing: border-box !important;
 }
 /* MISIÓN abajo a la derecha */
 grid-column: 1;
