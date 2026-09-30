@@ -2159,3 +2159,24 @@ justify-self: start;
     padding: 55px 70px !important;
     box-sizing: border-box !important;
 }
+/* Títulos fuera de los cuadros */
+.about-mission-vision .mission-vision-content h3 {
+    position: absolute !important;
+    top: -80px !important;
+    color: #a90000 !important;
+    font-size: 3rem !important;
+    font-weight: 900 !important;
+    margin: 0 !important;
+    z-index: 10 !important;
+}
+
+/* VISIÓN arriba a la izquierda */
+.about-mission-vision .vision-card .mission-vision-content h3 {
+    left: 0 !important;
+}
+
+/* MISIÓN arriba a la derecha */
+.about-mission-vision .mission-card .mission-vision-content h3 {
+    right: 0 !important;
+    left: auto !important;
+}
