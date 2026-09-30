@@ -2189,3 +2189,8 @@ justify-self: start;
 .about-mission-vision .mission-card h3 {
     right: 220px !important;
 }
+/* MOVER TÍTULO MISIÓN */
+.about-mission-vision .mission-card .mission-vision-content h3 {
+    right: 180px !important;
+    left: auto !important;
+}
