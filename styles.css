@@ -727,12 +727,14 @@ background-repeat: no-repeat;
 }
 
 .about-vision-grid {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 0 2rem 6rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
+  width: 100%;
+  max-width: none;
+  min-height: 500px;
+  margin: 0;
+  padding: 80px 8%;
+  background: #ffffff;
+  color: #000000;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
