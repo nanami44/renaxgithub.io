@@ -2120,23 +2120,32 @@ justify-self: start;
 
 @media (min-width: 769px) {
 
-  .nav-menu {
-    display: grid !important;
-    grid-template-columns: repeat(5, 100px);
-    width: 500px !important;
-    gap: 0 !important;
-    justify-content: center;
-    align-items: center;
-  }
+    .nav-container {
+        position: relative;
+    }
 
-  .nav-menu .nav-link {
-    width: 100px;
-    min-width: 100px;
-    max-width: 100px;
-    text-align: center;
-    box-sizing: border-box;
-    white-space: nowrap;
-  }
+    .nav-menu {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: grid !important;
+        grid-template-columns: repeat(5, 100px);
+        width: 500px !important;
+        gap: 0 !important;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-menu .nav-link {
+        width: 100px;
+        min-width: 100px;
+        max-width: 100px;
+        text-align: center;
+        box-sizing: border-box;
+        white-space: nowrap;
+    }
+
+}
 
 }
 /* Fondo negro para Misión y Visión */
