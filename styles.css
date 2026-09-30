@@ -2131,3 +2131,17 @@ justify-self: start;
 .about-mission-vision {
     background: #000000 !important;
 }
+/* Posición de los cuadros */
+.about-mission-vision .vision-card {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    align-self: start !important;
+}
+
+.about-mission-vision .mission-card {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    justify-self: end !important;
+    align-self: end !important;
+}
