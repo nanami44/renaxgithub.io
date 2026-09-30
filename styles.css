@@ -653,13 +653,14 @@ ul {
 
 /* Manifest Section */
 .about-manifest {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 50px auto;
     padding: 80px 70px;
     background: #ffffff;
     border: 3px solid #ff173d;
     border-radius: 35px;
     box-sizing: border-box;
+    color: #000000;
 }
 
 .about-manifest h2 {
