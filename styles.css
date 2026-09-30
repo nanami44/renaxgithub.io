@@ -2268,3 +2268,21 @@ justify-self: start;
     line-height: 1.2;
     margin: 0;
 }
+/* IMAGEN DEBAJO DE LOS VALORES */
+
+.renax-values-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 30px auto 80px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.renax-values-image img {
+    width: 100%;
+    max-width: 941px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
