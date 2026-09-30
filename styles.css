@@ -2285,4 +2285,5 @@ justify-self: start;
     height: auto;
     display: block;
     object-fit: contain;
+    border-radius: 35px;
 }
