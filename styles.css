@@ -2145,3 +2145,10 @@ justify-self: start;
     justify-self: end !important;
     align-self: end !important;
 }
+/* MISIÓN Y VISIÓN con el mismo tamaño */
+.about-mission-vision .mission-card .mission-vision-content,
+.about-mission-vision .vision-card .mission-vision-content {
+    width: 650px !important;
+    min-height: 320px !important;
+    box-sizing: border-box !important;
+}
