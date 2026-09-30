@@ -2127,3 +2127,7 @@ justify-self: start;
   }
 
 }
+/* Fondo negro para Misión y Visión */
+.about-mission-vision {
+    background: #000000 !important;
+}
