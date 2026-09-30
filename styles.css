@@ -2152,3 +2152,10 @@ justify-self: start;
     min-height: 320px !important;
     box-sizing: border-box !important;
 }
+/* Hacer MISIÓN más grande */
+.about-mission-vision .mission-card .mission-vision-content {
+    width: 750px !important;
+    min-height: 360px !important;
+    padding: 55px 70px !important;
+    box-sizing: border-box !important;
+}
