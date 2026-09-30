@@ -653,9 +653,13 @@ ul {
 
 /* Manifest Section */
 .about-manifest {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 80px 70px;
+    background: #ffffff;
+    border: 3px solid #ff173d;
+    border-radius: 35px;
+    box-sizing: border-box;
 }
 
 .about-manifest h2 {
