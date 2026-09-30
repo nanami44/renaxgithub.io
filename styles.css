@@ -2180,3 +2180,12 @@ justify-self: start;
     right: 0 !important;
     left: auto !important;
 }
+/* AJUSTE FINAL MISIÓN Y VISIÓN */
+
+.about-mission-vision .vision-card {
+    transform: translateY(80px);
+}
+
+.about-mission-vision .mission-card h3 {
+    right: 120px !important;
+}
