@@ -187,6 +187,34 @@
     </p>
   </div>
 </section>
+  <!-- BENEFICIOS RENAX -->
+<section class="renax-benefits">
+
+  <div class="benefit-card">
+    <div class="benefit-circle"></div>
+    <h3>MÁS<br>RECONOCIMIENTO</h3>
+    <p>Una imagen que facilita que tus clientes recuerden tu marca.</p>
+  </div>
+
+  <div class="benefit-card">
+    <div class="benefit-circle"></div>
+    <h3>MÁS CONFIANZA</h3>
+    <p>Una identidad profesional que refleja la experiencia de tu negocio.</p>
+  </div>
+
+  <div class="benefit-card">
+    <div class="benefit-circle"></div>
+    <h3>MÁS CONEXIÓN</h3>
+    <p>Una comunicación visual capaz de acercarte a nuevos públicos.</p>
+  </div>
+
+  <div class="benefit-card">
+    <div class="benefit-circle"></div>
+    <h3>MÁS COHERENCIA</h3>
+    <p>Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
+  </div>
+
+</section>
   <section class="renax-black-section">
 </section>
   <script>
@@ -240,3 +268,52 @@ if (languageBtn) {
   </script>
 </body>
 </html>
+/* ==========================================================
+   BENEFICIOS RENAX
+   ========================================================== */
+
+.renax-benefits {
+    position: relative;
+    z-index: 5;
+    width: 92%;
+    max-width: 1400px;
+    margin: -180px auto 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.benefit-card {
+    min-height: 420px;
+    padding: 40px 25px;
+    border: 3px solid #ffffff;
+    border-radius: 35px;
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #050000, #d90000);
+    display: flex;
+    flex-direction: column;
+}
+
+.benefit-circle {
+    width: 40px;
+    height: 40px;
+    background: #ffffff;
+    border-radius: 50%;
+    margin: 0 auto 35px;
+}
+
+.benefit-card h3 {
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 1.35rem;
+    font-weight: 900;
+    line-height: 1.15;
+    margin: 0 0 55px;
+}
+
+.benefit-card p {
+    color: #ffffff;
+    font-size: 1.15rem;
+    line-height: 1.45;
+    margin: 0;
+}
