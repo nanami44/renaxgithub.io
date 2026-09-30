@@ -2215,3 +2215,56 @@ justify-self: start;
     right: 180px !important;
     left: auto !important;
 }
+/* ==========================================================
+   VALORES RENAX
+   ========================================================== */
+
+.renax-values {
+    width: 100%;
+    max-width: 900px;
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.value-card {
+    width: 100%;
+    height: 210px;
+    border: 3px solid #ffffff;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.value-red {
+    background: #c8102e;
+}
+
+.value-black {
+    background: #050505;
+}
+
+.value-circle {
+    width: 38px;
+    height: 38px;
+    background: #ffffff;
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+.value-card h3 {
+    color: #ffffff;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 900;
+    text-align: center;
+    line-height: 1.2;
+    margin: 0;
+}
