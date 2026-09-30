@@ -102,7 +102,19 @@ ul {
   align-items: center;
   gap: 2rem;
 }
+/* Mantener la navegación fija en todas las páginas */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
 
+.nav-link {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    box-sizing: border-box;
+}
 .nav-link {
   font-size: 0.9rem;
   font-weight: 500;
