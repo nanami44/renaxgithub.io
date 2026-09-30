@@ -2102,3 +2102,28 @@ justify-self: start;
 .about-mission-vision .vision-card .mission-vision-content p {
     color: #ffffff !important;
 }
+/* =====================================================
+   MENÚ PRINCIPAL - POSICIÓN FIJA EN TODAS LAS PÁGINAS
+   ===================================================== */
+
+@media (min-width: 769px) {
+
+  .nav-menu {
+    display: grid !important;
+    grid-template-columns: repeat(5, 100px);
+    width: 500px !important;
+    gap: 0 !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-menu .nav-link {
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    text-align: center;
+    box-sizing: border-box;
+    white-space: nowrap;
+  }
+
+}
