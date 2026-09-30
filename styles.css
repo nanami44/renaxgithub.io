@@ -1967,7 +1967,15 @@ transform: translate(20px, -20px) !important;
     align-self: start;
     justify-self: start;
 }
-
+.about-mission-vision .vision-card .mission-vision-content {
+    width: 650px;
+    min-height: 320px;
+    padding: 45px 55px;
+    background: #a90000;
+    color: #ffffff;
+    border-radius: 0 70px 70px 0;
+    box-sizing: border-box;
+}
 /* MISIÓN abajo a la derecha */
 grid-column: 1;
 grid-row: 1;
