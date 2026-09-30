@@ -2273,9 +2273,9 @@ justify-self: start;
 .renax-values-image {
     width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     margin: 30px auto 80px;
-    padding: 0 20px;
+    padding: 0 80px;
     box-sizing: border-box;
 }
 
