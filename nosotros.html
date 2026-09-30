@@ -39,9 +39,7 @@
 
 </nav>
 
-      <button class="search-btn" aria-label="Buscar en el sitio">
-        <i class="fa-solid fa-magnifying-glass"></i>
-      </button>
+    <button class="language" id="languageBtn" type="button">ESP</button>  
     </div>
   </header>
 
@@ -196,6 +194,47 @@
     navToggle.addEventListener('click', () => {
       navMenu.classList.toggle('active');
     });
+    const languageBtn = document.getElementById('languageBtn');
+
+let english = false;
+
+const translations = {
+  es: {
+    aboutTitle: "SOMOS UNA AGENCIA DE BRANDING",
+    aboutText1: "Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria.",
+    aboutText2: "Analizamos la historia, los valores, la identidad y las necesidades de cada negocio para crear soluciones visuales que conecten su trayectoria con una nueva generación de clientes.",
+    mission: "MISIÓN",
+    vision: "VISIÓN",
+    why: "¿POR QUÉ<br>RENAX?",
+    team: "EQUIPO RENAX",
+    name: "Karol Yuliana Montenegro Ruiz",
+    what: "QUÉ HACEMOS"
+  },
+
+  en: {
+    aboutTitle: "WE ARE A BRANDING AGENCY",
+    aboutText1: "We are a visual identity and graphic communication agency specialized in modernizing established brands.",
+    aboutText2: "We analyze the history, values, identity and needs of each business to create visual solutions that connect its trajectory with a new generation of customers.",
+    mission: "MISSION",
+    vision: "VISION",
+    why: "WHY<br>RENAX?",
+    team: "RENAX TEAM",
+    name: "Karol Yuliana Montenegro Ruiz",
+    what: "WHAT WE DO"
+  }
+};
+
+if (languageBtn) {
+  languageBtn.addEventListener('click', function () {
+
+    english = !english;
+
+    const language = english ? translations.en : translations.es;
+
+    languageBtn.textContent = english ? "ESP" : "ENG";
+
+  });
+}
   </script>
 </body>
 </html>
