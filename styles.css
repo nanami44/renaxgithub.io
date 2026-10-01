@@ -2759,3 +2759,20 @@ color: #ffffff !important;
     }
 
 }
+/* COLOR FINAL DE LOS TEXTOS DE ATAJOS */
+
+section.renax-shortcuts .shortcut-column p {
+    color: #ffffff !important;
+}
+
+section.renax-shortcuts .shortcut-column p:hover {
+    color: #d90000 !important;
+}
+
+section.renax-shortcuts .shortcut-column a:not(.shortcut-title) {
+    color: #ffffff !important;
+}
+
+section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
+    color: #d90000 !important;
+}
