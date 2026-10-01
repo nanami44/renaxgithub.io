@@ -2806,7 +2806,10 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     display: flex !important;
     align-items: center !important;
 }
-
+/* QUITAR RAYAS DE FONDO DE MISIÓN Y VISIÓN */
+.about-mission-vision .orange-effect {
+    display: none !important;
+}
 
 /* Texto */
 .about-mission-vision .mission-vision-content p {
