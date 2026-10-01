@@ -3045,7 +3045,8 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .video-nosotros {
     width: 100%;
     min-height: 100vh;
-    padding: 80px 40px;
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 
     background-image: url("margas-marcas.png.png");
