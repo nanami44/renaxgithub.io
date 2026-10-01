@@ -3069,4 +3069,22 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 /* ==========================================================
    VIDEO NOSOTROS - FONDO MARGAS MARCAS
    ========================================================== */
+/* IMAGEN DE VISIÓN RENAX */
 
+.about-mission-vision .vision-card {
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.vision-renax-image {
+    width: 100% !important;
+    max-width: 850px !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: contain !important;
+    border-radius: 30px !important;
+}
