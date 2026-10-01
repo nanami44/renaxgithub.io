@@ -3071,20 +3071,31 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
    ========================================================== */
 /* IMAGEN DE VISIÓN RENAX */
 
+.about-mission-vision .vision-card {
+    position: relative !important;
+    z-index: 20 !important;
+    width: 650px !important;
+}
+
 .about-mission-vision .vision-card .mission-vision-content {
     background: transparent !important;
     padding: 0 !important;
     width: 650px !important;
     min-height: auto !important;
+    height: auto !important;
     border: none !important;
+    border-radius: 0 !important;
     overflow: visible !important;
+    display: block !important;
 }
 
 .about-mission-vision .vision-card .mission-vision-content img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 30px;
-    object-fit: contain;
+    width: 650px !important;
+    max-width: none !important;
+    height: auto !important;
+    display: block !important;
+    border-radius: 30px !important;
+    object-fit: contain !important;
+    position: relative !important;
+    z-index: 30 !important;
 }
-
