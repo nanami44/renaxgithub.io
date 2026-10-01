@@ -668,9 +668,9 @@ background-repeat: no-repeat;
 
 /* Manifest Section */
 .about-manifest {
-    max-width: 1400px;
+   max-width: 1500px;
     margin: 50px auto;
-    padding: 80px 70px;
+   padding: 90px 80px;
     background: #ffffff;
     border: 3px solid #ff173d;
     border-radius: 35px;
