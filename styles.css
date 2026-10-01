@@ -2352,3 +2352,131 @@ justify-self: start;
     padding: 80px 0;
     box-sizing: border-box;
 }
+/* ==========================================================
+   TARJETAS DE BENEFICIOS RENAX
+   ========================================================== */
+
+.renax-benefits {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    background: #050505;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+
+    padding: 0 6% 80px;
+}
+
+
+/* ---------- TARJETAS ---------- */
+
+.renax-benefits .benefit-card {
+    min-height: 410px;
+
+    padding: 40px 25px;
+
+    border: 3px solid #ffffff;
+    border-radius: 35px;
+
+    background: linear-gradient(
+        to bottom,
+        #050505 0%,
+        #250000 45%,
+        #d00000 100%
+    );
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    /* Hace que las tarjetas queden a mitad entre blanco y negro */
+    transform: translateY(-50%);
+}
+
+
+/* ---------- CÍRCULO SUPERIOR ---------- */
+
+.renax-benefits .benefit-circle {
+    width: 40px;
+    height: 40px;
+
+    background: #ffffff;
+
+    border-radius: 50%;
+
+    margin: 0 auto 35px;
+}
+
+
+/* ---------- TÍTULO ---------- */
+
+.renax-benefits .benefit-card h3 {
+    color: #ffffff;
+
+    font-family: var(--font-heading);
+
+    font-size: 1.35rem;
+
+    font-weight: 900;
+
+    line-height: 1.15;
+
+    margin: 0 0 55px;
+
+    text-transform: uppercase;
+}
+
+
+/* ---------- TEXTO ---------- */
+
+.renax-benefits .benefit-card p {
+    color: #ffffff;
+
+    font-family: var(--font-body);
+
+    font-size: 1.15rem;
+
+    line-height: 1.45;
+
+    margin: 0;
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .renax-benefits {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 5% 60px;
+        gap: 16px;
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+    .renax-benefits {
+        grid-template-columns: 1fr;
+        padding: 0 25px 50px;
+        gap: 20px;
+    }
+
+    .renax-benefits .benefit-card {
+        min-height: 330px;
+        transform: translateY(-20%);
+    }
+
+}
