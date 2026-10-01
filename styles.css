@@ -2978,3 +2978,19 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     font-size: 1.4rem !important;
     text-align: center;
 }
+/* IMAGEN PRINCIPAL DE SERVICIOS */
+.services-cover {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.services-cover img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
