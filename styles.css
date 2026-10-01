@@ -1021,7 +1021,25 @@ background-repeat: no-repeat;
   border-radius: 30px;
   padding: 5px 14px;
 }
+.login-btn {
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    background: #c8102e;
+    border: 1px solid #c8102e;
+    border-radius: 30px;
+    padding: 5px 14px;
+    text-decoration: none;
+    margin-left: 8px;
+    transition: 0.3s ease;
+}
 
+.login-btn:hover {
+    background: #a90000;
+    border-color: #a90000;
+    transform: scale(1.05);
+}
 
 /* ---------- HERO ---------- */
 
