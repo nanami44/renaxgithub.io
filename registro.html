@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro | RENAX</title>
+</head>
+
+<body>
+
+  <h1>REGÍSTRATE EN RENAX</h1>
+
+  <p>
+    Déjanos tus datos y cuéntanos qué servicio necesitas.
+    Nos pondremos en contacto contigo.
+  </p>
+
+  <form>
+
+    <label>Nombre completo</label>
+    <input type="text" name="nombre" required>
+
+    <label>Correo electrónico</label>
+    <input type="email" name="correo" required>
+
+    <label>Número de teléfono</label>
+    <input type="tel" name="telefono" required>
+
+    <label>Empresa</label>
+    <input type="text" name="empresa">
+
+    <label>Servicio de interés</label>
+    <select name="servicio" required>
+      <option value="">Selecciona un servicio</option>
+      <option value="diseño-marca">Diseño de marca</option>
+      <option value="identidad-visual">Identidad visual</option>
+      <option value="diseño-grafico">Diseño gráfico</option>
+      <option value="comunicacion">Comunicación gráfica</option>
+      <option value="otro">Otro</option>
+    </select>
+
+    <label>Mensaje o consulta</label>
+    <textarea name="mensaje" rows="5"></textarea>
+
+    <button type="submit">ENVIAR SOLICITUD</button>
+
+  </form>
+
+</body>
+</html>
