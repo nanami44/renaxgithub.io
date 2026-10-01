@@ -2848,3 +2848,28 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-manifest p {
     color: #ffffff !important;
 }
+/* AJUSTE POR QUÉ RENAX */
+.why-renax {
+    text-align: center;
+}
+
+.why-renax-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.why-renax-content h2 {
+    font-size: 3.5rem !important;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.why-renax-text {
+    text-align: center;
+}
+
+.why-renax-text p {
+    text-align: center;
+    margin: 15px 0;
+}
