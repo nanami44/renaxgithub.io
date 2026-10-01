@@ -4,9 +4,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registro | RENAX</title>
+ <style>
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: #050505;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+  }
+
+  .registro-container {
+    width: 100%;
+    max-width: 650px;
+    background: #0f0f0f;
+    border: 2px solid #c8102e;
+    border-radius: 20px;
+    padding: 45px;
+    box-sizing: border-box;
+    box-shadow: 0 0 35px rgba(200, 16, 46, 0.25);
+  }
+
+  h1 {
+    text-align: center;
+    color: #ffffff;
+    margin-bottom: 15px;
+  }
+
+  .registro-intro {
+    text-align: center;
+    color: #cccccc;
+    margin-bottom: 35px;
+    line-height: 1.6;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  label {
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 14px;
+    background: #050505;
+    color: #ffffff;
+    border: 1px solid #444444;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    outline: none;
+    border-color: #c8102e;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  button {
+    margin-top: 25px;
+    padding: 15px;
+    background: #c8102e;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  button:hover {
+    background: #a90000;
+  }
+</style> 
 </head>
 
 <body>
+  <div class="registro-container">
 
   <h1>REGÍSTRATE EN RENAX</h1>
 
@@ -45,6 +136,6 @@
     <button type="submit">ENVIAR SOLICITUD</button>
 
   </form>
-
+</div>
 </body>
 </html>
