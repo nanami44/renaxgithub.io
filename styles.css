@@ -2898,3 +2898,62 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
         transform: translateX(0) scale(1);
     }
 }
+/* REBOTE MISIÓN Y VISIÓN */
+.about-mission-vision .vision-card .mission-vision-content {
+    animation: reboteVision 1.2s ease-out;
+}
+
+.about-mission-vision .mission-card .mission-vision-content {
+    animation: reboteMision 1.2s ease-out;
+    animation-delay: 0.2s;
+}
+
+@keyframes reboteVision {
+    0% {
+        opacity: 0;
+        transform: translateX(-80px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateX(15px);
+    }
+
+    80% {
+        transform: translateX(-8px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes reboteMision {
+    0% {
+        opacity: 0;
+        transform: translateX(80px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateX(-15px);
+    }
+
+    80% {
+        transform: translateX(8px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+/* ZOOM AL PASAR EL MOUSE */
+.about-mission-vision .vision-card .mission-vision-content,
+.about-mission-vision .mission-card .mission-vision-content {
+    transition: transform 0.4s ease;
+}
+
+.about-mission-vision .vision-card .mission-vision-content:hover,
+.about-mission-vision .mission-card .mission-vision-content:hover {
+    transform: scale(1.05);
+}
