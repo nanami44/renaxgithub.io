@@ -2843,3 +2843,8 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(255, 23, 61, 0.25);
 }
+/* TEXTO DEL MANIFIESTO EN BLANCO */
+.about-manifest h2,
+.about-manifest p {
+    color: #ffffff !important;
+}
