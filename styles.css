@@ -2957,3 +2957,15 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision .mission-card .mission-vision-content:hover {
     transform: scale(1.05);
 }
+/* AJUSTE QUÉ HACEMOS */
+.about-vision-grid h3 {
+    color: #000000 !important;
+    font-size: 3.5rem !important;
+    text-align: center;
+}
+
+.about-vision-grid p {
+    color: #000000 !important;
+    font-size: 1.4rem !important;
+    text-align: center;
+}
