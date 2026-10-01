@@ -2812,7 +2812,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 
 /* Quitar fondo blanco de toda la sección */
 .about-mission-vision {
-    background: #000000 !important;
+  background: #ffffff !important;
 }
 
 
