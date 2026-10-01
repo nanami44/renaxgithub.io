@@ -2480,3 +2480,143 @@ justify-self: start;
     }
 
 }
+/* ==========================================================
+   MENÚ DE ATAJOS RENAX
+   ========================================================== */
+
+.renax-shortcuts {
+    width: 100%;
+    min-height: 420px;
+
+    padding: 70px 7% 80px;
+
+    box-sizing: border-box;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 60px;
+
+    background: linear-gradient(
+        to bottom,
+        #050505 0%,
+        #180000 55%,
+        #5a0000 100%
+    );
+}
+
+
+/* ---------- COLUMNAS ---------- */
+
+.shortcut-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+/* ---------- TÍTULOS ---------- */
+
+.shortcut-title {
+    display: inline-block;
+
+    color: #ffffff;
+
+    font-family: var(--font-heading);
+
+    font-size: 1.6rem;
+
+    font-weight: 900;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    padding-bottom: 8px;
+
+    margin-bottom: 30px;
+
+    border-bottom: 3px solid #d90000;
+
+    transition: color 0.3s ease;
+}
+
+
+/* ---------- ENLACES INTERNOS ---------- */
+
+.shortcut-column a:not(.shortcut-title) {
+    color: #d90000;
+
+    font-size: 1.25rem;
+
+    text-decoration: none;
+
+    margin-bottom: 24px;
+
+    line-height: 1.4;
+
+    transition: color 0.3s ease;
+}
+
+
+/* ---------- TEXTOS ---------- */
+
+.shortcut-column p {
+    color: #d90000;
+
+    font-size: 1.25rem;
+
+    line-height: 1.45;
+
+    margin: 0 0 24px;
+}
+
+
+/* ---------- EFECTO AL PASAR EL MOUSE ---------- */
+
+.shortcut-title:hover {
+    color: #d90000;
+}
+
+.shortcut-column a:not(.shortcut-title):hover {
+    color: #ffffff;
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .renax-shortcuts {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 45px 35px;
+        padding: 60px 7%;
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+    .renax-shortcuts {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 50px 30px;
+    }
+
+    .shortcut-title {
+        font-size: 1.4rem;
+    }
+
+    .shortcut-column p,
+    .shortcut-column a:not(.shortcut-title) {
+        font-size: 1.1rem;
+    }
+
+}
