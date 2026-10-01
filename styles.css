@@ -3041,3 +3041,27 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .nav-container .language {
     margin-left: auto !important;
 }
+/* FONDO DE VIDEO - MARGAS MARCAS */
+.video-nosotros {
+    width: 100%;
+    min-height: 100vh;
+    padding: 80px 40px;
+    box-sizing: border-box;
+
+    background-image: url("margas-marcas.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-nosotros iframe {
+    width: 90%;
+    max-width: 1200px;
+    height: 675px;
+    border-radius: 30px;
+    display: block;
+}
