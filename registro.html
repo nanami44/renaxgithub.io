@@ -137,5 +137,35 @@
 
   </form>
 </div>
+
+<script>
+  const formulario = document.querySelector("form");
+
+  formulario.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const datos = new FormData(formulario);
+
+    try {
+      const respuesta = await fetch(formulario.action, {
+        method: "POST",
+        body: datos,
+        headers: {
+          "Accept": "application/json"
+        }
+      });
+
+      if (respuesta.ok) {
+        window.location.href = "gracias.html";
+      } else {
+        alert("No se pudo enviar la solicitud. Por favor, inténtalo nuevamente.");
+      }
+
+    } catch (error) {
+      alert("Ocurrió un error al enviar la solicitud. Por favor, inténtalo nuevamente.");
+    }
+  });
+</script>
+
 </body>
 </html>
