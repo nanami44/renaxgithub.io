@@ -252,32 +252,127 @@
 let english = false;
 
 const translations = {
+
   es: {
+
     aboutTitle: "SOMOS UNA AGENCIA DE BRANDING",
+
     aboutText1: "Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria.",
+
     aboutText2: "Analizamos la historia, los valores, la identidad y las necesidades de cada negocio para crear soluciones visuales que conecten su trayectoria con una nueva generación de clientes.",
+
     mission: "MISIÓN",
+
+    missionText: "Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia.",
+
     vision: "VISIÓN",
+
+    visionText: "Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales.",
+
     why: "¿POR QUÉ<br>RENAX?",
+
+    why1: "Conservamos la esencia de tu marca.",
+    why2: "Analizamos antes de diseñar.",
+    why3: "Unimos estrategia y diseño.",
+    why4: "Creamos una identidad preparada para evolucionar.",
+
+    value1: "DISEÑO<br>FUNCIONAL",
+    value2: "ORIGINALIDAD",
+    value3: "ADAPTABILIDAD",
+    value4: "COHERENCIA<br>VISUAL",
+
     team: "EQUIPO RENAX",
+
     name: "Karol Yuliana Montenegro Ruiz",
-    what: "QUÉ HACEMOS"
+
+    teamText1: "Soy la creadora de RENAX, una agencia enfocada en la identidad visual y la comunicación gráfica. Mi propósito es ayudar a marcas con trayectoria a modernizar su imagen sin perder la esencia que las ha hecho reconocibles.",
+
+    teamText2: "Desde RENAX desarrollo propuestas de identidad visual, diseño gráfico y comunicación, buscando conectar la historia de cada marca con una imagen actual, coherente y preparada para evolucionar.",
+
+    what: "QUÉ HACEMOS",
+
+    whatText: "Modernizamos tu marca sin hacerte perder lo que eres. Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria. Trabajamos con pequeñas y medianas empresas que quieren evolucionar visualmente sin perder aquello que las hizo reconocidas.",
+
+    benefit1: "MÁS<br>RECONOCIMIENTO",
+
+    benefitText1: "Una imagen que facilita que tus clientes recuerden tu marca.",
+
+    benefit2: "MÁS CONFIANZA",
+
+    benefitText2: "Una identidad profesional que refleja la experiencia de tu negocio.",
+
+    benefit3: "MÁS CONEXIÓN",
+
+    benefitText3: "Una comunicación visual capaz de acercarte a nuevos públicos.",
+
+    benefit4: "MÁS COHERENCIA",
+
+    benefitText4: "Una marca preparada para comunicarse de manera consistente en medios físicos y digitales."
+
   },
 
   en: {
+
     aboutTitle: "WE ARE A BRANDING AGENCY",
+
     aboutText1: "We are a visual identity and graphic communication agency specialized in modernizing established brands.",
+
     aboutText2: "We analyze the history, values, identity and needs of each business to create visual solutions that connect its trajectory with a new generation of customers.",
+
     mission: "MISSION",
+
+    missionText: "Our mission is to provide strategic design and visual identity services for small and medium-sized businesses, modernizing established brands, strengthening their competitiveness and always preserving their essence.",
+
     vision: "VISION",
+
+    visionText: "By 2030, RENAX aims to be a leading agency in visual identity and graphic communication in the region, recognized for modernizing established brands and supporting the growth of local businesses.",
+
     why: "WHY<br>RENAX?",
+
+    why1: "We preserve the essence of your brand.",
+    why2: "We analyze before designing.",
+    why3: "We combine strategy and design.",
+    why4: "We create an identity ready to evolve.",
+
+    value1: "FUNCTIONAL<br>DESIGN",
+    value2: "ORIGINALITY",
+    value3: "ADAPTABILITY",
+    value4: "VISUAL<br>COHERENCE",
+
     team: "RENAX TEAM",
+
     name: "Karol Yuliana Montenegro Ruiz",
-    what: "WHAT WE DO"
+
+    teamText1: "I am the creator of RENAX, an agency focused on visual identity and graphic communication. My purpose is to help established brands modernize their image without losing the essence that has made them recognizable.",
+
+    teamText2: "At RENAX, I develop visual identity, graphic design and communication proposals, seeking to connect the history of each brand with a current, coherent image prepared to evolve.",
+
+    what: "WHAT WE DO",
+
+    whatText: "We modernize your brand without making you lose who you are. We are a visual identity and graphic communication agency specialized in modernizing established brands. We work with small and medium-sized businesses that want to evolve visually without losing what made them recognizable.",
+
+    benefit1: "MORE<br>RECOGNITION",
+
+    benefitText1: "An image that makes it easier for your customers to remember your brand.",
+
+    benefit2: "MORE TRUST",
+
+    benefitText2: "A professional identity that reflects the experience of your business.",
+
+    benefit3: "MORE CONNECTION",
+
+    benefitText3: "Visual communication capable of connecting you with new audiences.",
+
+    benefit4: "MORE CONSISTENCY",
+
+    benefitText4: "A brand prepared to communicate consistently across physical and digital media."
+
   }
+
 };
 
 if (languageBtn) {
+
   languageBtn.addEventListener('click', function () {
 
     english = !english;
@@ -286,7 +381,18 @@ if (languageBtn) {
 
     languageBtn.textContent = english ? "ESP" : "ENG";
 
+    document.querySelectorAll("[data-lang]").forEach(function(element) {
+
+      const key = element.getAttribute("data-lang");
+
+      if (language[key]) {
+        element.innerHTML = language[key];
+      }
+
+    });
+
   });
+
 }
   </script>
 </body>
