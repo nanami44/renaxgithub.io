@@ -2818,3 +2818,19 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision .mission-vision-content p {
     color: #ffffff !important;
 }
+/* EFECTO DE ENTRADA - MANIFEST */
+.about-manifest {
+    animation: manifestEntrada 1.2s ease-out both;
+}
+
+@keyframes manifestEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
