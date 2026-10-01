@@ -2834,3 +2834,12 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
         transform: translateY(0);
     }
 }
+/* EFECTO AL PASAR EL MOUSE */
+.about-manifest {
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about-manifest:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(255, 23, 61, 0.25);
+}
