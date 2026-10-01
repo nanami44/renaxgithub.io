@@ -3193,3 +3193,6 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     position: relative !important;
     z-index: 30 !important;
 }
+.about-mission-vision {
+    background: #000000 !important;
+}
