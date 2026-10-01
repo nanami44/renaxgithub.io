@@ -2776,3 +2776,39 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title) {
 section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     color: #d90000 !important;
 }
+/* ==========================================================
+   AJUSTE FINAL - MISIÓN Y VISIÓN
+   ========================================================== */
+
+/* Quitar fondo blanco de toda la sección */
+.about-mission-vision {
+    background: #000000 !important;
+}
+
+
+/* MISIÓN Y VISIÓN CON EL MISMO TAMAÑO */
+.about-mission-vision .vision-card .mission-vision-content,
+.about-mission-vision .mission-card .mission-vision-content {
+    width: 650px !important;
+    min-height: 320px !important;
+    height: 320px !important;
+
+    box-sizing: border-box !important;
+
+    background: #a90000 !important;
+    color: #ffffff !important;
+}
+
+
+/* Mantener el texto centrado verticalmente */
+.about-mission-vision .vision-card .mission-vision-content,
+.about-mission-vision .mission-card .mission-vision-content {
+    display: flex !important;
+    align-items: center !important;
+}
+
+
+/* Texto */
+.about-mission-vision .mission-vision-content p {
+    color: #ffffff !important;
+}
