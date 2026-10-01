@@ -42,7 +42,7 @@
 
     <!-- HERO PORTAFOLIO -->
     <section class="portfolio-hero">
-      <h1>NUESTRO TRABAJO</h1>
+      <h1 data-lang="portfolioTitle">NUESTRO TRABAJO</h1>
     </section>
 
     <!-- GALERÍA DE PROYECTOS -->
@@ -51,7 +51,7 @@
       <article class="portfolio-item" style="grid-column: span 1;">
        <img src="iea-logo.png.jpeg" alt="Logo IEA">
         <div class="portfolio-overlay">
-          <span>TODO SNEAKERS</span>
+         <span data-lang="sneakers">TODO SNEAKERS</span>
         </div>
       </article>
 
@@ -59,14 +59,14 @@
       <article class="portfolio-item">
        <img src="renax-tarjeta-uno.png.png" alt="Tarjetas RENAX">
         <div class="portfolio-overlay">
-          <span>PARA ELLOS:</span>
+          <span data-lang="paraEllos">PARA ELLOS:</span>
         </div>
       </article>
 
       <!-- Proyecto 3 -->
       <article class="portfolio-item"><img src="renax-tarjeta-dos.png.png" alt="Tarjetas RENAX"> renax-tarjeta-dos.png.png
         <div class="portfolio-overlay">
-          <span>STRATEGY SESSION</span>
+          <span data-lang="strategy">STRATEGY SESSION</span>
         </div>
       </article>
 
@@ -74,7 +74,7 @@
       <article class="portfolio-item">
        <img src="dia-matematicas.png.png" alt="Día Internacional de las Matemáticas">
         <div class="portfolio-overlay">
-         <span>CAMPAÑA VISUAL · DÍA DE LAS MATEMÁTICAS</span>
+        <span data-lang="matematicas">CAMPAÑA VISUAL · DÍA DE LAS MATEMÁTICAS</span>
         </div>
       </article>
 
@@ -82,7 +82,7 @@
       <article class="portfolio-item">
        <img src="sobre-renax.png.png" alt="Papelería RENAX">
         <div class="portfolio-overlay">
-          <span>CREATIVE ART</span>
+         <span data-lang="creative">RENAX</span>
         </div>
       </article>
 
@@ -90,7 +90,7 @@
       <article class="portfolio-item">
         <img src="iea-empaque.png.png" alt="Empaque IEA">
         <div class="portfolio-overlay">
-          <span>LE CHAT BAGARRE</span>
+         <span data-lang="chat">IDEAS</span>
         </div>
       </article>
     </section>
@@ -98,7 +98,7 @@
     <article class="portfolio-item">
       <img src="iea-empaque.png.png" alt="Empaque IEA">
       <div class="portfolio-overlay">
-        <span>LE CHAT BAGARRE</span>
+    <span data-lang="chat2">LE CHAT BAGARRE</span>
       </div>
     </article>
   </section>
@@ -106,6 +106,54 @@
 <article class="portfolio-item">  
 <img src="renax-hogar.png" alt="Productos para el hogar">
   <div class="portfolio-overlay">  
-   <span>SKENZI</span>  
+  <span data-lang="skenzi">SKENZI</span>
   </div>  
 </article>
+<script>
+const languageBtn = document.getElementById("languageBtn");
+
+let english = false;
+
+const translations = {
+    es: {
+        portfolioTitle: "NUESTRO TRABAJO",
+        sneakers: "TODO SNEAKERS",
+        paraEllos: "PARA ELLOS",
+        strategy: "STRATEGY SESSION",
+        matematicas: "CAMPAÑA VISUAL · DÍA DE LAS MATEMÁTICAS",
+        creative: "CREATIVE ART",
+        chat: "LE CHAT BAGARRE",
+        skenzi: "SKENZI"
+    },
+
+    en: {
+        portfolioTitle: "OUR WORK",
+        sneakers: "TODO SNEAKERS",
+        paraEllos: "FOR THEM",
+        strategy: "STRATEGY SESSION",
+        matematicas: "VISUAL CAMPAIGN · MATHEMATICS DAY",
+        creative: "CREATIVE ART",
+        chat: "LE CHAT BAGARRE",
+        skenzi: "SKENZI"
+    }
+};
+
+if (languageBtn) {
+    languageBtn.addEventListener("click", function () {
+
+        english = !english;
+
+        const language = english ? translations.en : translations.es;
+
+        languageBtn.textContent = english ? "ESP" : "ENG";
+
+        document.querySelectorAll("[data-lang]").forEach(function(element) {
+            const key = element.getAttribute("data-lang");
+
+            if (language[key]) {
+                element.innerHTML = language[key];
+            }
+        });
+    });
+}
+</script>
