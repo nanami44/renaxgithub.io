@@ -2699,7 +2699,7 @@ justify-self: start;
 /* ENLACES INTERNOS */
 
 .renax-shortcuts .shortcut-column a:not(.shortcut-title) {
-    color: #d90000 !important;
+  color: #ffffff !important;
 
     font-family: var(--font-body) !important;
 
@@ -2720,7 +2720,7 @@ justify-self: start;
 }
 
 .renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
-    color: #ffffff !important;
+    color: #d90000 !important;
 }
 
 
