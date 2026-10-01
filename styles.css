@@ -3012,3 +3012,29 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     object-fit: cover;
     object-position: center;
 }
+/* BOTÓN INICIAR SESIÓN */
+.nav-container .login-btn {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff !important;
+    background: #c8102e !important;
+    border: 1px solid #c8102e !important;
+    border-radius: 30px;
+    padding: 5px 14px;
+    text-decoration: none !important;
+    font-family: var(--font-heading);
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-left: 8px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.nav-container .login-btn:hover {
+    background: #a90000 !important;
+    border-color: #a90000 !important;
+    transform: scale(1.05);
+}
