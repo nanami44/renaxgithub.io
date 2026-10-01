@@ -2620,3 +2620,143 @@ justify-self: start;
     }
 
 }
+/* ==========================================================
+   AJUSTE VISUAL - ATAJOS RENAX
+   ========================================================== */
+
+.renax-shortcuts {
+    width: 100% !important;
+    min-height: 420px !important;
+
+    padding: 70px 7% 80px !important;
+
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 50px !important;
+
+    box-sizing: border-box !important;
+
+    background: linear-gradient(
+        to bottom,
+        #050505 0%,
+        #120000 45%,
+        #5a0000 100%
+    ) !important;
+}
+
+
+/* COLUMNAS */
+
+.renax-shortcuts .shortcut-column {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+}
+
+
+/* TÍTULOS PRINCIPALES */
+
+.renax-shortcuts .shortcut-title {
+    display: inline-block !important;
+
+    color: #ffffff !important;
+
+    font-family: var(--font-heading) !important;
+
+    font-size: 1.6rem !important;
+
+    font-weight: 900 !important;
+
+    text-decoration: none !important;
+
+    text-transform: uppercase !important;
+
+    line-height: 1.2 !important;
+
+    padding-bottom: 8px !important;
+
+    margin-bottom: 30px !important;
+
+    border-bottom: 3px solid #d90000 !important;
+}
+
+
+/* TEXTOS */
+
+.renax-shortcuts .shortcut-column p {
+    color: #d90000 !important;
+
+    font-family: var(--font-body) !important;
+
+    font-size: 1.25rem !important;
+
+    line-height: 1.45 !important;
+
+    margin: 0 !important;
+}
+
+
+/* ENLACES INTERNOS */
+
+.renax-shortcuts .shortcut-column a:not(.shortcut-title) {
+    color: #d90000 !important;
+
+    font-family: var(--font-body) !important;
+
+    font-size: 1.25rem !important;
+
+    line-height: 1.4 !important;
+
+    text-decoration: none !important;
+
+    margin-bottom: 24px !important;
+}
+
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.renax-shortcuts .shortcut-title:hover {
+    color: #d90000 !important;
+}
+
+.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
+    color: #ffffff !important;
+}
+
+
+/* ==========================================================
+   TABLET
+   ========================================================== */
+
+@media (max-width: 900px) {
+
+    .renax-shortcuts {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 45px 35px !important;
+    }
+
+}
+
+
+/* ==========================================================
+   CELULAR
+   ========================================================== */
+
+@media (max-width: 600px) {
+
+    .renax-shortcuts {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+        padding: 50px 30px !important;
+    }
+
+    .renax-shortcuts .shortcut-title {
+        font-size: 1.4rem !important;
+    }
+
+    .renax-shortcuts .shortcut-column p,
+    .renax-shortcuts .shortcut-column a:not(.shortcut-title) {
+        font-size: 1.1rem !important;
+    }
+
+}
