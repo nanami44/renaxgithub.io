@@ -2182,7 +2182,7 @@ justify-self: start;
 }
 /* Fondo negro para Misión y Visión */
 .about-mission-vision {
-    background: #000000 !important;
+   background: #ffffff !important;
 }
 /* Posición de los cuadros */
 .about-mission-vision .vision-card {
