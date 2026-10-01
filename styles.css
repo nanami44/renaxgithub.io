@@ -2860,7 +2860,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 }
 
 .why-renax-content h2 {
-    font-size: 3.5rem !important;
+   font-size: 5rem !important;
     text-align: center;
     margin-bottom: 40px;
 }
@@ -2872,4 +2872,5 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .why-renax-text p {
     text-align: center;
     margin: 15px 0;
+   font-size: 1.5rem;
 }
