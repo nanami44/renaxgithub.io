@@ -853,7 +853,16 @@ background-repeat: no-repeat;
   padding: 1.5rem;
   transition: opacity var(--transition-normal);
 }
+.portfolio-item .portfolio-overlay {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
 
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
 .portfolio-overlay span {
   font-family: var(--font-heading);
   font-size: 1.25rem;
