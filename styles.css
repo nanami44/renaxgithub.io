@@ -3038,3 +3038,6 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     border-color: #a90000 !important;
     transform: scale(1.05);
 }
+.nav-container .language {
+    margin-left: auto !important;
+}
