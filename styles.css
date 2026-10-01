@@ -3066,3 +3066,50 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     border-radius: 30px;
     display: block;
 }
+/* ==========================================================
+   VIDEO NOSOTROS - FONDO MARGAS MARCAS
+   ========================================================== */
+
+.video-nosotros {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 100vh !important;
+    margin: 0 auto !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+
+    display: grid !important;
+    place-items: center !important;
+
+    background: #000000 !important;
+    overflow: hidden !important;
+}
+
+/* Imagen ocupando toda la sección */
+.video-nosotros::before {
+    content: "" !important;
+    position: absolute !important;
+    inset: 0 !important;
+
+    background-image: url("margas-marcas.png.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    z-index: 0 !important;
+}
+
+/* Video centrado encima de la imagen */
+.video-nosotros iframe {
+    position: relative !important;
+    z-index: 1 !important;
+
+    width: 90% !important;
+    max-width: 1200px !important;
+    height: 675px !important;
+
+    margin: 0 auto !important;
+    border: none !important;
+    border-radius: 30px !important;
+    display: block !important;
+}
