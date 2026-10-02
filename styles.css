@@ -4131,3 +4131,77 @@ letter-spacing: 8px !important;
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
+/* =========================================
+   FONDO ABSTRACTO - EQUIPO RENAX
+   ========================================= */
+
+.renax-team {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    background: #000000;
+}
+
+/* Primera forma luminosa */
+.renax-team::before {
+    content: "";
+    position: absolute;
+    width: 650px;
+    height: 850px;
+    left: -180px;
+    top: -180px;
+
+    background:
+        radial-gradient(
+            ellipse at 35% 30%,
+            #ff2b00 0%,
+            #ff6a00 15%,
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 65% 55%,
+            #ff3b00 0%,
+            #ff7a00 18%,
+            transparent 50%
+        );
+
+    filter: blur(35px);
+    opacity: 0.75;
+    transform: rotate(-18deg);
+    z-index: -1;
+}
+
+/* Segunda forma luminosa */
+.renax-team::after {
+    content: "";
+    position: absolute;
+    width: 700px;
+    height: 500px;
+    right: -220px;
+    bottom: -150px;
+
+    background:
+        radial-gradient(
+            ellipse at 35% 45%,
+            #ff3200 0%,
+            #ff8a00 20%,
+            transparent 50%
+        ),
+        radial-gradient(
+            ellipse at 70% 55%,
+            #273cff 0%,
+            #ff4500 20%,
+            transparent 50%
+        );
+
+    filter: blur(45px);
+    opacity: 0.65;
+    transform: rotate(-12deg);
+    z-index: -1;
+}
+
+/* Mantiene la foto y el texto por encima */
+.renax-team > * {
+    position: relative;
+    z-index: 2;
+}
