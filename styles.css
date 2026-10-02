@@ -3189,7 +3189,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     display: block !important;
     border-radius: 30px !important;
     object-fit: contain !important;
-  margin-left: 80px !important;
+      object-fit: contain !important;
     position: relative !important;
     z-index: 30 !important;
 }
