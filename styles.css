@@ -3534,7 +3534,3 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision .mission-vision-content p {
     color: #ffffff !important;
 }
-/* OCULTAR IMÁGENES ELIMINADAS DE MISIÓN Y VISIÓN */
-.about-mission-vision img {
-    display: none !important;
-}
