@@ -3765,4 +3765,50 @@ letter-spacing: 8px !important;
         transform: translateX(calc(100vw + 250px)) translateY(20px);
     }
 
+/* ==========================================================
+   AVE RENAX - VUELO DETRÁS DE MISIÓN Y VISIÓN
+   ========================================================== */
+
+.about-mission-vision {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.ave-renax-mission {
+    position: absolute !important;
+
+    width: 180px !important;
+    height: auto !important;
+
+    top: 45% !important;
+    left: 0 !important;
+
+    z-index: 0 !important;
+
+    filter: brightness(0) invert(1)
+            drop-shadow(0 0 8px rgba(200, 16, 46, 0.45)) !important;
+
+    animation: vueloAveMission 10s linear infinite !important;
+}
+
+.about-mission-vision .mission-card,
+.about-mission-vision .vision-card {
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+@keyframes vueloAveMission {
+
+    0% {
+        transform: translateX(-250px) translateY(20px);
+    }
+
+    50% {
+        transform: translateX(50vw) translateY(-30px);
+    }
+
+    100% {
+        transform: translateX(calc(100vw + 250px)) translateY(20px);
+    }
+
 }
