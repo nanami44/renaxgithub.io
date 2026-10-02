@@ -3196,3 +3196,14 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision {
     background: #000000 !important;
 }
+/* ===== FONDO PARA EL VIDEO DE NOSOTROS ===== */
+
+.video-nosotros {
+    background-image: url("fondo-video-nosotros.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 70px;
+    border-radius: 30px;
+    box-sizing: border-box;
+}
