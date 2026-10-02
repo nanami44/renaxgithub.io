@@ -3071,16 +3071,18 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
    ========================================================== */
 /* IMAGEN DE VISIÓN RENAX */
 
+/* IMAGEN DE VISIÓN RENAX */
+
 .about-mission-vision .vision-card {
     position: relative !important;
     z-index: 20 !important;
-    width: 650px !important;
+    width: 520px !important;
 }
 
 .about-mission-vision .vision-card .mission-vision-content {
     background: transparent !important;
     padding: 0 !important;
-    width: 650px !important;
+    width: 520px !important;
     min-height: auto !important;
     height: auto !important;
     border: none !important;
@@ -3090,8 +3092,8 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 }
 
 .about-mission-vision .vision-card .mission-vision-content img {
-    width: 650px !important;
-   margin-left: 40px !important;
+    width: 520px !important;
+    margin-left: 80px !important;
     max-width: none !important;
     height: auto !important;
     display: block !important;
