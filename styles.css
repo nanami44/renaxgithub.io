@@ -3392,3 +3392,119 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision .mission-card .mission-vision-content:hover p {
     color: #ffffff !important;
 }
+/* ==========================================================
+   DISEÑO DEFINITIVO - MISIÓN Y VISIÓN
+   ========================================================== */
+
+/* CONTENEDOR GRANDE */
+.about-mission-vision {
+    background: #ffffff !important;
+    border: 3px solid #c8102e !important;
+    border-radius: 35px !important;
+    overflow: hidden !important;
+}
+
+/* ELIMINAR LOS CUADROS NARANJAS ANTERIORES */
+.about-mission-vision .orange-effect {
+    display: none !important;
+}
+
+/* POSICIÓN DE VISIÓN */
+.about-mission-vision .vision-card {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    justify-self: start !important;
+    align-self: start !important;
+    transform: none !important;
+}
+
+/* POSICIÓN DE MISIÓN */
+.about-mission-vision .mission-card {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    justify-self: end !important;
+    align-self: end !important;
+}
+
+/* TARJETAS BLANCAS, VERTICALES Y ALTAS */
+.about-mission-vision .vision-card .mission-vision-content,
+.about-mission-vision .mission-card .mission-vision-content {
+    width: 520px !important;
+    max-width: 520px !important;
+    height: 560px !important;
+    min-height: 560px !important;
+
+    background: #ffffff !important;
+    color: #000000 !important;
+
+    border: none !important;
+    border-radius: 28px !important;
+
+    padding: 60px 55px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    text-align: center !important;
+    box-sizing: border-box !important;
+
+    transition: 
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease !important;
+}
+
+/* TÍTULOS DENTRO DE LAS TARJETAS */
+.about-mission-vision .mission-vision-content h3 {
+    position: static !important;
+    top: auto !important;
+    right: auto !important;
+    left: auto !important;
+
+    color: #000000 !important;
+
+    font-family: var(--font-heading) !important;
+    font-size: 3.5rem !important;
+    font-weight: 900 !important;
+
+    margin: 0 0 30px !important;
+    text-align: center !important;
+}
+
+/* TEXTO DENTRO DE LAS TARJETAS */
+.about-mission-vision .mission-vision-content p {
+    color: #000000 !important;
+
+    font-size: 1.25rem !important;
+    line-height: 1.6 !important;
+
+    margin: 0 !important;
+    text-align: center !important;
+}
+
+/* VISIÓN → ROJO */
+.about-mission-vision .vision-card .mission-vision-content:hover {
+    background: #c8102e !important;
+    transform: scale(1.03) !important;
+    box-shadow: 0 20px 45px rgba(200, 16, 46, 0.35) !important;
+}
+
+.about-mission-vision .vision-card .mission-vision-content:hover h3,
+.about-mission-vision .vision-card .mission-vision-content:hover p {
+    color: #ffffff !important;
+}
+
+/* MISIÓN → NARANJA */
+.about-mission-vision .mission-card .mission-vision-content:hover {
+    background: #f28c00 !important;
+    transform: scale(1.03) !important;
+    box-shadow: 0 20px 45px rgba(242, 140, 0, 0.35) !important;
+}
+
+.about-mission-vision .mission-card .mission-vision-content:hover h3,
+.about-mission-vision .mission-card .mission-vision-content:hover p {
+    color: #ffffff !important;
+}
