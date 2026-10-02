@@ -3841,7 +3841,7 @@ letter-spacing: 8px !important;
     width: max-content !important;
     white-space: nowrap !important;
     font-family: var(--font-heading) !important;
-    font-size: clamp(5rem, 11vw, 10rem) !important;
+   font-size: clamp(6rem, 13vw, 12rem) !important;
     font-weight: 900 !important;
     line-height: 0.8 !important;
     letter-spacing: -4px !important;
