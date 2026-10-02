@@ -4236,8 +4236,11 @@ letter-spacing: 8px !important;
 .renax-values {
     position: relative;
     z-index: 1;
+    isolation: isolate;
+    overflow: visible !important;
 }
 
+/* FONDO LUMINOSO CONTINUO */
 .renax-values::before {
     content: "";
     position: absolute;
@@ -4247,38 +4250,38 @@ letter-spacing: 8px !important;
     transform: translateX(-50%);
 
     width: 100vw;
-    height: 1500px;
+    height: 1600px;
 
     background:
         radial-gradient(
-            ellipse 420px 500px at 10% 8%,
+            ellipse 420px 500px at 8% 10%,
             rgba(255, 20, 30, 0.95) 0%,
-            rgba(255, 60, 0, 0.75) 18%,
-            rgba(255, 120, 0, 0.35) 35%,
-            transparent 65%
+            rgba(255, 70, 0, 0.75) 20%,
+            rgba(255, 120, 0, 0.30) 40%,
+            transparent 68%
         ),
 
         radial-gradient(
-            ellipse 300px 260px at 48% 38%,
+            ellipse 300px 280px at 48% 38%,
             rgba(255, 30, 0, 0.95) 0%,
-            rgba(255, 150, 0, 0.85) 25%,
-            rgba(255, 70, 0, 0.45) 45%,
-            transparent 70%
+            rgba(255, 160, 0, 0.85) 25%,
+            rgba(255, 70, 0, 0.40) 48%,
+            transparent 72%
         ),
 
         radial-gradient(
-            ellipse 500px 600px at 90% 82%,
+            ellipse 500px 600px at 92% 82%,
             rgba(220, 0, 25, 0.95) 0%,
-            rgba(255, 40, 0, 0.70) 25%,
-            rgba(255, 100, 0, 0.35) 45%,
-            transparent 70%
+            rgba(255, 50, 0, 0.70) 25%,
+            rgba(255, 110, 0, 0.30) 48%,
+            transparent 72%
         ),
 
         radial-gradient(
             ellipse 180px 180px at 35% 42%,
-            rgba(255, 190, 40, 0.85) 0%,
-            rgba(255, 90, 0, 0.45) 35%,
-            transparent 70%
+            rgba(255, 190, 40, 0.90) 0%,
+            rgba(255, 90, 0, 0.50) 35%,
+            transparent 72%
         ),
 
         #020707;
@@ -4286,8 +4289,18 @@ letter-spacing: 8px !important;
     filter: blur(18px);
     opacity: 0.95;
 
-    z-index: -1;
+    z-index: 0;
     pointer-events: none;
+}
+
+
+/* ==========================================================
+   TARJETAS DE VALORES POR ENCIMA DEL FONDO
+   ========================================================== */
+
+.renax-values .value-card {
+    position: relative;
+    z-index: 2;
 }
 
 
@@ -4301,6 +4314,8 @@ letter-spacing: 8px !important;
     background: transparent !important;
 }
 
+
+/* Foto y texto por encima del fondo */
 .renax-team-image,
 .renax-team-text {
     position: relative;
@@ -4315,5 +4330,5 @@ letter-spacing: 8px !important;
 .renax-values-image {
     position: relative;
     z-index: 2;
-    background: transparent;
+    background: transparent !important;
 }
