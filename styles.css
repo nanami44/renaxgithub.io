@@ -3746,6 +3746,7 @@ letter-spacing: 8px !important;
     top: 35% !important;
     left: 0 !important;
     z-index: 1 !important;
+   filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(200, 16, 46, 0.45)) !important;
 
     animation: vueloAveRenax 10s linear infinite !important;
 }
