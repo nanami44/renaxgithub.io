@@ -4120,3 +4120,20 @@ letter-spacing: 8px !important;
         clip-path: inset(0 0 0 0);
     }
 }
+/* ==========================================
+   ENTRADA DEL EQUIPO RENAX AL HACER SCROLL
+   ========================================== */
+
+.renax-team {
+    opacity: 0;
+    transform: translateY(80px);
+    transition:
+        opacity 1s ease,
+        transform 1s ease;
+}
+
+/* Cuando la sección entra en pantalla */
+.renax-team.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
