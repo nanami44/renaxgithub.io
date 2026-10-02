@@ -3820,3 +3820,69 @@ letter-spacing: 8px !important;
         transform: translateX(100vw);
     }
 }
+/* ==========================================
+   ANIMACIÓN ¿POR QUÉ RENAX?
+   ========================================== */
+
+.why-renax-animation {
+    width: 100vw !important;
+    height: 260px !important;
+    margin-left: calc(50% - 50vw) !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: #000000 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 15px !important;
+}
+
+.why-renax-line {
+    display: block !important;
+    width: max-content !important;
+    white-space: nowrap !important;
+    font-family: var(--font-heading) !important;
+    font-size: clamp(5rem, 11vw, 10rem) !important;
+    font-weight: 900 !important;
+    line-height: 0.8 !important;
+    letter-spacing: -4px !important;
+    text-transform: uppercase !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* TEXTO BLANCO */
+.why-renax-line.solid {
+    color: #ffffff !important;
+    -webkit-text-stroke: 0 !important;
+    animation: renaxTexto 10s linear infinite !important;
+}
+
+/* TEXTO DE CONTORNO */
+.why-renax-line.outline {
+    color: transparent !important;
+    -webkit-text-stroke: 2px #ffffff !important;
+    animation: renaxContorno 10s linear infinite !important;
+}
+
+/* MOVIMIENTO DEL TEXTO BLANCO */
+@keyframes renaxTexto {
+    0% {
+        transform: translateX(100vw);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+/* MOVIMIENTO DEL TEXTO DE CONTORNO */
+@keyframes renaxContorno {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100vw);
+    }
+}
