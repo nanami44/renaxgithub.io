@@ -4131,77 +4131,100 @@ letter-spacing: 8px !important;
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
-/* =========================================
-   FONDO ABSTRACTO - EQUIPO RENAX
-   ========================================= */
+/* ==========================================================
+   FONDO ABSTRACTO CONTINUO
+   VALORES RENAX + EQUIPO RENAX
+   ========================================================== */
+
+/* La sección de valores será el punto de inicio del fondo */
+.renax-values {
+    position: relative;
+    z-index: 1;
+}
+
+/* Fondo abstracto que se extiende hacia abajo */
+.renax-values::before {
+    content: "";
+    position: absolute;
+
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100vw;
+    height: 1500px;
+
+    background:
+        /* Brillo rojo superior izquierdo */
+        radial-gradient(
+            ellipse 420px 500px at 10% 8%,
+            rgba(255, 20, 30, 0.95) 0%,
+            rgba(255, 60, 0, 0.75) 18%,
+            rgba(255, 120, 0, 0.35) 35%,
+            transparent 65%
+        ),
+
+        /* Forma naranja central */
+        radial-gradient(
+            ellipse 300px 260px at 48% 38%,
+            rgba(255, 30, 0, 0.95) 0%,
+            rgba(255, 150, 0, 0.85) 25%,
+            rgba(255, 70, 0, 0.45) 45%,
+            transparent 70%
+        ),
+
+        /* Brillo rojo inferior derecho */
+        radial-gradient(
+            ellipse 500px 600px at 90% 82%,
+            rgba(220, 0, 25, 0.95) 0%,
+            rgba(255, 40, 0, 0.70) 25%,
+            rgba(255, 100, 0, 0.35) 45%,
+            transparent 70%
+        ),
+
+        /* Pequeño brillo amarillo */
+        radial-gradient(
+            ellipse 180px 180px at 35% 42%,
+            rgba(255, 190, 40, 0.85) 0%,
+            rgba(255, 90, 0, 0.45) 35%,
+            transparent 70%
+        ),
+
+        /* Fondo oscuro */
+        #020707;
+
+    filter: blur(18px);
+    opacity: 0.95;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* ==========================================================
+   EQUIPO RENAX SOBRE EL MISMO FONDO
+   ========================================================== */
 
 .renax-team {
     position: relative;
-    overflow: hidden;
-    isolation: isolate;
-    background: #000000;
+    z-index: 2;
+
+    /* Quitamos el negro que tapaba el fondo */
+    background: transparent !important;
 }
 
-/* Primera forma luminosa */
-.renax-team::before {
-    content: "";
-    position: absolute;
-    width: 650px;
-    height: 850px;
-    left: -180px;
-    top: -180px;
 
-    background:
-        radial-gradient(
-            ellipse at 35% 30%,
-            #ff2b00 0%,
-            #ff6a00 15%,
-            transparent 45%
-        ),
-        radial-gradient(
-            ellipse at 65% 55%,
-            #ff3b00 0%,
-            #ff7a00 18%,
-            transparent 50%
-        );
-
-    filter: blur(35px);
-    opacity: 0.75;
-    transform: rotate(-18deg);
-    z-index: -1;
+/* La imagen y el texto quedan por encima */
+.renax-team-image,
+.renax-team-text {
+    position: relative;
+    z-index: 3;
 }
 
-/* Segunda forma luminosa */
-.renax-team::after {
-    content: "";
-    position: absolute;
-    width: 700px;
-    height: 500px;
-    right: -220px;
-    bottom: -150px;
 
-    background:
-        radial-gradient(
-            ellipse at 35% 45%,
-            #ff3200 0%,
-            #ff8a00 20%,
-            transparent 50%
-        ),
-        radial-gradient(
-            ellipse at 70% 55%,
-            #273cff 0%,
-            #ff4500 20%,
-            transparent 50%
-        );
-
-    filter: blur(45px);
-    opacity: 0.65;
-    transform: rotate(-12deg);
-    z-index: -1;
-}
-
-/* Mantiene la foto y el texto por encima */
-.renax-team > * {
+/* También dejamos transparente el espacio entre valores y equipo */
+.renax-values-image {
     position: relative;
     z-index: 2;
+    background: transparent;
 }
