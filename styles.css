@@ -3295,7 +3295,99 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 
     box-shadow: 0 15px 35px rgba(242, 140, 0, 0.35) !important;
 }
+/* ===== DISEÑO FINAL MISIÓN Y VISIÓN ===== */
 
+/* Eliminar los cuadros/efectos anteriores */
+.about-mission-vision .orange-effect {
+    display: none !important;
+}
+
+/* Tarjetas verticales */
+.about-mission-vision .vision-card .mission-vision-content,
+.about-mission-vision .mission-card .mission-vision-content {
+    width: 520px !important;
+    max-width: 520px !important;
+
+    height: 560px !important;
+    min-height: 560px !important;
+
+    background: #ffffff !important;
+    color: #000000 !important;
+
+    border: none !important;
+    border-radius: 28px !important;
+
+    box-sizing: border-box !important;
+
+    padding: 60px 55px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    text-align: center !important;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease !important;
+}
+
+/* TÍTULOS */
+.about-mission-vision .mission-vision-content h3 {
+    position: static !important;
+
+    color: #000000 !important;
+
+    font-size: 3.5rem !important;
+    font-weight: 800 !important;
+
+    margin: 0 0 30px !important;
+
+    text-align: center !important;
+}
+
+/* TEXTOS */
+.about-mission-vision .mission-vision-content p {
+    color: #000000 !important;
+
+    font-size: 1.25rem !important;
+    line-height: 1.6 !important;
+
+    margin: 0 !important;
+
+    text-align: center !important;
+}
+
+/* ===== VISIÓN: ROJO AL TOCAR ===== */
+
+.about-mission-vision .vision-card .mission-vision-content:hover {
+    background: #c8102e !important;
+    transform: scale(1.03) !important;
+
+    box-shadow: 0 20px 45px rgba(200, 16, 46, 0.35) !important;
+}
+
+.about-mission-vision .vision-card .mission-vision-content:hover h3,
+.about-mission-vision .vision-card .mission-vision-content:hover p {
+    color: #ffffff !important;
+}
+
+/* ===== MISIÓN: NARANJA AL TOCAR ===== */
+
+.about-mission-vision .mission-card .mission-vision-content:hover {
+    background: #f28c00 !important;
+    transform: scale(1.03) !important;
+
+    box-shadow: 0 20px 45px rgba(242, 140, 0, 0.35) !important;
+}
+
+.about-mission-vision .mission-card .mission-vision-content:hover h3,
+.about-mission-vision .mission-card .mission-vision-content:hover p {
+    color: #ffffff !important;
+}
 .about-mission-vision .mission-card .mission-vision-content:hover h3,
 .about-mission-vision .mission-card .mission-vision-content:hover p {
     color: #ffffff !important;
