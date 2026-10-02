@@ -3534,36 +3534,66 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision .mission-vision-content p {
     color: #ffffff !important;
 }
-/* MISIÓN Y VISIÓN - SIN CUADRO GRANDE */
+/* ==========================================================
+   MISIÓN Y VISIÓN - DISEÑO FINAL
+   ========================================================== */
 
 .about-mission-vision {
+    width: 100% !important;
+    max-width: none !important;
+    min-height: auto !important;
+    height: auto !important;
+
+    margin: 70px 0 !important;
+    padding: 60px 40px !important;
+
     background: #000000 !important;
     background-image: none !important;
     border: none !important;
+    border-radius: 0 !important;
     box-shadow: none !important;
-    outline: none !important;
 
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important;
+    align-items: stretch !important;
     gap: 70px !important;
-
-    padding: 80px 40px !important;
+    box-sizing: border-box !important;
 }
 
-/* TARJETAS INDEPENDIENTES */
+/* QUITAR EFECTOS ANTIGUOS */
+.about-mission-vision .orange-effect {
+    display: none !important;
+}
+
+/* TARJETAS */
 .about-mission-vision .mission-card,
 .about-mission-vision .vision-card {
-    width: 430px !important;
-    height: 600px !important;
+    width: 400px !important;
+    height: 580px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    position: relative !important;
+    display: block !important;
 }
 
-/* TARJETA */
-.about-mission-vision .mission-vision-content {
+/* TARJETAS BLANCAS */
+.about-mission-vision .mission-card .mission-vision-content,
+.about-mission-vision .vision-card .mission-vision-content {
     width: 100% !important;
     height: 100% !important;
+    min-height: 0 !important;
+
     background: #ffffff !important;
     border: none !important;
     border-radius: 25px !important;
+
+    padding: 50px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+
     box-sizing: border-box !important;
 }
