@@ -3765,3 +3765,7 @@ letter-spacing: 8px !important;
         transform: translateX(calc(100vw + 250px)) translateY(20px);
     }
 
+/* NAVEGACIÓN - PRIMERA LETRA EN MAYÚSCULA */
+.nav-menu .nav-link {
+    text-transform: none !important;
+}
