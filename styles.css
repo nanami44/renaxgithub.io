@@ -3224,3 +3224,10 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     width: 100% !important;
     display: block;
 }
+.about-mission-vision {
+    background-image: url("fondo-vision-mision.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    border: none !important;
+}
