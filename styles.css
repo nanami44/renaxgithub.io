@@ -3173,7 +3173,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision .mission-card .mission-vision-content {
     background: transparent !important;
     padding: 0 !important;
-    width: 650px !important;
+    width: 520px !important;
     min-height: auto !important;
     height: auto !important;
     border: none !important;
@@ -3189,7 +3189,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     display: block !important;
     border-radius: 30px !important;
     object-fit: contain !important;
-    margin-left: 40px !important;
+  margin-left: 80px !important;
     position: relative !important;
     z-index: 30 !important;
 }
