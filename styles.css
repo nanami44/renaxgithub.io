@@ -3597,3 +3597,34 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 
     box-sizing: border-box !important;
 }
+/* EFECTO AL TOCAR LAS TARJETAS */
+
+/* MISIÓN → NARANJA */
+.about-mission-vision .mission-card .mission-vision-content:hover,
+.about-mission-vision .mission-card .mission-vision-content:active {
+    background: #f28c00 !important;
+    transform: scale(1.03) !important;
+    box-shadow: 0 20px 45px rgba(242, 140, 0, 0.40) !important;
+}
+
+.about-mission-vision .mission-card .mission-vision-content:hover h3,
+.about-mission-vision .mission-card .mission-vision-content:hover p,
+.about-mission-vision .mission-card .mission-vision-content:active h3,
+.about-mission-vision .mission-card .mission-vision-content:active p {
+    color: #ffffff !important;
+}
+
+/* VISIÓN → ROJO */
+.about-mission-vision .vision-card .mission-vision-content:hover,
+.about-mission-vision .vision-card .mission-vision-content:active {
+    background: #c8102e !important;
+    transform: scale(1.03) !important;
+    box-shadow: 0 20px 45px rgba(200, 16, 46, 0.40) !important;
+}
+
+.about-mission-vision .vision-card .mission-vision-content:hover h3,
+.about-mission-vision .vision-card .mission-vision-content:hover p,
+.about-mission-vision .vision-card .mission-vision-content:active h3,
+.about-mission-vision .vision-card .mission-vision-content:active p {
+    color: #ffffff !important;
+}
