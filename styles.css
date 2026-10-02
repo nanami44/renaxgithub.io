@@ -3628,3 +3628,27 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision .vision-card .mission-vision-content:active p {
     color: #ffffff !important;
 }
+/* COLOR DEL TEXTO - MISIÓN Y VISIÓN */
+
+/* ESTADO NORMAL → TEXTO NEGRO */
+.about-mission-vision .mission-vision-content h3,
+.about-mission-vision .mission-vision-content p {
+    color: #000000 !important;
+    transition: color 0.4s ease !important;
+}
+
+/* AL PASAR EL MOUSE → TEXTO BLANCO */
+.about-mission-vision .mission-card .mission-vision-content:hover h3,
+.about-mission-vision .mission-card .mission-vision-content:hover p,
+.about-mission-vision .vision-card .mission-vision-content:hover h3,
+.about-mission-vision .vision-card .mission-vision-content:hover p {
+    color: #ffffff !important;
+}/* COLOR DEL TEXTO - MISIÓN Y VISIÓN */
+
+/* ESTADO NORMAL → TEXTO NEGRO */
+.about-mission-vision .mission-vision-content h3,
+.about-mission-vision .mission-vision-content p {
+    color: #000000 !important;
+    transition: color 0.4s ease !important;
+}
+
