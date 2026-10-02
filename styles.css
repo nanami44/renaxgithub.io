@@ -1978,174 +1978,7 @@ transform: translate(20px, -20px) !important;
 .about-hero-accents {
     display: none !important;
 }
-/* ==========================================================
-   RENAX - MISIÓN Y VISIÓN
-   ========================================================== */
 
-.about-mission-vision {
-    position: relative;
-    width: 95%;
-    max-width: 1400px;
-    min-height: 900px;
-    margin: 60px auto;
-    padding: 70px 50px;
-    background: #ffffff;
-    border: 3px solid #c8102e;
-    border-radius: 35px;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-}
-
-/* Tarjetas */
-.about-mission-vision .mission-vision-card {
-    position: relative;
-    z-index: 2;
-}
-
-/* VISIÓN arriba a la izquierda */
-.about-mission-vision .vision-card {
-    grid-column: 1;
-    grid-row: 1;
-    align-self: start;
-    justify-self: start;
-}
-.about-mission-vision .vision-card .mission-vision-content {
-    width: 650px !important;
-    min-height: 320px !important;
-    padding: 45px 55px !important;
-    background: #a90000 !important;
-    color: #ffffff !important;
-    border-radius: 70px 0 0 70px !important;
-    box-sizing: border-box !important;
-}
-/* MISIÓN abajo a la derecha */
-grid-column: 1;
-grid-row: 1;
-align-self: start;
-justify-self: start;
-}
-
-/* Títulos */
-.about-mission-vision .mission-vision-content h3 {
-    position: absolute;
-    color: #a90000;
-    font-family: var(--font-heading);
-    font-size: 3rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    z-index: 5;
-}
-
-/* Posición del título VISIÓN */
-.about-mission-vision .vision-card h3 {
-    top: -70px;
-    left: 0;
-}
-
-/* Posición del título MISIÓN */
-.about-mission-vision .mission-card h3 {
-    top: -75px;
-    right: 0;
-}
-
-/* Rectángulos rojos */
-.about-mission-vision .mission-vision-content {
-    width: 500px;
-    min-height: 240px;
-    padding: 45px 55px;
-    background: #a90000;
-    color: #ffffff;
-    border-radius: 0 70px 70px 0;
-    display: flex;
-    align-items: center;
-    position: relative;
-    z-index: 3;
-}
-
-/* Texto */
-.about-mission-vision .mission-vision-content p {
-    color: #ffffff;
-    font-size: 1.15rem;
-    line-height: 1.5;
-    margin: 0;
-}
-
-/* MISIÓN: rectángulo redondeado del lado izquierdo */
-.about-mission-vision .mission-card .mission-vision-content {
-    border-radius: 70px 0 0 70px;
-}
-
-/* Efecto naranja */
-.about-mission-vision .orange-effect {
-    position: absolute;
-    width: 330px;
-    height: 700px;
-    top: -100px;
-    right: 0;
-    z-index: 1;
-    background:
-        repeating-linear-gradient(
-            90deg,
-            transparent 0,
-            transparent 45px,
-            rgba(255, 120, 40, 0.18) 45px,
-            rgba(255, 120, 40, 0.18) 65px
-        );
-    filter: blur(2px);
-    opacity: 0.9;
-}
-
-/* Segundo efecto naranja */
-.about-mission-vision .mission-card .orange-effect {
-    left: -20px;
-    right: auto;
-    top: auto;
-    bottom: -250px;
-}
-
-/* Ajuste para pantallas pequeñas */
-@media (max-width: 768px) {
-
-    .about-mission-vision {
-        width: 92%;
-        min-height: auto;
-        padding: 100px 25px;
-        display: flex;
-        flex-direction: column;
-        gap: 180px;
-    }
-
-    .about-mission-vision .vision-card,
-    .about-mission-vision .mission-card {
-        width: 100%;
-    }
-
-    .about-mission-vision .mission-vision-content {
-        width: 100%;
-        min-height: 220px;
-        padding: 35px;
-    }
-
-    .about-mission-vision .mission-vision-content h3 {
-        font-size: 2.3rem;
-    }
-}
-/* CUADRO ROJO DE VISIÓN */
-.about-mission-vision .vision-card .mission-vision-content {
-    width: 650px !important;
-    min-height: 320px !important;
-    padding: 45px 55px !important;
-    background: #a90000 !important;
-    color: #ffffff !important;
-    border-radius: 0 70px 70px 0 !important;
-    box-sizing: border-box !important;
-}
-
-.about-mission-vision .vision-card .mission-vision-content p {
-    color: #ffffff !important;
-}
 /* =====================================================
    MENÚ PRINCIPAL - POSICIÓN FIJA EN TODAS LAS PÁGINAS
    ===================================================== */
@@ -3681,4 +3514,28 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision .mission-vision-content:hover h3,
 .about-mission-vision .mission-vision-content:hover p {
     color: #000000 !important;
+}
+/* MISIÓN Y VISIÓN - SIN TARJETAS */
+.about-mission-vision {
+    background: #000000 !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.about-mission-vision .vision-card .mission-vision-content,
+.about-mission-vision .mission-card .mission-vision-content {
+    background: transparent !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    width: auto !important;
+    height: auto !important;
+    min-height: auto !important;
+    padding: 0 !important;
+}
+
+.about-mission-vision .mission-vision-content h3,
+.about-mission-vision .mission-vision-content p {
+    color: #ffffff !important;
 }
