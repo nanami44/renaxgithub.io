@@ -4082,3 +4082,41 @@ letter-spacing: 8px !important;
 
     transform: scale(1.1) !important;
 }
+/* ==========================================
+   TRANSICIÓN FOTO EQUIPO RENAX
+   ========================================== */
+
+.renax-team-image {
+    overflow: hidden;
+}
+
+.renax-team-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    animation: entradaFotoRenax 1.4s ease-out both;
+}
+
+
+/* ENTRADA DE LA FOTO */
+@keyframes entradaFotoRenax {
+
+    0% {
+        opacity: 0;
+        transform: translateY(80px) scale(0.92);
+        clip-path: inset(100% 0 0 0);
+    }
+
+    60% {
+        opacity: 1;
+        transform: translateY(10px) scale(0.98);
+        clip-path: inset(20% 0 0 0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        clip-path: inset(0 0 0 0);
+    }
+}
