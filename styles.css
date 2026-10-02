@@ -3725,3 +3725,43 @@ letter-spacing: 8px !important;
     }
 
 }
+/* ==========================================================
+   AVE RENAX - VUELO
+   ========================================================== */
+
+.why-renax {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.why-renax-content {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.ave-renax {
+    position: absolute !important;
+    width: 180px !important;
+    height: auto !important;
+    top: 35% !important;
+    left: 0 !important;
+    z-index: 1 !important;
+
+    animation: vueloAveRenax 10s linear infinite !important;
+}
+
+@keyframes vueloAveRenax {
+
+    0% {
+        transform: translateX(-250px) translateY(20px);
+    }
+
+    50% {
+        transform: translateX(50vw) translateY(-30px);
+    }
+
+    100% {
+        transform: translateX(calc(100vw + 250px)) translateY(20px);
+    }
+
+}
