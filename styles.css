@@ -3680,7 +3680,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
         #000000 !important;
 }
 /* ==========================================================
-   ¿POR QUÉ RENAX? - ANIMACIÓN TIPO CINTURÓN
+   ¿POR QUÉ RENAX? - ANIMACIÓN CONTINUA
    ========================================================== */
 
 .why-renax h2 {
@@ -3692,23 +3692,36 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     left: 0 !important;
 
     animation: cinturonRenax 12s linear infinite !important;
-
-    transform-origin: center center;
 }
 
-/* QUITAR EL SALTO ENTRE "POR QUÉ" Y "RENAX" */
+/* QUITAR EL SALTO DE LÍNEA */
 .why-renax h2 br {
     display: none !important;
 }
 
+/* SEGUNDO ¿POR QUÉ RENAX? */
+.why-renax h2::after {
+    content: "¿POR QUÉ RENAX?";
+
+    display: inline-block;
+
+    margin-left: 180px;
+
+    color: #ffffff;
+
+    white-space: nowrap;
+}
+
+/* MOVIMIENTO CONTINUO */
+
 @keyframes cinturonRenax {
 
     0% {
-        transform: translateX(100vw);
+        transform: translateX(0);
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 
 }
