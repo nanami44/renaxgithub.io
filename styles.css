@@ -3230,12 +3230,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
    ========================================================== */
 
 /* CONTENEDOR GRANDE */
-.about-mission-vision {
-    background: #ffffff !important;
-    border: 3px solid #c8102e !important;
-    border-radius: 35px !important;
-    overflow: hidden !important;
-}
+
 
 /* ELIMINAR LOS CUADROS NARANJAS ANTERIORES */
 .about-mission-vision .orange-effect {
@@ -3538,4 +3533,8 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision .mission-vision-content h3,
 .about-mission-vision .mission-vision-content p {
     color: #ffffff !important;
+}
+/* OCULTAR IMÁGENES ELIMINADAS DE MISIÓN Y VISIÓN */
+.about-mission-vision img {
+    display: none !important;
 }
