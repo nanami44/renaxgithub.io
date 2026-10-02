@@ -3231,3 +3231,72 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     background-repeat: no-repeat !important;
     border: none !important;
 }
+/* ===== NUEVO DISEÑO TARJETAS MISIÓN Y VISIÓN ===== */
+
+.about-mission-vision .vision-card .mission-vision-content,
+.about-mission-vision .mission-card .mission-vision-content {
+    width: 760px !important;
+    max-width: 100% !important;
+    height: 260px !important;
+    min-height: 260px !important;
+
+    background: #ffffff !important;
+    color: #000000 !important;
+
+    border: none !important;
+    border-radius: 25px !important;
+
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    padding: 45px 65px !important;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease !important;
+}
+
+/* TEXTO NEGRO */
+
+.about-mission-vision .mission-vision-content h3,
+.about-mission-vision .mission-vision-content p {
+    color: #000000 !important;
+    transition: color 0.4s ease !important;
+}
+
+/* ===== VISIÓN - ROJO ===== */
+
+.about-mission-vision .vision-card .mission-vision-content:hover {
+    background: #c8102e !important;
+    color: #ffffff !important;
+
+    transform: scale(1.03) !important;
+
+    box-shadow: 0 15px 35px rgba(200, 16, 46, 0.35) !important;
+}
+
+.about-mission-vision .vision-card .mission-vision-content:hover h3,
+.about-mission-vision .vision-card .mission-vision-content:hover p {
+    color: #ffffff !important;
+}
+
+/* ===== MISIÓN - NARANJA ===== */
+
+.about-mission-vision .mission-card .mission-vision-content:hover {
+    background: #f28c00 !important;
+    color: #ffffff !important;
+
+    transform: scale(1.03) !important;
+
+    box-shadow: 0 15px 35px rgba(242, 140, 0, 0.35) !important;
+}
+
+.about-mission-vision .mission-card .mission-vision-content:hover h3,
+.about-mission-vision .mission-card .mission-vision-content:hover p {
+    color: #ffffff !important;
+}
