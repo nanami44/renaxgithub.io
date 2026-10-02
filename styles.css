@@ -3794,13 +3794,13 @@ letter-spacing: 8px !important;
 
 .why-renax-line.solid {
     color: #ffffff;
-    animation: whyRenaxMove 12s linear infinite;
+    animation: whyRenaxMove 10s linear infinite;
 }
 
 .why-renax-line.outline {
     color: transparent;
     -webkit-text-stroke: 2px #ffffff;
-    animation: whyRenaxMoveReverse 12s linear infinite;
+    animation: whyRenaxMoveReverse 10s linear infinite;
 }
 
 @keyframes whyRenaxMove {
