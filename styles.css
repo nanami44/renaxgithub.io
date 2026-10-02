@@ -2236,19 +2236,13 @@ transform: translate(20px, -20px) !important;
 /* ---------- TARJETAS ---------- */
 
 .renax-benefits .benefit-card {
-    min-height: 410px;
+    min-height: 380px;
+    padding: 35px 28px;
 
-    padding: 40px 25px;
+    border: 2px solid #ffffff;
+    border-radius: 25px;
 
-    border: 3px solid #ffffff;
-    border-radius: 35px;
-
-    background: linear-gradient(
-        to bottom,
-        #050505 0%,
-        #250000 45%,
-        #d00000 100%
-    );
+    background: #080808;
 
     box-sizing: border-box;
 
@@ -2256,9 +2250,12 @@ transform: translate(20px, -20px) !important;
     flex-direction: column;
 
     position: relative;
+    overflow: hidden;
 
-    /* Hace que las tarjetas queden a mitad entre blanco y negro */
-    transform: translateY(-50%);
+    transition: 
+        transform 0.4s ease,
+        box-shadow 0.4s ease,
+        border-color 0.4s ease;
 }
 
 
