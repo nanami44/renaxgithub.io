@@ -3534,3 +3534,36 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision .mission-vision-content p {
     color: #ffffff !important;
 }
+/* MISIÓN Y VISIÓN - SIN CUADRO GRANDE */
+
+.about-mission-vision {
+    background: #000000 !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 70px !important;
+
+    padding: 80px 40px !important;
+}
+
+/* TARJETAS INDEPENDIENTES */
+.about-mission-vision .mission-card,
+.about-mission-vision .vision-card {
+    width: 430px !important;
+    height: 600px !important;
+}
+
+/* TARJETA */
+.about-mission-vision .mission-vision-content {
+    width: 100% !important;
+    height: 100% !important;
+    background: #ffffff !important;
+    border: none !important;
+    border-radius: 25px !important;
+    box-sizing: border-box !important;
+}
