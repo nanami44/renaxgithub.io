@@ -3690,7 +3690,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 
     position: relative !important;
     left: 0 !important;
-
+letter-spacing: 8px !important;
     animation: cinturonRenax 12s linear infinite !important;
 }
 
@@ -3705,7 +3705,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 
     display: inline-block;
 
-    margin-left: 180px;
+    margin-left: 18S0px;
 
     color: #ffffff;
 
