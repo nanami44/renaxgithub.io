@@ -3965,3 +3965,120 @@ letter-spacing: 8px !important;
         0 0 30px #ff7a00,
         0 0 45px #008cff;
 }
+/* ==========================================
+   NUEVO DISEÑO - TARJETAS BENEFICIOS RENAX
+   ESTILO NEGRO + ROJO
+   ========================================== */
+
+.renax-benefits .benefit-card {
+    min-height: 380px !important;
+    padding: 35px 28px !important;
+
+    border: 2px solid #ffffff !important;
+    border-radius: 24px !important;
+
+    background: linear-gradient(
+        to bottom,
+        #050505 0%,
+        #080000 45%,
+        #8b0000 70%,
+        #d00000 100%
+    ) !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    position: relative !important;
+    overflow: hidden !important;
+
+    box-sizing: border-box !important;
+
+    transform: none !important;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease !important;
+}
+
+
+/* QUITAMOS LOS EFECTOS DE BORDE ANTERIORES */
+.renax-benefits .benefit-card::before,
+.renax-benefits .benefit-card::after {
+    display: none !important;
+}
+
+
+/* CÍRCULO */
+.renax-benefits .benefit-card .benefit-circle {
+    width: 42px !important;
+    height: 42px !important;
+
+    background: #ffffff !important;
+    border-radius: 50% !important;
+
+    margin: 5px auto 35px !important;
+
+    flex-shrink: 0 !important;
+}
+
+
+/* TÍTULO */
+.renax-benefits .benefit-card h3 {
+    color: #ffffff !important;
+
+    font-size: 1.35rem !important;
+    font-weight: 900 !important;
+
+    line-height: 1.1 !important;
+
+    text-align: left !important;
+
+    margin: 0 0 auto !important;
+
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+
+/* DESCRIPCIÓN */
+.renax-benefits .benefit-card p {
+    color: #ffffff !important;
+
+    font-size: 1rem !important;
+    line-height: 1.45 !important;
+
+    text-align: left !important;
+
+    margin: 25px 0 0 !important;
+
+    position: relative !important;
+    z-index: 2 !important;
+}
+
+
+/* ==========================================
+   EFECTO AL TOCAR / PASAR EL MOUSE
+   ========================================== */
+
+.renax-benefits .benefit-card:hover,
+.renax-benefits .benefit-card:active {
+    transform: scale(1.05) !important;
+
+    box-shadow:
+        0 0 12px rgba(255, 0, 0, 0.8),
+        0 0 30px rgba(220, 0, 0, 0.55),
+        0 0 55px rgba(180, 0, 0, 0.35) !important;
+
+    z-index: 10 !important;
+}
+
+
+/* CÍRCULO MÁS BRILLANTE */
+.renax-benefits .benefit-card:hover .benefit-circle,
+.renax-benefits .benefit-card:active .benefit-circle {
+    box-shadow:
+        0 0 10px #ffffff,
+        0 0 25px #ff0000 !important;
+
+    transform: scale(1.1) !important;
+}
