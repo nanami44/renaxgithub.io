@@ -3209,3 +3209,18 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     border-radius: 30px;
     box-sizing: border-box;
 }
+/* VIDEO A TODO EL ANCHO */
+.video-nosotros {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box;
+}
+
+.video-nosotros iframe {
+    width: 100% !important;
+    display: block;
+}
