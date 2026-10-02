@@ -3651,4 +3651,21 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     color: #000000 !important;
     transition: color 0.4s ease !important;
 }
+/* FONDO SUAVE PARA MISIÓN Y VISIÓN */
 
+.about-mission-vision {
+    background:
+        radial-gradient(
+            circle at 85% 50%,
+            rgba(180, 0, 20, 0.22) 0%,
+            rgba(100, 0, 10, 0.10) 28%,
+            rgba(0, 0, 0, 0) 60%
+        ),
+        linear-gradient(
+            110deg,
+            #000000 0%,
+            #030000 45%,
+            #080000 70%,
+            #140003 100%
+        ) !important;
+}
