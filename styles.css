@@ -3652,20 +3652,23 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     transition: color 0.4s ease !important;
 }
 /* FONDO SUAVE PARA MISIÓN Y VISIÓN */
+/* FONDO NEGRO CON ROJO MÁS VISIBLE */
 
 .about-mission-vision {
     background:
         radial-gradient(
-            circle at 85% 50%,
-            rgba(180, 0, 20, 0.22) 0%,
-            rgba(100, 0, 10, 0.10) 28%,
-            rgba(0, 0, 0, 0) 60%
+            circle at 88% 50%,
+            rgba(210, 0, 25, 0.42) 0%,
+            rgba(150, 0, 18, 0.25) 25%,
+            rgba(70, 0, 10, 0.10) 48%,
+            rgba(0, 0, 0, 0) 70%
         ),
         linear-gradient(
             110deg,
             #000000 0%,
-            #030000 45%,
-            #080000 70%,
-            #140003 100%
+            #030000 40%,
+            #0c0002 65%,
+            #220006 100%
         ) !important;
 }
+
