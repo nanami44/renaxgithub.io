@@ -3508,3 +3508,86 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 .about-mission-vision .mission-card .mission-vision-content:hover p {
     color: #ffffff !important;
 }
+/* ==================================================
+   MISIÓN Y VISIÓN — DISEÑO LIMPIO
+   ================================================== */
+
+.about-mission-vision {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Eliminar efectos anteriores */
+.about-mission-vision .orange-effect {
+    display: none !important;
+}
+
+/* Tarjetas limpias */
+.about-mission-vision .vision-card .mission-vision-content,
+.about-mission-vision .mission-card .mission-vision-content {
+    width: 520px !important;
+    height: 560px !important;
+    min-height: 560px !important;
+
+    background: #ffffff !important;
+    color: #000000 !important;
+
+    border: 1px solid #dddddd !important;
+    border-radius: 25px !important;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+
+    padding: 60px !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    box-sizing: border-box !important;
+
+    transform: none !important;
+}
+
+/* TÍTULO */
+.about-mission-vision .mission-vision-content h3 {
+    position: static !important;
+    color: #000000 !important;
+
+    font-size: 3.5rem !important;
+    font-weight: 800 !important;
+
+    margin: 0 0 30px !important;
+    text-align: center !important;
+}
+
+/* TEXTO */
+.about-mission-vision .mission-vision-content p {
+    color: #000000 !important;
+
+    font-size: 1.2rem !important;
+    line-height: 1.6 !important;
+
+    margin: 0 !important;
+    text-align: center !important;
+}
+
+/* Sin cambios de color al pasar el mouse */
+.about-mission-vision .vision-card .mission-vision-content:hover,
+.about-mission-vision .mission-card .mission-vision-content:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+
+    transform: none !important;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+}
+
+.about-mission-vision .vision-card .mission-vision-content:hover h3,
+.about-mission-vision .vision-card .mission-vision-content:hover p,
+.about-mission-vision .mission-card .mission-vision-content:hover h3,
+.about-mission-vision .mission-card .mission-vision-content:hover p {
+    color: #000000 !important;
+}
