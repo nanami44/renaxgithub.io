@@ -4422,7 +4422,7 @@ letter-spacing: 8px !important;
     padding: 80px;
     box-sizing: border-box;
 
-    background-image: url("fondo-equipo-renax.png") !important;
+   background: url("fondo-equipo-renax.png") center center / cover no-repeat !important;
    background-size: cover !important;
     background-position: center;
     background-repeat: no-repeat;
