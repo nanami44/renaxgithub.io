@@ -2015,7 +2015,10 @@ transform: translate(20px, -20px) !important;
 }
 /* Fondo negro para Misión y Visión */
 .about-mission-vision {
-   background: #ffffff !important;
+    background-image: url("Tipografía roja en cámara lenta(3).png.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 /* Posición de los cuadros */
 .about-mission-vision .vision-card {
