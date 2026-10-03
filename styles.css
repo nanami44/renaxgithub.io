@@ -4463,93 +4463,49 @@ letter-spacing: 8px !important;
 
     will-change: transform, filter;
 }
-
 @keyframes equipoImagen3D {
 
     0% {
-        transform: perspective(1000px)
+        transform: perspective(900px)
                    translateZ(0)
-                   scale(1);
-        filter: brightness(.85);
+                   translateY(20px)
+                   scale(0.92);
+        filter: brightness(0.75);
     }
 
-    35% {
-        transform: perspective(1000px)
-                   translateZ(80px)
-                   scale(1.08);
-        filter: brightness(1.05);
+    30% {
+        transform: perspective(900px)
+                   translateZ(60px)
+                   translateY(0)
+                   scale(1.02);
+        filter: brightness(1);
     }
 
-    55% {
-        transform: perspective(1000px)
-                   translateZ(180px)
-                   scale(1.18);
-        filter: brightness(1.15);
+    50% {
+        transform: perspective(900px)
+                   translateZ(150px)
+                   translateY(-25px)
+                   scale(1.14);
+        filter: brightness(1.12)
+                drop-shadow(0 25px 35px rgba(0,0,0,0.55));
     }
 
-    70% {
-        transform: perspective(1000px)
-                   translateZ(70px)
-                   scale(1.06);
-        filter: brightness(1.05);
+    65% {
+        transform: perspective(900px)
+                   translateZ(90px)
+                   translateY(-10px)
+                   scale(1.07);
+        filter: brightness(1.05)
+                drop-shadow(0 15px 25px rgba(0,0,0,0.40));
     }
 
     100% {
-        transform: perspective(1000px)
+        transform: perspective(900px)
                    translateZ(0)
-                   scale(1);
-        filter: brightness(.85);
+                   translateY(20px)
+                   scale(0.92);
+        filter: brightness(0.75);
     }
 
 }
-/* ==========================================================
-   FONDO GRANDE - MISIÓN Y VISIÓN
-   ========================================================== */
 
-.about-mission-vision {
-    position: relative !important;
-    overflow: hidden !important;
-
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.30),
-            rgba(0, 0, 0, 0.30)
-        ),
-        url("Tipografía roja en cámara lenta(3).png.png") !important;
-
-    background-size: cover !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-
-    min-height: 900px !important;
-}
-
-/* Las tarjetas quedan encima del fondo */
-.about-mission-vision .vision-card,
-.about-mission-vision .mission-card {
-    position: relative !important;
-    z-index: 5 !important;
-}
-
-.about-mission-vision .vision-card .mission-vision-content,
-.about-mission-vision .mission-card .mission-vision-content {
-    position: relative !important;
-    z-index: 6 !important;
-    background: #ffffff !important;
-}
-/* ==========================================================
-   FONDO DEFINITIVO MISIÓN Y VISIÓN
-   ========================================================== */
-
-.about-mission-vision {
-    position: relative !important;
-    overflow: hidden !important;
-
-    background-color: #050505 !important;
-    background-image: url("Tipografía roja en cámara lenta(3).png.png.") !important;
-    background-size: cover !important;
-    background-position: center center !important;
-    background-repeat: no-repeat !important;
-
-    min-height: 900px !important;
-}
