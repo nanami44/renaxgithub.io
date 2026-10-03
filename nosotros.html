@@ -589,7 +589,22 @@ if (languageBtn) {
   });
 
 }
-  
+  <script>
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const item = button.parentElement;
+    const icon = button.querySelector('.faq-icon');
+
+    item.classList.toggle('active');
+
+    if (item.classList.contains('active')) {
+      icon.textContent = '−';
+    } else {
+      icon.textContent = '+';
+    }
+  });
+});
+</script>
   </script>
 </body>
 </html>
