@@ -4391,29 +4391,3 @@ letter-spacing: 8px !important;
         padding-left: 22px !important;
         padding-right: 22px !important;
     }
-/* ==========================================================
-   PORTADA PORTAFOLIO RENAX
-   ========================================================== */
-
-.renax-portfolio-cover {
-    width: 100%;
-    height: 100vh;
-    min-height: 700px;
-    background: #000000;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
-    position: relative;
-}
-
-.renax-portfolio-cover img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    object-position: center;
-}
-    .renax-faq .faq-item.active .faq-answer {
-        padding: 20px 22px 25px !important;
-    }
-}
