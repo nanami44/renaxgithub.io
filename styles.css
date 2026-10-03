@@ -4499,3 +4499,38 @@ letter-spacing: 8px !important;
     }
 
 }
+/* ==========================================================
+   FONDO GRANDE - MISIÓN Y VISIÓN
+   ========================================================== */
+
+.about-mission-vision {
+    position: relative !important;
+    overflow: hidden !important;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.30)
+        ),
+        url("Tipografía roja en cámara lenta(3).png.png") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+
+    min-height: 900px !important;
+}
+
+/* Las tarjetas quedan encima del fondo */
+.about-mission-vision .vision-card,
+.about-mission-vision .mission-card {
+    position: relative !important;
+    z-index: 5 !important;
+}
+
+.about-mission-vision .vision-card .mission-vision-content,
+.about-mission-vision .mission-card .mission-vision-content {
+    position: relative !important;
+    z-index: 6 !important;
+    background: #ffffff !important;
+}
