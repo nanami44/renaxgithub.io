@@ -4535,38 +4535,18 @@ letter-spacing: 8px !important;
     background: #ffffff !important;
 }
 /* ==========================================================
-   FONDO FINAL - MISIÓN Y VISIÓN
+   FONDO DEFINITIVO MISIÓN Y VISIÓN
    ========================================================== */
 
 .about-mission-vision {
     position: relative !important;
     overflow: hidden !important;
 
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.25),
-            rgba(0, 0, 0, 0.25)
-        ),
-        url("Tipografía roja en cámara lenta(3).png.png") center center / cover no-repeat !important;
+    background-color: #050505 !important;
+    background-image: url("Tipografía roja en cámara lenta(3).png.png.") !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
 
     min-height: 900px !important;
-}
-
-/* CONTENIDO ENCIMA DEL FONDO */
-.about-mission-vision .vision-card,
-.about-mission-vision .mission-card {
-    position: relative !important;
-    z-index: 10 !important;
-}
-
-/* TARJETAS */
-.about-mission-vision .vision-card .mission-vision-content,
-.about-mission-vision .mission-card .mission-vision-content {
-    position: relative !important;
-    z-index: 20 !important;
-    background: #ffffff !important;
-}
-/* ESPACIO ENTRE VALORES Y EQUIPO RENAX */
-.renax-values {
-    margin-bottom: 180px !important;
 }
