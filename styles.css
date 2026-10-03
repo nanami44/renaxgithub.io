@@ -3587,8 +3587,12 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     width: 100% !important;
     height: 100% !important;
     min-height: 0 !important;
-
-    background: #ffffff !important;
+background: linear-gradient(
+    145deg,
+    #292929 0%,
+    #181818 55%,
+    #0d0d0d 100%
+) !important;
     border: none !important;
     border-radius: 25px !important;
 
