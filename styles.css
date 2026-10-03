@@ -4516,23 +4516,4 @@ letter-spacing: 8px !important;
 .renax-faq {
     margin-top: -180px !important;
 }
-/* FONDO IMAGEN MISIÓN Y VISIÓN */
-.about-mission-vision {
-    position: relative !important;
-    overflow: hidden !important;
-}
 
-.about-mission-vision .mission-vision-bg {
-    position: absolute !important;
-    inset: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    z-index: 0 !important;
-}
-
-.about-mission-vision .mission-vision-card {
-    position: relative !important;
-    z-index: 2 !important;
-}
