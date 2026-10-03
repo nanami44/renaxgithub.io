@@ -3338,8 +3338,11 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
    ================================================== */
 
 .about-mission-vision {
-    background: #ffffff !important;
-    background-image: none !important;
+    background-color: #000000 !important;
+    background-image: url("Tipografía roja en cámara lenta(3).png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
     border: none !important;
     box-shadow: none !important;
 }
