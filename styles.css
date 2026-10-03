@@ -4516,4 +4516,66 @@ letter-spacing: 8px !important;
 .renax-faq {
     margin-top: -180px !important;
 }
+/* ==========================================================
+   TARJETAS PREMIUM — MISIÓN Y VISIÓN
+   ========================================================== */
 
+.about-mission-vision .mission-vision-card .mission-vision-content,
+.about-mission-vision .vision-card .mission-vision-content {
+    background: linear-gradient(
+        145deg,
+        #242424 0%,
+        #151515 55%,
+        #0d0d0d 100%
+    ) !important;
+
+    color: #ffffff !important;
+
+    border: 1px solid rgba(200, 16, 46, 0.65) !important;
+    border-radius: 25px !important;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+
+    transition:
+        background 0.4s ease,
+        transform 0.4s ease,
+        box-shadow 0.4s ease !important;
+}
+
+/* TÍTULOS */
+.about-mission-vision .mission-vision-content h3 {
+    color: #ffffff !important;
+}
+
+/* TEXTOS */
+.about-mission-vision .mission-vision-content p {
+    color: #d8d8d8 !important;
+}
+
+/* MISIÓN → NARANJA */
+.about-mission-vision .mission-card .mission-vision-content:hover {
+    background: #f28c00 !important;
+    border-color: #f28c00 !important;
+
+    box-shadow:
+        0 20px 45px rgba(242, 140, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+}
+
+/* VISIÓN → ROJO */
+.about-mission-vision .vision-card .mission-vision-content:hover {
+    background: #c8102e !important;
+    border-color: #c8102e !important;
+
+    box-shadow:
+        0 20px 45px rgba(200, 16, 46, 0.40),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18) !important;
+}
+
+/* TEXTO AL ACTIVAR EL COLOR */
+.about-mission-vision .mission-vision-content:hover h3,
+.about-mission-vision .mission-vision-content:hover p {
+    color: #ffffff !important;
+}
