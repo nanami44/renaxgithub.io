@@ -4534,3 +4534,35 @@ letter-spacing: 8px !important;
     z-index: 6 !important;
     background: #ffffff !important;
 }
+/* ==========================================================
+   FONDO FINAL - MISIÓN Y VISIÓN
+   ========================================================== */
+
+.about-mission-vision {
+    position: relative !important;
+    overflow: hidden !important;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.25),
+            rgba(0, 0, 0, 0.25)
+        ),
+        url("Tipografía roja en cámara lenta(3).png.png") center center / cover no-repeat !important;
+
+    min-height: 900px !important;
+}
+
+/* CONTENIDO ENCIMA DEL FONDO */
+.about-mission-vision .vision-card,
+.about-mission-vision .mission-card {
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* TARJETAS */
+.about-mission-vision .vision-card .mission-vision-content,
+.about-mission-vision .mission-card .mission-vision-content {
+    position: relative !important;
+    z-index: 20 !important;
+    background: #ffffff !important;
+}
