@@ -4391,3 +4391,22 @@ letter-spacing: 8px !important;
         padding-left: 22px !important;
         padding-right: 22px !important;
     }
+/* PORTADA DEL PORTAFOLIO */
+
+.renax-portfolio-cover {
+    width: 100%;
+    height: calc(100vh - 80px);
+    min-height: 650px;
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    overflow: hidden;
+}
+
+.renax-portfolio-cover img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+}
