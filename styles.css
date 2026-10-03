@@ -2090,7 +2090,7 @@ transform: translate(20px, -20px) !important;
 .renax-values {
     width: 100%;
     max-width: 900px;
-    margin: 80px auto;
+    margin: 110px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 70px 80px;
