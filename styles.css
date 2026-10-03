@@ -4228,3 +4228,171 @@ letter-spacing: 8px !important;
     z-index: 2;
     background: transparent;
 }
+/* ==========================================================
+   FAQ RENAX - DISEÑO ROJO
+   ========================================================== */
+
+.renax-faq {
+    background: #050505 !important;
+    padding: 100px 30px !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.renax-faq .faq-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.renax-faq h2 {
+    color: #ffffff !important;
+    font-size: 5rem !important;
+    font-weight: 400 !important;
+    margin: 0 0 70px 0 !important;
+    text-align: left !important;
+}
+
+/* LISTA */
+.renax-faq .faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+/* CADA PREGUNTA */
+.renax-faq .faq-item {
+    position: relative;
+    background: #120909 !important;
+    border: 1px solid #3a2020 !important;
+    border-radius: 18px !important;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+/* PREGUNTA */
+.renax-faq .faq-question {
+    position: relative;
+    width: 100%;
+    min-height: 80px;
+    padding: 25px 70px 25px 35px !important;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(220, 0, 0, 0.95) 0%,
+            rgba(130, 0, 0, 0.65) 22%,
+            rgba(18, 9, 9, 1) 55%
+        ) !important;
+
+    border: none !important;
+    color: #ffffff !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    text-align: left;
+    cursor: pointer;
+}
+
+/* TEXTO DE LA PREGUNTA */
+.renax-faq .faq-question span:first-child {
+    color: #ffffff !important;
+    font-size: 1rem !important;
+    font-weight: 400 !important;
+    line-height: 1.3;
+}
+
+/* + / - */
+.renax-faq .faq-icon {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: #d90000 !important;
+    font-size: 2rem !important;
+    font-weight: 300 !important;
+    line-height: 1;
+}
+
+/* RESPUESTA */
+.renax-faq .faq-answer {
+    background: #120909 !important;
+    padding: 0 35px !important;
+
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    transition:
+        max-height 0.4s ease,
+        padding 0.4s ease,
+        opacity 0.3s ease;
+}
+
+.renax-faq .faq-answer p {
+    color: #dddddd !important;
+    font-size: 0.9rem !important;
+    line-height: 1.6;
+    margin: 0 !important;
+}
+
+/* PREGUNTA ABIERTA */
+.renax-faq .faq-item.active .faq-answer {
+    max-height: 300px;
+    padding: 25px 35px 30px !important;
+    opacity: 1;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+.renax-faq .faq-item:hover {
+    border-color: #d90000 !important;
+    box-shadow: 0 10px 30px rgba(217, 0, 0, 0.18);
+}
+
+.renax-faq .faq-item:hover .faq-question {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(217, 0, 0, 1) 0%,
+            rgba(140, 0, 0, 0.7) 25%,
+            rgba(18, 9, 9, 1) 60%
+        ) !important;
+}
+
+/* MÓVIL */
+@media (max-width: 768px) {
+
+    .renax-faq {
+        padding: 70px 18px !important;
+    }
+
+    .renax-faq h2 {
+        font-size: 3.5rem !important;
+        margin-bottom: 45px !important;
+    }
+
+    .renax-faq .faq-question {
+        min-height: 75px;
+        padding: 22px 60px 22px 22px !important;
+    }
+
+    .renax-faq .faq-question span:first-child {
+        font-size: 0.9rem !important;
+    }
+
+    .renax-faq .faq-icon {
+        right: 20px;
+    }
+
+    .renax-faq .faq-answer {
+        padding-left: 22px !important;
+        padding-right: 22px !important;
+    }
+
+    .renax-faq .faq-item.active .faq-answer {
+        padding: 20px 22px 25px !important;
+    }
+}
