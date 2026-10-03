@@ -3439,7 +3439,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 /* Fondo limpio de la sección */
 .about-mission-vision {
     background: #ffffff !important;
-    background-image: none !important;
+   background-image: url("Tipografía.png") !important;
     border: none !important;
     box-shadow: none !important;
 }
@@ -3516,7 +3516,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
 /* MISIÓN Y VISIÓN - SIN TARJETAS */
 .about-mission-vision {
     background: #000000 !important;
-    background-image: none !important;
+  background-image: url("Tipografía.png") !important;
     border: none !important;
     box-shadow: none !important;
 }
@@ -3551,7 +3551,7 @@ section.renax-shortcuts .shortcut-column a:not(.shortcut-title):hover {
     padding: 60px 40px !important;
 
     background: #000000 !important;
-    background-image: none !important;
+   background-image: url("Tipografía.png") !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;
