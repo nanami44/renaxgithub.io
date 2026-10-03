@@ -4566,3 +4566,7 @@ letter-spacing: 8px !important;
     z-index: 20 !important;
     background: #ffffff !important;
 }
+/* ESPACIO ENTRE VALORES Y EQUIPO RENAX */
+.renax-values {
+    margin-bottom: 180px !important;
+}
