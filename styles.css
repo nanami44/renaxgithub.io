@@ -4505,3 +4505,10 @@ letter-spacing: 8px !important;
     line-height: 1.1;
     margin-bottom: 35px;
 }
+/* FONDO FINAL MISIÓN Y VISIÓN */
+.about-mission-vision {
+    background-image: url("Tipografía.png") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
