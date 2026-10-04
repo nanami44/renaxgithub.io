@@ -4729,3 +4729,109 @@ letter-spacing: 8px !important;
     }
 
 }
+/* =========================================
+   TRANSICIÓN RENAX ENTRE PÁGINAS
+========================================= */
+
+.renax-page-transition {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #111111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 999999;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+}
+
+.renax-page-transition.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.renax-transition-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0;
+
+    font-family: Arial, sans-serif;
+    font-size: clamp(5rem, 14vw, 14rem);
+    font-weight: 900;
+    line-height: 1;
+
+    letter-spacing: -0.08em;
+}
+
+.renax-transition-logo span {
+    display: inline-block;
+
+    color: #333333;
+
+    animation:
+        renaxLetra 1.2s ease-in-out infinite;
+}
+
+/* Cada letra entra en un momento diferente */
+
+.renax-transition-logo span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.renax-transition-logo span:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.renax-transition-logo span:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.renax-transition-logo span:nth-child(4) {
+    animation-delay: 0.36s;
+}
+
+.renax-transition-logo span:nth-child(5) {
+    animation-delay: 0.48s;
+}
+
+@keyframes renaxLetra {
+
+    0% {
+        color: #333333;
+        transform: scale(0.96);
+        text-shadow: none;
+    }
+
+    40% {
+        color: #c8102e;
+        transform: scale(1.04);
+        text-shadow:
+            0 0 15px rgba(200, 16, 46, 0.7),
+            0 0 35px rgba(200, 16, 46, 0.35);
+    }
+
+    70% {
+        color: #ffffff;
+        transform: scale(1);
+        text-shadow:
+            0 0 12px rgba(255,255,255,0.4);
+    }
+
+    100% {
+        color: #333333;
+        transform: scale(0.96);
+        text-shadow: none;
+    }
+}
