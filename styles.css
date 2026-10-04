@@ -4657,3 +4657,75 @@ letter-spacing: 8px !important;
 
     margin: 0 80px 0 0 !important;
 }
+/* =========================================
+   CARRUSEL RENAX - MOVIMIENTO CONTINUO
+========================================= */
+
+.renax-marquee {
+    width: 100% !important;
+    height: 80px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    background: #ff1018 !important;
+}
+
+.renax-marquee .marquee-track {
+    width: max-content !important;
+    height: 80px !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+
+    white-space: nowrap !important;
+}
+
+.renax-marquee .marquee-content {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+
+    width: max-content !important;
+    min-width: max-content !important;
+    height: 80px !important;
+
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+
+    animation: renaxCarrusel 45s linear infinite !important;
+}
+
+.renax-marquee .marquee-content span {
+    display: inline-block !important;
+
+    width: max-content !important;
+    min-width: max-content !important;
+
+    flex: 0 0 auto !important;
+
+    white-space: nowrap !important;
+
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+
+    margin-right: 80px !important;
+}
+
+@keyframes renaxCarrusel {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+
+}
