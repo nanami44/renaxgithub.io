@@ -604,46 +604,54 @@ document.querySelectorAll('.faq-question').forEach(button => {
 });
 
   </script>
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
 
     const marquee = document.querySelector(".renax-marquee");
+    const track = document.querySelector(".marquee-track");
     const content = document.querySelector(".marquee-content");
 
-    if (!marquee || !content) return;
+    if (!marquee || !track || !content) return;
 
-    content.style.display = "flex";
-    content.style.flexWrap = "nowrap";
-    content.style.width = "max-content";
-    content.style.whiteSpace = "nowrap";
-    content.style.position = "relative";
+    /* Crear una copia para que nunca quede espacio vacío */
+    const copia = content.cloneNode(true);
+    track.appendChild(copia);
+
+    track.style.display = "flex";
+    track.style.width = "max-content";
+    track.style.flexWrap = "nowrap";
+
+    content.style.flexShrink = "0";
+    copia.style.flexShrink = "0";
 
     let posicion = 0;
     let ultimoTiempo = null;
 
-    function moverTexto(tiempo) {
+    function mover(tiempo) {
 
-        if (!ultimoTiempo) ultimoTiempo = tiempo;
+        if (!ultimoTiempo) {
+            ultimoTiempo = tiempo;
+        }
 
         const diferencia = tiempo - ultimoTiempo;
         ultimoTiempo = tiempo;
 
         posicion -= diferencia * 0.035;
 
-        const mitad = content.scrollWidth / 2;
+        const ancho = content.offsetWidth;
 
-        if (Math.abs(posicion) >= mitad) {
-            posicion = 0;
+        if (Math.abs(posicion) >= ancho) {
+            posicion += ancho;
         }
 
-        content.style.transform = "translateX(" + posicion + "px)";
+        track.style.transform = "translate3d(" + posicion + "px, 0, 0)";
 
-        requestAnimationFrame(moverTexto);
+        requestAnimationFrame(mover);
     }
 
-    requestAnimationFrame(moverTexto);
+    requestAnimationFrame(mover);
 
 });
-</script> 
+</script>
 </body>
 </html>
