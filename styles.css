@@ -813,18 +813,17 @@ background-repeat: no-repeat;
   max-width: var(--container-width);
   margin: 0 auto;
   padding: 2rem 2rem 6rem;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
+ display: flex;
+gap: 30px;
+overflow-x: auto;
+overflow-y: hidden;
+scroll-behavior: smooth;
 
-@media (min-width: 768px) {
-  .portfolio-gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+
 
 .portfolio-item {
+       flex: 0 0 420px;
+    height: 560px;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
