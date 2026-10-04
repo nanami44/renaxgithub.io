@@ -4874,6 +4874,15 @@ letter-spacing: 8px !important;
     width: 190px !important;
     height: 70px !important;
 }
+/* Imagen roja */
+.renax-statement .statement-img-rojo {
+    width: 150px !important;
+    height: 75px !important;
+    object-fit: cover !important;
+    margin: 0 12px !important;
+    border-radius: 8px !important;
+    flex-shrink: 0 !important;
+}
 /* FRASE RENAX - COLOR Y COMPOSICIÓN */
 .renax-statement .statement-title,
 .renax-statement .statement-line {
