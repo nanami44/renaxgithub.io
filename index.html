@@ -527,7 +527,12 @@ if (languageBtn) {
             }
 
         });
+// Ocultar descripción y botón en inglés
+const statementDescription = document.querySelector(".statement-description");
 
+if (statementDescription) {
+    statementDescription.style.display = english ? "none" : "";
+}
     });
 }
 </script>
