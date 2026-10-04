@@ -4927,3 +4927,78 @@ letter-spacing: 8px !important;
     border-radius: 20px !important;
     display: block !important;
 }
+/* ==========================================
+   AJUSTE FINAL - PORTAFOLIO DESTACADO
+========================================== */
+
+/* DISTRIBUCIÓN GENERAL */
+.renax-work .work-content {
+    display: grid !important;
+    grid-template-columns: minmax(0, 680px) 320px !important;
+    gap: 55px !important;
+    align-items: start !important;
+}
+
+/* DÍA DE LAS MATEMÁTICAS */
+.renax-work .work-main-image {
+    width: 100% !important;
+}
+
+.renax-work .work-main-image img {
+    width: 100% !important;
+    height: 760px !important;
+    object-fit: cover !important;
+    border-radius: 25px !important;
+    display: block !important;
+}
+
+/* COLUMNA DE SKENZI E IDEAS */
+.renax-work .work-side {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 35px !important;
+    transform: none !important;
+    margin: 0 !important;
+}
+
+/* SKENZI */
+.renax-work .skenzi-card {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.renax-work .skenzi-card img {
+    width: 100% !important;
+    height: 260px !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    display: block !important;
+}
+
+/* IDEAS */
+.renax-work .design-card {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.renax-work .design-card img {
+    width: 100% !important;
+    height: 260px !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    display: block !important;
+}
+
+/* TÍTULOS */
+.renax-work .skenzi-card h3,
+.renax-work .design-card h3 {
+    margin-top: 12px !important;
+}
+
+/* BOTÓN */
+.renax-work .work-side .renax-button {
+    margin-top: 5px !important;
+}
