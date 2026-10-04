@@ -4596,3 +4596,64 @@ letter-spacing: 8px !important;
     }
 
 }
+/* AJUSTE FINAL DE LA FRANJA EN MOVIMIENTO */
+
+.renax-marquee {
+    position: relative !important;
+    width: 100% !important;
+    height: 80px !important;
+    overflow: hidden !important;
+    background: #ff1018 !important;
+    display: block !important;
+}
+
+.renax-marquee .marquee-track {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+
+    height: 80px !important;
+    width: max-content !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+
+    white-space: nowrap !important;
+}
+
+.renax-marquee .marquee-content {
+    position: relative !important;
+
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+
+    width: max-content !important;
+    min-width: max-content !important;
+    height: 80px !important;
+
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+}
+
+.renax-marquee .marquee-content span {
+    display: block !important;
+
+    width: max-content !important;
+    min-width: max-content !important;
+
+    flex: 0 0 auto !important;
+    flex-shrink: 0 !important;
+
+    white-space: nowrap !important;
+
+    color: #ffffff !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    line-height: 1 !important;
+
+    margin: 0 80px 0 0 !important;
+}
