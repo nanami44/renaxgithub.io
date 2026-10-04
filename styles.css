@@ -4581,3 +4581,41 @@ letter-spacing: 8px !important;
     }
 
 }
+/* ===============================
+   CARRUSEL INFINITO - FRASE
+   =============================== */
+
+.renax-marquee {
+    width: 100%;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+
+.renax-marquee .marquee-track {
+    width: 100%;
+    overflow: hidden !important;
+}
+
+.renax-marquee .marquee-content {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    width: max-content !important;
+    white-space: nowrap !important;
+    animation: renaxMarquee 35s linear infinite !important;
+}
+
+.renax-marquee .marquee-content span {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    margin-right: 80px !important;
+}
+
+@keyframes renaxMarquee {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
