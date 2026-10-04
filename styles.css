@@ -4520,62 +4520,74 @@ letter-spacing: 8px !important;
 .renax-faq {
     margin-top: -180px !important;
 }
-   /* ================================
-   FRASE EN MOVIMIENTO RENAX
-================================ */
+  /* =========================================
+   FRANJA ROJA CON TEXTO EN MOVIMIENTO
+========================================= */
 
 .renax-marquee {
     width: 100%;
     height: 80px;
-    background: #ff1018;
+    background: transparent;
     overflow: hidden;
+    position: relative;
+    z-index: 20;
+
+    /* Sube la franja sobre el rojo que ya tienes */
+    margin-top: -80px;
+
     display: flex;
     align-items: center;
-    position: relative;
 }
 
-/* Contenedor que se mueve */
+/* Contenedor que realiza el movimiento */
 .marquee-track {
-    width: max-content;
     display: flex;
+    width: max-content;
+    flex-shrink: 0;
 }
 
-/* Línea completa de frases */
+/* Línea de texto */
 .marquee-content {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
+    width: max-content;
     white-space: nowrap;
-    animation: renaxMarquee 25s linear infinite;
+    flex-shrink: 0;
+
+    animation: renaxMarquee 22s linear infinite;
 }
 
-/* Cada frase */
+/* Textos */
 .marquee-content span {
-    display: inline-flex;
-    align-items: center;
+    display: inline-block;
+    flex-shrink: 0;
 
     color: #ffffff;
     font-size: 18px;
     font-weight: 700;
-    letter-spacing: 0.5px;
+    line-height: 1;
+    white-space: nowrap;
 
-    margin-right: 80px;
+    margin-right: 70px;
 }
 
-/* Separador visual */
+/* Punto separador */
 .marquee-content span::after {
     content: "•";
-    margin-left: 80px;
+    margin-left: 70px;
     color: #ffffff;
-    font-size: 20px;
 }
 
-/* Movimiento de derecha a izquierda */
+/* Movimiento continuo hacia la izquierda */
 @keyframes renaxMarquee {
-    from {
+
+    0% {
         transform: translateX(0);
     }
 
-    to {
+    100% {
         transform: translateX(-50%);
     }
+
 }
