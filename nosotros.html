@@ -604,5 +604,46 @@ document.querySelectorAll('.faq-question').forEach(button => {
 });
 
   </script>
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const marquee = document.querySelector(".renax-marquee");
+    const content = document.querySelector(".marquee-content");
+
+    if (!marquee || !content) return;
+
+    content.style.display = "flex";
+    content.style.flexWrap = "nowrap";
+    content.style.width = "max-content";
+    content.style.whiteSpace = "nowrap";
+    content.style.position = "relative";
+
+    let posicion = 0;
+    let ultimoTiempo = null;
+
+    function moverTexto(tiempo) {
+
+        if (!ultimoTiempo) ultimoTiempo = tiempo;
+
+        const diferencia = tiempo - ultimoTiempo;
+        ultimoTiempo = tiempo;
+
+        posicion -= diferencia * 0.035;
+
+        const mitad = content.scrollWidth / 2;
+
+        if (Math.abs(posicion) >= mitad) {
+            posicion = 0;
+        }
+
+        content.style.transform = "translateX(" + posicion + "px)";
+
+        requestAnimationFrame(moverTexto);
+    }
+
+    requestAnimationFrame(moverTexto);
+
+});
+</script> 
 </body>
 </html>
