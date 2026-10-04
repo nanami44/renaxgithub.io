@@ -4629,3 +4629,80 @@ letter-spacing: 8px !important;
     }
 
 }
+/* ==========================================================
+   RENAX - IMAGENES INTEGRADAS EN EL TITULO
+   ========================================================== */
+
+.hero-collage-title {
+    font-family: var(--font-heading);
+    font-size: clamp(3.5rem, 8vw, 8rem);
+    font-weight: 900;
+    line-height: 0.86;
+    text-transform: uppercase;
+    letter-spacing: -4px;
+    margin-bottom: 25px;
+    color: #ffffff;
+}
+
+/* Imagenes dentro del titulo */
+
+.hero-inline-image {
+    display: inline-block !important;
+    vertical-align: middle;
+    object-fit: cover;
+    border-radius: 14px;
+    margin: 0 15px;
+    max-width: none !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+}
+
+/* Primera imagen: persona */
+
+.hero-image-one {
+    width: 190px !important;
+    height: 90px !important;
+}
+
+/* Segunda imagen: mirada */
+
+.hero-image-two {
+    width: 230px !important;
+    height: 100px !important;
+}
+
+/* Efecto al pasar el mouse */
+
+.hero-inline-image:hover {
+    transform: scale(1.05);
+}
+
+
+/* ==========================================================
+   VERSION MOVIL
+   ========================================================== */
+
+@media (max-width: 768px) {
+
+    .hero-collage-title {
+        font-size: clamp(3rem, 14vw, 5rem);
+        line-height: 0.9;
+        letter-spacing: -2px;
+    }
+
+    .hero-inline-image {
+        margin: 5px 8px;
+        border-radius: 10px;
+    }
+
+    .hero-image-one {
+        width: 120px !important;
+        height: 60px !important;
+    }
+
+    .hero-image-two {
+        width: 140px !important;
+        height: 65px !important;
+    }
+
+}
