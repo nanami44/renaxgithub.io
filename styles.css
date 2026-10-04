@@ -1847,12 +1847,12 @@ object-fit: contain;
 .renax-work .work-side {
     gap: 70px !important;
 }
-
 .renax-work .skenzi-card img {
     width: 100% !important;
-    height: 340px !important;
-    object-fit: cover !important;
+    height: auto !important;
+    object-fit: contain !important;
     border-radius: 20px !important;
+    display: block;
 }
 .renax-work .design-card {
     width: 200% !important;
