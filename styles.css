@@ -1132,7 +1132,7 @@ overflow-y: hidden;
 
   font-size: clamp(
     3.5rem,
-    8vw,
+    5vw,
     8rem
   );
 
