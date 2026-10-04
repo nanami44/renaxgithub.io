@@ -817,7 +817,8 @@ background-repeat: no-repeat;
 gap: 30px;
 overflow-x: auto;
 overflow-y: hidden;
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
 
 
 
