@@ -11,7 +11,16 @@ S<!DOCTYPE html>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+<!-- TRANSICIÓN RENAX -->
+<div class="renax-page-transition" id="renaxPageTransition">
+    <div class="renax-transition-logo">
+        <span>R</span>
+        <span>E</span>
+        <span>N</span>
+        <span>A</span>
+        <span>X</span>
+    </div>
+</div>
   <!-- HEADER GLOBAL -->
   <header class="site-header">
     <div class="nav-container">
@@ -138,5 +147,51 @@ S<!DOCTYPE html>
   </footer>
 
   <script src="main.js"></script>
+  <script>
+window.addEventListener("load", function () {
+
+    const transicion = document.getElementById("renaxPageTransition");
+
+    if (transicion) {
+        setTimeout(function () {
+            transicion.classList.add("hide");
+        }, 900);
+    }
+
+});
+
+document.querySelectorAll("a[href]").forEach(function (enlace) {
+
+    enlace.addEventListener("click", function (e) {
+
+        const destino = enlace.getAttribute("href");
+
+        if (
+            !destino ||
+            destino.startsWith("#") ||
+            destino.startsWith("http") ||
+            destino.startsWith("mailto:")
+        ) {
+            return;
+        }
+
+        e.preventDefault();
+
+        const transicion = document.getElementById("renaxPageTransition");
+
+        if (transicion) {
+            transicion.classList.remove("hide");
+
+            setTimeout(function () {
+                window.location.href = destino;
+            }, 1400);
+        } else {
+            window.location.href = destino;
+        }
+
+    });
+
+});
+</script>
 </body>
 </html>
