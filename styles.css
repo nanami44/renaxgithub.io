@@ -4955,11 +4955,13 @@ letter-spacing: 8px !important;
 /* COLUMNA DERECHA */
 .renax-work .work-side {
     width: 100% !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 30px !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 25px !important;
     transform: none !important;
     margin: 0 !important;
+    align-items: start !important;
+}
 }
 
 /* SKENZI */
@@ -4969,14 +4971,14 @@ letter-spacing: 8px !important;
     padding: 0 !important;
 }
 
+/* SKENZI */
 .renax-work .skenzi-card img {
     width: 100% !important;
-    height: 235px !important;
+    height: 280px !important;
     object-fit: cover !important;
     border-radius: 20px !important;
     display: block !important;
 }
-
 /* IDEAS */
 .renax-work .design-card {
     width: 100% !important;
@@ -4986,7 +4988,7 @@ letter-spacing: 8px !important;
 
 .renax-work .design-card img {
     width: 100% !important;
-    height: 235px !important;
+    height: 280px !important;
     object-fit: cover !important;
     border-radius: 20px !important;
     display: block !important;
