@@ -4520,73 +4520,63 @@ letter-spacing: 8px !important;
 .renax-faq {
     margin-top: -180px !important;
 }
-  /* =========================================
-   FRANJA ROJA CON TEXTO EN MOVIMIENTO
+ /* =========================================
+   FRANJA ROJA - TEXTO EN MOVIMIENTO
 ========================================= */
 
 .renax-marquee {
     width: 100%;
     height: 80px;
-    background: transparent;
+    background: #ff1018;
     overflow: hidden;
     position: relative;
-    z-index: 20;
-
-    /* Sube la franja sobre el rojo que ya tienes */
-    margin-top: -80px;
-
     display: flex;
     align-items: center;
+    z-index: 50;
 }
 
-/* Contenedor que realiza el movimiento */
 .marquee-track {
     display: flex;
     width: max-content;
     flex-shrink: 0;
 }
 
-/* Línea de texto */
 .marquee-content {
     display: flex;
-    flex-wrap: nowrap;
     align-items: center;
+    flex-wrap: nowrap;
     width: max-content;
     white-space: nowrap;
     flex-shrink: 0;
 
-    animation: renaxMarquee 22s linear infinite;
+    animation: renaxMarquee 25s linear infinite;
 }
 
-/* Textos */
 .marquee-content span {
     display: inline-block;
     flex-shrink: 0;
+    white-space: nowrap;
 
     color: #ffffff;
     font-size: 18px;
     font-weight: 700;
-    line-height: 1;
-    white-space: nowrap;
 
-    margin-right: 70px;
+    margin-right: 80px;
 }
 
-/* Punto separador */
 .marquee-content span::after {
     content: "•";
-    margin-left: 70px;
+    margin-left: 80px;
     color: #ffffff;
 }
 
-/* Movimiento continuo hacia la izquierda */
 @keyframes renaxMarquee {
 
-    0% {
+    from {
         transform: translateX(0);
     }
 
-    100% {
+    to {
         transform: translateX(-50%);
     }
 
