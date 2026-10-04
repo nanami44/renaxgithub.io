@@ -604,54 +604,6 @@ document.querySelectorAll('.faq-question').forEach(button => {
 });
 
   </script>
-<script>
-document.addEventListener("DOMContentLoaded", function () {
 
-    const marquee = document.querySelector(".renax-marquee");
-    const track = document.querySelector(".marquee-track");
-    const content = document.querySelector(".marquee-content");
-
-    if (!marquee || !track || !content) return;
-
-    /* Crear una copia para que nunca quede espacio vacío */
-    const copia = content.cloneNode(true);
-    track.appendChild(copia);
-
-    track.style.display = "flex";
-    track.style.width = "max-content";
-    track.style.flexWrap = "nowrap";
-
-    content.style.flexShrink = "0";
-    copia.style.flexShrink = "0";
-
-    let posicion = 0;
-    let ultimoTiempo = null;
-
-    function mover(tiempo) {
-
-        if (!ultimoTiempo) {
-            ultimoTiempo = tiempo;
-        }
-
-        const diferencia = tiempo - ultimoTiempo;
-        ultimoTiempo = tiempo;
-
-        posicion -= diferencia * 0.035;
-
-        const ancho = content.offsetWidth;
-
-        if (Math.abs(posicion) >= ancho) {
-            posicion += ancho;
-        }
-
-        track.style.transform = "translate3d(" + posicion + "px, 0, 0)";
-
-        requestAnimationFrame(mover);
-    }
-
-    requestAnimationFrame(mover);
-
-});
-</script>
 </body>
 </html>
