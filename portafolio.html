@@ -186,4 +186,31 @@ if (languageBtn) {
         });
     });
 }
+  const portfolioGallery = document.querySelector('.portfolio-gallery');
+
+if (portfolioGallery) {
+
+    portfolioGallery.addEventListener('wheel', (e) => {
+        e.preventDefault();
+
+        portfolioGallery.scrollLeft += e.deltaY;
+    }, { passive: false });
+
+
+    portfolioGallery.querySelectorAll('.portfolio-item').forEach(item => {
+
+        item.addEventListener('click', () => {
+
+            const distancia = item.offsetWidth + 30;
+
+            portfolioGallery.scrollBy({
+                left: distancia,
+                behavior: 'smooth'
+            });
+
+        });
+
+    });
+
+}S    
 </script>
