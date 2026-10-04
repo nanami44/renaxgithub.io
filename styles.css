@@ -4874,3 +4874,8 @@ letter-spacing: 8px !important;
     width: 190px !important;
     height: 70px !important;
 }
+/* FRASE RENAX - COLOR Y COMPOSICIÓN */
+.renax-statement .statement-title,
+.renax-statement .statement-line {
+    color: #ffffff !important;
+}
