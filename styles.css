@@ -4934,7 +4934,7 @@ letter-spacing: 8px !important;
 /* DISTRIBUCIÓN */
 .renax-work .work-content {
     display: grid !important;
-    grid-template-columns: minmax(0, 610px) 300px !important;
+   grid-template-columns: minmax(0, 550px) 300px !important;
     gap: 50px !important;
     align-items: start !important;
 }
