@@ -4835,3 +4835,42 @@ letter-spacing: 8px !important;
         text-shadow: none;
     }
 }
+/* =========================================
+   FRASE RENAX - IMÁGENES INTEGRADAS
+========================================= */
+
+.renax-statement .statement-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 0 !important;
+    margin: 0 !important;
+}
+
+.renax-statement .statement-line {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+    line-height: 0.95 !important;
+}
+
+.renax-statement .statement-img {
+    display: inline-block !important;
+    object-fit: cover !important;
+    border-radius: 8px !important;
+    margin: 0 12px !important;
+    vertical-align: middle !important;
+}
+
+/* Imagen de la persona */
+.renax-statement .statement-img-persona {
+    width: 150px !important;
+    height: 90px !important;
+}
+
+/* Imagen de los ojos */
+.renax-statement .statement-img-mirada {
+    width: 190px !important;
+    height: 70px !important;
+}
