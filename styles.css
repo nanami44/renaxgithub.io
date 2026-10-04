@@ -4888,3 +4888,42 @@ letter-spacing: 8px !important;
 .renax-statement .statement-line {
     color: #ffffff !important;
 }
+/* ==========================================
+   PORTAFOLIO DESTACADO - TAMAÑO DE IMÁGENES
+========================================== */
+
+/* IMAGEN PRINCIPAL - DÍA DE LAS MATEMÁTICAS */
+.renax-work .work-main-image img {
+    width: 100% !important;
+    height: 800px !important;
+    object-fit: cover !important;
+    border-radius: 25px !important;
+}
+
+/* SKENZI - MEDIANA */
+.renax-work .skenzi-card {
+    width: 100% !important;
+    margin-left: 0 !important;
+}
+
+.renax-work .skenzi-card img {
+    width: 100% !important;
+    height: 380px !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    display: block !important;
+}
+
+/* YDEAS - MISMO TAMAÑO QUE SKENZI */
+.renax-work .design-card {
+    width: 100% !important;
+    margin-left: 0 !important;
+}
+
+.renax-work .design-card img {
+    width: 100% !important;
+    height: 380px !important;
+    object-fit: cover !important;
+    border-radius: 20px !important;
+    display: block !important;
+}
