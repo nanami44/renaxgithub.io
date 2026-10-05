@@ -5149,3 +5149,133 @@ letter-spacing: 8px !important;
     }
 
 }
+/* ==========================================================
+   FAQ - VISTA INDIVIDUAL DE RESPUESTA
+   ========================================================== */
+
+.faq-list-hidden {
+    display: none !important;
+}
+
+.faq-detail {
+    width: 100%;
+    animation: faqDetailAppear 0.4s ease;
+}
+
+.faq-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 25px;
+    padding: 12px 20px;
+
+    background: transparent;
+    border: 1px solid #d90000;
+    border-radius: 30px;
+
+    color: #ffffff;
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-back:hover {
+    background: #d90000;
+    transform: translateX(-4px);
+}
+
+.faq-detail-card {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 45px 50px;
+
+    background: linear-gradient(
+        135deg,
+        #180707 0%,
+        #0d0505 55%,
+        #080303 100%
+    );
+
+    border: 1px solid rgba(217, 0, 0, 0.45);
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(217, 0, 0, 0.08);
+
+    overflow: hidden;
+}
+
+.faq-detail-line {
+    width: 70px;
+    height: 4px;
+
+    margin-bottom: 25px;
+
+    background: #d90000;
+    border-radius: 10px;
+}
+
+.faq-detail-card h3 {
+    margin: 0 0 25px;
+
+    color: #ffffff;
+
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.faq-detail-answer {
+    color: #dddddd;
+
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.faq-detail-answer p {
+    margin: 0;
+    color: #dddddd !important;
+}
+
+@keyframes faqDetailAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .faq-detail-card {
+        padding: 30px 25px;
+        border-radius: 20px;
+    }
+
+    .faq-detail-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .faq-detail-answer {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .faq-back {
+        font-size: 0.75rem;
+        padding: 10px 16px;
+    }
+
+}
