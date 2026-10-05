@@ -5090,3 +5090,63 @@ letter-spacing: 8px !important;
     }
 
 }
+/* ==========================================================
+   PRUEBA 3D - FOTO KAROL RENAX
+   ========================================================== */
+
+.renax-team-image {
+    perspective: 1000px !important;
+}
+
+.renax-team-image img {
+    transform-style: preserve-3d !important;
+    transform-origin: center center !important;
+
+    animation: renaxFoto3D 4s ease-in-out infinite !important;
+
+    will-change: transform !important;
+}
+
+@keyframes renaxFoto3D {
+
+    0% {
+        transform: perspective(1000px)
+                   translateZ(0)
+                   rotateY(-4deg)
+                   rotateX(1deg)
+                   scale(1);
+    }
+
+    25% {
+        transform: perspective(1000px)
+                   translateZ(20px)
+                   rotateY(4deg)
+                   rotateX(-1deg)
+                   scale(1.03);
+    }
+
+    50% {
+        transform: perspective(1000px)
+                   translateZ(35px)
+                   rotateY(-4deg)
+                   rotateX(2deg)
+                   scale(1.05);
+    }
+
+    75% {
+        transform: perspective(1000px)
+                   translateZ(20px)
+                   rotateY(4deg)
+                   rotateX(-1deg)
+                   scale(1.03);
+    }
+
+    100% {
+        transform: perspective(1000px)
+                   translateZ(0)
+                   rotateY(-4deg)
+                   rotateX(1deg)
+                   scale(1);
+    }
+
+}
