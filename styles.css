@@ -5194,12 +5194,7 @@ letter-spacing: 8px !important;
 
     padding: 45px 50px;
 
-    background: linear-gradient(
-        135deg,
-        #180707 0%,
-        #0d0505 55%,
-        #080303 100%
-    );
+   background: #ffffff;
 
     border: 1px solid rgba(217, 0, 0, 0.45);
     border-radius: 25px;
@@ -5370,7 +5365,7 @@ letter-spacing: 8px !important;
 
 .about-manifest .faq-detail-answer p {
     margin: 0 0 22px 0;
-    color: #dddddd !important;
+   color: #222222 !important;
 }
 
 .about-manifest .faq-detail-answer p:last-child {
