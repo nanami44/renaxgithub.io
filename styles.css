@@ -4470,40 +4470,63 @@ letter-spacing: 8px !important;
 
     transform-origin: center center;
 
-    animation: movimientoSuaveRenax 6s ease-in-out infinite;
-
+   animation: movimientoSuaveRenax 6s ease-in-out infinite;
     will-change: transform, filter;
 }
 
 @keyframes movimientoSuaveRenax {
 
     0% {
-        transform: translateY(0) scale(1) rotate(0deg);
+        transform:
+            perspective(1000px)
+            translateY(0)
+            rotateX(0deg)
+            rotateY(0deg)
+            scale(1);
         filter: brightness(1);
     }
 
     25% {
-        transform: translateY(-8px) scale(1.015) rotate(-0.3deg);
+        transform:
+            perspective(1000px)
+            translateY(-8px)
+            rotateX(1deg)
+            rotateY(-2deg)
+            scale(1.015);
         filter: brightness(1.02);
     }
 
     50% {
-        transform: translateY(-14px) scale(1.03) rotate(0.3deg);
+        transform:
+            perspective(1000px)
+            translateY(-14px)
+            rotateX(1.5deg)
+            rotateY(2deg)
+            scale(1.03);
         filter: brightness(1.05);
     }
 
     75% {
-        transform: translateY(-7px) scale(1.015) rotate(-0.2deg);
+        transform:
+            perspective(1000px)
+            translateY(-7px)
+            rotateX(-0.5deg)
+            rotateY(-1.5deg)
+            scale(1.015);
         filter: brightness(1.02);
     }
 
     100% {
-        transform: translateY(0) scale(1) rotate(0deg);
+        transform:
+            perspective(1000px)
+            translateY(0)
+            rotateX(0deg)
+            rotateY(0deg)
+            scale(1);
         filter: brightness(1);
     }
 
 }
-     
 
    
 
