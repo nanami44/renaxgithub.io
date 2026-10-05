@@ -5016,9 +5016,4 @@ letter-spacing: 8px !important;
     position: relative !important;
     z-index: 6 !important;
 }
-/* CORRECCIÓN TRANSICIÓN RENAX */
-.renax-page-transition {
-    opacity: 0 !important;
-    visibility: hidden !important;
-    pointer-events: none !important;
-}
+
