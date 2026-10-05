@@ -5016,4 +5016,49 @@ letter-spacing: 8px !important;
     position: relative !important;
     z-index: 6 !important;
 }
+/* =====================================================
+   CORRECCIÓN DEFINITIVA DEL MENÚ RENAX
+   ===================================================== */
 
+@media (min-width: 769px) {
+
+    .nav-container {
+        position: relative !important;
+    }
+
+    .nav-menu {
+        position: absolute !important;
+        left: 50% !important;
+        top: 50% !important;
+        transform: translate(-50%, -50%) !important;
+
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+
+        width: 500px !important;
+        min-width: 500px !important;
+        max-width: 500px !important;
+
+        gap: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .nav-menu .nav-link {
+        flex: 0 0 100px !important;
+        width: 100px !important;
+        min-width: 100px !important;
+        max-width: 100px !important;
+
+        display: block !important;
+        text-align: center !important;
+        white-space: nowrap !important;
+
+        box-sizing: border-box !important;
+    }
+
+}
