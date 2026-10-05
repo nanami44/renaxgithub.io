@@ -5279,3 +5279,120 @@ letter-spacing: 8px !important;
     }
 
 }
+/* ==========================================================
+   RESEÑA HISTÓRICA - CUADRO PRINCIPAL
+   ========================================================== */
+
+.about-manifest .faq-list {
+    width: 100%;
+    margin: 0;
+}
+
+.about-manifest .faq-item {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 35px;
+}
+
+/* CUADRO DONDE ESTÁ EL TÍTULO */
+.about-manifest .faq-question {
+    width: 100%;
+    min-height: 220px;
+
+    padding: 45px 70px !important;
+
+    box-sizing: border-box;
+
+    background: transparent !important;
+    border: none !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #ffffff !important;
+
+    text-align: left;
+    cursor: pointer;
+}
+
+/* TÍTULO */
+.about-manifest .faq-question span:first-child {
+    color: #ffffff !important;
+
+    font-size: clamp(2.4rem, 4vw, 4rem) !important;
+
+    font-weight: 700 !important;
+
+    line-height: 1.1;
+
+    letter-spacing: 1px;
+
+    max-width: 75%;
+}
+
+/* AVE RENAX */
+.about-manifest .renax-history-bird {
+    width: 85px;
+    height: 85px;
+
+    object-fit: contain;
+
+    flex-shrink: 0;
+
+    margin-left: 40px;
+
+    transition: transform 0.35s ease;
+}
+
+.about-manifest .faq-question:hover .renax-history-bird {
+    transform: translateX(8px) scale(1.08);
+}
+
+/* EL TEXTO NO SE VE EN EL CUADRO CERRADO */
+.about-manifest .faq-answer {
+    display: none !important;
+}
+
+/* VISTA DE LA VENTANA */
+.about-manifest .faq-detail {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* TEXTO DE LA VENTANA */
+.about-manifest .faq-detail-answer {
+    color: #dddddd;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.about-manifest .faq-detail-answer p {
+    margin: 0 0 22px 0;
+    color: #dddddd !important;
+}
+
+.about-manifest .faq-detail-answer p:last-child {
+    margin-bottom: 0;
+}
+
+/* EN PANTALLAS PEQUEÑAS */
+@media (max-width: 768px) {
+
+    .about-manifest .faq-question {
+        min-height: 170px;
+        padding: 35px 30px !important;
+    }
+
+    .about-manifest .faq-question span:first-child {
+        font-size: 2.2rem !important;
+    }
+
+    .about-manifest .renax-history-bird {
+        width: 60px;
+        height: 60px;
+        margin-left: 20px;
+    }
+
+}
