@@ -4999,7 +4999,15 @@ letter-spacing: 8px !important;
     margin-top: 10px !important;
 }
 
-/* BOTÓN */
-.renax-work .work-side .renax-button {
-    margin-top: 5px !important;
+/* ESPACIO PARA LA DESCRIPCIÓN Y BOTÓN DE VUELVE A DESTACAR */
+.renax-statement .statement-description {
+    position: relative !important;
+    z-index: 5 !important;
+    margin-top: 80px !important;
+}
+
+.renax-statement .statement-description .renax-button {
+    margin-top: 35px !important;
+    position: relative !important;
+    z-index: 6 !important;
 }
