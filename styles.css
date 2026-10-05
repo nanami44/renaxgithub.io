@@ -4454,31 +4454,55 @@ letter-spacing: 8px !important;
     z-index: 3;
 }
 /* ==========================================================
-   EFECTO 3D - IMAGEN EQUIPO RENAX
+   MOVIMIENTO SUAVE - FOTO EQUIPO RENAX
    ========================================================== */
 
 .renax-team-image {
     position: relative;
     z-index: 3;
-    perspective: 1000px;
+    overflow: visible;
 }
 
 .renax-team-image img {
-    position: relative;
     display: block;
     width: 100%;
     height: auto;
 
-    transform-style: preserve-3d;
-    transform-origin: center bottom;
+    transform-origin: center center;
 
-    animation: equipoImagen3D 5s ease-in-out infinite;
+    animation: movimientoSuaveRenax 6s ease-in-out infinite;
 
     will-change: transform, filter;
 }
-@keyframes equipoImagen3D {
+
+@keyframes movimientoSuaveRenax {
 
     0% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        filter: brightness(1);
+    }
+
+    25% {
+        transform: translateY(-8px) scale(1.015) rotate(-0.3deg);
+        filter: brightness(1.02);
+    }
+
+    50% {
+        transform: translateY(-14px) scale(1.03) rotate(0.3deg);
+        filter: brightness(1.05);
+    }
+
+    75% {
+        transform: translateY(-7px) scale(1.015) rotate(-0.2deg);
+        filter: brightness(1.02);
+    }
+
+    100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        filter: brightness(1);
+    }
+
+}
         transform: translateY(25px) scale(0.90) rotateX(5deg);
         filter: brightness(0.75) drop-shadow(0 5px 8px rgba(0,0,0,0.20));
     }
