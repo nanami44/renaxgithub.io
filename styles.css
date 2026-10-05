@@ -4773,11 +4773,11 @@ letter-spacing: 8px !important;
     gap: 0;
 
     font-family: Arial, sans-serif;
-   font-size: clamp(3rem, 8vw, 8rem);
+  font-size: clamp(5rem, 12vw, 12rem);
     font-weight: 900;
     line-height: 1;
 
-    letter-spacing: -0.08em;
+  letter-spacing: -0.04em;
 }
 
 .renax-transition-logo span {
