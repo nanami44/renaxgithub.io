@@ -590,23 +590,53 @@ if (languageBtn) {
   });
 
 }
-  <script>
+<script>
 document.querySelectorAll('.faq-question').forEach(button => {
+
   button.addEventListener('click', () => {
-    const item = button.parentElement;
-    const icon = button.querySelector('.faq-icon');
 
-    item.classList.toggle('active');
+    const item = button.closest('.faq-item');
+    const question = button.querySelector('span:first-child').textContent;
+    const answer = item.querySelector('.faq-answer').innerHTML;
+    const faqContainer = document.querySelector('.faq-container');
+    const faqList = document.querySelector('.faq-list');
 
-    if (item.classList.contains('active')) {
-      icon.textContent = '−';
-    } else {
-      icon.textContent = '+';
-    }
+    faqList.classList.add('faq-list-hidden');
+
+    const detail = document.createElement('div');
+    detail.className = 'faq-detail';
+
+    detail.innerHTML = `
+      <button class="faq-back" type="button">
+        ← VOLVER A PREGUNTAS
+      </button>
+
+      <div class="faq-detail-card">
+
+        <div class="faq-detail-line"></div>
+
+        <h3>${question}</h3>
+
+        <div class="faq-detail-answer">
+          ${answer}
+        </div>
+
+      </div>
+    `;
+
+    faqContainer.appendChild(detail);
+
+    detail.querySelector('.faq-back').addEventListener('click', () => {
+
+      detail.remove();
+      faqList.classList.remove('faq-list-hidden');
+
+    });
+
   });
-});
 
-  </script>
+});
+</script>
 <script>
 window.addEventListener("load", function () {
 
