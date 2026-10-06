@@ -4567,7 +4567,7 @@ letter-spacing: 8px !important;
 .renax-team {
     position: relative;
     width: calc(100% - 60px);
-    margin: 140px auto 100px;
+   margin: 140px auto 300px;
     min-height: 700px;
     padding: 80px;
     box-sizing: border-box;
