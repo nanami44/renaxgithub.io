@@ -2374,6 +2374,17 @@ transform: translate(20px, -20px) !important;
 .exclusive-panel p {
     margin: 0;
 }
+/* CONTENIDO VENTANA 1 */
+
+.exclusive-panel-agency {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px;
+    box-sizing: border-box;
+}
 
 /* LOGO */
 
