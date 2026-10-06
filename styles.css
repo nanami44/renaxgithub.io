@@ -4868,6 +4868,122 @@ letter-spacing: 8px !important;
     }
 }
 /* =========================================
+   TRANSICIÓN EXCLUSIVA - NOSOTROS
+========================================= */
+
+.nosotros-page-transition {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background: #111111;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 999998;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity 0.6s ease,
+        visibility 0.6s ease;
+}
+
+.nosotros-page-transition.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.nosotros-transition-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 0;
+
+    font-family: Arial, sans-serif;
+    font-size: clamp(3rem, 9vw, 9rem);
+    font-weight: 900;
+    line-height: 1;
+
+    letter-spacing: -0.04em;
+}
+
+.nosotros-transition-logo span {
+    display: inline-block;
+
+    color: #333333;
+
+    animation:
+        nosotrosLetra 1.2s ease-in-out infinite;
+}
+
+.nosotros-transition-logo span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.nosotros-transition-logo span:nth-child(2) {
+    animation-delay: 0.12s;
+}
+
+.nosotros-transition-logo span:nth-child(3) {
+    animation-delay: 0.24s;
+}
+
+.nosotros-transition-logo span:nth-child(4) {
+    animation-delay: 0.36s;
+}
+
+.nosotros-transition-logo span:nth-child(5) {
+    animation-delay: 0.48s;
+}
+
+.nosotros-transition-logo span:nth-child(6) {
+    animation-delay: 0.60s;
+}
+
+.nosotros-transition-logo span:nth-child(7) {
+    animation-delay: 0.72s;
+}
+
+.nosotros-transition-logo span:nth-child(8) {
+    animation-delay: 0.84s;
+}
+
+@keyframes nosotrosLetra {
+
+    0% {
+        color: #333333;
+        transform: scale(0.96);
+        text-shadow: none;
+    }
+
+    40% {
+        color: #c8102e;
+        transform: scale(1.04);
+        text-shadow:
+            0 0 15px rgba(200, 16, 46, 0.7),
+            0 0 35px rgba(200, 16, 46, 0.35);
+    }
+
+    70% {
+        color: #ffffff;
+        transform: scale(1);
+        text-shadow:
+            0 0 12px rgba(255,255,255,0.4);
+    }
+
+    100% {
+        color: #333333;
+        transform: scale(0.96);
+        text-shadow: none;
+    }
+}
+/* =========================================
    FRASE RENAX - IMÁGENES INTEGRADAS
 ========================================= */
 
