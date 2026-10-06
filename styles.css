@@ -5646,3 +5646,7 @@ letter-spacing: 8px !important;
     }
 
 }
+/* OCULTAR EL CUADRO ORIGINAL AL ABRIR RESEÑA */
+.history-list-hidden {
+    display: none !important;
+}
