@@ -5820,3 +5820,21 @@ letter-spacing: 8px !important;
     border-radius: 25px !important;
     box-sizing: border-box !important;
 }
+/* ==========================================================
+   FONDO NUEVA EVOLUCIÓN - MISIÓN Y VISIÓN
+   CÓDIGO INDEPENDIENTE
+   ========================================================== */
+
+.about-mission-vision {
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url("nueva-evolucion.jpg") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
+}
