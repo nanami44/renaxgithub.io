@@ -5569,8 +5569,7 @@ letter-spacing: 8px !important;
 
 /* TÍTULO */
 .about-manifest .faq-question span:first-child {
-    color: #ffffff !important;
-
+   color: #000000 !important;
     font-size: clamp(2.4rem, 4vw, 4rem) !important;
 
     font-weight: 700 !important;
