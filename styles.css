@@ -2385,7 +2385,26 @@ transform: translate(20px, -20px) !important;
     padding: 80px;
     box-sizing: border-box;
 }
+/* DETALLE PREMIUM - VENTANA 1 */
 
+.exclusive-panel-agency {
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.12),
+        inset 0 0 40px rgba(0, 0, 0, 0.025);
+}
+
+.exclusive-panel-agency::after {
+    content: "";
+    position: absolute;
+    width: 90px;
+    height: 3px;
+    background: #c8102e;
+    left: 50%;
+    bottom: 110px;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
 /* LOGO */
 
 .exclusive-panel-logo img {
