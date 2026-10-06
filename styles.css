@@ -5813,3 +5813,25 @@ letter-spacing: 8px !important;
 .about-manifest .history-detail .history-detail-answer p:last-child {
     margin-bottom: 0 !important;
 }
+/* ==========================================================
+   RESEÑA HISTÓRICA - FONDO EXTERIOR BLANCO
+   CÓDIGO INDEPENDIENTE
+   ========================================================== */
+
+.about-manifest {
+    position: relative !important;
+    z-index: 1 !important;
+}
+
+.about-manifest::after {
+    content: "" !important;
+    position: absolute !important;
+    z-index: -1 !important;
+
+    top: -80px !important;
+    bottom: -80px !important;
+    left: -100vw !important;
+    right: -100vw !important;
+
+    background: #ffffff !important;
+}
