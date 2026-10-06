@@ -5608,6 +5608,7 @@ letter-spacing: 8px !important;
 .about-manifest .faq-detail {
     width: 100%;
     box-sizing: border-box;
+    background: #ffffff !important;
 }
 
 /* TEXTO DE LA VENTANA */
