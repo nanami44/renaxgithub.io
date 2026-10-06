@@ -735,7 +735,18 @@ window.addEventListener("load", function () {
     }
 
 });
+// TRANSICIÓN TRANSFORMAR - SOLO NOSOTROS
 
+const transformarTransition =
+    document.getElementById("transformarTransition");
+
+if (transformarTransition) {
+
+    setTimeout(function () {
+        transformarTransition.classList.add("hide");
+    }, 1800);
+
+}
 document.querySelectorAll("a[href]").forEach(function (enlace) {
 
     enlace.addEventListener("click", function (e) {
