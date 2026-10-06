@@ -687,7 +687,7 @@ background-repeat: no-repeat;
     gap: 0;
 
     font-family: Arial, sans-serif;
-font-size: clamp(2.5rem, 7vw, 7rem);
+font-size: clamp(4rem, 10vw, 11rem);
     font-weight: 900;
     line-height: 1;
 
@@ -699,7 +699,7 @@ font-size: clamp(2.5rem, 7vw, 7rem);
 
     color: #333333;
 
-  animation: transformarLetra 0.8s ease-out forwards;
+  animation: transformarLetra 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
 .transformar-logo span:nth-child(1) {
@@ -711,39 +711,39 @@ font-size: clamp(2.5rem, 7vw, 7rem);
 }
 
 .transformar-logo span:nth-child(3) {
-    animation-delay: 0.70s;
+    animation-delay: 1.00s;
 }
 
 .transformar-logo span:nth-child(4) {
-    animation-delay: 1.05s;
+    animation-delay: 1.50s;
 }
 
 .transformar-logo span:nth-child(5) {
-    animation-delay: 1.40s;
+    animation-delay: 2.00s;
 }
 
 .transformar-logo span:nth-child(6) {
-    animation-delay: 1.75s;
+    animation-delay: 2.5s;
 }
 
 .transformar-logo span:nth-child(7) {
-    animation-delay: 2.10s;
+    animation-delay: 3s;
 }
 
 .transformar-logo span:nth-child(8) {
-    animation-delay: 2.45s;
+    animation-delay: 3.5s;
 }
 
 .transformar-logo span:nth-child(9) {
-    animation-delay: 2.80s;
+    animation-delay: 4s;
 }
 
 .transformar-logo span:nth-child(10) {
-    animation-delay: 3.15s;
+    animation-delay: 4.5s;
 }
 
 .transformar-logo span:nth-child(11) {
-    animation-delay: 3.50s;
+    animation-delay: 5s;
 }
 
 @keyframes transformarLetra {
