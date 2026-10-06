@@ -687,7 +687,7 @@ background-repeat: no-repeat;
     gap: 0;
 
     font-family: Arial, sans-serif;
-    font-size: clamp(3rem, 8vw, 9rem);
+font-size: clamp(2.5rem, 7vw, 7rem);
     font-weight: 900;
     line-height: 1;
 
@@ -699,7 +699,7 @@ background-repeat: no-repeat;
 
     color: #333333;
 
-    animation: transformarLetra 1.2s ease-in-out infinite;
+  animation: transformarLetra 0.8s ease-out forwards;
 }
 
 .transformar-logo span:nth-child(1) {
@@ -707,76 +707,80 @@ background-repeat: no-repeat;
 }
 
 .transformar-logo span:nth-child(2) {
-    animation-delay: 0.10s;
+    animation-delay: 0.35s;
 }
 
 .transformar-logo span:nth-child(3) {
-    animation-delay: 0.20s;
-}
-
-.transformar-logo span:nth-child(4) {
-    animation-delay: 0.30s;
-}
-
-.transformar-logo span:nth-child(5) {
-    animation-delay: 0.40s;
-}
-
-.transformar-logo span:nth-child(6) {
-    animation-delay: 0.50s;
-}
-
-.transformar-logo span:nth-child(7) {
-    animation-delay: 0.60s;
-}
-
-.transformar-logo span:nth-child(8) {
     animation-delay: 0.70s;
 }
 
+.transformar-logo span:nth-child(4) {
+    animation-delay: 1.05s;
+}
+
+.transformar-logo span:nth-child(5) {
+    animation-delay: 1.40s;
+}
+
+.transformar-logo span:nth-child(6) {
+    animation-delay: 1.75s;
+}
+
+.transformar-logo span:nth-child(7) {
+    animation-delay: 2.10s;
+}
+
+.transformar-logo span:nth-child(8) {
+    animation-delay: 2.45s;
+}
+
 .transformar-logo span:nth-child(9) {
-    animation-delay: 0.80s;
+    animation-delay: 2.80s;
 }
 
 .transformar-logo span:nth-child(10) {
-    animation-delay: 0.90s;
+    animation-delay: 3.15s;
 }
 
 .transformar-logo span:nth-child(11) {
-    animation-delay: 1s;
+    animation-delay: 3.50s;
 }
 
 @keyframes transformarLetra {
 
-    0% {
-        color: #333333;
-        transform: scale(0.96);
-        text-shadow: none;
-    }
-
-    40% {
-        color: #c8102e;
-        transform: scale(1.04);
-
-        text-shadow:
-            0 0 15px rgba(200, 16, 46, 0.7),
-            0 0 35px rgba(200, 16, 46, 0.35);
-    }
-
-    70% {
-        color: #ffffff;
-        transform: scale(1);
-
-        text-shadow:
-            0 0 12px rgba(255,255,255,0.4);
-    }
-
-    100% {
-        color: #333333;
-        transform: scale(0.96);
-        text-shadow: none;
-    }
+   0% {
+    opacity: 0;
+    color: #ffffff;
+    transform: scale(0.96);
+    text-shadow: none;
 }
+
+  40% {
+    opacity: 1;
+    color: #ffffff;
+    transform: scale(1.04);
+    text-shadow:
+        0 0 15px rgba(255,255,255,0.5),
+        0 0 35px rgba(255,255,255,0.25);
+}
+   70% {
+    opacity: 1;
+    color: #ffffff;
+    transform: scale(1);
+    text-shadow:
+        0 0 12px rgba(255,255,255,0.4);
+}
+       
+   100% {
+    opacity: 1;
+    color: #ffffff;
+    transform: scale(1);
+    text-shadow:
+        0 0 12px rgba(255,255,255,0.4);
+ }
+     
+    }
+
 .about-hero-accents {
   display: flex;
   justify-content: center;
