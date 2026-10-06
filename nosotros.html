@@ -807,17 +807,7 @@ document.querySelectorAll("a[href]").forEach(function (enlace) {
 
         e.preventDefault();
 
-        const transicion = document.getElementById("renaxPageTransition");
-
-        if (transicion) {
-            transicion.classList.remove("hide");
-
-            setTimeout(function () {
-                window.location.href = destino;
-            }, 1400);
-        } else {
-            window.location.href = destino;
-        }
+       window.location.href = destino;
 
     });
 
