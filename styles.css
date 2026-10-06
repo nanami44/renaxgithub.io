@@ -5876,7 +5876,7 @@ url("nueva-evolucion.png") !important;
 .video-nosotros {
     position: relative !important;
     margin-top: 48px !important;
-    overflow: hidden !important;
+   overflow: hidden !important;
 }
 
 .video-nosotros::before {
