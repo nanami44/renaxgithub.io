@@ -676,54 +676,116 @@ if (languageBtn) {
 
 }
 </script>
-  <script>
-document.querySelectorAll('.faq-question').forEach(button => {
+<script>
 
-  button.addEventListener('click', () => {
+document.querySelectorAll('.history-question').forEach(button => {
 
-    const item = button.closest('.faq-item');
-    const question = button.querySelector('span:first-child').textContent;
-    const answer = item.querySelector('.faq-answer').innerHTML;
-    const faqContainer = document.querySelector('.faq-container');
-    const faqList = document.querySelector('.faq-list');
+    button.addEventListener('click', () => {
 
-    faqList.classList.add('faq-list-hidden');
+        const section = button.closest('.about-manifest');
 
-    const detail = document.createElement('div');
-    detail.className = 'faq-detail';
+        const historyList = section.querySelector('.faq-list');
 
-    detail.innerHTML = `
-      <button class="faq-back" type="button">
-       ← ATRÁS
-      </button>
+        const item = button.closest('.faq-item');
 
-      <div class="faq-detail-card">
+        const answer = item.querySelector('.faq-answer').innerHTML;
 
-        <div class="faq-detail-line"></div>
+        historyList.classList.add('history-list-hidden');
 
-        
+        const detail = document.createElement('div');
 
-        <div class="faq-detail-answer">
-          ${answer}
-        </div>
+        detail.className = 'history-detail';
 
-      </div>
-    `;
+        detail.innerHTML = `
+            <button class="history-back" type="button">
+                ← ATRÁS
+            </button>
 
-   faqList.parentNode.appendChild(detail);
+            <div class="history-detail-card">
 
-    detail.querySelector('.faq-back').addEventListener('click', () => {
+                <div class="history-detail-line"></div>
 
-      detail.remove();
-      faqList.classList.remove('faq-list-hidden');
+                <div class="history-detail-answer">
+                    ${answer}
+                </div>
+
+            </div>
+        `;
+
+        historyList.parentNode.appendChild(detail);
+
+        detail.querySelector('.history-back').addEventListener('click', () => {
+
+            detail.remove();
+
+            historyList.classList.remove('history-list-hidden');
+
+        });
 
     });
 
-  });
-
 });
+
 </script>
-<script>
+  <script>
+
+const faqSection = document.querySelector('.renax-faq');
+
+if (faqSection) {
+
+    const faqList = faqSection.querySelector('.faq-list');
+
+    faqSection.querySelectorAll('.faq-question').forEach(button => {
+
+        button.addEventListener('click', () => {
+
+            const item = button.closest('.faq-item');
+
+            const question = button.querySelector('span:first-child').textContent;
+
+            const answer = item.querySelector('.faq-answer').innerHTML;
+
+            faqList.classList.add('faq-list-hidden');
+
+            const detail = document.createElement('div');
+
+            detail.className = 'faq-detail';
+
+            detail.innerHTML = `
+                <button class="faq-back" type="button">
+                    ← ATRÁS
+                </button>
+
+                <div class="faq-detail-card">
+
+                    <div class="faq-detail-line"></div>
+
+                    <h3>${question}</h3>
+
+                    <div class="faq-detail-answer">
+                        ${answer}
+                    </div>
+
+                </div>
+            `;
+
+            faqList.parentNode.appendChild(detail);
+
+            detail.querySelector('.faq-back').addEventListener('click', () => {
+
+                detail.remove();
+
+                faqList.classList.remove('faq-list-hidden');
+
+            });
+
+        });
+
+    });
+
+}
+
+</script>
 window.addEventListener("load", function () {
 
     const transicion = document.getElementById("renaxPageTransition");
