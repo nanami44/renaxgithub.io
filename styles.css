@@ -5474,7 +5474,7 @@ letter-spacing: 8px !important;
 .faq-detail-card h3 {
     margin: 0 0 25px;
 
-    color: #ffffff;
+   color: #000000 !important;
 
     font-size: 1.5rem;
     font-weight: 500;
