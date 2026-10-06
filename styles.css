@@ -5650,3 +5650,40 @@ letter-spacing: 8px !important;
 .history-list-hidden {
     display: none !important;
 }
+/* RESEÑA HISTÓRICA - TÍTULO Y LOGO */
+.about-manifest .history-question {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 60px !important;
+}
+/* RESEÑA HISTÓRICA - DISEÑO DEL CUADRO PRINCIPAL */
+.about-manifest .history-question {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* TÍTULO CENTRADO */
+.about-manifest .history-question span {
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+
+    font-size: 3rem !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+}
+
+/* LOGO A LA DERECHA */
+.about-manifest .history-question .renax-history-bird {
+    position: absolute !important;
+    right: 70px !important;
+    margin-left: 0 !important;
+
+    width: 110px !important;
+    height: 110px !important;
+}
