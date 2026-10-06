@@ -5687,3 +5687,129 @@ letter-spacing: 8px !important;
     width: 110px !important;
     height: 110px !important;
 }
+/* ==========================================================
+   RENAX - RESEÑA HISTÓRICA - DISEÑO INDEPENDIENTE
+   ========================================================== */
+
+/* CUADRO PRINCIPAL */
+.about-manifest button.history-question {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 220px !important;
+    padding: 40px 70px !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: transparent !important;
+    border: none !important;
+
+    cursor: pointer !important;
+    color: #ffffff !important;
+}
+
+/* TÍTULO */
+.about-manifest button.history-question span {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    color: #ffffff !important;
+    font-size: 3.2rem !important;
+    font-weight: 700 !important;
+
+    line-height: 1.1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+}
+
+/* LOGO A LA DERECHA */
+.about-manifest button.history-question img.renax-history-bird {
+    position: absolute !important;
+
+    right: 70px !important;
+    top: 50% !important;
+
+    transform: translateY(-50%) !important;
+
+    width: 110px !important;
+    height: 110px !important;
+
+    object-fit: contain !important;
+    margin: 0 !important;
+}
+
+/* VENTANA DE RESEÑA */
+.about-manifest .history-detail {
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    margin: 30px 0 !important;
+}
+
+/* BOTÓN ATRÁS */
+.about-manifest .history-detail .history-back {
+    display: inline-flex !important;
+    align-items: center !important;
+
+    margin-bottom: 25px !important;
+    padding: 10px 20px !important;
+
+    background: #ffffff !important;
+    border: 1px solid #c8102e !important;
+    border-radius: 25px !important;
+
+    color: #000000 !important;
+    font-size: 1rem !important;
+
+    cursor: pointer !important;
+}
+
+/* CUADRO BLANCO DE LA RESEÑA */
+.about-manifest .history-detail .history-detail-card {
+    width: 100% !important;
+    box-sizing: border-box !important;
+
+    padding: 55px 70px !important;
+
+    background: #ffffff !important;
+    border-radius: 35px !important;
+
+    color: #000000 !important;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25) !important;
+}
+
+/* LÍNEA ROJA */
+.about-manifest .history-detail .history-detail-line {
+    width: 75px !important;
+    height: 5px !important;
+
+    margin-bottom: 30px !important;
+
+    background: #c8102e !important;
+    border-radius: 10px !important;
+}
+
+/* TEXTO DE LA RESEÑA */
+.about-manifest .history-detail .history-detail-answer {
+    color: #000000 !important;
+
+    font-size: 1.15rem !important;
+    line-height: 1.8 !important;
+}
+
+/* PÁRRAFOS */
+.about-manifest .history-detail .history-detail-answer p {
+    margin: 0 0 24px 0 !important;
+
+    color: #000000 !important;
+}
+
+.about-manifest .history-detail .history-detail-answer p:last-child {
+    margin-bottom: 0 !important;
+}
