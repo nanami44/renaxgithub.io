@@ -5613,7 +5613,7 @@ letter-spacing: 8px !important;
 
 /* TEXTO DE LA VENTANA */
 .about-manifest .faq-detail-answer {
-    color: #dddddd;
+   color: #000000;
     font-size: 1.1rem;
     line-height: 1.8;
 }
