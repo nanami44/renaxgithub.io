@@ -5871,27 +5871,29 @@ url("nueva-evolucion.png") !important;
    CINTURÓN NOSOTROS - ENTRE IMAGEN Y VIDEO
    CÓDIGO INDEPENDIENTE
    ========================================================== */
+/* ==========================================================
+   CINTURÓN NOSOTROS - CONTINUO
+   SOLO ENTRE IMAGEN Y VIDEO
+   ========================================================== */
 
 .video-nosotros {
     position: relative !important;
+    margin-top: 48px !important;
+    overflow: hidden !important;
 }
 
-/* FRANJA */
 .video-nosotros::before {
-    content: "NOSOTROS   »   NOSOTROS   »   NOSOTROS   »   NOSOTROS   »   NOSOTROS   »   NOSOTROS";
+    content: "NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS  »  NOSOTROS";
 
     position: absolute !important;
-    top: 0 !important;
+    top: -48px !important;
     left: 0 !important;
 
-    width: 100% !important;
-    height: 42px !important;
+    width: max-content !important;
+    height: 48px !important;
 
     display: flex !important;
     align-items: center !important;
-
-    white-space: nowrap !important;
-    overflow: hidden !important;
 
     background: #050505 !important;
 
@@ -5901,29 +5903,27 @@ url("nueva-evolucion.png") !important;
     color: #ffffff !important;
 
     font-family: var(--font-heading) !important;
-    font-size: 1.15rem !important;
+    font-size: 0.95rem !important;
     font-weight: 800 !important;
-    letter-spacing: 2px !important;
 
-    text-shadow:
-        0 0 6px rgba(200, 16, 46, 0.8) !important;
+    letter-spacing: 3px !important;
+    white-space: nowrap !important;
 
     box-sizing: border-box !important;
 
-    z-index: 50 !important;
+    z-index: 9999 !important;
 
-    animation: nosotrosCinturonVideo 14s linear infinite !important;
+    animation: renaxNosotrosCinturon 18s linear infinite !important;
 }
 
-/* MOVIMIENTO EXCLUSIVO DE ESTE CINTURÓN */
-@keyframes nosotrosCinturonVideo {
+@keyframes renaxNosotrosCinturon {
 
     0% {
-        transform: translateX(100%);
+        transform: translateX(0);
     }
 
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 
 }
