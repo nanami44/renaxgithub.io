@@ -847,6 +847,31 @@ document.querySelectorAll("a[href]").forEach(function (enlace) {
     });
 
 });
+   /* ==========================================================
+   TRANSICIÓN VENTANA 2 - QUÉ HACEMOS
+   ========================================================== */
+
+const exclusiveSpace = document.querySelector('.renax-exclusive-space');
+const exclusiveWhat = document.querySelector('.exclusive-panel-what');
+
+if (exclusiveSpace && exclusiveWhat) {
+
+    const observer = new IntersectionObserver((entries) => {
+
+        entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+                exclusiveWhat.style.transform = 'translateY(0)';
+            }
+
+        });
+
+    }, {
+        threshold: 0.45
+    });
+
+    observer.observe(exclusiveSpace);
+}
 </script>
   </script>
 
