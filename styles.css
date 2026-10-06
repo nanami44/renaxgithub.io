@@ -2308,6 +2308,84 @@ transform: translate(20px, -20px) !important;
     padding: 0;
     box-sizing: border-box;
 }
+/* ==========================================================
+   ESCENARIO EXCLUSIVO RENAX
+   ========================================================== */
+
+.renax-exclusive-space {
+    position: relative;
+    width: 100%;
+    height: 900px;
+    overflow: hidden;
+    background: #050505;
+    box-sizing: border-box;
+}
+
+/* VENTANAS */
+
+.exclusive-panel {
+    position: absolute;
+    inset: 40px;
+    width: calc(100% - 80px);
+    height: calc(100% - 80px);
+    border-radius: 35px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+/* VENTANA 1 */
+
+.exclusive-panel-agency {
+    background: #ffffff;
+    color: #000000;
+    z-index: 4;
+}
+
+/* VENTANA 2 */
+
+.exclusive-panel-what {
+    background: #050505;
+    color: #ffffff;
+    z-index: 3;
+}
+
+/* VENTANA 3 */
+
+.exclusive-panel-benefits {
+    background: #050505;
+    color: #ffffff;
+    z-index: 2;
+}
+
+/* VENTANA 4 */
+
+.exclusive-panel-logo {
+    background: #050505;
+    color: #ffffff;
+    z-index: 1;
+}
+
+/* CONTENIDO DE LAS VENTANAS */
+
+.exclusive-panel h2 {
+    margin: 0;
+}
+
+.exclusive-panel p {
+    margin: 0;
+}
+
+/* LOGO */
+
+.exclusive-panel-logo img {
+    width: 320px;
+    max-width: 70%;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 .renax-team {
     width: 90%;
     max-width: 1200px;
