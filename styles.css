@@ -4941,7 +4941,11 @@ letter-spacing: 8px !important;
 
   letter-spacing: -0.04em;
 }
-
+.transition-logo-image {
+    width: min(420px, 70vw);
+    height: auto;
+    display: block;
+}
 .renax-transition-logo span {
     display: inline-block;
 
