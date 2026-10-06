@@ -5919,15 +5919,3 @@ url("nueva-evolucion.png") !important;
     animation: nosotrosCinturonNuevo 16s linear infinite !important;
 }
 
-/* MOVIMIENTO EXCLUSIVO DE ESTE CINTURÓN */
-@keyframes nosotrosCinturonNuevo {
-
-    0% {
-        transform: translateX(100vw);
-    }
-
-    100% {
-        transform: translateX(-100%);
-    }
-
-}
