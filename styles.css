@@ -7010,32 +7010,3 @@ transition: color 0.4s ease;
         transform: translateX(-50%);
     }
 }
-/* ==========================================================
-   SKENZI · FONDO TIPOGRÁFICO DECORATIVO
-   NUEVO EFECTO — NO MODIFICA LOS ANTERIORES
-   ========================================================== */
-
-.skenzi-reto-imagen {
-    position: relative;
-    overflow: hidden;
-}
-
-.skenzi-reto-imagen::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("skenzi-fondo-tipografia.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.10;
-  filter: none;
-    transform: scale(1.05);
-    z-index: 0;
-    pointer-events: none;
-}
-
-.skenzi-reto-imagen img {
-    position: relative;
-    z-index: 2;
-}
