@@ -2467,7 +2467,14 @@ transform: translate(20px, -20px) !important;
 .exclusive-panel-logo {
     background: #050505;
     color: #ffffff;
-    z-index: 1;
+    z-index: 7;
+
+    transform: translateY(100%);
+    transition: transform 1s ease;
+}
+
+.exclusive-panel-logo.exclusive-show {
+    transform: translateY(0);
 }
 
 /* CONTENIDO DE LAS VENTANAS */
