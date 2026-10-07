@@ -7024,3 +7024,9 @@ transform: none;
     pointer-events: none;
 }
 
+/* QUITAR FONDO TIPOGRÁFICO DE SKENZI */
+
+.skenzi-reto-imagen {
+    background-image: none !important;
+    background-color: #ffffff !important;
+}
