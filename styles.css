@@ -7023,19 +7023,4 @@ transform: none;
     z-index: 0;
     pointer-events: none;
 }
-/* ==========================================================
-   SKENZI · FONDO REAL DE LA ZONA BLANCA
-   NUEVO AJUSTE — NO MODIFICA LOS EFECTOS ANTERIORES
-   ========================================================== */
 
-.skenzi-reto-imagen {
-    background-color: #ffffff;
-    background-image: url("skenzi-fondo-tipografia.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.skenzi-reto-imagen::before {
-    display: none;
-}
