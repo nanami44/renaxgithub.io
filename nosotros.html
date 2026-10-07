@@ -847,53 +847,80 @@ document.querySelectorAll("a[href]").forEach(function (enlace) {
     });
 
 });
- /* ==========================================================
-   TRANSICIÓN VENTANA 2 - QUÉ HACEMOS
-   ========================================================== */
-
+<script>
 /* ==========================================================
-   TRANSICIÓN VENTANA 2 Y VENTANA 3
+   RENAX - TRANSICIÓN EXCLUSIVA DE LAS 4 VENTANAS
+   SOLO AFECTA A .renax-exclusive-space
    ========================================================== */
 
-const exclusiveSpace = document.querySelector('.renax-exclusive-space');
-const exclusiveWhat = document.querySelector('.exclusive-panel-what');
-const exclusiveBenefits = document.querySelector('.exclusive-panel-benefits');
-const exclusiveLogo = document.querySelector('.exclusive-panel-logo');
-if (exclusiveSpace && exclusiveWhat && exclusiveBenefits && exclusiveLogo) {
+(function RENAXExclusiveWindowLoop() {
 
-    let activadaWhat = false;
-    let activadaBenefits = false;
-let activadaLogo = false;
-    window.addEventListener('scroll', () => {
+    const renaxLoopSpace =
+        document.querySelector('.renax-exclusive-space');
 
-        const rect = exclusiveSpace.getBoundingClientRect();
-        const alturaPantalla = window.innerHeight;
+    if (!renaxLoopSpace) return;
 
-        /* VENTANA 2 - QUÉ HACEMOS */
-        if (!activadaWhat && rect.top < alturaPantalla * 0.70) {
+    const renaxLoopPanels = [
+        renaxLoopSpace.querySelector('.exclusive-panel-agency'),
+        renaxLoopSpace.querySelector('.exclusive-panel-what'),
+        renaxLoopSpace.querySelector('.exclusive-panel-benefits'),
+        renaxLoopSpace.querySelector('.exclusive-panel-logo')
+    ];
 
-            activadaWhat = true;
+    if (renaxLoopPanels.some(panel => !panel)) return;
 
-            exclusiveWhat.classList.add('exclusive-show');
+    let renaxLoopIndex = 0;
+
+    const RENAX_ENTRADA = 2500;
+    const RENAX_LECTURA = 6000;
+
+    function renaxLoopMostrar(numero) {
+
+        renaxLoopPanels.forEach(panel => {
+            panel.classList.remove('exclusive-show');
+        });
+
+        const panelActual = renaxLoopPanels[numero];
+
+        panelActual.classList.add('exclusive-show');
+
+        setTimeout(() => {
+
+            if (renaxLoopIndex === numero) {
+
+                renaxLoopIndex =
+                    (renaxLoopIndex + 1) %
+                    renaxLoopPanels.length;
+
+                renaxLoopMostrar(renaxLoopIndex);
+            }
+
+        }, RENAX_ENTRADA + RENAX_LECTURA);
+    }
+
+    /*
+       Comienza solamente cuando esta sección
+       entra en la pantalla.
+    */
+
+    const renaxLoopObserver = new IntersectionObserver(
+        (entradas, observer) => {
+
+            if (entradas[0].isIntersecting) {
+
+                observer.disconnect();
+
+                renaxLoopMostrar(renaxLoopIndex);
+            }
+
+        },
+        {
+            threshold: 0.25
         }
+    );
 
-        /* VENTANA 3 - TARJETAS */
-        if (!activadaBenefits && rect.top < alturaPantalla * 0.35) {
+    renaxLoopObserver.observe(renaxLoopSpace);
 
-            activadaBenefits = true;
-
-            exclusiveBenefits.classList.add('exclusive-show');
-        }
-/* VENTANA 4 - LOGO RENAX */
-
-if (!activadaLogo && rect.top < alturaPantalla * 0.15) {
-
-    activadaLogo = true;
-
-    exclusiveLogo.classList.add('exclusive-show');
-
-}
-    });
-
-}
+})();
 </script>
+
