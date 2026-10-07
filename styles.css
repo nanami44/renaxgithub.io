@@ -2344,12 +2344,12 @@ transform: translate(20px, -20px) !important;
 /* VENTANA 2 */
 
 .exclusive-panel-what {
-   background:
+  background:
     radial-gradient(
         circle at 50% 65%,
-        rgba(200, 16, 46, 0.14) 0%,
-        rgba(200, 16, 46, 0.05) 35%,
-        rgba(5, 5, 5, 1) 75%
+        #26070d 0%,
+        #120307 38%,
+        #050505 75%
     );
     color: #ffffff;
     z-index: 5;
