@@ -6987,3 +6987,26 @@ transition: color 0.4s ease;
     color: #c8102e;
     transform: scale(1.05);
 }
+/* ==========================================================
+   SKENZI · MOVIMIENTO CONTINUO DEL CINTURÓN
+   NUEVO EFECTO — NO MODIFICA LOS CÓDIGOS ANTERIORES
+   ========================================================== */
+
+.skenzi-transformacion-lista {
+    animation: skenziCinturon 28s linear infinite;
+    will-change: transform;
+}
+
+.skenzi-transformacion {
+    overflow: hidden;
+}
+
+@keyframes skenziCinturon {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
