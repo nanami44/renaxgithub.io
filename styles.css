@@ -7030,3 +7030,10 @@ transform: none;
     background-image: none !important;
     background-color: #ffffff !important;
 }
+/* ==========================================================
+   SKENZI · ELIMINAR FONDO TIPOGRÁFICO
+   ========================================================== */
+
+.skenzi-reto-imagen::before {
+    display: none !important;
+}
