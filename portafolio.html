@@ -212,6 +212,23 @@ if (portfolioGallery) {
     });
 
 }   
+// CARRUSEL AUTOMÁTICO HACIA LA IZQUIERDA
+if (portfolioGallery) {
+
+    function moverCarruselIzquierda() {
+
+        if (portfolioGallery.scrollLeft <= 0) {
+            portfolioGallery.scrollLeft =
+                portfolioGallery.scrollWidth - portfolioGallery.clientWidth;
+        } else {
+            portfolioGallery.scrollLeft -= 1;
+        }
+
+    }
+
+    setInterval(moverCarruselIzquierda, 20);
+
+}      
  window.addEventListener("load", function () {
 
     const transicion = document.getElementById("renaxPageTransition");
