@@ -6946,3 +6946,44 @@ transition: color 0.4s ease;
     }
 
 }
+/* ==========================================================
+   SKENZI · CINTURÓN DE TRANSFORMACIÓN
+   NUEVO DISEÑO — NO MODIFICA LOS CÓDIGOS ANTERIORES
+   ========================================================== */
+
+.skenzi-transformacion-lista {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 90px;
+    width: max-content;
+    padding: 70px 8vw;
+    overflow: hidden;
+}
+
+.skenzi-transformacion-item {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    white-space: nowrap;
+}
+
+.skenzi-transformacion-item span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.skenzi-transformacion-item strong {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2rem, 4vw, 4.5rem);
+    font-weight: 600;
+    letter-spacing: -2px;
+    color: #ffffff;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+
+.skenzi-transformacion-item:hover strong {
+    color: #c8102e;
+    transform: scale(1.05);
+}
