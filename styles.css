@@ -2538,10 +2538,10 @@ transform: translate(20px, -20px) !important;
 
 .exclusive-panel-what p {
     max-width: 1000px;
-    margin: 0 auto;
+   margin: 0;
     font-size: clamp(1.1rem, 1.8vw, 1.45rem);
     line-height: 1.7;
-    text-align: center;
+    text-align: left;
     color: #eeeeee;
 }
 /* CONTENIDO VENTANA 1 */
