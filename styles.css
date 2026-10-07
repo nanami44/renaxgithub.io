@@ -7037,3 +7037,10 @@ transform: none;
 .skenzi-reto-imagen::before {
     display: none !important;
 }
+/* ==========================================================
+   SKENZI · OCULTAR NÚMEROS DEL CINTURÓN
+   ========================================================== */
+
+.skenzi-transformacion-item > span {
+    display: none;
+}
