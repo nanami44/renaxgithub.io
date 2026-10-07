@@ -7010,3 +7010,16 @@ transition: color 0.4s ease;
         transform: translateX(-50%);
     }
 }
+.skenzi-reto-imagen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("skenzi-fondo-tipografia.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  opacity: 0.18;
+transform: none;
+    z-index: 0;
+    pointer-events: none;
+}
