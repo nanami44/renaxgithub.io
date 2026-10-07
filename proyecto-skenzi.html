@@ -209,4 +209,23 @@
 
 </section>
 </body>
+    <script>
+  
+/* ==========================================================
+   SKENZI · CINTURÓN CONTINUO
+   DUPLICACIÓN PARA EVITAR ESPACIOS VACÍOS
+   ========================================================== */
+
+const skenziCinturon = document.querySelector('.skenzi-transformacion-lista');
+
+if (skenziCinturon) {
+  const copiaCinturon = skenziCinturon.cloneNode(true);
+
+while (copiaCinturon.firstElementChild) {
+    skenziCinturon.appendChild(copiaCinturon.firstElementChild);
+}
+}
+   
+</script>
+    </body>
 </html>
