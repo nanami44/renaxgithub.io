@@ -6583,8 +6583,8 @@ url("nueva-evolucion.png") !important;
     min-height: 80vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: #F7F1E1;
-    color: #153628;
+   background: #050505;
+    color: #ffffff;
 }
 
 .skenzi-reto-texto {
@@ -6596,7 +6596,7 @@ url("nueva-evolucion.png") !important;
 
 .skenzi-reto-texto > span {
     margin-bottom: 30px;
-    color: #153628;
+   color: #c8102e;
     font-family: 'Montserrat', sans-serif;
     font-size: 0.75rem;
     font-weight: 700;
