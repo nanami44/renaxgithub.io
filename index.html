@@ -719,5 +719,62 @@ document.querySelectorAll("a[href]").forEach(function (enlace) {
 
 });  
 </script>
+ <script>
+const faqSection = document.querySelector('.renax-faq');
+
+if (faqSection) {
+
+    const faqList = faqSection.querySelector('.faq-list');
+
+    faqSection.querySelectorAll('.faq-question').forEach(button => {
+
+        button.addEventListener('click', () => {
+
+            const item = button.closest('.faq-item');
+
+            const question = button.querySelector('span:first-child').textContent;
+
+            const answer = item.querySelector('.faq-answer').innerHTML;
+
+            faqList.classList.add('faq-list-hidden');
+
+            const detail = document.createElement('div');
+
+            detail.className = 'faq-detail';
+
+            detail.innerHTML = `
+                <button class="faq-back" type="button">
+                    ← ATRÁS
+                </button>
+
+                <div class="faq-detail-card">
+
+                    <div class="faq-detail-line"></div>
+
+                    <h3>${question}</h3>
+
+                    <div class="faq-detail-answer">
+                        ${answer}
+                    </div>
+
+                </div>
+            `;
+
+            faqList.parentNode.appendChild(detail);
+
+            detail.querySelector('.faq-back').addEventListener('click', () => {
+
+                detail.remove();
+
+                faqList.classList.remove('faq-list-hidden');
+
+            });
+
+        });
+
+    });
+
+}
+</script> 
 </body>
 </html>
