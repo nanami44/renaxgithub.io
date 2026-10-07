@@ -6495,7 +6495,7 @@ url("nueva-evolucion.png") !important;
 .skenzi-hero {
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 42% 58%;
+  grid-template-columns: 1fr;
    background: #050505;
     color: #F7F1E1;
 }
@@ -6546,7 +6546,7 @@ url("nueva-evolucion.png") !important;
 }
 
 .skenzi-hero-image {
-    min-height: 100vh;
+   min-height: 58vh;
     overflow: hidden;
 }
 
