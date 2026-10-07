@@ -2344,7 +2344,13 @@ transform: translate(20px, -20px) !important;
 /* VENTANA 2 */
 
 .exclusive-panel-what {
-    background: #050505;
+   background:
+    radial-gradient(
+        circle at 50% 65%,
+        rgba(200, 16, 46, 0.14) 0%,
+        rgba(200, 16, 46, 0.05) 35%,
+        rgba(5, 5, 5, 1) 75%
+    );
     color: #ffffff;
     z-index: 5;
 
@@ -2378,6 +2384,35 @@ transform: translate(20px, -20px) !important;
 
 .exclusive-panel p {
     margin: 0;
+}
+/* DISEÑO TÍTULO Y TEXTO - VENTANA 2 */
+
+.exclusive-panel-what h2 {
+    font-size: clamp(3rem, 6vw, 6rem);
+    font-weight: 800;
+    letter-spacing: -2px;
+    margin: 0 0 28px 0;
+    text-align: center;
+    position: relative;
+}
+
+.exclusive-panel-what h2::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 3px;
+    background: #c8102e;
+    margin: 24px auto 0;
+    border-radius: 10px;
+}
+
+.exclusive-panel-what p {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+    line-height: 1.7;
+    text-align: center;
+    color: #eeeeee;
 }
 /* CONTENIDO VENTANA 1 */
 
