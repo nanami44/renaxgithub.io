@@ -7048,3 +7048,33 @@ transform: none;
     border-radius: 32px;
     overflow: hidden;
 }
+/* ==========================================================
+   SKENZI · INTERACCIÓN ANTES / EVOLUCIÓN / DESPUÉS
+   LÍNEA DE TRANSFORMACIÓN
+   ========================================================== */
+
+.skenzi-comparacion-imagen {
+    position: relative;
+    overflow: hidden;
+}
+
+.skenzi-comparacion-imagen::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: #c8102e;
+    transform: translateX(-10px);
+    transition: transform 0.8s ease;
+    z-index: 3;
+}
+
+.skenzi-comparacion-bloque:hover .skenzi-comparacion-imagen::after {
+    transform: translateX(calc(100% + 7px));
+}
+
+.skenzi-comparacion-bloque:hover .skenzi-comparacion-imagen img {
+    filter: brightness(1.08);
+}
