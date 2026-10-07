@@ -6633,6 +6633,8 @@ url("nueva-evolucion.png") !important;
 .skenzi-imagen-placeholder {
     width: 100%;
     aspect-ratio: 1 / 1;
+   border-radius: 24px;
+overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
