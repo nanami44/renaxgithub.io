@@ -7282,3 +7282,102 @@ transform: none;
     }
 
 }
+/* ==========================================================
+   SKENZI · SKENZI HOY
+   ========================================================== */
+
+.skenzi-hoy {
+    min-height: 85vh;
+    padding: 120px 8vw;
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 80px;
+    background: #F7F1E1;
+    color: #050505;
+}
+
+.skenzi-hoy-texto {
+    max-width: 600px;
+}
+
+.skenzi-hoy-texto h2 {
+    margin: 0 0 25px;
+    color: #c8102e;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.skenzi-hoy-texto h3 {
+    margin: 0 0 35px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+.skenzi-hoy-texto p {
+    max-width: 560px;
+    margin: 0 0 20px;
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.skenzi-hoy-texto strong {
+    color: #050505;
+}
+
+.skenzi-hoy-imagen {
+    width: 100%;
+    max-height: 650px;
+    overflow: hidden;
+    border-radius: 32px;
+    background: #050505;
+}
+
+.skenzi-hoy-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    transition: transform 0.6s ease;
+}
+
+.skenzi-hoy-imagen:hover img {
+    transform: scale(1.025);
+}
+
+@media (max-width: 900px) {
+
+    .skenzi-hoy {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        padding: 100px 7vw;
+    }
+
+    .skenzi-hoy-texto {
+        max-width: 800px;
+    }
+
+    .skenzi-hoy-imagen {
+        max-height: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .skenzi-hoy {
+        padding: 80px 25px;
+    }
+
+    .skenzi-hoy-texto h3 {
+        font-size: 3.3rem;
+    }
+
+}
