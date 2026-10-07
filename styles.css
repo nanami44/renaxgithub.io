@@ -6575,3 +6575,108 @@ url("nueva-evolucion.png") !important;
     }
 
 }
+/* ==========================================================
+   SKENZI · EL RETO
+   ========================================================== */
+
+.skenzi-reto {
+    min-height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #F7F1E1;
+    color: #153628;
+}
+
+.skenzi-reto-texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8vw;
+}
+
+.skenzi-reto-texto > span {
+    margin-bottom: 30px;
+    color: #153628;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.skenzi-reto-texto h2 {
+    max-width: 650px;
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 5vw, 6rem);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+.skenzi-reto-texto p {
+    max-width: 520px;
+    margin-top: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #365244;
+}
+
+.skenzi-reto-imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7vw;
+    background: #153628;
+}
+
+.skenzi-imagen-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid rgba(247, 241, 225, 0.35);
+    color: #F7F1E1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    line-height: 1.8;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .skenzi-reto {
+        grid-template-columns: 1fr;
+    }
+
+    .skenzi-reto-texto {
+        padding: 80px 8vw;
+    }
+
+    .skenzi-reto-imagen {
+        min-height: 500px;
+        padding: 60px 8vw;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .skenzi-reto-texto {
+        padding: 70px 25px;
+    }
+
+    .skenzi-reto-texto h2 {
+        font-size: 3.4rem;
+    }
+
+    .skenzi-reto-imagen {
+        padding: 50px 25px;
+    }
+
+}
