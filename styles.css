@@ -7044,3 +7044,7 @@ transform: none;
 .skenzi-transformacion-item > span {
     display: none;
 }
+.skenzi-reto-imagen {
+    border-radius: 32px;
+    overflow: hidden;
+}
