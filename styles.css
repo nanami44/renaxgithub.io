@@ -6288,3 +6288,182 @@ url("nueva-evolucion.png") !important;
         transform: translateX(-50%);
     }
 }
+/* ==========================================================
+   RENAX · CASOS DE ESTUDIO
+   ========================================================== */
+
+.renax-casos-estudio {
+    width: 100%;
+    padding: 120px 6vw;
+    background: #050505;
+    color: #ffffff;
+    box-sizing: border-box;
+}
+
+.casos-estudio-header {
+    max-width: 1200px;
+    margin: 0 auto 70px;
+}
+
+.casos-estudio-header > span {
+    display: block;
+    margin-bottom: 20px;
+    color: #d90000;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.casos-estudio-header h2 {
+    margin: 0;
+    font-size: clamp(3rem, 7vw, 7rem);
+    line-height: 0.9;
+    font-weight: 300;
+    letter-spacing: -3px;
+}
+
+.casos-estudio-header h2 strong {
+    font-weight: 800;
+}
+
+.casos-estudio-header p {
+    max-width: 650px;
+    margin-top: 35px;
+    color: #bdbdbd;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.caso-estudio-destacado {
+    max-width: 1400px;
+    min-height: 650px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr;
+    background: #0d0d0d;
+    border: 1px solid #242424;
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.caso-estudio-imagen {
+    min-height: 650px;
+    overflow: hidden;
+}
+
+.caso-estudio-imagen img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.caso-estudio-destacado:hover .caso-estudio-imagen img {
+    transform: scale(1.03);
+}
+
+.caso-estudio-contenido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 70px;
+}
+
+.caso-estudio-etiqueta {
+    color: #d90000;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.caso-estudio-contenido h3 {
+    margin: 0 0 25px;
+    color: #ffffff;
+    font-size: clamp(4rem, 7vw, 7rem);
+    line-height: 0.9;
+    font-weight: 800;
+}
+
+.caso-estudio-contenido p {
+    max-width: 430px;
+    margin: 0 0 40px;
+    color: #bdbdbd;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+.caso-estudio-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    padding: 16px 28px;
+    border: 1px solid #ffffff;
+    border-radius: 40px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: all 0.3s ease;
+}
+
+.caso-estudio-boton:hover {
+    background: #d90000;
+    border-color: #d90000;
+    transform: translateX(6px);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media (max-width: 900px) {
+
+    .renax-casos-estudio {
+        padding: 90px 5vw;
+    }
+
+    .caso-estudio-destacado {
+        grid-template-columns: 1fr;
+    }
+
+    .caso-estudio-imagen {
+        min-height: 450px;
+    }
+
+    .caso-estudio-contenido {
+        padding: 50px 35px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .renax-casos-estudio {
+        padding: 70px 20px;
+    }
+
+    .casos-estudio-header {
+        margin-bottom: 45px;
+    }
+
+    .casos-estudio-header h2 {
+        font-size: 3.2rem;
+    }
+
+    .caso-estudio-imagen {
+        min-height: 300px;
+    }
+
+    .caso-estudio-contenido {
+        padding: 40px 25px;
+    }
+
+    .caso-estudio-contenido h3 {
+        font-size: 4rem;
+    }
+
+}
