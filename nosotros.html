@@ -847,7 +847,7 @@ document.querySelectorAll("a[href]").forEach(function (enlace) {
     });
 
 });
-   /* ==========================================================
+ /* ==========================================================
    TRANSICIÓN VENTANA 2 - QUÉ HACEMOS
    ========================================================== */
 
@@ -856,27 +856,21 @@ const exclusiveWhat = document.querySelector('.exclusive-panel-what');
 
 if (exclusiveSpace && exclusiveWhat) {
 
-    const observer = new IntersectionObserver((entries) => {
+    let activada = false;
 
-        entries.forEach((entry) => {
+    window.addEventListener('scroll', () => {
 
-            if (entry.isIntersecting) {
-                exclusiveWhat.style.transform = 'translateY(0)';
-            }
+        const rect = exclusiveSpace.getBoundingClientRect();
+        const alturaPantalla = window.innerHeight;
 
-        });
+        if (!activada && rect.top < alturaPantalla * 0.70) {
 
-    }, {
-        threshold: 0.45
+            activada = true;
+
+            exclusiveWhat.classList.add('exclusive-show');
+
+        }
+
     });
 
-    observer.observe(exclusiveSpace);
 }
-</script>
-  </script>
-
-
-
-</body>
-</html>
-
