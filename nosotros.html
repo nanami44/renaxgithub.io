@@ -813,11 +813,10 @@ if (faqSection) {
 const transicion = document.getElementById("renaxPageTransition");
 
 if (transicion) {
-    setTimeout(function () {
-        transicion.classList.add("hide");
-    }, 900);
+    transicion.style.opacity = "0";
+    transicion.style.visibility = "hidden";
+    transicion.style.pointerEvents = "none";
 }
-
 document.querySelectorAll("a[href]").forEach(function (enlace) {
 
     enlace.addEventListener("click", function (e) {
