@@ -259,7 +259,36 @@ while (copiaCinturon.firstElementChild) {
     skenziCinturon.appendChild(copiaCinturon.firstElementChild);
 }
 }
-   
+/* ==========================================================
+   SKENZI · CARRUSEL AUTOMÁTICO ANTES → DESPUÉS
+   ========================================================== */
+
+const skenziCarrusel = document.querySelector('.skenzi-comparacion');
+
+if (skenziCarrusel) {
+
+    const copiaCarrusel = skenziCarrusel.innerHTML;
+
+    skenziCarrusel.innerHTML += copiaCarrusel;
+
+    let velocidadCarrusel = 0.6;
+
+    function moverSkenziCarrusel() {
+
+        skenziCarrusel.scrollLeft += velocidadCarrusel;
+
+        if (
+            skenziCarrusel.scrollLeft >=
+            skenziCarrusel.scrollWidth / 2
+        ) {
+            skenziCarrusel.scrollLeft = 0;
+        }
+
+        requestAnimationFrame(moverSkenziCarrusel);
+    }
+
+    moverSkenziCarrusel();
+}   
 </script>
     </body>
 </html>
