@@ -7198,3 +7198,49 @@ transform: none;
 .skenzi-personalidad-header > span {
     display: none !important;
 }
+/* ==========================================================
+   SKENZI · EFECTO PALABRAS
+   UNA NUEVA PERSONALIDAD
+   ========================================================== */
+
+.skenzi-personalidad-palabras span {
+    position: relative;
+    cursor: pointer;
+}
+
+/* Línea roja debajo */
+
+.skenzi-personalidad-palabras span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: #c8102e;
+    transition: width 0.4s ease;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+
+.skenzi-personalidad-palabras span:hover {
+    color: #c8102e;
+    transform: translateY(-6px) scale(1.08);
+    letter-spacing: 3px;
+    text-shadow:
+        0 0 10px rgba(200, 16, 46, 0.45),
+        0 0 25px rgba(200, 16, 46, 0.20);
+}
+
+/* Línea aparece */
+
+.skenzi-personalidad-palabras span:hover::after {
+    width: 100%;
+}
+
+/* Efecto al tocar en celular */
+
+.skenzi-personalidad-palabras span:active {
+    color: #c8102e;
+    transform: translateY(-4px) scale(1.05);
+}
