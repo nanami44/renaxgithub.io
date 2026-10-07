@@ -7029,7 +7029,7 @@ transition: color 0.4s ease;
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0.10;
-    filter: blur(1px);
+  filter: none;
     transform: scale(1.05);
     z-index: 0;
     pointer-events: none;
