@@ -6737,6 +6737,7 @@ overflow: hidden;
 }
 
 .skenzi-transformacion-header h2 {
+   
     max-width: 900px;
     margin: 0;
     font-family: 'Cormorant Garamond', serif;
@@ -6744,8 +6745,12 @@ overflow: hidden;
     font-weight: 500;
     line-height: 0.9;
     letter-spacing: -2px;
+  color: #ffffff;
+transition: color 0.4s ease; 
 }
-
+.skenzi-transformacion-header h2:hover {
+    color: #c8102e;
+}
 .skenzi-transformacion-header p {
     max-width: 650px;
     margin-top: 40px;
