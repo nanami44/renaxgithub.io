@@ -2509,7 +2509,7 @@ transform: translate(20px, -20px) !important;
 
 .exclusive-panel-what h2::after {
     content: "";
-    display: block;
+   display: none;
     width: 90px;
     height: 3px;
     background: #c8102e;
@@ -2528,7 +2528,7 @@ transform: translate(20px, -20px) !important;
 
 .exclusive-panel-what h2::after {
     content: "";
-    display: block;
+    display: none;
     width: 90px;
     height: 3px;
     background: #c8102e;
@@ -2585,6 +2585,7 @@ transform: translate(20px, -20px) !important;
 
 .exclusive-panel-agency::after {
     content: "";
+   display: none;
     position: absolute;
     width: 90px;
     height: 3px;
