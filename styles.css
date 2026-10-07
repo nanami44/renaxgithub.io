@@ -6611,8 +6611,12 @@ url("nueva-evolucion.png") !important;
     font-weight: 500;
     line-height: 0.95;
     letter-spacing: -2px;
+       color: #ffffff;
+    transition: color 0.4s ease;
 }
-
+.skenzi-reto-texto h2:hover {
+    color: #c8102e;
+}
 .skenzi-reto-texto p {
     max-width: 520px;
     margin-top: 35px;
