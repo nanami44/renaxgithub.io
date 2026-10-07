@@ -7089,3 +7089,104 @@ transform: none;
 .skenzi-comparacion-bloque:hover .skenzi-comparacion-imagen img {
     filter: brightness(1.08);
 }
+/* ==========================================================
+   SKENZI · UNA NUEVA PERSONALIDAD
+   ========================================================== */
+
+.skenzi-personalidad {
+    padding: 150px 8vw;
+    background: #050505;
+    color: #ffffff;
+}
+
+.skenzi-personalidad-header {
+    max-width: 900px;
+    margin: 0 auto 90px;
+    text-align: center;
+}
+
+.skenzi-personalidad-header > span {
+    display: block;
+    margin-bottom: 25px;
+    color: #c8102e;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.skenzi-personalidad-header h2 {
+    margin: 0 0 25px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 6vw, 6rem);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -2px;
+}
+
+.skenzi-personalidad-header p {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #cccccc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* PALABRAS */
+
+.skenzi-personalidad-palabras {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px 45px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.skenzi-personalidad-palabras span {
+    display: inline-block;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.1rem, 2vw, 1.7rem);
+    font-weight: 600;
+    letter-spacing: 2px;
+    transition:
+        color 0.35s ease,
+        transform 0.35s ease,
+        letter-spacing 0.35s ease;
+    cursor: default;
+}
+
+/* EFECTO RENAX */
+
+.skenzi-personalidad-palabras span:hover {
+    color: #c8102e;
+    transform: translateY(-5px) scale(1.06);
+    letter-spacing: 3px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 600px) {
+
+    .skenzi-personalidad {
+        padding: 100px 25px;
+    }
+
+    .skenzi-personalidad-header {
+        margin-bottom: 60px;
+    }
+
+    .skenzi-personalidad-header h2 {
+        font-size: 3.4rem;
+    }
+
+    .skenzi-personalidad-palabras {
+        gap: 20px;
+        padding-top: 25px;
+    }
+
+}
