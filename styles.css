@@ -2365,7 +2365,7 @@ transform: translate(20px, -20px) !important;
 .exclusive-panel-benefits {
     background: #050505;
     color: #ffffff;
-    z-index: 2;
+   z-index: 6;
 }
 /* ==========================================================
    DISEÑO TARJETAS - VENTANA 3
@@ -2378,7 +2378,14 @@ transform: translate(20px, -20px) !important;
     padding: 60px;
     box-sizing: border-box;
 }
+.exclusive-panel-benefits {
+    transform: translateY(100%);
+    transition: transform 1s ease;
+}
 
+.exclusive-panel-benefits.exclusive-show {
+    transform: translateY(0);
+}
 .exclusive-benefits {
     width: 100%;
     max-width: 1500px;
