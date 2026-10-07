@@ -7058,6 +7058,8 @@ transform: none;
     overflow: hidden;
 }
 
+/* LÍNEA ROJA · MOVIMIENTO CONTINUO */
+
 .skenzi-comparacion-imagen::after {
     content: "";
     position: absolute;
@@ -7066,13 +7068,22 @@ transform: none;
     width: 3px;
     height: 100%;
     background: #c8102e;
-    transform: translateX(-10px);
-    transition: transform 0.8s ease;
+    transform: translateX(-5px);
     z-index: 3;
 }
 
 .skenzi-comparacion-bloque:hover .skenzi-comparacion-imagen::after {
-    transform: translateX(calc(100% + 7px));
+    animation: skenziLineaMovimiento 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes skenziLineaMovimiento {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100% - 3px));
+    }
 }
 
 .skenzi-comparacion-bloque:hover .skenzi-comparacion-imagen img {
