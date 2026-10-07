@@ -812,15 +812,13 @@ if (faqSection) {
  <script> 
 window.addEventListener("load", function () {
 
-    const transicion = document.getElementById("renaxPageTransition");
+const transicion = document.getElementById("renaxPageTransition");
 
-    if (transicion) {
-        setTimeout(function () {
-            transicion.classList.add("hide");
-        }, 900);
-    }
-
-});
+if (transicion) {
+    setTimeout(function () {
+        transicion.classList.add("hide");
+    }, 900);
+}
 
 document.querySelectorAll("a[href]").forEach(function (enlace) {
 
