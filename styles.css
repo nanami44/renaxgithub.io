@@ -6488,3 +6488,90 @@ url("nueva-evolucion.png") !important;
 .renax-casos-estudio article:nth-of-type(3) .caso-estudio-contenido {
     order: 2;
 }
+/* ==========================================================
+   PORTADA CASO DE ESTUDIO SKENZI
+   ========================================================== */
+
+.skenzi-hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 42% 58%;
+    background: #153628;
+    color: #F7F1E1;
+}
+
+.skenzi-hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8vw;
+}
+
+.skenzi-hero-text > span {
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    opacity: 0.8;
+}
+
+.skenzi-hero h1 {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(5rem, 9vw, 9rem);
+    font-weight: 500;
+    line-height: 0.78;
+    letter-spacing: -4px;
+}
+
+.skenzi-hero h1 em {
+    font-style: normal;
+    font-weight: 400;
+}
+
+.skenzi-hero-subtitle {
+    max-width: 430px;
+    margin: 45px 0 15px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.skenzi-hero-years {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+.skenzi-hero-image {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.skenzi-hero-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .skenzi-hero {
+        grid-template-columns: 1fr;
+    }
+
+    .skenzi-hero-text {
+        min-height: 55vh;
+        padding: 70px 8vw;
+    }
+
+    .skenzi-hero-image {
+        min-height: 60vh;
+    }
+
+}
