@@ -858,12 +858,12 @@ document.querySelectorAll("a[href]").forEach(function (enlace) {
 const exclusiveSpace = document.querySelector('.renax-exclusive-space');
 const exclusiveWhat = document.querySelector('.exclusive-panel-what');
 const exclusiveBenefits = document.querySelector('.exclusive-panel-benefits');
-
-if (exclusiveSpace && exclusiveWhat && exclusiveBenefits) {
+const exclusiveLogo = document.querySelector('.exclusive-panel-logo');
+if (exclusiveSpace && exclusiveWhat && exclusiveBenefits && exclusiveLogo) {
 
     let activadaWhat = false;
     let activadaBenefits = false;
-
+let activadaLogo = false;
     window.addEventListener('scroll', () => {
 
         const rect = exclusiveSpace.getBoundingClientRect();
@@ -884,7 +884,15 @@ if (exclusiveSpace && exclusiveWhat && exclusiveBenefits) {
 
             exclusiveBenefits.classList.add('exclusive-show');
         }
+/* VENTANA 4 - LOGO RENAX */
 
+if (!activadaLogo && rect.top < alturaPantalla * 0.15) {
+
+    activadaLogo = true;
+
+    exclusiveLogo.classList.add('exclusive-show');
+
+}
     });
 
 }
