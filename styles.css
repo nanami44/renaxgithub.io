@@ -6467,3 +6467,24 @@ url("nueva-evolucion.png") !important;
     }
 
 }
+/* ==========================================================
+   ALTERNANCIA DE CASOS DE ESTUDIO
+   ========================================================== */
+
+/* IDEAS · imagen a la derecha */
+.renax-casos-estudio article:nth-of-type(2) .caso-estudio-imagen {
+    order: 2;
+}
+
+.renax-casos-estudio article:nth-of-type(2) .caso-estudio-contenido {
+    order: 1;
+}
+
+/* DÍA DE LAS MATEMÁTICAS · imagen a la izquierda */
+.renax-casos-estudio article:nth-of-type(3) .caso-estudio-imagen {
+    order: 1;
+}
+
+.renax-casos-estudio article:nth-of-type(3) .caso-estudio-contenido {
+    order: 2;
+}
