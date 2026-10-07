@@ -6680,3 +6680,117 @@ url("nueva-evolucion.png") !important;
     }
 
 }
+/* ==========================================================
+   SKENZI · LA TRANSFORMACIÓN
+   ========================================================== */
+
+.skenzi-transformacion {
+    padding: 140px 8vw;
+    background: #153628;
+    color: #F7F1E1;
+}
+
+.skenzi-transformacion-header {
+    max-width: 950px;
+    margin-bottom: 90px;
+}
+
+.skenzi-transformacion-header > span {
+    display: block;
+    margin-bottom: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.skenzi-transformacion-header h2 {
+    max-width: 900px;
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 6vw, 7rem);
+    font-weight: 500;
+    line-height: 0.9;
+    letter-spacing: -2px;
+}
+
+.skenzi-transformacion-header p {
+    max-width: 650px;
+    margin-top: 40px;
+    color: rgba(247, 241, 225, 0.75);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.skenzi-transformacion-lista {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: 1px solid rgba(247, 241, 225, 0.3);
+}
+
+.skenzi-transformacion-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    min-height: 120px;
+    padding: 25px 10px;
+    border-bottom: 1px solid rgba(247, 241, 225, 0.3);
+}
+
+.skenzi-transformacion-item:nth-child(odd) {
+    border-right: 1px solid rgba(247, 241, 225, 0.3);
+    padding-right: 50px;
+}
+
+.skenzi-transformacion-item:nth-child(even) {
+    padding-left: 50px;
+}
+
+.skenzi-transformacion-item span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    opacity: 0.55;
+}
+
+.skenzi-transformacion-item strong {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+
+    .skenzi-transformacion {
+        padding: 100px 8vw;
+    }
+
+    .skenzi-transformacion-lista {
+        grid-template-columns: 1fr;
+    }
+
+    .skenzi-transformacion-item:nth-child(odd) {
+        border-right: none;
+        padding-right: 10px;
+    }
+
+    .skenzi-transformacion-item:nth-child(even) {
+        padding-left: 10px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .skenzi-transformacion {
+        padding: 80px 25px;
+    }
+
+    .skenzi-transformacion-header h2 {
+        font-size: 3.6rem;
+    }
+
+}
