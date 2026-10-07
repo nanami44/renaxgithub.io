@@ -7244,3 +7244,41 @@ transform: none;
     color: #c8102e;
     transform: translateY(-4px) scale(1.05);
 }
+/* ==========================================================
+   SKENZI · CARRUSEL ANTES → DESPUÉS
+   ========================================================== */
+
+.skenzi-comparacion {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    gap: 30px;
+}
+
+.skenzi-comparacion-bloque {
+    flex: 0 0 calc((100% - 60px) / 3);
+}
+
+/* Movimiento suave */
+
+.skenzi-comparacion {
+    scroll-behavior: smooth;
+}
+
+/* En pantallas pequeñas */
+
+@media (max-width: 900px) {
+
+    .skenzi-comparacion-bloque {
+        flex: 0 0 75%;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .skenzi-comparacion-bloque {
+        flex: 0 0 90%;
+    }
+
+}
