@@ -7548,7 +7548,8 @@ body {
     position: relative;
     z-index: 6;
     width: 100%;
-    padding: 35px 8%;
+  padding: 100px 8% 160px;
+min-height: 100vh;
     background: rgba(5, 5, 5, 0.72);
     backdrop-filter: blur(6px);
     text-align: center;
