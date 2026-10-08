@@ -418,7 +418,50 @@
             }
 
         }
+/* =========================================
+   CINTURÓN SKENZI
+   ========================================= */
 
+.skenzi-cinturon {
+    width: 100%;
+    overflow: hidden;
+    background: #c8102e;
+    padding: 22px 0;
+}
+
+.skenzi-cinturon-pista {
+    display: flex;
+    width: max-content;
+    animation: skenziCinturon 22s linear infinite;
+}
+
+.skenzi-cinturon-grupo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.skenzi-cinturon-grupo span {
+    color: #050505;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    margin-right: 65px;
+}
+
+@keyframes skenziCinturon {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
+}
     </style>
 
 </head>
