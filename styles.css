@@ -7570,3 +7570,35 @@ min-height: 100vh;
     font-size: 16px;
     line-height: 1.6;
 }
+
+/* ==================================================
+   SKENZI · TEXTO + IMAGEN
+   ================================================== */
+
+.skenzi-intro-contenido {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+    max-width: 1400px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.skenzi-intro-contenido h2,
+.skenzi-intro-contenido p {
+    max-width: 560px;
+}
+
+.skenzi-intro-imagen {
+    flex: 0 0 52%;
+    max-width: 700px;
+}
+
+.skenzi-intro-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 32px;
+    object-fit: cover;
+}
