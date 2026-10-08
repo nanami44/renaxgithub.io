@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Día de las Especialidades | RENAX</title>
+
+    <!-- TIPOGRAFÍAS RENAX -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================================
+           CONFIGURACIÓN GENERAL
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #050505;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        /* =========================================
+           PORTADA
+        ========================================= */
+
+        .especialidades-portada {
+            min-height: 100vh;
+            padding: 150px 7vw 120px;
+
+            background: #050505;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .especialidades-portada-contenido {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .especialidades-etiqueta {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            color: #c8102e;
+
+            margin-bottom: 30px;
+        }
+
+        .especialidades-portada h1 {
+            max-width: 1100px;
+
+            margin: 0 0 45px;
+
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(65px, 9vw, 140px);
+            line-height: 0.85;
+            font-weight: 500;
+
+            letter-spacing: -2px;
+        }
+
+        .especialidades-portada-descripcion {
+            max-width: 720px;
+
+            margin: 0;
+
+            font-size: 17px;
+            line-height: 1.9;
+
+            color: #cccccc;
+        }
+
+
+        /* =========================================
+           VIDEO
+        ========================================= */
+
+        .especialidades-video {
+            padding: 120px 7vw 170px;
+
+            background: #ffffff;
+            color: #050505;
+        }
+
+        .especialidades-video-contenido {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .especialidades-video-marco {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+
+            background: #111111;
+
+            border: 1px solid #292929;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .especialidades-video-placeholder {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .especialidades-video-placeholder span {
+            display: block;
+
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            color: #c8102e;
+
+            margin-bottom: 15px;
+        }
+
+        .especialidades-video-placeholder p {
+            margin: 0;
+
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+
+            color: #ffffff;
+        }
+
+
+        /* =========================================
+           CIERRE
+        ========================================= */
+
+        .especialidades-cierre {
+            padding: 150px 7vw;
+
+            background: #050505;
+            color: #ffffff;
+
+            text-align: center;
+        }
+
+        .especialidades-cierre-contenido {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .especialidades-cierre h2 {
+            margin: 0 0 45px;
+
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(45px, 6vw, 85px);
+            line-height: 0.95;
+            font-weight: 500;
+        }
+
+        .especialidades-cierre p {
+            margin: 0;
+
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            color: #c8102e;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .especialidades-portada {
+                min-height: auto;
+                padding: 110px 25px 100px;
+            }
+
+            .especialidades-video {
+                padding: 90px 25px 110px;
+            }
+
+            .especialidades-portada h1 {
+                font-size: clamp(55px, 14vw, 90px);
+            }
+
+            .especialidades-portada-descripcion {
+                font-size: 15px;
+            }
+
+            .especialidades-video-placeholder p {
+                font-size: 28px;
+            }
+
+            .especialidades-cierre {
+                padding: 110px 25px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         PORTADA
+    ========================================= -->
+
+    <section class="especialidades-portada">
+
+        <div class="especialidades-portada-contenido">
+
+            <div class="especialidades-etiqueta">
+                Caso de estudio · 02
+            </div>
+
+            <h1>
+                DÍA DE LAS<br>
+                ESPECIALIDADES
+            </h1>
+
+            <p class="especialidades-portada-descripcion">
+                Una propuesta visual creada para comunicar el Día de las
+                Especialidades de una manera atractiva, cercana y memorable,
+                destacando el talento, la creatividad y las diferentes áreas
+                que hacen parte de esta celebración.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         VIDEO
+    ========================================= -->
+
+    <section class="especialidades-video">
+
+        <div class="especialidades-video-contenido">
+
+            <div class="especialidades-etiqueta">
+                La campaña
+            </div>
+
+            <div class="especialidades-video-marco">
+
+                <div class="especialidades-video-placeholder">
+
+                    <span>
+                        Video del proyecto
+                    </span>
+
+                    <p>
+                        Aquí irá el video de la campaña
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CIERRE
+    ========================================= -->
+
+    <section class="especialidades-cierre">
+
+        <div class="especialidades-cierre-contenido">
+
+            <h2>
+                Transformar una idea también es encontrar
+                una nueva forma de conectar con las personas.
+            </h2>
+
+            <p>
+                RENAX — TRANSFORMAMOS MARCAS SIN BORRAR SU HISTORIA.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</body>
+</html>
