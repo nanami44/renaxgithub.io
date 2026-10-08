@@ -7454,7 +7454,7 @@ body {
     object-fit: cover;
     display: block;
 
-    animation: skenziMovimientoCircular 28s ease-in-out infinite;
+    animation: skenziMovimientoCircular 35s linear infinite;
 
     filter: blur(1.2px);
     transform-origin: center center;
@@ -7462,6 +7462,15 @@ body {
 
 @keyframes skenziMovimientoCircular {
 
+    from {
+        transform: rotate(0deg) scale(1.08);
+    }
+
+    to {
+        transform: rotate(360deg) scale(1.08);
+    }
+
+}
     0% {
         transform: rotate(-2deg) scale(1.08);
     }
