@@ -7577,22 +7577,49 @@ min-height: 100vh;
 
 .skenzi-intro-contenido {
     display: flex;
+    .skenzi-intro-contenido {
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 70px;
-    max-width: 1400px;
+    gap: 90px;
+    max-width: 1300px;
     margin: 0 auto;
     text-align: left;
 }
 
-.skenzi-intro-contenido h2,
-.skenzi-intro-contenido p {
-    max-width: 560px;
+.skenzi-intro-texto {
+    flex: 1;
+    max-width: 540px;
+}
+
+.skenzi-intro-texto h2 {
+    margin: 0 0 28px;
+    font-family: "Bodoni Moda", "Times New Roman", serif;
+    font-size: clamp(38px, 4vw, 58px);
+    font-weight: 400;
+    line-height: 1.08;
+    color: #ffffff;
+}
+
+.skenzi-intro-texto p {
+    max-width: 520px;
+    margin: 0;
+    color: #dddddd;
+    font-size: 17px;
+    line-height: 1.8;
 }
 
 .skenzi-intro-imagen {
-    flex: 0 0 52%;
-    max-width: 700px;
+    flex: 0 0 42%;
+    max-width: 540px;
+}
+
+.skenzi-intro-imagen img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    object-fit: cover;
 }
 
 .skenzi-intro-imagen img {
