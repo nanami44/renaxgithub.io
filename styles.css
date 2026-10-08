@@ -6381,7 +6381,7 @@ url("nueva-evolucion.png") !important;
 .caso-estudio-contenido h3 {
     margin: 0 0 25px;
     color: #ffffff;
-    font-size: clamp(4rem, 7vw, 7rem);
+   font-size: clamp(3rem, 5vw, 5rem);
     line-height: 0.9;
     font-weight: 800;
 }
