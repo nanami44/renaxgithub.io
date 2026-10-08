@@ -6731,7 +6731,7 @@ padding: 0 8vw 140px;
    color: #ffffff;
 
 .skenzi-transformacion-header {
-   margin-top: -180px !important;
+  margin-top: 0 !important;
 }
 .skenzi-transformacion-header {
     max-width: 950px;
