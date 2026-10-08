@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Donut's Bites | RENAX</title>
+
+
+    <!-- =========================
+         TIPOGRAFÍAS
+    ========================= -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <style>
+
+        /* =========================
+           CONFIGURACIÓN GENERAL
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+            background: #050505;
+            color: #ffffff;
+
+            font-family: 'Montserrat', sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           TRANSICIÓN RENAX
+        ========================= */
+
+        .renax-page-transition {
+
+            position: fixed;
+
+            inset: 0;
+
+            background: #050505;
+
+            z-index: 9999;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transition:
+                opacity 0.7s ease,
+                visibility 0.7s ease;
+        }
+
+
+        .renax-page-transition.hide {
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            pointer-events: none;
+        }
+
+
+        .transition-logo-image {
+
+            width: 150px;
+
+            max-width: 45vw;
+        }
+
+
+        /* =========================
+           BOTÓN VOLVER
+        ========================= */
+
+        .renax-back {
+
+            position: fixed;
+
+            top: 30px;
+
+            left: 35px;
+
+            z-index: 1000;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 2px;
+
+            border: 1px solid rgba(255,255,255,0.35);
+
+            padding: 12px 18px;
+
+            transition: 0.3s ease;
+        }
+
+
+        .renax-back:hover {
+
+            background: #c8102e;
+
+            border-color: #c8102e;
+        }
+
+
+        /* =========================
+           PORTADA
+        ========================= */
+
+        .hero-donut {
+
+            background: #050505;
+
+            padding: 110px 8% 100px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .hero-content {
+
+            width: 100%;
+
+            max-width: 1400px;
+
+            margin: 0 auto;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =========================
+           IMAGEN PRINCIPAL
+        ========================= */
+
+        .hero-image {
+
+            width: 100%;
+
+            height: 70vh;
+
+            min-height: 500px;
+
+            background: #111111;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+            margin-bottom: 55px;
+        }
+
+
+        .hero-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            padding: 40px;
+        }
+
+
+        /* =========================
+           INFORMACIÓN DE PORTADA
+        ========================= */
+
+        .hero-info {
+
+            max-width: 1000px;
+        }
+
+
+        .hero-label {
+
+            display: block;
+
+            color: #c8102e;
+
+            font-size: 12px;
+
+            font-weight: 600;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero-title {
+
+            font-family: 'Baloo 2', sans-serif;
+
+            font-size: clamp(4rem, 8vw, 8rem);
+
+            font-weight: 800;
+
+            line-height: 0.85;
+
+            color: #ffffff;
+
+            margin-bottom: 35px;
+        }
+
+
+        .hero-title span {
+
+            color: #c8102e;
+        }
+
+
+        .hero-description {
+
+            max-width: 800px;
+
+            color: #cccccc;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        .hero-line {
+
+            width: 100%;
+
+            height: 1px;
+
+            background: rgba(255,255,255,0.15);
+
+            margin-top: 65px;
+        }
+
+
+        /* =========================
+           SECCIONES GENERALES
+        ========================= */
+
+        .section {
+
+            padding: 110px 8%;
+        }
+
+
+        .section-white {
+
+            background: #ffffff;
+
+            color: #050505;
+        }
+
+
+        .section-dark {
+
+            background: #050505;
+
+            color: #ffffff;
+        }
+
+
+        .section-header {
+
+            max-width: 1100px;
+
+            margin: 0 auto 65px;
+        }
+
+
+        .section-number {
+
+            display: block;
+
+            color: #c8102e;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .section-title {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(3rem, 6vw, 6rem);
+
+            line-height: 0.95;
+
+            margin-bottom: 25px;
+        }
+
+
+        .section-intro {
+
+            max-width: 750px;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           01 · LA HISTORIA
+        ========================= */
+
+        .historia-grid {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .historia-text p {
+
+            font-size: 17px;
+
+            line-height: 1.9;
+
+            margin-bottom: 25px;
+        }
+
+
+        .historia-image {
+
+            background: #050505;
+
+            min-height: 430px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 40px;
+        }
+
+
+        .historia-image img {
+
+            width: 100%;
+
+            max-width: 480px;
+
+            height: auto;
+
+            object-fit: contain;
+        }
+
+
+        /* =========================
+           02 · LA ESENCIA
+        ========================= */
+
+        .esencia {
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        .esencia-box {
+
+            border-top: 1px solid rgba(255,255,255,0.2);
+
+            padding: 45px 0;
+
+            display: grid;
+
+            grid-template-columns: 1fr 2fr;
+
+            gap: 50px;
+        }
+
+
+        .esencia-label {
+
+            color: #c8102e;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+        }
+
+
+        .esencia-content {
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 20px;
+
+            line-height: 1.8;
+        }
+
+
+        .palabras {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-top: 30px;
+        }
+
+
+        .palabra {
+
+            border: 1px solid rgba(255,255,255,0.3);
+
+            padding: 10px 18px;
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 13px;
+        }
+
+
+        /* =========================
+           03 · IDENTIDAD VISUAL
+        ========================= */
+
+        .identidad {
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        .identidad-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 25px;
+        }
+
+
+        .identidad-card {
+
+            background: #111111;
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            padding: 45px;
+
+            min-height: 280px;
+        }
+
+
+        .identidad-card h3 {
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 22px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .identidad-card p {
+
+            color: #cccccc;
+
+            font-size: 15px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           PALETA DE COLORES
+        ========================= */
+
+        .paleta {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+
+            margin-top: 25px;
+        }
+
+
+        .color-item {
+
+            flex: 1;
+
+            min-width: 120px;
+        }
+
+
+        .color {
+
+            height: 90px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .color-name {
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 12px;
+
+            color: #cccccc;
+        }
+
+
+        .blue-principal {
+
+            background: #0057FF;
+        }
+
+
+        .blue-secondary {
+
+            background: #3CA9FF;
+        }
+
+
+        .cream {
+
+            background: #FFF7E6;
+        }
+
+
+        .yellow {
+
+            background: #FFD633;
+        }
+
+
+        /* =========================
+           TIPOGRAFÍA
+        ========================= */
+
+        .font-demo {
+
+            margin-top: 30px;
+        }
+
+
+        .font-baloo {
+
+            font-family: 'Baloo 2', sans-serif;
+
+            font-size: 42px;
+
+            font-weight: 800;
+
+            margin-bottom: 15px;
+        }
+
+
+        .font-poppins {
+
+            font-family: 'Poppins', sans-serif;
+
+            font-size: 20px;
+        }
+
+
+        /* =========================
+           04 · DESARROLLO
+        ========================= */
+
+        .aplicaciones {
+
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+
+        .aplicaciones-grid {
+
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+
+        .aplicacion {
+
+            min-height: 300px;
+
+            background: #111111;
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .aplicacion img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: contain;
+
+            padding: 25px;
+        }
+
+
+        .aplicacion-label {
+
+            position: absolute;
+
+            bottom: 18px;
+
+            left: 20px;
+
+            font-size: 10px;
+
+            letter-spacing: 2px;
+
+            color: rgba(255,255,255,0.6);
+        }
+
+
+        /* =========================
+           CIERRE
+        ========================= */
+
+        .cierre {
+
+            min-height: 80vh;
+
+            background: #050505;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 100px 8%;
+        }
+
+
+        .cierre-content {
+
+            max-width: 900px;
+        }
+
+
+        .cierre-frase {
+
+            font-family: 'Cormorant Garamond', serif;
+
+            font-size: clamp(3rem, 6vw, 6rem);
+
+            line-height: 1;
+
+            margin-bottom: 45px;
+        }
+
+
+        .cierre-renax {
+
+            color: #c8102e;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 45px;
+        }
+
+
+        .volver {
+
+            display: inline-block;
+
+            text-decoration: none;
+
+            color: #ffffff;
+
+            border: 1px solid rgba(255,255,255,0.4);
+
+            padding: 15px 28px;
+
+            font-size: 11px;
+
+            font-weight: 600;
+
+            letter-spacing: 2px;
+
+            transition: 0.3s ease;
+        }
+
+
+        .volver:hover {
+
+            background: #c8102e;
+
+            border-color: #c8102e;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .renax-back {
+
+                top: 20px;
+
+                left: 20px;
+            }
+
+
+            .hero-donut {
+
+                padding: 110px 7% 70px;
+            }
+
+
+            .hero-image {
+
+                height: 45vh;
+
+                min-height: 300px;
+
+                margin-bottom: 40px;
+            }
+
+
+            .hero-image img {
+
+                padding: 20px;
+            }
+
+
+            .hero-title {
+
+                font-size: clamp(3.5rem, 16vw, 6rem);
+            }
+
+
+            .section {
+
+                padding: 80px 7%;
+            }
+
+
+            .historia-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 40px;
+            }
+
+
+            .esencia-box {
+
+                grid-template-columns: 1fr;
+
+                gap: 20px;
+            }
+
+
+            .identidad-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .aplicaciones-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .identidad-card {
+
+                padding: 30px;
+            }
+
+
+            .historia-image {
+
+                min-height: 300px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         TRANSICIÓN RENAX
+    ========================= -->
+
+    <div class="renax-page-transition"
+         id="renaxPageTransition">
+
+        <div class="renax-transition-logo">
+
+            <img
+                src="logo-renax-transparente.png"
+                alt="RENAX"
+                class="transition-logo-image"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         VOLVER AL PORTAFOLIO
+    ========================= -->
+
+    <a href="portafolio.html"
+       class="renax-back">
+
+        ← VOLVER AL PORTAFOLIO
+
+    </a>
+
+
+    <!-- =========================
+         PORTADA
+    ========================= -->
+
+    <section class="hero-donut">
+
+        <div class="hero-content">
+
+
+            <!-- IMAGEN GRANDE -->
+
+            <div class="hero-image">
+
+                <img
+                    src="donuts-bites.png.png"
+                    alt="Donut's Bites"
+                >
+
+            </div>
+
+
+            <!-- TÍTULO Y DESCRIPCIÓN -->
+
+            <div class="hero-info">
+
+                <span class="hero-label">
+                    CASO DE ESTUDIO · 04
+                </span>
+
+
+                <h1 class="hero-title">
+
+                    DONUT'S <span>BITES</span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Una identidad visual creada para una marca divertida,
+                    fresca y juvenil, donde el personaje y la dona se
+                    convierten en protagonistas de una propuesta llena
+                    de color, energía y personalidad.
+
+                </p>
+
+            </div>
+
+
+            <div class="hero-line"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         01 · LA HISTORIA
+    ========================= -->
+
+    <section class="section section-white">
+
+
+        <div class="section-header">
+
+            <span class="section-number">
+                01 · LA HISTORIA
+            </span>
+
+
+            <h2 class="section-title">
+
+                Una marca con<br>
+                personalidad.
+
+            </h2>
+
+
+            <p class="section-intro">
+
+                DONUT'S BITES se presenta como una marca de carácter
+                divertido, fresco y juvenil. Su identidad parte de dos
+                elementos protagonistas: un personaje y una dona,
+                que juntos construyen un universo visual cercano
+                y reconocible.
+
+            </p>
+
+        </div>
+
+
+        <div class="historia-grid">
+
+
+            <div class="historia-text">
+
+                <p>
+
+                    La propuesta visual busca que la marca pueda
+                    transmitir su personalidad desde el primer contacto,
+                    utilizando elementos gráficos capaces de generar
+                    reconocimiento y conexión.
+
+                </p>
+
+
+                <p>
+
+                    El personaje y la dona funcionan como protagonistas
+                    de la identidad y permiten construir una imagen
+                    dinámica, expresiva y fácil de recordar.
+
+                </p>
+
+            </div>
+
+
+            <div class="historia-image">
+
+                <img
+                    src="donuts-bites.png.png"
+                    alt="Donut's Bites"
+                >
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         02 · LA ESENCIA
+    ========================= -->
+
+    <section class="section section-dark">
+
+
+        <div class="esencia">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    02 · LA ESENCIA
+                </span>
+
+
+                <h2 class="section-title">
+
+                    Divertida.<br>
+                    Fresca.<br>
+                    Juvenil.
+
+                </h2>
+
+            </div>
+
+
+            <div class="esencia-box">
+
+
+                <div class="esencia-label">
+
+                    PERSONALIDAD
+
+                </div>
+
+
+                <div class="esencia-content">
+
+                    <p>
+
+                        La identidad de DONUT'S BITES se construye
+                        alrededor de una personalidad alegre y
+                        expresiva, donde el color, el personaje
+                        y la dona trabajan juntos para crear
+                        una experiencia visual atractiva.
+
+                    </p>
+
+
+                    <div class="palabras">
+
+
+                        <span class="palabra">
+                            DIVERTIDA
+                        </span>
+
+
+                        <span class="palabra">
+                            FRESCA
+                        </span>
+
+
+                        <span class="palabra">
+                            JUVENIL
+                        </span>
+
+
+                        <span class="palabra">
+                            CREATIVA
+                        </span>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         03 · IDENTIDAD VISUAL
+    ========================= -->
+
+    <section class="section section-dark">
+
+
+        <div class="identidad">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    03 · IDENTIDAD VISUAL
+                </span>
+
+
+                <h2 class="section-title">
+
+                    Construir<br>
+                    reconocimiento.
+
+                </h2>
+
+
+                <p class="section-intro">
+
+                    Cada elemento visual fue pensado para reforzar
+                    la personalidad de DONUT'S BITES y mantener
+                    una comunicación coherente.
+
+                </p>
+
+            </div>
+
+
+            <div class="identidad-grid">
+
+
+                <!-- COLOR -->
+
+                <div class="identidad-card">
+
+                    <h3>
+                        Color
+                    </h3>
+
+
+                    <p>
+
+                        Una paleta vibrante que combina energía,
+                        frescura y un carácter juvenil.
+
+                    </p>
+
+
+                    <div class="paleta">
+
+
+                        <div class="color-item">
+
+                            <div class="color blue-principal"></div>
+
+                            <span class="color-name">
+                                #0057FF
+                            </span>
+
+                        </div>
+
+
+                        <div class="color-item">
+
+                            <div class="color blue-secondary"></div>
+
+                            <span class="color-name">
+                                #3CA9FF
+                            </span>
+
+                        </div>
+
+
+                        <div class="color-item">
+
+                            <div class="color cream"></div>
+
+                            <span class="color-name">
+                                #FFF7E6
+                            </span>
+
+                        </div>
+
+
+                        <div class="color-item">
+
+                            <div class="color yellow"></div>
+
+                            <span class="color-name">
+                                #FFD633
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TIPOGRAFÍA -->
+
+                <div class="identidad-card">
+
+                    <h3>
+                        Tipografía
+                    </h3>
+
+
+                    <p>
+
+                        La combinación tipográfica refuerza
+                        el carácter divertido y cercano
+                        de la marca.
+
+                    </p>
+
+
+                    <div class="font-demo">
+
+
+                        <div class="font-baloo">
+                            Baloo 2
+                        </div>
+
+
+                        <div class="font-poppins">
+                            Poppins
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!-- PERSONAJE -->
+
+                <div class="identidad-card">
+
+                    <h3>
+                        Personaje
+                    </h3>
+
+
+                    <p>
+
+                        El personaje funciona como uno de los
+                        elementos protagonistas de la identidad,
+                        aportando expresión y personalidad
+                        a la marca.
+
+                    </p>
+
+                </div>
+
+
+                <!-- DONA -->
+
+                <div class="identidad-card">
+
+                    <h3>
+                        Elemento protagonista
+                    </h3>
+
+
+                    <p>
+
+                        La dona se integra con el personaje
+                        para construir un recurso visual
+                        reconocible y directamente relacionado
+                        con la esencia de DONUT'S BITES.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         04 · DESARROLLO
+    ========================= -->
+
+    <section class="section section-white">
+
+
+        <div class="aplicaciones">
+
+
+            <div class="section-header">
+
+                <span class="section-number">
+                    04 · DESARROLLO
+                </span>
+
+
+                <h2 class="section-title">
+
+                    La identidad<br>
+                    toma forma.
+
+                </h2>
+
+
+                <p class="section-intro">
+
+                    El desarrollo visual permite llevar la identidad
+                    de DONUT'S BITES a diferentes piezas y espacios,
+                    manteniendo sus elementos principales como
+                    punto de reconocimiento.
+
+                </p>
+
+            </div>
+
+
+            <div class="aplicaciones-grid">
+
+
+                <div class="aplicacion">
+
+                    <img
+                        src="donuts-bites.png.png"
+                        alt="Aplicación Donut's Bites"
+                    >
+
+
+                    <span class="aplicacion-label">
+                        IDENTIDAD · 01
+                    </span>
+
+                </div>
+
+
+                <div class="aplicacion">
+
+                    <span class="aplicacion-label">
+                        APLICACIÓN · 02
+                    </span>
+
+                </div>
+
+
+                <div class="aplicacion">
+
+                    <span class="aplicacion-label">
+                        APLICACIÓN · 03
+                    </span>
+
+                </div>
+
+
+                <div class="aplicacion">
+
+                    <span class="aplicacion-label">
+                        APLICACIÓN · 04
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CIERRE
+    ========================= -->
+
+    <section class="cierre">
+
+
+        <div class="cierre-content">
+
+
+            <div class="cierre-frase">
+
+                Transformar una idea también
+                es encontrar una nueva forma
+                de conectar con las personas.
+
+            </div>
+
+
+            <div class="cierre-renax">
+
+                RENAX — TRANSFORMAMOS MARCAS
+                SIN BORRAR SU HISTORIA.
+
+            </div>
+
+
+            <a href="portafolio.html"
+               class="volver">
+
+                VOLVER AL PORTAFOLIO →
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const transicion =
+                    document.getElementById(
+                        "renaxPageTransition"
+                    );
+
+
+                if (transicion) {
+
+                    setTimeout(
+                        function () {
+
+                            transicion.classList.add("hide");
+
+                        },
+                        600
+                    );
+
+                }
+
+            }
+        );
+
+    </script>
+
+
+</body>
+</html>
