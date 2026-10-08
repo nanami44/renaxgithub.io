@@ -7629,3 +7629,169 @@ min-height: 100vh;
     border-radius: 32px;
     object-fit: cover;
 }
+/* ==========================================================
+   CIERRE DEL PORTAFOLIO
+   ========================================================== */
+
+.renax-portfolio-cierre {
+    min-height: 75vh;
+    background: #050505;
+    color: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 8%;
+}
+
+
+.portfolio-cierre-contenido {
+    width: 100%;
+    max-width: 1000px;
+}
+
+
+.portfolio-cierre-etiqueta {
+    display: block;
+
+    color: #c8102e;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 30px;
+}
+
+
+.portfolio-cierre-contenido h2 {
+    margin: 0 0 30px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(3.5rem, 7vw, 7rem);
+
+    line-height: 0.9;
+
+    font-weight: 400;
+}
+
+
+.portfolio-cierre-contenido h2 strong {
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+.portfolio-cierre-contenido p {
+    max-width: 650px;
+
+    margin: 0 auto 40px;
+
+    color: #cccccc;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+.portfolio-cierre-boton {
+    display: inline-block;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border: 1px solid rgba(255,255,255,0.45);
+
+    padding: 16px 30px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    transition: all 0.3s ease;
+}
+
+
+.portfolio-cierre-boton:hover {
+    background: #c8102e;
+
+    border-color: #c8102e;
+}
+
+
+.portfolio-cierre-linea {
+    width: 100%;
+
+    max-width: 700px;
+
+    height: 1px;
+
+    background: rgba(255,255,255,0.15);
+
+    margin: 70px auto 30px;
+}
+
+
+.portfolio-cierre-renax {
+    display: block;
+
+    color: #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================
+   CIERRE · MÓVIL
+========================= */
+
+@media (max-width: 800px) {
+
+    .renax-portfolio-cierre {
+        min-height: 70vh;
+
+        padding: 90px 7%;
+    }
+
+
+    .portfolio-cierre-contenido h2 {
+        font-size: clamp(3rem, 13vw, 5rem);
+    }
+
+
+    .portfolio-cierre-contenido p {
+        font-size: 15px;
+    }
+
+
+    .portfolio-cierre-boton {
+        padding: 14px 22px;
+    }
+
+
+    .portfolio-cierre-linea {
+        margin-top: 55px;
+    }
+
+
+    .portfolio-cierre-renax {
+        line-height: 1.7;
+    }
+
+}
