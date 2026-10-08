@@ -7404,3 +7404,9 @@ transform: none;
     background: transparent !important;
     color: #050505 !important;
 }
+/* QUITAR CUADRO DE FONDO DE LA IMAGEN · EL RETO */
+
+.skenzi-reto-imagen {
+    background: transparent !important;
+    padding: 0 !important;
+}
