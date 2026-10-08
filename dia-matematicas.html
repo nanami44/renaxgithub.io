@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Día de las Matemáticas | RENAX</title>
+
+    <!-- TIPOGRAFÍAS RENAX -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================================
+           CONFIGURACIÓN GENERAL
+        ========================================= */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: #050505;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+
+        /* =========================================
+           PORTADA
+        ========================================= */
+
+        .matematicas-portada {
+            min-height: 100vh;
+            padding: 150px 7vw 120px;
+
+            background: #050505;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .matematicas-portada-contenido {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .matematicas-etiqueta {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            color: #c8102e;
+
+            margin-bottom: 30px;
+        }
+
+        .matematicas-portada h1 {
+            max-width: 1100px;
+
+            margin: 0 0 45px;
+
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(70px, 10vw, 150px);
+            line-height: 0.85;
+            font-weight: 500;
+
+            letter-spacing: -2px;
+        }
+
+        .matematicas-portada-descripcion {
+            max-width: 720px;
+
+            margin: 0;
+
+            font-size: 17px;
+            line-height: 1.9;
+
+            color: #cccccc;
+        }
+
+
+        /* =========================================
+           VIDEO
+        ========================================= */
+
+        .matematicas-video {
+            padding: 120px 7vw 170px;
+
+            background: #ffffff;
+            color: #050505;
+        }
+
+        .matematicas-video-contenido {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .matematicas-video-marco {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+
+            background: #111111;
+
+            border: 1px solid #292929;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+        }
+
+        .matematicas-video-placeholder {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .matematicas-video-placeholder span {
+            display: block;
+
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            color: #c8102e;
+
+            margin-bottom: 15px;
+        }
+
+        .matematicas-video-placeholder p {
+            margin: 0;
+
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+
+            color: #ffffff;
+        }
+
+
+        /* =========================================
+           CIERRE
+        ========================================= */
+
+        .matematicas-cierre {
+            padding: 150px 7vw;
+
+            background: #050505;
+            color: #ffffff;
+
+            text-align: center;
+        }
+
+        .matematicas-cierre-contenido {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .matematicas-cierre h2 {
+            margin: 0 0 45px;
+
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(45px, 6vw, 85px);
+            line-height: 0.95;
+            font-weight: 500;
+        }
+
+        .matematicas-cierre p {
+            margin: 0;
+
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+
+            letter-spacing: 3px;
+            text-transform: uppercase;
+
+            color: #c8102e;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            .matematicas-portada {
+                min-height: auto;
+                padding: 110px 25px 100px;
+            }
+
+            .matematicas-video {
+                padding: 90px 25px 110px;
+            }
+
+            .matematicas-portada h1 {
+                font-size: clamp(55px, 15vw, 90px);
+            }
+
+            .matematicas-portada-descripcion {
+                font-size: 15px;
+            }
+
+            .matematicas-video-placeholder p {
+                font-size: 28px;
+            }
+
+            .matematicas-cierre {
+                padding: 110px 25px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         PORTADA
+    ========================================= -->
+
+    <section class="matematicas-portada">
+
+        <div class="matematicas-portada-contenido">
+
+            <div class="matematicas-etiqueta">
+                Caso de estudio · 03
+            </div>
+
+            <h1>
+                DÍA DE LAS<br>
+                MATEMÁTICAS
+            </h1>
+
+            <p class="matematicas-portada-descripcion">
+                Una campaña visual creada para conmemorar el Día Internacional
+                de las Matemáticas y acercar esta celebración a los estudiantes
+                de una manera dinámica, creativa y atractiva. La propuesta buscó
+                despertar el interés por las matemáticas, incentivar la participación
+                y convertir la fecha en una experiencia memorable para la comunidad
+                educativa del I.E. Eustaquio Palacios.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         VIDEO
+    ========================================= -->
+
+    <section class="matematicas-video">
+
+        <div class="matematicas-video-contenido">
+
+            <div class="matematicas-etiqueta">
+                La campaña
+            </div>
+
+            <div class="matematicas-video-marco">
+
+                <div class="matematicas-video-placeholder">
+
+                    <span>
+                        Video del proyecto
+                    </span>
+
+                    <p>
+                        Aquí irá el video de la campaña
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         CIERRE
+    ========================================= -->
+
+    <section class="matematicas-cierre">
+
+        <div class="matematicas-cierre-contenido">
+
+            <h2>
+                Transformar una idea también es encontrar
+                una nueva forma de conectar con las personas.
+            </h2>
+
+            <p>
+                RENAX — TRANSFORMAMOS MARCAS SIN BORRAR SU HISTORIA.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</body>
+</html>
