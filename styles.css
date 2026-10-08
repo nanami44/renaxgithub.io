@@ -7540,3 +7540,32 @@ body {
     max-width: 900px;
     text-shadow: 0 2px 12px rgba(0,0,0,0.55);
 }
+/* ==========================================================
+   SKENZI · BLOQUE INFERIOR DE PORTADA
+   ========================================================== */
+
+.skenzi-hero-bloque-inferior {
+    position: relative;
+    z-index: 6;
+    width: 100%;
+    padding: 35px 8%;
+    background: rgba(5, 5, 5, 0.72);
+    backdrop-filter: blur(6px);
+    text-align: center;
+}
+
+.skenzi-hero-bloque-inferior h2 {
+    margin: 0 0 10px;
+    font-family: "Bodoni Moda", "Times New Roman", serif;
+    font-size: 32px;
+    font-weight: 400;
+    color: #ffffff;
+}
+
+.skenzi-hero-bloque-inferior p {
+    max-width: 850px;
+    margin: 0 auto;
+    color: #dddddd;
+    font-size: 16px;
+    line-height: 1.6;
+}
