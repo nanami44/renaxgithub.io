@@ -7,13 +7,13 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>SKENZI × RENAX</title>
+    <title>SKENZI · Caso de estudio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
 
@@ -23,10 +23,8 @@
             box-sizing: border-box;
         }
 
-        html,
-        body {
-            width: 100%;
-            min-height: 100%;
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -36,176 +34,391 @@
             overflow-x: hidden;
         }
 
+        /* =========================================
+           PORTADA
+           ========================================= */
 
-        /* ==================================================
-           PORTADA SKENZI
-           ================================================== */
-
-        .skenzi-hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            min-height: 650px;
-            overflow: hidden;
+        .skenzi-portada {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 55px 7vw 65px;
             background: #050505;
         }
 
-
-        /* IMAGEN DE FONDO */
-
-        .skenzi-hero-imagen {
-            position: absolute;
-            inset: -12%;
+        .skenzi-portada-superior {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
+            justify-content: space-between;
+            align-items: flex-start;
         }
 
-        .skenzi-hero-imagen img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-
-            filter: blur(1.2px);
-
-            transform-origin: center center;
-
-            animation: skenziGiro 32s linear infinite;
-        }
-
-
-        /* GIRO CIRCULAR CONTINUO */
-
-        @keyframes skenziGiro {
-
-            0% {
-                transform: rotate(0deg) scale(1.18);
-            }
-
-            100% {
-                transform: rotate(360deg) scale(1.18);
-            }
-
-        }
-
-
-        /* CAPA SUAVE PARA QUE EL CONTENIDO NO TAPE LA IMAGEN */
-
-        .skenzi-hero-overlay {
-            position: absolute;
-            inset: 0;
-
-            z-index: 5;
-
-            display: flex;
-            flex-direction: column;
-
-            align-items: center;
-            justify-content: center;
-
-            text-align: center;
-
-            pointer-events: none;
-        }
-
-
-        /* LOGOTIPO */
-
-        .skenzi-hero-logo {
-            width: min(280px, 32vw);
-            height: auto;
-
-            margin-bottom: 28px;
-
-            display: block;
-        }
-
-
-        /* FRASE */
-
-        .skenzi-hero-frase {
-            max-width: 850px;
-
-            padding: 0 30px;
-
-            font-family: 'Bodoni Moda', serif;
-
-            font-size: clamp(28px, 3.2vw, 52px);
-
-            line-height: 1.15;
-
-            font-weight: 400;
-
-            color: #ffffff;
-
-            text-shadow:
-                0 2px 12px rgba(0, 0, 0, 0.75);
-        }
-
-
-        /* 11 AÑOS */
-
-        .skenzi-hero-anios {
-            margin-top: 22px;
-
+        .skenzi-marca {
             font-family: 'Montserrat', sans-serif;
-
-            font-size: clamp(15px, 1.3vw, 20px);
-
-            font-weight: 500;
-
-            letter-spacing: 4px;
-
+            font-size: 13px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
             color: #ffffff;
-
-            text-shadow:
-                0 2px 10px rgba(0, 0, 0, 0.75);
         }
 
+        .skenzi-esencia {
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            color: #c8102e;
+            text-align: right;
+        }
 
-        /* ==================================================
-           ADAPTACIÓN PARA PANTALLAS PEQUEÑAS
-           ================================================== */
+        .skenzi-portada-centro {
+            max-width: 1200px;
+        }
 
-        @media (max-width: 700px) {
+        .skenzi-portada h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(90px, 15vw, 220px);
+            line-height: 0.78;
+            font-weight: 500;
+            letter-spacing: -5px;
+            color: #ffffff;
+        }
 
-            .skenzi-hero {
-                min-height: 600px;
+        .skenzi-portada-linea {
+            width: 90px;
+            height: 2px;
+            background: #c8102e;
+            margin: 45px 0 25px;
+        }
+
+        .skenzi-portada-descripcion {
+            max-width: 560px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #d6d6d6;
+        }
+
+        .skenzi-portada-inferior {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 30px;
+        }
+
+        .skenzi-portada-numero {
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #777777;
+        }
+
+        .skenzi-portada-flecha {
+            color: #c8102e;
+            font-size: 28px;
+        }
+
+        /* =========================================
+           INTRODUCCIÓN
+           ========================================= */
+
+        .skenzi-introduccion {
+            padding: 150px 7vw;
+            background: #ffffff;
+            color: #050505;
+        }
+
+        .skenzi-introduccion-contenido {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skenzi-etiqueta {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c8102e;
+            margin-bottom: 35px;
+        }
+
+        .skenzi-introduccion h2 {
+            max-width: 900px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(48px, 6vw, 82px);
+            line-height: 0.98;
+            font-weight: 500;
+            margin-bottom: 45px;
+        }
+
+        .skenzi-introduccion p {
+            max-width: 720px;
+            font-size: 17px;
+            line-height: 1.9;
+            color: #333333;
+        }
+
+        /* =========================================
+           IMAGEN PRINCIPAL
+           ========================================= */
+
+        .skenzi-imagen-grande {
+            padding: 0 5vw;
+            background: #ffffff;
+        }
+
+        .skenzi-imagen-grande img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        /* =========================================
+           EL RETO
+           ========================================= */
+
+        .skenzi-reto {
+            padding: 170px 7vw;
+            background: #050505;
+        }
+
+        .skenzi-reto-contenido {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 0.8fr 1.4fr;
+            gap: 100px;
+            align-items: start;
+        }
+
+        .skenzi-reto h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(55px, 6vw, 90px);
+            font-weight: 500;
+            line-height: 0.95;
+        }
+
+        .skenzi-reto-texto p {
+            max-width: 650px;
+            font-size: 17px;
+            line-height: 1.9;
+            color: #cccccc;
+        }
+
+        /* =========================================
+           RENAX
+           ========================================= */
+
+        .skenzi-renax {
+            padding: 160px 7vw;
+            background: #111111;
+        }
+
+        .skenzi-renax-contenido {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skenzi-renax h2 {
+            max-width: 900px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(55px, 7vw, 100px);
+            line-height: 0.95;
+            font-weight: 500;
+            margin-bottom: 55px;
+        }
+
+        .skenzi-renax-texto {
+            max-width: 700px;
+            font-size: 17px;
+            line-height: 1.9;
+            color: #cccccc;
+        }
+
+        .skenzi-servicios {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 60px;
+        }
+
+        .skenzi-servicios span {
+            border: 1px solid #444444;
+            padding: 13px 20px;
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* =========================================
+           ANTES / DESPUÉS
+           ========================================= */
+
+        .skenzi-transformacion {
+            padding: 170px 7vw;
+            background: #ffffff;
+            color: #050505;
+        }
+
+        .skenzi-transformacion-contenido {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skenzi-transformacion h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(55px, 7vw, 100px);
+            line-height: 0.95;
+            font-weight: 500;
+            margin-bottom: 90px;
+        }
+
+        .skenzi-comparacion {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 35px;
+        }
+
+        .skenzi-comparacion figure {
+            margin: 0;
+        }
+
+        .skenzi-comparacion img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .skenzi-comparacion figcaption {
+            padding-top: 18px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* =========================================
+           SKENZI HOY
+           ========================================= */
+
+        .skenzi-hoy {
+            padding: 170px 7vw;
+            background: #050505;
+        }
+
+        .skenzi-hoy-contenido {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .skenzi-hoy h2 {
+            max-width: 950px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(60px, 8vw, 115px);
+            line-height: 0.9;
+            font-weight: 500;
+            margin-bottom: 50px;
+        }
+
+        .skenzi-hoy p {
+            max-width: 700px;
+            font-size: 17px;
+            line-height: 1.9;
+            color: #cccccc;
+            margin-bottom: 80px;
+        }
+
+        .skenzi-hoy img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 4px;
+        }
+
+        /* =========================================
+           CIERRE
+           ========================================= */
+
+        .skenzi-cierre {
+            min-height: 75vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 7vw;
+            background: #ffffff;
+            color: #050505;
+        }
+
+        .skenzi-cierre-contenido {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .skenzi-cierre h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(65px, 9vw, 130px);
+            line-height: 0.88;
+            font-weight: 500;
+            margin-bottom: 50px;
+        }
+
+        .skenzi-cierre p {
+            max-width: 650px;
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333333;
+        }
+
+        .skenzi-cierre-marca {
+            margin-top: 80px;
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #c8102e;
+            text-transform: uppercase;
+        }
+
+        /* =========================================
+           RESPONSIVE
+           ========================================= */
+
+        @media (max-width: 800px) {
+
+            .skenzi-portada {
+                padding: 35px 25px 45px;
             }
 
-            .skenzi-hero-logo {
-                width: 210px;
-                margin-bottom: 22px;
+            .skenzi-portada-superior,
+            .skenzi-portada-inferior {
+                flex-direction: column;
+                gap: 20px;
             }
 
-            .skenzi-hero-frase {
-                font-size: 28px;
-                padding: 0 20px;
+            .skenzi-esencia {
+                text-align: left;
             }
 
-            .skenzi-hero-anios {
-                font-size: 13px;
-                letter-spacing: 3px;
+            .skenzi-portada h1 {
+                font-size: 24vw;
+                letter-spacing: -2px;
+            }
+
+            .skenzi-introduccion,
+            .skenzi-reto,
+            .skenzi-renax,
+            .skenzi-transformacion,
+            .skenzi-hoy,
+            .skenzi-cierre {
+                padding: 100px 25px;
+            }
+
+            .skenzi-reto-contenido {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .skenzi-comparacion {
+                grid-template-columns: 1fr;
+            }
+
+            .skenzi-imagen-grande {
+                padding: 0 15px;
             }
 
         }
-    /* aquí termina el CSS de la portada */
 
-
-    /* ==================================================
-       INTRODUCCIÓN SKENZI
-       ================================================== */
-
-    .skenzi-intro {
-        ...
-    }
-
-    /* resto del CSS */
-
-
-</style>
     </style>
 
 </head>
@@ -214,65 +427,273 @@
 <body>
 
 
-   <section class="skenzi-intro">
+    <!-- =========================================
+         PORTADA
+         ========================================= -->
 
-    <div class="skenzi-intro-contenido">
+    <section class="skenzi-portada">
 
-        <div class="skenzi-intro-texto">
+        <div class="skenzi-portada-superior">
+
+            <div class="skenzi-marca">
+                MARCA: SKENZI
+            </div>
+
+            <div class="skenzi-esencia">
+                ESENCIA: Esencia que inspira
+            </div>
+
+        </div>
+
+
+        <div class="skenzi-portada-centro">
+
+            <h1>SKENZI</h1>
+
+            <div class="skenzi-portada-linea"></div>
+
+            <p class="skenzi-portada-descripcion">
+                Una marca que creció durante 11 años, evolucionando desde una
+                pequeña papelería de barrio hacia una nueva etapa con productos,
+                servicios y presencia digital.
+            </p>
+
+        </div>
+
+
+        <div class="skenzi-portada-inferior">
+
+            <div class="skenzi-portada-numero">
+                CASO DE ESTUDIO · 01
+            </div>
+
+            <div class="skenzi-portada-flecha">
+                ↓
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         HISTORIA
+         ========================================= -->
+
+    <section class="skenzi-introduccion">
+
+        <div class="skenzi-introduccion-contenido">
+
+            <div class="skenzi-etiqueta">
+                La historia
+            </div>
 
             <h2>
                 Una marca que creció sin perder su esencia.
             </h2>
 
             <p>
-                SKENZI nació hace 11 años como una pequeña papelería de barrio
-                y con el tiempo evolucionó hacia una nueva etapa, incorporando
-                nuevos productos, servicios y una línea de productos para el hogar.
-                RENAX acompañó esta evolución renovando su identidad visual,
-                modernizando su imagen y comunicación sin perder la esencia
-                de la marca ni la historia construida durante estos años.
+                SKENZI nació hace 11 años como una pequeña papelería de barrio.
+                Con el tiempo, el negocio creció, incorporó nuevos productos y
+                servicios y abrió una nueva línea de productos para el hogar
+                con presencia en Internet.
             </p>
 
         </div>
 
-        <div class="skenzi-intro-imagen">
+    </section>
+
+
+    <!-- =========================================
+         IMAGEN
+         ========================================= -->
+
+    <section class="skenzi-imagen-grande">
+
+        <img
+            src="skenzi-identidad-anterior.png"
+            alt="Identidad anterior de SKENZI"
+        >
+
+    </section>
+
+
+    <!-- =========================================
+         EL RETO
+         ========================================= -->
+
+    <section class="skenzi-reto">
+
+        <div class="skenzi-reto-contenido">
+
+            <h2>
+                El reto
+            </h2>
+
+            <div class="skenzi-reto-texto">
+
+                <p>
+                    La marca había evolucionado, pero su identidad visual
+                    necesitaba acompañar esa nueva etapa. El desafío era
+                    modernizar su imagen sin perder la esencia y la historia
+                    construida durante estos años.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         RENAX
+         ========================================= -->
+
+    <section class="skenzi-renax">
+
+        <div class="skenzi-renax-contenido">
+
+            <div class="skenzi-etiqueta">
+                La intervención
+            </div>
+
+            <h2>
+                RENAX acompañó su evolución.
+            </h2>
+
+            <p class="skenzi-renax-texto">
+                Renovamos la identidad visual de SKENZI para acompañar el
+                crecimiento de la marca, modernizando su imagen y comunicación
+                sin perder aquello que la hacía reconocible.
+            </p>
+
+            <div class="skenzi-servicios">
+
+                <span>Identidad visual</span>
+                <span>Logo</span>
+                <span>Colores</span>
+                <span>Tipografía</span>
+                <span>Piezas visuales</span>
+                <span>Presencia digital</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         TRANSFORMACIÓN
+         ========================================= -->
+
+    <section class="skenzi-transformacion">
+
+        <div class="skenzi-transformacion-contenido">
+
+            <div class="skenzi-etiqueta">
+                La transformación
+            </div>
+
+            <h2>
+                Antes.<br>
+                Evolución.<br>
+                Después.
+            </h2>
+
+            <div class="skenzi-comparacion">
+
+                <figure>
+
+                    <img
+                        src="skenzi-identidad-anterior.png"
+                        alt="Identidad anterior de SKENZI"
+                    >
+
+                    <figcaption>
+                        Identidad anterior
+                    </figcaption>
+
+                </figure>
+
+
+                <figure>
+
+                    <img
+                        src="skenzi-nueva-identidad.png"
+                        alt="Nueva identidad visual de SKENZI"
+                    >
+
+                    <figcaption>
+                        Nueva identidad
+                    </figcaption>
+
+                </figure>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================
+         SKENZI HOY
+         ========================================= -->
+
+    <section class="skenzi-hoy">
+
+        <div class="skenzi-hoy-contenido">
+
+            <div class="skenzi-etiqueta">
+                Una nueva etapa
+            </div>
+
+            <h2>
+                SKENZI sigue creciendo.
+            </h2>
+
+            <p>
+                La evolución de la marca también abrió una nueva línea de
+                negocio: productos para el hogar vendidos por Internet,
+                llevando la propuesta de SKENZI a nuevos espacios y
+                fortaleciendo su presencia digital.
+            </p>
 
             <img
-                src="skenzi-nueva-identidad.png"
-                alt="Nueva identidad visual de SKENZI"
+                src="skenzi-home-nueva-propuesta.png"
+                alt="Nueva propuesta de productos para el hogar de SKENZI"
             >
 
         </div>
 
-    </div>
+    </section>
 
-</section>
 
-    <!-- ==================================================
-         INTRODUCCIÓN SKENZI
-         ================================================== -->
+    <!-- =========================================
+         CIERRE
+         ========================================= -->
 
-    <section class="skenzi-intro">
+    <section class="skenzi-cierre">
 
-       
-
-        <div class="skenzi-intro-contenido">
+        <div class="skenzi-cierre-contenido">
 
             <h2>
-                Llevar la identidad visual al nivel de evolución de la marca.
+                Una historia que continúa evolucionando.
             </h2>
 
             <p>
-                RENAX renovó la imagen de SKENZI desde diferentes puntos de contacto,
-                manteniendo su esencia y proyectándola hacia una nueva etapa.
+                Hoy, la nueva identidad acompaña a SKENZI en sus diferentes
+                puntos de contacto, desde su presencia digital hasta la
+                presentación de sus productos.
             </p>
-<div class="skenzi-intro-imagen">
-    <img
-        src="skenzi-identidad-anterior.png"
-        alt="Identidad anterior de SKENZI"
-    >
-</div>
-           
+
+            <div class="skenzi-cierre-marca">
+                SKENZI · Esencia que inspira
+            </div>
+
+        </div>
 
     </section>
 
