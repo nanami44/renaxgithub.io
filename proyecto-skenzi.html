@@ -244,7 +244,243 @@
             letter-spacing: 1.5px;
             text-transform: uppercase;
         }
+/* =========================================
+   LA NUEVA IDENTIDAD
+   ========================================= */
 
+.skenzi-identidad {
+    padding: 170px 7vw;
+    background: #050505;
+    color: #ffffff;
+}
+
+.skenzi-identidad-contenido {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skenzi-identidad h2 {
+    max-width: 1000px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(55px, 7vw, 105px);
+    line-height: 0.92;
+    font-weight: 500;
+    margin-bottom: 45px;
+}
+
+.skenzi-identidad-intro {
+    max-width: 720px;
+    font-size: 17px;
+    line-height: 1.9;
+    color: #cccccc;
+    margin-bottom: 90px;
+}
+
+/* BLOQUE PRINCIPAL */
+
+.skenzi-identidad-principal {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.skenzi-identidad-logo,
+.skenzi-identidad-simbolo {
+    background: #111111;
+    border: 1px solid #292929;
+    padding: 45px;
+    min-height: 420px;
+}
+
+.skenzi-identidad-logo h3,
+.skenzi-identidad-simbolo h3,
+.skenzi-identidad-bloque h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c8102e;
+    margin-bottom: 30px;
+}
+
+.skenzi-identidad-logo img {
+    width: 100%;
+    max-width: 600px;
+    height: 260px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.skenzi-identidad-simbolo img {
+    width: 100%;
+    max-width: 250px;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.skenzi-identidad-simbolo p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #cccccc;
+}
+
+/* COLORES Y TIPOGRAFÍA */
+
+.skenzi-identidad-secundarios {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.skenzi-identidad-bloque {
+    background: #111111;
+    border: 1px solid #292929;
+    padding: 45px;
+    min-height: 360px;
+}
+
+/* PALETA */
+
+.skenzi-paleta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.skenzi-color {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 95px;
+}
+
+.skenzi-color-muestra {
+    width: 95px;
+    height: 70px;
+    border-radius: 3px;
+}
+
+.skenzi-color span {
+    font-size: 10px;
+    letter-spacing: 1px;
+    color: #aaaaaa;
+    text-transform: uppercase;
+}
+
+.skenzi-color-verde {
+    background: #315c4a;
+}
+
+.skenzi-color-verde-2 {
+    background: #6f9278;
+}
+
+.skenzi-color-beige {
+    background: #d8c9ad;
+}
+
+.skenzi-color-dorado {
+    background: #b89a5a;
+}
+
+.skenzi-color-negro {
+    background: #050505;
+    border: 1px solid #444444;
+}
+
+.skenzi-identidad-bloque p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: #cccccc;
+}
+
+/* TIPOGRAFÍA */
+
+.skenzi-tipografia-principal {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 54px;
+    line-height: 1;
+    margin-bottom: 12px;
+}
+
+.skenzi-tipografia-secundaria {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+}
+
+.skenzi-tipografia-descripcion {
+    border-top: 1px solid #333333;
+    padding-top: 25px;
+}
+
+/* QUÉ TRANSMITE */
+
+.skenzi-identidad-transmite {
+    margin-top: 30px;
+    padding: 50px 45px;
+    background: #c8102e;
+    color: #050505;
+}
+
+.skenzi-identidad-transmite h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 45px;
+    font-weight: 500;
+    margin-bottom: 35px;
+}
+
+.skenzi-transmite-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.skenzi-transmite-item strong {
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.skenzi-transmite-item p {
+    font-size: 13px;
+    line-height: 1.6;
+    color: #222222;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .skenzi-identidad {
+        padding: 100px 25px;
+    }
+
+    .skenzi-identidad-principal,
+    .skenzi-identidad-secundarios {
+        grid-template-columns: 1fr;
+    }
+
+    .skenzi-identidad-logo,
+    .skenzi-identidad-simbolo,
+    .skenzi-identidad-bloque {
+        padding: 30px;
+    }
+
+    .skenzi-transmite-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
         /* =========================================
            ANTES / DESPUÉS
            ========================================= */
@@ -664,7 +900,170 @@
 
         </div>
 
+<!-- =========================================
+     LA NUEVA IDENTIDAD
+     ========================================= -->
 
+<section class="skenzi-identidad">
+
+    <div class="skenzi-identidad-contenido">
+
+        <div class="skenzi-etiqueta">
+            La nueva identidad
+        </div>
+
+        <h2>
+            Una identidad que evoluciona sin perder la esencia.
+        </h2>
+
+        <p class="skenzi-identidad-intro">
+            La nueva identidad visual de SKENZI acompaña el crecimiento
+            de la marca, conservando elementos que hacen parte de su
+            reconocimiento y llevándolos a una expresión más actual,
+            clara y coherente.
+        </p>
+
+        <div class="skenzi-identidad-principal">
+
+            <div class="skenzi-identidad-logo">
+
+                <h3>
+                    Identidad principal
+                </h3>
+
+                <img
+                    src="skenzi-logo-nueva-identidad.png"
+                    alt="Nuevo logo de SKENZI"
+                >
+
+            </div>
+
+            <div class="skenzi-identidad-simbolo">
+
+                <h3>
+                    Símbolo
+                </h3>
+
+                <img
+                    src="skenzi-simbolo.png"
+                    alt="Símbolo de la nueva identidad de SKENZI"
+                >
+
+                <p>
+                    Un símbolo que representa la evolución de SKENZI,
+                    conectando la marca con el hogar, el bienestar y
+                    los nuevos espacios en los que comienza a estar presente.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="skenzi-identidad-secundarios">
+
+            <div class="skenzi-identidad-bloque">
+
+                <h3>
+                    Colores
+                </h3>
+
+                <div class="skenzi-paleta">
+
+                    <div class="skenzi-color">
+                        <div class="skenzi-color-muestra skenzi-color-verde"></div>
+                        <span>Verde principal</span>
+                    </div>
+
+                    <div class="skenzi-color">
+                        <div class="skenzi-color-muestra skenzi-color-verde-2"></div>
+                        <span>Verde secundario</span>
+                    </div>
+
+                    <div class="skenzi-color">
+                        <div class="skenzi-color-muestra skenzi-color-beige"></div>
+                        <span>Beige</span>
+                    </div>
+
+                    <div class="skenzi-color">
+                        <div class="skenzi-color-muestra skenzi-color-dorado"></div>
+                        <span>Dorado</span>
+                    </div>
+
+                    <div class="skenzi-color">
+                        <div class="skenzi-color-muestra skenzi-color-negro"></div>
+                        <span>Negro</span>
+                    </div>
+
+                </div>
+
+                <p>
+                    Una paleta pensada para transmitir estabilidad,
+                    cercanía, calidez y confianza, construyendo una
+                    percepción más moderna y coherente para la marca.
+                </p>
+
+            </div>
+
+            <div class="skenzi-identidad-bloque">
+
+                <h3>
+                    Tipografía
+                </h3>
+
+                <div class="skenzi-tipografia-principal">
+                    SKENZI
+                </div>
+
+                <div class="skenzi-tipografia-secundaria">
+                    HOME
+                </div>
+
+                <p class="skenzi-tipografia-descripcion">
+                    La tipografía principal aporta elegancia, carácter
+                    y reconocimiento, mientras que la tipografía secundaria
+                    complementa la comunicación con una expresión limpia,
+                    actual y funcional.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="skenzi-identidad-transmite">
+
+            <h3>
+                ¿Qué transmite?
+            </h3>
+
+            <div class="skenzi-transmite-grid">
+
+                <div class="skenzi-transmite-item">
+                    <strong>Evolución</strong>
+                    <p>Una marca preparada para una nueva etapa.</p>
+                </div>
+
+                <div class="skenzi-transmite-item">
+                    <strong>Cercanía</strong>
+                    <p>Una identidad que mantiene la conexión con su historia.</p>
+                </div>
+
+                <div class="skenzi-transmite-item">
+                    <strong>Confianza</strong>
+                    <p>Una imagen más sólida y coherente.</p>
+                </div>
+
+                <div class="skenzi-transmite-item">
+                    <strong>Modernidad</strong>
+                    <p>Una expresión visual preparada para nuevos espacios.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
     <!-- =========================================
          TRANSFORMACIÓN
          ========================================= -->
