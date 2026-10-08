@@ -6618,7 +6618,7 @@ url("nueva-evolucion.png") !important;
     font-weight: 500;
     line-height: 0.95;
     letter-spacing: -2px;
-       color: #ffffff;
+     color: #c8102e;
     transition: color 0.4s ease;
 }
 .skenzi-reto-texto h2:hover {
@@ -6630,7 +6630,8 @@ url("nueva-evolucion.png") !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     line-height: 1.8;
-   background: #050505;
+   background: transparent;
+color: #050505;
 }
 
 .skenzi-reto-imagen {
