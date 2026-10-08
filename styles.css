@@ -7389,3 +7389,18 @@ transform: none;
     }
 
 }
+/* AJUSTE FINAL · SKENZI EL RETO */
+
+.skenzi-reto {
+    background: #F7F1E1 !important;
+    color: #050505 !important;
+}
+
+.skenzi-reto-texto h2 {
+    color: #c8102e !important;
+}
+
+.skenzi-reto-texto p {
+    background: transparent !important;
+    color: #050505 !important;
+}
