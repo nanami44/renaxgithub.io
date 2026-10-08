@@ -7544,7 +7544,7 @@ body {
    SKENZI · BLOQUE INFERIOR DE PORTADA
    ========================================================== */
 
-.skenzi-hero-bloque-inferior {
+.skenzi-intro {
     position: relative;
     z-index: 6;
     width: 100%;
@@ -7554,7 +7554,7 @@ body {
     text-align: center;
 }
 
-.skenzi-hero-bloque-inferior h2 {
+.skenzi-intro h2 {
     margin: 0 0 10px;
     font-family: "Bodoni Moda", "Times New Roman", serif;
     font-size: 32px;
@@ -7562,7 +7562,7 @@ body {
     color: #ffffff;
 }
 
-.skenzi-hero-bloque-inferior p {
+.skenzi-intro p {
     max-width: 850px;
     margin: 0 auto;
     color: #dddddd;
