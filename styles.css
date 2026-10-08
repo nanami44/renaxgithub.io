@@ -7411,3 +7411,19 @@ transform: none;
     background: transparent !important;
     padding: 0 !important;
 }
+/* ==========================================================
+   SKENZI · FONDO GENERAL NEGRO MATE
+   ========================================================== */
+
+body {
+    background: #050505 !important;
+}
+
+.skenzi-hero,
+.skenzi-reto,
+.skenzi-transformacion,
+.skenzi-antes-despues,
+.skenzi-personalidad,
+.skenzi-hoy {
+    background: #050505 !important;
+}
