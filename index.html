@@ -669,21 +669,71 @@ document.querySelectorAll("a[href]").forEach(function (enlace) {
 
 });  
   
-/* Activar preguntas frecuentes de RENAX */
-document.querySelectorAll('.faq-question').forEach((boton) => {
-    boton.addEventListener('click', () => {
-        const respuesta = boton.nextElementSibling;
-        const abierta = respuesta.classList.toggle('faq-abierta');
 
-        boton.setAttribute('aria-expanded', abierta);
-        const icono = boton.querySelector('.faq-icon');
 
-        if (icono) {
-            icono.textContent = abierta ? '−' : '+';
+</script>
+  
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById('faqModal');
+    const answer = document.getElementById('faqAnswer');
+    const back = document.getElementById('faqBack');
+    const backText = document.getElementById('faqBackText');
+
+    if (!modal || !answer || !back || !backText) {
+        console.error('RENAX FAQ: faltan elementos de la ventana.');
+        return;
+    }
+
+    const responses = [
+        'RENAX trabaja con pequeñas y medianas empresas que desean modernizar su identidad visual, fortalecer su presencia y conservar la esencia de su marca.',
+        'Comenzamos conociendo la historia, los valores y la identidad actual de la marca. Después desarrollamos una propuesta visual que busca modernizarla sin borrar su historia.',
+        'No necesariamente. El objetivo es evaluar qué elementos deben conservarse y cuáles pueden actualizarse para lograr una identidad más clara, coherente y actual.',
+        'El contenido depende del servicio contratado y de las necesidades de cada marca. Antes de iniciar, definimos el alcance del proyecto.',
+        'Podemos revisar juntos la situación actual de tu marca y conversar sobre los objetivos que deseas alcanzar para identificar el servicio más adecuado.',
+        'Sí. Puedes consultar por un servicio específico de diseño gráfico, según las necesidades de tu negocio.',
+        'Sí. RENAX busca revitalizar marcas con trayectoria, respetando los elementos que forman parte de su historia y actualizando su identidad visual.',
+        'Puedes comunicarte con RENAX mediante la sección de contacto para conversar sobre tu marca y las necesidades de tu proyecto.'
+    ];
+
+    function openAnswer(index) {
+        const response = responses[index];
+        if (!response) return;
+
+        answer.textContent = response;
+        modal.classList.add('faq-modal-visible');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        back.focus();
+    }
+
+    function closeAnswer() {
+        modal.classList.remove('faq-modal-visible');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.faq-question[data-faq]').forEach(function (button) {
+        button.addEventListener('click', function () {
+            openAnswer(Number(button.dataset.faq));
+        });
+    });
+
+    back.addEventListener('click', closeAnswer);
+    backText.addEventListener('click', closeAnswer);
+
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) closeAnswer();
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' &&
+            modal.classList.contains('faq-modal-visible')) {
+            closeAnswer();
         }
     });
 });
-
 </script>
+
 </body>
 </html>
