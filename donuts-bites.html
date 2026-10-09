@@ -43,6 +43,8 @@
 
         body {
             background: #050505;
+            position: relative;
+isolation: isolate;
             color: #ffffff;
 
             font-family: 'Montserrat', sans-serif;
@@ -951,7 +953,20 @@
         transform: translateX(-10vw) rotate(5deg);
     }
 }
-```
+
+        
+/* CONTENIDO POR ENCIMA DEL FONDO DINÁMICO */
+
+body > .donut-fondo {
+    z-index: -1;
+}
+
+body > section,
+body > a {
+    position: relative;
+    z-index: 1;
+}
+
     </style>
 
 </head>
