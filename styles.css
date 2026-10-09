@@ -9267,7 +9267,10 @@ min-height: 100vh;
         padding: 0 18px;
     }
 }
-
+/* PRUEBA TEMPORAL: OCULTAR EFECTO DEL AVE */
+.renax-ave-hero {
+    display: none !important;
+}
     .renax-ave-frame:first-child {
         opacity: 1;
     }
