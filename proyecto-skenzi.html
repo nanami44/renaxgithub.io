@@ -700,12 +700,108 @@
     height: auto;
     display: block;
 }   
+     /* ==========================================================
+   SKENZI · FONDO DINÁMICO RENAX
+   ========================================================== */
+
+.proyecto-skenzi-renax {
+    position: relative;
+    background: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.skenzi-fondo {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+    background: #050505;
+}
+
+.skenzi-fondo::before {
+    content: "";
+    position: absolute;
+    width: 75vw;
+    height: 180vh;
+    top: -45vh;
+    left: 48%;
+    background:
+        linear-gradient(
+            135deg,
+            transparent 0%,
+            transparent 20%,
+            rgba(200,16,46,0.08) 30%,
+            rgba(200,16,46,0.65) 45%,
+            #c8102e 50%,
+            rgba(200,16,46,0.55) 56%,
+            rgba(200,16,46,0.08) 72%,
+            transparent 82%
+        );
+    filter: blur(8px);
+    animation: skenziRedMove 18s ease-in-out infinite alternate;
+}
+
+.skenzi-fondo::after {
+    content: "";
+    position: absolute;
+    width: 55vw;
+    height: 150vh;
+    top: -25vh;
+    left: 58%;
+    background:
+        linear-gradient(
+            135deg,
+            transparent 35%,
+            rgba(200,16,46,0.25) 48%,
+            rgba(200,16,46,0.05) 65%,
+            transparent 75%
+        );
+    filter: blur(25px);
+    animation: skenziRedGlow 14s ease-in-out infinite alternate;
+}
+
+@keyframes skenziRedMove {
+    0% {
+        transform: translateX(-15vw) rotate(-8deg) scale(1);
+    }
+
+    50% {
+        transform: translateX(5vw) rotate(-3deg) scale(1.08);
+    }
+
+    100% {
+        transform: translateX(18vw) rotate(5deg) scale(1.12);
+    }
+}
+
+@keyframes skenziRedGlow {
+    0% {
+        transform: translateX(10vw) rotate(-5deg);
+    }
+
+    100% {
+        transform: translateX(-10vw) rotate(5deg);
+    }
+}
+
+.proyecto-skenzi-renax > section,
+.proyecto-skenzi-renax > a {
+    position: relative;
+    z-index: 1;
+}
+
+.skenzi-logo-renax {
+    z-index: 9999;
+}   
     </style>
 
 </head>
 
 
-<body>
+<body class="proyecto-skenzi-renax">
+    <div class="skenzi-fondo"></div>
 <a href="index.html" class="skenzi-logo-renax">
     <img src="logo-renax-transparente.png" alt="RENAX">
 </a>
