@@ -1,262 +1,2170 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Servicios MANTRA® - Diseño de Marca, Creación de Nombres, Impresos y Consultoría.">
-  <title>Servicios | Agencia de Branding & Marketing</title>
-  
-  <!-- FontAwesome v6 & CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Servicios RENAX — Transformamos marcas sin borrar su historia.">
+
+    <title>Servicios | RENAX</title>
+
+
+    <!-- =========================
+         FONT AWESOME
+    ========================= -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    >
+
+
+    <!-- =========================
+         ESTILOS GLOBALES RENAX
+    ========================= -->
+
+    <link rel="stylesheet" href="styles.css">
+
+
+    <!-- =========================
+         TIPOGRAFÍAS
+    ========================= -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         DISEÑO EXCLUSIVO DE SERVICIOS
+    ====================================================== -->
+
+    <style>
+
+        /* ==================================================
+           CONFIGURACIÓN GENERAL
+        ================================================== */
+
+        .servicios-renax {
+
+            margin: 0;
+
+            background: #050505;
+
+            color: #ffffff;
+
+            font-family: 'Montserrat', sans-serif;
+
+            overflow-x: hidden;
+        }
+
+
+        .servicios-renax *,
+        .servicios-renax *::before,
+        .servicios-renax *::after {
+
+            box-sizing: border-box;
+        }
+
+
+        /* ==================================================
+           FONDO ROJO RENAX EN MOVIMIENTO
+        ================================================== */
+
+        .servicios-fondo {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            background: #050505;
+        }
+
+
+        .servicios-fondo::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 75vw;
+
+            height: 180vh;
+
+            top: -45vh;
+
+            left: 48%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    transparent 0%,
+                    transparent 20%,
+                    rgba(200,16,46,0.08) 30%,
+                    rgba(200,16,46,0.65) 45%,
+                    #c8102e 50%,
+                    rgba(200,16,46,0.55) 56%,
+                    rgba(200,16,46,0.08) 72%,
+                    transparent 82%
+                );
+
+            filter: blur(8px);
+
+            transform: rotate(0deg);
+
+            animation: renaxRedMove 18s ease-in-out infinite alternate;
+        }
+
+
+        .servicios-fondo::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 55vw;
+
+            height: 150vh;
+
+            top: -25vh;
+
+            left: 58%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    transparent 35%,
+                    rgba(200,16,46,0.25) 48%,
+                    rgba(200,16,46,0.05) 65%,
+                    transparent 75%
+                );
+
+            filter: blur(25px);
+
+            animation: renaxRedGlow 14s ease-in-out infinite alternate;
+        }
+
+
+        @keyframes renaxRedMove {
+
+            0% {
+
+                transform:
+                    translateX(-15vw)
+                    rotate(-8deg)
+                    scale(1);
+            }
+
+            50% {
+
+                transform:
+                    translateX(5vw)
+                    rotate(-3deg)
+                    scale(1.08);
+            }
+
+            100% {
+
+                transform:
+                    translateX(18vw)
+                    rotate(5deg)
+                    scale(1.12);
+            }
+
+        }
+
+
+        @keyframes renaxRedGlow {
+
+            0% {
+
+                transform:
+                    translateX(10vw)
+                    rotate(-5deg);
+            }
+
+            100% {
+
+                transform:
+                    translateX(-10vw)
+                    rotate(5deg);
+            }
+
+        }
+
+
+        /* ==================================================
+           CONTENIDO POR ENCIMA DEL FONDO
+        ================================================== */
+
+        .servicios-contenido {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* ==================================================
+           PORTADA
+        ================================================== */
+
+        .srv-portada {
+
+            min-height: 100vh;
+
+            padding:
+                120px
+                8%
+                100px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+
+        /* ==================================================
+           ESPACIO GRANDE PARA IMAGEN DE PORTADA
+        ================================================== */
+
+        .srv-portada-imagen {
+
+            width: 100%;
+
+            height: 68vh;
+
+            min-height: 500px;
+
+            margin-bottom: 65px;
+
+            background:
+                rgba(5,5,5,0.55);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+            backdrop-filter: blur(3px);
+        }
+
+
+        .srv-portada-imagen img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+
+        .srv-imagen-placeholder {
+
+            color:
+                rgba(255,255,255,0.35);
+
+            font-size: 11px;
+
+            letter-spacing: 4px;
+
+            text-align: center;
+        }
+
+
+        /* ==================================================
+           TEXTO PORTADA
+        ================================================== */
+
+        .srv-portada-texto {
+
+            max-width: 1100px;
+        }
+
+
+        .srv-etiqueta {
+
+            display: block;
+
+            color: #c8102e;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .srv-portada-titulo {
+
+            margin: 0 0 30px;
+
+            font-family:
+                'Montserrat',
+                sans-serif;
+
+            font-size:
+                clamp(
+                    4rem,
+                    9vw,
+                    9rem
+                );
+
+            line-height: 0.86;
+
+            font-weight: 800;
+
+            letter-spacing: -4px;
+        }
+
+
+        .srv-portada-titulo span {
+
+            color: #c8102e;
+        }
+
+
+        .srv-portada-descripcion {
+
+            max-width: 800px;
+
+            color: #cccccc;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        .srv-linea {
+
+            width: 100%;
+
+            height: 1px;
+
+            margin-top: 70px;
+
+            background:
+                rgba(255,255,255,0.18);
+        }
+
+
+        /* ==================================================
+           QUÉ HACEMOS
+        ================================================== */
+
+        .srv-que-hacemos {
+
+            padding:
+                150px
+                8%;
+
+            background:
+                rgba(5,5,5,0.82);
+        }
+
+
+        .srv-contenedor {
+
+            width: 100%;
+
+            max-width: 1200px;
+
+            margin: 0 auto;
+        }
+
+
+        .srv-seccion-titulo {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(
+                    3.5rem,
+                    7vw,
+                    7rem
+                );
+
+            line-height: 0.9;
+
+            font-weight: 600;
+
+            margin: 0 0 35px;
+        }
+
+
+        .srv-seccion-titulo strong {
+
+            color: #c8102e;
+
+            font-weight: 600;
+        }
+
+
+        .srv-texto-grande {
+
+            max-width: 850px;
+
+            font-size: 20px;
+
+            line-height: 1.9;
+
+            color: #cccccc;
+        }
+
+
+        .srv-frase {
+
+            margin-top: 90px;
+
+            padding:
+                50px 0;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.18);
+
+            font-size:
+                clamp(
+                    2rem,
+                    5vw,
+                    5rem
+                );
+
+            line-height: 0.95;
+
+            font-weight: 700;
+        }
+
+
+        .srv-frase span {
+
+            color: #c8102e;
+        }
+
+
+        /* ==================================================
+           SERVICIOS
+        ================================================== */
+
+        .srv-servicios {
+
+            padding:
+                140px 8%
+                80px;
+        }
+
+
+        .srv-intro-servicios {
+
+            max-width: 750px;
+
+            margin-bottom: 100px;
+        }
+
+
+        .srv-intro-servicios p {
+
+            color: #cccccc;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ==================================================
+           SERVICIO INDIVIDUAL
+        ================================================== */
+
+        .srv-servicio {
+
+            width: 100%;
+
+            max-width: 1250px;
+
+            margin:
+                0 auto 150px;
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+
+        .srv-servicio.reverse {
+
+            direction: rtl;
+        }
+
+
+        .srv-servicio.reverse
+        .srv-servicio-texto {
+
+            direction: ltr;
+        }
+
+
+        .srv-servicio.reverse
+        .srv-servicio-media {
+
+            direction: ltr;
+        }
+
+
+        /* ==================================================
+           ESPACIO GRANDE PARA IMAGEN
+        ================================================== */
+
+        .srv-servicio-media {
+
+            width: 100%;
+
+            min-height: 560px;
+
+            background:
+                rgba(5,5,5,0.65);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.13);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            overflow: hidden;
+
+            backdrop-filter: blur(3px);
+        }
+
+
+        .srv-servicio-media::before {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 15px;
+
+            border:
+                1px solid
+                rgba(200,16,46,0.18);
+
+            pointer-events: none;
+        }
+
+
+        .srv-servicio-media img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .srv-servicio-numero {
+
+            display: block;
+
+            color: #c8102e;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .srv-servicio-texto h2 {
+
+            margin: 0 0 25px;
+
+            font-size:
+                clamp(
+                    2.5rem,
+                    5vw,
+                    5rem
+                );
+
+            line-height: 0.95;
+
+            font-weight: 800;
+        }
+
+
+        .srv-servicio-texto p {
+
+            color: #cccccc;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+
+            margin-bottom: 30px;
+        }
+
+
+        .srv-lista {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+        }
+
+
+        .srv-lista li {
+
+            padding:
+                13px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.13);
+
+            color: #ffffff;
+
+            font-size: 14px;
+        }
+
+
+        .srv-lista li::before {
+
+            content: "—";
+
+            color: #c8102e;
+
+            margin-right: 12px;
+        }
+
+
+        /* ==================================================
+           PROCESO
+        ================================================== */
+
+        .srv-proceso {
+
+            padding:
+                150px 8%;
+
+            background:
+                rgba(255,255,255,0.97);
+
+            color: #050505;
+        }
+
+
+        .srv-proceso
+        .srv-seccion-titulo {
+
+            color: #050505;
+        }
+
+
+        .srv-proceso
+        .srv-texto-grande {
+
+            color: #444444;
+        }
+
+
+        .srv-proceso-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 1px;
+
+            margin-top: 80px;
+
+            background: #cccccc;
+        }
+
+
+        .srv-proceso-item {
+
+            background: #ffffff;
+
+            min-height: 330px;
+
+            padding: 40px 30px;
+
+            position: relative;
+        }
+
+
+        .srv-proceso-numero {
+
+            color: #c8102e;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 80px;
+
+            display: block;
+        }
+
+
+        .srv-proceso-item h3 {
+
+            font-size: 24px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .srv-proceso-item p {
+
+            color: #555555;
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* ==================================================
+           PARA QUIÉN
+        ================================================== */
+
+        .srv-publico {
+
+            padding:
+                160px 8%;
+
+            background: #050505;
+        }
+
+
+        .srv-publico-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.1fr 1fr;
+
+            gap: 100px;
+
+            align-items: center;
+        }
+
+
+        .srv-publico-lista {
+
+            list-style: none;
+
+            padding: 0;
+
+            margin: 0;
+        }
+
+
+        .srv-publico-lista li {
+
+            padding:
+                25px 0;
+
+            border-bottom:
+                1px solid
+                rgba(255,255,255,0.15);
+
+            font-size:
+                clamp(
+                    1.4rem,
+                    3vw,
+                    2.5rem
+                );
+
+            font-weight: 600;
+        }
+
+
+        .srv-publico-lista li span {
+
+            color: #c8102e;
+
+            font-size: 13px;
+
+            margin-right: 20px;
+        }
+
+
+        .srv-publico-texto {
+
+            color: #cccccc;
+
+            font-size: 17px;
+
+            line-height: 1.9;
+        }
+
+
+        /* ==================================================
+           CIERRE
+        ================================================== */
+
+        .srv-cierre {
+
+            min-height: 80vh;
+
+            padding:
+                130px 8%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                rgba(5,5,5,0.88);
+        }
+
+
+        .srv-cierre-contenido {
+
+            max-width: 1000px;
+        }
+
+
+        .srv-cierre h2 {
+
+            font-family:
+                'Cormorant Garamond',
+                serif;
+
+            font-size:
+                clamp(
+                    3.5rem,
+                    7vw,
+                    7rem
+                );
+
+            line-height: 0.9;
+
+            margin: 0 0 35px;
+        }
+
+
+        .srv-cierre h2 span {
+
+            color: #c8102e;
+        }
+
+
+        .srv-cierre p {
+
+            max-width: 700px;
+
+            margin: 0 auto 45px;
+
+            color: #cccccc;
+
+            font-size: 16px;
+
+            line-height: 1.8;
+        }
+
+
+        .srv-boton {
+
+            display: inline-block;
+
+            padding:
+                17px 32px;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.5);
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .srv-boton:hover {
+
+            background: #c8102e;
+
+            border-color: #c8102e;
+        }
+
+
+        .srv-cierre-linea {
+
+            width: 100%;
+
+            max-width: 700px;
+
+            height: 1px;
+
+            margin:
+                80px auto 30px;
+
+            background:
+                rgba(255,255,255,0.15);
+        }
+
+
+        .srv-firma {
+
+            color: #ffffff;
+
+            font-size: 10px;
+
+            font-weight: 600;
+
+            letter-spacing: 3px;
+        }
+
+
+        /* ==================================================
+           RESPONSIVE
+        ================================================== */
+
+        @media (max-width: 900px) {
+
+            .srv-portada {
+
+                padding:
+                    110px 7% 80px;
+            }
+
+
+            .srv-portada-imagen {
+
+                height: 55vh;
+
+                min-height: 350px;
+            }
+
+
+            .srv-portada-titulo {
+
+                letter-spacing: -2px;
+            }
+
+
+            .srv-servicio {
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+
+                margin-bottom: 100px;
+            }
+
+
+            .srv-servicio.reverse {
+
+                direction: ltr;
+            }
+
+
+            .srv-servicio-media {
+
+                min-height: 400px;
+
+                order: 1;
+            }
+
+
+            .srv-servicio-texto {
+
+                order: 2;
+            }
+
+
+            .srv-proceso-grid {
+
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+
+            .srv-publico-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 60px;
+            }
+
+        }
+
+
+        @media (max-width: 600px) {
+
+            .srv-portada {
+
+                padding:
+                    100px 6% 70px;
+            }
+
+
+            .srv-portada-imagen {
+
+                height: 45vh;
+
+                min-height: 280px;
+
+                margin-bottom: 45px;
+            }
+
+
+            .srv-portada-titulo {
+
+                font-size:
+                    clamp(
+                        3.2rem,
+                        15vw,
+                        5rem
+                    );
+            }
+
+
+            .srv-que-hacemos,
+            .srv-servicios,
+            .srv-proceso,
+            .srv-publico,
+            .srv-cierre {
+
+                padding-left: 6%;
+
+                padding-right: 6%;
+            }
+
+
+            .srv-proceso-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .srv-proceso-item {
+
+                min-height: 260px;
+            }
+
+
+            .srv-proceso-numero {
+
+                margin-bottom: 45px;
+            }
+
+
+            .srv-servicio-media {
+
+                min-height: 330px;
+            }
+
+
+            .srv-cierre h2 {
+
+                font-size:
+                    clamp(
+                        3rem,
+                        14vw,
+                        5rem
+                    );
+            }
+
+
+            .srv-firma {
+
+                line-height: 1.7;
+            }
+
+        }
+
+    </style>
+
 </head>
-<body>
-<!-- TRANSICIÓN RENAX -->
-<div class="renax-page-transition" id="renaxPageTransition">
-    <div class="renax-transition-logo">
-       <img src="logo-renax-transparente.png" alt="RENAX" class="transition-logo-image">
-    </div>
-</div>
-  <!-- HEADER GLOBAL -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="index.html" class="brand-logo" aria-label="Página principal">
-        <img src="logo-renax-transparente.png" alt="RENAX" class="logo-renax">
-      </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación">
-        <i class="fa-solid fa-bars"></i>
-      </button>
 
-      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
+<body class="servicios-renax">
 
-  <a href="index.html" class="nav-link">Inicio</a>
 
-  <a href="nosotros.html" class="nav-link">Nosotros</a>
+    <!-- ==================================================
+         TRANSICIÓN RENAX
+    ================================================== -->
 
-  <a href="portafolio.html" class="nav-link">Portafolio</a>
+    <div class="renax-page-transition"
+         id="renaxPageTransition">
 
-  <a href="servicios.html" class="nav-link active" aria-current="page">Servicios</a>
+        <div class="renax-transition-logo">
 
-  <a href="contacto.html" class="nav-link">Contáctanos</a>
+            <img
+                src="logo-renax-transparente.png"
+                alt="RENAX"
+                class="transition-logo-image"
+            >
 
-</nav>
-
-      
-      <button class="language" id="languageBtn" type="button">ESP</button>
-      <a href="registro.html" class="login-btn">INICIAR SESIÓN</a>
-    </div>
-  </header>
-
-  <!-- MAIN CONTENT -->
-  <main id="main-content">
-<!-- IMAGEN PRINCIPAL DE SERVICIOS -->
-<section class="services-cover">
-  <img src="servicios-estrategias.png.png" alt="Servicios y estrategias RENAX">
-</section>
-   <!-- HERO SERVICIOS -->
-<section class="services-hero">
-  <h1 class="services-title">
-    LO QUE HACEMOS PARA QUE TU MARCA EVOLUCIONE
-  </h1>
-
-  <p class="services-intro">
-    Porque una marca con propósito no solo se reconoce, se recuerda. No solo vende, conecta. No solo crece, trasciende.<br>
-    En RENAX combinamos estrategia, creatividad y conciencia para desarrollar marcas que generan valor a largo plazo.
-  </p>
-</section>
-
- <!-- SERVICIO 1: DIAGNÓSTICO DE MARCA -->
-<section class="service-item diagnostico-marca">
-  <div class="service-content">
-
-    <h2>DIAGNÓSTICO DE MARCA</h2>
-
-    <p>
-      Analizamos la situación actual de tu marca para identificar oportunidades de evolución.
-    </p>
-
-    <ul class="service-list">
-      <li>Auditoría de marca</li>
-      <li>Análisis de identidad visual</li>
-      <li>Análisis de presencia digital</li>
-    </ul>
-
-  </div>
-</section> 
-
-<!-- SERVICIO 2: REDISEÑO DE IDENTIDAD VISUAL -->
-<section class="service-item reverse">
-  <div class="service-content">
-    <h2>REDISEÑO DE IDENTIDAD VISUAL</h2>
-
-    <p>
-      Actualizamos la imagen de tu marca conservando sus elementos esenciales.
-    </p>
-
-    <ul class="service-list">
-      <li>Logotipo</li>
-      <li>Paleta de colores</li>
-      <li>Tipografías</li>
-      <li>Elementos gráficos</li>
-      <li>Manual de identidad</li>
-    </ul>
-      <div class="service-media-grid">
-        <img src="https://images.unsplash.com/photo-1542744094-3a3121699496?auto=format&fit=crop&w=600&q=80" alt="Creación de nombres 1">
-        <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=600&q=80" alt="Creación de nombres 2">
-      </div>
-    </section>
-
-    <!-- SERVICIO 3: DISEÑO DE IMPRESOS -->
-    <section class="service-item">
-      <div class="service-content">
-        <h2>DISEÑO DE IMPRESOS</h2>
-        <p>Es importante cuidar tu marca en todas sus interacciones por ello, los impresos deben proyectar lo que la empresa representa frente al consumidor ya que esto ayuda al posicionamiento de marca, reconocimiento y publicidad, para que el cliente pueda reconocerlo fácilmente en cualquier parte.</p>
-        <ul class="service-list">
-          <li> Tarjetas de presentación</li>
-          <li> Hoja membretada</li>
-          <li> Kit para eventos</li>
-          <li> Interiores</li>
-          <li> Empaques</li>
-        </ul>
-        <a href="contacto.html" class="btn-pill">Botón &rarr;</a>
-      </div>
-      <div class="service-media-grid">
-        <img src="https://images.unsplash.com/photo-1586075010923-2dd4570fb338?auto=format&fit=crop&w=600&q=80" alt="Diseño de impresos 1">
-        <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=600&q=80" alt="Diseño de impresos 2">
-      </div>
-    </section>
-
-    <!-- SERVICIO 4: CONSULTORÍA DE MARCA (REVERSE) -->
-    <section class="service-item reverse">
-      <div class="service-content">
-        <h2>CONSULTORÍA DE MARCA</h2>
-        <p>Sabemos que en ocasiones necesitas contar con una empresa que te pueda asesorar y ayudar en ciertas decisiones, para potencializar el crecimiento de tu empresa o verificar alguna estrategia para lograr el mejor resultado y cumplir los objetivos que se han trazado de forma exitosa.</p>
-        <ul class="service-list">
-          <li> Viabilidad de estrategias de branding</li>
-          <li> Cambios o actualizaciones</li>
-          <li> Asesoría especializada</li>
-          <li> Seguimiento de procesos</li>
-          <li> Creación de protocolos</li>
-        </ul>
-        <a href="contacto.html" class="btn-pill">Botón &rarr;</a>
-      </div>
-      <div class="service-media-grid">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=80" alt="Consultoría de marca 1">
-        <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80" alt="Consultoría de marca 2">
-      </div>
-    </section>
-
-    <!-- FORMULARIO / TRABAJEMOS EN TU PROYECTO -->
-    <section class="services-contact-section">
-      <div style="max-width: var(--container-width); margin: 0 auto;">
-        <p style="text-transform: uppercase; letter-spacing: 2px; color: var(--text-muted); margin-bottom: 1rem;">Trabajemos en tu proyecto</p>
-        <h2 style="font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 900; text-transform: uppercase; margin-bottom: 2rem;">
-          ¿QUIERES QUE TU MARCA TRASCIENDA? <br> ¡HABLEMOS!
-        </h2>
-
-        <div style="margin-bottom: 3rem;">
-          <p style="color: var(--text-muted);">Email</p>
-          <a href="mailto:start@fragtal.co" style="font-size: 1.25rem; font-weight: 600; text-decoration: underline;">start@fragtal.co</a>
-          <br><br>
-          <p style="color: var(--text-muted);">Celular</p>
-          <a href="tel:+573024779096" style="font-size: 1.25rem; font-weight: 600;">+57 3024779096</a>
         </div>
 
-        <form class="contact-form-minimal" action="#" method="POST" id="servicesForm">
-          <div class="form-group-line">
-            <input type="email" class="form-input-line" placeholder="tu correo eletronico" required>
-          </div>
-          <div class="form-group-line">
-            <input type="text" class="form-input-line" placeholder="asunto" required>
-          </div>
-          <div class="form-group-line">
-            <textarea class="form-input-line" rows="3" placeholder="tu mensaje" required style="resize: none;"></textarea>
-          </div>
-          <div style="text-align: center; margin-top: 2rem;">
-            <button type="submit" class="btn-pill btn-pill-red" style="width: 100%; max-width: 200px;">Botón</button>
-          </div>
-        </form>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- WIDGET WHATSAPP -->
-  <a href="https://wa.me/573024779096" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
-    <i class="fa-brands fa-whatsapp"></i>
-  </a>
-
-  <!-- FOOTER GLOBAL -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p class="footer-contact-text">Contact us / Join us</p>
-      <div class="footer-socials">
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" target="_blank" rel="noopener">X</a>
-        <a href="#" target="_blank" rel="noopener">Facebook</a>
-        <a href="#" target="_blank" rel="noopener">Glassdoor</a>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 MANTRA / BBDO Agency. Todos los derechos reservados.</p>
-      </div>
     </div>
-  </footer>
 
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
 
-    navToggle.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-    });
-  </script>
-  <script>
-window.addEventListener("load", function () {
+    <!-- ==================================================
+         HEADER GLOBAL
+    ================================================== -->
 
-    const transicion = document.getElementById("renaxPageTransition");
+    <header class="site-header">
 
-    if (transicion) {
-        setTimeout(function () {
-            transicion.classList.add("hide");
-        }, 900);
-    }
+        <div class="nav-container">
 
-});
 
-document.querySelectorAll("a[href]").forEach(function (enlace) {
+            <a
+                href="index.html"
+                class="brand-logo"
+                aria-label="Página principal"
+            >
 
-    enlace.addEventListener("click", function (e) {
+                <img
+                    src="logo-renax-transparente.png"
+                    alt="RENAX"
+                    class="logo-renax"
+                >
 
-        const destino = enlace.getAttribute("href");
+            </a>
 
-        if (
-            !destino ||
-            destino.startsWith("#") ||
-            destino.startsWith("http") ||
-            destino.startsWith("mailto:")
-        ) {
-            return;
+
+            <button
+                class="nav-toggle"
+                id="navToggle"
+                aria-label="Abrir menú de navegación"
+            >
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <nav
+                class="nav-menu"
+                id="navMenu"
+                aria-label="Navegación principal"
+            >
+
+                <a
+                    href="index.html"
+                    class="nav-link"
+                >
+                    Inicio
+                </a>
+
+
+                <a
+                    href="nosotros.html"
+                    class="nav-link"
+                >
+                    Nosotros
+                </a>
+
+
+                <a
+                    href="portafolio.html"
+                    class="nav-link"
+                >
+                    Portafolio
+                </a>
+
+
+                <a
+                    href="servicios.html"
+                    class="nav-link active"
+                    aria-current="page"
+                >
+                    Servicios
+                </a>
+
+
+                <a
+                    href="contacto.html"
+                    class="nav-link"
+                >
+                    Contáctanos
+                </a>
+
+            </nav>
+
+
+            <button
+                class="language"
+                id="languageBtn"
+                type="button"
+            >
+                ESP
+            </button>
+
+
+            <a
+                href="registro.html"
+                class="login-btn"
+            >
+                INICIAR SESIÓN
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ==================================================
+         FONDO ANIMADO
+    ================================================== -->
+
+    <div class="servicios-fondo"></div>
+
+
+    <!-- ==================================================
+         CONTENIDO
+    ================================================== -->
+
+    <main class="servicios-contenido">
+
+
+        <!-- ==================================================
+             PORTADA
+        ================================================== -->
+
+        <section class="srv-portada">
+
+
+            <!-- ESPACIO GRANDE PARA IMAGEN -->
+
+            <div class="srv-portada-imagen">
+
+                <span class="srv-imagen-placeholder">
+                    ESPACIO PARA IMAGEN PRINCIPAL
+                </span>
+
+            </div>
+
+
+            <div class="srv-portada-texto">
+
+
+                <span class="srv-etiqueta">
+                    RENAX · SERVICIOS
+                </span>
+
+
+                <h1 class="srv-portada-titulo">
+
+                    TRANSFORMAMOS
+                    <br>
+                    <span>TU MARCA.</span>
+
+                </h1>
+
+
+                <p class="srv-portada-descripcion">
+
+                    Diseñamos soluciones visuales y estratégicas
+                    para marcas que quieren evolucionar sin perder
+                    aquello que las hace únicas.
+
+                </p>
+
+            </div>
+
+
+            <div class="srv-linea"></div>
+
+        </section>
+
+
+        <!-- ==================================================
+             QUÉ HACEMOS
+        ================================================== -->
+
+        <section class="srv-que-hacemos">
+
+
+            <div class="srv-contenedor">
+
+
+                <span class="srv-etiqueta">
+                    01 · QUÉ HACEMOS
+                </span>
+
+
+                <h2 class="srv-seccion-titulo">
+
+                    Una marca puede
+                    <br>
+                    <strong>evolucionar.</strong>
+
+                </h2>
+
+
+                <p class="srv-texto-grande">
+
+                    En RENAX trabajamos con marcas que buscan
+                    actualizar su imagen, fortalecer su identidad
+                    y comunicar mejor lo que representan.
+
+                    <br><br>
+
+                    Nuestro trabajo parte de entender lo que ya
+                    existe para encontrar nuevas formas de hacerlo
+                    crecer.
+
+                </p>
+
+
+                <div class="srv-frase">
+
+                    NO CAMBIAMOS
+                    <span>TU ESENCIA.</span>
+
+                    <br>
+
+                    LA HACEMOS
+                    <span>EVOLUCIONAR.</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             SERVICIOS
+        ================================================== -->
+
+        <section class="srv-servicios">
+
+
+            <div class="srv-contenedor">
+
+
+                <span class="srv-etiqueta">
+                    02 · NUESTROS SERVICIOS
+                </span>
+
+
+                <h2 class="srv-seccion-titulo">
+
+                    Lo que hacemos
+                    <br>
+                    para tu <strong>marca.</strong>
+
+                </h2>
+
+
+                <div class="srv-intro-servicios">
+
+                    <p>
+
+                        Cada proyecto parte de una necesidad
+                        diferente. Por eso desarrollamos soluciones
+                        que pueden adaptarse al momento y a los
+                        objetivos de cada marca.
+
+                    </p>
+
+                </div>
+
+
+                <!-- ==========================================
+                     SERVICIO 01
+                =========================================== -->
+
+                <article class="srv-servicio">
+
+
+                    <div class="srv-servicio-media">
+
+                        <span class="srv-imagen-placeholder">
+                            IMAGEN · DIAGNÓSTICO DE MARCA
+                        </span>
+
+                    </div>
+
+
+                    <div class="srv-servicio-texto">
+
+                        <span class="srv-servicio-numero">
+                            01 · DIAGNÓSTICO
+                        </span>
+
+
+                        <h2>
+                            DIAGNÓSTICO
+                            <br>
+                            DE MARCA
+                        </h2>
+
+
+                        <p>
+
+                            Analizamos la situación actual de tu
+                            marca para identificar oportunidades
+                            de evolución y reconocer aquello que
+                            vale la pena conservar.
+
+                        </p>
+
+
+                        <ul class="srv-lista">
+
+                            <li>
+                                Auditoría de marca
+                            </li>
+
+                            <li>
+                                Análisis de identidad visual
+                            </li>
+
+                            <li>
+                                Análisis de comunicación
+                            </li>
+
+                            <li>
+                                Identificación de oportunidades
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ==========================================
+                     SERVICIO 02
+                =========================================== -->
+
+                <article class="srv-servicio reverse">
+
+
+                    <div class="srv-servicio-media">
+
+                        <span class="srv-imagen-placeholder">
+                            IMAGEN · RENOVACIÓN DE MARCA
+                        </span>
+
+                    </div>
+
+
+                    <div class="srv-servicio-texto">
+
+                        <span class="srv-servicio-numero">
+                            02 · RENOVACIÓN
+                        </span>
+
+
+                        <h2>
+                            RENOVACIÓN
+                            <br>
+                            DE MARCA
+                        </h2>
+
+
+                        <p>
+
+                            Modernizamos marcas existentes
+                            respetando su trayectoria, personalidad
+                            y reconocimiento.
+
+                        </p>
+
+
+                        <ul class="srv-lista">
+
+                            <li>
+                                Renovación de logotipo
+                            </li>
+
+                            <li>
+                                Paleta de colores
+                            </li>
+
+                            <li>
+                                Tipografías
+                            </li>
+
+                            <li>
+                                Sistema visual
+                            </li>
+
+                            <li>
+                                Manual de identidad
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ==========================================
+                     SERVICIO 03
+                =========================================== -->
+
+                <article class="srv-servicio">
+
+
+                    <div class="srv-servicio-media">
+
+                        <span class="srv-imagen-placeholder">
+                            IMAGEN · DISEÑO DE COMUNICACIÓN
+                        </span>
+
+                    </div>
+
+
+                    <div class="srv-servicio-texto">
+
+                        <span class="srv-servicio-numero">
+                            03 · COMUNICACIÓN
+                        </span>
+
+
+                        <h2>
+                            DISEÑO DE
+                            <br>
+                            COMUNICACIÓN
+                        </h2>
+
+
+                        <p>
+
+                            Desarrollamos piezas visuales para
+                            comunicar productos, servicios,
+                            campañas y mensajes de manera clara,
+                            atractiva y coherente.
+
+                        </p>
+
+
+                        <ul class="srv-lista">
+
+                            <li>
+                                Piezas para redes sociales
+                            </li>
+
+                            <li>
+                                Campañas visuales
+                            </li>
+
+                            <li>
+                                Material publicitario
+                            </li>
+
+                            <li>
+                                Presentaciones
+                            </li>
+
+                            <li>
+                                Piezas digitales e impresas
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ==========================================
+                     SERVICIO 04
+                =========================================== -->
+
+                <article class="srv-servicio reverse">
+
+
+                    <div class="srv-servicio-media">
+
+                        <span class="srv-imagen-placeholder">
+                            IMAGEN · ESTRATEGIA VISUAL
+                        </span>
+
+                    </div>
+
+
+                    <div class="srv-servicio-texto">
+
+                        <span class="srv-servicio-numero">
+                            04 · ESTRATEGIA
+                        </span>
+
+
+                        <h2>
+                            ESTRATEGIA
+                            <br>
+                            VISUAL
+                        </h2>
+
+
+                        <p>
+
+                            Definimos una dirección visual coherente
+                            para que la marca pueda comunicar de
+                            manera consistente en diferentes medios
+                            y espacios.
+
+                        </p>
+
+
+                        <ul class="srv-lista">
+
+                            <li>
+                                Dirección visual
+                            </li>
+
+                            <li>
+                                Concepto creativo
+                            </li>
+
+                            <li>
+                                Sistema gráfico
+                            </li>
+
+                            <li>
+                                Coherencia de marca
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             PROCESO
+        ================================================== -->
+
+        <section class="srv-proceso">
+
+
+            <div class="srv-contenedor">
+
+
+                <span class="srv-etiqueta">
+                    03 · NUESTRO PROCESO
+                </span>
+
+
+                <h2 class="srv-seccion-titulo">
+
+                    De la idea
+                    <br>
+                    a la <strong>transformación.</strong>
+
+                </h2>
+
+
+                <p class="srv-texto-grande">
+
+                    Cada proyecto comienza escuchando,
+                    continúa entendiendo y termina convirtiendo
+                    una idea en una identidad capaz de conectar.
+
+                </p>
+
+
+                <div class="srv-proceso-grid">
+
+
+                    <article class="srv-proceso-item">
+
+                        <span class="srv-proceso-numero">
+                            01
+                        </span>
+
+                        <h3>
+                            CONOCEMOS
+                        </h3>
+
+                        <p>
+
+                            Entendemos la marca, su historia,
+                            su personalidad y aquello que quiere
+                            transmitir.
+
+                        </p>
+
+                    </article>
+
+
+                    <article class="srv-proceso-item">
+
+                        <span class="srv-proceso-numero">
+                            02
+                        </span>
+
+                        <h3>
+                            ANALIZAMOS
+                        </h3>
+
+                        <p>
+
+                            Identificamos qué funciona,
+                            qué puede mejorar y dónde está
+                            la oportunidad.
+
+                        </p>
+
+                    </article>
+
+
+                    <article class="srv-proceso-item">
+
+                        <span class="srv-proceso-numero">
+                            03
+                        </span>
+
+                        <h3>
+                            TRANSFORMAMOS
+                        </h3>
+
+                        <p>
+
+                            Desarrollamos una propuesta visual
+                            sin perder aquello que hace única
+                            a la marca.
+
+                        </p>
+
+                    </article>
+
+
+                    <article class="srv-proceso-item">
+
+                        <span class="srv-proceso-numero">
+                            04
+                        </span>
+
+                        <h3>
+                            CONECTAMOS
+                        </h3>
+
+                        <p>
+
+                            Llevamos la identidad a piezas
+                            y espacios donde pueda conectar
+                            con las personas.
+
+                        </p>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             PARA QUIÉN
+        ================================================== -->
+
+        <section class="srv-publico">
+
+
+            <div class="srv-contenedor">
+
+
+                <div class="srv-publico-grid">
+
+
+                    <div>
+
+                        <span class="srv-etiqueta">
+                            04 · PARA QUIÉN
+                        </span>
+
+
+                        <h2 class="srv-seccion-titulo">
+
+                            Marcas
+                            <br>
+                            <strong>con historia.</strong>
+
+                        </h2>
+
+
+                        <p class="srv-publico-texto">
+
+                            RENAX está pensado para pequeñas y
+                            medianas empresas y para emprendedores
+                            con trayectoria que entienden el valor
+                            de una marca bien construida.
+
+                        </p>
+
+                    </div>
+
+
+                    <ul class="srv-publico-lista">
+
+                        <li>
+
+                            <span>01</span>
+
+                            Marcas con historia.
+
+                        </li>
+
+
+                        <li>
+
+                            <span>02</span>
+
+                            Empresas que quieren evolucionar.
+
+                        </li>
+
+
+                        <li>
+
+                            <span>03</span>
+
+                            Negocios que necesitan comunicar mejor.
+
+                        </li>
+
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
+             CIERRE
+        ================================================== -->
+
+        <section class="srv-cierre">
+
+
+            <div class="srv-cierre-contenido">
+
+
+                <span class="srv-etiqueta">
+                    RENAX · HABLEMOS
+                </span>
+
+
+                <h2>
+
+                    ¿TU MARCA ESTÁ
+                    <br>
+                    LISTA PARA
+                    <span>EVOLUCIONAR?</span>
+
+                </h2>
+
+
+                <p>
+
+                    Hablemos de cómo podemos transformar
+                    su identidad sin borrar su historia.
+
+                </p>
+
+
+                <a
+                    href="contacto.html"
+                    class="srv-boton"
+                >
+
+                    HABLEMOS DE TU MARCA →
+
+                </a>
+
+
+                <div class="srv-cierre-linea"></div>
+
+
+                <span class="srv-firma">
+
+                    RENAX — TRANSFORMAMOS MARCAS
+                    SIN BORRAR SU HISTORIA.
+
+                </span>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ==================================================
+         FOOTER
+    ================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-content">
+
+            <p class="footer-contact-text">
+                RENAX · TRANSFORMAMOS MARCAS
+            </p>
+
+
+            <div class="footer-socials">
+
+                <a href="#">
+                    Instagram
+                </a>
+
+                <a href="#">
+                    Facebook
+                </a>
+
+                <a href="#">
+                    LinkedIn
+                </a>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 RENAX.
+                    Todos los derechos reservados.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ==================================================
+         JAVASCRIPT
+    ================================================== -->
+
+    <script>
+
+        /* ================================================
+           MENÚ
+        ================================================= */
+
+        const navToggle =
+            document.getElementById("navToggle");
+
+        const navMenu =
+            document.getElementById("navMenu");
+
+
+        if (navToggle && navMenu) {
+
+            navToggle.addEventListener(
+                "click",
+                function () {
+
+                    navMenu.classList.toggle("active");
+
+                }
+            );
+
         }
 
-        e.preventDefault();
 
-        const transicion = document.getElementById("renaxPageTransition");
+        /* ================================================
+           TRANSICIÓN DE ENTRADA
+        ================================================= */
 
-        if (transicion) {
-            transicion.classList.remove("hide");
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
 
-            setTimeout(function () {
-                window.location.href = destino;
-            }, 1400);
-        } else {
-            window.location.href = destino;
-        }
+                const transicion =
+                    document.getElementById(
+                        "renaxPageTransition"
+                    );
 
-    });
 
-});
-</script>
+                if (transicion) {
+
+                    setTimeout(
+                        function () {
+
+                            transicion.classList.add(
+                                "hide"
+                            );
+
+                        },
+                        600
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* ================================================
+           TRANSICIÓN ENTRE PÁGINAS
+        ================================================= */
+
+        document
+            .querySelectorAll("a[href]")
+            .forEach(function (enlace) {
+
+
+                enlace.addEventListener(
+                    "click",
+                    function (e) {
+
+
+                        const destino =
+                            enlace.getAttribute("href");
+
+
+                        if (
+
+                            !destino ||
+
+                            destino.startsWith("#") ||
+
+                            destino.startsWith("http") ||
+
+                            destino.startsWith("mailto:")
+
+                        ) {
+
+                            return;
+
+                        }
+
+
+                        e.preventDefault();
+
+
+                        const transicion =
+                            document.getElementById(
+                                "renaxPageTransition"
+                            );
+
+
+                        if (transicion) {
+
+                            transicion.classList.remove(
+                                "hide"
+                            );
+
+
+                            setTimeout(
+                                function () {
+
+                                    window.location.href =
+                                        destino;
+
+                                },
+                                900
+                            );
+
+                        } else {
+
+                            window.location.href =
+                                destino;
+
+                        }
+
+                    }
+                );
+
+            });
+
+    </script>
+
+
 </body>
+
 </html>
