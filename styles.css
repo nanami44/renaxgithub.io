@@ -9173,6 +9173,68 @@ min-height: 100vh;
         animation: none;
     }
 
+/* =====================================
+   CINTURÓN ANIMADO RENAX
+===================================== */
+
+.renax-cinturon {
+    position: relative;
+    width: 100%;
+    height: 34px;
+    overflow: hidden;
+    background: #050505;
+    border-top: 1px solid rgba(200, 16, 46, 0.65);
+    border-bottom: 1px solid rgba(200, 16, 46, 0.65);
+    display: flex;
+    align-items: center;
+    z-index: 10;
+}
+
+.renax-cinturon-pista {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    flex-shrink: 0;
+    animation: renaxCinturonMovimiento 22s linear infinite;
+}
+
+.renax-cinturon-pista span {
+    flex-shrink: 0;
+    padding: 0 28px;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    white-space: nowrap;
+}
+
+.renax-cinturon-pista span::first-letter {
+    color: #c8102e;
+}
+
+@keyframes renaxCinturonMovimiento {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Ajuste para móviles */
+@media (max-width: 600px) {
+    .renax-cinturon {
+        height: 29px;
+    }
+
+    .renax-cinturon-pista span {
+        font-size: 10px;
+        letter-spacing: 2px;
+        padding: 0 18px;
+    }
+}
+
     .renax-ave-frame:first-child {
         opacity: 1;
     }
