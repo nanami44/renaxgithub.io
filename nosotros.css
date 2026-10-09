@@ -3,34 +3,19 @@
    FONDO DINÁMICO ESTILO SERVICIOS
    ========================================================== */
 
-html,
-body {
+.nosotros-renax {
+    margin: 0;
     background: #050505;
+    color: #ffffff;
     overflow-x: hidden;
 }
 
-#main-content {
+.nosotros-renax #main-content {
     position: relative;
     overflow: hidden;
     isolation: isolate;
 
-    background:
-        radial-gradient(
-            circle at 15% 20%,
-            rgba(200, 16, 46, 0.18),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 85% 35%,
-            rgba(255, 72, 0, 0.13),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 50% 80%,
-            rgba(150, 0, 30, 0.14),
-            transparent 35%
-        ),
-        #050505;
+   
 }
 
 
@@ -38,171 +23,12 @@ body {
    CAPA PRINCIPAL DE MEZCLA
    ========================================================== */
 
-#main-content::before {
-    content: "";
-
-    position: absolute;
-
-    z-index: -2;
-
-    top: -25%;
-    left: -25%;
-
-    width: 150%;
-    height: 150%;
-
-    pointer-events: none;
-
-    background:
-
-        /* ROJO RENAX */
-        radial-gradient(
-            ellipse 35% 25% at 18% 25%,
-            rgba(200, 16, 46, 0.75),
-            transparent 70%
-        ),
-
-        /* ROJO OSCURO */
-        radial-gradient(
-            ellipse 45% 35% at 75% 15%,
-            rgba(105, 0, 20, 0.65),
-            transparent 72%
-        ),
-
-        /* NARANJA */
-        radial-gradient(
-            ellipse 30% 28% at 75% 70%,
-            rgba(255, 72, 0, 0.55),
-            transparent 70%
-        ),
-
-        /* ROJO BAJO */
-        radial-gradient(
-            ellipse 45% 30% at 25% 85%,
-            rgba(170, 5, 30, 0.45),
-            transparent 72%
-        ),
-
-        /* LUZ CÁLIDA */
-        radial-gradient(
-            ellipse 25% 20% at 50% 50%,
-            rgba(255, 110, 30, 0.12),
-            transparent 70%
-        );
-
-    filter: blur(35px);
-
-    animation:
-        renaxColorFlow
-        16s
-        ease-in-out
-        infinite
-        alternate;
-}
 
 
-/* ==========================================================
-   BANDA DIAGONAL EN MOVIMIENTO
-   ========================================================== */
-
-#main-content::after {
-    content: "";
-
-    position: absolute;
-
-    z-index: -1;
-
-    top: -70%;
-    left: -35%;
-
-    width: 45%;
-    height: 240%;
-
-    pointer-events: none;
-
-    transform: rotate(27deg);
-
-    background:
-
-        linear-gradient(
-            90deg,
-
-            transparent 0%,
-
-            rgba(200, 16, 46, 0.03) 20%,
-
-            rgba(200, 16, 46, 0.20) 38%,
-
-            rgba(255, 55, 0, 0.38) 48%,
-
-            rgba(200, 16, 46, 0.22) 58%,
-
-            rgba(120, 0, 20, 0.08) 72%,
-
-            transparent 100%
-        );
-
-    filter: blur(18px);
-
-    animation:
-        renaxDiagonalMove
-        11s
-        ease-in-out
-        infinite
-        alternate;
-}
 
 
-/* ==========================================================
-   SEGUNDA LUZ EN MOVIMIENTO
-   ========================================================== */
 
-.about-hero::before,
-.about-manifest::before,
-.about-mission-vision::before,
-.why-renax::before,
-.renax-team::before,
-.renax-exclusive-space::before,
-.renax-black-section::before,
-.renax-shortcuts::before {
 
-    content: "";
-
-    position: absolute;
-
-    top: -50%;
-    left: -30%;
-
-    width: 160%;
-    height: 200%;
-
-    pointer-events: none;
-
-    z-index: 0;
-
-    background:
-
-        radial-gradient(
-            ellipse at 30% 40%,
-            rgba(200, 16, 46, 0.20),
-            transparent 35%
-        ),
-
-        radial-gradient(
-            ellipse at 70% 65%,
-            rgba(255, 72, 0, 0.16),
-            transparent 32%
-        );
-
-    filter: blur(30px);
-
-    animation:
-        renaxSectionGlow
-        13s
-        ease-in-out
-        infinite
-        alternate;
-}
 
 
 /* ==========================================================
