@@ -9213,7 +9213,16 @@ min-height: 100vh;
     align-items: center;
     z-index: 10;
 }
+/* AJUSTE DE VISIBILIDAD DEL CINTURÓN RENAX */
+.renax-cinturon {
+    position: relative;
+    z-index: 10;
+    isolation: isolate;
+}
 
+.renax-cinturon-pista span {
+    color: #ffffff;
+}
 .renax-cinturon-pista {
     display: flex;
     align-items: center;
