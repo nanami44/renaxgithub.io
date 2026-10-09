@@ -319,13 +319,18 @@ ul {
 /* ==========================================================================
    SECCIÓN: WORK GRID ASIMÉTRICO (COMPLEX MOCKUP LAYOUT)
    ========================================================================== */
+
 .work-section {
-  max-width: var(--container-width);
-  margin: 0 auto;
-  padding: 6rem 2rem;
-  display: flex;
-  gap: 2rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 6rem 2rem;
+    display: flex;
+    gap: 2rem;
+    background: transparent !important;
+    position: relative;
+    z-index: 3;
 }
+
 
 .work-title-vertical {
   font-family: var(--font-heading);
