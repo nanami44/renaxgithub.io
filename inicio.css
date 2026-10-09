@@ -91,6 +91,15 @@
     z-index: 1;
 }
 
+/* Mostrar las respuestas de las preguntas frecuentes */
+.renax-faq .faq-answer {
+    display: none;
+}
+
+.renax-faq .faq-answer.faq-abierta {
+    display: block;
+}
+
 /* RENAX: permitir que se vea el fondo dinámico */
 .inicio-renax main,
 .inicio-renax .work-side {
