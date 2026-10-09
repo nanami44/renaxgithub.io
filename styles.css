@@ -9275,3 +9275,10 @@ min-height: 100vh;
         opacity: 1;
     }
 }
+
+/* INICIO: permitir ver el fondo dinámico */
+.work-section {
+    background: transparent !important;
+    position: relative;
+    z-index: 3;
+}
