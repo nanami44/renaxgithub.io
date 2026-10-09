@@ -7795,3 +7795,1282 @@ min-height: 100vh;
     }
 
 }
+/* ==========================================================
+   RENAX · NUEVA PÁGINA NOSOTROS
+   ESTILO VISUAL RENAX
+   ========================================================== */
+
+
+/* ==========================================================
+   1. LIMPIEZA DE ELEMENTOS ANTIGUOS
+   ========================================================== */
+
+/* Quitamos el cinturón antiguo de NOSOTROS */
+.video-nosotros::before {
+    display: none !important;
+}
+
+
+/* ==========================================================
+   2. BASE GENERAL
+   ========================================================== */
+
+.nosotros-portada,
+.nosotros-video,
+.nosotros-historia,
+.nosotros-mision-vision,
+.nosotros-por-que,
+.nosotros-equipo,
+.nosotros-que-hacemos,
+.nosotros-cierre {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+
+/* ==========================================================
+   3. PORTADA
+   ========================================================== */
+
+.nosotros-portada {
+    min-height: 82vh;
+    background: #050505;
+    color: #ffffff;
+
+    display: flex;
+    align-items: flex-end;
+
+    padding: 120px 8% 100px;
+
+    isolation: isolate;
+}
+
+
+/* Fondo rojo diagonal */
+
+.nosotros-portada::before {
+    content: "";
+
+    position: absolute;
+
+    width: 75%;
+    height: 180%;
+
+    top: -45%;
+    right: -25%;
+
+    background: linear-gradient(
+        135deg,
+        transparent 0%,
+        rgba(200, 16, 46, 0.04) 30%,
+        rgba(200, 16, 46, 0.30) 50%,
+        rgba(200, 16, 46, 0.08) 70%,
+        transparent 100%
+    );
+
+    transform: rotate(-18deg);
+
+    z-index: -1;
+
+    animation: nosotrosRedMove 12s ease-in-out infinite alternate;
+}
+
+
+.nosotros-portada::after {
+    content: "";
+
+    position: absolute;
+
+    width: 45%;
+    height: 2px;
+
+    background: #c8102e;
+
+    right: 8%;
+    bottom: 16%;
+
+    box-shadow:
+        0 0 15px rgba(200,16,46,0.7),
+        0 0 35px rgba(200,16,46,0.25);
+
+    z-index: -1;
+}
+
+
+@keyframes nosotrosRedMove {
+
+    0% {
+        transform: translateX(0) rotate(-18deg);
+    }
+
+    100% {
+        transform: translateX(-8%) rotate(-18deg);
+    }
+
+}
+
+
+.nosotros-portada-contenido {
+    width: min(1100px, 100%);
+    margin: 0 auto;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.nosotros-etiqueta {
+    display: block;
+
+    margin-bottom: 24px;
+
+    color: #c8102e;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+
+    letter-spacing: 4px;
+}
+
+
+.nosotros-portada h1 {
+    max-width: 1000px;
+
+    margin: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(3.5rem, 7vw, 7.5rem);
+
+    line-height: 0.92;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+
+.nosotros-portada h1 strong {
+    display: block;
+
+    color: #c8102e;
+
+    font-weight: 600;
+}
+
+
+.nosotros-portada p {
+    max-width: 700px;
+
+    margin: 38px 0 0;
+
+    color: #cccccc;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 1rem;
+
+    line-height: 1.8;
+}
+
+
+
+/* ==========================================================
+   4. VIDEO
+   ========================================================== */
+
+.nosotros-video {
+    background: #ffffff;
+
+    color: #050505;
+
+    padding: 110px 8% 130px;
+}
+
+
+.nosotros-seccion-intro {
+    width: min(1100px, 100%);
+
+    margin: 0 auto 55px;
+}
+
+
+.nosotros-seccion-intro > span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #c8102e;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+.nosotros-seccion-intro h2 {
+    max-width: 900px;
+
+    margin: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+}
+
+
+.nosotros-seccion-intro h2 strong {
+    display: block;
+
+    color: #c8102e;
+}
+
+
+.video-nosotros {
+    width: min(1200px, 100%);
+
+    margin: 0 auto;
+
+    aspect-ratio: 16 / 9;
+
+    background: #050505;
+
+    border: 1px solid #222222;
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,0.20);
+}
+
+
+.video-nosotros iframe {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    border: 0;
+}
+
+
+
+/* ==========================================================
+   5. NÚMERO DE SECCIÓN
+   ========================================================== */
+
+.nosotros-numero {
+    position: absolute;
+
+    top: 80px;
+    left: 8%;
+
+    color: #c8102e;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+
+/* ==========================================================
+   6. TÍTULOS GENERALES DE SECCIÓN
+   ========================================================== */
+
+.nosotros-seccion-titulo {
+    width: min(1100px, 100%);
+
+    margin: 0 auto 70px;
+}
+
+
+.nosotros-seccion-titulo > span {
+    display: block;
+
+    margin-bottom: 18px;
+
+    color: #c8102e;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+.nosotros-seccion-titulo h2 {
+    max-width: 950px;
+
+    margin: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(3rem, 6vw, 6rem);
+
+    line-height: 0.94;
+
+    font-weight: 500;
+
+    letter-spacing: -1px;
+}
+
+
+.nosotros-seccion-titulo h2 strong {
+    display: block;
+
+    color: #c8102e;
+
+    font-weight: 600;
+}
+
+
+
+/* ==========================================================
+   7. HISTORIA
+   ========================================================== */
+
+.nosotros-historia {
+    min-height: 80vh;
+
+    background: #050505;
+
+    color: #ffffff;
+
+    padding: 150px 8% 130px;
+}
+
+
+.historia-contenido {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 45px;
+}
+
+
+.historia-contenido p {
+    margin: 0;
+
+    color: #cccccc;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.9;
+}
+
+
+.historia-contenido p:first-child {
+    color: #ffffff;
+
+    font-size: 1.1rem;
+
+    font-weight: 500;
+}
+
+
+.historia-contenido p::before {
+    content: "";
+
+    display: block;
+
+    width: 35px;
+    height: 2px;
+
+    margin-bottom: 25px;
+
+    background: #c8102e;
+}
+
+
+
+/* ==========================================================
+   8. MISIÓN Y VISIÓN
+   ========================================================== */
+
+.nosotros-mision-vision {
+    background: #ffffff;
+
+    color: #050505;
+
+    padding: 150px 8% 140px;
+}
+
+
+.mision-vision-grid {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+.nosotros-card-mv {
+    position: relative;
+
+    min-height: 430px;
+
+    padding: 55px;
+
+    background: #050505;
+
+    color: #ffffff;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+}
+
+
+.nosotros-card-mv::after {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    right: -100px;
+    bottom: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(200,16,46,0.18);
+
+    filter: blur(5px);
+}
+
+
+.nosotros-card-vision {
+    background: #111111;
+}
+
+
+.card-numero {
+    display: block;
+
+    margin-bottom: 70px;
+
+    color: #c8102e;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.nosotros-card-mv h3 {
+    margin: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(3rem, 5vw, 5rem);
+
+    line-height: 0.9;
+
+    font-weight: 600;
+}
+
+
+.card-linea {
+    width: 55px;
+    height: 2px;
+
+    margin: 28px 0;
+
+    background: #c8102e;
+}
+
+
+.nosotros-card-mv p {
+    max-width: 520px;
+
+    margin: 0;
+
+    color: #cccccc;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+
+
+/* ==========================================================
+   9. POR QUÉ RENAX
+   ========================================================== */
+
+.nosotros-por-que {
+    background: #050505;
+
+    color: #ffffff;
+
+    padding: 150px 8% 140px;
+}
+
+
+.por-que-grid {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    border-top: 1px solid #333333;
+
+    border-left: 1px solid #333333;
+}
+
+
+.por-que-item {
+    min-height: 330px;
+
+    padding: 50px;
+
+    box-sizing: border-box;
+
+    border-right: 1px solid #333333;
+
+    border-bottom: 1px solid #333333;
+
+    transition:
+        background 0.35s ease,
+        transform 0.35s ease;
+}
+
+
+.por-que-item:hover {
+    background: #111111;
+}
+
+
+.por-que-item > span {
+    color: #c8102e;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.por-que-item h3 {
+    max-width: 420px;
+
+    margin: 55px 0 25px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(2.4rem, 4vw, 4rem);
+
+    line-height: 0.95;
+
+    font-weight: 500;
+}
+
+
+.por-que-item h3 strong {
+    display: block;
+
+    color: #c8102e;
+
+    font-weight: 600;
+}
+
+
+.por-que-item p {
+    max-width: 400px;
+
+    margin: 0;
+
+    color: #aaaaaa;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.85rem;
+
+    line-height: 1.7;
+}
+
+
+
+/* ==========================================================
+   10. QUIÉNES SOMOS
+   ========================================================== */
+
+.nosotros-equipo {
+    background: #ffffff;
+
+    color: #050505;
+
+    padding: 150px 8% 140px;
+}
+
+
+.nosotros-equipo-grid {
+    width: min(1200px, 100%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 80px;
+}
+
+
+.nosotros-equipo-imagen {
+    min-height: 600px;
+
+    background: #050505;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    position: relative;
+}
+
+
+.nosotros-equipo-imagen::before {
+    content: "";
+
+    position: absolute;
+
+    width: 90%;
+    height: 2px;
+
+    top: 25%;
+
+    left: 5%;
+
+    background: #c8102e;
+
+    box-shadow: 0 0 20px rgba(200,16,46,0.5);
+}
+
+
+.nosotros-equipo-imagen img {
+    position: relative;
+
+    max-width: 100%;
+
+    max-height: 600px;
+
+    width: auto;
+
+    object-fit: contain;
+
+    z-index: 2;
+}
+
+
+.nosotros-equipo-texto > span {
+    display: block;
+
+    margin-bottom: 20px;
+
+    color: #c8102e;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+.nosotros-equipo-texto h2 {
+    margin: 0 0 40px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(4rem, 7vw, 7rem);
+
+    line-height: 0.85;
+
+    font-weight: 500;
+}
+
+
+.nosotros-equipo-texto h2 strong {
+    display: block;
+
+    color: #c8102e;
+
+    font-weight: 600;
+}
+
+
+.nosotros-equipo-texto p {
+    max-width: 550px;
+
+    margin: 0 0 25px;
+
+    color: #555555;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.9rem;
+
+    line-height: 1.9;
+}
+
+
+
+/* ==========================================================
+   11. QUÉ HACEMOS
+   ========================================================== */
+
+.nosotros-que-hacemos {
+    background: #050505;
+
+    color: #ffffff;
+
+    padding: 150px 8% 140px;
+}
+
+
+.que-hacemos-contenido {
+    width: min(1100px, 100%);
+
+    margin: 0 auto;
+}
+
+
+.que-hacemos-principal {
+    padding: 65px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #333333;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(200,16,46,0.12),
+            transparent 50%
+        );
+}
+
+
+.que-hacemos-principal h3 {
+    max-width: 850px;
+
+    margin: 0 0 35px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(3rem, 5vw, 5.5rem);
+
+    line-height: 0.9;
+
+    font-weight: 500;
+}
+
+
+.que-hacemos-principal h3 strong {
+    color: #c8102e;
+
+    font-weight: 600;
+}
+
+
+.que-hacemos-principal p {
+    max-width: 800px;
+
+    margin: 0 0 20px;
+
+    color: #bbbbbb;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+
+.beneficios-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1px;
+
+    background: #333333;
+
+    border: 1px solid #333333;
+}
+
+
+.beneficios-grid article {
+    min-height: 300px;
+
+    padding: 35px;
+
+    background: #050505;
+
+    box-sizing: border-box;
+}
+
+
+.beneficios-grid article > span {
+    color: #c8102e;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.7rem;
+
+    font-weight: 800;
+
+    letter-spacing: 3px;
+}
+
+
+.beneficios-grid h4 {
+    margin: 60px 0 20px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 2.3rem;
+
+    line-height: 0.9;
+
+    font-weight: 500;
+}
+
+
+.beneficios-grid h4 strong {
+    display: block;
+
+    color: #c8102e;
+
+    font-weight: 600;
+}
+
+
+.beneficios-grid p {
+    margin: 0;
+
+    color: #999999;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.78rem;
+
+    line-height: 1.7;
+}
+
+
+
+/* ==========================================================
+   12. CIERRE
+   ========================================================== */
+
+.nosotros-cierre {
+    min-height: 75vh;
+
+    background: #050505;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 120px 8%;
+
+    box-sizing: border-box;
+}
+
+
+.nosotros-cierre::before {
+    content: "";
+
+    position: absolute;
+
+    width: 70%;
+    height: 70%;
+
+    left: 15%;
+    top: 15%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(200,16,46,0.15),
+            transparent 65%
+        );
+
+    pointer-events: none;
+}
+
+
+.nosotros-cierre-contenido {
+    position: relative;
+
+    width: min(900px, 100%);
+
+    z-index: 2;
+}
+
+
+.nosotros-cierre-contenido > span {
+    display: block;
+
+    margin-bottom: 25px;
+
+    color: #c8102e;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.8rem;
+
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+
+.nosotros-cierre h2 {
+    margin: 0;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(3.5rem, 7vw, 7rem);
+
+    line-height: 0.88;
+
+    font-weight: 500;
+}
+
+
+.nosotros-cierre h2 strong {
+    display: block;
+
+    color: #c8102e;
+
+    font-weight: 600;
+}
+
+
+.nosotros-cierre p {
+    max-width: 650px;
+
+    margin: 35px auto;
+
+    color: #bbbbbb;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+.nosotros-cierre-boton {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 52px;
+
+    padding: 0 32px;
+
+    border: 1px solid #c8102e;
+
+    color: #ffffff;
+
+    background: #c8102e;
+
+    text-decoration: none;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.75rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.nosotros-cierre-boton:hover {
+    background: transparent;
+
+    color: #c8102e;
+
+    transform: translateY(-3px);
+}
+
+
+.nosotros-cierre-linea {
+    width: 80px;
+    height: 1px;
+
+    margin: 55px auto 25px;
+
+    background: #c8102e;
+}
+
+
+.nosotros-cierre-contenido small {
+    color: #777777;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 2px;
+}
+
+
+
+/* ==========================================================
+   13. RESPONSIVE · TABLET
+   ========================================================== */
+
+@media (max-width: 1000px) {
+
+    .historia-contenido {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+
+    .mision-vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .nosotros-equipo-grid {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+
+    .nosotros-equipo-imagen {
+        min-height: 500px;
+    }
+
+
+    .beneficios-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+
+/* ==========================================================
+   14. RESPONSIVE · MÓVIL
+   ========================================================== */
+
+@media (max-width: 700px) {
+
+    .nosotros-portada {
+        min-height: 75vh;
+
+        padding: 110px 7% 70px;
+    }
+
+
+    .nosotros-portada h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+
+        letter-spacing: -1px;
+    }
+
+
+    .nosotros-portada p {
+        font-size: 0.85rem;
+    }
+
+
+    .nosotros-video,
+    .nosotros-historia,
+    .nosotros-mision-vision,
+    .nosotros-por-que,
+    .nosotros-equipo,
+    .nosotros-que-hacemos {
+        padding-left: 7%;
+        padding-right: 7%;
+    }
+
+
+    .nosotros-video {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+
+    .nosotros-historia,
+    .nosotros-mision-vision,
+    .nosotros-por-que,
+    .nosotros-equipo,
+    .nosotros-que-hacemos {
+        padding-top: 120px;
+        padding-bottom: 110px;
+    }
+
+
+    .nosotros-numero {
+        top: 55px;
+        left: 7%;
+    }
+
+
+    .nosotros-seccion-titulo {
+        margin-bottom: 50px;
+    }
+
+
+    .nosotros-seccion-titulo h2 {
+        font-size: clamp(3rem, 13vw, 5rem);
+    }
+
+
+    .historia-contenido {
+        grid-template-columns: 1fr;
+    }
+
+
+    .nosotros-card-mv {
+        min-height: 380px;
+
+        padding: 40px;
+    }
+
+
+    .por-que-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .por-que-item {
+        min-height: 280px;
+
+        padding: 35px;
+    }
+
+
+    .por-que-item h3 {
+        margin-top: 45px;
+    }
+
+
+    .nosotros-equipo-imagen {
+        min-height: 420px;
+    }
+
+
+    .nosotros-equipo-texto h2 {
+        font-size: clamp(4rem, 17vw, 6rem);
+    }
+
+
+    .que-hacemos-principal {
+        padding: 40px 30px;
+    }
+
+
+    .que-hacemos-principal h3 {
+        font-size: clamp(3rem, 12vw, 5rem);
+    }
+
+
+    .beneficios-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .beneficios-grid article {
+        min-height: 250px;
+    }
+
+
+    .beneficios-grid h4 {
+        margin-top: 45px;
+    }
+
+
+    .nosotros-cierre {
+        min-height: 70vh;
+
+        padding: 100px 7%;
+    }
+
+
+    .nosotros-cierre h2 {
+        font-size: clamp(3.2rem, 14vw, 5rem);
+    }
+
+
+    .nosotros-cierre p {
+        font-size: 0.85rem;
+    }
+
+}
