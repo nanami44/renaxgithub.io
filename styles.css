@@ -1380,7 +1380,7 @@ scroll-behavior: auto;
 
   padding: 100px 8%;
 
-  background: #050505;
+ background: transparent;
 border: 2px solid #ff173d;
 border-radius: 45px;
 width: 92%;
