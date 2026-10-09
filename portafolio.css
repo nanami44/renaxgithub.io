@@ -90,3 +90,30 @@
     position: relative;
     z-index: 1;
 }
+/* ==========================================================
+   PORTAFOLIO · DEJAR VER EL FONDO DINÁMICO
+   ========================================================== */
+
+.portafolio-renax .renax-casos-estudio {
+    position: relative;
+    background: transparent !important;
+}
+
+.portafolio-renax .casos-estudio-destacado {
+    position: relative;
+    background: rgba(5, 5, 5, 0.35) !important;
+}
+
+.portafolio-renax .portfolio-gallery {
+    position: relative;
+    z-index: 2;
+}
+
+.portafolio-renax .renax-casos-estudio {
+    z-index: 2;
+}
+
+.portafolio-renax .renax-portfolio-cierre {
+    position: relative;
+    z-index: 2;
+}
