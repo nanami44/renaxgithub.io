@@ -733,6 +733,22 @@ document.querySelectorAll("a[href]").forEach(function (enlace) {
     });
 
 });  
+  
+/* Activar preguntas frecuentes de RENAX */
+document.querySelectorAll('.faq-question').forEach((boton) => {
+    boton.addEventListener('click', () => {
+        const respuesta = boton.nextElementSibling;
+        const abierta = respuesta.classList.toggle('faq-abierta');
+
+        boton.setAttribute('aria-expanded', abierta);
+        const icono = boton.querySelector('.faq-icon');
+
+        if (icono) {
+            icono.textContent = abierta ? '−' : '+';
+        }
+    });
+});
+
 </script>
 </body>
 </html>
