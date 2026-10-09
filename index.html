@@ -770,5 +770,42 @@ document.addEventListener('DOMContentLoaded', function () {
   </div>
 </div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const abrirManual = document.getElementById("abrirManualMarca");
+    const ventanaManual = document.getElementById("ventanaManualMarca");
+    const cerrarManual = document.getElementById("cerrarManualMarca");
+
+    if (!abrirManual || !ventanaManual || !cerrarManual) return;
+
+    function cerrarVentanaManual() {
+        ventanaManual.classList.remove("activo");
+        ventanaManual.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+    }
+
+    abrirManual.addEventListener("click", function (event) {
+        event.preventDefault();
+        ventanaManual.classList.add("activo");
+        ventanaManual.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    });
+
+    cerrarManual.addEventListener("click", cerrarVentanaManual);
+
+    ventanaManual.addEventListener("click", function (event) {
+        if (event.target === ventanaManual) {
+            cerrarVentanaManual();
+        }
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+            cerrarVentanaManual();
+        }
+    });
+});
+</script>
+
 </body>
 </html>
