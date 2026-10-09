@@ -90,3 +90,9 @@
     position: relative;
     z-index: 1;
 }
+
+/* RENAX: permitir que se vea el fondo dinámico */
+.inicio-renax main,
+.inicio-renax .work-side {
+    background: transparent !important;
+}
