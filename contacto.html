@@ -1,193 +1,794 @@
-S<!DOCTYPE html>
+
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contáctanos - Ponte en contacto con nuestro equipo global de expertos en branding.">
-  <title>Contacto | Agencia de Branding & Marketing</title>
-  
-  <!-- FontAwesome v6 & CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Contacta con RENAX. Transformamos marcas sin borrar su historia.">
+
+    <title>Contáctanos | RENAX</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- TIPOGRAFÍAS ORIGINALES DE SERVICIOS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <style>
+        /* CONFIGURACIÓN GENERAL */
+
+        .contacto-renax {
+            margin: 0;
+            background: #050505;
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .contacto-renax *,
+        .contacto-renax *::before,
+        .contacto-renax *::after {
+            box-sizing: border-box;
+        }
+
+        /* FONDO DINÁMICO ORIGINAL DE SERVICIOS */
+
+        .servicios-fondo {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background: #050505;
+        }
+
+        .servicios-fondo::before {
+            content: "";
+            position: absolute;
+            width: 75vw;
+            height: 180vh;
+            top: -45vh;
+            left: 48%;
+
+            background: linear-gradient(
+                135deg,
+                transparent 0%,
+                transparent 20%,
+                rgba(200,16,46,0.08) 30%,
+                rgba(200,16,46,0.65) 45%,
+                #c8102e 50%,
+                rgba(200,16,46,0.55) 56%,
+                rgba(200,16,46,0.08) 72%,
+                transparent 82%
+            );
+
+            filter: blur(8px);
+            transform: rotate(0deg);
+            animation: renaxRedMove 18s ease-in-out infinite alternate;
+        }
+
+        .servicios-fondo::after {
+            content: "";
+            position: absolute;
+            width: 55vw;
+            height: 150vh;
+            top: -25vh;
+            left: 58%;
+
+            background: linear-gradient(
+                135deg,
+                transparent 35%,
+                rgba(200,16,46,0.25) 48%,
+                rgba(200,16,46,0.05) 65%,
+                transparent 75%
+            );
+
+            filter: blur(25px);
+            animation: renaxRedGlow 14s ease-in-out infinite alternate;
+        }
+
+        @keyframes renaxRedMove {
+            0% {
+                transform: translateX(-15vw) rotate(-8deg) scale(1);
+            }
+
+            50% {
+                transform: translateX(5vw) rotate(-3deg) scale(1.08);
+            }
+
+            100% {
+                transform: translateX(18vw) rotate(5deg) scale(1.12);
+            }
+        }
+
+        @keyframes renaxRedGlow {
+            0% {
+                transform: translateX(10vw) rotate(-5deg);
+            }
+
+            100% {
+                transform: translateX(-10vw) rotate(5deg);
+            }
+        }
+
+        /* CONTENIDO */
+
+        .contacto-contenido {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* PORTADA */
+
+        .contacto-portada {
+            min-height: 90vh;
+            padding: 150px 8% 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .contacto-etiqueta {
+            display: block;
+            color: #c8102e;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .contacto-titulo {
+            max-width: 1100px;
+            margin: 0 0 35px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(3.5rem, 9vw, 8.5rem);
+            line-height: 0.9;
+            font-weight: 800;
+            letter-spacing: -4px;
+        }
+
+        .contacto-titulo span {
+            color: #c8102e;
+        }
+
+        .contacto-descripcion {
+            max-width: 780px;
+            color: #cccccc;
+            font-size: 17px;
+            line-height: 1.9;
+        }
+
+        .contacto-linea {
+            width: 100%;
+            height: 1px;
+            margin-top: 75px;
+            background: rgba(255,255,255,0.18);
+        }
+
+        /* SECCIÓN DE CONTACTO */
+
+        .contacto-seccion {
+            padding: 130px 8%;
+            background: rgba(5,5,5,0.78);
+        }
+
+        .contacto-contenedor {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .contacto-subtitulo {
+            margin: 0 0 30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 6vw, 6rem);
+            line-height: 0.95;
+            font-weight: 600;
+        }
+
+        .contacto-subtitulo span {
+            color: #c8102e;
+        }
+
+        .contacto-texto {
+            color: #cccccc;
+            font-size: 16px;
+            line-height: 1.9;
+            max-width: 650px;
+        }
+
+        /* TARJETA DE CONTACTO */
+
+        .contacto-tarjeta {
+            padding: 45px 38px;
+            background: rgba(5,5,5,0.68);
+            border: 1px solid rgba(255,255,255,0.15);
+            position: relative;
+            backdrop-filter: blur(4px);
+        }
+
+        .contacto-tarjeta::before {
+            content: "";
+            position: absolute;
+            inset: 12px;
+            border: 1px solid rgba(200,16,46,0.2);
+            pointer-events: none;
+        }
+
+        .contacto-tarjeta-contenido {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contacto-tarjeta h3 {
+            margin: 0 0 20px;
+            font-size: 22px;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .contacto-tarjeta p {
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.9;
+            margin-bottom: 30px;
+        }
+
+        .contacto-boton {
+            display: inline-block;
+            padding: 17px 25px;
+            border: 1px solid rgba(255,255,255,0.5);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            line-height: 1.7;
+            transition: 0.3s ease;
+        }
+
+        .contacto-boton:hover {
+            background: #c8102e;
+            border-color: #c8102e;
+        }
+
+        .contacto-nota {
+            margin-top: 22px;
+            color: #999999;
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        /* SERVICIOS DE RENAX */
+
+        .contacto-servicios {
+            padding: 130px 8%;
+        }
+
+        .contacto-servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1px;
+            margin-top: 65px;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .contacto-servicio {
+            min-height: 180px;
+            padding: 35px;
+            background: rgba(5,5,5,0.88);
+        }
+
+        .contacto-servicio-numero {
+            display: block;
+            margin-bottom: 25px;
+            color: #c8102e;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+        }
+
+        .contacto-servicio h3 {
+            margin: 0 0 12px;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.5;
+        }
+
+        .contacto-servicio p {
+            margin: 0;
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        /* CIERRE */
+
+        .contacto-cierre {
+            min-height: 75vh;
+            padding: 130px 8%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: rgba(5,5,5,0.85);
+        }
+
+        .contacto-cierre-contenido {
+            max-width: 1000px;
+        }
+
+        .contacto-cierre h2 {
+            margin: 0 0 35px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3.5rem, 7vw, 7rem);
+            line-height: 0.95;
+            font-weight: 600;
+        }
+
+        .contacto-cierre h2 span {
+            color: #c8102e;
+        }
+
+        .contacto-cierre p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: #cccccc;
+            font-size: 16px;
+            line-height: 1.9;
+        }
+
+        .contacto-firma {
+            display: block;
+            margin-top: 70px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.15);
+            color: #ffffff;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            line-height: 1.9;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .contacto-grid {
+                grid-template-columns: 1fr;
+                gap: 55px;
+            }
+
+            .contacto-portada {
+                min-height: 80vh;
+                padding: 120px 7% 80px;
+            }
+
+            .contacto-titulo {
+                letter-spacing: -2px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .contacto-portada {
+                min-height: 75vh;
+                padding: 110px 6% 70px;
+            }
+
+            .contacto-titulo {
+                font-size: clamp(3rem, 14vw, 5rem);
+                letter-spacing: -2px;
+            }
+
+            .contacto-descripcion {
+                font-size: 15px;
+            }
+
+            .contacto-seccion,
+            .contacto-servicios,
+            .contacto-cierre {
+                padding: 90px 6%;
+            }
+
+            .contacto-servicios-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contacto-servicio {
+                min-height: auto;
+                padding: 30px 25px;
+            }
+
+            .contacto-tarjeta {
+                padding: 35px 25px;
+            }
+
+            .contacto-cierre h2 {
+                font-size: clamp(2.8rem, 13vw, 4.5rem);
+            }
+
+            .contacto-firma {
+                letter-spacing: 2px;
+            }
+        }
+    </style>
 </head>
-<body>
-<!-- TRANSICIÓN RENAX -->
-<div class="renax-page-transition" id="renaxPageTransition">
-    <div class="renax-transition-logo">
-      <img src="logo-renax-transparente.png" alt="RENAX" class="transition-logo-image">
+
+<body class="contacto-renax">
+
+    <!-- TRANSICIÓN RENAX -->
+
+    <div class="renax-page-transition" id="renaxPageTransition">
+        <div class="renax-transition-logo">
+            <img src="logo-renax-transparente.png"
+                 alt="RENAX"
+                 class="transition-logo-image">
+        </div>
     </div>
-</div>
-  <!-- HEADER GLOBAL -->
-  <header class="site-header">
-    <div class="nav-container">
-    <a href="index.html" class="brand-logo" aria-label="Página principal">
-        <img src="logo-renax-transparente.png" alt="RENAX" class="logo-renax">
-        
-      </a>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación">
-        <i class="fa-solid fa-bars"></i>
-      </button>
+    <!-- ENCABEZADO ORIGINAL -->
 
-      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
-       <a href="index.html" class="nav-link">Inicio</a>
-        <a href="nosotros.html" class="nav-link">Nosotros</a>
-        <a href="portafolio.html" class="nav-link">Portafolio</a>
-        <a href="servicios.html" class="nav-link">Servicios</a>
-        <a href="contacto.html" class="nav-link active" aria-current="page">Contáctanos</a>
-      </nav>
+    <header class="site-header">
+        <div class="nav-container">
 
-     
-   
+            <a href="index.html"
+               class="brand-logo"
+               aria-label="Página principal">
+                <img src="logo-renax-transparente.png"
+                     alt="RENAX"
+                     class="logo-renax">
+            </a>
 
-<button class="language" id="languageBtn" type="button">ESP</button>
-<a href="registro.html" class="login-btn">INICIAR SESIÓN</a>
+            <button class="nav-toggle"
+                    id="navToggle"
+                    aria-label="Abrir menú de navegación">
+                <i class="fa-solid fa-bars"></i>
+            </button>
 
-</div>
-</header>
+            <nav class="nav-menu"
+                 id="navMenu"
+                 aria-label="Navegación principal">
 
+                <a href="index.html" class="nav-link">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="portafolio.html" class="nav-link">Portafolio</a>
+                <a href="servicios.html" class="nav-link">Servicios</a>
 
-    <!-- HERO CONTACTO -->
-    <section class="contact-hero">
-      <h1>CONTACTO</h1>
-      <p>Get in touch with our global team of branding experts to discuss your challenge.</p>
-    </section>
+                <a href="contacto.html"
+                   class="nav-link active"
+                   aria-current="page">
+                    Contáctanos
+                </a>
+            </nav>
 
-    <!-- FORMULARIO DE CONTACTO COMPLETO -->
-    <section class="contact-form-container">
-      <form id="fullContactForm" novalidate>
-        <div class="form-group-box">
-          <input type="text" class="form-input-box" id="firstName" placeholder="First Name" required>
+            <button class="language"
+                    id="languageBtn"
+                    type="button">
+                ESP
+            </button>
+
+            <a href="registro.html" class="login-btn">
+                INICIAR SESIÓN
+            </a>
+
         </div>
+    </header>
 
-        <div class="form-group-box">
-          <input type="text" class="form-input-box" id="lastName" placeholder="Last name" required>
+    <!-- FONDO ANIMADO -->
+
+    <div class="servicios-fondo"></div>
+
+    <main class="contacto-contenido">
+
+        <!-- PORTADA -->
+
+        <section class="contacto-portada">
+
+            <span class="contacto-etiqueta">
+                RENAX · CONTÁCTANOS
+            </span>
+
+            <h1 class="contacto-titulo">
+                HABLEMOS
+                <br>
+                DE TU <span>MARCA.</span>
+            </h1>
+
+            <p class="contacto-descripcion">
+                Cada marca tiene una historia que contar.
+                Cuéntanos la tuya y exploremos cómo fortalecer
+                su identidad, modernizar su imagen y proyectarla
+                hacia nuevas oportunidades sin perder su esencia.
+            </p>
+
+            <div class="contacto-linea"></div>
+
+        </section>
+
+        <!-- INICIEMOS UNA CONVERSACIÓN -->
+
+        <section class="contacto-seccion">
+
+            <div class="contacto-contenedor contacto-grid">
+
+                <div>
+                    <span class="contacto-etiqueta">
+                        01 · EL PRIMER PASO
+                    </span>
+
+                    <h2 class="contacto-subtitulo">
+                        Toda transformación
+                        comienza con una
+                        <span>conversación.</span>
+                    </h2>
+
+                    <p class="contacto-texto">
+                        En RENAX creemos que una marca no necesita
+                        olvidar su historia para avanzar. Necesita
+                        reconocer su valor, descubrir nuevas
+                        posibilidades y encontrar una manera de
+                        comunicar mejor lo que la hace única.
+                    </p>
+
+                    <p class="contacto-texto">
+                        Queremos conocer tu negocio, entender tus
+                        objetivos y explorar contigo cómo podemos
+                        fortalecer su identidad.
+                    </p>
+                </div>
+
+                <div class="contacto-tarjeta">
+                    <div class="contacto-tarjeta-contenido">
+
+                        <span class="contacto-etiqueta">
+                            HABLEMOS DE TU PROYECTO
+                        </span>
+
+                        <h3>
+                            Cuéntanos qué necesita tu marca.
+                        </h3>
+
+                        <p>
+                            Da el primer paso. Accede a nuestro
+                            formulario para compartir la información
+                            de tu proyecto y explicarnos qué te
+                            gustaría transformar.
+                        </p>
+
+                        <a href="registro.html"
+                           class="contacto-boton">
+                            ENVIAR SOLICITUD →
+                        </a>
+
+                        <p class="contacto-nota">
+                            Tu historia es el punto de partida
+                            para construir nuevas posibilidades.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- EN QUÉ PODEMOS AYUDARTE -->
+
+        <section class="contacto-servicios">
+
+            <div class="contacto-contenedor">
+
+                <span class="contacto-etiqueta">
+                    02 · ¿CÓMO PODEMOS AYUDARTE?
+                </span>
+
+                <h2 class="contacto-subtitulo">
+                    Una marca con historia.
+                    <br>
+                    Un futuro por <span>construir.</span>
+                </h2>
+
+                <p class="contacto-texto">
+                    Cada negocio tiene necesidades diferentes.
+                    Estas son algunas de las áreas en las que
+                    podemos trabajar contigo.
+                </p>
+
+                <div class="contacto-servicios-grid">
+
+                    <article class="contacto-servicio">
+                        <span class="contacto-servicio-numero">
+                            01 · IDENTIDAD
+                        </span>
+                        <h3>Renovación de identidad visual</h3>
+                        <p>
+                            Actualizamos la imagen de tu marca
+                            respetando su esencia y trayectoria.
+                        </p>
+                    </article>
+
+                    <article class="contacto-servicio">
+                        <span class="contacto-servicio-numero">
+                            02 · ESTRATEGIA
+                        </span>
+                        <h3>Fortalecimiento de marca</h3>
+                        <p>
+                            Trabajamos en una identidad más clara,
+                            coherente y alineada con tus objetivos.
+                        </p>
+                    </article>
+
+                    <article class="contacto-servicio">
+                        <span class="contacto-servicio-numero">
+                            03 · COMUNICACIÓN
+                        </span>
+                        <h3>Diseño de piezas gráficas</h3>
+                        <p>
+                            Creamos recursos visuales para comunicar
+                            tus productos, servicios e ideas.
+                        </p>
+                    </article>
+
+                    <article class="contacto-servicio">
+                        <span class="contacto-servicio-numero">
+                            04 · ORIENTACIÓN
+                        </span>
+                        <h3>Asesoría de marca</h3>
+                        <p>
+                            Exploramos oportunidades para mejorar
+                            la forma en que tu negocio se presenta
+                            y se comunica.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CIERRE -->
+
+        <section class="contacto-cierre">
+
+            <div class="contacto-cierre-contenido">
+
+                <span class="contacto-etiqueta">
+                    RENAX · EL SIGUIENTE PASO
+                </span>
+
+                <h2>
+                    TU HISTORIA
+                    <br>
+                    MERECE <span>EVOLUCIONAR.</span>
+                </h2>
+
+                <p>
+                    Las marcas que evolucionan no tienen que
+                    renunciar a lo que las hace especiales.
+                    En RENAX trabajamos para que su historia
+                    siga creciendo y conectando con nuevas
+                    oportunidades.
+                </p>
+
+                <a href="registro.html"
+                   class="contacto-boton">
+                    HABLEMOS DE TU MARCA →
+                </a>
+
+                <span class="contacto-firma">
+                    RENAX — TRANSFORMAMOS MARCAS
+                    <br>
+                    SIN BORRAR SU HISTORIA.
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+
+    <footer class="site-footer">
+        <div class="footer-content">
+
+            <p class="footer-contact-text">
+                RENAX · TRANSFORMAMOS MARCAS
+            </p>
+
+            <div class="footer-socials">
+                <!-- Agregaremos aquí los enlaces oficiales
+                     cuando estén definidos. -->
+            </div>
+
+            <div class="footer-bottom">
+                <p>
+                    © 2026 RENAX.
+                    Todos los derechos reservados.
+                </p>
+            </div>
+
         </div>
+    </footer>
 
-        <div class="form-group-box">
-          <input type="email" class="form-input-box" id="email" placeholder="Email" required>
-        </div>
+    <!-- JAVASCRIPT -->
 
-        <div class="form-group-box">
-          <input type="text" class="form-input-box" placeholder="Company name (optional)">
-        </div>
+    <script>
+        /* MENÚ MÓVIL */
 
-        <div class="form-group-box">
-          <input type="text" class="form-input-box" placeholder="Job title (optional)">
-        </div>
+        const navToggle = document.getElementById("navToggle");
+        const navMenu = document.getElementById("navMenu");
 
-        <div class="form-group-box">
-          <input type="text" class="form-input-box" placeholder="Country of residence (optional)">
-        </div>
-
-        <div style="margin-top: 3rem;">
-          <label class="form-label-title">DEJA UN MENSAJE</label>
-          <div class="form-group-box">
-            <textarea class="form-input-box" id="message" rows="5" placeholder="Escribe tu mensaje aquí..." required style="resize: vertical;"></textarea>
-          </div>
-        </div>
-
-        <div style="text-align: center; margin-top: 2rem;">
-          <button type="submit" class="btn-pill" style="min-width: 180px;">Botón</button>
-        </div>
-
-        <!-- Mensaje de Feedback -->
-        <div id="formStatus" class="form-status" aria-live="polite"></div>
-      </form>
-    </section>
-
-    <!-- BLOQUES INFORMATIVOS / FOOTER INFO -->
-    <section class="contact-info-grid">
-      <div class="info-card-box">
-        <h3>Servicios Principales</h3>
-        <ul>
-          <li>Diseño de marca</li>
-          <li>Creación de nombre</li>
-          <li>Diseño de impresos</li>
-          <li>Modelación de negocios</li>
-          <li>Consultoría de marca</li>
-          <li>Talleres y conferencias</li>
-        </ul>
-      </div>
-
-      <div class="info-card-box" style="display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="text-align: center; margin-bottom: 1.5rem;">
-          <svg width="60" height="60" viewBox="0 0 100 100" fill="white">
-            <path d="M10 80 Q 50 10 90 80 Q 50 50 10 80 Z" />
-          </svg>
-          <p style="font-family: var(--font-heading); font-weight: 800; font-size: 0.9rem; letter-spacing: 2px; margin-top: 0.5rem;">RENAX</p>
-        </div>
-        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; text-align: center;">
-          Somos Fragtal Worldwide SAS es una consultora especializada en diseño, auditoría y posicionamiento de de marca.
-        </p>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- FOOTER GLOBAL -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p class="footer-contact-text">Contact us / Join us</p>
-      <div class="footer-socials">
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" target="_blank" rel="noopener">X</a>
-        <a href="#" target="_blank" rel="noopener">Facebook</a>
-        <a href="#" target="_blank" rel="noopener">Glassdoor</a>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 MANTRA / BBDO Agency. Todos los derechos reservados.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="main.js"></script>
-  <script>
-window.addEventListener("load", function () {
-
-    const transicion = document.getElementById("renaxPageTransition");
-
-    if (transicion) {
-        setTimeout(function () {
-            transicion.classList.add("hide");
-        }, 900);
-    }
-
-});
-
-document.querySelectorAll("a[href]").forEach(function (enlace) {
-
-    enlace.addEventListener("click", function (e) {
-
-        const destino = enlace.getAttribute("href");
-
-        if (
-            !destino ||
-            destino.startsWith("#") ||
-            destino.startsWith("http") ||
-            destino.startsWith("mailto:")
-        ) {
-            return;
+        if (navToggle && navMenu) {
+            navToggle.addEventListener("click", function () {
+                navMenu.classList.toggle("active");
+            });
         }
 
-        e.preventDefault();
+        /* TRANSICIÓN DE ENTRADA */
 
-        const transicion = document.getElementById("renaxPageTransition");
+        document.addEventListener("DOMContentLoaded", function () {
+            const transicion =
+                document.getElementById("renaxPageTransition");
 
-        if (transicion) {
-            transicion.classList.remove("hide");
+            if (transicion) {
+                setTimeout(function () {
+                    transicion.classList.add("hide");
+                }, 600);
+            }
+        });
 
-            setTimeout(function () {
-                window.location.href = destino;
-            }, 1400);
-        } else {
-            window.location.href = destino;
-        }
+        /* TRANSICIÓN ENTRE PÁGINAS */
 
-    });
+        document.querySelectorAll("a[href]").forEach(function (enlace) {
+            enlace.addEventListener("click", function (e) {
+                const destino = enlace.getAttribute("href");
 
-});
-</script>
+                if (
+                    !destino ||
+                    destino.startsWith("#") ||
+                    destino.startsWith("http") ||
+                    destino.startsWith("mailto:") ||
+                    enlace.target === "_blank"
+                ) {
+                    return;
+                }
+
+                e.preventDefault();
+
+                const transicion =
+                    document.getElementById("renaxPageTransition");
+
+                if (transicion) {
+                    transicion.classList.remove("hide");
+
+                    setTimeout(function () {
+                        window.location.href = destino;
+                    }, 900);
+                } else {
+                    window.location.href = destino;
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
