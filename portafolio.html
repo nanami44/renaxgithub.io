@@ -453,3 +453,55 @@ document.querySelectorAll("a[href]").forEach(function (enlace) {
 
 });     
 </script>
+   
+
+<script>
+(function () {
+    const ave = document.getElementById("renaxAveCasos");
+    const boton = document.getElementById("renaxSonidoCasos");
+
+    if (!ave) return;
+
+    const poses = [
+        "ave-01.png",
+        "ave-02.png",
+        "ave-03.png",
+        "ave-04.png",
+        "ave-05.png",
+        "ave-06.png"
+    ];
+
+    let pose = 0;
+
+    setInterval(function () {
+        pose = (pose + 1) % poses.length;
+        ave.src = poses[pose];
+    }, 120);
+
+    if (boton) {
+        const sonido = new Audio("aleteo.mp3");
+        sonido.loop = true;
+        sonido.volume = 0.25;
+
+        boton.addEventListener("click", function () {
+            if (sonido.paused) {
+                sonido.play().then(function () {
+                    boton.setAttribute("aria-pressed", "true");
+                }).catch(function () {
+                    alert("No se pudo reproducir el sonido. Comprueba que al ete o.mp3 esté en el repositorio.");
+                });
+            } else {
+                sonido.pause();
+                sonido.currentTime = 0;
+                boton.setAttribute("aria-pressed", "false");
+            }
+        });
+    }
+})();
+</script>
+
+</body>
+ 
+
+  
+</html>
