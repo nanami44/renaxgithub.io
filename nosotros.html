@@ -1046,6 +1046,18 @@ document.querySelectorAll('.renax-frase-bloque').forEach(function(letra) {
         ave.src = poses[pose];
     }, 120);
 })();
+  
+/* Sonido del aleteo de RENAX */
+const sonidoAve = new Audio("aleteo.mp3");
+sonidoAve.loop = true;
+sonidoAve.volume = 0.25;
+
+document.querySelectorAll(".exclusive-theme-toggle").forEach(function (boton) {
+    boton.addEventListener("click", function () {
+        sonidoAve.play().catch(function () {});
+    });
+});
+
 </script>
 
 </body>
