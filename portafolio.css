@@ -552,8 +552,10 @@
     position: absolute;
     left: -90px;
     top: 20px;
-    width: 68px;
-    height: auto;
+   width: 120px;
+max-width: 100%;
+height: auto;
+    
     z-index: 5;
     pointer-events: none;
    animation: renaxAveCasosVuelo 8s linear forwards;
