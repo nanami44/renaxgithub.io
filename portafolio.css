@@ -421,5 +421,8 @@
     overflow: hidden;
     margin: 0 0 45px;
 }
-
+/* OCULTAR FLECHAS DE LA GALERÍA */
+.portafolio-renax .renax-work-card h3 span {
+    display: none !important;
+}
 
