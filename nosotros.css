@@ -398,3 +398,16 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
         padding: 45px 6px 6px;
     }
 }
+
+/* Efecto de color al tocar las letras de RENAX */
+.nosotros-renax .renax-frase-bloque {
+    cursor: pointer;
+    transition: color 0.3s ease, -webkit-text-fill-color 0.3s ease,
+                -webkit-text-stroke-color 0.3s ease;
+}
+
+.nosotros-renax .renax-frase-bloque.letra-activa {
+    color: #e3262e;
+    -webkit-text-fill-color: #e3262e;
+    -webkit-text-stroke-color: #e3262e;
+}
