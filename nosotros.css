@@ -272,17 +272,17 @@
     text-transform: uppercase;
 
     background: transparent;
-    color: transparent;
-    overflow: visible;
+color: #000000;
+overflow: visible;
 }
 
 .nosotros-renax .renax-frase-bloque {
     display: block;
     max-width: 100%;
-  color: #080808;
--webkit-text-fill-color: transparent;
--webkit-text-stroke: 2px #080808;
-paint-order: stroke fill;
+  color: #000000;
+-webkit-text-fill-color: #000000;
+-webkit-text-stroke: 0;
+paint-order: fill;
 
 text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
 
@@ -315,40 +315,22 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
    ========================================================== */
 
 .nosotros-renax .renax-frase-bloque {
-    animation: renaxLetrasMovimiento 5s ease-in-out infinite;
+    animation: renaxZoomEsencia 3s ease-in-out infinite;
 }
 
 .nosotros-renax .renax-frase-bloque:nth-child(2) {
     animation-delay: 0.35s;
 }
 
-@keyframes renaxLetrasMovimiento {
-    0%, 15%, 100% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 1;
-        filter: blur(0);
+@keyframes renaxZoomEsencia {
+    0%, 100% {
+        transform: scale(0.75);
     }
 
-    25% {
-        transform: translate(-3px, 2px) rotate(-2deg);
-    }
-
-    35% {
-        transform: translate(4px, -3px) rotate(2deg);
-        filter: blur(0.5px);
-    }
-
-    45% {
-        transform: translate(-2px, -2px) rotate(-1deg);
-    }
-
-    55%, 70% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 1;
-        filter: blur(0);
+    50% {
+        transform: scale(1);
     }
 }
-
 @media (prefers-reduced-motion: reduce) {
     .nosotros-renax .renax-frase-bloque {
         animation: none !important;
