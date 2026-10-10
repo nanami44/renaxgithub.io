@@ -411,3 +411,61 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     -webkit-text-fill-color: #e3262e;
     -webkit-text-stroke-color: #e3262e;
 }
+
+/* Interruptor de tema exclusivo del cuadro Nosotros */
+.nosotros-renax .exclusive-panel-agency {
+    position: relative;
+    transition: background-color 0.45s ease, color 0.45s ease;
+}
+
+.nosotros-renax .exclusive-theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 24px auto;
+    padding: 8px 12px;
+    border: 1px solid #222;
+    border-radius: 30px;
+    background: #fff;
+    color: #111;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nosotros-renax .toggle-track {
+    display: flex;
+    align-items: center;
+    width: 42px;
+    height: 24px;
+    padding: 3px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background: #222;
+    transition: background-color 0.3s ease;
+}
+
+.nosotros-renax .toggle-knob {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+}
+
+.nosotros-renax .exclusive-theme-toggle[aria-pressed="true"] {
+    background: #111;
+    color: #fff;
+    border-color: #fff;
+}
+
+.nosotros-renax .exclusive-theme-toggle[aria-pressed="true"] .toggle-track {
+    background: #e3262e;
+}
+
+.nosotros-renax .exclusive-theme-toggle[aria-pressed="true"] .toggle-knob {
+    transform: translateX(18px);
+}
