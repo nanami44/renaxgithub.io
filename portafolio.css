@@ -407,6 +407,19 @@
         gap: 12px;
     }
 }
-
+/* WORK GRANDE EN CASOS DE ESTUDIO */
+.portafolio-renax .renax-casos-estudio::before {
+    content: "WORK";
+    display: block;
+    width: 100%;
+    color: #ff0000;
+    font-size: clamp(120px, 27vw, 390px);
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -0.055em;
+    white-space: nowrap;
+    overflow: hidden;
+    margin: 0 0 45px;
+}
 
 
