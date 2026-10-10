@@ -426,3 +426,7 @@
     display: none !important;
 }
 
+/* OCULTAR LOGO O MARCA DEBAJO DE WORK */
+.portafolio-renax .renax-casos-estudio .renax-casos-estudio-marca {
+    display: none !important;
+}
