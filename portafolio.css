@@ -388,3 +388,113 @@
         letter-spacing: -1px;
     }
 }
+
+/* ==========================================
+   RENAX · CASOS DE ESTUDIO
+   ESTILO EDITORIAL INSPIRADO EN BBDO
+   ========================================== */
+
+.portafolio-renax .renax-casos-estudio {
+    position: relative;
+    z-index: 2;
+    padding: 90px 5%;
+    background: transparent;
+    color: #fff;
+}
+
+.portafolio-renax .casos-estudio-header {
+    max-width: 1050px;
+    margin: 0 auto 70px;
+}
+
+.portafolio-renax .casos-estudio-header h1,
+.portafolio-renax .casos-estudio-header h2 {
+    max-width: 1000px;
+    font-size: clamp(42px, 7vw, 92px);
+    line-height: .98;
+    letter-spacing: -2px;
+}
+
+.portafolio-renax .casos-estudio-destacado {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 0 auto 90px;
+    padding: 0;
+    background: transparent !important;
+    border: 0;
+    box-shadow: none;
+}
+
+.portafolio-renax .caso-estudio-imagen {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #151515;
+}
+
+.portafolio-renax .caso-estudio-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .7s ease;
+}
+
+.portafolio-renax .casos-estudio-destacado:hover
+.caso-estudio-imagen img {
+    transform: scale(1.035);
+}
+
+.portafolio-renax .caso-estudio-contenido {
+    order: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 22px 0 0;
+    text-align: left;
+}
+
+.portafolio-renax .caso-estudio-contenido h2,
+.portafolio-renax .caso-estudio-contenido h3 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(22px, 3vw, 36px);
+    line-height: 1.15;
+}
+
+.portafolio-renax .caso-estudio-contenido a {
+    flex-shrink: 0;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 650px) {
+    .portafolio-renax .renax-casos-estudio {
+        padding: 60px 5%;
+    }
+
+    .portafolio-renax .casos-estudio-header {
+        margin-bottom: 42px;
+    }
+
+    .portafolio-renax .casos-estudio-destacado {
+        margin-bottom: 55px;
+    }
+
+    .portafolio-renax .caso-estudio-imagen {
+        aspect-ratio: 4 / 3;
+        border-radius: 10px;
+    }
+
+    .portafolio-renax .caso-estudio-contenido {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+}
