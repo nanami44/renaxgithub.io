@@ -274,29 +274,30 @@
 .portafolio-renax .renax-casos-estudio {
     position: relative;
     z-index: 2;
-    padding: 90px 5%;
-    background: transparent;
+    padding: 100px 5%;
+    background: transparent !important;
     color: #fff;
 }
 
 .portafolio-renax .casos-estudio-header {
-    max-width: 1050px;
-    margin: 0 auto 70px;
+    max-width: 1200px;
+    margin: 0 auto 65px;
 }
 
 .portafolio-renax .casos-estudio-header h1,
 .portafolio-renax .casos-estudio-header h2 {
     max-width: 1000px;
-    font-size: clamp(42px, 7vw, 92px);
-    line-height: .98;
-    letter-spacing: -2px;
+    font-size: clamp(42px, 8vw, 100px);
+    line-height: .92;
+    letter-spacing: -3px;
+    font-weight: 800;
 }
 
 .portafolio-renax .casos-estudio-destacado {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin: 0 auto 90px;
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 70px;
     padding: 0;
     background: transparent !important;
     border: 0;
@@ -304,13 +305,11 @@
 }
 
 .portafolio-renax .caso-estudio-imagen {
-    order: 1;
     width: 100%;
-    max-width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
     overflow: hidden;
-    border-radius: 16px;
-    background: #151515;
+    border-radius: 14px;
+    background: #171717;
 }
 
 .portafolio-renax .caso-estudio-imagen img {
@@ -319,22 +318,21 @@
     height: 100%;
     object-fit: cover;
     object-position: center;
-    transition: transform .7s ease;
+    transition: transform .7s cubic-bezier(.2,.7,.2,1);
 }
 
 .portafolio-renax .casos-estudio-destacado:hover
 .caso-estudio-imagen img {
-    transform: scale(1.035);
+    transform: scale(1.06);
 }
 
 .portafolio-renax .caso-estudio-contenido {
-    order: 2;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 18px;
-    padding: 22px 0 0;
+    gap: 12px 20px;
+    padding: 16px 0 0;
     text-align: left;
 }
 
@@ -342,26 +340,60 @@
 .portafolio-renax .caso-estudio-contenido h3 {
     margin: 0;
     color: #fff;
-    font-size: clamp(22px, 3vw, 36px);
-    line-height: 1.15;
+    font-size: clamp(16px, 2vw, 25px);
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.portafolio-renax .caso-estudio-contenido p {
+    display: none;
 }
 
 .portafolio-renax .caso-estudio-contenido a {
     flex-shrink: 0;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #c8102e;
+    padding: 8px 0;
+    font-size: .85rem;
+    transition: color .25s ease;
 }
 
-/* Adaptación para pantallas pequeñas */
+.portafolio-renax .caso-estudio-contenido a:hover {
+    color: #c8102e;
+}
+
+/* Composición editorial en pantallas grandes */
+@media (min-width: 900px) {
+    .portafolio-renax .caso-estudio-destacado:nth-of-type(even) {
+        width: 72%;
+        margin-left: auto;
+    }
+
+    .portafolio-renax .caso-estudio-destacado:nth-of-type(odd) {
+        width: 82%;
+        margin-right: auto;
+    }
+}
+
+/* Adaptación para celulares */
 @media (max-width: 650px) {
     .portafolio-renax .renax-casos-estudio {
-        padding: 60px 5%;
+        padding: 65px 5%;
     }
 
     .portafolio-renax .casos-estudio-header {
         margin-bottom: 42px;
     }
 
+    .portafolio-renax .casos-estudio-header h1,
+    .portafolio-renax .casos-estudio-header h2 {
+        letter-spacing: -1px;
+    }
+
     .portafolio-renax .casos-estudio-destacado {
-        margin-bottom: 55px;
+        width: 100%;
+        margin-bottom: 42px;
     }
 
     .portafolio-renax .caso-estudio-imagen {
@@ -372,6 +404,9 @@
     .portafolio-renax .caso-estudio-contenido {
         align-items: flex-start;
         flex-direction: column;
-        gap: 14px;
+        gap: 12px;
     }
 }
+
+
+
