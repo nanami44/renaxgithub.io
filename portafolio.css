@@ -550,15 +550,14 @@
 
 #renaxAveCasosVoladora {
     position: absolute;
-    left: -90px;
+    left: -350px;
     top: 20px;
-   width: 350px;
-max-width: 350%;
-height: auto;
-    
+    width: 350px;
+    max-width: none;
+    height: auto;
     z-index: 5;
     pointer-events: none;
-   animation: renaxAveCasosVuelo 8s linear forwards;
+    animation: renaxAveCasosVuelo 8s linear forwards;
     filter: drop-shadow(0 0 5px rgba(255, 0, 35, 0.6));
 }
 
