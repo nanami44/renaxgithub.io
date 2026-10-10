@@ -607,7 +607,7 @@
 
     88%, 100% {
         left: 78%;
-        top: 0;
+        top: 20;
         opacity: 1;
         transform: translateY(0) rotate(0deg);
     }
