@@ -2340,11 +2340,17 @@ transform: translate(20px, -20px) !important;
 
 /* VENTANA 1 */
 
+
 .exclusive-panel-agency {
     background: #ffffff;
     color: #000000;
     z-index: 4;
+    border: 2px solid #e60026;
+    box-shadow:
+        0 0 8px rgba(230, 0, 38, 0.45),
+        0 0 20px rgba(230, 0, 38, 0.22);
 }
+
 
 /* VENTANA 2 */
 
