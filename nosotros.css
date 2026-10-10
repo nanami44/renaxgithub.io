@@ -481,45 +481,85 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
     color: #ffffff;
 }
 
-/* Ave RENAX: vuelo y aterrizaje sobre el interruptor */
+/* AVE RENAX: VUELO DIAGONAL CON ESTELA ROJA */
 .nosotros-renax .exclusive-panel-agency {
     position: relative;
+    overflow: hidden;
 }
 
 .nosotros-renax .renax-ave-aterrizaje {
     position: absolute;
-    top: 24px;
-    right: 155px;
-    width: 40px;
+    top: 12%;
+    left: -90px;
+    width: 68px;
     height: auto;
-    z-index: 10;
+    z-index: 12;
     pointer-events: none;
-    animation: renaxAveVuelo 2.8s ease-out forwards;
+    opacity: 0;
+    filter: drop-shadow(0 0 3px rgba(255, 0, 35, 0.5));
+    animation: renaxAveCruza 6s ease-in-out infinite;
 }
 
-@keyframes renaxAveVuelo {
+/* Recorrido del ave de esquina a esquina */
+@keyframes renaxAveCruza {
     0% {
-        transform: translate(100px, -70px) rotate(-18deg);
+        left: -90px;
+        top: 12%;
+        opacity: 0;
+        transform: rotate(-8deg);
+    }
+    8% {
+        opacity: 1;
+    }
+    42% {
+        left: 45%;
+        top: 45%;
+        opacity: 1;
+        transform: rotate(4deg);
+    }
+    78% {
+        left: 82%;
+        top: 72%;
+        opacity: 1;
+        transform: rotate(8deg);
+    }
+    92% {
+        left: 105%;
+        top: 85%;
+        opacity: 1;
+        transform: rotate(12deg);
+    }
+    100% {
+        left: 105%;
+        top: 85%;
         opacity: 0;
     }
-    35% {
-        transform: translate(55px, -35px) rotate(-8deg);
-        opacity: 1;
-    }
-    70% {
-        transform: translate(12px, 0) rotate(5deg);
-        opacity: 1;
-    }
-    85%, 100% {
-        transform: translate(0, 0) rotate(0deg);
-        opacity: 1;
-    }
+}
+
+/* Estela roja que se desvanece detrás del ave */
+.nosotros-renax .renax-ave-aterrizaje::after {
+    content: "";
+    position: absolute;
+    width: 75px;
+    height: 3px;
+    right: 65%;
+    top: 55%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 0, 35, 0.85),
+        rgba(255, 40, 65, 0.15)
+    );
+    border-radius: 50%;
+    filter: blur(2px);
+    transform: rotate(-18deg);
+    transform-origin: right center;
+    pointer-events: none;
 }
 
 @media (max-width: 600px) {
     .nosotros-renax .renax-ave-aterrizaje {
-        width: 30px;
-        right: 130px;
-        top: 22px;
+        width: 48px;
     }
 }
+
