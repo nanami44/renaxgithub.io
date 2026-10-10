@@ -129,3 +129,13 @@
     margin-right: 0;
     box-sizing: border-box;
 }
+
+/* Ocultar la barra de desplazamiento del carrusel */
+.portafolio-renax .portfolio-gallery {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.portafolio-renax .portfolio-gallery::-webkit-scrollbar {
+    display: none;
+}
