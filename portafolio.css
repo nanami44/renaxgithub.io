@@ -563,6 +563,7 @@
 
 
 
+
 @keyframes renaxAveCasosVuelo {
     0% {
         left: -90px;
@@ -575,45 +576,34 @@
         opacity: 1;
     }
 
-    20% {
-        left: 12%;
-        top: 35px;
-        transform: translateY(-12px) rotate(8deg);
-    }
-
     35% {
-        left: 32%;
-        top: 5px;
-        transform: translateY(8px) rotate(-8deg);
-    }
-
-    50% {
-        left: 52%;
+        left: 30%;
         top: 35px;
-        transform: translateY(-10px) rotate(8deg);
-    }
-
-    65% {
-        left: 70%;
-        top: 5px;
-        transform: translateY(5px) rotate(-5deg);
-    }
-
-    78% {
-        left: 78%;
-        top: 0;
         opacity: 1;
         transform: translateY(-8px) rotate(5deg);
     }
 
-    88%, 100% {
-        left: 78%;
-        top: 20;
+    65% {
+        left: 58%;
+        top: 20px;
+        opacity: 1;
+        transform: translateY(-5px) rotate(-3deg);
+    }
+
+    85% {
+        left: 76%;
+        top: 20px;
+        opacity: 1;
+        transform: translateY(0) rotate(0deg);
+    }
+
+    100% {
+        left: 76%;
+        top: 20px;
         opacity: 1;
         transform: translateY(0) rotate(0deg);
     }
 }
-
 
 .renax-ave-texto {
     font-size: clamp(32px, 5vw, 58px);
