@@ -909,5 +909,27 @@ document.querySelectorAll('.renax-frase-bloque').forEach(function(letra) {
 });
 </script>
 
+<script>
+(function () {
+    const panel = document.querySelector('.exclusive-panel-agency');
+    if (!panel) return;
+
+    const boton = panel.querySelector('.exclusive-theme-toggle');
+    if (!boton) return;
+
+    boton.addEventListener('click', function () {
+        const oscuro = boton.getAttribute('aria-pressed') !== 'true';
+
+        boton.setAttribute('aria-pressed', String(oscuro));
+        boton.querySelector('.toggle-label').textContent =
+            oscuro ? 'MODO CLARO' : 'MODO OSCURO';
+        boton.querySelector('.toggle-icon').textContent =
+            oscuro ? '☾' : '☀';
+
+        panel.classList.toggle('agency-dark-mode', oscuro);
+    });
+})();
+</script>
+
 </body>
 </html>
