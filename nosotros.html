@@ -941,5 +941,76 @@ document.querySelectorAll('.renax-frase-bloque').forEach(function(letra) {
 })();
 </script>
 
+<style>
+/* Vuelo y aleteo del ave, solo dentro del cuadro RENAX */
+.nosotros-renax .exclusive-panel-agency {
+    position: relative;
+    overflow: hidden;
+}
+
+.nosotros-renax #renaxAveVoladora {
+    position: absolute;
+    top: 8%;
+    left: -80px;
+    width: 68px;
+    height: auto;
+    z-index: 15;
+    pointer-events: none;
+    opacity: 0;
+    filter: drop-shadow(0 0 4px rgba(255, 0, 35, .65));
+    animation: renaxVuelo 7s linear infinite;
+}
+
+@keyframes renaxVuelo {
+    0%   { left: -80px; top: 8%; opacity: 0; }
+    8%   { opacity: 1; }
+    45%  { left: 45%; top: 42%; opacity: 1; }
+    90%  { left: 90%; top: 75%; opacity: 1; }
+    100% { left: 105%; top: 82%; opacity: 0; }
+}
+
+/* Estela luminosa roja */
+.nosotros-renax #renaxAveVoladora::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 65%;
+    width: 85px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ff002d, transparent);
+    filter: blur(2px);
+}
+
+/* Tamaño adaptado a móviles */
+@media (max-width: 600px) {
+    .nosotros-renax #renaxAveVoladora {
+        width: 48px;
+    }
+}
+</style>
+
+<script>
+(function () {
+    const ave = document.getElementById("renaxAveVoladora");
+    if (!ave) return;
+
+    const poses = [
+        "ave-01.png",
+        "ave-02.png",
+        "ave-03.png",
+        "ave-04.png",
+        "ave-05.png",
+        "ave-06.png"
+    ];
+
+    let pose = 0;
+
+    setInterval(function () {
+        pose = (pose + 1) % poses.length;
+        ave.src = poses[pose];
+    }, 120);
+})();
+</script>
+
 </body>
 </html>
