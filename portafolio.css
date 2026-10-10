@@ -117,3 +117,15 @@
     position: relative;
     z-index: 2;
 }
+
+/* ==========================================================
+   RENAX · CARRUSEL A TODO EL ANCHO
+   ========================================================== */
+
+.portafolio-renax .portfolio-gallery {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
