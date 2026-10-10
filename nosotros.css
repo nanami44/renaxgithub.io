@@ -469,3 +469,14 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
 .nosotros-renax .exclusive-theme-toggle[aria-pressed="true"] .toggle-knob {
     transform: translateX(18px);
 }
+
+/* Modo oscuro limitado al cuadro de la agencia */
+.nosotros-renax .exclusive-panel-agency.agency-dark-mode {
+    background-color: #080808;
+    color: #ffffff;
+}
+
+.nosotros-renax .exclusive-panel-agency.agency-dark-mode h2,
+.nosotros-renax .exclusive-panel-agency.agency-dark-mode p {
+    color: #ffffff;
+}
