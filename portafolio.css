@@ -139,3 +139,128 @@
 .portafolio-renax .portfolio-gallery::-webkit-scrollbar {
     display: none;
 }
+
+/* ==========================================================
+   RENAX · PROYECTOS DESTACADOS
+   Diseño editorial inspirado en BBDO
+   ========================================================== */
+
+.portafolio-renax .renax-casos-estudio {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 100px 6%;
+    box-sizing: border-box;
+    background: transparent !important;
+}
+
+.portafolio-renax .casos-estudio-header {
+    max-width: 1200px;
+    margin: 0 auto 70px;
+}
+
+.portafolio-renax .casos-estudio-header h2 {
+    font-size: clamp(2.5rem, 6vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    margin: 20px 0;
+}
+
+.portafolio-renax .casos-estudio-header p {
+    max-width: 600px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Cada proyecto conserva su estructura y su enlace */
+.portafolio-renax .caso-estudio-destacado {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    max-width: 1200px;
+    margin: 0 auto 90px;
+    padding: 0;
+    background: transparent !important;
+    border: 0;
+    box-shadow: none;
+}
+
+/* Imagen grande, sin texto superpuesto */
+.portafolio-renax .caso-estudio-imagen {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background: #111;
+}
+
+.portafolio-renax .caso-estudio-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.portafolio-renax .caso-estudio-destacado:hover
+.caso-estudio-imagen img {
+    transform: scale(1.025);
+}
+
+/* Título y botón debajo de la imagen */
+.portafolio-renax .caso-estudio-contenido {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px 24px;
+}
+
+.portafolio-renax .caso-estudio-etiqueta,
+.portafolio-renax .caso-estudio-contenido p {
+    display: none;
+}
+
+.portafolio-renax .caso-estudio-contenido h3 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(1.3rem, 2.5vw, 2rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.portafolio-renax .caso-estudio-boton {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    border-bottom: 1px solid #c8102e;
+    padding: 8px 0;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    transition: color 0.25s ease;
+}
+
+.portafolio-renax .caso-estudio-boton:hover {
+    color: #c8102e;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 700px) {
+    .portafolio-renax .renax-casos-estudio {
+        padding: 65px 5%;
+    }
+
+    .portafolio-renax .casos-estudio-header {
+        margin-bottom: 45px;
+    }
+
+    .portafolio-renax .caso-estudio-destacado {
+        margin-bottom: 55px;
+    }
+
+    .portafolio-renax .caso-estudio-imagen {
+        aspect-ratio: 4 / 3;
+    }
+
+    .portafolio-renax .caso-estudio-contenido {
+        align-items: flex-start;
+    }
+}
