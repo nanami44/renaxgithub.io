@@ -219,6 +219,26 @@
      ========================================================== -->
  <section class="renax-casos-estudio renax-work-grid" id="renaxCasos">
 
+<div class="renax-ave-casos-contenedor">
+    <img
+        src="ave-01.png"
+        id="renaxAveCasos"
+        alt=""
+        aria-hidden="true"
+    >
+
+    <button
+        type="button"
+        id="renaxSonidoCasos"
+        aria-label="Activar sonido del aleteo"
+        aria-pressed="false"
+    >
+        <img src="logo-renax-transparente.png" alt="RENAX">
+    </button>
+
+    <span class="renax-ave-texto">RENAX</span>
+</div>
+
   <div class="renax-work-heading">
     <span>RENAX · CASOS DE ESTUDIO</span>
     <h2>MARCAS QUE<br><strong>HAN EVOLUCIONADO.</strong></h2>
@@ -476,7 +496,7 @@ document.querySelectorAll("a[href]").forEach(function (enlace) {
     setInterval(function () {
         pose = (pose + 1) % poses.length;
         ave.src = poses[pose];
-    }, 120);
+    }, 80);
 
     if (boton) {
         const sonido = new Audio("aleteo.mp3");
