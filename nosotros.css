@@ -480,3 +480,46 @@ text-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
 .nosotros-renax .exclusive-panel-agency.agency-dark-mode p {
     color: #ffffff;
 }
+
+/* Ave RENAX: vuelo y aterrizaje sobre el interruptor */
+.nosotros-renax .exclusive-panel-agency {
+    position: relative;
+}
+
+.nosotros-renax .renax-ave-aterrizaje {
+    position: absolute;
+    top: 24px;
+    right: 155px;
+    width: 40px;
+    height: auto;
+    z-index: 10;
+    pointer-events: none;
+    animation: renaxAveVuelo 2.8s ease-out forwards;
+}
+
+@keyframes renaxAveVuelo {
+    0% {
+        transform: translate(100px, -70px) rotate(-18deg);
+        opacity: 0;
+    }
+    35% {
+        transform: translate(55px, -35px) rotate(-8deg);
+        opacity: 1;
+    }
+    70% {
+        transform: translate(12px, 0) rotate(5deg);
+        opacity: 1;
+    }
+    85%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .nosotros-renax .renax-ave-aterrizaje {
+        width: 30px;
+        right: 130px;
+        top: 22px;
+    }
+}
