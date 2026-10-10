@@ -264,3 +264,127 @@
         align-items: flex-start;
     }
 }
+
+/* ==========================================
+   RENAX · NUEVA GALERÍA EDITORIAL
+   ========================================== */
+
+.portafolio-renax .renax-work-grid {
+    position: relative;
+    z-index: 2;
+    padding: 100px 5%;
+    background: #050505;
+    color: #ffffff;
+}
+
+.portafolio-renax .renax-work-heading {
+    margin-bottom: 65px;
+}
+
+.portafolio-renax .renax-work-heading > span {
+    color: #c8102e;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+.portafolio-renax .renax-work-heading h2 {
+    margin: 24px 0 0;
+    font-size: clamp(42px, 8vw, 100px);
+    line-height: .92;
+    letter-spacing: -3px;
+    font-weight: 800;
+}
+
+.portafolio-renax .renax-work-heading h2 strong {
+    color: #c8102e;
+}
+
+.portafolio-renax .renax-work-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 70px 24px;
+    align-items: start;
+}
+
+.portafolio-renax .renax-work-card {
+    display: block;
+    min-width: 0;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.portafolio-renax .renax-work-tall {
+    grid-row: span 2;
+}
+
+.portafolio-renax .renax-work-image {
+    width: 100%;
+    height: clamp(240px, 34vw, 490px);
+    overflow: hidden;
+    border-radius: 14px;
+    background: #171717;
+}
+
+.portafolio-renax .renax-work-tall .renax-work-image {
+    height: clamp(380px, 57vw, 740px);
+}
+
+.portafolio-renax .renax-work-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+
+.portafolio-renax .renax-work-card:hover .renax-work-image img {
+    transform: scale(1.06);
+}
+
+.portafolio-renax .renax-work-card h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 16px 0 0;
+    font-size: clamp(16px, 2vw, 25px);
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+.portafolio-renax .renax-work-card h3 span {
+    color: #c8102e;
+    font-size: 25px;
+    transition: transform .3s ease;
+}
+
+.portafolio-renax .renax-work-card:hover h3 span {
+    transform: translate(4px, -4px);
+}
+
+/* Adaptación para celulares */
+@media (max-width: 650px) {
+    .portafolio-renax .renax-work-grid {
+        padding: 65px 5%;
+    }
+
+    .portafolio-renax .renax-work-layout {
+        grid-template-columns: 1fr;
+        gap: 38px;
+    }
+
+    .portafolio-renax .renax-work-tall {
+        grid-row: auto;
+    }
+
+    .portafolio-renax .renax-work-image,
+    .portafolio-renax .renax-work-tall .renax-work-image {
+        height: auto;
+        aspect-ratio: 4 / 3;
+    }
+
+    .portafolio-renax .renax-work-heading h2 {
+        letter-spacing: -1px;
+    }
+}
