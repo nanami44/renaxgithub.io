@@ -430,3 +430,8 @@
 .portafolio-renax .renax-casos-estudio .renax-casos-estudio-marca {
     display: none !important;
 }
+/* OCULTAR LA MARCA RENAX QUE APARECE DEBAJO DE WORK */
+.portafolio-renax .renax-casos-estudio::after {
+    content: none !important;
+    display: none !important;
+}
