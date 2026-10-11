@@ -9403,3 +9403,17 @@ min-height: 100vh;
     outline: none !important;
     box-shadow: none !important;
 }
+
+/* Servicio 03: eliminar bordes del contenedor de imagen */
+.srv-servicio:nth-of-type(3) .srv-servicio-media {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #000000;
+}
+
+.srv-servicio:nth-of-type(3) .srv-imagen-real {
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
