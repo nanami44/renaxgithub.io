@@ -216,6 +216,7 @@
             justify-content: center;
 
             overflow: hidden;
+            overflow: hidden;
         }
 
         .especialidades-video-placeholder {
@@ -320,7 +321,14 @@
                 padding: 110px 25px;
             }
         }
-
+.especialidades-video-marco iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
     </style>
 </head>
 
@@ -371,17 +379,15 @@
 
             <div class="especialidades-video-marco">
 
-                <div class="especialidades-video-placeholder">
-
-                    <span>
-                        Video del proyecto
-                    </span>
-
-                    <p>
-                        Aquí irá el video de la campaña
-                    </p>
-
-                </div>
+             
+<iframe
+    src="https://www.youtube.com/embed/oM-5SSs9RAo"
+    title="Día de las Especialidades - RENAX"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe>
+  
 
             </div>
 
