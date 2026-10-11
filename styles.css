@@ -9417,3 +9417,23 @@ min-height: 100vh;
     outline: none;
 }
 
+/* CORRECCIÓN DE BOTONES DE CONCEPTOS RENAX */
+.servicios-renax .srv-lista .srv-concepto,
+.servicios-renax .srv-lista .srv-concepto:hover,
+.servicios-renax .srv-lista .srv-concepto:focus,
+.servicios-renax .srv-lista .srv-concepto:active {
+    background: transparent !important;
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.servicios-renax .srv-lista .srv-concepto::before,
+.servicios-renax .srv-lista .srv-concepto::after {
+    background: transparent;
+}
+
