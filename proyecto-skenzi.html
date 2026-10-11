@@ -1199,6 +1199,126 @@ color: #ffffff;
     text-shadow: 0 0 10px rgba(200, 16, 46, 0.2);
 }
 
+/* =========================================
+   SKENZI INSPIRACIÓN · CINTURÓN INFINITO
+========================================= */
+
+.skenzi-titulo-accesible {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+.skenzi-inspiracion-marquesina {
+    position: relative;
+    left: 50%;
+    width: 100vw;
+    margin: 25px 0 35px -50vw;
+    padding: 20px 0 25px;
+    overflow: hidden;
+    background: #c8102e;
+    border-top: 2px solid #ff243f;
+    border-bottom: 2px solid #ff243f;
+}
+
+.skenzi-inspiracion-fila {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    display: flex;
+    line-height: 0.88;
+}
+
+.skenzi-inspiracion-pista {
+    display: flex;
+    flex: 0 0 auto;
+    width: max-content;
+    will-change: transform;
+}
+
+.skenzi-inspiracion-pista span {
+    display: block;
+    flex: 0 0 auto;
+    padding-right: 0.35em;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(65px, 12vw, 190px);
+    font-weight: 800;
+    letter-spacing: -0.055em;
+    line-height: 0.95;
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+/* Primera línea: letras blancas sólidas */
+.skenzi-inspiracion-derecha span {
+    color: #ffffff;
+}
+
+/* Segunda línea: letras blancas de contorno */
+.skenzi-inspiracion-izquierda span {
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+}
+
+/* UNA MARCA, NUEVOS: se desplaza hacia la derecha */
+.skenzi-inspiracion-derecha {
+    animation: skenziInspiracionDerecha 30s linear infinite;
+}
+
+/* ESPACIOS: se desplaza hacia la izquierda */
+.skenzi-inspiracion-izquierda {
+    animation: skenziInspiracionIzquierda 30s linear infinite;
+}
+
+@keyframes skenziInspiracionDerecha {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes skenziInspiracionIzquierda {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+    .skenzi-inspiracion-marquesina {
+        padding: 16px 0 20px;
+    }
+
+    .skenzi-inspiracion-pista span {
+        font-size: clamp(54px, 14vw, 95px);
+        letter-spacing: -0.04em;
+        padding-right: 0.25em;
+    }
+
+    .skenzi-inspiracion-izquierda span {
+        -webkit-text-stroke-width: 1.5px;
+    }
+}
+
+/* Respetar la preferencia de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .skenzi-inspiracion-pista {
+        animation: none;
+        transform: none;
+    }
+}
+
     </style>
 
 </head>
