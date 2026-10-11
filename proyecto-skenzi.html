@@ -1271,36 +1271,26 @@ color: #ffffff;
     animation: skenziInspiracionDerecha 30s linear infinite;
 }
 
-/* ESPACIOS: se desplaza hacia la izquierda */
-.skenzi-inspiracion-izquierda {
-    animation: skenziInspiracionIzquierda 30s linear infinite;
+
+/* ENTRADA DE LA FRASE SUPERIOR DESDE LA DERECHA */
+.skenzi-inspiracion-derecha {
+    width: 100%;
+    justify-content: center;
+    animation: skenziEntradaSuperior 2.5s cubic-bezier(0.22, 0.61, 0.36, 1) both !important;
 }
 
+.skenzi-inspiracion-derecha span {
+    padding-right: 0;
+    font-size: clamp(54px, 8vw, 150px);
+    text-align: center;
+}
 
-@keyframes skenziInspiracionDerecha {
-    0% {
+@keyframes skenziEntradaSuperior {
+    from {
+        transform: translateX(110%);
+    }
+    to {
         transform: translateX(0);
-    }
-    100% {
-        transform: translateX(50%);
-    }
-}
-
-
-/* Ajustes para pantallas pequeñas */
-@media (max-width: 600px) {
-    .skenzi-inspiracion-marquesina {
-        padding: 16px 0 20px;
-    }
-
-    .skenzi-inspiracion-pista span {
-        font-size: clamp(54px, 14vw, 95px);
-        letter-spacing: -0.04em;
-        padding-right: 0.25em;
-    }
-
-    .skenzi-inspiracion-izquierda span {
-        -webkit-text-stroke-width: 1.5px;
     }
 }
 
