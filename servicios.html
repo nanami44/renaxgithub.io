@@ -2220,6 +2220,42 @@
   </div>
 </div>
 
+<script>
+function abrirVentanaServicio(concepto) {
+    const ventana = document.getElementById("srv-modal-" + concepto);
+    if (!ventana) return;
+
+    ventana.style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+
+function cerrarVentanaServicio(concepto) {
+    const ventana = document.getElementById("srv-modal-" + concepto);
+    if (!ventana) return;
+
+    ventana.style.display = "none";
+    document.body.style.overflow = "";
+}
+
+document.querySelectorAll(".srv-modal").forEach(function(ventana) {
+    ventana.addEventListener("click", function(evento) {
+        if (evento.target === ventana) {
+            ventana.style.display = "none";
+            document.body.style.overflow = "";
+        }
+    });
+});
+
+document.addEventListener("keydown", function(evento) {
+    if (evento.key === "Escape") {
+        document.querySelectorAll(".srv-modal").forEach(function(ventana) {
+            ventana.style.display = "none";
+        });
+        document.body.style.overflow = "";
+    }
+});
+</script>
+
 
 </body>
 
