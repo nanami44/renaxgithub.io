@@ -942,6 +942,141 @@ color: #ffffff;
         font-size: 10px;
     }
 }
+        
+/* =========================================
+   SKENZI — NIEBLA ROJA Y BURBUJAS EN PORTADA
+========================================= */
+
+.skenzi-portada {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+/* NIEBLA ROJA QUE CRUZA DE DERECHA A IZQUIERDA */
+.skenzi-portada::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 70% 30%,
+            rgba(200, 16, 46, 0.42) 0%,
+            rgba(200, 16, 46, 0.16) 28%,
+            transparent 62%
+        ),
+        radial-gradient(
+            ellipse at 35% 65%,
+            rgba(155, 0, 30, 0.35) 0%,
+            rgba(200, 16, 46, 0.12) 35%,
+            transparent 65%
+        ),
+        radial-gradient(
+            ellipse at 85% 75%,
+            rgba(225, 24, 58, 0.28) 0%,
+            transparent 52%
+        );
+
+    filter: blur(38px);
+    opacity: 0.8;
+    transform: translateX(110%);
+    animation: skenziNeblinaCruza 20s linear infinite;
+}
+
+/* BURBUJAS ROJAS TRANSLÚCIDAS */
+.skenzi-portada::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle 22px at 12% 22%,
+            transparent 0 9px,
+            rgba(220, 25, 55, 0.28) 10px 12px,
+            transparent 14px
+        ),
+        radial-gradient(circle 34px at 34% 68%,
+            transparent 0 15px,
+            rgba(200, 16, 46, 0.24) 16px 18px,
+            transparent 20px
+        ),
+        radial-gradient(circle 17px at 52% 35%,
+            transparent 0 6px,
+            rgba(230, 45, 75, 0.3) 7px 9px,
+            transparent 11px
+        ),
+        radial-gradient(circle 28px at 72% 72%,
+            transparent 0 12px,
+            rgba(200, 16, 46, 0.24) 13px 15px,
+            transparent 17px
+        ),
+        radial-gradient(circle 42px at 88% 28%,
+            transparent 0 19px,
+            rgba(220, 25, 55, 0.2) 20px 22px,
+            transparent 25px
+        ),
+        radial-gradient(circle 13px at 25% 45%,
+            rgba(220, 25, 55, 0.2) 0 4px,
+            transparent 7px
+        ),
+        radial-gradient(circle 18px at 62% 18%,
+            rgba(220, 25, 55, 0.18) 0 5px,
+            transparent 9px
+        );
+
+    opacity: 0.75;
+    filter: blur(1.5px);
+    transform: translateX(110%);
+    animation: skenziBurbujasCruzan 27s linear infinite;
+    animation-delay: -9s;
+}
+
+/* MOVER LA NIEBLA A TRAVÉS DE LA PORTADA */
+@keyframes skenziNeblinaCruza {
+    0% {
+        transform: translateX(110%) scale(0.95);
+    }
+    50% {
+        transform: translateX(0%) scale(1.15);
+    }
+    100% {
+        transform: translateX(-110%) scale(1.05);
+    }
+}
+
+/* MOVIMIENTO Y GIRO LENTO DE LAS BURBUJAS */
+@keyframes skenziBurbujasCruzan {
+    0% {
+        transform: translateX(110%) rotate(0deg);
+    }
+    50% {
+        transform: translateX(0%) rotate(180deg);
+    }
+    100% {
+        transform: translateX(-110%) rotate(360deg);
+    }
+}
+
+/* CONSERVAR EL TEXTO Y LOS ELEMENTOS POR ENCIMA */
+.skenzi-portada > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* RESPETAR LA PREFERENCIA DE MOVIMIENTO REDUCIDO */
+@media (prefers-reduced-motion: reduce) {
+    .skenzi-portada::before,
+    .skenzi-portada::after {
+        animation: none;
+        transform: none;
+    }
+}
+
     </style>
 
 </head>
