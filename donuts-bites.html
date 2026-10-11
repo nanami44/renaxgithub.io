@@ -877,7 +877,7 @@ isolation: isolate;
             }
 
         }
-```css
+
 /* =========================================
    FONDO DINÁMICO RENAX
    DONUT'S BITES
@@ -966,7 +966,20 @@ body > a {
     position: relative;
     z-index: 1;
 }
+/* ZOOM SUAVE EN LAS CUATRO IMÁGENES */
+.aplicaciones .aplicacion {
+    overflow: hidden;
+    border-radius: 18px;
+}
 
+.aplicaciones .aplicacion img {
+    border-radius: 18px;
+    transition: transform 0.45s ease;
+}
+
+.aplicaciones .aplicacion:hover img {
+    transform: scale(1.05);
+}
     </style>
 
 </head>
@@ -1019,14 +1032,12 @@ body > a {
 
             <!-- IMAGEN GRANDE -->
 
-            <div class="hero-image">
-
-                <img
-                    src="donuts-bites.png.png"
-                    alt="Donut's Bites"
-                >
-
-            </div>
+          <div class="hero-image">
+    <img
+        src="Logo de Mascota.png"
+        alt="Logo de la mascota de DONUT'S BITES"
+    >
+</div>
 
 
             <!-- TÍTULO Y DESCRIPCIÓN -->
@@ -1458,10 +1469,10 @@ body > a {
 
                 <div class="aplicacion">
 
-                    <img
-                        src="donuts-bites.png.png"
-                        alt="Aplicación Donut's Bites"
-                    >
+                   <img
+    src="DONUT'S -carro.png"
+    alt="DONUT'S BITES - Carro"
+>
 
 
                     <span class="aplicacion-label">
@@ -1472,7 +1483,10 @@ body > a {
 
 
                 <div class="aplicacion">
-
+<img
+    src="DONUT'S BITES-caja.jpeg"
+    alt="DONUT'S BITES - Caja"
+>
                     <span class="aplicacion-label">
                         APLICACIÓN · 02
                     </span>
@@ -1481,7 +1495,10 @@ body > a {
 
 
                 <div class="aplicacion">
-
+<img
+        src="DONUT'S BITES-galeria 01.png"
+        alt="DONUT'S BITES - Diseño de marca"
+     >
                     <span class="aplicacion-label">
                         APLICACIÓN · 03
                     </span>
@@ -1490,7 +1507,10 @@ body > a {
 
 
                 <div class="aplicacion">
-
+ <img
+        src="DONUT'S BITES-galeria02.png"
+        alt="DONUT'S BITES - Identidad visual"
+    >
                     <span class="aplicacion-label">
                         APLICACIÓN · 04
                     </span>
