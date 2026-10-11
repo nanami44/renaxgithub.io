@@ -9352,3 +9352,35 @@ min-height: 100vh;
         gap: 14px;
     }
 }
+
+/* ===== PORTADA DE SERVICIOS RENAX ===== */
+
+.srv-portada-imagen {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.srv-portada-imagen img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ===== PORTADA DE SERVICIOS RENAX ===== */
+
+.srv-portada-imagen {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.srv-portada-imagen img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
