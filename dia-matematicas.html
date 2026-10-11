@@ -440,6 +440,90 @@ overflow: hidden;
     }
 }
 
+/* MÁS MOVIMIENTO Y GIROS PARA LOS SÍMBOLOS */
+.matematicas-video .matematicas-numeros span {
+    animation: matematicasGiroSuave 24s linear infinite;
+    transform-origin: center center;
+    will-change: transform;
+}
+
+/* POSICIONES DE LOS NUEVOS SÍMBOLOS */
+.matematicas-video .matematicas-numeros span:nth-child(13) {
+    top: 16%; left: 24%; color: #5478d4; font-size: 34px; animation-delay: -4s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(14) {
+    top: 35%; left: 72%; color: #c8102e; font-size: 42px; animation-delay: -9s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(15) {
+    top: 62%; left: 30%; color: #b89a5a; font-size: 38px; animation-delay: -13s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(16) {
+    top: 82%; left: 85%; color: #5478d4; font-size: 30px; animation-delay: -6s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(17) {
+    top: 25%; left: 48%; color: #c8102e; font-size: 35px; animation-delay: -11s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(18) {
+    top: 72%; left: 8%; color: #b89a5a; font-size: 44px; animation-delay: -3s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(19) {
+    top: 48%; left: 78%; color: #ffffff; font-size: 28px; animation-delay: -15s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(20) {
+    top: 8%; left: 88%; color: #c8102e; font-size: 36px; animation-delay: -8s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(21) {
+    top: 90%; left: 60%; color: #5478d4; font-size: 32px; animation-delay: -12s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(22) {
+    top: 40%; left: 20%; color: #b89a5a; font-size: 40px; animation-delay: -5s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(23) {
+    top: 56%; left: 48%; color: #c8102e; font-size: 30px; animation-delay: -10s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(24) {
+    top: 18%; left: 56%; color: #5478d4; font-size: 36px; animation-delay: -7s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(25) {
+    top: 78%; left: 38%; color: #b89a5a; font-size: 34px; animation-delay: -14s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(26) {
+    top: 32%; left: 92%; color: #ffffff; font-size: 28px; animation-delay: -2s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(27) {
+    top: 65%; left: 65%; color: #c8102e; font-size: 42px; animation-delay: -16s;
+}
+.matematicas-video .matematicas-numeros span:nth-child(28) {
+    top: 5%; left: 18%; color: #5478d4; font-size: 31px; animation-delay: -6s;
+}
+
+@keyframes matematicasGiroSuave {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+        transform: translate(15px, -12px) rotate(90deg);
+    }
+    50% {
+        transform: translate(5px, -25px) rotate(180deg);
+    }
+    75% {
+        transform: translate(-12px, -10px) rotate(270deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .matematicas-video .matematicas-numeros span {
+        animation: none;
+    }
+}
+
+
+
+
     </style>
 </head>
 
