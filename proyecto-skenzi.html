@@ -825,7 +825,92 @@ color: #ffffff;
 .skenzi-identidad-transmite .skenzi-transmite-item p {
     color: #333333 !important;
 }
-    
+   
+/* GALERÍA INTERCALADA DE PRODUCTOS SKENZI */
+.skenzi-galeria-seccion {
+    padding: 120px 7vw 150px;
+    background: #f5f0e7;
+    color: #111111;
+}
+
+.skenzi-galeria-encabezado {
+    max-width: 1000px;
+    margin: 0 auto 70px;
+}
+
+.skenzi-galeria-encabezado .skenzi-etiqueta {
+    display: block;
+    margin-bottom: 25px;
+}
+
+.skenzi-galeria-encabezado h2 {
+    max-width: 800px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(45px, 7vw, 90px);
+    line-height: 0.98;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.skenzi-galeria-encabezado p {
+    max-width: 600px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #555555;
+}
+
+.skenzi-galeria-grid {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 35px 45px;
+    align-items: start;
+}
+
+.skenzi-galeria-item {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #e5dfd3;
+}
+
+.skenzi-galeria-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 18px;
+    transition: transform 0.5s ease;
+}
+
+.skenzi-galeria-desplazada {
+    margin-top: 90px;
+}
+
+.skenzi-galeria-item:hover img {
+    transform: scale(1.025);
+}
+
+@media (max-width: 700px) {
+    .skenzi-galeria-seccion {
+        padding: 80px 20px 100px;
+    }
+
+    .skenzi-galeria-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .skenzi-galeria-desplazada {
+        margin-top: 0;
+    }
+
+    .skenzi-galeria-encabezado {
+        margin-bottom: 40px;
+    }
+}
+ 
     </style>
 
 </head>
