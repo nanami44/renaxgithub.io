@@ -9384,3 +9384,8 @@ min-height: 100vh;
     height: auto;
     object-fit: cover;
 }
+
+/* Fondo negro del contenedor de la imagen del Servicio 03 */
+.srv-servicio:nth-of-type(3) .srv-servicio-media {
+    background-color: #000000;
+}
