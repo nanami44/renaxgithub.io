@@ -1775,31 +1775,76 @@ color: #ffffff;
 
     <div class="skenzi-galeria-encabezado">
         <span class="skenzi-etiqueta">SKENZI · INSPIRACIÓN</span>
-        <h2>Una marca, nuevos espacios.</h2>
-        <p>Diseño, identidad y detalles que acompañan cada producto.</p>
+        
+
+<h2 class="skenzi-titulo-accesible">
+    Una marca, nuevos espacios.
+</h2>
+
+<div class="skenzi-inspiracion-marquesina" aria-hidden="true">
+    <div class="skenzi-inspiracion-fila">
+        <div class="skenzi-inspiracion-pista skenzi-inspiracion-derecha">
+            <span>UNA MARCA, NUEVOS</span>
+            <span>UNA MARCA, NUEVOS</span>
+            <span>UNA MARCA, NUEVOS</span>
+            <span>UNA MARCA, NUEVOS</span>
+        </div>
     </div>
 
-    <div class="skenzi-galeria-grid">
-
-        <figure class="skenzi-galeria-item">
-            <img src="skenzi-bolsas.png" alt="Bolsas de SKENZI">
-        </figure>
-
-        <figure class="skenzi-galeria-item skenzi-galeria-desplazada">
-            <img src="skenzi-productos.png" alt="Productos SKENZI">
-        </figure>
-
-        <figure class="skenzi-galeria-item">
-            <img src="skenzi-hollas.png" alt="Diseño de SKENZI">
-        </figure>
-
-        <figure class="skenzi-galeria-item skenzi-galeria-desplazada">
-            <img src="skenzi-forma.png" alt="Identidad visual SKENZI">
-        </figure>
-
+    <div class="skenzi-inspiracion-fila">
+        <div class="skenzi-inspiracion-pista skenzi-inspiracion-izquierda">
+            <span>ESPACIOS.</span>
+            <span>ESPACIOS.</span>
+            <span>ESPACIOS.</span>
+            <span>ESPACIOS.</span>
+        </div>
     </div>
+</div>
 
 </section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const titulo = document.querySelector(".skenzi-cierre h2");
+
+    if (!titulo || titulo.dataset.clicPreparado === "true") return;
+
+    const walker = document.createTreeWalker(
+        titulo,
+        NodeFilter.SHOW_TEXT
+    );
+
+    const nodos = [];
+
+    while (walker.nextNode()) {
+        nodos.push(walker.currentNode);
+    }
+
+    nodos.forEach(function (nodo) {
+        const fragmento = document.createDocumentFragment();
+
+        for (const caracter of nodo.textContent) {
+            if (/\s/.test(caracter)) {
+                fragmento.appendChild(document.createTextNode(caracter));
+            } else {
+                const letra = document.createElement("span");
+                letra.className = "skenzi-hover-letra";
+                letra.textContent = caracter;
+
+                letra.addEventListener("click", function () {
+                    letra.classList.toggle("activa");
+                });
+
+                fragmento.appendChild(letra);
+            }
+        }
+
+        nodo.replaceWith(fragmento);
+    });
+
+    titulo.dataset.clicPreparado = "true";
+});
+</script>
 
 </body>
 
