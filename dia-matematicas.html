@@ -288,6 +288,8 @@ background: rgba(255, 255, 255, 0.88);
 
             .matematicas-video {
                 padding: 90px 25px 110px;
+                position: relative;
+overflow: hidden;
             }
 
             .matematicas-portada h1 {
@@ -339,13 +341,32 @@ background: rgba(255, 255, 255, 0.88);
         font-size: 10px;
     }
 }
+/* NÚMEROS SOLO DETRÁS DEL VIDEO */
+.matematicas-video .matematicas-numeros {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+}
 
+.matematicas-video .matematicas-video-contenido {
+    position: relative;
+    z-index: 1;
+}
+
+.matematicas-video .matematicas-video-marco {
+    position: relative;
+    z-index: 2;
+}
     </style>
 </head>
 
 
 <body class="matematicas-renax">
     <div class="matematicas-fondo"></div>
+    
+
+
     <a href="portafolio.html" class="renax-back-proyecto">
     ← VOLVER AL PORTAFOLIO
 </a>
@@ -387,7 +408,20 @@ background: rgba(255, 255, 255, 0.88);
     ========================================= -->
 
     <section class="matematicas-video">
-
+<div class="matematicas-numeros" aria-hidden="true">
+    <span>0</span>
+    <span>1</span>
+    <span>π</span>
+    <span>∑</span>
+    <span>8</span>
+    <span>√</span>
+    <span>3</span>
+    <span>∞</span>
+    <span>9</span>
+    <span>÷</span>
+    <span>4</span>
+    <span>×</span>
+</div>
         <div class="matematicas-video-contenido">
 
             <div class="matematicas-etiqueta">
