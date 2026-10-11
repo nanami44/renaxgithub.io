@@ -1260,10 +1260,10 @@ color: #ffffff;
     color: #ffffff;
 }
 
-/* Segunda línea: letras blancas de contorno */
+/* FRASE INFERIOR EN NEGRO */
 .skenzi-inspiracion-izquierda span {
-    color: transparent;
-    -webkit-text-stroke: 2px #ffffff;
+    color: #050505;
+    -webkit-text-stroke: 0;
 }
 
 /* UNA MARCA, NUEVOS: se desplaza hacia la derecha */
@@ -1276,23 +1276,27 @@ color: #ffffff;
     animation: skenziInspiracionIzquierda 30s linear infinite;
 }
 
+
+/* FRASE SUPERIOR: AVANZA HACIA LA DERECHA */
 @keyframes skenziInspiracionDerecha {
-    from {
+    0% {
         transform: translateX(-50%);
     }
-    to {
+    100% {
         transform: translateX(0);
     }
 }
 
+/* FRASE INFERIOR: AVANZA HACIA LA IZQUIERDA */
 @keyframes skenziInspiracionIzquierda {
-    from {
+    0% {
         transform: translateX(0);
     }
-    to {
+    100% {
         transform: translateX(-50%);
     }
 }
+
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 600px) {
