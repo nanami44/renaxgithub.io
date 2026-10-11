@@ -435,3 +435,17 @@
     content: none !important;
     display: none !important;
 }
+
+/* SKENZI - imagen completa y ajustada en Casos de estudio */
+.portafolio-renax .renax-casos-estudio .renax-work-card:first-child .renax-work-image {
+    height: 420px !important;
+    overflow: hidden !important;
+}
+
+.portafolio-renax .renax-casos-estudio .renax-work-card:first-child .renax-work-image img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: contain !important;
+    object-position: center !important;
+    transform: none !important;
+}
