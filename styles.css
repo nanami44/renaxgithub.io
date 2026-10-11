@@ -9293,3 +9293,62 @@ min-height: 100vh;
     position: relative;
     z-index: 3;
 }
+
+/* ===== PIE DE PÁGINA RENAX ===== */
+
+.renax-footer {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+    gap: 40px;
+    padding: 65px 8%;
+    background: #050505;
+    border-top: 1px solid #292929;
+}
+
+.footer-logo {
+    color: #ffffff;
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.footer-description {
+    max-width: 300px;
+    margin-top: 12px;
+    color: #aaaaaa;
+    font-size: 0.9rem;
+}
+
+.footer-menu h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.footer-menu-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 25px;
+}
+
+.footer-menu-links a {
+    color: #aaaaaa;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-menu-links a:hover {
+    color: #c8102e;
+}
+
+@media (max-width: 768px) {
+    .renax-footer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 45px 25px;
+    }
+
+    .footer-menu-links {
+        flex-direction: column;
+        gap: 14px;
+    }
+}
