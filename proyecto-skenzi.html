@@ -156,17 +156,23 @@
            IMAGEN PRINCIPAL
            ========================================= */
 
-        .skenzi-imagen-grande {
-            padding: 0 2vw;
-            background: #ffffff;
-        }
+      
+.skenzi-imagen-grande {
+    padding: 35px 4vw 90px;
+    background: #ffffff;
+}
 
-        .skenzi-imagen-grande img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 4px;
-        }
+.skenzi-imagen-grande img {
+    display: block;
+    width: 100%;
+    max-width: 1600px;
+    height: clamp(280px, 55vh, 500px);
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 4px;
+}
+
 
         /* =========================================
            EL RETO
