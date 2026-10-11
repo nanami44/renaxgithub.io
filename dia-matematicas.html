@@ -194,8 +194,16 @@ background: rgba(255, 255, 255, 0.88);
             justify-content: center;
 
             overflow: hidden;
+            position: relative;
         }
-
+.matematicas-video-marco iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: 0;
+}
         .matematicas-video-placeholder {
             text-align: center;
             padding: 30px;
@@ -353,17 +361,13 @@ background: rgba(255, 255, 255, 0.88);
 
             <div class="matematicas-video-marco">
 
-                <div class="matematicas-video-placeholder">
-
-                    <span>
-                        Video del proyecto
-                    </span>
-
-                    <p>
-                        Aquí irá el video de la campaña
-                    </p>
-
-                </div>
+               <iframe
+    src="https://www.youtube.com/embed/oM-5SSs9RAo"
+    title="Día Internacional de las Matemáticas - RENAX"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen>
+</iframe> 
 
             </div>
 
