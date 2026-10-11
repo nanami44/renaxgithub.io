@@ -9384,3 +9384,36 @@ min-height: 100vh;
     height: auto;
     object-fit: cover;
 }
+   
+/* RENAX — Botones de conceptos de servicio */
+
+.srv-concepto {
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    border-radius: 0;
+    background: transparent !important;
+    color: #ffffff !important;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    text-align: left;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.srv-concepto:hover,
+.srv-concepto:focus,
+.srv-concepto:active {
+    background: transparent !important;
+    color: #e31837 !important;
+    outline-offset: 4px;
+}
+
+.srv-concepto:focus:not(:focus-visible) {
+    outline: none;
+}
+
