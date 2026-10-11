@@ -980,7 +980,48 @@ body > a {
 
 .aplicaciones-grid .aplicacion:nth-child(n+3) img {
     background: #ffffff;
-}  
+}
+  
+/* FONDO BLANCO EN LOS CUATRO CUADROS */
+.aplicaciones-grid .aplicacion {
+    background: #ffffff !important;
+    border: 1px solid #e5e5e5;
+    border-radius: 18px;
+    overflow: hidden;
+}
+
+/* IMÁGENES CENTRADAS Y COMPLETAS */
+.aplicaciones-grid .aplicacion img {
+    position: relative;
+    z-index: 1;
+    background: #ffffff !important;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 18px;
+    transition: transform 0.45s ease;
+}
+
+/* EFECTO ZOOM */
+.aplicaciones-grid .aplicacion:hover img {
+    transform: scale(1.05);
+}
+
+/* TÍTULOS VISIBLES SOBRE LAS IMÁGENES */
+.aplicaciones-grid .aplicacion .aplicacion-label {
+    position: absolute;
+    z-index: 10;
+    bottom: 12px;
+    left: 12px;
+    color: #111111 !important;
+    background: rgba(255, 255, 255, 0.96);
+    padding: 9px 13px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.4;
+}
+      
     </style>
 
 </head>
@@ -1485,7 +1526,7 @@ body > a {
 
                 <div class="aplicacion">
 <img
-    src="DONUT'S BITES-caja.jpeg"
+    src="DONUT'S BITES-caja.png"
     alt="DONUT'S BITES - Caja"
 >
                     <span class="aplicacion-label">
