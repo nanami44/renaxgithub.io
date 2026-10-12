@@ -482,6 +482,7 @@ footerContacto1: "Let's talk about your project",
   }
 };
 
+
 let idiomaActual = "es";
 
 const languageBtn = document.getElementById("languageBtn");
@@ -490,16 +491,27 @@ function cambiarIdioma() {
   const textos = translations[idiomaActual];
 
   document.querySelectorAll("[data-lang]").forEach(elemento => {
-    const clave = elemento.dataset.lang;
+    const clave = elemento.getAttribute("data-lang");
 
-    if (textos[clave] !== undefined) {
+    if (Object.prototype.hasOwnProperty.call(textos, clave)) {
       elemento.innerHTML = textos[clave];
     }
   });
 
+  document.documentElement.lang = idiomaActual;
+
   if (languageBtn) {
     languageBtn.textContent = idiomaActual === "es" ? "ENG" : "ESP";
   }
+}
+
+if (languageBtn) {
+  languageBtn.addEventListener("click", () => {
+    idiomaActual = idiomaActual === "es" ? "en" : "es";
+    cambiarIdioma();
+  });
+}
+
 
   document.documentElement.lang = idiomaActual;
 }
