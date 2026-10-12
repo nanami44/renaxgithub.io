@@ -9639,9 +9639,26 @@ footer.renax-footer .footer-column a:hover {
     }
 }
 
-/* PRUEBA: PIE DE PÁGINA SIN FONDO */
+
+
+/* CORRECCIÓN DEL PIE DE PÁGINA EN SERVICIOS */
 footer.renax-footer {
-    background: transparent !important;
-    background-image: none !important;
-    box-shadow: none !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+    inset: auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 250px !important;
+    overflow: visible !important;
+    z-index: 999 !important;
+    margin-top: 0 !important;
+    clear: both !important;
+}
+
+footer.renax-footer .footer-container {
+    display: grid !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
