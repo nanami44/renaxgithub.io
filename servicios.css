@@ -200,3 +200,16 @@ body.servicios-renax h4,
 body.servicios-renax .srv-titulo {
     line-height: 1.01;
 }
+
+/* TITULOS RENAX: GRANDES, GRUESOS Y COMPACTOS */
+body.servicios-renax h1,
+body.servicios-renax h2,
+body.servicios-renax h3,
+body.servicios-renax h4,
+body.servicios-renax .srv-titulo,
+body.servicios-renax .srv-frase-fuerte {
+    font-family: "League Spartan", sans-serif;
+    font-weight: 800;
+    line-height: 1.01;
+    letter-spacing: -1.5px;
+}
