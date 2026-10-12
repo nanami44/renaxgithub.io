@@ -436,31 +436,69 @@ class="renax-button centered">
  
 <!-- ================ FOOTER RENAX ================ -->
 
-<footer class="renax-footer">
+<!-- ================ FOOTER RENAX ================ -->
 
+<footer class="renax-footer" id="footer-renax">
+
+    <!-- IDENTIDAD RENAX -->
     <div class="footer-column">
-       <a href="index.html" class="footer-logo">RENAX</a> 
-        <p class="footer-description">
+        <a href="index.html" class="footer-logo">RENAX</a>
+
+        <p class="footer-description" data-lang="footerDescription">
             Transformamos marcas sin borrar su historia.
         </p>
     </div>
 
+    <!-- MENÚ PRINCIPAL -->
     <nav class="footer-column footer-menu"
          aria-label="Menú del pie de página">
 
-        <h3>MENÚ</h3>
+        <h3 data-lang="footerMenu">MENÚ</h3>
 
         <div class="footer-menu-links">
-            <a href="inicio.html">Inicio</a>
-            <a href="nosotros.html">Nosotros</a>
-            <a href="portafolio.html">Portafolio</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="contacto.html">Contáctanos</a>
+            <a href="index.html" data-lang="footerInicio">Inicio</a>
+            <a href="nosotros.html" data-lang="footerNosotros">Nosotros</a>
+            <a href="portafolio.html" data-lang="footerPortfolio">Portafolio</a>
+            <a href="servicios.html" data-lang="footerServices">Servicios</a>
+            <a href="contacto.html" data-lang="footerContactPage">Contáctanos</a>
         </div>
 
     </nav>
 
+    <!-- ACCESOS DIRECTOS DE INICIO -->
+    <div class="footer-column footer-contenido">
+
+        <h3 data-lang="footerHomeTitle">INICIO</h3>
+
+        <div class="footer-menu-links">
+
+            <a href="index.html#hero-inicio"
+               data-lang="footerHomeHero">
+                Expertos en transformar marcas
+            </a>
+
+            <a href="index.html#esencia-marca"
+               data-lang="footerHomeEssence">
+                Vuelve a destacar sin perder tu esencia
+            </a>
+
+            <a href="index.html#historia-marca"
+               data-lang="footerHomeHistory">
+                Tu historia merece una imagen que esté a su altura
+            </a>
+
+            <a href="index.html#preguntas-frecuentes"
+               data-lang="footerHomeFAQ">
+                Preguntas frecuentes
+            </a>
+
+        </div>
+
+    </div>
+
 </footer>
+
+
 
 
 
@@ -530,8 +568,19 @@ const translations = {
         footerWhy: "¿Por qué RENAX?",
         footerPortfolio: "PORTAFOLIO",
         footerProjects: "Proyectos y trabajos realizados",
-        footerContact: "CONTACTO",
-        footerTalk: "Hablemos de tu proyecto"
+       
+footerContact: "CONTACTO",
+footerTalk: "Hablemos de tu proyecto",
+
+footerMenu: "MENÚ",
+footerServices: "Servicios",
+footerContactPage: "Contáctanos",
+footerHomeTitle: "INICIO",
+footerHomeHero: "Expertos en transformar marcas",
+footerHomeEssence: "Vuelve a destacar sin perder tu esencia",
+footerHomeHistory: "Tu historia merece una imagen que esté a su altura",
+footerHomeFAQ: "Preguntas frecuentes"
+
     },
 
     en: {
@@ -578,8 +627,19 @@ const translations = {
         footerWhy: "Why RENAX?",
         footerPortfolio: "PORTFOLIO",
         footerProjects: "Projects and completed work",
-        footerContact: "CONTACT",
-        footerTalk: "Let's talk about your project"
+        
+footerContact: "CONTACT",
+footerTalk: "Let's talk about your project",
+
+footerMenu: "MENU",
+footerServices: "Services",
+footerContactPage: "Contact us",
+footerHomeTitle: "HOME",
+footerHomeHero: "Experts in transforming brands",
+footerHomeEssence: "Stand out again without losing your essence",
+footerHomeHistory: "Your story deserves an image that lives up to it",
+footerHomeFAQ: "Frequently asked questions"
+
     }
 };
 
