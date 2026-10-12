@@ -282,3 +282,37 @@ body.servicios-renax .srv-footer-col p {
     font-size: 12px;
     line-height: 1.6;
 }
+
+/* AJUSTE DEL MENÚ DEL PIE DE PÁGINA */
+body.servicios-renax .srv-footer-menu-titulo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #bdbdbd;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+body.servicios-renax .srv-footer-menu-titulo span:first-child {
+    color: #e21b36;
+    font-weight: 700;
+}
+
+body.servicios-renax .srv-footer-col h3 {
+    font-size: 12px;
+    line-height: 1.2;
+    letter-spacing: 0.3px;
+}
+
+body.servicios-renax .srv-footer-col a {
+    display: block;
+    margin-top: 12px;
+    color: #c8c8c8;
+    font-size: 12px;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+body.servicios-renax .srv-footer-col a:hover {
+    color: #e21b36;
+}
