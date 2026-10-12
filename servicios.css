@@ -220,3 +220,44 @@ body.servicios-renax .srv-seccion-cabecera,
 body.servicios-renax .srv-proceso {
     align-items: center;
 }
+
+/* SERVICIOS RENAX: DISEÑO INTERCALADO */
+
+/* Estructura general de cada servicio */
+body.servicios-renax .srv-servicio {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(35px, 6vw, 90px);
+}
+
+/* Primera y tercera sección: imagen a la izquierda */
+body.servicios-renax .srv-servicio:nth-of-type(odd) .srv-imagen {
+    order: 1;
+}
+
+body.servicios-renax .srv-servicio:nth-of-type(odd) .srv-contenido {
+    order: 2;
+}
+
+/* Segunda y cuarta sección: imagen a la derecha */
+body.servicios-renax .srv-servicio:nth-of-type(even) .srv-imagen {
+    order: 2;
+}
+
+body.servicios-renax .srv-servicio:nth-of-type(even) .srv-contenido {
+    order: 1;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 768px) {
+    body.servicios-renax .srv-servicio {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    body.servicios-renax .srv-servicio .srv-imagen,
+    body.servicios-renax .srv-servicio .srv-contenido {
+        order: initial;
+    }
+}
