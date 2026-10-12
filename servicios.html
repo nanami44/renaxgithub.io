@@ -487,6 +487,7 @@ let idiomaActual = "es";
 
 const languageBtn = document.getElementById("languageBtn");
 
+
 function cambiarIdioma() {
   const textos = translations[idiomaActual];
 
@@ -498,7 +499,14 @@ function cambiarIdioma() {
     }
   });
 
- if (languageBtn) {
+  document.documentElement.lang = idiomaActual;
+
+  if (languageBtn) {
+    languageBtn.textContent = idiomaActual === "es" ? "ENG" : "ESP";
+  }
+}
+
+if (languageBtn) {
   languageBtn.addEventListener("click", () => {
     idiomaActual = idiomaActual === "es" ? "en" : "es";
     cambiarIdioma();
@@ -506,6 +514,7 @@ function cambiarIdioma() {
 }
 
 cambiarIdioma();
+
 </script>
 </body>
 </html>
