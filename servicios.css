@@ -457,6 +457,34 @@ body.servicios-renax .srv-servicio .srv-contenido {
     transform: none !important;
 }
 
+/* IMÁGENES DE SERVICIOS MÁS ANCHAS */
+body.servicios-renax .srv-servicio {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) !important;
+    column-gap: clamp(25px, 4vw, 55px) !important;
+}
+
+body.servicios-renax .srv-servicio .srv-imagen {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+}
+
+body.servicios-renax .srv-servicio .srv-imagen img {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+}
+
+/* Mantener una sola columna en celulares */
+@media (max-width: 768px) {
+    body.servicios-renax .srv-servicio {
+        grid-template-columns: 1fr !important;
+    }
+}
+
 @media (max-width: 768px) {
     body.servicios-renax .srv-servicio .srv-contenido {
         margin-top: 0 !important;
