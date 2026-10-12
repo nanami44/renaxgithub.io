@@ -1753,7 +1753,10 @@ z-index: 1;
 }
 
 
-/* ---------- FOOTER ---------- */
+
+/* ---------- FOOTER ANTERIOR ---------- */
+
+
 
 .renax-footer {
 
@@ -8391,6 +8394,103 @@ min-height: 100vh;
     background: #111111;
 }
 
+
+/* ===== PIE DE PÁGINA RENAX - AJUSTE FINAL ===== */
+
+footer.renax-footer {
+    display: block !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 65px 6% 35px !important;
+    background: linear-gradient(180deg, #080808 0%, #300000 100%) !important;
+    color: #ffffff !important;
+    position: relative;
+    z-index: 10;
+}
+
+footer.renax-footer .footer-container {
+    display: grid !important;
+    grid-template-columns: 1.15fr 1fr 1fr 1fr 1fr !important;
+    gap: 30px !important;
+    width: 100% !important;
+    max-width: 1500px !important;
+    margin: 0 auto !important;
+    align-items: start !important;
+}
+
+footer.renax-footer .footer-column {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px;
+    min-width: 0;
+}
+
+footer.renax-footer .footer-column h3 {
+    margin: 0 0 25px !important;
+    font-size: 22px !important;
+    font-weight: 800 !important;
+}
+
+footer.renax-footer .footer-column h3 a,
+footer.renax-footer .footer-menu-links a {
+    display: block !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+footer.renax-footer .footer-column h3 a {
+    padding-bottom: 10px;
+    border-bottom: 3px solid #e00000;
+}
+
+footer.renax-footer .footer-menu-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 20px !important;
+}
+
+footer.renax-footer .footer-menu-links a {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+}
+
+footer.renax-footer .footer-column a:hover {
+    color: #ff3333 !important;
+}
+
+@media (max-width: 900px) {
+    footer.renax-footer .footer-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    footer.renax-footer {
+        padding: 40px 7% !important;
+    }
+
+    footer.renax-footer .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 30px 20px !important;
+    }
+
+    footer.renax-footer .footer-column h3 {
+        font-size: 18px !important;
+        margin-bottom: 15px !important;
+    }
+
+    footer.renax-footer .footer-menu-links {
+        gap: 14px !important;
+    }
+
+    footer.renax-footer .footer-menu-links a {
+        font-size: 14px !important;
+    }
+}
 
 .por-que-item > span {
     color: #c8102e;
