@@ -212,6 +212,59 @@
           : '<i class="fa-solid fa-bars"></i>';
       });
     }
+    
+    
+// CAMBIO DE IDIOMA ESPAÑOL / INGLÉS
+const languageBtn = document.getElementById('languageBtn');
+
+const traducciones = {
+    es: {
+        'INICIO': 'Inicio',
+        'NOSOTROS': 'Nosotros',
+        'PORTAFOLIO': 'Portafolio',
+        'SERVICIOS': 'Servicios',
+        'CONTÁCTANOS': 'Contáctanos',
+        'INICIAR SESIÓN': 'Iniciar sesión'
+    },
+    en: {
+        'INICIO': 'Home',
+        'NOSOTROS': 'About Us',
+        'PORTAFOLIO': 'Portfolio',
+        'SERVICIOS': 'Services',
+        'CONTÁCTANOS': 'Contact Us',
+        'INICIAR SESIÓN': 'Sign In'
+    }
+};
+
+let idiomaActual = 'es';
+
+if (languageBtn) {
+    languageBtn.addEventListener('click', () => {
+        idiomaActual = idiomaActual === 'es' ? 'en' : 'es';
+
+        languageBtn.textContent = idiomaActual === 'es' ? 'ESP' : 'ENG';
+
+        document.querySelectorAll('.srv-nav a').forEach(enlace => {
+            const textoOriginal = enlace.dataset.textoOriginal
+                || enlace.textContent.trim();
+
+            if (!enlace.dataset.textoOriginal) {
+                enlace.dataset.textoOriginal = textoOriginal;
+            }
+
+            const clave = textoOriginal.toUpperCase();
+            enlace.textContent =
+                traducciones[idiomaActual][clave] || textoOriginal;
+        });
+
+        document.querySelectorAll('.srv-header .login-btn').forEach(boton => {
+            boton.textContent = idiomaActual === 'es'
+                ? 'INICIAR SESIÓN'
+                : 'SIGN IN';
+        });
+    });
+}
+
   </script>
 </body>
 </html>
