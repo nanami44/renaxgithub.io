@@ -191,3 +191,12 @@ body.servicios-renax img { display: block; max-width: 100%; }
   .srv-pasos { grid-template-columns: 1fr; }
   .srv-footer-grid { grid-template-columns: 1fr 1fr; }
 }
+
+/* Interlineado de todos los títulos */
+body.servicios-renax h1,
+body.servicios-renax h2,
+body.servicios-renax h3,
+body.servicios-renax h4,
+body.servicios-renax .srv-titulo {
+    line-height: 1.01;
+}
