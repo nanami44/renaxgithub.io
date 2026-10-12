@@ -4,7 +4,7 @@
    No depende de styles.css.
    ========================================================= */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=League+Spartan:wght@400;500;600;700;800&display=swap');
 
 :root {
   --srv-negro: #080808;
@@ -18,8 +18,9 @@
   --srv-margen: clamp(22px, 6vw, 92px);
   /* Fuentes solicitadas. Si Integral/Talial están instaladas localmente,
      el navegador las usará; si no, se aplican las alternativas. */
-  --srv-titulos: "Integral", "Arial Black", Impact, sans-serif;
-  --srv-textos: "Talial", "Inter", Arial, sans-serif;
+  --srv-titulos: "League Spartan", sans-serif;
+--srv-textos: "Talial", "Inter", Arial, sans-serif;
+ 
 }
 
 * { box-sizing: border-box; }
