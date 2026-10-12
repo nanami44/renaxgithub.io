@@ -236,34 +236,74 @@ const traducciones = {
     }
 };
 
+
 let idiomaActual = 'es';
 
-if (languageBtn) {
-    languageBtn.addEventListener('click', () => {
-        idiomaActual = idiomaActual === 'es' ? 'en' : 'es';
+const traduccionesPagina = {
+  en: {
+    'INICIO': 'Home',
+    'NOSOTROS': 'About Us',
+    'PORTAFOLIO': 'Portfolio',
+    'SERVICIOS': 'Services',
+    'CONTÁCTANOS': 'Contact Us',
+    'INICIAR SESIÓN': 'Sign In',
+    'DIAGNÓSTICO': 'Brand Audit',
+    'RENOVACIÓN': 'Brand Renewal',
+    'COMUNICACIÓN': 'Communication',
+    'ESTRATEGIA': 'Strategy',
+    'MENÚ': 'MENU',
+    'CONTACTO': 'CONTACT',
+    'HABLEMOS DE TU PROYECTO': 'Let’s talk about your project',
+    'PREGUNTAS FRECUENTES': 'Frequently Asked Questions',
+    'VISIÓN': 'Vision',
+    'MISIÓN': 'Mission'
+  }
+};
 
-        languageBtn.textContent = idiomaActual === 'es' ? 'ESP' : 'ENG';
+function traducirElemento(elemento, ingles) {
+  if (!elemento.dataset.textoOriginal) {
+    elemento.dataset.textoOriginal = elemento.innerHTML;
+  }
 
-        document.querySelectorAll('.srv-nav a').forEach(enlace => {
-            const textoOriginal = enlace.dataset.textoOriginal
-                || enlace.textContent.trim();
+  if (!ingles) {
+    elemento.innerHTML = elemento.dataset.textoOriginal;
+    return;
+  }
 
-            if (!enlace.dataset.textoOriginal) {
-                enlace.dataset.textoOriginal = textoOriginal;
-            }
+  let texto = elemento.dataset.textoOriginal;
 
-            const clave = textoOriginal.toUpperCase();
-            enlace.textContent =
-                traducciones[idiomaActual][clave] || textoOriginal;
-        });
+  Object.entries(traduccionesPagina.en).forEach(([es, en]) => {
+    texto = texto.replaceAll(es, en);
+    texto = texto.replaceAll(
+      es.charAt(0) + es.slice(1).toLowerCase(),
+      en
+    );
+  });
 
-        document.querySelectorAll('.srv-header .login-btn').forEach(boton => {
-            boton.textContent = idiomaActual === 'es'
-                ? 'INICIAR SESIÓN'
-                : 'SIGN IN';
-        });
-    });
+  elemento.innerHTML = texto;
 }
+
+if (languageBtn) {
+  languageBtn.addEventListener('click', () => {
+    idiomaActual = idiomaActual === 'es' ? 'en' : 'es';
+    const ingles = idiomaActual === 'en';
+
+    languageBtn.textContent = ingles ? 'ENG' : 'ESP';
+    document.documentElement.lang = idiomaActual;
+
+    document.querySelectorAll(
+      '.srv-nav a, .srv-servicio, .srv-proceso, .srv-manifiesto, ' +
+      '.srv-frase-fuerte, .srv-cierre, .srv-footer'
+    ).forEach(elemento => {
+      traducirElemento(elemento, ingles);
+    });
+
+    document.querySelectorAll('.srv-header .login-btn').forEach(boton => {
+      boton.textContent = ingles ? 'SIGN IN' : 'INICIAR SESIÓN';
+    });
+  });
+}
+
 
   </script>
 </body>
