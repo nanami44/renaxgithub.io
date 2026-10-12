@@ -222,81 +222,6 @@ body.servicios-renax .srv-proceso {
 }
 
 
-/* SERVICIOS RENAX: IMAGEN Y TEXTO ALINEADOS */
-
-
-
-body.servicios-renax .srv-servicio {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  align-items: center;
-  column-gap: clamp(30px, 5vw, 75px);
-  row-gap: 0;
-  padding: 10px 0;
-  margin: 0 auto;
-  min-height: 0;
-  height: auto;
-}
-
-
-
-/* Imagen y texto centrados verticalmente */
-body.servicios-renax .srv-servicio .srv-imagen,
-body.servicios-renax .srv-servicio .srv-contenido {
-  width: 100%;
-  min-width: 0;
-  margin: 0;
-}
-
-/* Imágenes con tamaño uniforme */
-body.servicios-renax .srv-servicio .srv-imagen img {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-}
-
-/* Servicios impares: imagen izquierda, texto derecha */
-body.servicios-renax .srv-servicio:nth-of-type(odd) .srv-imagen {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-body.servicios-renax .srv-servicio:nth-of-type(odd) .srv-contenido {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-/* Servicios pares: texto izquierda, imagen derecha */
-body.servicios-renax .srv-servicio:nth-of-type(even) .srv-imagen {
-  grid-column: 2;
-  grid-row: 1;
-}
-
-body.servicios-renax .srv-servicio:nth-of-type(even) .srv-contenido {
-  grid-column: 1;
-  grid-row: 1;
-}
-
-/* Adaptación para celulares */
-@media (max-width: 768px) {
-  body.servicios-renax .srv-servicio {
-    grid-template-columns: 1fr;
-    gap: 24px;
-    padding: 35px 0;
-  }
-
-  body.servicios-renax .srv-servicio .srv-imagen,
-  body.servicios-renax .srv-servicio .srv-contenido {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  body.servicios-renax .srv-servicio .srv-imagen img {
-    aspect-ratio: 4 / 3;
-  }
-}
 
 
 /* PIE DE PÁGINA RENAX: AJUSTE DEL MENÚ */
@@ -390,135 +315,106 @@ body.servicios-renax .srv-header .srv-header-actions {
         margin: 0;
     }
 }
-/* AJUSTE FINAL: TEXTO AL NIVEL DE LA IMAGEN */
-@media (min-width: 701px) {
-  body.servicios-renax .srv-servicio {
-    align-items: start !important;
-    padding-top: 0 !important;
-    padding-bottom: 35px !important;
-    row-gap: 0 !important;
-  }
 
-  body.servicios-renax .srv-servicio .srv-contenido {
-    align-self: start !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-  }
+/* ESTRUCTURA DE LAS SECCIONES DE SERVICIOS RENAX */
 
-/* ALINEAR TODAS LAS SECCIONES DE SERVICIOS */
 body.servicios-renax .srv-servicio {
-    display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center !important;
-    gap: clamp(30px, 5vw, 75px);
-    padding-top: 20px !important;
-    padding-bottom: 20px !important;
-    margin: 0 auto !important;
-    min-height: 0 !important;
-    height: auto !important;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+    padding: 35px 0;
 }
 
-body.servicios-renax .srv-servicio .srv-imagen,
-body.servicios-renax .srv-servicio .srv-contenido {
-    align-self: center !important;
-    margin-top: 0 !important;
-    min-width: 0;
+/* Número de cada servicio */
+body.servicios-renax .srv-servicio-num {
+    grid-column: 1 / -1;
 }
 
-body.servicios-renax .srv-servicio .srv-contenido {
-    padding-top: 0 !important;
-    transform: translateY(-35px);
+/* Imágenes */
+body.servicios-renax .srv-servicio-imagen {
+    margin: 0;
+    width: 100%;
 }
 
-body.servicios-renax .srv-servicio .srv-imagen img {
+body.servicios-renax .srv-servicio-imagen img {
     display: block;
     width: 100%;
     height: auto;
     object-fit: contain;
 }
 
-/* En celulares: una columna y sin desplazamiento vertical */
+/* Contenido de texto */
+body.servicios-renax .srv-servicio-contenido {
+    align-self: start;
+    margin: 0;
+    padding: 0;
+    transform: none;
+}
+
+/* 01. DIAGNÓSTICO: imagen izquierda */
+body.servicios-renax .srv-servicio-diagnostico
+.srv-servicio-imagen {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+body.servicios-renax .srv-servicio-diagnostico
+.srv-servicio-contenido {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* 02. RENOVACIÓN: imagen derecha */
+body.servicios-renax .srv-servicio-renovacion
+.srv-servicio-contenido {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+body.servicios-renax .srv-servicio-renovacion
+.srv-servicio-imagen {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* 03. COMUNICACIÓN: imagen izquierda */
+body.servicios-renax .srv-servicio-comunicacion
+.srv-servicio-imagen {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+body.servicios-renax .srv-servicio-comunicacion
+.srv-servicio-contenido {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* 04. ESTRATEGIA: imagen derecha */
+body.servicios-renax .srv-servicio-estrategia
+.srv-servicio-contenido {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+body.servicios-renax .srv-servicio-estrategia
+.srv-servicio-imagen {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Adaptación para móviles */
 @media (max-width: 768px) {
     body.servicios-renax .srv-servicio {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
     }
 
-    body.servicios-renax .srv-servicio .srv-contenido {
-        transform: none;
+    body.servicios-renax .srv-servicio-num,
+    body.servicios-renax .srv-servicio-imagen,
+    body.servicios-renax .srv-servicio-contenido {
+        grid-column: 1;
+        grid-row: auto;
     }
 }
-
-
-/* REDUCIR ESPACIO ENCIMA DE LOS TEXTOS */
-body.servicios-renax .srv-servicio .srv-contenido {
-    margin-top: -100px !important;
-    padding-top: 0 !important;
-    transform: none !important;
-}
-
-
-/* RESTAURAR ESTRUCTURA ORIGINAL DE LAS IMÁGENES */
-body.servicios-renax .srv-servicio {
-    grid-template-columns: minmax(180px, 0.8fr) minmax(0, 1fr) !important;
-    column-gap: clamp(24px, 4vw, 60px) !important;
-}
-
-body.servicios-renax .srv-servicio .srv-imagen {
-    width: 100%;
-    max-width: none;
-}
-
-body.servicios-renax .srv-servicio .srv-imagen img {
-    display: block;
-    width: 100%;
-    height: auto;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-}
-
-/* SERVICIOS PARES: conservar imagen a la derecha */
-body.servicios-renax .srv-servicio:nth-of-type(even) .srv-imagen {
-    grid-column: 2;
-}
-
-body.servicios-renax .srv-servicio:nth-of-type(even) .srv-contenido {
-    grid-column: 1;
-}
-
-/* CELULARES */
-@media (max-width: 768px) {
-    body.servicios-renax .srv-servicio {
-        grid-template-columns: 1fr !important;
-    }
-
-    body.servicios-renax .srv-servicio .srv-imagen,
-    body.servicios-renax .srv-servicio .srv-contenido {
-        grid-column: 1 !important;
-    }
-}
-
-/* ALINEAR EL TEXTO ARRIBA DE CADA IMAGEN */
-body.servicios-renax .srv-servicio {
-    align-items: start !important;
-    grid-auto-rows: auto !important;
-}
-
-body.servicios-renax .srv-servicio .srv-contenido {
-    align-self: start !important;
-    margin-top: 0 !important;
-    padding-top: 0 !important;
-    transform: none !important;
-}
-
-/* Evitar espacio superior dentro del texto */
-body.servicios-renax .srv-servicio .srv-contenido h3 {
-    margin-top: 0 !important;
-}
-
-@media (max-width: 768px) {
-    body.servicios-renax .srv-servicio {
-        align-items: start !important;
-    }
-}
-
