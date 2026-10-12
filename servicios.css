@@ -457,36 +457,44 @@ body.servicios-renax .srv-servicio .srv-contenido {
     transform: none !important;
 }
 
-/* IMÁGENES DE SERVICIOS MÁS ANCHAS */
+
+/* RESTAURAR ESTRUCTURA ORIGINAL DE LAS IMÁGENES */
 body.servicios-renax .srv-servicio {
-    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) !important;
-    column-gap: clamp(25px, 4vw, 55px) !important;
+    grid-template-columns: minmax(180px, 0.8fr) minmax(0, 1fr) !important;
+    column-gap: clamp(24px, 4vw, 60px) !important;
 }
 
 body.servicios-renax .srv-servicio .srv-imagen {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
+    width: 100%;
+    max-width: none;
 }
 
 body.servicios-renax .srv-servicio .srv-imagen img {
     display: block;
-    width: 100% !important;
-    max-width: none !important;
-    height: auto !important;
-    aspect-ratio: 5 / 4;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
     object-fit: cover;
 }
 
-/* Mantener una sola columna en celulares */
+/* SERVICIOS PARES: conservar imagen a la derecha */
+body.servicios-renax .srv-servicio:nth-of-type(even) .srv-imagen {
+    grid-column: 2;
+}
+
+body.servicios-renax .srv-servicio:nth-of-type(even) .srv-contenido {
+    grid-column: 1;
+}
+
+/* CELULARES */
 @media (max-width: 768px) {
     body.servicios-renax .srv-servicio {
         grid-template-columns: 1fr !important;
     }
-}
 
-@media (max-width: 768px) {
+    body.servicios-renax .srv-servicio .srv-imagen,
     body.servicios-renax .srv-servicio .srv-contenido {
-        margin-top: 0 !important;
+        grid-column: 1 !important;
     }
 }
+
