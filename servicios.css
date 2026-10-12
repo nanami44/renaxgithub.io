@@ -213,3 +213,10 @@ body.servicios-renax .srv-frase-fuerte {
     line-height: 1.01;
     letter-spacing: -1.5px;
 }
+
+/* ALINEACIÓN DE TÍTULOS Y TEXTOS */
+body.servicios-renax .srv-manifiesto,
+body.servicios-renax .srv-seccion-cabecera,
+body.servicios-renax .srv-proceso {
+    align-items: center;
+}
