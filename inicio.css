@@ -448,3 +448,97 @@
         padding: 45px 6px 6px;
     }
 }
+
+/* ==========================================
+   RENAX · PIE DE PÁGINA
+========================================== */
+
+.inicio-renax .renax-footer {
+    position: relative;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 1.5fr;
+    gap: 45px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 65px 7%;
+    background: #080808;
+    color: #ffffff;
+    border-top: 1px solid rgba(200, 16, 46, 0.45);
+}
+
+.inicio-renax .renax-footer .footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+}
+
+.inicio-renax .renax-footer .footer-logo {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: 4px;
+}
+
+.inicio-renax .renax-footer .footer-description {
+    max-width: 260px;
+    color: #bdbdbd;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.inicio-renax .renax-footer h3 {
+    margin: 5px 0 20px;
+    color: #c8102e;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.inicio-renax .renax-footer .footer-menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+    width: 100%;
+}
+
+.inicio-renax .renax-footer .footer-menu-links a {
+    display: inline-block;
+    color: #d2d2d2;
+    font-size: 13px;
+    line-height: 1.7;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.inicio-renax .renax-footer .footer-menu-links a:hover {
+    color: #ff304b;
+    transform: translateX(4px);
+}
+
+@media (max-width: 800px) {
+    .inicio-renax .renax-footer {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 25px;
+        padding: 45px 6%;
+    }
+
+    .inicio-renax .renax-footer .footer-contenido {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .inicio-renax .renax-footer {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 40px 7%;
+    }
+
+    .inicio-renax .renax-footer .footer-contenido {
+        grid-column: auto;
+    }
+}
