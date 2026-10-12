@@ -498,3 +498,27 @@ body.servicios-renax .srv-servicio:nth-of-type(even) .srv-contenido {
     }
 }
 
+/* ALINEAR EL TEXTO ARRIBA DE CADA IMAGEN */
+body.servicios-renax .srv-servicio {
+    align-items: start !important;
+    grid-auto-rows: auto !important;
+}
+
+body.servicios-renax .srv-servicio .srv-contenido {
+    align-self: start !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    transform: none !important;
+}
+
+/* Evitar espacio superior dentro del texto */
+body.servicios-renax .srv-servicio .srv-contenido h3 {
+    margin-top: 0 !important;
+}
+
+@media (max-width: 768px) {
+    body.servicios-renax .srv-servicio {
+        align-items: start !important;
+    }
+}
+
