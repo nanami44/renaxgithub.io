@@ -2121,6 +2121,109 @@
     
 
 
+/* ==========================================
+   RENAX SERVICIOS — PIE DE PÁGINA AISLADO
+========================================== */
+
+footer.servicios-footer-aislado {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #080808;
+    color: #ffffff;
+    border-top: 1px solid #68101b;
+    font-family: 'Montserrat', sans-serif;
+}
+
+footer.servicios-footer-aislado * {
+    box-sizing: border-box;
+}
+
+.servicios-footer-aislado .servicios-footer-titulo {
+    margin: 0;
+    padding: 48px 20px 38px;
+    text-align: center;
+    color: #f0183c;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 5px;
+}
+
+.servicios-footer-aislado .servicios-footer-columnas {
+    width: 100%;
+    max-width: 1700px;
+    margin: 0 auto;
+    padding: 0 5% 45px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    column-gap: 35px;
+    align-items: start;
+}
+
+.servicios-footer-aislado .servicios-footer-columna {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.servicios-footer-aislado .servicios-footer-columna h4 {
+    margin: 0 0 34px;
+    color: #bdbdbd;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.servicios-footer-aislado .servicios-footer-columna a {
+    display: block;
+    margin: 0 0 18px;
+    color: #eeeeee;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+    transition: color 0.2s ease;
+}
+
+.servicios-footer-aislado .servicios-footer-columna a:hover {
+    color: #f0183c;
+}
+
+/* TABLETAS */
+@media (max-width: 950px) {
+    .servicios-footer-aislado .servicios-footer-columnas {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        row-gap: 35px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    .servicios-footer-aislado .servicios-footer-titulo {
+        padding: 35px 15px;
+    }
+
+    .servicios-footer-aislado .servicios-footer-columnas {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px 20px;
+        padding: 0 22px 35px;
+    }
+
+    .servicios-footer-aislado .servicios-footer-columna h4 {
+        margin-bottom: 20px;
+        font-size: 13px;
+    }
+
+    .servicios-footer-aislado .servicios-footer-columna a {
+        margin-bottom: 14px;
+        font-size: 11px;
+    }
+}
+
 
 </body>
 
