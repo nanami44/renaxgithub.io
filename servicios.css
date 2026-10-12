@@ -225,15 +225,19 @@ body.servicios-renax .srv-proceso {
 /* SERVICIOS RENAX: IMAGEN Y TEXTO ALINEADOS */
 
 
+
 body.servicios-renax .srv-servicio {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
   column-gap: clamp(30px, 5vw, 75px);
   row-gap: 0;
-  padding: 35px 0;
+  padding: 10px 0;
+  margin: 0 auto;
   min-height: 0;
+  height: auto;
 }
+
 
 
 /* Imagen y texto centrados verticalmente */
@@ -385,4 +389,24 @@ body.servicios-renax .srv-header .srv-header-actions {
     body.servicios-renax .srv-header nav {
         margin: 0;
     }
+}
+/* AJUSTE FINAL: TEXTO AL NIVEL DE LA IMAGEN */
+@media (min-width: 701px) {
+  body.servicios-renax .srv-servicio {
+    align-items: start !important;
+    padding-top: 0 !important;
+    padding-bottom: 35px !important;
+    row-gap: 0 !important;
+  }
+
+  body.servicios-renax .srv-servicio .srv-contenido {
+    align-self: start !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  body.servicios-renax .srv-servicio .srv-imagen {
+    align-self: start !important;
+    margin-top: 0 !important;
+  }
 }
