@@ -261,3 +261,24 @@ body.servicios-renax .srv-servicio:nth-of-type(even) .srv-contenido {
         order: initial;
     }
 }
+
+/* PIE DE PÁGINA RENAX: AJUSTE DEL MENÚ */
+body.servicios-renax .srv-footer-kicker {
+    color: #e21b36;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+body.servicios-renax .srv-footer-menu-titulo,
+body.servicios-renax .srv-footer-col h3 {
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+body.servicios-renax .srv-footer-col a,
+body.servicios-renax .srv-footer-col p {
+    font-size: 12px;
+    line-height: 1.6;
+}
