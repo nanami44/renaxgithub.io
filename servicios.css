@@ -405,6 +405,27 @@ body.servicios-renax .srv-header .srv-header-actions {
     padding-top: 0 !important;
   }
 
+/* AJUSTE DE ALINEACIÓN DE SERVICIOS */
+body.servicios-renax .srv-servicio {
+    align-items: center !important;
+    padding-top: 0 !important;
+    padding-bottom: 20px !important;
+    min-height: 0 !important;
+    height: auto !important;
+}
+
+body.servicios-renax .srv-servicio .srv-contenido {
+    align-self: center !important;
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    transform: translateY(-35px);
+}
+
+body.servicios-renax .srv-servicio .srv-imagen {
+    align-self: center !important;
+    margin-top: 0 !important;
+}
+
   body.servicios-renax .srv-servicio .srv-imagen {
     align-self: start !important;
     margin-top: 0 !important;
