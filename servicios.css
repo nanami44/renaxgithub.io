@@ -221,46 +221,75 @@ body.servicios-renax .srv-proceso {
     align-items: center;
 }
 
-/* SERVICIOS RENAX: DISEÑO INTERCALADO */
 
-/* Estructura general de cada servicio */
+/* SERVICIOS RENAX: IMAGEN Y TEXTO ALINEADOS */
+
 body.servicios-renax .srv-servicio {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: center;
-    gap: clamp(35px, 6vw, 90px);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(30px, 5vw, 75px);
+  padding: 50px 0;
 }
 
-/* Primera y tercera sección: imagen a la izquierda */
+/* Imagen y texto centrados verticalmente */
+body.servicios-renax .srv-servicio .srv-imagen,
+body.servicios-renax .srv-servicio .srv-contenido {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+/* Imágenes con tamaño uniforme */
+body.servicios-renax .srv-servicio .srv-imagen img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* Servicios impares: imagen izquierda, texto derecha */
 body.servicios-renax .srv-servicio:nth-of-type(odd) .srv-imagen {
-    order: 1;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 body.servicios-renax .srv-servicio:nth-of-type(odd) .srv-contenido {
-    order: 2;
+  grid-column: 2;
+  grid-row: 1;
 }
 
-/* Segunda y cuarta sección: imagen a la derecha */
+/* Servicios pares: texto izquierda, imagen derecha */
 body.servicios-renax .srv-servicio:nth-of-type(even) .srv-imagen {
-    order: 2;
+  grid-column: 2;
+  grid-row: 1;
 }
 
 body.servicios-renax .srv-servicio:nth-of-type(even) .srv-contenido {
-    order: 1;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 /* Adaptación para celulares */
 @media (max-width: 768px) {
-    body.servicios-renax .srv-servicio {
-        grid-template-columns: 1fr;
-        gap: 28px;
-    }
+  body.servicios-renax .srv-servicio {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 35px 0;
+  }
 
-    body.servicios-renax .srv-servicio .srv-imagen,
-    body.servicios-renax .srv-servicio .srv-contenido {
-        order: initial;
-    }
+  body.servicios-renax .srv-servicio .srv-imagen,
+  body.servicios-renax .srv-servicio .srv-contenido {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  body.servicios-renax .srv-servicio .srv-imagen img {
+    aspect-ratio: 4 / 3;
+  }
 }
+
 
 /* PIE DE PÁGINA RENAX: AJUSTE DEL MENÚ */
 body.servicios-renax .srv-footer-kicker {
