@@ -374,7 +374,7 @@ const translations = {
 
     cierreTitulo: "¿Tu marca está lista<br>para <em>evolucionar?</em>",
     cierreTexto: "Hablemos de cómo podemos transformar su identidad sin borrar su historia.",
-    cierreBoton: "HABLEMOS DE TU MARCA"
+    cierreBoton: "HABLEMOS DE TU MARCA",
     footerKicker: "RENAX / NAVEGACIÓN",
 footerTitulo: "Una historia.<br><em>Nuevas posibilidades.</em>",
 footerManifiesto: "Transformamos marcas<br>sin borrar su historia.",
@@ -451,7 +451,7 @@ footerContacto1: "Hablemos de tu proyecto",
 
     cierreTitulo: "Is your brand ready<br>to <em>evolve?</em>",
     cierreTexto: "Let's talk about how we can transform your brand identity without erasing its history.",
-    cierreBoton: "LET'S TALK ABOUT YOUR BRAND"
+   cierreBoton: "LET'S TALK ABOUT YOUR BRAND",
   
 footerKicker: "RENAX / NAVIGATION",
 footerTitulo: "One story.<br><em>New possibilities.</em>",
@@ -498,14 +498,7 @@ function cambiarIdioma() {
     }
   });
 
-  document.documentElement.lang = idiomaActual;
-
-  if (languageBtn) {
-    languageBtn.textContent = idiomaActual === "es" ? "ENG" : "ESP";
-  }
-}
-
-if (languageBtn) {
+ if (languageBtn) {
   languageBtn.addEventListener("click", () => {
     idiomaActual = idiomaActual === "es" ? "en" : "es";
     cambiarIdioma();
@@ -513,11 +506,16 @@ if (languageBtn) {
 }
 
 cambiarIdioma();
-
-
-
-
-
-  </script>
+</script>
 </body>
 </html>
+   
+ 
+
+
+
+
+
+
+
+  
