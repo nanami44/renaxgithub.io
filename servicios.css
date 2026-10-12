@@ -485,3 +485,110 @@ body.servicios-renax .srv-header {
     padding-left: 5.5%;
     padding-right: 9%;
 }
+
+/* ==========================================
+   RENAX — DISTRIBUCIÓN DE LOS SERVICIOS
+   Imágenes y textos alternados
+========================================== */
+
+.srv-servicios {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.srv-servicios .srv-seccion-cabecera {
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.srv-servicios .srv-servicio {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto 100px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas:
+        "numero numero"
+        "imagen contenido";
+    align-items: center;
+    gap: 28px 60px;
+    direction: ltr;
+}
+
+.srv-servicios .srv-servicio-num {
+    grid-area: numero;
+    margin: 0;
+}
+
+.srv-servicios .srv-servicio-imagen {
+    grid-area: imagen;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+}
+
+.srv-servicios .srv-servicio-imagen img {
+    display: block;
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+}
+
+.srv-servicios .srv-servicio-contenido {
+    grid-area: contenido;
+    min-width: 0;
+}
+
+/* Segundo y cuarto servicio: imagen a la derecha */
+
+.srv-servicios .srv-servicio-renovacion .srv-servicio-imagen,
+.srv-servicios .srv-servicio-estrategia .srv-servicio-imagen {
+    grid-column: 2;
+}
+
+.srv-servicios .srv-servicio-renovacion .srv-servicio-contenido,
+.srv-servicios .srv-servicio-estrategia .srv-servicio-contenido {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.srv-servicios .srv-servicio-renovacion .srv-servicio-imagen,
+.srv-servicios .srv-servicio-estrategia .srv-servicio-imagen {
+    grid-row: 2;
+}
+
+/* Adaptación para celulares y pantallas pequeñas */
+
+@media (max-width: 760px) {
+    .srv-servicios .srv-servicio {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas:
+            "numero"
+            "imagen"
+            "contenido";
+        gap: 22px;
+        margin-bottom: 65px;
+    }
+
+    .srv-servicios .srv-servicio-imagen,
+    .srv-servicios .srv-servicio-renovacion .srv-servicio-imagen,
+    .srv-servicios .srv-servicio-estrategia .srv-servicio-imagen {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .srv-servicios .srv-servicio-contenido,
+    .srv-servicios .srv-servicio-renovacion .srv-servicio-contenido,
+    .srv-servicios .srv-servicio-estrategia .srv-servicio-contenido {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .srv-servicios .srv-servicio-imagen img {
+        height: auto;
+        max-height: 420px;
+        object-fit: cover;
+    }
+}
