@@ -449,3 +449,16 @@ body.servicios-renax .srv-servicio .srv-imagen img {
     }
 }
 
+
+/* REDUCIR ESPACIO ENCIMA DE LOS TEXTOS */
+body.servicios-renax .srv-servicio .srv-contenido {
+    margin-top: -100px !important;
+    padding-top: 0 !important;
+    transform: none !important;
+}
+
+@media (max-width: 768px) {
+    body.servicios-renax .srv-servicio .srv-contenido {
+        margin-top: 0 !important;
+    }
+}
