@@ -1,0 +1,20 @@
+
+/* =========================================
+   RENAX — ESTILOS EXCLUSIVOS DE SERVICIOS
+   ========================================= */
+
+.servicios-renax {
+    position: relative;
+    min-height: 100vh;
+    margin: 0;
+    background: #050505;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+.servicios-renax *,
+.servicios-renax *::before,
+.servicios-renax *::after {
+    box-sizing: border-box;
+}
