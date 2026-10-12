@@ -213,96 +213,142 @@
       });
     }
     
-    
-// CAMBIO DE IDIOMA ESPAÑOL / INGLÉS
-const languageBtn = document.getElementById('languageBtn');
+const translations = {
+  es: {
+    navInicio: "Inicio",
+    navNosotros: "Nosotros",
+    navPortafolio: "Portafolio",
+    navServicios: "Servicios",
+    navContacto: "Contáctanos",
+    loginButton: "INICIAR SESIÓN",
 
-const traducciones = {
-    es: {
-        'INICIO': 'Inicio',
-        'NOSOTROS': 'Nosotros',
-        'PORTAFOLIO': 'Portafolio',
-        'SERVICIOS': 'Servicios',
-        'CONTÁCTANOS': 'Contáctanos',
-        'INICIAR SESIÓN': 'Iniciar sesión'
-    },
-    en: {
-        'INICIO': 'Home',
-        'NOSOTROS': 'About Us',
-        'PORTAFOLIO': 'Portfolio',
-        'SERVICIOS': 'Services',
-        'CONTÁCTANOS': 'Contact Us',
-        'INICIAR SESIÓN': 'Sign In'
-    }
-};
+    manifiestoEtiqueta: "QUÉ HACEMOS",
+    manifiestoTitulo: "Una marca puede<br><em>evolucionar.</em>",
+    manifiestoTexto1: "En RENAX trabajamos con marcas que buscan actualizar su imagen, fortalecer su identidad y comunicar mejor lo que representan.",
+    manifiestoTexto2: "Nuestro trabajo parte de entender lo que ya existe para encontrar nuevas formas de hacerlo crecer.",
+    manifiestoFrase: "NO CAMBIAMOS TU ESENCIA.<br><em>LA HACEMOS EVOLUCIONAR.</em>",
 
+    serviciosEtiqueta: "NUESTROS SERVICIOS",
+    serviciosTitulo: "Lo que hacemos<br>para tu <em>marca.</em>",
+    serviciosTexto: "Cada proyecto parte de una necesidad diferente. Por eso desarrollamos soluciones que pueden adaptarse al momento y a los objetivos de cada marca.",
 
-let idiomaActual = 'es';
+    diagnosticoEtiqueta: "ENTENDER ANTES DE TRANSFORMAR",
+    diagnosticoTitulo: "Diagnóstico<br><em>de marca</em>",
+    diagnosticoTexto: "Analizamos la situación actual de tu marca para identificar oportunidades de evolución y reconocer aquello que vale la pena conservar.",
 
-const traduccionesPagina = {
+    renovacionEtiqueta: "EVOLUCIONAR SIN PERDER LA ESENCIA",
+    renovacionTitulo: "Renovación<br><em>de marca</em>",
+    renovacionTexto: "Modernizamos marcas existentes respetando su trayectoria, personalidad y reconocimiento.",
+
+    comunicacionEtiqueta: "MENSAJES QUE CONECTAN",
+    comunicacionTitulo: "Contenido para<br><em>redes sociales</em>",
+    comunicacionTexto: "Desarrollamos piezas visuales para comunicar productos, servicios, campañas y mensajes de manera clara, atractiva y coherente.",
+
+    estrategiaEtiqueta: "UNA DIRECCIÓN COHERENTE",
+    estrategiaTitulo: "Estrategia<br><em>visual</em>",
+    estrategiaTexto: "Definimos una dirección visual coherente para que la marca pueda comunicar de manera consistente en diferentes medios y espacios.",
+
+    procesoEtiqueta: "NUESTRO PROCESO",
+    procesoTitulo: "De la idea a la<br><em>transformación.</em>",
+    procesoTexto: "Cada proyecto comienza escuchando, continúa entendiendo y termina convirtiendo una idea en una identidad capaz de conectar.",
+
+    proceso1Titulo: "Conocemos",
+    proceso1Texto: "Entendemos la marca, su historia, su personalidad y aquello que quiere transmitir.",
+    proceso2Titulo: "Analizamos",
+    proceso2Texto: "Identificamos qué funciona, qué puede mejorar y dónde está la oportunidad.",
+    proceso3Titulo: "Transformamos",
+    proceso3Texto: "Desarrollamos una propuesta visual sin perder aquello que hace única a la marca.",
+    proceso4Titulo: "Conectamos",
+    proceso4Texto: "Llevamos la identidad a piezas y espacios donde pueda conectar con las personas.",
+
+    cierreTitulo: "¿Tu marca está lista<br>para <em>evolucionar?</em>",
+    cierreTexto: "Hablemos de cómo podemos transformar su identidad sin borrar su historia.",
+    cierreBoton: "HABLEMOS DE TU MARCA"
+  },
+
   en: {
-    'INICIO': 'Home',
-    'NOSOTROS': 'About Us',
-    'PORTAFOLIO': 'Portfolio',
-    'SERVICIOS': 'Services',
-    'CONTÁCTANOS': 'Contact Us',
-    'INICIAR SESIÓN': 'Sign In',
-    'DIAGNÓSTICO': 'Brand Audit',
-    'RENOVACIÓN': 'Brand Renewal',
-    'COMUNICACIÓN': 'Communication',
-    'ESTRATEGIA': 'Strategy',
-    'MENÚ': 'MENU',
-    'CONTACTO': 'CONTACT',
-    'HABLEMOS DE TU PROYECTO': 'Let’s talk about your project',
-    'PREGUNTAS FRECUENTES': 'Frequently Asked Questions',
-    'VISIÓN': 'Vision',
-    'MISIÓN': 'Mission'
+    navInicio: "Home",
+    navNosotros: "About Us",
+    navPortafolio: "Portfolio",
+    navServicios: "Services",
+    navContacto: "Contact",
+    loginButton: "SIGN IN",
+
+    manifiestoEtiqueta: "WHAT WE DO",
+    manifiestoTitulo: "A brand can<br><em>evolve.</em>",
+    manifiestoTexto1: "At RENAX, we work with brands looking to update their image, strengthen their identity, and better communicate what they represent.",
+    manifiestoTexto2: "Our work begins by understanding what already exists and finding new ways to help it grow.",
+    manifiestoFrase: "WE DON'T CHANGE YOUR ESSENCE.<br><em>WE HELP IT EVOLVE.</em>",
+
+    serviciosEtiqueta: "OUR SERVICES",
+    serviciosTitulo: "What we do<br>for your <em>brand.</em>",
+    serviciosTexto: "Every project starts with a different need. That's why we develop solutions tailored to each brand's current stage and goals.",
+
+    diagnosticoEtiqueta: "UNDERSTAND BEFORE TRANSFORMING",
+    diagnosticoTitulo: "Brand<br><em>diagnosis</em>",
+    diagnosticoTexto: "We analyze your brand's current situation to identify opportunities for growth and recognize what is worth preserving.",
+
+    renovacionEtiqueta: "EVOLVE WITHOUT LOSING YOUR ESSENCE",
+    renovacionTitulo: "Brand<br><em>refresh</em>",
+    renovacionTexto: "We modernize existing brands while respecting their history, personality, and recognition.",
+
+    comunicacionEtiqueta: "MESSAGES THAT CONNECT",
+    comunicacionTitulo: "Social media<br><em>content</em>",
+    comunicacionTexto: "We create visual assets to communicate products, services, campaigns, and messages clearly, attractively, and consistently.",
+
+    estrategiaEtiqueta: "A CONSISTENT DIRECTION",
+    estrategiaTitulo: "Visual<br><em>strategy</em>",
+    estrategiaTexto: "We define a consistent visual direction so your brand communicates effectively across different media and platforms.",
+
+    procesoEtiqueta: "OUR PROCESS",
+    procesoTitulo: "From idea to<br><em>transformation.</em>",
+    procesoTexto: "Every project begins with listening, moves forward through understanding, and turns an idea into an identity that connects.",
+
+    proceso1Titulo: "Discover",
+    proceso1Texto: "We understand the brand, its history, personality, and what it wants to communicate.",
+    proceso2Titulo: "Analyze",
+    proceso2Texto: "We identify what works, what can improve, and where the opportunities lie.",
+    proceso3Titulo: "Transform",
+    proceso3Texto: "We develop a visual proposal without losing what makes the brand unique.",
+    proceso4Titulo: "Connect",
+    proceso4Texto: "We bring the identity to visual assets and spaces where it can connect with people.",
+
+    cierreTitulo: "Is your brand ready<br>to <em>evolve?</em>",
+    cierreTexto: "Let's talk about how we can transform your brand identity without erasing its history.",
+    cierreBoton: "LET'S TALK ABOUT YOUR BRAND"
   }
 };
 
-function traducirElemento(elemento, ingles) {
-  if (!elemento.dataset.textoOriginal) {
-    elemento.dataset.textoOriginal = elemento.innerHTML;
-  }
+let idiomaActual = "es";
 
-  if (!ingles) {
-    elemento.innerHTML = elemento.dataset.textoOriginal;
-    return;
-  }
+const languageBtn = document.getElementById("languageBtn");
 
-  let texto = elemento.dataset.textoOriginal;
+function cambiarIdioma() {
+  const textos = translations[idiomaActual];
 
-  Object.entries(traduccionesPagina.en).forEach(([es, en]) => {
-    texto = texto.replaceAll(es, en);
-    texto = texto.replaceAll(
-      es.charAt(0) + es.slice(1).toLowerCase(),
-      en
-    );
+  document.querySelectorAll("[data-lang]").forEach(elemento => {
+    const clave = elemento.dataset.lang;
+
+    if (textos[clave] !== undefined) {
+      elemento.innerHTML = textos[clave];
+    }
   });
 
-  elemento.innerHTML = texto;
+  if (languageBtn) {
+    languageBtn.textContent = idiomaActual === "es" ? "ENG" : "ESP";
+  }
+
+  document.documentElement.lang = idiomaActual;
 }
 
 if (languageBtn) {
-  languageBtn.addEventListener('click', () => {
-    idiomaActual = idiomaActual === 'es' ? 'en' : 'es';
-    const ingles = idiomaActual === 'en';
-
-    languageBtn.textContent = ingles ? 'ENG' : 'ESP';
-    document.documentElement.lang = idiomaActual;
-
-    document.querySelectorAll(
-      '.srv-nav a, .srv-servicio, .srv-proceso, .srv-manifiesto, ' +
-      '.srv-frase-fuerte, .srv-cierre, .srv-footer'
-    ).forEach(elemento => {
-      traducirElemento(elemento, ingles);
-    });
-
-    document.querySelectorAll('.srv-header .login-btn').forEach(boton => {
-      boton.textContent = ingles ? 'SIGN IN' : 'INICIAR SESIÓN';
-    });
+  languageBtn.addEventListener("click", () => {
+    idiomaActual = idiomaActual === "es" ? "en" : "es";
+    cambiarIdioma();
   });
 }
+
+
 
 
   </script>
