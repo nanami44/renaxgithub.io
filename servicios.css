@@ -293,9 +293,35 @@ body.servicios-renax .srv-header {
     padding: 0 5.5%;
 }
 
-body.servicios-renax .srv-header nav {
+
+body.servicios-renax .srv-header .srv-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(20px, 2.5vw, 40px);
     margin-left: auto;
-    margin-right: 32px;
+    margin-right: 55px;
+}
+
+body.servicios-renax .srv-nav a {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    line-height: 1.2;
+    padding: 8px 0;
+}
+
+body.servicios-renax .srv-nav a.activo::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 22px;
+    height: 2px;
+    margin: 0;
+    background: #e21b36;
+}
+
 }
 
 body.servicios-renax .srv-header .srv-header-actions {
