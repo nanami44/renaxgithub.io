@@ -491,3 +491,22 @@ body.servicios-renax .srv-header {
         object-fit: cover;
     }
 }
+
+/* CORRECCIÓN: cada servicio ocupa una fila completa */
+
+body.servicios-renax #servicios.srv-servicios {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+}
+
+body.servicios-renax #servicios.srv-servicios > .srv-servicio {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    width: 100% !important;
+    max-width: 1250px !important;
+    margin: 0 auto 100px !important;
+    flex: 0 0 100% !important;
+    box-sizing: border-box !important;
+}
