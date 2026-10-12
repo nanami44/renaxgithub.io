@@ -9638,3 +9638,9 @@ footer.renax-footer .footer-column a:hover {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
+/* PRUEBA TEMPORAL DEL PIE DE PÁGINA */
+footer.renax-footer {
+    min-height: 200px !important;
+    outline: 3px solid red !important;
+    background: #300000 !important;
+}
