@@ -245,41 +245,9 @@ body.servicios-renax .srv-footer-col p {
     line-height: 1.6;
 }
 
-/* AJUSTE DEL MENÚ DEL PIE DE PÁGINA */
-body.servicios-renax .srv-footer-menu-titulo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #bdbdbd;
-    font-size: 12px;
-    letter-spacing: 1px;
-}
 
-body.servicios-renax .srv-footer-menu-titulo span:first-child {
-    color: #e21b36;
-    font-weight: 700;
-}
+/* ENCABEZADO DE SERVICIOS: ALINEADO COMO INICIO */
 
-body.servicios-renax .srv-footer-col h3 {
-    font-size: 12px;
-    line-height: 1.2;
-    letter-spacing: 0.3px;
-}
-
-body.servicios-renax .srv-footer-col a {
-    display: block;
-    margin-top: 12px;
-    color: #c8c8c8;
-    font-size: 12px;
-    line-height: 1.5;
-    text-decoration: none;
-}
-
-body.servicios-renax .srv-footer-col a:hover {
-    color: #e21b36;
-}
-
-/* ENCABEZADO DE SERVICIOS: ALINEACIÓN COMO INICIO */
 body.servicios-renax header,
 body.servicios-renax .srv-header {
     width: 100%;
@@ -291,56 +259,62 @@ body.servicios-renax .srv-header {
     align-items: center;
     justify-content: space-between;
     padding: 0 5.5%;
+    gap: 24px;
 }
 
+/* Logo a la izquierda */
+body.servicios-renax .srv-logo {
+    flex-shrink: 0;
+}
 
+/* Menú centrado */
 body.servicios-renax .srv-header .srv-nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(20px, 2.5vw, 40px);
-    margin-left: auto;
-    margin-right: 55px;
+    flex: 1;
+    gap: 0;
+    margin: 0;
 }
 
-body.servicios-renax .srv-nav a {
+/* Enlaces del menú */
+body.servicios-renax .srv-header .srv-nav a {
+    position: relative;
     display: inline-flex;
     align-items: center;
-    position: relative;
+    justify-content: center;
+    width: 100px;
+    min-height: 42px;
+    padding: 0 5px;
+    box-sizing: border-box;
     line-height: 1.2;
-    padding: 8px 0;
+    text-align: center;
+    transform: none;
 }
 
-body.servicios-renax .srv-nav a.activo::after {
+/* Línea roja debajo del enlace activo */
+body.servicios-renax .srv-header .srv-nav a::after {
     content: "";
     position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 22px;
+    left: 50%;
+    bottom: 2px;
+    width: 24px;
     height: 2px;
-    margin: 0;
-    background: #e21b36;
+    background: #c8102e;
+    transform: translateX(-50%);
+    opacity: 0;
 }
 
+body.servicios-renax .srv-header .srv-nav a.activo::after {
+    opacity: 1;
 }
 
-body.servicios-renax .srv-header .srv-header-actions {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
+/* Evitar que el enlace se mueva */
+body.servicios-renax .srv-header .srv-nav a:hover,
+body.servicios-renax .srv-header .srv-nav a.activo {
+    transform: none;
 }
 
-@media (max-width: 900px) {
-    body.servicios-renax .srv-header {
-        flex-wrap: wrap;
-        gap: 16px;
-    }
-
-    body.servicios-renax .srv-header nav {
-        margin: 0;
-    }
-}
 
 /* ESTRUCTURA DE LAS SECCIONES DE SERVICIOS RENAX */
 
