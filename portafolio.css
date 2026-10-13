@@ -1,609 +1,453 @@
 /* ==========================================================
-   RENAX · PORTAFOLIO
-   FONDO DINÁMICO ESTILO SERVICIOS
+   ESTILOS GENERALES Y CONFIGURACIÓN BASE
    ========================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-.portafolio-renax {
-    margin: 0;
-    background: #050505;
-    color: #ffffff;
-    overflow-x: hidden;
+body.portafolio-renax {
+  background-color: #0b0b0b;
+  color: #ffffff;
+  overflow-x: hidden;
+  position: relative;
 }
 
 .portafolio-fondo {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-    background: #050505;
-}
-
-.portafolio-fondo::before {
-    content: "";
-    position: absolute;
-    width: 75vw;
-    height: 180vh;
-    top: -45vh;
-    left: 48%;
-    background:
-        linear-gradient(
-            135deg,
-            transparent 0%,
-            transparent 20%,
-            rgba(200,16,46,0.08) 30%,
-            rgba(200,16,46,0.65) 45%,
-            #c8102e 50%,
-            rgba(200,16,46,0.55) 56%,
-            rgba(200,16,46,0.08) 72%,
-            transparent 82%
-        );
-    filter: blur(8px);
-    transform: rotate(0deg);
-    animation: portafolioRedMove 18s ease-in-out infinite alternate;
-}
-
-.portafolio-fondo::after {
-    content: "";
-    position: absolute;
-    width: 55vw;
-    height: 150vh;
-    top: -25vh;
-    left: 58%;
-    background:
-        linear-gradient(
-            135deg,
-            transparent 35%,
-            rgba(200,16,46,0.25) 48%,
-            rgba(200,16,46,0.05) 65%,
-            transparent 75%
-        );
-    filter: blur(25px);
-    animation: portafolioRedGlow 14s ease-in-out infinite alternate;
-}
-
-@keyframes portafolioRedMove {
-    0% {
-        transform: translateX(-15vw) rotate(-8deg) scale(1);
-    }
-
-    50% {
-        transform: translateX(5vw) rotate(-3deg) scale(1.08);
-    }
-
-    100% {
-        transform: translateX(18vw) rotate(5deg) scale(1.12);
-    }
-}
-
-@keyframes portafolioRedGlow {
-    0% {
-        transform: translateX(10vw) rotate(-5deg);
-    }
-
-    100% {
-        transform: translateX(-10vw) rotate(5deg);
-    }
-}
-
-.portafolio-renax #main-content {
-    position: relative;
-    z-index: 1;
-}
-/* ==========================================================
-   PORTAFOLIO · DEJAR VER EL FONDO DINÁMICO
-   ========================================================== */
-
-.portafolio-renax .renax-casos-estudio {
-    position: relative;
-    background: transparent !important;
-}
-
-.portafolio-renax .casos-estudio-destacado {
-    position: relative;
-    background: rgba(5, 5, 5, 0.35) !important;
-}
-
-.portafolio-renax .portfolio-gallery {
-    position: relative;
-    z-index: 2;
-}
-
-.portafolio-renax .renax-casos-estudio {
-    z-index: 2;
-}
-
-.portafolio-renax .renax-portfolio-cierre {
-    position: relative;
-    z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 20%, #1a1a1a 0%, #0b0b0b 100%);
+  z-index: -1;
 }
 
 /* ==========================================================
-   RENAX · CARRUSEL A TODO EL ANCHO
+   TRANSICIÓN DE PÁGINA
    ========================================================== */
-
-.portafolio-renax .portfolio-gallery {
-    width: 100%;
-    max-width: none;
-    margin-left: 0;
-    margin-right: 0;
-    box-sizing: border-box;
+.renax-page-transition {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0b0b0b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
 }
 
-/* Ocultar la barra de desplazamiento del carrusel */
-.portafolio-renax .portfolio-gallery {
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+.renax-page-transition.hide {
+  opacity: 0;
+  visibility: hidden;
 }
 
-.portafolio-renax .portfolio-gallery::-webkit-scrollbar {
-    display: none;
+.transition-logo-image {
+  width: 150px;
+  animation: pulseLogo 1.5s infinite alternate;
 }
 
-
-
-/* ==========================================
-   RENAX · NUEVA GALERÍA EDITORIAL
-   ========================================== */
-
-.portafolio-renax .renax-work-grid {
-    position: relative;
-    z-index: 2;
-    padding: 100px 5%;
-    background: #050505;
-    color: #ffffff;
+@keyframes pulseLogo {
+  0% { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(1.08); opacity: 1; }
 }
 
-.portafolio-renax .renax-work-heading {
-    margin-bottom: 65px;
+/* ==========================================================
+   HEADER Y NAVEGACIÓN
+   ========================================================== */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(11, 11, 11, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.portafolio-renax .renax-work-heading > span {
-    color: #c8102e;
-    font-size: 12px;
-    letter-spacing: 3px;
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.portafolio-renax .renax-work-heading h2 {
-    margin: 24px 0 0;
-    font-size: clamp(42px, 8vw, 100px);
-    line-height: .92;
-    letter-spacing: -3px;
-    font-weight: 800;
+.logo-renax {
+  height: 40px;
 }
 
-.portafolio-renax .renax-work-heading h2 strong {
-    color: #c8102e;
+.nav-menu {
+  display: flex;
+  gap: 25px;
+  align-items: center;
 }
 
-.portafolio-renax .renax-work-layout {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 70px 24px;
-    align-items: start;
+.nav-link {
+  color: #b3b3b3;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
-.portafolio-renax .renax-work-card {
+.nav-link:hover, .nav-link.active {
+  color: #ffffff;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.language {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.language:hover {
+  background: #fff;
+  color: #000;
+}
+
+.login-btn {
+  background-color: #ffffff;
+  color: #0b0b0b;
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 12px;
+  letter-spacing: 1px;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* ==========================================================
+   HERO PORTAFOLIO
+   ========================================================== */
+.renax-portfolio-cover {
+  width: 100%;
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.renax-portfolio-cover img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+}
+
+/* ==========================================================
+   GALERÍA / CARRUSEL HORIZONTAL
+   ========================================================== */
+.portfolio-gallery {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  padding: 40px;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+}
+
+.portfolio-gallery::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+
+.portfolio-item {
+  min-width: 350px;
+  height: 450px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  transition: transform 0.4s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-8px);
+}
+
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.portfolio-item:hover img {
+  transform: scale(1.05);
+}
+
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* ==========================================================
+   GRID DE TRABAJOS Y CASOS DE ESTUDIO
+   ========================================================== */
+.renax-work-grid {
+  max-width: 1400px;
+  margin: 80px auto;
+  padding: 0 30px;
+}
+
+.renax-work-heading {
+  margin-bottom: 50px;
+}
+
+.renax-work-heading span {
+  color: #888;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.renax-work-heading h2 {
+  font-size: 42px;
+  margin-top: 10px;
+  line-height: 1.2;
+}
+
+.renax-work-heading p {
+  color: #aaa;
+  margin-top: 15px;
+  max-width: 600px;
+  font-size: 16px;
+}
+
+.renax-work-layout {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.renax-work-card {
+  background: #161616;
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.05);
+}
+
+.renax-work-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+}
+
+.renax-work-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.renax-work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.renax-work-card:hover .renax-work-image img {
+  transform: scale(1.05);
+}
+
+.renax-work-card h3 {
+  padding: 20px;
+  font-size: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Modificadores de grid */
+.renax-work-tall {
+  grid-row: span 2;
+}
+.renax-work-tall .renax-work-image {
+  height: 665px;
+}
+
+.renax-work-wide {
+  grid-column: span 2;
+}
+
+/* ==========================================================
+   CIERRE DEL PORTAFOLIO
+   ========================================================== */
+.renax-portfolio-cierre {
+  text-align: center;
+  padding: 100px 20px;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0b0b0b 80%);
+}
+
+.portfolio-cierre-titulo {
+  font-size: 56px;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.portfolio-cierre-boton {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #0b0b0b;
+  padding: 15px 35px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.portfolio-cierre-boton:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+}
+
+/* ==========================================================
+   BOTONES FLOTANTES (WHATSAPP Y FACEBOOK)
+   ========================================================== */
+.renax-floating-buttons {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+}
+
+.renax-float-btn {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 26px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.renax-float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+}
+
+.renax-whatsapp { 
+  background-color: #25d366; 
+}
+
+.renax-facebook { 
+  background-color: #1877f2; 
+}
+
+/* ==========================================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================================== */
+.renax-footer {
+  background-color: #070707;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 80px 30px 40px;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+}
+
+.footer-column h3 {
+  font-size: 14px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.footer-column h3 a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-menu-links a {
+  color: #888;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-menu-links a:hover {
+  color: #ffffff;
+}
+
+/* ==========================================================
+   DISEÑO RESPONSIVO (MOBILE)
+   ========================================================== */
+@media (max-width: 992px) {
+  .renax-work-layout {
+    grid-template-columns: 1fr;
+  }
+  .renax-work-wide, .renax-work-tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .renax-work-tall .renax-work-image,
+  .renax-work-image {
+    height: 300px;
+  }
+  .portfolio-cierre-titulo {
+    font-size: 36px;
+  }
+  .nav-menu {
+    display: none; /* Puedes añadir la lógica JS del menú hamburguesa si ya la tienes en tu script */
+  }
+  .nav-toggle {
     display: block;
-    min-width: 0;
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.portafolio-renax .renax-work-tall {
-    grid-row: span 2;
-}
-
-.portafolio-renax .renax-work-image {
-    width: 100%;
-    height: clamp(240px, 34vw, 490px);
-    overflow: hidden;
-    border-radius: 14px;
-    background: #171717;
-}
-
-.portafolio-renax .renax-work-tall .renax-work-image {
-    height: clamp(380px, 57vw, 740px);
-}
-
-.portafolio-renax .renax-work-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform .7s cubic-bezier(.2,.7,.2,1);
-}
-
-.portafolio-renax .renax-work-card:hover .renax-work-image img {
-    transform: scale(1.06);
-}
-
-.portafolio-renax .renax-work-card h3 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    margin: 16px 0 0;
-    font-size: clamp(16px, 2vw, 25px);
-    line-height: 1.2;
-    font-weight: 500;
-}
-
-.portafolio-renax .renax-work-card h3 span {
-    color: #c8102e;
-    font-size: 25px;
-    transition: transform .3s ease;
-}
-
-.portafolio-renax .renax-work-card:hover h3 span {
-    transform: translate(4px, -4px);
-}
-
-/* Adaptación para celulares */
-@media (max-width: 650px) {
-    .portafolio-renax .renax-work-grid {
-        padding: 65px 5%;
-    }
-
-    .portafolio-renax .renax-work-layout {
-        grid-template-columns: 1fr;
-        gap: 38px;
-    }
-
-    .portafolio-renax .renax-work-tall {
-        grid-row: auto;
-    }
-
-    .portafolio-renax .renax-work-image,
-    .portafolio-renax .renax-work-tall .renax-work-image {
-        height: auto;
-        aspect-ratio: 4 / 3;
-    }
-
-    .portafolio-renax .renax-work-heading h2 {
-        letter-spacing: -1px;
-    }
-}
-
-/* ==========================================
-   RENAX · CASOS DE ESTUDIO
-   ESTILO EDITORIAL INSPIRADO EN BBDO
-   ========================================== */
-
-.portafolio-renax .renax-casos-estudio {
-    position: relative;
-    z-index: 2;
-    padding: 100px 5%;
-    background: transparent !important;
-    color: #fff;
-}
-
-.portafolio-renax .casos-estudio-header {
-    max-width: 1200px;
-    margin: 0 auto 65px;
-}
-
-.portafolio-renax .casos-estudio-header h1,
-.portafolio-renax .casos-estudio-header h2 {
-    max-width: 1000px;
-    font-size: clamp(42px, 8vw, 100px);
-    line-height: .92;
-    letter-spacing: -3px;
-    font-weight: 800;
-}
-
-.portafolio-renax .casos-estudio-destacado {
-    display: block;
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto 70px;
-    padding: 0;
-    background: transparent !important;
-    border: 0;
-    box-shadow: none;
-}
-
-.portafolio-renax .caso-estudio-imagen {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    border-radius: 14px;
-    background: #171717;
-}
-
-.portafolio-renax .caso-estudio-imagen img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    transition: transform .7s cubic-bezier(.2,.7,.2,1);
-}
-
-.portafolio-renax .casos-estudio-destacado:hover
-.caso-estudio-imagen img {
-    transform: scale(1.06);
-}
-
-.portafolio-renax .caso-estudio-contenido {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px 20px;
-    padding: 16px 0 0;
-    text-align: left;
-}
-
-.portafolio-renax .caso-estudio-contenido h2,
-.portafolio-renax .caso-estudio-contenido h3 {
-    margin: 0;
-    color: #fff;
-    font-size: clamp(16px, 2vw, 25px);
-    line-height: 1.2;
-    font-weight: 500;
-}
-
-.portafolio-renax .caso-estudio-contenido p {
-    display: none;
-}
-
-.portafolio-renax .caso-estudio-contenido a {
-    flex-shrink: 0;
-    color: #fff;
-    text-decoration: none;
-    border-bottom: 1px solid #c8102e;
-    padding: 8px 0;
-    font-size: .85rem;
-    transition: color .25s ease;
-}
-
-.portafolio-renax .caso-estudio-contenido a:hover {
-    color: #c8102e;
-}
-
-/* Composición editorial en pantallas grandes */
-@media (min-width: 900px) {
-    .portafolio-renax .caso-estudio-destacado:nth-of-type(even) {
-        width: 72%;
-        margin-left: auto;
-    }
-
-    .portafolio-renax .caso-estudio-destacado:nth-of-type(odd) {
-        width: 82%;
-        margin-right: auto;
-    }
-}
-
-/* Adaptación para celulares */
-@media (max-width: 650px) {
-    .portafolio-renax .renax-casos-estudio {
-        padding: 65px 5%;
-    }
-
-    .portafolio-renax .casos-estudio-header {
-        margin-bottom: 42px;
-    }
-
-    .portafolio-renax .casos-estudio-header h1,
-    .portafolio-renax .casos-estudio-header h2 {
-        letter-spacing: -1px;
-    }
-
-    .portafolio-renax .casos-estudio-destacado {
-        width: 100%;
-        margin-bottom: 42px;
-    }
-
-    .portafolio-renax .caso-estudio-imagen {
-        aspect-ratio: 4 / 3;
-        border-radius: 10px;
-    }
-
-    .portafolio-renax .caso-estudio-contenido {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 12px;
-    }
-}
-/* WORK GRANDE EN CASOS DE ESTUDIO */
-.portafolio-renax .renax-casos-estudio::before {
-    content: "WORK";
-    display: block;
-    width: 100%;
-    color: #ff0000;
-    font-size: clamp(120px, 27vw, 390px);
-    font-weight: 900;
-    line-height: 0.8;
-    letter-spacing: -0.055em;
-    white-space: nowrap;
-    overflow: hidden;
-    margin: 0 0 45px;
-}
-/* OCULTAR FLECHAS DE LA GALERÍA */
-.portafolio-renax .renax-work-card h3 span {
-    display: none !important;
-}
-
-/* OCULTAR LOGO O MARCA DEBAJO DE WORK */
-.portafolio-renax .renax-casos-estudio .renax-casos-estudio-marca {
-    display: none !important;
-}
-/* OCULTAR LA MARCA RENAX QUE APARECE DEBAJO DE WORK */
-.portafolio-renax .renax-casos-estudio::after {
-    content: none !important;
-    display: none !important;
-}
-
-/* SKENZI - imagen completa y ajustada en Casos de estudio */
-.portafolio-renax .renax-casos-estudio .renax-work-card:first-child .renax-work-image {
-    height: 420px !important;
-    overflow: hidden !important;
-}
-
-.portafolio-renax .renax-casos-estudio .renax-work-card:first-child .renax-work-image img {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: contain !important;
-    object-position: center !important;
-    transform: none !important;
-}
-
-/* CIERRE FINAL DEL PORTAFOLIO RENAX */
-.portafolio-renax .renax-portfolio-cierre {
-    min-height: 530px;
-    padding: 60px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background: radial-gradient(
-        ellipse at center,
-        #a9002a 0%,
-        #650018 45%,
-        #050505 82%
-    );
-}
-
-.portafolio-renax .portfolio-cierre-contenido {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 45px;
-}
-
-.portafolio-renax .portfolio-cierre-titulo {
-    margin: 0;
-    color: #fff;
-    font-size: clamp(52px, 10vw, 145px);
-    font-weight: 900;
-    line-height: 0.95;
-    letter-spacing: -4px;
-}
-
-.portafolio-renax .portfolio-cierre-boton {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    padding: 16px 30px;
-    border: 1px solid #fff;
-    border-radius: 50px;
-    color: #fff;
-    background: transparent;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    transition: background .3s, color .3s;
-}
-
-.portafolio-renax .portfolio-cierre-boton:hover {
-    background: #fff;
-    color: #111;
-}
-
-@media (max-width: 600px) {
-    .portafolio-renax .portfolio-cierre-titulo {
-        letter-spacing: -2px;
-    }
-
-    .portafolio-renax .portfolio-cierre-contenido {
-        gap: 32px;
-    }
-}
-
-/* ===== PIE DE PÁGINA RENAX ===== */
-
-.portafolio-renax .renax-footer {
-    position: relative;
-    z-index: 5;
-    display: block;
-    box-sizing: border-box;
-    width: 100%;
-    padding: 65px 4.5%;
-    background: linear-gradient(180deg, #080808 0%, #260000 100%);
-    border-top: 1px solid #292929;
-    color: #ffffff;
-}
-
-.portafolio-renax .footer-container {
-    display: grid;
-    grid-template-columns: 1.15fr 1fr 1fr 1fr 1fr;
-    gap: 30px;
-    align-items: start;
-    width: 100%;
-    max-width: 1600px;
-    margin: 0 auto;
-}
-
-.portafolio-renax .renax-footer .footer-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: 0;
-}
-
-.portafolio-renax .renax-footer .footer-column h3 {
-    margin: 0 0 30px;
-    padding-bottom: 10px;
-    border-bottom: 3px solid #c8102e;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 900;
-}
-
-.portafolio-renax .renax-footer .footer-column h3 a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.portafolio-renax .renax-footer .footer-menu-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-}
-
-.portafolio-renax .renax-footer .footer-menu-links a {
-    color: #ffffff;
-    font-size: 16px;
-    line-height: 1.5;
-    text-decoration: none;
-    overflow-wrap: anywhere;
-    transition: color 0.3s ease;
-}
-
-.portafolio-renax .renax-footer .footer-menu-links a:hover,
-.portafolio-renax .renax-footer .footer-column h3 a:hover {
-    color: #c8102e;
-}
-
-@media (max-width: 900px) {
-    .portafolio-renax .footer-container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 35px 25px;
-    }
-}
-
-@media (max-width: 560px) {
-    .portafolio-renax .renax-footer {
-        padding: 35px 7%;
-    }
-
-    .portafolio-renax .footer-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px 20px;
-    }
-
-    .portafolio-renax .renax-footer .footer-column h3 {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-
-    .portafolio-renax .renax-footer .footer-menu-links a {
-        font-size: 14px;
-    }
+  }
 }
