@@ -540,7 +540,7 @@ body.servicios-renax .srv-cierre {
 
 /* INICIO DEL VELO DEBAJO DEL HERO */
 body.servicios-renax .srv-manifiesto {
-    margin-top: -12vh;
+    margin-top: 0;
     padding-top: 100px;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -550,5 +550,20 @@ body.servicios-renax .srv-manifiesto {
         margin-top: -6vh;
         padding-top: 70px;
     }
+}
+
+/* VELO DEL ANCHO COMPLETO DE LA PORTADA */
+body.servicios-renax .srv-manifiesto,
+body.servicios-renax .srv-servicios,
+body.servicios-renax .srv-proceso,
+body.servicios-renax .srv-cierre {
+    width: calc(100% + 2 * var(--srv-margen));
+    margin-left: calc(-1 * var(--srv-margen));
+    box-sizing: border-box;
+}
+
+/* EL VELO COMIENZA DEBAJO DE LA PORTADA */
+body.servicios-renax .srv-manifiesto {
+    margin-top: 0;
 }
 
