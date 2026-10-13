@@ -1,13 +1,8 @@
 /* ==========================================================
-   ESTILOS GENERALES Y CONFIGURACIÓN BASE
+   ESTILOS DE PORTAFOLIO Y GALERÍA (portafolio.css)
    ========================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
+/* Fondo general de la página */
 body.portafolio-renax {
   background-color: #0b0b0b;
   color: #ffffff;
@@ -25,9 +20,7 @@ body.portafolio-renax {
   z-index: -1;
 }
 
-/* ==========================================================
-   TRANSICIÓN DE PÁGINA
-   ========================================================== */
+/* Transición de página */
 .renax-page-transition {
   position: fixed;
   top: 0;
@@ -57,96 +50,7 @@ body.portafolio-renax {
   100% { transform: scale(1.08); opacity: 1; }
 }
 
-/* ==========================================================
-   HEADER Y NAVEGACIÓN
-   ========================================================== */
-.site-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(11, 11, 11, 0.9);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.nav-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo-renax {
-  height: 40px;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 25px;
-  align-items: center;
-}
-
-.nav-link {
-  color: #b3b3b3;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover, .nav-link.active {
-  color: #ffffff;
-}
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.language {
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 12px;
-  transition: all 0.3s ease;
-}
-
-.language:hover {
-  background: #fff;
-  color: #000;
-}
-
-.login-btn {
-  background-color: #ffffff;
-  color: #0b0b0b;
-  padding: 8px 18px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 12px;
-  letter-spacing: 1px;
-  transition: background 0.3s ease;
-}
-
-.login-btn:hover {
-  background-color: #e0e0e0;
-}
-
-/* ==========================================================
-   HERO PORTAFOLIO
-   ========================================================== */
+/* Portada Hero */
 .renax-portfolio-cover {
   width: 100%;
   margin-top: 80px;
@@ -161,20 +65,18 @@ body.portafolio-renax {
   border-radius: 12px;
 }
 
-/* ==========================================================
-   GALERÍA / CARRUSEL HORIZONTAL
-   ========================================================== */
+/* Galería de proyectos horizontal (Carrusel) */
 .portfolio-gallery {
   display: flex;
   gap: 30px;
   overflow-x: auto;
   padding: 40px;
   scroll-behavior: smooth;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
 .portfolio-gallery::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
+  display: none;
 }
 
 .portfolio-item {
@@ -186,22 +88,20 @@ body.portafolio-renax {
   cursor: pointer;
   flex-shrink: 0;
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  transition: transform 0.4s ease;
 }
 
-.portfolio-item:hover {
-  transform: translateY(-8px);
-}
-
-.portfolio-item img {
+/* Efecto Zoom en la Galería y Tarjetas */
+.portfolio-item img, 
+.renax-work-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
 }
 
-.portfolio-item:hover img {
-  transform: scale(1.05);
+.portfolio-item:hover img, 
+.renax-work-card:hover .renax-work-image img {
+  transform: scale(1.08);
 }
 
 .portfolio-overlay {
@@ -216,9 +116,7 @@ body.portafolio-renax {
   letter-spacing: 1px;
 }
 
-/* ==========================================================
-   GRID DE TRABAJOS Y CASOS DE ESTUDIO
-   ========================================================== */
+/* Grid de Trabajos y Casos de Estudio */
 .renax-work-grid {
   max-width: 1400px;
   margin: 80px auto;
@@ -278,26 +176,17 @@ body.portafolio-renax {
   overflow: hidden;
 }
 
-.renax-work-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.renax-work-card:hover .renax-work-image img {
-  transform: scale(1.05);
-}
-
+/* Títulos debajo de la imagen en las tarjetas */
 .renax-work-card h3 {
   padding: 20px;
   font-size: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #161616;
 }
 
-/* Modificadores de grid */
+/* Modificadores de grid para intercalar tamaños */
 .renax-work-tall {
   grid-row: span 2;
 }
@@ -309,9 +198,7 @@ body.portafolio-renax {
   grid-column: span 2;
 }
 
-/* ==========================================================
-   CIERRE DEL PORTAFOLIO
-   ========================================================== */
+/* Cierre del portafolio */
 .renax-portfolio-cierre {
   text-align: center;
   padding: 100px 20px;
@@ -341,9 +228,7 @@ body.portafolio-renax {
   transform: scale(1.05);
 }
 
-/* ==========================================================
-   BOTONES FLOTANTES (WHATSAPP Y FACEBOOK)
-   ========================================================== */
+/* Botones flotantes de WhatsApp y Facebook */
 .renax-floating-buttons {
   position: fixed;
   bottom: 25px;
@@ -355,22 +240,21 @@ body.portafolio-renax {
 }
 
 .renax-float-btn {
-  width: 55px;
-  height: 55px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #fff;
-  font-size: 26px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
   text-decoration: none;
 }
 
 .renax-float-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
 }
 
 .renax-whatsapp { 
@@ -379,75 +263,4 @@ body.portafolio-renax {
 
 .renax-facebook { 
   background-color: #1877f2; 
-}
-
-/* ==========================================================
-   PIE DE PÁGINA (FOOTER)
-   ========================================================== */
-.renax-footer {
-  background-color: #070707;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 80px 30px 40px;
-}
-
-.footer-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-}
-
-.footer-column h3 {
-  font-size: 14px;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-.footer-column h3 a {
-  color: #ffffff;
-  text-decoration: none;
-}
-
-.footer-menu-links {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.footer-menu-links a {
-  color: #888;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.3s ease;
-}
-
-.footer-menu-links a:hover {
-  color: #ffffff;
-}
-
-/* ==========================================================
-   DISEÑO RESPONSIVO (MOBILE)
-   ========================================================== */
-@media (max-width: 992px) {
-  .renax-work-layout {
-    grid-template-columns: 1fr;
-  }
-  .renax-work-wide, .renax-work-tall {
-    grid-column: span 1;
-    grid-row: span 1;
-  }
-  .renax-work-tall .renax-work-image,
-  .renax-work-image {
-    height: 300px;
-  }
-  .portfolio-cierre-titulo {
-    font-size: 36px;
-  }
-  .nav-menu {
-    display: none; /* Puedes añadir la lógica JS del menú hamburguesa si ya la tienes en tu script */
-  }
-  .nav-toggle {
-    display: block;
-  }
 }
