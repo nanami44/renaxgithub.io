@@ -782,3 +782,16 @@ body.servicios-renax .srv-modal-volver:hover {
     }
 }
 
+#tituloInteractivo {
+  color: #fff;
+  cursor: pointer;
+  transition: color 0.35s ease;
+}
+
+#tituloInteractivo em {
+  transition: color 0.35s ease;
+}
+
+#tituloInteractivo.rojo {
+  color: #ff2638;
+}
