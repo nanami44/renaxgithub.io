@@ -397,4 +397,180 @@ body.contacto-page {
 }
 
 /* 6. CIERRE / CTA */
-.contacto-
+.contacto-cierre {
+  padding: 120px 5%;
+  text-align: center;
+  background-color: var(--color-superficie);
+  border-top: 1px solid var(--color-borde);
+}
+
+.contacto-cierre-contenido {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.contacto-cierre h2 {
+  font-family: var(--fuente-titulo);
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.contacto-cierre h2 em {
+  font-style: italic;
+  color: var(--color-acento);
+}
+
+.contacto-cierre p {
+  color: var(--color-texto-secundario);
+  margin-bottom: 35px;
+}
+
+.contacto-firma {
+  display: block;
+  margin-top: 50px;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  color: var(--color-texto-secundario);
+}
+
+/* 7. ESTILOS DEL FOOTER (MENÚ HORIZONTAL) */
+.contacto-footer {
+  background-color: #0d0d0d;
+  color: #ffffff;
+  padding: 40px 60px 40px;
+  font-family: var(--fuente-cuerpo);
+  border-top: 1px solid var(--color-borde);
+}
+
+.contacto-footer-contenedor {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contacto-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 40px;
+}
+
+.contacto-footer-titulo {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.contacto-footer-explora {
+  font-size: 0.8rem;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+}
+
+.contacto-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.contacto-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contacto-footer-col h2 {
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.contacto-footer-col h2 a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.contacto-footer-col a {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  transition: color 0.2s ease;
+}
+
+.contacto-footer-col a:hover {
+  color: #ffffff;
+}
+
+.contacto-footer-bottom {
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.contacto-footer-marca img {
+  height: 28px;
+  width: auto;
+  display: block;
+  opacity: 0.9;
+}
+
+/* 8. RESPONSIVE / MÓVILES */
+@media (max-width: 1024px) {
+  .contacto-footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .contacto-conversacion-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacto-nav {
+    position: fixed;
+    top: 79px;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-fondo);
+    flex-direction: column;
+    padding: 30px 5%;
+    border-bottom: 1px solid var(--color-borde);
+    transform: translateY(-150%);
+    transition: transform 0.4s ease;
+  }
+
+  .contacto-nav.abierto {
+    transform: translateY(0);
+  }
+
+  .contacto-menu-toggle {
+    display: block;
+  }
+
+  .contacto-hero-indice {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .contacto-footer {
+    padding: 30px 20px;
+  }
+
+  .contacto-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
