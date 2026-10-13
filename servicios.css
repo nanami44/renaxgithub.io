@@ -415,12 +415,14 @@ body.servicios-renax .srv-header {
 
 /* RENAX: títulos en rojo de marca */
 
+
 body.servicios-renax h1,
 body.servicios-renax h2,
 body.servicios-renax h3,
 body.servicios-renax h4 {
-    color: #000000 !important;
+    color: #FFFFFF !important;
 }
+
 
 
 /* RENAX: bordes redondeados en las imágenes de servicios */
