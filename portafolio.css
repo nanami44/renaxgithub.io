@@ -1,13 +1,14 @@
 /* ==========================================================
-   ESTILOS DE PORTAFOLIO Y GALERÍA (portafolio.css)
+   ESTILOS GENERALES Y FONDO
    ========================================================== */
-
-/* Fondo general de la página */
 body.portafolio-renax {
   background-color: #0b0b0b;
   color: #ffffff;
   overflow-x: hidden;
   position: relative;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .portafolio-fondo {
@@ -20,7 +21,9 @@ body.portafolio-renax {
   z-index: -1;
 }
 
-/* Transición de página */
+/* ==========================================================
+   TRANSICIÓN DE PÁGINA RENAX
+   ========================================================== */
 .renax-page-transition {
   position: fixed;
   top: 0;
@@ -50,13 +53,16 @@ body.portafolio-renax {
   100% { transform: scale(1.08); opacity: 1; }
 }
 
-/* Portada Hero */
+/* ==========================================================
+   PORTADA HERO
+   ========================================================== */
 .renax-portfolio-cover {
   width: 100%;
   margin-top: 80px;
   display: flex;
   justify-content: center;
   padding: 40px 20px;
+  box-sizing: border-box;
 }
 
 .renax-portfolio-cover img {
@@ -65,7 +71,9 @@ body.portafolio-renax {
   border-radius: 12px;
 }
 
-/* Galería de proyectos horizontal (Carrusel) */
+/* ==========================================================
+   GALERÍA DE PROYECTOS (CARRUSEL HORIZONTAL)
+   ========================================================== */
 .portfolio-gallery {
   display: flex;
   gap: 30px;
@@ -87,16 +95,17 @@ body.portafolio-renax {
   overflow: hidden;
   cursor: pointer;
   flex-shrink: 0;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Efecto Zoom en la Galería y Tarjetas */
+/* EFECTO ZOOM EN LAS IMÁGENES */
 .portfolio-item img, 
 .renax-work-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  display: block;
 }
 
 .portfolio-item:hover img, 
@@ -111,16 +120,20 @@ body.portafolio-renax {
   width: 100%;
   padding: 20px;
   background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-  color: #fff;
+  color: #ffffff;
   font-weight: bold;
   letter-spacing: 1px;
+  box-sizing: border-box;
 }
 
-/* Grid de Trabajos y Casos de Estudio */
+/* ==========================================================
+   CUADRÍCULA DE TRABAJOS Y CASOS DE ESTUDIO
+   ========================================================== */
 .renax-work-grid {
   max-width: 1400px;
   margin: 80px auto;
   padding: 0 30px;
+  box-sizing: border-box;
 }
 
 .renax-work-heading {
@@ -128,7 +141,7 @@ body.portafolio-renax {
 }
 
 .renax-work-heading span {
-  color: #888;
+  color: #888888;
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -141,10 +154,11 @@ body.portafolio-renax {
 }
 
 .renax-work-heading p {
-  color: #aaa;
+  color: #aaaaaa;
   margin-top: 15px;
   max-width: 600px;
   font-size: 16px;
+  line-height: 1.6;
 }
 
 .renax-work-layout {
@@ -158,16 +172,16 @@ body.portafolio-renax {
   border-radius: 12px;
   overflow: hidden;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255,255,255,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .renax-work-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
 .renax-work-image {
@@ -176,20 +190,24 @@ body.portafolio-renax {
   overflow: hidden;
 }
 
-/* Títulos debajo de la imagen en las tarjetas */
+/* TÍTUO DEBAJO DE CADA IMAGEN EN LAS TARJETAS */
 .renax-work-card h3 {
   padding: 20px;
-  font-size: 18px;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #161616;
+  letter-spacing: 1px;
 }
 
-/* Modificadores de grid para intercalar tamaños */
+/* MODIFICADORES DE TAMAÑO PARA INTERCALAR LAS TARJETAS */
 .renax-work-tall {
   grid-row: span 2;
 }
+
 .renax-work-tall .renax-work-image {
   height: 665px;
 }
@@ -198,7 +216,9 @@ body.portafolio-renax {
   grid-column: span 2;
 }
 
-/* Cierre del portafolio */
+/* ==========================================================
+   SECCIÓN DE CIERRE
+   ========================================================== */
 .renax-portfolio-cierre {
   text-align: center;
   padding: 100px 20px;
@@ -209,6 +229,7 @@ body.portafolio-renax {
   font-size: 56px;
   line-height: 1.1;
   margin-bottom: 30px;
+  font-weight: 800;
 }
 
 .portfolio-cierre-boton {
@@ -228,7 +249,9 @@ body.portafolio-renax {
   transform: scale(1.05);
 }
 
-/* Botones flotantes de WhatsApp y Facebook */
+/* ==========================================================
+   BOTONES FLOTANTES DE REDES SOCIALES
+   ========================================================== */
 .renax-floating-buttons {
   position: fixed;
   bottom: 25px;
@@ -246,9 +269,9 @@ body.portafolio-renax {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #ffffff;
   font-size: 24px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   transition: transform 0.3s ease;
   text-decoration: none;
 }
@@ -257,22 +280,23 @@ body.portafolio-renax {
   transform: scale(1.1);
 }
 
-.renax-whatsapp { 
-  background-color: #25d366; 
+.renax-whatsapp {
+  background-color: #25d366;
 }
 
-.renax-facebook { 
-  background-color: #1877f2; 
+.renax-facebook {
+  background-color: #1877f2;
 }
+
 /* ==========================================================
-   ESTILOS PIE DE PÁGINA EXACTO A LA IMAGEN
+   PIE DE PÁGINA (FOOTER RENAX)
    ========================================================== */
 .renax-footer {
   background-color: #0b0b0b;
   color: #ffffff;
   padding: 40px 60px 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
-  font-family: system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
 }
 
 .footer-wrapper {
@@ -280,7 +304,7 @@ body.portafolio-renax {
   margin: 0 auto;
 }
 
-/* Barra Superior de Menú */
+/* BARRA SUPERIOR DEL FOOTER */
 .footer-top-bar {
   display: flex;
   justify-content: space-between;
@@ -310,7 +334,7 @@ body.portafolio-renax {
   opacity: 0.7;
 }
 
-/* Grid de Columnas */
+/* COLUMNAS DE NAVEGACIÓN DEL FOOTER */
 .footer-columns-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -323,7 +347,7 @@ body.portafolio-renax {
   font-weight: 800;
   letter-spacing: 1.5px;
   color: #ffffff;
-  margin-bottom: 25px;
+  margin: 0 0 25px 0;
   text-transform: uppercase;
 }
 
@@ -345,7 +369,7 @@ body.portafolio-renax {
   color: #ffffff;
 }
 
-/* Barra Inferior del Logo */
+/* BARRA INFERIOR / LOGO */
 .footer-bottom-bar {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   padding-top: 30px;
@@ -359,8 +383,16 @@ body.portafolio-renax {
   opacity: 0.9;
 }
 
-/* Adaptación para pantallas móviles */
+/* ==========================================================
+   ADAPTACIÓN PARA PANTALLAS MÓVILES Y TABLETS
+   ========================================================== */
 @media (max-width: 1024px) {
+  .renax-work-layout {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .renax-work-wide {
+    grid-column: span 1;
+  }
   .footer-columns-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
@@ -368,6 +400,15 @@ body.portafolio-renax {
 }
 
 @media (max-width: 600px) {
+  .renax-work-layout {
+    grid-template-columns: 1fr;
+  }
+  .renax-work-tall {
+    grid-row: span 1;
+  }
+  .renax-work-tall .renax-work-image {
+    height: 300px;
+  }
   .renax-footer {
     padding: 30px 20px;
   }
