@@ -794,3 +794,24 @@ body.servicios-renax .srv-modal-volver:hover {
     text-shadow: 0 0 10px rgba(227, 38, 46, 0.35);
 }
 
+/* RENAX: efecto rojo en las opciones del diagnóstico */
+body.servicios-renax .srv-diagnostico-enlaces button {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: none !important;
+    padding: 5px 0 !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: inherit;
+    font-weight: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+body.servicios-renax .srv-diagnostico-enlaces button:hover,
+body.servicios-renax .srv-diagnostico-enlaces button:focus,
+body.servicios-renax .srv-diagnostico-enlaces button.activo {
+    color: #ff2638 !important;
+    text-shadow: 0 0 12px rgba(255, 38, 56, 0.55);
+}
+
