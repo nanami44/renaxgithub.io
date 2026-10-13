@@ -10,20 +10,51 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="portafolio.css?v=1">
+  <style>
+    /* Estilos rápidos para los botones flotantes de redes sociales */
+    .renax-floating-buttons {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 9999;
+    }
+    .renax-float-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 24px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease;
+      text-decoration: none;
+    }
+    .renax-float-btn:hover {
+      transform: scale(1.1);
+    }
+    .renax-whatsapp { background-color: #25d366; }
+    .renax-facebook { background-color: #1877f2; }
+  </style>
 </head>
 <body class="portafolio-renax">
-<!-- TRANSICIÓN RENAX -->
-<div class="renax-page-transition" id="renaxPageTransition">
+
+  <!-- TRANSICIÓN RENAX -->
+  <div class="renax-page-transition" id="renaxPageTransition">
     <div class="renax-transition-logo">
- <img src="logo-renax-transparente.png" alt="RENAX" class="transition-logo-image">    
+      <img src="logo-renax-transparente.png" alt="RENAX" class="transition-logo-image">    
     </div>
-</div>
+  </div>
+
   <!-- HEADER GLOBAL -->
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand-logo" aria-label="Página principal">
-       <img src="logo-renax-transparente.png" alt="RENAX" class="logo-renax">
-          
+        <img src="logo-renax-transparente.png" alt="RENAX" class="logo-renax">
       </a>
 
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación">
@@ -31,72 +62,75 @@
       </button>
 
       <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
-  <a href="index.html" class="nav-link">Inicio</a>
-  <a href="nosotros.html" class="nav-link">Nosotros</a>
-  <a href="portafolio.html" class="nav-link active" aria-current="page">Portafolio</a>
-  <a href="servicios.html" class="nav-link">Servicios</a>
-  <a href="contacto.html" class="nav-link">Contáctanos</a>
-</nav>
+        <a href="index.html" class="nav-link" data-lang="navHome">Inicio</a>
+        <a href="nosotros.html" class="nav-link" data-lang="navAbout">Nosotros</a>
+        <a href="portafolio.html" class="nav-link active" aria-current="page" data-lang="navPortfolio">Portafolio</a>
+        <a href="servicios.html" class="nav-link" data-lang="navServices">Servicios</a>
+        <a href="contacto.html" class="nav-link" data-lang="navContact">Contáctanos</a>
+        <!-- Botón de Nómina integrado en el menú -->
+        <a href="nomina.html" class="nav-link nomina-link" style="color: #ffd700;" data-lang="navNomina">Nómina</a>
+      </nav>
 
-   <button class="language" id="languageBtn" type="button">ESP</button>
-    <a href="registro.html" class="login-btn">INICIAR SESIÓN</a>
+      <button class="language" id="languageBtn" type="button">ENG</button>
+      <a href="registro.html" class="login-btn" data-lang="loginBtn">INICIAR SESIÓN</a>
     </div>
   </header>
-<div class="portafolio-fondo"></div>
+
+  <div class="portafolio-fondo"></div>
+
   <!-- MAIN CONTENT -->
   <main id="main-content">
 
     <!-- HERO PORTAFOLIO -->
     <section class="renax-portfolio-cover">
-<img src="portafolio-final.png" alt="PORTAFOLIO RENAX">
-</section>
+      <img src="portafolio-final.png" alt="PORTAFOLIO RENAX">
+    </section>
 
-    <!-- GALERÍA DE PROYECTOS -->
+    <!-- GALERÍA DE PROYECTOS CARRUSEL -->
     <section class="portfolio-gallery">
       <!-- Proyecto 1 -->
       <article class="portfolio-item" style="grid-column: span 1;">
-       
-<img src="skenzi-carrusel01.jpeg" alt="Proyecto Skenzi">
-
+        <img src="skenzi-carrusel01.jpeg" alt="Proyecto Skenzi">
         <div class="portfolio-overlay">
-        <span data-lang="sneakers">SKENZI</span>
+          <span data-lang="sneakers">SKENZI</span>
         </div>
       </article>
 
       <!-- Proyecto 2 -->
       <article class="portfolio-item">
-      <img src="Renax- carrusel 01.png" alt="RENAX">
+        <img src="Renax- carrusel 01.png" alt="RENAX">
         <div class="portfolio-overlay">
-         <span data-lang="paraEllos">RENAX</span>
+          <span data-lang="paraEllos">RENAX</span>
         </div>
       </article>
 
       <!-- Proyecto 3 -->
-     <article class="portfolio-item"><img src="Renax-carrusel02.png" alt="RENAX">
+      <article class="portfolio-item">
+        <img src="Renax-carrusel02.png" alt="RENAX">
         <div class="portfolio-overlay">
-       <span data-lang="strategy">RENAX</span>
+          <span data-lang="strategy">RENAX</span>
         </div>
       </article>
 
       <!-- Proyecto 4 -->
       <article class="portfolio-item">
-       <img src="Día-Matemáticas.png" alt="Día Internacional de las Matemáticas">
+        <img src="Día-Matemáticas.png" alt="Día Internacional de las Matemáticas">
         <div class="portfolio-overlay">
-        <span data-lang="matematicas">CAMPAÑA VISUAL · DÍA DE LAS MATEMÁTICAS</span>
+          <span data-lang="matematicas">CAMPAÑA VISUAL · DÍA DE LAS MATEMÁTICAS</span>
         </div>
       </article>
 
       <!-- Proyecto 5 -->
       <article class="portfolio-item">
-       <img src="sobre-renax.png.png" alt="Papelería RENAX">
+        <img src="sobre-renax.png.png" alt="Papelería RENAX">
         <div class="portfolio-overlay">
-         <span data-lang="creative">RENAX</span>
+          <span data-lang="creative">RENAX</span>
         </div>
       </article>
 
-          <!-- Proyecto 6 -->
+      <!-- Proyecto 6 -->
       <article class="portfolio-item">
-       <img src="renzi-fondo-verde.png" alt="Renzi - Esencia que inspira, productos para el hogar">
+        <img src="renzi-fondo-verde.png" alt="Renzi - Esencia que inspira">
         <div class="portfolio-overlay">
           <span data-lang="chat">SKENZI</span>
         </div>
@@ -104,17 +138,15 @@
 
       <!-- Proyecto 7 -->
       <article class="portfolio-item">
-       <img src="donuts-bites.png.png" alt="Donut's Bites">
+        <img src="donuts-bites.png.png" alt="Donut's Bites">
         <div class="portfolio-overlay">
-          <span>DONUT'S BITES/span>
+          <span>DONUT'S BITES</span>
         </div>
       </article>
 
       <!-- Proyecto 8 -->
       <article class="portfolio-item">
-       
-<img src="skenzi-carrusel01.jpeg" alt="SKENZI">
-
+        <img src="skenzi-carrusel01.jpeg" alt="SKENZI">
         <div class="portfolio-overlay">
           <span data-lang="skenzi">SKENZI</span>
         </div>
@@ -122,245 +154,235 @@
 
       <!-- Proyecto 9 -->
       <article class="portfolio-item">
-       <img src="DONUT'S BITES-carrusel01.png" alt="Donut's Bites">
+        <img src="DONUT'S BITES-carrusel01.png" alt="Donut's Bites">
         <div class="portfolio-overlay">
           <span>DONUT'S BITES</span>
         </div>
       </article>
-<!-- Proyecto 10 -->
-<article class="portfolio-item">
- <img src="Renax-carrusel02.png" alt="RENAX">
-  <div class="portfolio-overlay">
-    <span>RENAX</span>
-  </div>
-</article>
+
+      <!-- Proyecto 10 -->
+      <article class="portfolio-item">
+        <img src="Renax-carrusel02.png" alt="RENAX">
+        <div class="portfolio-overlay">
+          <span>RENAX</span>
+        </div>
+      </article>
     </section>
-    
-<section class="renax-work-grid" id="proyectos">
-  <div class="renax-work-heading">
-    <span>RENAX · PORTAFOLIO</span>
-    <h2>TRABAJO<br><strong>CON IDENTIDAD.</strong></h2>
-  </div>
 
-  <div class="renax-work-layout">
-
-    <a href="proyecto-skenzi.html" class="renax-work-card renax-work-tall">
-      <div class="renax-work-image">
-        <img src="renzi-fondo-verde.png" alt="Renzi">
+    <!-- GRID DE TRABAJOS -->
+    <section class="renax-work-grid" id="proyectos">
+      <div class="renax-work-heading">
+        <span>RENAX · PORTAFOLIO</span>
+        <h2>TRABAJO<br><strong>CON IDENTIDAD.</strong></h2>
       </div>
-      <h3>SKENZI <span>↗</span></h3>
-    </a>
 
-    <a href="dia-matematicas.html" class="renax-work-card renax-work-wide">
-      <div class="renax-work-image">
-        <img src="dia-matematicas.png.png" alt="Día de las Matemáticas">
-      </div>
-      <h3> <span>↗</span></h3>
-    </a>
-
-    <div class="renax-work-card">
-      <div class="renax-work-image">
-       <img src="DONUT'S BITES-galeria 01.png" alt="DONUT'S BITES">
-      </div>
-      <h3><DONUT'S BITES</h3>
-    </div>
-
-    <div class="renax-work-card">
-      <div class="renax-work-image">
-      <img src="Renax-galeria01.png" alt="RENAX - Diseño e identidad visual">
-      </div>
-      <h3>IDENTIDA RENAX</h3>
-    </div>
-
-    <div class="renax-work-card">
-      <div class="renax-work-image">
-        <img src="renax-tarjeta-dos.png.png" alt="Diseño de marca">
-      </div>
-      <h3>DISEÑO DE MARCA</h3>
-    </div>
-
-    <div class="renax-work-card renax-work-wide">
-      <div class="renax-work-image">
-        <img src="sobre-renax.png.png" alt="Papelería corporativa">
-      </div>
-      <h3>PAPELERÍA CORPORATIVA</h3>
-    </div>
-       <div class="renax-work-image">
-
-    <div class="renax-work-card">
-      <div class="renax-work-image">
-       <img src="skenzi-empaque.png" alt="Skenzi - Diseño de empaques">
-      </div>
-      <h3>DISEÑO DE EMPAQUE</h3>
-    </div>
-
-    <a href="dia-especialidades.html" class="renax-work-card renax-work-tall">
-      <div class="renax-work-image">
-        <img src="iea-empaque.png.png" alt="Día de las Especialidades">
-      </div>
-      <h3>DÍA DE LAS ESPECIALIDADES <span>↗</span></h3>
-    </a>
-
-    <a href="donuts-bites.html" class="renax-work-card renax-work-wide">
-      <div class="renax-work-image">
-        <img src="donuts-bites.png.png" alt="Donut's Bites">
-      </div>
-      <h3>DONUT'S BITES <span>↗</span></h3>
-    </a>
-
-    <div class="renax-work-card">
-      <div class="renax-work-image">
-<img src="Renax-galeria04.png" alt="RENAX - Diseño e identidad visual">
-      </div>
-      <h3>RENAX</h3>
-    </div>
-
-  </div>
-</section>
-<!-- ==========================================================
-     CASOS DE ESTUDIO
-     ========================================================== -->
-<section class="renax-casos-estudio renax-work-grid" id="casos-estudio">
-
-
-
-  <div class="renax-work-heading">
-    <span>RENAX · CASOS DE ESTUDIO</span>
-    <h2>MARCAS QUE<br><strong>HAN EVOLUCIONADO.</strong></h2>
-    <p>Conoce el proceso detrás de algunos de nuestros proyectos y descubre cómo RENAX transforma ideas en identidades visuales.</p>
-  </div>
-
-  <div class="renax-work-layout">
-
-    <a href="proyecto-skenzi.html" class="renax-work-card renax-work-tall">
-      <div class="renax-work-image">
-       <img src="skenzi-caso.png" alt="SKENZI - Caso de estudio">
-      </div>
-      <h3>SKENZI <span>↗</span></h3>
-    </a>
-
-    <a href="dia-especialidades.html" class="renax-work-card renax-work-wide">
-      <div class="renax-work-image">
-       <img src="especialidades-9.jpeg" alt="DONUT'S BITES - Caso de estudio 2">
-      </div>
-      <h3>ESPECIALIDADES <span>↗</span></h3>
-    </a>
-
-    <a href="dia-matematicas.html" class="renax-work-card">
-      <div class="renax-work-image">
-       <img src="mate2.png" alt="DONUT'S BITES - Caso de estudio 2">
-      </div>
-      <h3>DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
-    </a>
-
-    <a href="donuts-bites.html" class="renax-work-card renax-work-tall">
-      <div class="renax-work-image">
-<img src="DONUT'S BITES-casos-estudio03.png" alt="DONUT'S BITES - Caso de estudio 3">
-      </div>
-      <h3>DONUT'S BITES <span>↗</span></h3>
-    </a>
-
-  </div>
-</section>
-    
-
-  <!-- ==========================================================
-     CIERRE DEL PORTAFOLIO
-     ========================================================== -->
-
-
-<section class="renax-portfolio-cierre">
-    <div class="portfolio-cierre-contenido">
-
-        <h2 class="portfolio-cierre-titulo">
-            ¿TU MARCA ESTÁ<br>LISTA?
-        </h2>
-
-       <a href="contacto.html#contacto-formulario" class="portfolio-cierre-boton">
-            HABLEMOS DE TU MARCA <span>→</span>
+      <div class="renax-work-layout">
+        <a href="proyecto-skenzi.html" class="renax-work-card renax-work-tall">
+          <div class="renax-work-image">
+            <img src="renzi-fondo-verde.png" alt="Renzi">
+          </div>
+          <h3>SKENZI <span>↗</span></h3>
         </a>
 
-    </div>
-</section>
+        <a href="dia-matematicas.html" class="renax-work-card renax-work-wide">
+          <div class="renax-work-image">
+            <img src="dia-matematicas.png.png" alt="Día de las Matemáticas">
+          </div>
+          <h3>DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
+        </a>
 
+        <div class="renax-work-card">
+          <div class="renax-work-image">
+            <img src="DONUT'S BITES-galeria 01.png" alt="DONUT'S BITES">
+          </div>
+          <h3>DONUT'S BITES</h3>
+        </div>
 
-</section>
+        <div class="renax-work-card">
+          <div class="renax-work-image">
+            <img src="Renax-galeria01.png" alt="RENAX - Identidad visual">
+          </div>
+          <h3>IDENTIDAD RENAX</h3>
+        </div>
 
-    
-<!-- PIE DE PÁGINA RENAX -->
-<footer class="renax-footer">
+        <div class="renax-work-card">
+          <div class="renax-work-image">
+            <img src="renax-tarjeta-dos.png.png" alt="Diseño de marca">
+          </div>
+          <h3>DISEÑO DE MARCA</h3>
+        </div>
+
+        <div class="renax-work-card renax-work-wide">
+          <div class="renax-work-image">
+            <img src="sobre-renax.png.png" alt="Papelería corporativa">
+          </div>
+          <h3>PAPELERÍA CORPORATIVA</h3>
+        </div>
+
+        <div class="renax-work-card">
+          <div class="renax-work-image">
+            <img src="skenzi-empaque.png" alt="Skenzi - Diseño de empaques">
+          </div>
+          <h3>DISEÑO DE EMPAQUE</h3>
+        </div>
+
+        <a href="dia-especialidades.html" class="renax-work-card renax-work-tall">
+          <div class="renax-work-image">
+            <img src="iea-empaque.png.png" alt="Día de las Especialidades">
+          </div>
+          <h3>DÍA DE LAS ESPECIALIDADES <span>↗</span></h3>
+        </a>
+
+        <a href="donuts-bites.html" class="renax-work-card renax-work-wide">
+          <div class="renax-work-image">
+            <img src="donuts-bites.png.png" alt="Donut's Bites">
+          </div>
+          <h3>DONUT'S BITES <span>↗</span></h3>
+        </a>
+
+        <div class="renax-work-card">
+          <div class="renax-work-image">
+            <img src="Renax-galeria04.png" alt="RENAX - Identidad visual">
+          </div>
+          <h3>RENAX</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- CASOS DE ESTUDIO -->
+    <section class="renax-casos-estudio renax-work-grid" id="casos-estudio">
+      <div class="renax-work-heading">
+        <span>RENAX · CASOS DE ESTUDIO</span>
+        <h2>MARCAS QUE<br><strong>HAN EVOLUCIONADO.</strong></h2>
+        <p>Conoce el proceso detrás de algunos de nuestros proyectos y descubre cómo RENAX transforma ideas en identidades visuales.</p>
+      </div>
+
+      <div class="renax-work-layout">
+        <a href="proyecto-skenzi.html" class="renax-work-card renax-work-tall">
+          <div class="renax-work-image">
+            <img src="skenzi-caso.png" alt="SKENZI - Caso de estudio">
+          </div>
+          <h3>SKENZI <span>↗</span></h3>
+        </a>
+
+        <a href="dia-especialidades.html" class="renax-work-card renax-work-wide">
+          <div class="renax-work-image">
+            <img src="especialidades-9.jpeg" alt="Especialidades - Caso de estudio">
+          </div>
+          <h3>ESPECIALIDADES <span>↗</span></h3>
+        </a>
+
+        <a href="dia-matematicas.html" class="renax-work-card">
+          <div class="renax-work-image">
+            <img src="mate2.png" alt="Día de las Matemáticas - Caso de estudio">
+          </div>
+          <h3>DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
+        </a>
+
+        <a href="donuts-bites.html" class="renax-work-card renax-work-tall">
+          <div class="renax-work-image">
+            <img src="DONUT'S BITES-casos-estudio03.png" alt="DONUT'S BITES - Caso de estudio">
+          </div>
+          <h3>DONUT'S BITES <span>↗</span></h3>
+        </a>
+      </div>
+    </section>
+
+    <!-- CIERRE DEL PORTAFOLIO -->
+    <section class="renax-portfolio-cierre">
+      <div class="portfolio-cierre-contenido">
+        <h2 class="portfolio-cierre-titulo">
+          ¿TU MARCA ESTÁ<br>LISTA?
+        </h2>
+        <a href="contacto.html#contacto-formulario" class="portfolio-cierre-boton">
+          HABLEMOS DE TU MARCA <span>→</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BOTONES FLOTANTES (WHATSAPP & FACEBOOK) -->
+  <div class="renax-floating-buttons">
+    <a href="https://wa.me/message/ANFNF6L522RNN1" target="_blank" class="renax-float-btn renax-whatsapp" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="https://facebook.com" target="_blank" class="renax-float-btn renax-facebook" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+  </div>
+
+  <!-- PIE DE PÁGINA RENAX -->
+  <footer class="renax-footer">
     <div class="footer-container">
+      <!-- INICIO -->
+      <nav class="footer-column">
+        <h3><a href="index.html" data-lang="footerHome">INICIO</a></h3>
+        <div class="footer-menu-links">
+          <a href="index.html#hero-inicio" data-lang="footerIntro">Transformamos marcas sin borrar su historia</a>
+          <a href="index.html#esencia-marca">Nuestra esencia</a>
+          <a href="index.html#historia-marca">Nuestra historia</a>
+          <a href="index.html#preguntas-frecuentes">Preguntas frecuentes</a>
+        </div>
+      </nav>
 
-        <!-- INICIO -->
-        <nav class="footer-column">
-            <h3>
-                <a href="index.html" data-lang="footerHome">INICIO</a>
-            </h3>
-            <div class="footer-menu-links">
-                <a href="index.html#hero-inicio" data-lang="footerIntro">Transformamos marcas sin borrar su historia</a>
-                <a href="index.html#esencia-marca">Nuestra esencia</a>
-                <a href="index.html#historia-marca">Nuestra historia</a>
-                <a href="index.html#preguntas-frecuentes">Preguntas frecuentes</a>
-            </div>
-        </nav>
+      <!-- NOSOTROS -->
+      <nav class="footer-column">
+        <h3><a href="nosotros.html" data-lang="footerAbout">NOSOTROS</a></h3>
+        <div class="footer-menu-links">
+          <a href="nosotros.html#quienes-somos">Quiénes somos</a>
+          <a href="nosotros.html#vision">Visión</a>
+          <a href="nosotros.html#mision">Misión</a>
+          <a href="nosotros.html#por-que-renax">Por qué RENAX</a>
+        </div>
+      </nav>
 
-        <!-- NOSOTROS -->
-        <nav class="footer-column">
-            <h3>
-                <a href="nosotros.html" data-lang="footerAbout">NOSOTROS</a>
-            </h3>
-            <div class="footer-menu-links">
-                <a href="nosotros.html#quienes-somos">Quiénes somos</a>
-                <a href="nosotros.html#vision">Visión</a>
-                <a href="nosotros.html#mision">Misión</a>
-                <a href="nosotros.html#por-que-renax">Por qué RENAX</a>
-            </div>
-        </nav>
+      <!-- PORTAFOLIO -->
+      <nav class="footer-column">
+        <h3><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h3>
+        <div class="footer-menu-links">
+          <a href="portafolio.html#proyectos">Proyectos y trabajos realizados</a>
+          <a href="portafolio.html#casos-estudio">Casos de estudio</a>
+        </div>
+      </nav>
 
-        <!-- PORTAFOLIO -->
-        <nav class="footer-column">
-            <h3>
-                <a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a>
-            </h3>
-            <div class="footer-menu-links">
-                <a href="portafolio.html#proyectos">Proyectos y trabajos realizados</a>
-                <a href="portafolio.html#casos-estudio">Casos de estudio</a>
-            </div>
-        </nav>
+      <!-- SERVICIOS -->
+      <nav class="footer-column">
+        <h3><a href="servicios.html" data-lang="footerServices">SERVICIOS</a></h3>
+        <div class="footer-menu-links">
+          <a href="servicios.html#diagnostico" data-lang="footerService1">Diagnóstico de marca</a>
+          <a href="servicios.html#identidad" data-lang="footerService2">Identidad visual</a>
+          <a href="servicios.html#comunicacion" data-lang="footerService3">Comunicación</a>
+          <a href="servicios.html#estrategia" data-lang="footerService4">Estrategia visual</a>
+        </div>
+      </nav>
 
-        <!-- SERVICIOS -->
-        <nav class="footer-column">
-            <h3>
-                <a href="servicios.html" data-lang="footerServices">SERVICIOS</a>
-            </h3>
-            <div class="footer-menu-links">
-                <a href="servicios.html#diagnostico" data-lang="footerService1">Diagnóstico de marca</a>
-                <a href="servicios.html#identidad" data-lang="footerService2">Identidad visual</a>
-                <a href="servicios.html#comunicacion" data-lang="footerService3">Comunicación</a>
-                <a href="servicios.html#estrategia" data-lang="footerService4">Estrategia visual</a>
-            </div>
-        </nav>
-
-        <!-- CONTACTO -->
-        <nav class="footer-column">
-            <h3>
-                <a href="contacto.html" data-lang="footerContact">CONTACTO</a>
-            </h3>
-            <div class="footer-menu-links">
-                <a href="contacto.html#contacto-formulario" data-lang="footerTalk">Hablemos de tu proyecto</a>
-            </div>
-        </nav>
-
+      <!-- CONTACTO -->
+      <nav class="footer-column">
+        <h3><a href="contacto.html" data-lang="footerContact">CONTACTO</a></h3>
+        <div class="footer-menu-links">
+          <a href="contacto.html#contacto-formulario" data-lang="footerTalk">Hablemos de tu proyecto</a>
+          <a href="nomina.html" style="color: #ffd700;" data-lang="navNomina">Nómina</a>
+        </div>
+      </nav>
     </div>
-</footer>
-    
-    <script>
-const languageBtn = document.getElementById("languageBtn");
+  </footer>
 
-let english = false;
+  <!-- SCRIPTS -->
+  <script>
+    // CAMBIO DE IDIOMA (ES / EN)
+    const languageBtn = document.getElementById("languageBtn");
+    let english = false;
 
-const translations = {
-    es: {
+    const translations = {
+      es: {
+        navHome: "Inicio",
+        navAbout: "Nosotros",
+        navPortfolio: "Portafolio",
+        navServices: "Servicios",
+        navContact: "Contáctanos",
+        navNomina: "Nómina",
+        loginBtn: "INICIAR SESIÓN",
         portfolioTitle: "NUESTRO TRABAJO",
         sneakers: "TODO SNEAKERS",
         paraEllos: "PARA ELLOS",
@@ -368,10 +390,21 @@ const translations = {
         matematicas: "CAMPAÑA VISUAL · DÍA DE LAS MATEMÁTICAS",
         creative: "CREATIVE ART",
         chat: "LE CHAT BAGARRE",
-        skenzi: "SKENZI"
-    },
-
-    en: {
+        skenzi: "SKENZI",
+        footerHome: "INICIO",
+        footerAbout: "NOSOTROS",
+        footerPortfolio: "PORTAFOLIO",
+        footerServices: "SERVICIOS",
+        footerContact: "CONTACTO"
+      },
+      en: {
+        navHome: "Home",
+        navAbout: "About Us",
+        navPortfolio: "Portfolio",
+        navServices: "Services",
+        navContact: "Contact Us",
+        navNomina: "Payroll",
+        loginBtn: "LOG IN",
         portfolioTitle: "OUR WORK",
         sneakers: "TODO SNEAKERS",
         paraEllos: "FOR THEM",
@@ -379,166 +412,95 @@ const translations = {
         matematicas: "VISUAL CAMPAIGN · MATHEMATICS DAY",
         creative: "CREATIVE ART",
         chat: "LE CHAT BAGARRE",
-        skenzi: "SKENZI"
-    }
-};
+        skenzi: "SKENZI",
+        footerHome: "HOME",
+        footerAbout: "ABOUT US",
+        footerPortfolio: "PORTFOLIO",
+        footerServices: "SERVICES",
+        footerContact: "CONTACT"
+      }
+    };
 
-if (languageBtn) {
-    languageBtn.addEventListener("click", function () {
-
+    if (languageBtn) {
+      languageBtn.addEventListener("click", function () {
         english = !english;
-
         const language = english ? translations.en : translations.es;
-
         languageBtn.textContent = english ? "ESP" : "ENG";
 
         document.querySelectorAll("[data-lang]").forEach(function(element) {
-            const key = element.getAttribute("data-lang");
-
-            if (language[key]) {
-                element.innerHTML = language[key];
-            }
+          const key = element.getAttribute("data-lang");
+          if (language[key]) {
+            element.innerHTML = language[key];
+          }
         });
-    });
-}
-  const portfolioGallery = document.querySelector('.portfolio-gallery');
+      });
+    }
 
-if (portfolioGallery) {
+    // CARRUSEL PORTAFOLIO Y INTERACCIÓN
+    const portfolioGallery = document.querySelector('.portfolio-gallery');
 
-    portfolioGallery.addEventListener('wheel', (e) => {
+    if (portfolioGallery) {
+      portfolioGallery.addEventListener('wheel', (e) => {
         e.preventDefault();
-
         portfolioGallery.scrollLeft += e.deltaY;
-    }, { passive: false });
+      }, { passive: false });
 
-
-    portfolioGallery.querySelectorAll('.portfolio-item').forEach(item => {
-
+      portfolioGallery.querySelectorAll('.portfolio-item').forEach(item => {
         item.addEventListener('click', () => {
-
-            const distancia = item.offsetWidth + 30;
-
-            portfolioGallery.scrollBy({
-                left: distancia,
-                behavior: 'smooth'
-            });
-
+          const distancia = item.offsetWidth + 30;
+          portfolioGallery.scrollBy({
+            left: distancia,
+            behavior: 'smooth'
+          });
         });
+      });
 
+      function moverCarruselIzquierda() {
+        if (portfolioGallery.scrollLeft <= 0) {
+          portfolioGallery.scrollLeft = portfolioGallery.scrollWidth - portfolioGallery.clientWidth;
+        } else {
+          portfolioGallery.scrollLeft -= 1;
+        }
+      }
+      setInterval(moverCarruselIzquierda, 20);
+    }
+
+    // TRANSICIÓN DE PÁGINA
+    window.addEventListener("load", function () {
+      const transicion = document.getElementById("renaxPageTransition");
+      if (transicion) {
+        setTimeout(function () {
+          transicion.classList.add("hide");
+        }, 900);
+      }
     });
 
-}   
-// CARRUSEL AUTOMÁTICO HACIA LA IZQUIERDA
-if (portfolioGallery) {
-
-    function moverCarruselIzquierda() {
-
-        if (portfolioGallery.scrollLeft <= 0) {
-            portfolioGallery.scrollLeft =
-                portfolioGallery.scrollWidth - portfolioGallery.clientWidth;
-        } else {
-            portfolioGallery.scrollLeft -= 1;
-        }
-
-    }
-
-    setInterval(moverCarruselIzquierda, 20);
-
-}      
- window.addEventListener("load", function () {
-
-    const transicion = document.getElementById("renaxPageTransition");
-
-    if (transicion) {
-        setTimeout(function () {
-            transicion.classList.add("hide");
-        }, 900);
-    }
-
-});
-
-document.querySelectorAll("a[href]").forEach(function (enlace) {
-
-    enlace.addEventListener("click", function (e) {
-
+    document.querySelectorAll("a[href]").forEach(function (enlace) {
+      enlace.addEventListener("click", function (e) {
         const destino = enlace.getAttribute("href");
 
         if (
-            !destino ||
-            destino.startsWith("#") ||
-            destino.startsWith("http") ||
-            destino.startsWith("mailto:")
+          !destino ||
+          destino.startsWith("#") ||
+          destino.startsWith("http") ||
+          destino.startsWith("mailto:")
         ) {
-            return;
+          return;
         }
 
         e.preventDefault();
-
         const transicion = document.getElementById("renaxPageTransition");
 
         if (transicion) {
-            transicion.classList.remove("hide");
-
-            setTimeout(function () {
-                window.location.href = destino;
-            }, 1400);
-        } else {
+          transicion.classList.remove("hide");
+          setTimeout(function () {
             window.location.href = destino;
+          }, 1400);
+        } else {
+          window.location.href = destino;
         }
-
-});    
-
-});     
-</script>
-   
-
-<script>
-(function () {
-   const ave = document.getElementById("renaxAveCasosVoladora");
-    const boton = document.getElementById("renaxSonidoCasos");
-
-    if (!ave) return;
-
-    const poses = [
-        "ave-01.png",
-        "ave-02.png",
-        "ave-03.png",
-        "ave-04.png",
-        "ave-05.png",
-        "ave-06.png"
-    ];
-
-    let pose = 0;
-
-    setInterval(function () {
-        pose = (pose + 1) % poses.length;
-        ave.src = poses[pose];
-    }, 80);
-
-    if (boton) {
-        const sonido = new Audio("aleteo.mp3");
-        sonido.loop = true;
-        sonido.volume = 0.25;
-
-        boton.addEventListener("click", function () {
-            if (sonido.paused) {
-                sonido.play().then(function () {
-                    boton.setAttribute("aria-pressed", "true");
-                }).catch(function () {
-                    alert("No se pudo reproducir el sonido. Comprueba que al ete o.mp3 esté en el repositorio.");
-                });
-            } else {
-                sonido.pause();
-                sonido.currentTime = 0;
-                boton.setAttribute("aria-pressed", "false");
-            }
-        });
-    }
-})();
-</script>
-
+      });
+    });
+  </script>
 </body>
- 
-
-  
 </html>
