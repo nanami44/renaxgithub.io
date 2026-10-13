@@ -491,19 +491,7 @@ SSS
 
 
 @media (max-width: 1100px) {
-    .renax-footer .footer-container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 35px 25px;
-    }
-}
-
-
-@media (max-width: 600px) {
-    .renax-footer {
-        padding: 0 22px 25px;
-    }
-
-    .renax-footer .footer-container {
+.renax-footer .footer-container {
     display: grid;
     grid-template-columns: 1.2fr 1fr 1fr 1fr 1fr;
     gap: 28px;
@@ -511,6 +499,13 @@ SSS
     align-items: start;
     width: 100%;
 }
+
+@media (max-width: 600px) {
+    .renax-footer {
+        padding: 0 22px 25px;
+    }
+
+
 
     .renax-footer .footer-column h3 {
         font-size: 13px;
