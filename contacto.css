@@ -31,6 +31,74 @@
 .contacto-page button { font: inherit; }
 .contacto-page section { scroll-margin-top: 90px; }
 
+
+/* ACCIONES DEL ENCABEZADO: idioma e inicio de sesión */
+.contacto-page .contacto-header-acciones {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+.contacto-page .contacto-idioma,
+.contacto-page .contacto-login-btn {
+  min-height: 36px;
+  border: 0;
+  border-radius: 999px;
+  padding: 0 20px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .3px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: transform .2s ease, background .2s ease, color .2s ease;
+}
+.contacto-page .contacto-idioma { background: #f5f5f5; color: #111; min-width: 60px; }
+.contacto-page .contacto-login-btn { background: #c8102e; color: #fff; }
+.contacto-page .contacto-idioma:hover,
+.contacto-page .contacto-login-btn:hover { transform: translateY(-1px); }
+.contacto-page .contacto-login-btn:hover { background: #a90d26; }
+.contacto-page .contacto-idioma:focus-visible,
+.contacto-page .contacto-login-btn:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+/* MODAL DE ACCESO */
+.contacto-page.contacto-modal-abierto { overflow: hidden; }
+.contacto-page .contacto-login-modal[hidden] { display: none !important; }
+.contacto-page .contacto-login-modal {
+  position: fixed; inset: 0; z-index: 1000;
+  display: grid; place-items: center; padding: 22px;
+}
+.contacto-page .contacto-login-fondo {
+  position: absolute; inset: 0; background: rgba(0,0,0,.82); backdrop-filter: blur(7px);
+}
+.contacto-page .contacto-login-panel {
+  position: relative; z-index: 1; width: min(100%, 440px);
+  padding: 42px 34px 32px; background: #101010; color: #f5f5f5;
+  border: 1px solid rgba(255,255,255,.18); border-top: 2px solid #c8102e;
+  box-shadow: 0 25px 90px rgba(0,0,0,.6);
+}
+.contacto-page .contacto-login-cerrar {
+  position: absolute; top: 10px; right: 15px; width: 35px; height: 35px;
+  border: 0; background: transparent; color: #ddd; font-size: 30px; cursor: pointer;
+}
+.contacto-page .contacto-login-panel .contacto-eyebrow { margin-bottom: 12px; }
+.contacto-page .contacto-login-panel h2 { margin: 0 0 10px; font-size: 30px; }
+.contacto-page .contacto-login-intro { color: #aaa; font-size: 13px; line-height: 1.7; margin-bottom: 25px; }
+.contacto-page .contacto-login-panel form { display: flex; flex-direction: column; gap: 10px; }
+.contacto-page .contacto-login-panel label { margin-top: 8px; color: #ddd; font-size: 12px; font-weight: 600; }
+.contacto-page .contacto-login-panel input {
+  width: 100%; min-height: 46px; padding: 12px 14px; border: 1px solid #3a3a3a;
+  border-radius: 0; outline: none; background: #080808; color: #fff; font: inherit; font-size: 13px;
+}
+.contacto-page .contacto-login-panel input:focus { border-color: #c8102e; }
+.contacto-page .contacto-login-enviar {
+  min-height: 47px; margin-top: 12px; border: 0; background: #c8102e; color: #fff;
+  font-size: 11px; font-weight: 800; letter-spacing: 1px; cursor: pointer;
+}
+.contacto-page .contacto-login-enviar:hover { background: #a90d26; }
+.contacto-page .contacto-login-aviso { margin: 8px 0 0; color: #929292; font-size: 11px; line-height: 1.7; }
+.contacto-page .contacto-login-aviso-activo { color: #ffb8c2; }
+
 /* HEADER / MENÚ */
 .contacto-page .contacto-header {
   position: relative;
@@ -41,7 +109,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 38px;
+  gap: clamp(18px, 2.8vw, 46px);
   background: #080808;
   border-bottom: 1px solid rgba(255,255,255,.13);
 }
@@ -62,8 +130,9 @@
 .contacto-page .contacto-nav {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: clamp(18px, 3vw, 44px);
+  justify-content: center;
+  flex: 1 1 auto;
+  gap: clamp(18px, 2.7vw, 44px);
 }
 
 .contacto-page .contacto-nav a {
@@ -73,9 +142,9 @@
   min-height: 42px;
   padding: 7px 0;
   color: #e7e7e7;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 1.15px;
+  letter-spacing: .1px;
   text-decoration: none;
   text-transform: uppercase;
   white-space: nowrap;
@@ -571,19 +640,24 @@
 
 /* TABLET */
 @media (max-width: 1000px) {
-  .contacto-page .contacto-header { gap: 20px; padding-inline: 4%; }
-  .contacto-page .contacto-logo { flex-basis: 115px; width: 115px; }
-  .contacto-page .contacto-nav { gap: 18px; }
-  .contacto-page .contacto-nav a { font-size: 10px; letter-spacing: .8px; }
+  .contacto-page .contacto-header { gap: 18px; padding-inline: 4%; }
+  .contacto-page .contacto-logo { flex-basis: 105px; width: 105px; }
+  .contacto-page .contacto-nav { gap: 16px; }
+  .contacto-page .contacto-nav a { font-size: 11px; letter-spacing: 0; }
+  .contacto-page .contacto-header-acciones { gap: 8px; }
+  .contacto-page .contacto-idioma, .contacto-page .contacto-login-btn { padding-inline: 14px; font-size: 10px; }
   .contacto-page .contacto-footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 38px; }
   .contacto-page .contacto-conversacion-grid { gap: 45px; }
 }
 
 /* MÓVIL */
 @media (max-width: 700px) {
-  .contacto-page .contacto-header { min-height: 76px; padding: 12px 6%; }
-  .contacto-page .contacto-logo { flex-basis: 120px; width: 120px; }
-  .contacto-page .contacto-menu-toggle { display: grid; place-items: center; }
+  .contacto-page .contacto-header { min-height: 76px; padding: 12px 5%; flex-wrap: wrap; gap: 10px; }
+  .contacto-page .contacto-logo { flex-basis: 105px; width: 105px; margin-right: auto; }
+  .contacto-page .contacto-menu-toggle { display: grid; place-items: center; order: 3; }
+  .contacto-page .contacto-header-acciones { order: 2; gap: 6px; }
+  .contacto-page .contacto-idioma, .contacto-page .contacto-login-btn { min-height: 34px; padding-inline: 12px; font-size: 9px; }
+  .contacto-page .contacto-login-panel { padding: 38px 24px 25px; }
 
   .contacto-page .contacto-nav {
     position: absolute;
@@ -790,4 +864,134 @@
 
 @media (max-width: 360px) {
   .contacto-page .contacto-footer-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   AJUSTE FINAL DEL ENCABEZADO RENAX
+   Replica la distribución de la referencia: logo a la izquierda,
+   navegación centrada y botones ESP / INICIAR SESIÓN a la derecha.
+   ========================================================= */
+.contacto-page .contacto-header {
+  min-height: 108px;
+  padding: 16px max(5.5%, calc((100% - 1435px) / 2));
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: clamp(24px, 3vw, 54px);
+  background: linear-gradient(105deg, #080808 0%, #090707 72%, #100607 100%);
+  border-top: 1px solid rgba(200, 16, 46, .18);
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+.contacto-page .contacto-logo {
+  width: 112px;
+  flex: none;
+  justify-self: start;
+}
+
+.contacto-page .contacto-logo img {
+  width: 112px;
+  max-height: 58px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.contacto-page .contacto-nav {
+  min-width: 0;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(24px, 3.4vw, 62px);
+}
+
+.contacto-page .contacto-nav a {
+  min-height: 44px;
+  padding: 8px 0 10px;
+  color: #c9c9c9;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -.2px;
+  text-transform: none;
+}
+
+.contacto-page .contacto-nav a:hover,
+.contacto-page .contacto-nav a:focus-visible,
+.contacto-page .contacto-nav a.activo {
+  color: #f5f5f5;
+}
+
+.contacto-page .contacto-nav a::after {
+  bottom: 0;
+  height: 2px;
+  background: #d10d35;
+}
+
+.contacto-page .contacto-header-acciones {
+  justify-self: end;
+  gap: 10px;
+}
+
+.contacto-page .contacto-idioma,
+.contacto-page .contacto-login-btn {
+  min-height: 36px;
+  padding: 0 21px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .1px;
+}
+
+.contacto-page .contacto-idioma {
+  min-width: 70px;
+  background: #f4f4f4;
+  color: #171717;
+}
+
+.contacto-page .contacto-login-btn {
+  min-width: 168px;
+  background: #c8102e;
+  color: #fff;
+}
+
+.contacto-page .contacto-login-btn:hover { background: #a90d26; }
+
+@media (max-width: 1180px) and (min-width: 701px) {
+  .contacto-page .contacto-header {
+    padding-inline: 3.5%;
+    grid-template-columns: 105px minmax(0, 1fr) auto;
+    column-gap: 20px;
+  }
+  .contacto-page .contacto-logo,
+  .contacto-page .contacto-logo img { width: 100px; }
+  .contacto-page .contacto-nav { gap: clamp(13px, 2vw, 24px); }
+  .contacto-page .contacto-nav a { font-size: 13px; }
+  .contacto-page .contacto-idioma,
+  .contacto-page .contacto-login-btn { padding-inline: 13px; font-size: 10px; }
+  .contacto-page .contacto-login-btn { min-width: 130px; }
+}
+
+@media (max-width: 700px) {
+  .contacto-page .contacto-header {
+    min-height: 76px;
+    padding: 11px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .contacto-page .contacto-logo {
+    width: 100px;
+    flex: 0 0 100px;
+    margin-right: auto;
+  }
+  .contacto-page .contacto-logo img { width: 100px; max-height: 48px; }
+  .contacto-page .contacto-header-acciones { order: 2; gap: 6px; }
+  .contacto-page .contacto-idioma,
+  .contacto-page .contacto-login-btn {
+    min-height: 33px;
+    min-width: 0;
+    padding: 0 11px;
+    font-size: 9px;
+  }
+  .contacto-page .contacto-menu-toggle { order: 3; }
+  .contacto-page .contacto-nav a { font-size: 13px; text-transform: none; }
 }
