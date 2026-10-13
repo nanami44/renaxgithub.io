@@ -497,29 +497,34 @@ SSS
     }
 }
 
+
 @media (max-width: 600px) {
     .renax-footer {
-        padding: 0 22px 45px;
+        padding: 0 22px 25px;
     }
 
     .renax-footer .footer-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 35px 20px;
-        padding-top: 32px;
+        gap: 22px 16px;
+        padding-top: 22px;
     }
 
     .renax-footer .footer-column h3 {
         font-size: 13px;
+        margin-bottom: 10px;
         white-space: normal;
     }
 
+    .renax-footer .footer-menu-links {
+        gap: 7px;
+    }
+
     .renax-footer .footer-menu-links a {
         font-size: 12px;
+        line-height: 1.5;
     }
 }
 
 
-    .renax-footer .footer-menu-links a {
-        font-size: 12px;
-    }
-}
+
+    
