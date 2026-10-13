@@ -732,6 +732,25 @@ function obtenerIdioma() {
 })();
 </script>
 
+/* Efecto rojo al seleccionar las opciones del diagnóstico */
+.srv-diagnostico-enlaces button {
+  color: inherit;
+  cursor: pointer;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.srv-diagnostico-enlaces button:hover,
+.srv-diagnostico-enlaces button:focus-visible,
+.srv-diagnostico-enlaces button.activo {
+  color: #e3262e;
+  text-shadow: 0 0 10px rgba(227, 38, 46, 0.18);
+}
+
+.srv-diagnostico-enlaces button:focus-visible {
+  outline: 1px solid #e3262e;
+  outline-offset: 4px;
+}
+
 </body>
 </html>
    
