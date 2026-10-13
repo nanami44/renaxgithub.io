@@ -436,5 +436,16 @@ body.servicios-renax .srv-header {
 }
 
 
+/* RENAX: títulos en rojo de marca */
+body.servicios-renax h1,
+body.servicios-renax h2,
+body.servicios-renax h3,
+body.servicios-renax h4,
+body.servicios-renax .srv-manifiesto h2,
+body.servicios-renax .srv-proceso h2,
+body.servicios-renax .srv-frase-fuerte {
+    color: #ff2638 !important;
+}
+
 
 
