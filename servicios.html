@@ -220,6 +220,47 @@
     </section>
   </main>
 
+<!-- VENTANAS DE DIAGNÓSTICO RENAX -->
+<div class="srv-modal" id="srvModal" hidden>
+  <div class="srv-modal-fondo" data-cerrar-ventana></div>
+
+  <section class="srv-modal-panel"
+           role="dialog"
+           aria-modal="true"
+           aria-labelledby="srvModalTitulo"
+           tabindex="-1">
+
+    <button class="srv-modal-cerrar"
+            type="button"
+            aria-label="Cerrar ventana"
+            data-cerrar-ventana>
+      ×
+    </button>
+
+    <p class="srv-modal-etiqueta">RENAX / DIAGNÓSTICO DE MARCA</p>
+
+    <h2 id="srvModalTitulo">Auditoría de marca</h2>
+
+    <p class="srv-modal-intro" id="srvModalIntro"></p>
+
+    <div class="srv-modal-linea"></div>
+
+    <h3>¿Qué analizamos?</h3>
+    <ul class="srv-modal-lista" id="srvModalLista"></ul>
+
+    <div class="srv-modal-resultado">
+      <span>OBJETIVO</span>
+      <p id="srvModalResultado"></p>
+    </div>
+
+    <button class="srv-modal-volver"
+            type="button"
+            data-cerrar-ventana>
+      <span>←</span> Volver a la sección
+    </button>
+  </section>
+</div>
+
  
 <!-- PIE DE PÁGINA RENAX -->
 <footer class="srv-footer">
@@ -516,6 +557,190 @@ if (languageBtn) {
 cambiarIdioma();
 
 </script>
+  
+<script>
+(() => {
+  const modal = document.getElementById("srvModal");
+  if (!modal) return;
+
+  const titulo = document.getElementById("srvModalTitulo");
+  const intro = document.getElementById("srvModalIntro");
+  const lista = document.getElementById("srvModalLista");
+  const resultado = document.getElementById("srvModalResultado");
+  const panel = modal.querySelector(".srv-modal-panel");
+  const etiqueta = modal.querySelector(".srv-modal-etiqueta");
+  const subtitulo = modal.querySelector(".srv-modal-panel h3");
+  const botonVolver = modal.querySelector(".srv-modal-volver");
+
+  const textos = {
+    es: {
+      etiqueta: "RENAX / DIAGNÓSTICO DE MARCA",
+      subtitulo: "¿Qué analizamos?",
+      objetivo: "OBJETIVO",
+      volver: "← Volver a la sección",
+      contenidos: {
+        auditoria: {
+          titulo: "Auditoría de marca",
+          intro: "Analizamos el estado actual de tu marca para reconocer sus fortalezas, detectar inconsistencias y descubrir oportunidades de mejora, respetando su trayectoria.",
+          puntos: [
+            "Identidad y presentación actual de la marca.",
+            "Coherencia entre su imagen y los valores que representa.",
+            "Fortalezas y aspectos que pueden mejorar."
+          ],
+          resultado: "Comprender la situación de la marca antes de proponer cambios."
+        },
+        identidad: {
+          titulo: "Análisis de identidad visual",
+          intro: "Evaluamos los elementos gráficos que representan a tu marca y cómo trabajan juntos para transmitir su personalidad y diferenciarla.",
+          puntos: [
+            "Logotipo y sus aplicaciones.",
+            "Colores y tipografías.",
+            "Coherencia de los elementos del sistema visual."
+          ],
+          resultado: "Identificar qué elementos visuales funcionan y cuáles necesitan fortalecerse."
+        },
+        comunicacion: {
+          titulo: "Análisis de comunicación",
+          intro: "Revisamos cómo tu marca transmite sus mensajes y si su comunicación es coherente con su identidad y con el público al que desea llegar.",
+          puntos: [
+            "Claridad de los mensajes y tono de comunicación.",
+            "Contenido para medios digitales e impresos.",
+            "Coherencia entre lo que la marca muestra y lo que comunica."
+          ],
+          resultado: "Reconocer oportunidades para comunicar de forma más clara, profesional y consistente."
+        },
+        oportunidades: {
+          titulo: "Identificación de oportunidades",
+          intro: "Identificamos posibilidades de evolución que respondan a las necesidades actuales del negocio sin perder los elementos que hacen única a la marca.",
+          puntos: [
+            "Aspectos de la identidad que pueden actualizarse.",
+            "Elementos de la historia y personalidad que conviene conservar.",
+            "Oportunidades para fortalecer la presentación de la marca."
+          ],
+          resultado: "Definir prioridades de mejora para orientar la evolución de la marca."
+        }
+      }
+    },
+
+    en: {
+      etiqueta: "RENAX / BRAND DIAGNOSIS",
+      subtitulo: "What do we analyze?",
+      objetivo: "OBJECTIVE",
+      volver: "← Back to section",
+      contenidos: {
+        auditoria: {
+          titulo: "Brand Audit",
+          intro: "We analyze your brand's current state to recognize its strengths, identify inconsistencies, and discover opportunities for improvement while respecting its history.",
+          puntos: [
+            "The brand's current identity and presentation.",
+            "Consistency between its image and the values it represents.",
+            "Strengths and areas for improvement."
+          ],
+          resultado: "Understand the brand's current situation before proposing changes."
+        },
+        identidad: {
+          titulo: "Visual Identity Analysis",
+          intro: "We evaluate the graphic elements that represent your brand and how they work together to communicate its personality and set it apart.",
+          puntos: [
+            "Logo and its applications.",
+            "Colors and typography.",
+            "Consistency across the visual identity system."
+          ],
+          resultado: "Identify which visual elements work well and which need to be strengthened."
+        },
+        comunicacion: {
+          titulo: "Communication Analysis",
+          intro: "We review how your brand communicates its messages and whether its communication is consistent with its identity and the audience it wants to reach.",
+          puntos: [
+            "Message clarity and tone of voice.",
+            "Content for digital and print media.",
+            "Consistency between what the brand shows and what it communicates."
+          ],
+          resultado: "Identify opportunities to communicate more clearly, professionally, and consistently."
+        },
+        oportunidades: {
+          titulo: "Identifying Opportunities",
+          intro: "We identify ways for your brand to evolve in response to the business's current needs without losing the elements that make it unique.",
+          puntos: [
+            "Elements of the identity that could be updated.",
+            "Parts of the brand's history and personality worth preserving.",
+            "Opportunities to strengthen the brand's presentation."
+          ],
+          resultado: "Set improvement priorities to guide the brand's evolution."
+        }
+      }
+    }
+  };
+
+  let elementoAnterior = null;
+
+  function obtenerIdioma() {
+    const idiomaGuardado = localStorage.getItem("renaxIdioma");
+    if (idiomaGuardado === "en" || idiomaGuardado === "es") {
+      return idiomaGuardado;
+    }
+
+    const botonIngles = [...document.querySelectorAll("button, a")]
+      .find(el => el.textContent.trim().toUpperCase() === "ENG");
+
+    return document.documentElement.lang.toLowerCase().startsWith("en")
+      || botonIngles?.dataset.idioma === "en"
+      ? "en"
+      : "es";
+  }
+
+  function abrirVentana(clave, boton) {
+    const idioma = obtenerIdioma();
+    const idiomaTextos = textos[idioma];
+    const contenido = idiomaTextos.contenidos[clave];
+    if (!contenido) return;
+
+    elementoAnterior = boton;
+    etiqueta.textContent = idiomaTextos.etiqueta;
+    titulo.textContent = contenido.titulo;
+    intro.textContent = contenido.intro;
+    subtitulo.textContent = idiomaTextos.subtitulo;
+    resultado.textContent = contenido.resultado;
+    botonVolver.textContent = idiomaTextos.volver;
+
+    lista.replaceChildren();
+    contenido.puntos.forEach(punto => {
+      const li = document.createElement("li");
+      li.textContent = punto;
+      lista.appendChild(li);
+    });
+
+    const objetivoEtiqueta = modal.querySelector(".srv-modal-resultado span");
+    if (objetivoEtiqueta) objetivoEtiqueta.textContent = idiomaTextos.objetivo;
+
+    modal.hidden = false;
+    document.body.style.overflow = "hidden";
+    panel.scrollTop = 0;
+    panel.focus();
+  }
+
+  function cerrarVentana() {
+    modal.hidden = true;
+    document.body.style.overflow = "";
+    if (elementoAnterior) elementoAnterior.focus();
+  }
+
+  document.querySelectorAll("[data-ventana]").forEach(boton => {
+    boton.addEventListener("click", () => {
+      abrirVentana(boton.dataset.ventana, boton);
+    });
+  });
+
+  modal.querySelectorAll("[data-cerrar-ventana]").forEach(elemento => {
+    elemento.addEventListener("click", cerrarVentana);
+  });
+
+  document.addEventListener("keydown", evento => {
+    if (evento.key === "Escape" && !modal.hidden) cerrarVentana();
+  });
+})();
+</script>
+
 </body>
 </html>
    
