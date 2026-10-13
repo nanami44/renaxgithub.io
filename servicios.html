@@ -734,6 +734,18 @@ function obtenerIdioma() {
 })();
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const titulo = document.getElementById("tituloInteractivo");
+
+  if (titulo) {
+    titulo.addEventListener("click", function () {
+      titulo.classList.toggle("rojo");
+    });
+  }
+});
+</script>
+
 
 </body>
 </html>
