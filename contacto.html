@@ -225,6 +225,59 @@ SS<!DOCTYPE html>
       });
     })();
   </script>
+  
+<script>
+(() => {
+    const boton = document.getElementById("contactoIdioma");
+    if (!boton) return;
+
+    const textos = {
+        "Inicio": "Home",
+        "Nosotros": "About Us",
+        "Portafolio": "Portfolio",
+        "Servicios": "Services",
+        "Contáctanos": "Contact Us",
+        "HABLEMOS DE TU PROYECTO": "LET'S TALK ABOUT YOUR PROJECT",
+        "EL PRIMER PASO": "THE FIRST STEP",
+        "CONTACTO": "CONTACT",
+        "Canales de contacto": "Contact channels",
+        "Hablemos de tu proyecto": "Let's talk about your project",
+        "Enviar solicitud": "Send request",
+        "VOLVER ARRIBA ↑": "BACK TO TOP ↑",
+        "Transformamos marcas sin borrar su historia.": "We transform brands without erasing their history."
+    };
+
+    const elementos = [
+        ...document.querySelectorAll(
+            ".contacto-header .contacto-nav a, .contacto-main h1, .contacto-main h2, .contacto-main h3, .contacto-main p, .contacto-main a, .contacto-footer h2, .contacto-footer a, .contacto-footer p"
+        )
+    ];
+
+    const originales = elementos.map(elemento => ({
+        elemento,
+        html: elemento.innerHTML,
+        texto: elemento.textContent.trim()
+    }));
+
+    let ingles = false;
+
+    boton.addEventListener("click", () => {
+        ingles = !ingles;
+
+        originales.forEach(({ elemento, html, texto }) => {
+            if (!ingles) {
+                elemento.innerHTML = html;
+            } else if (textos[texto]) {
+                elemento.textContent = textos[texto];
+            }
+        });
+
+        boton.textContent = ingles ? "ENG" : "ESP";
+        document.documentElement.lang = ingles ? "en" : "es";
+    });
+})();
+</script>
+
 </body>
 </html>
 
