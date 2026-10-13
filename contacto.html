@@ -303,6 +303,7 @@ const textos = {
 
 
   
+
 const elementos = [
     ...document.querySelectorAll(
         ".contacto-header .contacto-nav a, " +
@@ -310,8 +311,16 @@ const elementos = [
         ".contacto-main h3, .contacto-main p, " +
         ".contacto-main a, .contacto-main label, " +
         ".contacto-main button, .contacto-footer h2, " +
-        ".contacto-footer a, .contacto-footer p"
+        ".contacto-footer a, .contacto-footer p, " +
+        ".contacto-hero [data-lang], " +
+        ".contacto-contenido [data-lang], " +
+        ".contacto-footer [data-lang]"
     )
+].filter(elemento =>
+    elemento.id !== "contactoIdioma" &&
+    elemento.id !== "contactoMenuToggle"
+);
+
 ].filter(elemento =>
     elemento.id !== "contactoIdioma" &&
     elemento.id !== "contactoMenuToggle"
