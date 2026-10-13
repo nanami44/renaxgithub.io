@@ -449,3 +449,121 @@
         transform: none;
     }
 }
+
+/* =========================================
+   RENAX — PIE DE PÁGINA DE CINCO COLUMNAS
+========================================= */
+
+.renax-footer {
+    position: relative;
+    z-index: 2;
+    padding: 0 3.1% 65px;
+    background: #0b0b0b;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.renax-footer .footer-top {
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid #383838;
+    border-bottom: 1px solid #383838;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.renax-footer .footer-top span {
+    font-weight: 600;
+}
+
+.renax-footer .footer-top a {
+    color: #aaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.renax-footer .footer-top a:hover {
+    color: #c8102e;
+}
+
+.renax-footer .footer-container {
+    display: grid;
+    grid-template-columns: 1.2fr 0.9fr 0.9fr 0.9fr 0.9fr;
+    gap: 40px;
+    padding-top: 42px;
+}
+
+.renax-footer .footer-column {
+    min-width: 0;
+}
+
+.renax-footer .footer-column h3 {
+    margin: 0 0 26px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 1.5;
+}
+
+.renax-footer .footer-column h3 a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.renax-footer .footer-menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 17px;
+}
+
+.renax-footer .footer-menu-links a {
+    color: #b8b8b8;
+    font-size: 14px;
+    line-height: 1.7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.renax-footer .footer-menu-links a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 900px) {
+    .renax-footer .footer-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 35px 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .renax-footer {
+        padding: 0 22px 45px;
+    }
+
+    .renax-footer .footer-top {
+        font-size: 11px;
+    }
+
+    .renax-footer .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px 20px;
+        padding-top: 32px;
+    }
+
+    .renax-footer .footer-column h3 {
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .renax-footer .footer-menu-links {
+        gap: 13px;
+    }
+
+    .renax-footer .footer-menu-links a {
+        font-size: 12px;
+    }
+}
