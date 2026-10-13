@@ -674,20 +674,11 @@ cambiarIdioma();
 
   let elementoAnterior = null;
 
-  function obtenerIdioma() {
-    const idiomaGuardado = localStorage.getItem("renaxIdioma");
-    if (idiomaGuardado === "en" || idiomaGuardado === "es") {
-      return idiomaGuardado;
-    }
 
-    const botonIngles = [...document.querySelectorAll("button, a")]
-      .find(el => el.textContent.trim().toUpperCase() === "ENG");
+function obtenerIdioma() {
+  return idiomaActual;
+}
 
-    return document.documentElement.lang.toLowerCase().startsWith("en")
-      || botonIngles?.dataset.idioma === "en"
-      ? "en"
-      : "es";
-  }
 
   function abrirVentana(clave, boton) {
     const idioma = obtenerIdioma();
