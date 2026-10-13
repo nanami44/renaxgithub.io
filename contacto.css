@@ -1202,3 +1202,62 @@
         font-size: 11px;
     }
 }
+
+/* ===== BOTONES DEL ENCABEZADO DE CONTACTO ===== */
+
+.contacto-header-botones {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.contacto-idioma,
+.contacto-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0 22px;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.contacto-idioma {
+    background: #ffffff;
+    color: #080808;
+    border: 1px solid #ffffff;
+}
+
+.contacto-idioma:hover {
+    background: #e8e8e8;
+}
+
+.contacto-login {
+    background: #d20a2e;
+    color: #ffffff;
+    border: 1px solid #d20a2e;
+}
+
+.contacto-login:hover {
+    background: #a80724;
+    border-color: #a80724;
+}
+
+@media (max-width: 900px) {
+    .contacto-header-botones {
+        gap: 8px;
+    }
+
+    .contacto-idioma,
+    .contacto-login {
+        padding: 0 14px;
+        font-size: 12px;
+    }
+}
