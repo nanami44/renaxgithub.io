@@ -424,5 +424,15 @@ body.servicios-renax .srv-frase-fuerte {
     color: #ff2638 !important;
 }
 
+/* RENAX: bordes redondeados en las imágenes de servicios */
+body.servicios-renax .srv-servicio-imagen {
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+body.servicios-renax .srv-servicio-imagen img {
+    border-radius: 16px;
+}
+
 
 
