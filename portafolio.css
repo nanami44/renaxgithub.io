@@ -264,3 +264,114 @@ body.portafolio-renax {
 .renax-facebook { 
   background-color: #1877f2; 
 }
+/* ==========================================================
+   ESTILOS PIE DE PÁGINA EXACTO A LA IMAGEN
+   ========================================================== */
+.renax-footer {
+  background-color: #0b0b0b;
+  color: #ffffff;
+  padding: 40px 60px 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.footer-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Barra Superior de Menú */
+.footer-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 40px;
+}
+
+.footer-top-title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.footer-top-link {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.footer-top-link:hover {
+  opacity: 0.7;
+}
+
+/* Grid de Columnas */
+.footer-columns-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  padding-bottom: 60px;
+}
+
+.footer-column h3 {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.footer-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-menu-links a {
+  color: #a0a0a0;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.footer-menu-links a:hover {
+  color: #ffffff;
+}
+
+/* Barra Inferior del Logo */
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-logo {
+  height: 32px;
+  width: auto;
+  opacity: 0.9;
+}
+
+/* Adaptación para pantallas móviles */
+@media (max-width: 1024px) {
+  .footer-columns-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .renax-footer {
+    padding: 30px 20px;
+  }
+  .footer-columns-container {
+    grid-template-columns: 1fr;
+  }
+}
