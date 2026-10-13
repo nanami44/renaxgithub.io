@@ -326,7 +326,7 @@ const originales = elementos.map(elemento => ({
 
     boton.addEventListener("click", () => {
         ingles = !ingles;
-
+console.log("Botón de idioma pulsado:", ingles);
     originales.forEach(({ elemento, html, texto }) => {
     if (!ingles) {
         elemento.innerHTML = html;
