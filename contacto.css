@@ -1,4 +1,4 @@
-
+SSS
 /* =====================================================
    RENAX — PÁGINA DE CONTACTO
    Estética: elegante, oscura, premium y moderna
@@ -489,50 +489,8 @@
     color: #c8102e;
 }
 
-.renax-footer .footer-container {
-    display: grid;
-    grid-template-columns: 1.2fr 0.9fr 0.9fr 0.9fr 0.9fr;
-    gap: 40px;
-    padding-top: 42px;
-}
 
-.renax-footer .footer-column {
-    min-width: 0;
-}
-
-.renax-footer .footer-column h3 {
-    margin: 0 0 26px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 800;
-    line-height: 1.5;
-}
-
-.renax-footer .footer-column h3 a {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.renax-footer .footer-menu-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 17px;
-}
-
-.renax-footer .footer-menu-links a {
-    color: #b8b8b8;
-    font-size: 14px;
-    line-height: 1.7;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.renax-footer .footer-menu-links a:hover {
-    color: #ffffff;
-}
-
-@media (max-width: 900px) {
+@media (max-width: 1100px) {
     .renax-footer .footer-container {
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 35px 25px;
@@ -544,10 +502,6 @@
         padding: 0 22px 45px;
     }
 
-    .renax-footer .footer-top {
-        font-size: 11px;
-    }
-
     .renax-footer .footer-container {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 35px 20px;
@@ -555,13 +509,15 @@
     }
 
     .renax-footer .footer-column h3 {
-        font-size: 14px;
-        margin-bottom: 18px;
+        font-size: 13px;
+        white-space: normal;
     }
 
-    .renax-footer .footer-menu-links {
-        gap: 13px;
+    .renax-footer .footer-menu-links a {
+        font-size: 12px;
     }
+}
+
 
     .renax-footer .footer-menu-links a {
         font-size: 12px;
