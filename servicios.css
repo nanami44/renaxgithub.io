@@ -500,4 +500,51 @@ body.servicios-renax::before {
     }
 }
 
+/* ==========================================
+   RENAX SERVICIOS — PORTADA FIJA Y VELO
+========================================== */
+
+/* La portada permanece detrás del contenido */
+body.servicios-renax .srv-hero {
+    position: sticky;
+    top: 0;
+    z-index: 0;
+    margin-bottom: 0;
+}
+
+/* El contenido sube por encima de la portada */
+body.servicios-renax .srv-manifiesto,
+body.servicios-renax .srv-servicios,
+body.servicios-renax .srv-proceso,
+body.servicios-renax .srv-cierre {
+    position: relative;
+    z-index: 2;
+    background: rgba(8, 8, 8, 0.88);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+/* Transición suave entre portada y contenido */
+body.servicios-renax .srv-manifiesto {
+    margin-top: -12vh;
+    padding-top: 100px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Mantener legible el contenido */
+body.servicios-renax .srv-manifiesto,
+body.servicios-renax .srv-servicios,
+body.servicios-renax .srv-proceso,
+body.servicios-renax .srv-cierre {
+    color: #f5f3f0;
+}
+
+/* En móviles, reducir la superposición */
+@media (max-width: 700px) {
+    body.servicios-renax .srv-manifiesto {
+        margin-top: -6vh;
+        padding-top: 70px;
+    }
+}
+
 
