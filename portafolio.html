@@ -32,15 +32,15 @@
       </button>
 
       <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
-        <a href="index.html" class="nav-link">Inicio</a>
-        <a href="nosotros.html" class="nav-link">Nosotros</a>
-        <a href="portafolio.html" class="nav-link active" aria-current="page">Portafolio</a>
-        <a href="servicios.html" class="nav-link">Servicios</a>
-        <a href="contacto.html" class="nav-link">Contáctanos</a>
+        <a href="index.html" class="nav-link" data-lang="navHome">Inicio</a>
+        <a href="nosotros.html" class="nav-link" data-lang="navAbout">Nosotros</a>
+        <a href="portafolio.html" class="nav-link active" aria-current="page" data-lang="navPortfolio">Portafolio</a>
+        <a href="servicios.html" class="nav-link" data-lang="navServices">Servicios</a>
+        <a href="contacto.html" class="nav-link" data-lang="navContact">Contáctanos</a>
       </nav>
 
       <button class="language" id="languageBtn" type="button">ENG</button>
-      <a href="registro.html" class="login-btn">INICIAR SESIÓN</a>
+      <a href="registro.html" class="login-btn" data-lang="loginBtn">INICIAR SESIÓN</a>
     </div>
   </header>
 
@@ -54,10 +54,10 @@
       <img src="portafolio-final.png" alt="PORTAFOLIO RENAX">
     </section>
 
-    <!-- GALERÍA DE PROYECTOS CARRUSEL -->
+    <!-- GALERÍA DE PROYECTOS -->
     <section class="portfolio-gallery">
       <!-- Proyecto 1 -->
-      <article class="portfolio-item" style="grid-column: span 1;">
+      <article class="portfolio-item">
         <img src="skenzi-carrusel01.jpeg" alt="Proyecto Skenzi">
         <div class="portfolio-overlay">
           <span data-lang="sneakers">SKENZI</span>
@@ -66,7 +66,7 @@
 
       <!-- Proyecto 2 -->
       <article class="portfolio-item">
-        <img src="Renax-%20carrusel%2001.png" alt="RENAX">
+        <img src="Renax- carrusel 01.png" alt="RENAX">
         <div class="portfolio-overlay">
           <span data-lang="paraEllos">RENAX</span>
         </div>
@@ -122,7 +122,7 @@
 
       <!-- Proyecto 9 -->
       <article class="portfolio-item">
-        <img src="DONUT'S%20BITES-carrusel01.png" alt="Donut's Bites">
+        <img src="DONUT'S BITES-carrusel01.png" alt="Donut's Bites">
         <div class="portfolio-overlay">
           <span>DONUT'S BITES</span>
         </div>
@@ -140,8 +140,8 @@
     <!-- GRID DE TRABAJOS -->
     <section class="renax-work-grid" id="proyectos">
       <div class="renax-work-heading">
-        <span>RENAX · PORTAFOLIO</span>
-        <h2>TRABAJO<br><strong>CON IDENTIDAD.</strong></h2>
+        <span data-lang="workSubtitle">RENAX · PORTAFOLIO</span>
+        <h2 data-lang="workTitle">TRABAJO<br><strong>CON IDENTIDAD.</strong></h2>
       </div>
 
       <div class="renax-work-layout">
@@ -156,12 +156,12 @@
           <div class="renax-work-image">
             <img src="dia-matematicas.png.png" alt="Día de las Matemáticas">
           </div>
-          <h3>DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
+          <h3 data-lang="itemMath">DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
         </a>
 
         <div class="renax-work-card">
           <div class="renax-work-image">
-            <img src="DONUT'S%20BITES-galeria%2001.png" alt="DONUT'S BITES">
+            <img src="DONUT'S BITES-galeria 01.png" alt="DONUT'S BITES">
           </div>
           <h3>DONUT'S BITES</h3>
         </div>
@@ -170,35 +170,35 @@
           <div class="renax-work-image">
             <img src="Renax-galeria01.png" alt="RENAX - Identidad visual">
           </div>
-          <h3>IDENTIDAD RENAX</h3>
+          <h3 data-lang="itemIdentity">IDENTIDAD RENAX</h3>
         </div>
 
         <div class="renax-work-card">
           <div class="renax-work-image">
             <img src="renax-tarjeta-dos.png.png" alt="Diseño de marca">
           </div>
-          <h3>DISEÑO DE MARCA</h3>
+          <h3 data-lang="itemBrand">DISEÑO DE MARCA</h3>
         </div>
 
         <div class="renax-work-card renax-work-wide">
           <div class="renax-work-image">
             <img src="sobre-renax.png.png" alt="Papelería corporativa">
           </div>
-          <h3>PAPELERÍA CORPORATIVA</h3>
+          <h3 data-lang="itemStationery">PAPELERÍA CORPORATIVA</h3>
         </div>
 
         <div class="renax-work-card">
           <div class="renax-work-image">
             <img src="skenzi-empaque.png" alt="Skenzi - Diseño de empaques">
           </div>
-          <h3>DISEÑO DE EMPAQUE</h3>
+          <h3 data-lang="itemPackaging">DISEÑO DE EMPAQUE</h3>
         </div>
 
         <a href="dia-especialidades.html" class="renax-work-card renax-work-tall">
           <div class="renax-work-image">
             <img src="iea-empaque.png.png" alt="Día de las Especialidades">
           </div>
-          <h3>DÍA DE LAS ESPECIALIDADES <span>↗</span></h3>
+          <h3 data-lang="itemSpecialties">DÍA DE LAS ESPECIALIDADES <span>↗</span></h3>
         </a>
 
         <a href="donuts-bites.html" class="renax-work-card renax-work-wide">
@@ -220,9 +220,9 @@
     <!-- CASOS DE ESTUDIO -->
     <section class="renax-casos-estudio renax-work-grid" id="casos-estudio">
       <div class="renax-work-heading">
-        <span>RENAX · CASOS DE ESTUDIO</span>
-        <h2>MARCAS QUE<br><strong>HAN EVOLUCIONADO.</strong></h2>
-        <p>Conoce el proceso detrás de algunos de nuestros proyectos y descubre cómo RENAX transforma ideas en identidades visuales.</p>
+        <span data-lang="casesSubtitle">RENAX · CASOS DE ESTUDIO</span>
+        <h2 data-lang="casesTitle">MARCAS QUE<br><strong>HAN EVOLUCIONADO.</strong></h2>
+        <p data-lang="casesDesc">Conoce el proceso detrás de algunos de nuestros proyectos y descubre cómo RENAX transforma ideas en identidades visuales.</p>
       </div>
 
       <div class="renax-work-layout">
@@ -237,19 +237,19 @@
           <div class="renax-work-image">
             <img src="especialidades-9.jpeg" alt="Especialidades - Caso de estudio">
           </div>
-          <h3>ESPECIALIDADES <span>↗</span></h3>
+          <h3 data-lang="caseSpecialties">ESPECIALIDADES <span>↗</span></h3>
         </a>
 
         <a href="dia-matematicas.html" class="renax-work-card">
           <div class="renax-work-image">
             <img src="mate2.png" alt="Día de las Matemáticas - Caso de estudio">
           </div>
-          <h3>DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
+          <h3 data-lang="caseMath">DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
         </a>
 
         <a href="donuts-bites.html" class="renax-work-card renax-work-tall">
           <div class="renax-work-image">
-            <img src="DONUT'S%20BITES-casos-estudio03.png" alt="DONUT'S BITES - Caso de estudio">
+            <img src="DONUT'S BITES-casos-estudio03.png" alt="DONUT'S BITES - Caso de estudio">
           </div>
           <h3>DONUT'S BITES <span>↗</span></h3>
         </a>
@@ -259,16 +259,26 @@
     <!-- CIERRE DEL PORTAFOLIO -->
     <section class="renax-portfolio-cierre">
       <div class="portfolio-cierre-contenido">
-        <h2 class="portfolio-cierre-titulo">
+        <h2 class="portfolio-cierre-titulo" data-lang="closeTitle">
           ¿TU MARCA ESTÁ<br>LISTA?
         </h2>
-        <a href="contacto.html#contacto-formulario" class="portfolio-cierre-boton">
+        <a href="contacto.html#contacto-formulario" class="portfolio-cierre-boton" data-lang="closeBtn">
           HABLEMOS DE TU MARCA <span>→</span>
         </a>
       </div>
     </section>
 
   </main>
+
+  <!-- BOTONES FLOTANTES DE REDES SOCIALES -->
+  <div class="renax-floating-buttons">
+    <a href="https://wa.me/message/ANFNF6L522RNN1" target="_blank" rel="noopener noreferrer" class="renax-float-btn renax-whatsapp" aria-label="WhatsApp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="renax-float-btn renax-facebook" aria-label="Facebook">
+      <i class="fa-brands fa-facebook-f"></i>
+    </a>
+  </div>
 
   <!-- PIE DE PÁGINA RENAX -->
   <footer class="renax-footer">
@@ -278,9 +288,9 @@
         <h3><a href="index.html" data-lang="footerHome">INICIO</a></h3>
         <div class="footer-menu-links">
           <a href="index.html#hero-inicio" data-lang="footerIntro">Transformamos marcas sin borrar su historia</a>
-          <a href="index.html#esencia-marca">Nuestra esencia</a>
-          <a href="index.html#historia-marca">Nuestra historia</a>
-          <a href="index.html#preguntas-frecuentes">Preguntas frecuentes</a>
+          <a href="index.html#esencia-marca" data-lang="footerEssence">Nuestra esencia</a>
+          <a href="index.html#historia-marca" data-lang="footerHistory">Nuestra historia</a>
+          <a href="index.html#preguntas-frecuentes" data-lang="footerFaq">Preguntas frecuentes</a>
         </div>
       </nav>
 
@@ -288,10 +298,10 @@
       <nav class="footer-column">
         <h3><a href="nosotros.html" data-lang="footerAbout">NOSOTROS</a></h3>
         <div class="footer-menu-links">
-          <a href="nosotros.html#quienes-somos">Quiénes somos</a>
-          <a href="nosotros.html#vision">Visión</a>
-          <a href="nosotros.html#mision">Misión</a>
-          <a href="nosotros.html#por-que-renax">Por qué RENAX</a>
+          <a href="nosotros.html#quienes-somos" data-lang="footerWho">Quiénes somos</a>
+          <a href="nosotros.html#vision" data-lang="footerVision">Visión</a>
+          <a href="nosotros.html#mision" data-lang="footerMission">Misión</a>
+          <a href="nosotros.html#por-que-renax" data-lang="footerWhy">Por qué RENAX</a>
         </div>
       </nav>
 
@@ -299,8 +309,8 @@
       <nav class="footer-column">
         <h3><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h3>
         <div class="footer-menu-links">
-          <a href="portafolio.html#proyectos">Proyectos y trabajos realizados</a>
-          <a href="portafolio.html#casos-estudio">Casos de estudio</a>
+          <a href="portafolio.html#proyectos" data-lang="footerProjects">Proyectos y trabajos realizados</a>
+          <a href="portafolio.html#casos-estudio" data-lang="footerCases">Casos de estudio</a>
         </div>
       </nav>
 
@@ -333,24 +343,106 @@
 
     const translations = {
       es: {
+        navHome: "Inicio",
+        navAbout: "Nosotros",
+        navPortfolio: "Portafolio",
+        navServices: "Servicios",
+        navContact: "Contáctanos",
+        loginBtn: "INICIAR SESIÓN",
         portfolioTitle: "NUESTRO TRABAJO",
-        sneakers: "TODO SNEAKERS",
-        paraEllos: "PARA ELLOS",
-        strategy: "STRATEGY SESSION",
+        sneakers: "SKENZI",
+        paraEllos: "RENAX",
+        strategy: "RENAX",
         matematicas: "CAMPAÑA VISUAL · DÍA DE LAS MATEMÁTICAS",
-        creative: "CREATIVE ART",
-        chat: "LE CHAT BAGARRE",
-        skenzi: "SKENZI"
+        creative: "RENAX",
+        chat: "SKENZI",
+        skenzi: "SKENZI",
+        workSubtitle: "RENAX · PORTAFOLIO",
+        workTitle: "TRABAJO<br><strong>CON IDENTIDAD.</strong>",
+        itemMath: "DÍA DE LAS MATEMÁTICAS <span>↗</span>",
+        itemIdentity: "IDENTIDAD RENAX",
+        itemBrand: "DISEÑO DE MARCA",
+        itemStationery: "PAPELERÍA CORPORATIVA",
+        itemPackaging: "DISEÑO DE EMPAQUE",
+        itemSpecialties: "DÍA DE LAS ESPECIALIDADES <span>↗</span>",
+        casesSubtitle: "RENAX · CASOS DE ESTUDIO",
+        casesTitle: "MARCAS QUE<br><strong>HAN EVOLUCIONADO.</strong>",
+        casesDesc: "Conoce el proceso detrás de algunos de nuestros proyectos y descubre cómo RENAX transforma ideas en identidades visuales.",
+        caseSpecialties: "ESPECIALIDADES <span>↗</span>",
+        caseMath: "DÍA DE LAS MATEMÁTICAS <span>↗</span>",
+        closeTitle: "¿TU MARCA ESTÁ<br>LISTA?",
+        closeBtn: "HABLEMOS DE TU MARCA <span>→</span>",
+        footerHome: "INICIO",
+        footerIntro: "Transformamos marcas sin borrar su historia",
+        footerEssence: "Nuestra esencia",
+        footerHistory: "Nuestra historia",
+        footerFaq: "Preguntas frecuentes",
+        footerAbout: "NOSOTROS",
+        footerWho: "Quiénes somos",
+        footerVision: "Visión",
+        footerMission: "Misión",
+        footerWhy: "Por qué RENAX",
+        footerPortfolio: "PORTAFOLIO",
+        footerProjects: "Proyectos y trabajos realizados",
+        footerCases: "Casos de estudio",
+        footerServices: "SERVICIOS",
+        footerService1: "Diagnóstico de marca",
+        footerService2: "Identidad visual",
+        footerService3: "Comunicación",
+        footerService4: "Estrategia visual",
+        footerContact: "CONTACTO",
+        footerTalk: "Hablemos de tu proyecto"
       },
       en: {
+        navHome: "Home",
+        navAbout: "About Us",
+        navPortfolio: "Portfolio",
+        navServices: "Services",
+        navContact: "Contact Us",
+        loginBtn: "LOG IN",
         portfolioTitle: "OUR WORK",
-        sneakers: "TODO SNEAKERS",
-        paraEllos: "FOR THEM",
-        strategy: "STRATEGY SESSION",
+        sneakers: "SKENZI",
+        paraEllos: "RENAX",
+        strategy: "RENAX",
         matematicas: "VISUAL CAMPAIGN · MATHEMATICS DAY",
-        creative: "CREATIVE ART",
-        chat: "LE CHAT BAGARRE",
-        skenzi: "SKENZI"
+        creative: "RENAX",
+        chat: "SKENZI",
+        skenzi: "SKENZI",
+        workSubtitle: "RENAX · PORTFOLIO",
+        workTitle: "WORK<br><strong>WITH IDENTITY.</strong>",
+        itemMath: "MATHEMATICS DAY <span>↗</span>",
+        itemIdentity: "RENAX IDENTITY",
+        itemBrand: "BRAND DESIGN",
+        itemStationery: "CORPORATE STATIONERY",
+        itemPackaging: "PACKAGING DESIGN",
+        itemSpecialties: "SPECIALTIES DAY <span>↗</span>",
+        casesSubtitle: "RENAX · CASE STUDIES",
+        casesTitle: "BRANDS THAT<br><strong>HAVE EVOLVED.</strong>",
+        casesDesc: "Learn about the process behind some of our projects and discover how RENAX transforms ideas into visual identities.",
+        caseSpecialties: "SPECIALTIES <span>↗</span>",
+        caseMath: "MATHEMATICS DAY <span>↗</span>",
+        closeTitle: "IS YOUR BRAND<br>READY?",
+        closeBtn: "LET'S TALK ABOUT YOUR BRAND <span>→</span>",
+        footerHome: "HOME",
+        footerIntro: "We transform brands without erasing their history",
+        footerEssence: "Our essence",
+        footerHistory: "Our history",
+        footerFaq: "Frequently asked questions",
+        footerAbout: "ABOUT US",
+        footerWho: "Who we are",
+        footerVision: "Vision",
+        footerMission: "Mission",
+        footerWhy: "Why RENAX",
+        footerPortfolio: "PORTFOLIO",
+        footerProjects: "Completed projects and work",
+        footerCases: "Case studies",
+        footerServices: "SERVICES",
+        footerService1: "Brand diagnosis",
+        footerService2: "Visual identity",
+        footerService3: "Communication",
+        footerService4: "Visual strategy",
+        footerContact: "CONTACT",
+        footerTalk: "Let's talk about your project"
       }
     };
 
@@ -369,17 +461,15 @@
       });
     }
 
-    // CARRUSEL PORTAFOLIO Y INTERACCIÓN
+    // CARRUSEL PORTAFOLIO E INTERACCIÓN
     const portfolioGallery = document.querySelector('.portfolio-gallery');
 
     if (portfolioGallery) {
-      // Scroll horizontal con rueda del ratón
       portfolioGallery.addEventListener('wheel', (e) => {
         e.preventDefault();
         portfolioGallery.scrollLeft += e.deltaY;
       }, { passive: false });
 
-      // Clic para avanzar item
       portfolioGallery.querySelectorAll('.portfolio-item').forEach(item => {
         item.addEventListener('click', () => {
           const distancia = item.offsetWidth + 30;
@@ -390,7 +480,6 @@
         });
       });
 
-      // Carrusel automático continuo
       function moverCarruselIzquierda() {
         if (portfolioGallery.scrollLeft <= 0) {
           portfolioGallery.scrollLeft = portfolioGallery.scrollWidth - portfolioGallery.clientWidth;
@@ -437,49 +526,6 @@
         }
       });
     });
-
-    // ANIMACIÓN Y AUDIO DEL AVE
-    (function () {
-      const ave = document.getElementById("renaxAveCasosVoladora");
-      const boton = document.getElementById("renaxSonidoCasos");
-
-      if (ave) {
-        const poses = [
-          "ave-01.png",
-          "ave-02.png",
-          "ave-03.png",
-          "ave-04.png",
-          "ave-05.png",
-          "ave-06.png"
-        ];
-        let pose = 0;
-
-        setInterval(function () {
-          pose = (pose + 1) % poses.length;
-          ave.src = poses[pose];
-        }, 80);
-      }
-
-      if (boton) {
-        const sonido = new Audio("aleteo.mp3");
-        sonido.loop = true;
-        sonido.volume = 0.25;
-
-        boton.addEventListener("click", function () {
-          if (sonido.paused) {
-            sonido.play().then(function () {
-              boton.setAttribute("aria-pressed", "true");
-            }).catch(function () {
-              alert("No se pudo reproducir el sonido. Comprueba que aleteo.mp3 esté en el repositorio.");
-            });
-          } else {
-            sonido.pause();
-            sonido.currentTime = 0;
-            boton.setAttribute("aria-pressed", "false");
-          }
-        });
-      }
-    })();
   </script>
 </body>
 </html>
