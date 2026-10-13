@@ -83,7 +83,7 @@ body.servicios-renax img { display: block; max-width: 100%; }
 .srv-manifiesto h2, .srv-seccion-cabecera h2, .srv-proceso h2 { font-size: clamp(39px, 5.1vw, 72px); }
 .srv-manifiesto-texto { max-width: 510px; color: #c1bdb9; }
 .srv-manifiesto-texto p { margin: 0 0 18px; }
-.srv-frase-fuerte { padding-top: 20px; color: #fff; font-family: var(--srv-titulos); font-size: clamp(13px, 1.4vw, 18px); line-height: 1.6; letter-spacing: .04em; }
+.srv-frase-fuerte { padding-top: 20px; color: #fff; font-family: var(--srv-titulos); font-size: clamp(22px, 2.2vw, 32px); line-height: 1.6; letter-spacing: .04em; }
 
 .srv-servicios { padding: 105px 0 80px; }
 .srv-seccion-cabecera { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8%; align-items: end; margin-bottom: 58px; }
