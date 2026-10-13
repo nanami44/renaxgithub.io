@@ -435,4 +435,68 @@ body.servicios-renax .srv-servicio-imagen img {
 }
 
 
+/* =========================================
+   RENAX — NIEBLA ROJA ANIMADA DE FONDO
+========================================= */
+
+body.servicios-renax {
+    position: relative;
+    isolation: isolate;
+    background: #080808;
+}
+
+/* Capa de niebla que recorre la página */
+body.servicios-renax::before {
+    content: "";
+    position: fixed;
+    inset: -30%;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 8% 92%,
+            rgba(190, 0, 28, 0.34) 0%,
+            rgba(150, 0, 24, 0.20) 18%,
+            transparent 48%
+        ),
+        radial-gradient(
+            ellipse at 88% 100%,
+            rgba(255, 20, 45, 0.22) 0%,
+            rgba(160, 0, 25, 0.14) 22%,
+            transparent 48%
+        ),
+        radial-gradient(
+            ellipse at 40% 65%,
+            rgba(180, 0, 30, 0.15) 0%,
+            transparent 45%
+        );
+
+    filter: blur(65px);
+    opacity: 0.9;
+    animation: renaxNieblaRoja 18s ease-in-out infinite alternate;
+}
+
+/* Movimiento lento ascendente */
+@keyframes renaxNieblaRoja {
+    0% {
+        transform: translate3d(-4%, 12%, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(3%, -5%, 0) scale(1.08);
+    }
+
+    100% {
+        transform: translate3d(7%, -18%, 0) scale(1.14);
+    }
+}
+
+/* Respetar a quienes prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+    body.servicios-renax::before {
+        animation: none;
+    }
+}
+
 
