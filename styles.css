@@ -9663,6 +9663,54 @@ footer.renax-footer .footer-container {
     opacity: 1 !important;
 }
 
+/* AJUSTE FINAL: PIE DE PÁGINA RENAX */
+
+footer.renax-footer:not(.renax-footer-nuevo) > .footer-container {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    gap: 30px !important;
+    align-items: start !important;
+    box-sizing: border-box !important;
+}
+
+footer.renax-footer:not(.renax-footer-nuevo) > .footer-container > .footer-column {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    width: 100% !important;
+}
+
+footer.renax-footer:not(.renax-footer-nuevo) > .footer-container .footer-column h3 {
+    font-size: 15px !important;
+    line-height: 1.5 !important;
+    margin: 0 0 24px !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+}
+
+footer.renax-footer:not(.renax-footer-nuevo) > .footer-container .footer-menu-links a {
+    font-size: 14px !important;
+    line-height: 1.7 !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+}
+
+@media (max-width: 900px) {
+    footer.renax-footer:not(.renax-footer-nuevo) > .footer-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    footer.renax-footer:not(.renax-footer-nuevo) > .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 30px 20px !important;
+    }
+}
+
 /* =====================================
    PIE DE PAGINA NUEVO - RENAX
 ===================================== */
