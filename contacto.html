@@ -247,30 +247,40 @@ SS<!DOCTYPE html>
         "Transformamos marcas sin borrar su historia.": "We transform brands without erasing their history."
     };
 
-    const elementos = [
-        ...document.querySelectorAll(
-            ".contacto-header .contacto-nav a, .contacto-main h1, .contacto-main h2, .contacto-main h3, .contacto-main p, .contacto-main a, .contacto-footer h2, .contacto-footer a, .contacto-footer p"
-        )
-    ];
+  
+const elementos = [
+    ...document.querySelectorAll(
+        ".contacto-header .contacto-nav a, " +
+        ".contacto-main h1, .contacto-main h2, " +
+        ".contacto-main h3, .contacto-main p, " +
+        ".contacto-main a, .contacto-main label, " +
+        ".contacto-main button, .contacto-footer h2, " +
+        ".contacto-footer a, .contacto-footer p"
+    )
+].filter(elemento =>
+    elemento.id !== "contactoIdioma" &&
+    elemento.id !== "contactoMenuToggle"
+);
 
-    const originales = elementos.map(elemento => ({
-        elemento,
-        html: elemento.innerHTML,
-        texto: elemento.textContent.trim()
-    }));
+const originales = elementos.map(elemento => ({
+    elemento,
+    html: elemento.innerHTML,
+    texto: elemento.textContent.trim()
+}));
+
 
     let ingles = false;
 
     boton.addEventListener("click", () => {
         ingles = !ingles;
 
-        originales.forEach(({ elemento, html, texto }) => {
-            if (!ingles) {
-                elemento.innerHTML = html;
-            } else if (textos[texto]) {
-                elemento.textContent = textos[texto];
-            }
-        });
+    originales.forEach(({ elemento, html, texto }) => {
+    if (!ingles) {
+        elemento.innerHTML = html;
+    } else if (textos[texto]) {
+        elemento.textContent = textos[texto];
+    }
+});
 
         boton.textContent = ingles ? "ENG" : "ESP";
         document.documentElement.lang = ingles ? "en" : "es";
