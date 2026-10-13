@@ -6,25 +6,23 @@
   <meta name="description" content="Contacta con RENAX. Transformamos marcas sin borrar su historia.">
   <title>Contáctanos | RENAX</title>
 
-  <!-- Esta página utiliza únicamente contacto.css; no depende de styles.css. -->
+  <!-- Estilos independientes -->
   <link rel="stylesheet" href="contacto.css">
 
+  <!-- Tipografías e Iconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="contacto-page">
+
+  <!-- ENCABEZADO / NAVEGACIÓN -->
   <header class="contacto-header">
     <a class="contacto-logo" href="index.html" aria-label="RENAX, ir al inicio">
       <img src="logo-renax-transparente.png" alt="RENAX">
     </a>
-
-    <button class="contacto-menu-toggle" id="contactoMenuToggle" type="button"
-            aria-label="Abrir menú" aria-expanded="false" aria-controls="contactoNav">
-      <i class="fa-solid fa-bars" aria-hidden="true"></i>
-    </button>
 
     <nav class="contacto-nav" id="contactoNav" aria-label="Menú principal">
       <a href="index.html">Inicio</a>
@@ -33,325 +31,306 @@
       <a href="servicios.html">Servicios</a>
       <a href="contacto.html" class="activo" aria-current="page">Contáctanos</a>
     </nav>
-    
-<div class="contacto-header-botones">
-    <button type="button" class="contacto-idioma" id="contactoIdioma">
-        ESP
-    </button>
-   <a href="registro.html" class="contacto-login">
-    <span data-lang="loginButton">INICIAR SESIÓN</span>
-</a>
-</div>
 
+    <div class="contacto-header-acciones">
+      <button type="button" class="contacto-idioma" id="contactoIdioma" aria-label="Cambiar idioma">ESP</button>
+      <a href="registro.html" class="contacto-login">
+        <span data-lang="loginButton">INICIAR SESIÓN</span>
+      </a>
+      <button class="contacto-menu-toggle" id="contactoMenuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="contactoNav">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+    </div>
   </header>
 
+  <!-- CONTENIDO PRINCIPAL -->
   <main class="contacto-main">
-    <!-- PORTADA GRANDE. El fondo visual se añadirá después desde contacto.css. -->
+
+    <!-- HERO / PORTADA -->
     <section class="contacto-hero" id="contacto-inicio" aria-labelledby="contactoHeroTitulo">
       <div class="contacto-hero-contenido">
-        <p class="contacto-eyebrow"><span></span> RENAX / CONTÁCTANOS</p>
-       
-<h1 id="contactoHeroTitulo">
-    <span data-lang="contactTitle">HABLEMOS</span><br>
-    <span data-lang="contactTitle2">DE TU <em>MARCA.</em></span>
-</h1>
+        <p class="contacto-eyebrow"><span class="indicador-punto"></span> RENAX / CONTÁCTANOS</p>
+        
+        <h1 id="contactoHeroTitulo">
+          <span data-lang="contactTitle">HABLEMOS</span><br>
+          <span data-lang="contactTitle2">DE TU <em>MARCA.</em></span>
+        </h1>
 
-
-<p class="contacto-hero-texto" data-lang="contactDescription">
-    Cada marca tiene una historia que contar. Cuéntanos la tuya y exploremos cómo fortalecer su identidad, modernizar su imagen y proyectarla hacia nuevas oportunidades sin perder su esencia.
-</p>
-
-
+        <p class="contacto-hero-texto" data-lang="contactDescription">
+          Cada marca tiene una historia que contar. Cuéntanos la tuya y exploremos cómo fortalecer su identidad, modernizar su imagen y proyectarla hacia nuevas oportunidades sin perder su esencia.
+        </p>
 
         <a class="contacto-link-principal" href="#contacto-formulario">
-         <span data-lang="contactButton">HABLEMOS DE TU PROYECTO</span>
-<span aria-hidden="true">↘</span>
+          <span data-lang="contactButton">HABLEMOS DE TU PROYECTO</span>
+          <span class="flecha-icono" aria-hidden="true">↘</span>
         </a>
       </div>
+
       <div class="contacto-hero-indice" aria-hidden="true">
-<span>RENAX</span><span class="contacto-hero-linea"></span><span data-lang="contactIndicator">01 / CONTACTO</span>
+        <span>RENAX</span>
+        <span class="contacto-hero-linea"></span>
+        <span data-lang="contactIndicator">01 / CONTACTO</span>
       </div>
     </section>
 
-    <!-- INFORMACIÓN PRINCIPAL CONSERVADA -->
+    <!-- SECCIÓN 01: CONVERSACIÓN / FORMULARIO SOLICITUD -->
     <section class="contacto-conversacion" id="contacto-formulario" aria-labelledby="contactoConversacionTitulo">
-<div class="contacto-seccion-meta">
-    <span>01</span>
-    <span data-lang="firstStep">EL PRIMER PASO</span>
-</div>
+      <div class="contacto-seccion-meta">
+        <span class="numero-paso">01</span>
+        <span class="etiqueta-paso" data-lang="firstStep">EL PRIMER PASO</span>
+      </div>
 
       <div class="contacto-conversacion-grid">
         <div class="contacto-conversacion-texto">
-         <h2 id="contactoConversacionTitulo">
-    <span data-lang="conversationTitle">Toda transformación comienza con una</span>
-    <em data-lang="conversationWord">conversación.</em>
-</h2>
+          <h2 id="contactoConversacionTitulo">
+            <span data-lang="conversationTitle">Toda transformación comienza con una</span>
+            <em data-lang="conversationWord">conversación.</em>
+          </h2>
           <p>
-            En RENAX creemos que una marca no necesita olvidar su historia para avanzar.
-            Necesita reconocer su valor, descubrir nuevas posibilidades y encontrar
-            una manera de comunicar mejor lo que la hace única.
+            En RENAX creemos que una marca no necesita olvidar su historia para avanzar. Necesita reconocer su valor, descubrir nuevas posibilidades y encontrar una manera de comunicar mejor lo que la hace única.
           </p>
           <p>
-            Queremos conocer tu negocio, entender tus objetivos y explorar contigo
-            cómo podemos fortalecer su identidad.
+            Queremos conocer tu negocio, entender tus objetivos y explorar contigo cómo podemos fortalecer su identidad.
           </p>
         </div>
 
         <aside class="contacto-tarjeta">
-          <span class="contacto-tarjeta-etiqueta" data-lang="contactButton">
-    HABLEMOS DE TU PROYECTO
-</span>
-       <h3 data-lang="tellBrand">Cuéntanos qué necesita tu marca.</h3>
+          <span class="contacto-tarjeta-etiqueta" data-lang="contactButton">HABLEMOS DE TU PROYECTO</span>
+          <h3 data-lang="tellBrand">Cuéntanos qué necesita tu marca.</h3>
           <p data-lang="projectDescription">
-    Da el primer paso. Comparte la información de tu proyecto y explícanos qué te gustaría transformar.
-</p>
+            Da el primer paso. Comparte la información de tu proyecto y explícanos qué te gustaría transformar.
+          </p>
           <a class="contacto-boton contacto-boton-rojo" href="registro.html">
-    <span data-lang="contactSubmit">ENVIAR SOLICITUD</span>
-    <span aria-hidden="true">→</span>
-</a>
-
-<p class="contacto-nota" data-lang="contactNote">
-    Tu historia es el punto de partida para construir nuevas posibilidades.
-</p>
+            <span data-lang="contactSubmit">ENVIAR SOLICITUD</span>
+            <span aria-hidden="true">→</span>
+          </a>
+          <p class="contacto-nota" data-lang="contactNote">
+            Tu historia es el punto de partida para construir nuevas posibilidades.
+          </p>
         </aside>
       </div>
     </section>
 
-    <!-- CONTACTO DIRECTO: reemplaza el número de WhatsApp por el real. -->
+    <!-- SECCIÓN 02: CANALES DIRECTOS -->
     <section class="contacto-canales" id="contacto-directo" aria-labelledby="contactoCanalesTitulo">
-      <div class="contacto-seccion-meta"><span>02</span><span>HABLEMOS DIRECTAMENTE</span></div>
+      <div class="contacto-seccion-meta">
+        <span class="numero-paso">02</span>
+        <span>HABLEMOS DIRECTAMENTE</span>
+      </div>
+
       <div class="contacto-canales-cabecera">
         <h2 id="contactoCanalesTitulo">Conectemos con tu <em>próxima idea.</em></h2>
         <p>Elige el canal que prefieras para dar el siguiente paso con RENAX.</p>
       </div>
 
-      <div class="contacto-redes">
-        <!-- CAMBIA 57TU_NUMERO por el indicativo y número de WhatsApp, sin + ni espacios. -->
-        <a class="contacto-red contacto-red-whatsapp" href="https://wa.me/57TU_NUMERO"
-           target="_blank" rel="noopener noreferrer">
-          <span class="contacto-red-icono"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
-          <span class="contacto-red-texto"><strong>Let's talk on WhatsApp</strong><small><small>Let's talk about your project</small>/small></span>
-          <span class="contacto-red-flecha" aria-hidden="true">↗</span>
+      <div class="contacto-redes-grid">
+        <!-- WhatsApp (reemplazar 57TU_NUMERO) -->
+        <a class="contacto-red-card contacto-red-whatsapp" href="https://wa.me/57TU_NUMERO" target="_blank" rel="noopener noreferrer">
+          <div class="contacto-red-header">
+            <span class="contacto-red-icono"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></span>
+            <span class="contacto-red-flecha" aria-hidden="true">↗</span>
+          </div>
+          <div class="contacto-red-info">
+            <strong>Hablemos por WhatsApp</strong>
+            <small>Conversemos sobre tu proyecto</small>
+          </div>
         </a>
 
-        <!-- Enlace de Facebook de RENAX; reemplázalo si la página utiliza otra URL. -->
-        <a class="contacto-red contacto-red-facebook"
-           href="https://www.facebook.com/profile.php?id=615951222990"
-           target="_blank" rel="noopener noreferrer">
-          <span class="contacto-red-icono"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></span>
-          <span class="contacto-red-texto"><strong>Find us on Facebook</strong><small>Follow RENAX updates</small></span>
-          <span class="contacto-red-flecha" aria-hidden="true">↗</span>
+        <!-- Facebook -->
+        <a class="contacto-red-card contacto-red-facebook" href="https://www.facebook.com/profile.php?id=615951222990" target="_blank" rel="noopener noreferrer">
+          <div class="contacto-red-header">
+            <span class="contacto-red-icono"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></span>
+            <span class="contacto-red-flecha" aria-hidden="true">↗</span>
+          </div>
+          <div class="contacto-red-info">
+            <strong>Encuéntranos en Facebook</strong>
+            <small>Sigue las novedades de RENAX</small>
+          </div>
         </a>
       </div>
     </section>
 
-    <!-- CIERRE ORIGINAL -->
+    <!-- SECCIÓN CIERRE / CALL TO ACTION -->
     <section class="contacto-cierre" id="contacto-cierre" aria-labelledby="contactoCierreTitulo">
       <div class="contacto-cierre-contenido">
-<span class="contacto-eyebrow" data-lang="nextStep">EL SIGUIENTE PASO</span>
-       <h2 id="contactoCierreTitulo">
-    <span data-lang="yourStory">TU HISTORIA</span><br>
-    <span data-lang="deservesTo">MERECE</span>
-    <em data-lang="evolve">EVOLUCIONAR.</em>
-</h2>
+        <span class="contacto-eyebrow" data-lang="nextStep">EL SIGUIENTE PASO</span>
+        <h2 id="contactoCierreTitulo">
+          <span data-lang="yourStory">TU HISTORIA</span><br>
+          <span data-lang="deservesTo">MERECE</span>
+          <em data-lang="evolve">EVOLUCIONAR.</em>
+        </h2>
         <p data-lang="closingDescription">
-    Las marcas que evolucionan no tienen que renunciar a lo que las hace especiales.
-    En RENAX trabajamos para que su historia siga creciendo y conectando con nuevas oportunidades.
-</p>
+          Las marcas que evolucionan no tienen que renunciar a lo que las hace especiales. En RENAX trabajamos para que su historia siga creciendo y conectando con nuevas oportunidades.
+        </p>
         <a class="contacto-link-principal" href="registro.html">
-    <span data-lang="talkAboutYourBrand">HABLEMOS DE TU MARCA</span>
-    <span aria-hidden="true">↗</span>
-</a>
-        <span class="contacto-firma">RENAX — TRANSFORMAMOS MARCAS<br>SIN BORRAR SU HISTORIA.</span>
+          <span data-lang="talkAboutYourBrand">HABLEMOS DE TU MARCA</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <p class="contacto-firma">RENAX — TRANSFORMAMOS MARCAS<br>SIN BORRAR SU HISTORIA.</p>
       </div>
     </section>
+
   </main>
 
-  <!-- PIE DE PÁGINA INDEPENDIENTE -->
+  <!-- PIE DE PÁGINA (FOOTER REORGANIZADO) -->
   <footer class="contacto-footer">
-    <div class="contacto-footer-top">
-     <span data-lang="footerMenu">MENÚ</span>
-    </div>
+    <div class="contacto-footer-contenedor">
+      <div class="contacto-footer-top">
+        <span class="contacto-footer-badge" data-lang="footerMenu">MENÚ NAVEGACIÓN</span>
+      </div>
 
-    <div class="contacto-footer-grid">
-      
-<nav class="contacto-footer-col" aria-label="Enlaces de Inicio">
-   
-<a href="index.html#hero-inicio" data-lang="footerHome1">Expertos en transformar marcas</a>
-<a href="index.html#esencia-marca" data-lang="footerHome2">Vuelve a destacar sin perder tu esencia</a>
-<a href="index.html#historia-marca" data-lang="footerHome3">Tu historia merece una imagen que esté a su altura</a>
-<a href="index.html#preguntas-frecuentes" data-lang="footerHome4">Preguntas frecuentes</a>
+      <div class="contacto-footer-grid">
+        <!-- Columna 1: Inicio -->
+        <nav class="contacto-footer-col" aria-label="Enlaces de Inicio">
+          <h2><a href="index.html">INICIO</a></h2>
+          <ul>
+            <li><a href="index.html#hero-inicio" data-lang="footerHome1">Expertos en transformar marcas</a></li>
+            <li><a href="index.html#esencia-marca" data-lang="footerHome2">Vuelve a destacar sin perder tu esencia</a></li>
+            <li><a href="index.html#historia-marca" data-lang="footerHome3">Tu historia merece una imagen a su altura</a></li>
+            <li><a href="index.html#preguntas-frecuentes" data-lang="footerHome4">Preguntas frecuentes</a></li>
+          </ul>
+        </nav>
 
+        <!-- Columna 2: Nosotros -->
+        <nav class="contacto-footer-col" aria-label="Enlaces de Nosotros">
+          <h2><a href="nosotros.html" data-lang="footerAbout">NOSOTROS</a></h2>
+          <ul>
+            <li><a href="nosotros.html#quienes-somos" data-lang="footerAbout1">Quiénes somos</a></li>
+            <li><a href="nosotros.html#vision" data-lang="footerAbout2">Visión</a></li>
+            <li><a href="nosotros.html#mision" data-lang="footerAbout3">Misión</a></li>
+            <li><a href="nosotros.html#por-que-renax" data-lang="footerAbout4">¿Por qué RENAX?</a></li>
+          </ul>
+        </nav>
 
+        <!-- Columna 3: Portafolio -->
+        <nav class="contacto-footer-col" aria-label="Enlaces de Portafolio">
+          <h2><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h2>
+          <ul>
+            <li><a href="portafolio.html#proyectos" data-lang="footerPortfolio1">Proyectos realizados</a></li>
+            <li><a href="portafolio.html#casos-estudio" data-lang="footerPortfolio2">Casos de estudio</a></li>
+          </ul>
+        </nav>
 
+        <!-- Columna 4: Servicios -->
+        <nav class="contacto-footer-col" aria-label="Enlaces de Servicios">
+          <h2><a href="servicios.html" data-lang="footerServices">SERVICIOS</a></h2>
+          <ul>
+            <li><a href="servicios.html#diagnostico" data-lang="footerService1">Diagnóstico de marca</a></li>
+            <li><a href="servicios.html#identidad" data-lang="footerService2">Renovación de marca</a></li>
+            <li><a href="servicios.html#comunicacion" data-lang="footerService3">Comunicación</a></li>
+            <li><a href="servicios.html#estrategia" data-lang="footerService4">Estrategia visual</a></li>
+          </ul>
+        </nav>
 
-<nav class="contacto-footer-col" aria-label="Enlaces de Nosotros">
-    <h2><a href="nosotros.html" data-lang="footerAbout">NOSOTROS</a></h2>
-    <a href="nosotros.html#quienes-somos" data-lang="footerAbout1">Quiénes somos</a>
-    <a href="nosotros.html#vision" data-lang="footerAbout2">Visión</a>
-    <a href="nosotros.html#mision" data-lang="footerAbout3">Misión</a>
-    <a href="nosotros.html#por-que-renax" data-lang="footerAbout4">¿Por qué RENAX?</a>
-</nav>
+        <!-- Columna 5: Contacto -->
+        <nav class="contacto-footer-col" aria-label="Enlaces de Contacto">
+          <h2><a href="contacto.html" data-lang="footerContact">CONTACTO</a></h2>
+          <ul>
+            <li><a href="#contacto-formulario" data-lang="footerTalk">Hablemos de tu proyecto</a></li>
+            <li><a href="#contacto-directo" data-lang="footerChannels">Canales de contacto</a></li>
+            <li><a href="registro.html" data-lang="footerSubmit">Enviar solicitud</a></li>
+          </ul>
+        </nav>
+      </div>
 
-
-      
-<nav class="contacto-footer-col" aria-label="Enlaces de Portafolio">
-    <h2><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h2>
-    <a href="portafolio.html#proyectos" data-lang="footerPortfolio1">Proyectos y trabajos realizados</a>
-    <a href="portafolio.html#casos-estudio" data-lang="footerPortfolio2">Casos de estudio</a>
-</nav>
-
-
-      <nav class="contacto-footer-col" aria-label="Enlaces de Servicios">
-       <h2><a href="servicios.html" data-lang="footerServices">SERVICIOS</a></h2>
-       <a href="servicios.html#diagnostico" data-lang="footerService1">Diagnóstico de marca</a>
-        <a href="servicios.html#identidad" data-lang="footerService2">Renovación de marca</a>
-        <a href="servicios.html#comunicacion" data-lang="footerService3">Comunicación</a>
-<a href="servicios.html#estrategia" data-lang="footerService4">Estrategia visual</a>
-      </nav>
-
-      <nav class="contacto-footer-col" aria-label="Enlaces de Contacto">
-       <h2><a href="contacto.html" data-lang="footerContact">CONTACTO</a></h2>
-        <a href="#contacto-formulario" data-lang="footerTalk">Hablemos de tu proyecto</a>
-       <a href="#contacto-directo" data-lang="footerChannels">Canales de contacto</a>
-       <a href="registro.html" data-lang="footerSubmit">Enviar solicitud</a>
-      </nav>
-    </div>
-
-    <div class="contacto-footer-bottom">
-      <a href="index.html" class="contacto-footer-marca">RENAX</a>
-      <p data-lang="footerSlogan">Transformamos marcas sin borrar su historia.</p>
-    <a href="#contacto-inicio" class="contacto-volver-arriba" data-lang="backToTop">VOLVER ARRIBA ↑</a>
+      <div class="contacto-footer-bottom">
+        <div class="contacto-footer-brand">
+          <a href="index.html" class="contacto-footer-marca">RENAX</a>
+          <p data-lang="footerSlogan">Transformamos marcas sin borrar su historia.</p>
+        </div>
+        <a href="#contacto-inicio" class="contacto-volver-arriba" data-lang="backToTop">VOLVER ARRIBA ↑</a>
+      </div>
     </div>
   </footer>
 
+  <!-- JAVASCRIPT DE FUNCIONALIDAD -->
   <script>
     (() => {
+      // Menú desplegable móvil
       const boton = document.getElementById("contactoMenuToggle");
       const nav = document.getElementById("contactoNav");
-      if (!boton || !nav) return;
-
-      boton.addEventListener("click", () => {
-        const abierto = nav.classList.toggle("abierto");
-        boton.setAttribute("aria-expanded", String(abierto));
-        boton.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
-        boton.innerHTML = abierto
-          ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
-          : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-      });
-
-      nav.querySelectorAll("a").forEach((enlace) => {
-        enlace.addEventListener("click", () => {
-          nav.classList.remove("abierto");
-          boton.setAttribute("aria-expanded", "false");
-          boton.setAttribute("aria-label", "Abrir menú");
-          boton.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+      if (boton && nav) {
+        boton.addEventListener("click", () => {
+          const abierto = nav.classList.toggle("abierto");
+          boton.setAttribute("aria-expanded", String(abierto));
+          boton.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+          boton.innerHTML = abierto
+            ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
+            : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
         });
+
+        nav.querySelectorAll("a").forEach((enlace) => {
+          enlace.addEventListener("click", () => {
+            nav.classList.remove("abierto");
+            boton.setAttribute("aria-expanded", "false");
+            boton.setAttribute("aria-label", "Abrir menú");
+            boton.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+          });
+        });
+      }
+
+      // Cambio de Idioma (ESP / ENG)
+      const botonIdioma = document.getElementById("contactoIdioma");
+      if (!botonIdioma) return;
+
+      const textos = {
+        "contactTitle": "LET'S TALK",
+        "contactTitle2": "ABOUT YOUR BRAND.",
+        "talkAboutYourBrand": "LET'S TALK ABOUT YOUR BRAND",
+        "loginButton": "LOG IN",
+        "contactButton": "LET'S TALK ABOUT YOUR PROJECT",
+        "firstStep": "THE FIRST STEP",
+        "contactIndicator": "01 / CONTACT",
+        "conversationTitle": "Every transformation begins with a",
+        "conversationWord": "conversation.",
+        "tellBrand": "Tell us what your brand needs.",
+        "projectDescription": "Take the first step. Share your project details and tell us what you would like to transform.",
+        "contactSubmit": "SEND REQUEST",
+        "contactNote": "Your story is the starting point for building new possibilities.",
+        "nextStep": "THE NEXT STEP",
+        "yourStory": "YOUR STORY",
+        "deservesTo": "DESERVES TO",
+        "evolve": "EVOLVE.",
+        "closingDescription": "Brands can evolve without giving up what makes them special. At RENAX, we help their stories keep growing and connecting with new opportunities.",
+        "footerMenu": "NAVIGATION MENU",
+        "footerAbout": "ABOUT US",
+        "footerPortfolio": "PORTFOLIO",
+        "footerServices": "SERVICES",
+        "footerContact": "CONTACT",
+        "footerTalk": "Let's talk about your project",
+        "footerChannels": "Contact channels",
+        "footerSubmit": "Send request",
+        "backToTop": "BACK TO TOP ↑",
+        "footerSlogan": "We transform brands without erasing their history."
+      };
+
+      const elementos = [
+        ...document.querySelectorAll("[data-lang]")
+      ];
+
+      const originales = elementos.map(elemento => ({
+        elemento,
+        clave: elemento.getAttribute("data-lang"),
+        html: elemento.innerHTML
+      }));
+
+      let ingles = false;
+
+      botonIdioma.addEventListener("click", () => {
+        ingles = !ingles;
+        originales.forEach(({ elemento, clave, html }) => {
+          if (!ingles) {
+            elemento.innerHTML = html;
+          } else if (textos[clave]) {
+            elemento.textContent = textos[clave];
+          }
+        });
+
+        botonIdioma.textContent = ingles ? "ENG" : "ESP";
+        document.documentElement.lang = ingles ? "en" : "es";
       });
     })();
   </script>
-  
-<script>
-(() => {
-    const boton = document.getElementById("contactoIdioma");
-    if (!boton) return;
-
-
-const textos = {
-  
-  "contactTitle": "LET'S TALK",
-"contactTitle2": "ABOUT YOUR BRAND.",
-  "talkAboutYourBrand": "LET'S TALK ABOUT YOUR BRAND",
-    "Inicio": "Home",
-    "Nosotros": "About Us",
-    "Portafolio": "Portfolio",
-    "Servicios": "Services",
-    "Contáctanos": "Contact Us",
-    "HABLEMOS DE TU PROYECTO": "LET'S TALK ABOUT YOUR PROJECT",
-    "EL PRIMER PASO": "THE FIRST STEP",
-    "CONTACTO": "CONTACT",
-    "Canales de contacto": "Contact channels",
-    "Hablemos de tu proyecto": "Let's talk about your project",
-    "Enviar solicitud": "Send request",
-    "VOLVER ARRIBA ↑": "BACK TO TOP ↑",
-    "Transformamos marcas sin borrar su historia.": "We transform brands without erasing their history.",
-    "Cada marca tiene una historia que contar. Cuéntanos la tuya y exploremos cómo fortalecer su identidad, modernizar su imagen y proyectarla hacia nuevas oportunidades sin perder su esencia.": "Every brand has a story to tell. Tell us yours, and let's explore how to strengthen its identity, modernize its image, and create new opportunities without losing its essence.",
-    "Toda transformación comienza con una conversación.": "Every transformation begins with a conversation.",
-    "En RENAX creemos que una marca no necesita olvidar su historia para avanzar. Necesita reconocer su valor, descubrir nuevas posibilidades y encontrar una manera de comunicar mejor lo que la hace única.": "At RENAX, we believe a brand doesn't need to forget its history to move forward. It needs to recognize its value, discover new possibilities, and find a better way to communicate what makes it unique.",
-    "Queremos conocer tu negocio, entender tus objetivos y explorar contigo cómo podemos fortalecer su identidad.": "We want to learn about your business, understand your goals, and explore how we can strengthen its identity together.",
-    "Cuéntanos qué necesita tu marca.": "Tell us what your brand needs.",
-    "Da el primer paso. Comparte la información de tu proyecto y explícanos qué te gustaría transformar.": "Take the first step. Share your project details and tell us what you'd like to transform.",
-    "Tu historia es el punto de partida para construir nuevas posibilidades.": "Your story is the starting point for building new possibilities.",
-    "Conectemos con tu próxima idea.": "Let's connect with your next idea.",
-    "Elige el canal que prefieras para dar el siguiente paso con RENAX.": "Choose your preferred channel to take the next step with RENAX.",
-    "Hablemos por WhatsApp": "Let's talk on WhatsApp",
-    "Conversemos sobre tu proyecto": "Let's discuss your project",
-    "Encuéntranos en Facebook": "Find us on Facebook",
-    "Sigue las novedades de RENAX": "Follow RENAX updates",
-    "TU HISTORIA MERECE EVOLUCIONAR.": "YOUR STORY DESERVES TO EVOLVE.",
-    "Las marcas que evolucionan no tienen que renunciar a lo que las hace especiales. En RENAX trabajamos para que su historia siga creciendo y conectando con nuevas oportunidades.": "Brands can evolve without giving up what makes them special. At RENAX, we help their stories keep growing and connecting with new opportunities.",
-   "HABLEMOS DE TU MARCA": "LET'S TALK ABOUT YOUR BRAND",
-"firstStep": "THE FIRST STEP",
-"conversationTitle": "Every transformation begins with a",
-"conversationWord": "conversation.",
-  "tellBrand": "Tell us what your brand needs.",
-"projectDescription": "Take the first step. Share your project information and tell us what you would like to transform.",
-"contactSubmit": "SEND REQUEST",
-"contactNote": "Your story is the starting point for building new possibilities.",
-
-};
-
-
-  
-
-const elementos = [
-    ...document.querySelectorAll(
-        ".contacto-header .contacto-nav a, " +
-        ".contacto-main h1, .contacto-main h2, " +
-        ".contacto-main h3, .contacto-main p, " +
-        ".contacto-main a, .contacto-main label, " +
-        ".contacto-main button, .contacto-footer h2, " +
-        ".contacto-footer a, .contacto-footer p, " +
-        ".contacto-hero [data-lang], " +
-        ".contacto-contenido [data-lang], " +
-        ".contacto-footer [data-lang]"
-    )
-].filter(elemento =>
-    elemento.id !== "contactoIdioma" &&
-    elemento.id !== "contactoMenuToggle"
-);
-
-].filter(elemento =>
-    elemento.id !== "contactoIdioma" &&
-    elemento.id !== "contactoMenuToggle"
-);
-
-const originales = elementos.map(elemento => ({
-    elemento,
-    html: elemento.innerHTML,
-    texto: elemento.textContent.trim()
-}));
-
-
-    let ingles = false;
-
-    boton.addEventListener("click", () => {
-        ingles = !ingles;
-console.log("Botón de idioma pulsado:", ingles);
-    originales.forEach(({ elemento, html, texto }) => {
-    if (!ingles) {
-        elemento.innerHTML = html;
-    } else if (textos[texto]) {
-        elemento.textContent = textos[texto];
-    }
-});
-
-        boton.textContent = ingles ? "ENG" : "ESP";
-        document.documentElement.lang = ingles ? "en" : "es";
-    });
-})();
-</script>
 
 </body>
 </html>
-
