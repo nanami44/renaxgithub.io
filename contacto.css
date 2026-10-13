@@ -1,0 +1,371 @@
+
+/* =====================================================
+   RENAX — PÁGINA DE CONTACTO
+   Estética: elegante, oscura, premium y moderna
+===================================================== */
+
+/* ---------- CONFIGURACIÓN GENERAL ---------- */
+
+#main-content {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #080808;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#main-content *,
+#main-content *::before,
+#main-content *::after {
+    box-sizing: border-box;
+}
+
+#main-content::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            ellipse at 85% 10%,
+            rgba(200, 16, 46, 0.19),
+            transparent 42%
+        ),
+        radial-gradient(
+            ellipse at 5% 55%,
+            rgba(200, 16, 46, 0.09),
+            transparent 38%
+        );
+}
+
+/* ---------- PORTADA DE CONTACTO ---------- */
+
+.contact-hero {
+    position: relative;
+    padding: clamp(100px, 14vw, 180px) 8% 85px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.contact-hero::before {
+    content: "RENAX";
+    position: absolute;
+    top: 15px;
+    right: -15px;
+    z-index: -1;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(100px, 24vw, 300px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.09em;
+    color: rgba(255, 255, 255, 0.025);
+    pointer-events: none;
+}
+
+.contact-hero h1 {
+    margin: 0 0 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(58px, 10vw, 120px);
+    font-weight: 600;
+    line-height: 0.95;
+    letter-spacing: -0.035em;
+    color: #ffffff;
+}
+
+.contact-hero h1::after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 3px;
+    margin-top: 28px;
+    background: #c8102e;
+}
+
+.contact-hero p {
+    max-width: 620px;
+    margin: 25px 0 0;
+    color: #bdbdbd;
+    font-size: clamp(14px, 1.5vw, 17px);
+    line-height: 1.9;
+}
+
+/* ---------- FORMULARIO ---------- */
+
+.contact-form-container {
+    position: relative;
+    width: min(100% - 40px, 1000px);
+    margin: 0 auto;
+    padding: 75px 0 90px;
+}
+
+#fullContactForm {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 28px;
+}
+
+.form-group-box {
+    min-width: 0;
+}
+
+.form-input-box {
+    display: block;
+    width: 100%;
+    min-height: 58px;
+    padding: 17px 18px;
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    border-radius: 3px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.035);
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.form-input-box::placeholder {
+    color: #999999;
+    opacity: 1;
+}
+
+.form-input-box:hover {
+    border-color: rgba(200, 16, 46, 0.55);
+}
+
+.form-input-box:focus {
+    border-color: #c8102e;
+    background: rgba(200, 16, 46, 0.045);
+    box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.10);
+}
+
+#fullContactForm > div:nth-last-child(3) {
+    grid-column: 1 / -1;
+    margin-top: 20px !important;
+}
+
+#fullContactForm > div:nth-last-child(2) {
+    grid-column: 1 / -1;
+    margin-top: 5px !important;
+}
+
+#message {
+    min-height: 160px;
+    margin-top: 15px;
+    resize: vertical;
+}
+
+.form-label-title {
+    display: block;
+    margin-bottom: 12px;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+/* ---------- BOTÓN PRINCIPAL ---------- */
+
+.btn-pill {
+    position: relative;
+    min-height: 55px;
+    padding: 16px 32px;
+    overflow: hidden;
+    border: 1px solid #c8102e;
+    border-radius: 2px;
+    background: #c8102e;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn-pill:hover {
+    transform: translateY(-3px);
+    border-color: #f02745;
+    background: #a80d26;
+    box-shadow: 0 10px 30px rgba(200, 16, 46, 0.20);
+}
+
+.btn-pill:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+}
+
+.form-status {
+    grid-column: 1 / -1;
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ---------- BLOQUES INFORMATIVOS ---------- */
+
+.contact-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+    width: min(100% - 40px, 1000px);
+    margin: 0 auto;
+    padding: 0 0 100px;
+}
+
+.info-card-box {
+    min-width: 0;
+    padding: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.055),
+        rgba(255, 255, 255, 0.015)
+    );
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.info-card-box:hover {
+    transform: translateY(-4px);
+    border-color: rgba(200, 16, 46, 0.65);
+    background: rgba(200, 16, 46, 0.035);
+}
+
+.info-card-box h3 {
+    margin: 0 0 25px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.info-card-box ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.info-card-box li {
+    position: relative;
+    margin: 0;
+    padding: 13px 0 13px 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #bcbcbc;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.info-card-box li::before {
+    content: "";
+    position: absolute;
+    top: 21px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #c8102e;
+}
+
+.info-card-box p {
+    color: #bcbcbc;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* ---------- CABECERA Y PIE GLOBAL ---------- */
+/* Conserva la estructura de styles.css.
+   Solo añade detalles de color para Contacto. */
+
+.site-header .nav-link.active {
+    color: #c8102e;
+}
+
+.site-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background: #050505;
+    color: #ffffff;
+}
+
+.footer-contact-text {
+    color: #ffffff;
+}
+
+.footer-socials a {
+    color: #aaaaaa;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+    color: #c8102e;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.10);
+    color: #858585;
+}
+
+/* ---------- ADAPTACIÓN A MÓVILES ---------- */
+
+@media (max-width: 700px) {
+    .contact-hero {
+        padding: 110px 25px 65px;
+    }
+
+    .contact-hero::before {
+        top: 35px;
+        right: 0;
+        font-size: 30vw;
+    }
+
+    .contact-form-container {
+        width: calc(100% - 40px);
+        padding: 55px 0 65px;
+    }
+
+    #fullContactForm {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    #fullContactForm > div:nth-last-child(3),
+    #fullContactForm > div:nth-last-child(2) {
+        grid-column: 1;
+    }
+
+    .contact-info-grid {
+        grid-template-columns: 1fr;
+        width: calc(100% - 40px);
+        padding-bottom: 65px;
+    }
+
+    .info-card-box {
+        padding: 25px;
+    }
+
+    .btn-pill {
+        width: 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #main-content *,
+    #main-content *::before,
+    #main-content *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
