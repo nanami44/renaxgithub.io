@@ -386,6 +386,30 @@ body.servicios-renax .srv-header {
     padding-right: 9%;
 }
 
+/* RENAX: ocultar etiquetas numeradas y rótulos secundarios */
+
+/* Etiquetas como 01 QUÉ HACEMOS y 02 NUESTROS SERVICIOS */
+.srv-seccion-meta,
+.srv-seccion-meta span {
+    display: none !important;
+}
+
+/* Números verticales de cada servicio */
+.srv-servicio-num {
+    display: none !important;
+}
+
+/* Números de las etapas del proceso */
+.srv-proceso-num {
+    display: none !important;
+}
+
+/* Rótulo RENAX / NAVEGACIÓN */
+.srv-navegacion,
+.srv-navegacion-etiqueta {
+    display: none !important;
+}
+
 
 
 
