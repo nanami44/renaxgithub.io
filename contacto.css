@@ -560,116 +560,115 @@ body.contacto-page {
     gap: 30px;
   }
 /* ==========================================================
-   DISEÑO MODERNO - PREGUNTAS FRECUENTES (FAQ)
+   BLOQUE AISLADO Y MODERNO - FAQ RENAX
    ========================================================== */
-.contacto-faq {
+.renax-faq-section {
   max-width: 1400px;
-  margin: 120px auto;
+  margin: 140px auto;
   padding: 0 5%;
 }
 
-.contacto-faq-grid {
+.renax-faq-grid {
   display: grid;
-  grid-template-columns: 1fr 1.4fr;
+  grid-template-columns: 1fr 1.3fr;
   gap: 60px;
   align-items: start;
   margin-top: 40px;
 }
 
-.contacto-faq-intro h2 {
+.renax-faq-intro h2 {
   font-size: clamp(2.5rem, 4vw, 3.5rem);
   font-weight: 900;
   text-transform: uppercase;
   line-height: 1.1;
   margin-bottom: 20px;
+  color: #ffffff;
 }
 
-.contacto-faq-intro h2 em {
+.renax-faq-intro h2 em {
   color: #c2384a;
   font-style: normal;
 }
 
-.contacto-faq-intro p {
-  color: var(--text-muted);
+.renax-faq-intro p {
+  color: #b0b0b0;
   font-size: 1.05rem;
   line-height: 1.6;
 }
 
-.contacto-faq-lista {
+.renax-faq-lista {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
 }
 
-.faq-item {
-  background: rgba(15, 15, 15, 0.65);
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--border-color);
-  border-radius: 16px;
-  padding: 24px 28px;
-  transition: all 0.3s ease;
+.renax-faq-card {
+  background: rgba(15, 15, 15, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 18px !important;
+  padding: 24px 28px !important;
+  transition: all 0.3s ease !important;
 }
 
-.faq-item[open] {
-  border-color: rgba(194, 56, 74, 0.5);
-  background: rgba(20, 15, 16, 0.85);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+.renax-faq-card[open] {
+  border-color: rgba(194, 56, 74, 0.6) !important;
+  background: rgba(22, 16, 18, 0.9) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
 }
 
-.faq-item summary {
-  font-weight: 700;
-  font-size: 1.05rem;
-  color: var(--text-primary);
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
+.renax-faq-card summary {
+  font-weight: 700 !important;
+  font-size: 1.08rem !important;
+  color: #ffffff !important;
+  cursor: pointer !important;
+  list-style: none !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  gap: 20px !important;
 }
 
-.faq-item summary::-webkit-details-marker {
-  display: none;
+.renax-faq-card summary::-webkit-details-marker {
+  display: none !important;
 }
 
-/* Icono circular dinámico para el acordeón */
-.faq-item summary::after {
-  content: '+';
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  font-size: 1.2rem;
-  color: #c2384a;
-  font-weight: 400;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
+.renax-faq-card summary::after {
+  content: '+' !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 34px !important;
+  height: 34px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 50% !important;
+  font-size: 1.3rem !important;
+  color: #c2384a !important;
+  font-weight: 400 !important;
+  flex-shrink: 0 !important;
+  transition: all 0.3s ease !important;
 }
 
-.faq-item[open] summary::after {
-  content: '−';
-  background: rgba(194, 56, 74, 0.15);
-  border-color: #c2384a;
-  transform: rotate(180deg);
+.renax-faq-card[open] summary::after {
+  content: '−' !important;
+  background: rgba(194, 56, 74, 0.2) !important;
+  border-color: #c2384a !important;
+  transform: rotate(180deg) !important;
 }
 
-.faq-item p {
-  color: var(--text-muted);
-  margin-top: 18px;
-  line-height: 1.6;
-  font-size: 0.95rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 16px;
+.renax-faq-card p {
+  color: #b0b0b0 !important;
+  margin-top: 18px !important;
+  line-height: 1.6 !important;
+  font-size: 0.96rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  padding-top: 16px !important;
 }
 
-/* Responsivo para móviles */
 @media (max-width: 1024px) {
-  .contacto-faq-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .renax-faq-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
   }
 }
