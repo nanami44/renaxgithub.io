@@ -7,7 +7,87 @@
   <title>Servicios | RENAX</title>
   <link rel="stylesheet" href="servicios.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <style>
+
+    <style>
+  /* ==========================================================
+     FONDO LÁSER DINÁMICO RENAX (FORZADO EN HTML)
+     ========================================================== */
+  body.servicios-renax {
+    background-color: #030303 !important;
+    position: relative !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Capa de fondo láser fija */
+  .srv-fondo-reserva {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    pointer-events: none !important;
+    z-index: 1 !important;
+    background: #030303 !important;
+    overflow: hidden !important;
+  }
+
+  /* Líneas láser rojas neón principales cruzadas */
+  .srv-fondo-reserva::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -50% !important;
+    left: -50% !important;
+    width: 200% !important;
+    height: 200% !important;
+    background-image: 
+      linear-gradient(115deg, transparent 48%, rgba(200, 16, 46, 0.85) 49.5%, rgba(255, 60, 80, 1) 50%, rgba(200, 16, 46, 0.85) 50.5%, transparent 52%),
+      linear-gradient(42deg, transparent 47%, rgba(200, 16, 46, 0.75) 49%, rgba(255, 30, 60, 0.95) 50%, rgba(200, 16, 46, 0.75) 51%, transparent 53%),
+      linear-gradient(-65deg, transparent 48%, rgba(180, 10, 35, 0.6) 49.5%, rgba(200, 16, 46, 0.8) 50%, rgba(180, 10, 35, 0.6) 50.5%, transparent 52%) !important;
+    background-size: 380px 380px, 520px 520px, 450px 450px !important;
+    filter: drop-shadow(0 0 10px #c8102e) drop-shadow(0 0 20px rgba(200, 16, 46, 0.7)) !important;
+    opacity: 0.9 !important;
+    animation: movimientoLaserSuave 25s linear infinite alternate !important;
+  }
+
+  /* Capa secundaria de líneas láser cruzadas con resplandor */
+  .srv-fondo-reserva::after {
+    content: '' !important;
+    position: absolute !important;
+    top: -40% !important;
+    left: -40% !important;
+    width: 180% !important;
+    height: 180% !important;
+    background-image: 
+      linear-gradient(155deg, transparent 48.5%, rgba(255, 20, 50, 0.7) 49.7%, rgba(200, 16, 46, 0.9) 50%, transparent 51.5%),
+      linear-gradient(-25deg, transparent 48%, rgba(160, 0, 25, 0.5) 49.5%, rgba(200, 16, 46, 0.7) 50%, transparent 52%) !important;
+    background-size: 600px 600px, 420px 420px !important;
+    filter: drop-shadow(0 0 14px #ff173d) !important;
+    opacity: 0.7 !important;
+    animation: movimientoLaserCruzado 35s ease-in-out infinite alternate !important;
+  }
+
+  /* Asegurar que el contenido de la página flote por encima del fondo láser */
+  .srv-header,
+  .srv-main,
+  .srv-footer,
+  .srv-modal {
+    position: relative !important;
+    z-index: 10 !important;
+  }
+
+  /* Animaciones suaves */
+  @keyframes movimientoLaserSuave {
+    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+    50% { transform: translate(-30px, 25px) rotate(1deg) scale(1.02); }
+    100% { transform: translate(25px, -30px) rotate(-1deg) scale(0.98); }
+  }
+
+  @keyframes movimientoLaserCruzado {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; }
+    50% { transform: translate(30px, -20px) rotate(-1.5deg); opacity: 0.8; }
+    100% { transform: translate(-25px, 35px) rotate(1.5deg); opacity: 0.5; }
+  }
+
     /* Estilos mejorados integrados para tarjetas intercaladas, modales y bordes redondeados */
     .srv-servicio {
       display: grid;
