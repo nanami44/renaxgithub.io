@@ -626,3 +626,44 @@ body.servicios-renax {
   background: var(--bg-primary);
   color: var(--text-primary);
   padding: 60px 40px 30px;
+/* ==========================================================
+   ILUSTRACIÓN DEL AVE EN LA SECCIÓN DE PROCESO
+   ========================================================== */
+.srv-proceso {
+  display: grid;
+  grid-template-columns: 280px 1fr 1fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.srv-proceso-decoracion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.srv-proceso-decoracion img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.9;
+  filter: drop-shadow(0 0 35px rgba(200, 16, 46, 0.3));
+  transition: transform 0.5s ease, filter 0.5s ease;
+}
+
+.srv-proceso-decoracion:hover img {
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 45px rgba(200, 16, 46, 0.5));
+}
+
+@media (max-width: 1024px) {
+  .srv-proceso {
+    grid-template-columns: 1fr;
+  }
+  .srv-proceso-decoracion {
+    display: none;
+  }
+}
