@@ -741,180 +741,46 @@ body.contacto-page {
   padding-left: 15px;
 }
 /* ==========================================================
-   TARJETAS DE CANALES CON COLOR PERMANENTE Y EFECTO HOVER
+   LOGOS HORIZONTALES DE CANALES DE ATENCIÓN - RENAX
    ========================================================== */
-.contacto-canales-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+.contacto-logos-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-top: 35px;
 }
 
-.renax-canal-card {
-  background: rgba(15, 15, 15, 0.65);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 30px;
+.logo-canal-item {
+  width: 65px;
+  height: 65px;
+  background: rgba(15, 15, 15, 0.75);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* 1. Tarjeta de WhatsApp (Tono verde sutil constante) */
-.renax-canal-card:nth-child(1) {
-  border: 1px solid rgba(37, 211, 102, 0.25);
-}
-.renax-canal-card:nth-child(1) .canal-icon-wrapper {
-  background: rgba(37, 211, 102, 0.1);
-  border: 1px solid rgba(37, 211, 102, 0.2);
-  color: #25d366;
-}
-.renax-canal-card:nth-child(1) .canal-svg-icon,
-.renax-canal-card:nth-child(1) .canal-info h3 span {
-  color: #25d366;
-}
-
-/* 2. Tarjeta de Correo / Gmail (Tono blanco sutil constante) */
-.renax-canal-card:nth-child(2) {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-.renax-canal-card:nth-child(2) .canal-icon-wrapper {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-}
-.renax-canal-card:nth-child(2) .canal-svg-icon,
-.renax-canal-card:nth-child(2) .canal-info h3 span {
-  color: #ffffff;
-}
-
-/* 3. Tarjeta de Facebook (Tono azul sutil constante) */
-.renax-canal-card:nth-child(3) {
-  border: 1px solid rgba(24, 119, 242, 0.25);
-}
-.renax-canal-card:nth-child(3) .canal-icon-wrapper {
-  background: rgba(24, 119, 242, 0.1);
-  border: 1px solid rgba(24, 119, 242, 0.2);
-  color: #1877f2;
-}
-.renax-canal-card:nth-child(3) .canal-svg-icon,
-.renax-canal-card:nth-child(3) .canal-info h3 span {
-  color: #1877f2;
-}
-
-/* Efecto hover unificado (zoom, elevación y brillo rojo de bordes) para todas */
-.renax-canal-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(194, 56, 74, 0.6) !important;
-  background: rgba(20, 15, 17, 0.9);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-}
-
-.canal-icon-wrapper {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.35s ease;
-}
-
-.canal-info h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 6px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.canal-info h3 span {
-  font-size: 0.9rem;
-  opacity: 0;
-  transform: translate(-5px, 5px);
-  transition: all 0.3s ease;
-}
-
-.renax-canal-card:hover .canal-info h3 span {
-  opacity: 1;
-  transform: translate(0, 0);
-}
-
-.canal-info p {
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin: 0;
-}
-
-@media (max-width: 1024px) {
-  .contacto-canales-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-/* ==========================================================
-   ESTILOS PARA LOGOS DE IMAGEN EN CANALES DE ATENCIÓN
-   ========================================================== */
-.canal-icon-wrapper {
-  width: 48px;
-  height: 48px;
-  border-radius: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.35s ease;
-  overflow: hidden;
-}
-
-.canal-img-logo {
-  width: 24px;
-  height: 24px;
+.logo-canal-img {
+  width: 28px;
+  height: 28px;
   object-fit: contain;
   display: block;
+  transition: transform 0.35s ease;
 }
 
-/* Colores permanentes en las tarjetas y bordes */
-.renax-canal-card:nth-child(1) {
-  border: 1px solid rgba(37, 211, 102, 0.25);
-}
-.renax-canal-card:nth-child(1) .canal-icon-wrapper {
-  background: rgba(37, 211, 102, 0.1);
-  border: 1px solid rgba(37, 211, 102, 0.2);
-}
-.renax-canal-card:nth-child(1) .canal-info h3 span {
-  color: #25d366;
+/* Efecto Hover interactivo: elevación, zoom y borde rojo sofisticado de RENAX */
+.logo-canal-item:hover {
+  transform: translateY(-6px) scale(1.08);
+  border-color: rgba(194, 56, 74, 0.6);
+  background: rgba(22, 16, 18, 0.9);
+  box-shadow: 0 15px 35px rgba(194, 56, 74, 0.2);
 }
 
-.renax-canal-card:nth-child(2) {
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-.renax-canal-card:nth-child(2) .canal-icon-wrapper {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-.renax-canal-card:nth-child(2) .canal-info h3 span {
-  color: #ffffff;
-}
-
-.renax-canal-card:nth-child(3) {
-  border: 1px solid rgba(24, 119, 242, 0.25);
-}
-.renax-canal-card:nth-child(3) .canal-icon-wrapper {
-  background: rgba(24, 119, 242, 0.1);
-  border: 1px solid rgba(24, 119, 242, 0.2);
-}
-.renax-canal-card:nth-child(3) .canal-info h3 span {
-  color: #1877f2;
-}
-
-/* Efecto hover unificado (zoom y brillo rojo) */
-.renax-canal-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(194, 56, 74, 0.6) !important;
-  background: rgba(20, 15, 17, 0.9);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+.logo-canal-item:hover .logo-canal-img {
+  transform: scale(1.1);
 }
