@@ -287,9 +287,8 @@ body.portafolio-renax {
 .renax-facebook {
   background-color: #1877f2;
 }
-
 /* ==========================================================
-   PIE DE PÁGINA (FOOTER RENAX)
+   PIE DE PÁGINA (FOOTER RENAX - HORIZONTAL Y ROJO)
    ========================================================== */
 .renax-footer {
   background-color: #0b0b0b;
@@ -297,53 +296,55 @@ body.portafolio-renax {
   padding: 40px 60px 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   box-sizing: border-box;
+  width: 100%;
 }
 
 .footer-wrapper {
-  max-width: 1400px;
+  max-width: 100%; /* Aprovecha el ancho horizontal completo */
   margin: 0 auto;
 }
 
-/* BARRA SUPERIOR DEL FOOTER */
+/* BARRA SUPERIOR DEL FOOTER CON MENÚ ROJO */
 .footer-top-bar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 25px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   margin-bottom: 40px;
 }
 
 .footer-top-title {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #ff0000; /* Color rojo destacado */
+  text-transform: uppercase;
 }
 
 .footer-top-link {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 600;
   letter-spacing: 1.5px;
   color: #ffffff;
   text-decoration: none;
-  transition: opacity 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .footer-top-link:hover {
-  opacity: 0.7;
+  color: #ff0000;
 }
 
-/* COLUMNAS DE NAVEGACIÓN DEL FOOTER */
+/* COLUMNAS DE NAVEGACIÓN EN DISTRIBUCIÓN HORIZONTAL */
 .footer-columns-container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 30px;
+  grid-template-columns: repeat(5, 1fr); /* 5 columnas distribuidas horizontalmente */
+  gap: 40px;
   padding-bottom: 60px;
 }
 
 .footer-column h3 {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 1.5px;
   color: #ffffff;
@@ -354,14 +355,14 @@ body.portafolio-renax {
 .footer-menu-links {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
 }
 
 .footer-menu-links a {
   color: #a0a0a0;
   text-decoration: none;
   font-size: 13px;
-  line-height: 1.4;
+  line-height: 1.5;
   transition: color 0.3s ease;
 }
 
@@ -371,10 +372,11 @@ body.portafolio-renax {
 
 /* BARRA INFERIOR / LOGO */
 .footer-bottom-bar {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
   padding-top: 30px;
   display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 .footer-logo {
@@ -383,32 +385,15 @@ body.portafolio-renax {
   opacity: 0.9;
 }
 
-/* ==========================================================
-   ADAPTACIÓN PARA PANTALLAS MÓVILES Y TABLETS
-   ========================================================== */
+/* RESPONSIVO PARA PANTALLAS MÁS PEQUEÑAS */
 @media (max-width: 1024px) {
-  .renax-work-layout {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .renax-work-wide {
-    grid-column: span 1;
-  }
   .footer-columns-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
   }
 }
 
 @media (max-width: 600px) {
-  .renax-work-layout {
-    grid-template-columns: 1fr;
-  }
-  .renax-work-tall {
-    grid-row: span 1;
-  }
-  .renax-work-tall .renax-work-image {
-    height: 300px;
-  }
   .renax-footer {
     padding: 30px 20px;
   }
