@@ -668,87 +668,59 @@ body.servicios-renax {
   }
 }
 /* ==========================================================
-   FONDO DINÁMICO RENAX: NEBLINA ROJA Y NEGRA EN MOVIEMIENTO
+   FONDO DINÁMICO RENAX: NEBLINA ROJA Y NEGRA (CORREGIDO)
    ========================================================== */
 
-/* 1. Fondo base con degradado suave rojo-negro */
-.servicios-renax {
+/* Fondo base del body */
+body.servicios-renax {
+  background-color: #050505 !important;
   position: relative;
-  background-color: #050505;
   overflow-x: hidden;
 }
 
-/* 2. Capa de neblina dinámica animada */
+/* Capa fija de neblina dinámica que recorre desde la esquina superior derecha */
 .srv-fondo-reserva {
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  pointer-events: none;
-  z-index: -1;
-  background: 
-    radial-gradient(circle at 80% 10%, rgba(200, 16, 46, 0.45) 0%, transparent 40%),
-    radial-gradient(circle at 20% 80%, rgba(104, 0, 13, 0.35) 0%, transparent 50%),
-    radial-gradient(circle at 50% 50%, rgba(18, 18, 18, 0.8) 0%, #050505 100%);
-  filter: blur(60px);
-  animation: moverNeblinaRed 16s linear infinite;
+  position: fixed !important;
+  top: -30% !important;
+  right: -30% !important;
+  width: 160vw !important;
+  height: 160vh !important;
+  pointer-events: none !important;
+  z-index: 0 !important; /* Visible por encima del fondo pero detrás del contenido */
+  background: radial-gradient(
+    circle at 75% 25%,
+    rgba(200, 16, 46, 0.55) 0%,
+    rgba(104, 0, 13, 0.35) 35%,
+    rgba(5, 5, 5, 0.95) 70%
+  ) !important;
+  filter: blur(50px) !important;
+  opacity: 0.9 !important;
+  animation: recorridoNeblinaReno 14s ease-in-out infinite alternate !important;
 }
 
-/* Capa adicional de vapor/neblina flotante continua */
-.servicios-renax::before {
-  content: '';
-  position: fixed;
-  top: -60%;
-  right: -60%;
-  width: 220%;
-  height: 220%;
-  pointer-events: none;
-  z-index: -1;
-  background: radial-gradient(
-    ellipse at top right,
-    rgba(200, 16, 46, 0.35) 0%,
-    rgba(80, 0, 10, 0.2) 30%,
-    rgba(5, 5, 5, 0.9) 70%,
-    transparent 100%
-  );
-  filter: blur(80px);
-  opacity: 0.85;
-  animation: recorridoEsquinaEsquina 22s ease-in-out infinite alternate;
+/* Asegura que el contenido quede visible sobre la neblina */
+.srv-header,
+.srv-main,
+.srv-footer,
+.srv-modal {
+  position: relative;
+  z-index: 2;
 }
 
 /* ==========================================================
-   ANIMACIONES DE LA NEBLINA (RECORRIDO ESQUINA DERECHA A ABAJO)
+   ANIMACIÓN: MOVIMIENTO DESDE ESQUINA DERECHA HACIA ABAJO
    ========================================================== */
-
-/* Movimiento continuo en diagonal descendente */
-@keyframes moverNeblinaRed {
+@keyframes recorridoNeblinaReno {
   0% {
-    transform: translate(25%, -25%) scale(1);
+    transform: translate(10%, -10%) scale(1);
     opacity: 0.6;
   }
   50% {
-    transform: translate(-10%, 15%) scale(1.15);
-    opacity: 0.9;
+    transform: translate(-15%, 15%) scale(1.2);
+    opacity: 0.95;
   }
   100% {
-    transform: translate(-35%, 35%) scale(1.05);
-    opacity: 0.6;
-  }
-}
-
-/* Efecto fluido de respiración y desplazamiento desde la esquina superior derecha */
-@keyframes recorridoEsquinaEsquina {
-  0% {
-    transform: translate(15%, -15%) rotate(0deg);
+    transform: translate(-30%, 30%) scale(1.05);
     opacity: 0.5;
-  }
-  50% {
-    transform: translate(-15%, 20%) rotate(5deg);
-    opacity: 0.85;
-  }
-  100% {
-    transform: translate(-30%, 40%) rotate(-5deg);
-    opacity: 0.4;
   }
 }
