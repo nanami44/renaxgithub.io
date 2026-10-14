@@ -1,797 +1,562 @@
-/* =========================================================
-   RENAX · SERVICIOS — SISTEMA VISUAL NUEVO E INDEPENDIENTE
-   El fondo definitivo se incorporará después en .srv-fondo-reserva.
-   No depende de styles.css.
-   ========================================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=League+Spartan:wght@400;500;600;700;800&display=swap');
-
-:root {
-  --srv-negro: #080808;
-  --srv-carbon: #111111;
-  --srv-panel: #171717;
-  --srv-blanco: #f5f3f0;
-  --srv-gris: #a5a2a0;
-  --srv-linea: rgba(255,255,255,.19);
-  --srv-rojo: #e21b36;
-  --srv-max: 1320px;
-  --srv-margen: clamp(22px, 6vw, 92px);
-  /* Fuentes solicitadas. Si Integral/Talial están instaladas localmente,
-     el navegador las usará; si no, se aplican las alternativas. */
-  --srv-titulos: "League Spartan", sans-serif;
---srv-textos: "Talial", "Inter", Arial, sans-serif;
- 
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; background: var(--srv-negro); }
-body.servicios-renax {
-  margin: 0;
-  min-height: 100vh;
-  overflow-x: hidden;
-  color: var(--srv-blanco);
-  background: var(--srv-negro);
-  font-family: var(--srv-textos);
-  font-size: 16px;
-  line-height: 1.7;
-}
-body.servicios-renax a { color: inherit; text-decoration: none; }
-body.servicios-renax img { display: block; max-width: 100%; }
-.srv-fondo-reserva { position: absolute; inset: 0 0 auto; height: 100vh; pointer-events: none; z-index: 0; }
-.srv-header, .srv-main, .srv-footer { position: relative; z-index: 1; }
-.srv-header {
-  min-height: 94px; padding: 18px var(--srv-margen);
-  display: flex; align-items: center; justify-content: space-between; gap: 34px;
-  border-bottom: 1px solid var(--srv-linea);
-  background: rgba(8,8,8,.92);
-}
-.srv-logo { width: 128px; flex: 0 0 auto; }
-.srv-logo img { width: 100%; max-height: 52px; object-fit: contain; object-position: left center; }
-.srv-nav { display: flex; align-items: center; gap: clamp(18px, 2.5vw, 40px); }
-.srv-nav a {
-  color: #c7c4c2; font-size: 11px; font-weight: 700; letter-spacing: .12em;
-  text-transform: uppercase; transition: color .2s ease;
-}
-.srv-nav a:hover, .srv-nav a.activo { color: #fff; }
-.srv-nav a.activo::after { content: ""; display: block; width: 22px; height: 2px; margin-top: 8px; background: var(--srv-rojo); }
-.srv-menu-boton { display: none; color: white; background: transparent; border: 1px solid var(--srv-linea); padding: 10px 13px; font-size: 20px; }
-
-.srv-main { max-width: var(--srv-max); margin: 0 auto; padding: 0 var(--srv-margen); }
-.srv-hero {
-  width: calc(100% + 2 * var(--srv-margen));
-  margin-left: calc(-1 * var(--srv-margen));
-  height: clamp(420px, 68vw, 760px);
-  max-height: 82vh;
-  min-height: 360px;
-  overflow: hidden;
-  position: relative;
-  border-bottom: 1px solid var(--srv-linea);
-  background: #111;
-}
-.srv-hero-imagen {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.srv-manifiesto { padding: 100px 0 115px; border-bottom: 1px solid var(--srv-linea); }
-.srv-seccion-meta { display: flex; align-items: center; gap: 16px; color: #a6a19e; margin-bottom: 34px; }
-.srv-seccion-meta span:first-child { color: var(--srv-rojo); }
-
-.srv-manifiesto-contenido {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8%;
-    align-items: center;
-}
-
-.srv-frase-fuerte {
-    grid-column: 2;
-    grid-row: 1;
-    justify-self: end;
-    align-self: center;
-    width: 100%;
-    max-width: 600px;
-    font-size: clamp(34px, 3.8vw, 50px);
-    transition: transform 0.35s ease, color 0.35s ease, text-shadow 0.35s ease;
-    transform-origin: center;
-}
-
-.srv-frase-fuerte:hover {
-    transform: scale(1.06);
-    color: #ff2638;
-    text-shadow: 0 0 14px rgba(255, 38, 56, 0.35);
-}
-
-.srv-manifiesto h2, .srv-seccion-cabecera h2, .srv-proceso h2 { font-size: clamp(39px, 5.1vw, 72px); }
-.srv-manifiesto-texto { max-width: 510px; color: #c1bdb9; }
-.srv-manifiesto-texto p { margin: 0 0 18px; }
-.srv-frase-fuerte { padding-top: 20px; color: #fff; font-family: var(--srv-titulos); font-size: clamp(34px, 3.8vw, 50px); line-height: 1.6; letter-spacing: .04em; }transition: transform 0.35s ease, color 0.35s ease, text-shadow 0.35s ease;
-transform-origin: left center;
-
-.srv-servicios { padding: 105px 0 80px; }
-.srv-seccion-cabecera { display: grid; grid-template-columns: 1fr 1fr; column-gap: 8%; align-items: end; margin-bottom: 58px; }
-.srv-seccion-cabecera .srv-seccion-meta { grid-column: 1 / -1; }
-.srv-seccion-cabecera h2 { grid-column: 1; }
-.srv-seccion-cabecera > p { color: #bdb8b5; max-width: 440px; margin: 0 0 4px; }
-.srv-servicio {
-  display: grid; grid-template-columns: 90px minmax(220px, .82fr) 1fr; gap: clamp(24px, 4vw, 62px);
-  padding: 36px 0 48px; border-top: 1px solid var(--srv-linea); align-items: center;
-}
-.srv-servicio-num { align-self: start; padding-top: 9px; color: var(--srv-rojo); font-size: 9px; writing-mode: vertical-rl; transform: rotate(180deg); }
-.srv-servicio-imagen { margin: 0; overflow: hidden; background: #191919; border: 1px solid var(--srv-linea); }
-.srv-servicio-imagen img { width: 100%; aspect-ratio: 4 / 4.3; object-fit: cover; transition: transform .5s ease; }
-.srv-servicio:hover .srv-servicio-imagen img { transform: scale(1.035); }
-.srv-servicio-contenido { max-width: 510px; padding: 10px 0; }
-.srv-card-etiqueta { color: #aaa4a1; font-size: 9px; margin: 0 0 18px; }
-.srv-servicio h3 { font-family: var(--srv-titulos); font-size: clamp(28px, 3.3vw, 46px); text-transform: uppercase; letter-spacing: -.04em; line-height: 1.06; margin: 0 0 22px; }
-.srv-servicio-contenido > p:not(.srv-card-etiqueta) { color: #c1bdb9; margin: 0 0 22px; }
-.srv-servicio ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 18px; }
-.srv-servicio li { position: relative; padding: 0 0 0 15px; color: #eee9e6; font-size: 13px; }
-.srv-servicio li::before { content: ""; position: absolute; left: 0; top: .78em; width: 5px; height: 2px; background: var(--srv-rojo); }
-
-.srv-proceso { padding: 95px 0 110px; border-top: 1px solid var(--srv-linea); }
-.srv-proceso-cabecera { display: grid; grid-template-columns: 1fr .7fr; gap: 10%; align-items: end; margin-bottom: 50px; }
-.srv-proceso-cabecera p { max-width: 400px; margin: 0; color: #bdb8b5; }
-.srv-pasos { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--srv-linea); }
-.srv-paso { padding: 24px 22px 0 0; margin-right: 22px; }
-.srv-paso-num { display: block; color: var(--srv-rojo); font-family: var(--srv-titulos); font-size: 15px; margin-bottom: 25px; }
-.srv-paso h3 { font-family: var(--srv-titulos); font-size: 17px; line-height: 1.2; text-transform: uppercase; margin: 0 0 12px; }
-.srv-paso p { color: #bdb8b5; font-size: 13px; line-height: 1.7; margin: 0; }
-
-.srv-cierre { padding: 85px 0 110px; border-top: 1px solid var(--srv-linea); }
-.srv-cierre h2 { max-width: 900px; font-size: clamp(42px, 7vw, 94px); }
-.srv-cierre > p { max-width: 480px; margin: 26px 0 28px; color: #c1bdb9; }
-.srv-cta { display: inline-flex; justify-content: space-between; align-items: center; gap: 45px; min-width: 280px; padding: 17px 20px; border: 1px solid #77716e; font-size: 10px; font-weight: 800; letter-spacing: .13em; transition: background .2s, border-color .2s; }
-.srv-cta span { color: var(--srv-rojo); font-size: 18px; }
-.srv-cta:hover { background: var(--srv-rojo); border-color: var(--srv-rojo); }
-.srv-cta:hover span { color: #fff; }
-
-.srv-footer { padding: 66px var(--srv-margen) 24px; background: #0c0c0c; border-top: 1px solid rgba(226,27,54,.65); }
-.srv-footer-top { max-width: var(--srv-max); margin: 0 auto 55px; display: flex; justify-content: space-between; gap: 40px; align-items: end; }
-.srv-footer-kicker { margin: 0 0 18px; color: var(--srv-rojo); font-family: var(--srv-titulos); font-size: 9px; letter-spacing: .16em; }
-.srv-footer-top h2 { font-size: clamp(30px, 4vw, 54px); }
-.srv-footer-manifiesto { margin: 0 0 4px; color: #bdb8b5; font-size: 13px; }
-.srv-footer-menu-titulo { max-width: var(--srv-max); margin: 0 auto; display: flex; justify-content: space-between; padding: 15px 0; border-top: 1px solid var(--srv-linea); border-bottom: 1px solid var(--srv-linea); font-family: var(--srv-titulos); font-size: 10px; letter-spacing: .13em; }
-.srv-footer-menu-titulo span:first-child { color: white; }
-.srv-footer-menu-titulo span:last-child { color: #999; }
-.srv-footer-grid { max-width: var(--srv-max); margin: 0 auto; display: grid; grid-template-columns: 1.35fr 1fr 1fr 1fr 1fr; gap: 30px; padding: 35px 0 45px; }
-.srv-footer-col h3 { margin: 0 0 18px; font-family: var(--srv-titulos); font-size: 11px; letter-spacing: .08em; }
-.srv-footer-col a { display: block; max-width: 220px; margin: 0 0 12px; color: #aaa5a2 !important; font-size: 12px; line-height: 1.55; transition: color .2s; }
-.srv-footer-col a:hover { color: #fff !important; }
-.srv-footer-bottom { max-width: var(--srv-max); margin: 0 auto; padding-top: 20px; border-top: 1px solid var(--srv-linea); display: flex; justify-content: space-between; align-items: center; gap: 24px; }
-.srv-footer-bottom img { width: 78px; max-height: 34px; object-fit: contain; }
-.srv-footer-bottom span, .srv-footer-bottom a { font-size: 9px; color: #96908d; letter-spacing: .08em; }
-.srv-footer-bottom a:hover { color: white; }
-
-@media (max-width: 980px) {
-  .srv-header { gap: 18px; }
-  .srv-nav { gap: 16px; }
-  .srv-nav a { font-size: 9px; }
-  .srv-hero { height: clamp(380px, 58vw, 600px); }
-  .srv-servicio { grid-template-columns: 45px minmax(180px, .8fr) 1fr; gap: 25px; }
-  .srv-footer-grid { grid-template-columns: repeat(3, 1fr); }
-}
-@media (max-width: 700px) {
-  :root { --srv-margen: 22px; }
-  .srv-header { min-height: 74px; flex-wrap: wrap; }
-  .srv-logo { width: 104px; }
-  .srv-menu-boton { display: block; margin-left: auto; }
-  .srv-nav { display: none; width: 100%; flex-direction: column; align-items: stretch; gap: 0; padding: 10px 0 4px; }
-  .srv-nav.abierto { display: flex; }
-  .srv-nav a { padding: 13px 0; border-top: 1px solid var(--srv-linea); font-size: 11px; }
-  .srv-nav a.activo::after { display: none; }
-  .srv-hero { height: clamp(320px, 88vw, 520px); min-height: 320px; }
-  .srv-manifiesto { padding: 70px 0; }
-  .srv-manifiesto-contenido, .srv-seccion-cabecera, .srv-proceso-cabecera { grid-template-columns: 1fr; gap: 25px; }
-  .srv-manifiesto h2, .srv-seccion-cabecera h2, .srv-proceso h2 { font-size: clamp(39px, 10vw, 60px); }
-  .srv-seccion-cabecera { margin-bottom: 38px; }
-  .srv-seccion-cabecera .srv-seccion-meta, .srv-seccion-cabecera h2 { grid-column: auto; }
-  .srv-servicios { padding: 70px 0 55px; }
-  .srv-servicio { grid-template-columns: 1fr 1fr; gap: 18px; padding: 28px 0 35px; }
-  .srv-servicio-num { grid-column: 1 / -1; writing-mode: initial; transform: none; padding: 0; }
-  .srv-servicio-imagen { align-self: start; }
-  .srv-servicio-imagen img { aspect-ratio: 3 / 4; }
-  .srv-servicio-contenido { padding: 0; }
-  .srv-servicio h3 { font-size: clamp(24px, 6vw, 34px); }
-  .srv-servicio-contenido > p:not(.srv-card-etiqueta) { font-size: 13px; }
-  .srv-servicio ul { grid-template-columns: 1fr; gap: 7px; }
-  .srv-proceso { padding: 70px 0; }
-  .srv-pasos { grid-template-columns: 1fr 1fr; row-gap: 28px; }
-  .srv-paso { margin-right: 10px; }
-  .srv-cierre { padding: 70px 0 80px; }
-  .srv-cierre h2 { font-size: clamp(42px, 11vw, 68px); }
-  .srv-footer { padding: 48px var(--srv-margen) 20px; }
-  .srv-footer-top { display: block; margin-bottom: 35px; }
-  .srv-footer-manifiesto { margin-top: 24px; }
-  .srv-footer-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 18px; }
-  .srv-footer-bottom { flex-wrap: wrap; }
-  .srv-footer-bottom span { order: 3; width: 100%; }
-}
-@media (max-width: 420px) {
-  .srv-servicio { grid-template-columns: 1fr; }
-  .srv-servicio-imagen { max-width: 290px; }
-  .srv-servicio-contenido { max-width: none; }
-  .srv-pasos { grid-template-columns: 1fr; }
-  .srv-footer-grid { grid-template-columns: 1fr 1fr; }
-}
-
-/* Interlineado de todos los títulos */
-body.servicios-renax h1,
-body.servicios-renax h2,
-body.servicios-renax h3,
-body.servicios-renax h4,
-body.servicios-renax .srv-titulo {
-    line-height: 1.01;
-}
-
-/* TITULOS RENAX: GRANDES, GRUESOS Y COMPACTOS */
-body.servicios-renax h1,
-body.servicios-renax h2,
-body.servicios-renax h3,
-body.servicios-renax h4,
-body.servicios-renax .srv-titulo,
-body.servicios-renax .srv-frase-fuerte {
-    font-family: "League Spartan", sans-serif;
-    font-weight: 800;
-    line-height: 1.01;
-    letter-spacing: -1.5px;
-}
-
-/* ALINEACIÓN DE TÍTULOS Y TEXTOS */
-body.servicios-renax .srv-manifiesto,
-body.servicios-renax .srv-seccion-cabecera,
-body.servicios-renax .srv-proceso {
-    align-items: center;
-}
-
-
-
-
-/* PIE DE PÁGINA RENAX: AJUSTE DEL MENÚ */
-body.servicios-renax .srv-footer-kicker {
-    color: #e21b36;
-    font-size: 13px;
-    letter-spacing: 4px;
-    text-align: center;
-}
-
-body.servicios-renax .srv-footer-menu-titulo,
-body.servicios-renax .srv-footer-col h3 {
-    font-size: 14px;
-    line-height: 1.2;
-    letter-spacing: 1px;
-}
-
-body.servicios-renax .srv-footer-col a,
-body.servicios-renax .srv-footer-col p {
-    font-size: 12px;
-    line-height: 1.6;
-}
-
-
-/* ENCABEZADO DE SERVICIOS: ALINEADO COMO INICIO */
-
-body.servicios-renax header,
-body.servicios-renax .srv-header {
-    width: 100%;
-    box-sizing: border-box;
-}
-
-body.servicios-renax .srv-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 5.5%;
-    gap: 24px;
-}
-
-/* Logo a la izquierda */
-body.servicios-renax .srv-logo {
-    flex-shrink: 0;
-}
-
-/* Menú centrado */
-body.servicios-renax .srv-header .srv-nav {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    gap: 0;
-    margin: 0;
-}
-
-/* Enlaces del menú */
-body.servicios-renax .srv-header .srv-nav a {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100px;
-    min-height: 42px;
-    padding: 0 5px;
-    box-sizing: border-box;
-    line-height: 1.2;
-    text-align: center;
-    transform: none;
-}
-
-/* Línea roja debajo del enlace activo */
-body.servicios-renax .srv-header .srv-nav a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 2px;
-    width: 24px;
-    height: 2px;
-    background: #c8102e;
-    transform: translateX(-50%);
-    opacity: 0;
-}
-
-body.servicios-renax .srv-header .srv-nav a.activo::after {
-    opacity: 1;
-}
-
-/* Evitar que el enlace se mueva */
-body.servicios-renax .srv-header .srv-nav a:hover,
-body.servicios-renax .srv-header .srv-nav a.activo {
-    transform: none;
-}
-
-
-
-
-/* BOTONES DEL ENCABEZADO RENAX */
-
-/* Botón de idioma */
-body.servicios-renax .language,
-body.servicios-renax #languageBtn {
-    background: #ffffff;
-    color: #080808;
-    border: 1px solid #ffffff;
-    border-radius: 30px;
-    padding: 9px 19px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.25s ease, color 0.25s ease;
-}
-
-body.servicios-renax .language:hover,
-body.servicios-renax #languageBtn:hover {
-    background: #e8e8e8;
-    color: #080808;
-}
-
-/* Botón iniciar sesión */
-body.servicios-renax .login-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: #c8102e;
-    color: #ffffff;
-    border: 1px solid #c8102e;
-    border-radius: 30px;
-    padding: 10px 20px;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 800;
-    text-decoration: none;
-    white-space: nowrap;
-    transition: background 0.25s ease, border-color 0.25s ease;
-}
-
-body.servicios-renax .login-btn:hover {
-    background: #a50d25;
-    border-color: #a50d25;
-    color: #ffffff;
-}
-
-/* AJUSTAR POSICIÓN DE LOS BOTONES DEL ENCABEZADO */
-
-body.servicios-renax .srv-header #languageBtn,
-body.servicios-renax .srv-header .language {
-    margin-left: 0;
-    flex-shrink: 0;
-}
-
-body.servicios-renax .srv-header .login-btn {
-    margin-left: 0;
-    flex-shrink: 0;
-}
-
-/* Acercar los botones al menú */
-body.servicios-renax .srv-header {
-    column-gap: 16px;
-    padding-left: 5.5%;
-    padding-right: 9%;
-}
-
-
-
-/* RENAX: títulos en rojo de marca */
-
-
-body.servicios-renax h1,
-body.servicios-renax h2,
-body.servicios-renax h3,
-body.servicios-renax h4 {
-    color: #FFFFFF !important;
-}
-
-
-
-/* RENAX: bordes redondeados en las imágenes de servicios */
-body.servicios-renax .srv-servicio-imagen {
-    border-radius: 16px;
-    overflow: hidden;
-}
-
-body.servicios-renax .srv-servicio-imagen img {
-    border-radius: 16px;
-}
-
-
-/* =========================================
-   RENAX — NIEBLA ROJA ANIMADA DE FONDO
-========================================= */
-
-body.servicios-renax {
-    position: relative;
-    isolation: isolate;
-    background: #080808;
-}
-
-/* Capa de niebla que recorre la página */
-body.servicios-renax::before {
-    content: "";
-    position: fixed;
-    inset: -30%;
-    z-index: -1;
-    pointer-events: none;
-
-    background:
-        radial-gradient(
-            ellipse at 8% 92%,
-            rgba(190, 0, 28, 0.34) 0%,
-            rgba(150, 0, 24, 0.20) 18%,
-            transparent 48%
-        ),
-        radial-gradient(
-            ellipse at 88% 100%,
-            rgba(255, 20, 45, 0.22) 0%,
-            rgba(160, 0, 25, 0.14) 22%,
-            transparent 48%
-        ),
-        radial-gradient(
-            ellipse at 40% 65%,
-            rgba(180, 0, 30, 0.15) 0%,
-            transparent 45%
-        );
-
-    filter: blur(65px);
-    opacity: 0.9;
-    animation: renaxNieblaRoja 18s ease-in-out infinite alternate;
-}
-
-/* Movimiento lento ascendente */
-@keyframes renaxNieblaRoja {
-    0% {
-        transform: translate3d(-4%, 12%, 0) scale(1);
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicios RENAX: diagnóstico, renovación de marca, comunicación y estrategia visual.">
+  <title>Servicios | RENAX</title>
+  <link rel="stylesheet" href="servicios.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ESTILOS ADICIONALES PARA DISEÑO INTERCALADO Y MODALES */
+    .srv-servicio {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+      max-width: 1400px;
+      margin: 80px auto;
+      padding: 0 40px;
+    }
+    .srv-servicio.invertido {
+      direction: rtl;
+    }
+    .srv-servicio.invertido > * {
+      direction: ltr;
+    }
+    .srv-servicio-imagen img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+    .srv-servicio-contenido ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .srv-servicio-contenido ul li {
+      background: rgba(255,255,255,0.03);
+      padding: 12px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #fff;
+    }
+    .srv-servicio-contenido ul li:hover {
+      background: rgba(200, 16, 46, 0.15);
+      border-color: #c8102e;
+      transform: translateX(5px);
+    }
+    .srv-servicio-contenido ul li::after {
+      content: '→';
+      font-weight: bold;
+      color: #c8102e;
     }
 
-    50% {
-        transform: translate3d(3%, -5%, 0) scale(1.08);
+    /* MODAL */
+    .srv-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 99999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .srv-modal[hidden] {
+      display: none !important;
+    }
+    .srv-modal-fondo {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+    }
+    .srv-modal-panel {
+      position: relative;
+      background: #111;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 40px;
+      max-width: 650px;
+      width: 100%;
+      color: #fff;
+      z-index: 2;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+    .srv-modal-cerrar {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+    }
+    .srv-modal-etiqueta {
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: #c8102e;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .srv-modal-panel h2 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+    .srv-modal-intro {
+      color: #aaa;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .srv-modal-linea {
+      height: 1px;
+      background: rgba(255,255,255,0.1);
+      margin: 20px 0;
+    }
+    .srv-modal-panel h3 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+    .srv-modal-lista {
+      list-style: disc;
+      padding-left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      color: #ccc;
+      margin-bottom: 25px;
+    }
+    .srv-modal-resultado {
+      background: rgba(200, 16, 46, 0.1);
+      border-left: 4px solid #c8102e;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 25px;
+    }
+    .srv-modal-resultado span {
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: #c8102e;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .srv-modal-resultado p {
+      color: #fff;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+    .srv-modal-volver {
+      background: transparent;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .srv-modal-volver:hover {
+      background: #fff;
+      color: #000;
     }
 
-    100% {
-        transform: translate3d(7%, -18%, 0) scale(1.14);
+    @media(max-width: 900px) {
+      .srv-servicio, .srv-servicio.invertido {
+        grid-template-columns: 1fr;
+        direction: ltr;
+        gap: 30px;
+        padding: 0 20px;
+      }
     }
-}
+  </style>
+</head>
+<body class="servicios-renax">
+  <div class="srv-fondo-reserva" aria-hidden="true"></div>
 
-/* Respetar a quienes prefieren menos movimiento */
-@media (prefers-reduced-motion: reduce) {
-    body.servicios-renax::before {
-        animation: none;
-    }
-}
+  <!-- HEADER -->
+  <header class="srv-header">
+    <a class="srv-logo" href="index.html" aria-label="RENAX, inicio">
+      <img src="logo-renax-transparente.png" alt="RENAX">
+    </a>
 
-/* ==========================================
-   RENAX SERVICIOS — PORTADA FIJA Y VELO
-========================================== */
+    <button class="srv-menu-boton" id="srvMenuBoton" aria-label="Abrir menú" aria-expanded="false">
+      <i class="fa-solid fa-bars"></i>
+    </button>
 
-/* La portada permanece detrás del contenido */
-body.servicios-renax .srv-hero {
-    position: sticky;
-    top: 0;
-    z-index: 0;
-    margin-bottom: 0;
-}
+    <nav class="srv-nav" id="srvNav" aria-label="Menú principal">
+      <a href="index.html" data-lang="navInicio">Inicio</a>
+      <a href="nosotros.html" data-lang="navNosotros">Nosotros</a>
+      <a href="portafolio.html" data-lang="navPortafolio">Portafolio</a>
+      <a class="activo" href="servicios.html" aria-current="page" data-lang="navServicios">Servicios</a>
+      <a href="contacto.html" data-lang="navContacto">Contáctanos</a>
+    </nav>
 
-/* El contenido sube por encima de la portada */
-body.servicios-renax .srv-manifiesto,
-body.servicios-renax .srv-servicios,
-body.servicios-renax .srv-proceso,
-body.servicios-renax .srv-cierre {
-    position: relative;
-    z-index: 2;
-    background: rgba(8, 8, 8, 0.88);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-}
+    <div class="srv-header-acciones">
+      <button class="language" id="languageBtn" type="button">ESP</button>
+      <a href="registro.html" class="login-btn" data-lang="loginButton">INICIAR SESIÓN</a>
+    </div>
+  </header>
 
-/* VELO OSCURO: ANCHO COMPLETO Y DEBAJO DEL ENCABEZADO */
-body.servicios-renax .srv-manifiesto,
-body.servicios-renax .srv-servicios,
-body.servicios-renax .srv-proceso,
-body.servicios-renax .srv-cierre {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-    box-sizing: border-box;
-    background: rgba(8, 8, 8, 0.88);
-    backdrop-filter: blur(2px);
-    -webkit-backdrop-filter: blur(2px);
-}
+  <main class="srv-main">
+    <!-- PORTADA -->
+    <section class="srv-hero" id="inicio-servicios" aria-label="Portada de Servicios RENAX">
+      <img class="srv-hero-imagen" src="Servicio creativo.png" alt="Imagen de portada de Servicios RENAX">
+    </section>
 
-/* INICIO DEL VELO DEBAJO DEL HERO */
-body.servicios-renax .srv-manifiesto {
-    margin-top: 0;
-    padding-top: 100px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-}
+    <!-- MANIFIESTO -->
+    <section class="srv-manifiesto" aria-labelledby="srv-manifiesto-titulo">
+      <div class="srv-seccion-meta"><span>01</span><span data-lang="manifiestoEtiqueta">QUÉ HACEMOS</span></div>
+      <div class="srv-manifiesto-texto">
+        <p data-lang="manifiestoTexto1">En RENAX trabajamos con marcas que buscan actualizar su imagen, fortalecer su identidad y comunicar mejor lo que representan.</p>
+        <p data-lang="manifiestoTexto2">Nuestro trabajo parte de entender lo que ya existe para encontrar nuevas formas de hacerlo crecer.</p>
+        <p class="srv-frase-fuerte" data-lang="manifiestoFrase">NO CAMBIAMOS TU ESENCIA.<br><em>LA HACEMOS EVOLUCIONAR.</em></p>
+      </div>
+    </section>
 
-@media (max-width: 700px) {
-    body.servicios-renax .srv-manifiesto {
-        margin-top: -6vh;
-        padding-top: 70px;
-    }
-}
+    <!-- SECCIÓN DE SERVICIOS INTERCALADOS -->
+    <section class="srv-servicios" id="servicios" aria-labelledby="srv-servicios-titulo">
+      <div class="srv-seccion-cabecera" style="max-width:1400px; margin: 0 auto 50px; padding: 0 40px;">
+        <div class="srv-seccion-meta"><span>02</span><span data-lang="serviciosEtiqueta">NUESTROS SERVICIOS</span></div>
+        <h2 id="srv-servicios-titulo" data-lang="serviciosTitulo">Lo que hacemos<br>para tu <em>marca.</em></h2>
+        <p data-lang="serviciosTexto">Cada proyecto parte de una necesidad diferente. Por eso desarrollamos soluciones que pueden adaptarse al momento y a los objetivos de cada marca.</p>
+      </div>
 
-/* VELO DEL ANCHO COMPLETO DE LA PORTADA */
-body.servicios-renax .srv-manifiesto,
-body.servicios-renax .srv-servicios,
-body.servicios-renax .srv-proceso,
-body.servicios-renax .srv-cierre {
-    width: calc(100% + 2 * var(--srv-margen));
-    margin-left: calc(-1 * var(--srv-margen));
-    box-sizing: border-box;
-}
+      <!-- 1. DIAGNÓSTICO -->
+      <article class="srv-servicio" id="diagnostico">
+        <figure class="srv-servicio-imagen"><img src="dianostico.png" alt="Diagnóstico y análisis de marca"></figure>
+        <div class="srv-servicio-contenido">
+          <p class="srv-card-etiqueta" data-lang="diagnosticoEtiqueta">ENTENDER ANTES DE TRANSFORMAR</p>
+          <h3 data-lang="diagnosticoTitulo">Diagnóstico<br><em>de marca</em></h3>
+          <p data-lang="diagnosticoTexto">Analizamos la situación actual de tu marca para identificar oportunidades de evolución y reconocer aquello que vale la pena conservar.</p>
+          <ul>
+            <li data-ventana="auditoria" data-lang="diagItem1">Auditoría de marca</li>
+            <li data-ventana="identidad" data-lang="diagItem2">Análisis de identidad visual</li>
+            <li data-ventana="comunicacionModal" data-lang="diagItem3">Análisis de comunicación</li>
+            <li data-ventana="oportunidades" data-lang="diagItem4">Identificación de oportunidades</li>
+          </ul>
+        </div>
+      </article>
 
-/* EL VELO COMIENZA DEBAJO DE LA PORTADA */
-body.servicios-renax .srv-manifiesto {
-    margin-top: 0;
-}
+      <!-- 2. RENOVACIÓN (Invertido) -->
+      <article class="srv-servicio invertido" id="renovacion">
+        <figure class="srv-servicio-imagen"><img src="rediseno.png" alt="Renovación de identidad visual"></figure>
+        <div class="srv-servicio-contenido">
+          <p class="srv-card-etiqueta" data-lang="renovacionEtiqueta">EVOLUCIONAR SIN PERDER LA ESENCIA</p>
+          <h3 data-lang="renovacionTitulo">Renovación<br><em>de marca</em></h3>
+          <p data-lang="renovacionTexto">Modernizamos marcas existentes respetando su trayectoria, personalidad y reconocimiento.</p>
+          <ul>
+            <li data-ventana="renovacionLogo" data-lang="renovacionItem1">Renovación de logotipo</li>
+            <li data-ventana="paletaColores" data-lang="renovacionItem2">Paleta de colores</li>
+            <li data-ventana="tipografias" data-lang="renovacionItem3">Tipografías</li>
+            <li data-ventana="sistemaVisual" data-lang="renovacionItem4">Sistema visual</li>
+            <li data-ventana="manualIdentidad" data-lang="renovacionItem5">Manual de identidad</li>
+          </ul>
+        </div>
+      </article>
 
-/* =========================================
-   RENAX · VENTANAS ELEGANTES DE DIAGNÓSTICO
-========================================= */
+      <!-- 3. COMUNICACIÓN -->
+      <article class="srv-servicio" id="comunicacion">
+        <figure class="srv-servicio-imagen"><img src="comunicacion.png" alt="Diseño de contenido y comunicación visual"></figure>
+        <div class="srv-servicio-contenido">
+          <p class="srv-card-etiqueta" data-lang="comunicacionEtiqueta">MENSAJES QUE CONECTAN</p>
+          <h3 data-lang="comunicacionTitulo">Contenido para<br><em>redes sociales</em></h3>
+          <p data-lang="comunicacionTexto">Desarrollamos piezas visuales para comunicar productos, servicios, campañas y mensajes de manera clara, atractiva y coherente.</p>
+          <ul>
+            <li data-ventana="piezasRedes" data-lang="comunicacionItem1">Piezas para redes sociales</li>
+            <li data-ventana="campañasVisuales" data-lang="comunicacionItem2">Campañas visuales</li>
+            <li data-ventana="materialPublicitario" data-lang="comunicacionItem3">Material publicitario</li>
+            <li data-ventana="presentaciones" data-lang="comunicacionItem4">Presentaciones</li>
+            <li data-ventana="piezasDigitales" data-lang="comunicacionItem5">Piezas digitales e impresas</li>
+          </ul>
+        </div>
+      </article>
 
-/* Subtítulos que abren las ventanas */
-body.servicios-renax .srv-diagnostico-enlaces button {
-    appearance: none;
-    padding: 0;
-    border: 0;
-    background: transparent;
-    color: #eee9e6;
-    font: inherit;
-    font-size: 13px;
-    text-align: left;
-    cursor: pointer;
-    transition: color .25s ease;
-}
+      <!-- 4. ESTRATEGIA (Invertido) -->
+      <article class="srv-servicio invertido" id="estrategia">
+        <figure class="srv-servicio-imagen"><img src="estrategias.png" alt="Estrategia y dirección visual de marca"></figure>
+        <div class="srv-servicio-contenido">
+          <p class="srv-card-etiqueta" data-lang="estrategiaEtiqueta">UNA DIRECCIÓN COHERENTE</p>
+          <h3 data-lang="estrategiaTitulo">Estrategia<br><em>visual</em></h3>
+          <p data-lang="estrategiaTexto">Definimos una dirección visual coherente para que la marca pueda comunicar de manera consistente en diferentes medios y espacios.</p>
+          <ul>
+            <li data-ventana="dirVisual" data-lang="estrategiaItem1">Dirección visual</li>
+            <li data-ventana="conceptoCreativo" data-lang="estrategiaItem2">Concepto creativo</li>
+            <li data-ventana="sistemaGrafico" data-lang="estrategiaItem3">Sistema gráfico</li>
+            <li data-ventana="coherenciaMarca" data-lang="estrategiaItem4">Coherencia de marca</li>
+          </ul>
+        </div>
+      </article>
+    </section>
 
-body.servicios-renax .srv-diagnostico-enlaces button:hover,
-body.servicios-renax .srv-diagnostico-enlaces button:focus-visible {
-    color: #ff5268;
-    outline: none;
-}
+    <!-- PROCESO -->
+    <section class="srv-proceso" id="proceso">
+      <div class="srv-seccion-meta"><span>03</span><span data-lang="procesoEtiqueta">NUESTRO PROCESO</span></div>
+      <div class="srv-proceso-cabecera">
+        <h2 data-lang="procesoTitulo">De la idea a la<br><em>transformación.</em></h2>
+        <p data-lang="procesoTexto">Cada proyecto comienza escuchando, continúa entendiendo y termina convirtiendo una idea en una identidad capaz de conectar.</p>
+      </div>
+      <div class="srv-pasos">
+        <article class="srv-paso">
+          <span class="srv-paso-num">01</span>
+          <div>
+            <h3 data-lang="proceso1Titulo">Conocemos</h3>
+            <p data-lang="proceso1Texto">Entendemos la marca, su historia, su personalidad y aquello que quiere transmitir.</p>
+          </div>
+        </article>
+        <article class="srv-paso">
+          <span class="srv-paso-num">02</span>
+          <div>
+            <h3 data-lang="proceso2Titulo">Analizamos</h3>
+            <p data-lang="proceso2Texto">Identificamos qué funciona, qué puede mejorar y dónde está la oportunidad.</p>
+          </div>
+        </article>
+        <article class="srv-paso">
+          <span class="srv-paso-num">03</span>
+          <div>
+            <h3 data-lang="proceso3Titulo">Transformamos</h3>
+            <p data-lang="proceso3Texto">Desarrollamos una propuesta visual sin perder aquello que hace única a la marca.</p>
+          </div>
+        </article>
+        <article class="srv-paso">
+          <span class="srv-paso-num">04</span>
+          <div>
+            <h3 data-lang="proceso4Titulo">Conectamos</h3>
+            <p data-lang="proceso4Texto">Llevamos la identidad a piezas y espacios donde pueda conectar con las personas.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-/* Fondo que cubre la pantalla */
-body.servicios-renax .srv-modal[hidden] {
-    display: none;
-}
+    <!-- CIERRE -->
+    <section class="srv-cierre" id="contacto-servicios">
+      <div class="srv-seccion-meta"><span>04</span><span>RENAX · <span data-lang="cierreEtiqueta">HABLEMOS</span></span></div>
+      <h2 data-lang="cierreTitulo" class="titulo-interactivo" id="tituloInteractivo">¿Tu marca está lista<br>para <em>evolucionar?</em></h2>
+      <p data-lang="cierreTexto">Hablemos de cómo podemos transformar su identidad sin borrar su historia.</p>
+      <a class="srv-cta" href="contacto.html" data-lang="cierreBoton">HABLEMOS DE TU MARCA <span>↗</span></a>
+    </section>
+  </main>
 
-body.servicios-renax .srv-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 9999;
-    display: grid;
-    place-items: center;
-    padding: 24px;
-    overflow-y: auto;
-}
+  <!-- VENTANA MODAL -->
+  <div class="srv-modal" id="srvModal" hidden>
+    <div class="srv-modal-fondo" data-cerrar-ventana></div>
+    <section class="srv-modal-panel" role="dialog" aria-modal="true" aria-labelledby="srvModalTitulo" tabindex="-1">
+      <button class="srv-modal-cerrar" type="button" aria-label="Cerrar ventana" data-cerrar-ventana>×</button>
+      <p class="srv-modal-etiqueta" id="srvModalEtiqueta">RENAX / SERVICIOS</p>
+      <h2 id="srvModalTitulo"></h2>
+      <p class="srv-modal-intro" id="srvModalIntro"></p>
+      <div class="srv-modal-linea"></div>
+      <h3 id="srvModalSubtitulo">¿Qué incluye?</h3>
+      <ul class="srv-modal-lista" id="srvModalLista"></ul>
+      <div class="srv-modal-resultado">
+        <span id="srvModalObjLabel">OBJETIVO</span>
+        <p id="srvModalResultado"></p>
+      </div>
+      <button class="srv-modal-volver" type="button" data-cerrar-ventana>
+        <span id="srvModalVolverTexto">← Volver a la sección</span>
+      </button>
+    </section>
+  </div>
 
-body.servicios-renax .srv-modal-fondo {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, .78);
-    backdrop-filter: blur(7px);
-    -webkit-backdrop-filter: blur(7px);
-}
+  <!-- PIE DE PÁGINA (5 COLUMNAS) -->
+  <footer class="srv-footer" style="width: 100%; background: #050505; color: #fff; padding: 60px 40px 30px; border-top: 1px solid rgba(255,255,255,0.1);">
+    <div class="srv-footer-wrapper" style="max-width: 1400px; margin: 0 auto;">
+      <div class="srv-footer-top" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 20px; margin-bottom: 40px;">
+        <span style="font-size: 13px; font-weight: 700; letter-spacing: 1.5px;" data-lang="footerMenu">MENÚ</span>
+        <a href="#servicios" style="font-size: 12px; font-weight: 600; letter-spacing: 1.5px; color: #fff; text-decoration: none;" data-lang="footerExplora">EXPLORA RENAX ↘</a>
+      </div>
+      
+      <div class="srv-footer-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 30px; padding-bottom: 50px;">
+        <div class="srv-footer-col" style="display: flex; flex-direction: column; gap: 12px;">
+          <h3 style="font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;" data-lang="footerInicio">INICIO</h3>
+          <a href="index.html#hero-inicio" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerInicio1">Expertos en transformar marcas</a>
+          <a href="index.html#esencia-marca" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerInicio2">Vuelve a destacar sin perder tu esencia</a>
+          <a href="index.html#historia-marca" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerInicio3">Tu historia merece una imagen que esté a su altura</a>
+          <a href="index.html#preguntas-frecuentes" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerInicio4">Preguntas frecuentes</a>
+        </div>
 
-/* Panel central */
-body.servicios-renax .srv-modal-panel {
-    position: relative;
-    z-index: 1;
-    width: min(100%, 620px);
-    max-height: calc(100vh - 48px);
-    overflow-y: auto;
-    padding: clamp(26px, 5vw, 46px);
-    color: #f5f3f0;
-    background: linear-gradient(145deg, #191919, #0d0d0d);
-    border: 1px solid rgba(255, 255, 255, .13);
-    border-radius: 12px;
-    box-shadow: 0 24px 80px rgba(0, 0, 0, .45);
-    animation: srvModalEntrada .3s ease both;
-}
+        <div class="srv-footer-col" style="display: flex; flex-direction: column; gap: 12px;">
+          <h3 style="font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;" data-lang="footerNosotros">NOSOTROS</h3>
+          <a href="nosotros.html" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerNosotros1">Quiénes somos</a>
+          <a href="nosotros.html#vision" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerNosotros2">Visión</a>
+          <a href="nosotros.html#mision" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerNosotros3">Misión</a>
+          <a href="nosotros.html#por-que-renax" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerNosotros4">¿Por qué RENAX?</a>
+        </div>
 
-body.servicios-renax .srv-modal-cerrar {
-    position: absolute;
-    top: 14px;
-    right: 18px;
-    width: 36px;
-    height: 36px;
-    border: 1px solid rgba(255, 255, 255, .16);
-    border-radius: 50%;
-    color: #eee;
-    background: transparent;
-    font-size: 25px;
-    cursor: pointer;
-}
+        <div class="srv-footer-col" style="display: flex; flex-direction: column; gap: 12px;">
+          <h3 style="font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;" data-lang="footerPortafolio">PORTAFOLIO</h3>
+          <a href="portafolio.html#proyectos" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerPortafolio1">Proyectos y trabajos realizados</a>
+          <a href="portafolio.html#casos-estudio" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerPortafolio2">Casos de estudio</a>
+        </div>
 
-body.servicios-renax .srv-modal-cerrar:hover {
-    color: #ff5268;
-    border-color: #c8102e;
-}
+        <div class="srv-footer-col" style="display: flex; flex-direction: column; gap: 12px;">
+          <h3 style="font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;" data-lang="footerServicios">SERVICIOS</h3>
+          <a href="#diagnostico" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerServicio1">Diagnóstico de marca</a>
+          <a href="#renovacion" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerServicio2">Renovación de marca</a>
+          <a href="#comunicacion" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerServicio3">Comunicación</a>
+          <a href="#estrategia" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerServicio4">Estrategia visual</a>
+        </div>
 
-body.servicios-renax .srv-modal-etiqueta {
-    margin: 0 35px 16px 0;
-    color: #e21b36;
-    font-size: 10px;
-    letter-spacing: .16em;
-}
+        <div class="srv-footer-col" style="display: flex; flex-direction: column; gap: 12px;">
+          <h3 style="font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;" data-lang="footerContacto">CONTACTO</h3>
+          <a href="contacto.html" style="color: #aaa; font-size: 13px; text-decoration: none;" data-lang="footerContacto1">Hablemos de tu proyecto</a>
+        </div>
+      </div>
 
-body.servicios-renax .srv-modal-panel h2 {
-    margin: 0 0 18px;
-    color: #fff;
-    font-size: clamp(29px, 5vw, 42px);
-    letter-spacing: -.8px;
-    line-height: 1.08;
-}
+      <div class="srv-footer-bottom" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 25px;">
+        <img src="logo-renax-transparente.png" alt="RENAX" style="height: 32px;">
+      </div>
+    </div>
+  </footer>
 
-body.servicios-renax .srv-modal-intro {
-    margin: 0;
-    color: #c5c1c0;
-    font-size: 15px;
-    line-height: 1.8;
-}
-
-body.servicios-renax .srv-modal-linea {
-    height: 1px;
-    margin: 25px 0;
-    background: linear-gradient(90deg, #c8102e, rgba(255,255,255,.08));
-}
-
-body.servicios-renax .srv-modal-panel h3 {
-    margin: 0 0 15px;
-    color: #fff;
-    font-size: 17px;
-    letter-spacing: 0;
-}
-
-body.servicios-renax .srv-modal-lista {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 11px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-body.servicios-renax .srv-modal-lista li {
-    position: relative;
-    padding-left: 18px;
-    color: #d5d1d0;
-    font-size: 14px;
-    line-height: 1.6;
-}
-
-body.servicios-renax .srv-modal-lista li::before {
-    content: "";
-    position: absolute;
-    top: .75em;
-    left: 0;
-    width: 6px;
-    height: 2px;
-    background: #e21b36;
-}
-
-body.servicios-renax .srv-modal-resultado {
-    margin-top: 25px;
-    padding: 17px 18px;
-    border-left: 2px solid #c8102e;
-    background: rgba(255, 255, 255, .035);
-}
-
-body.servicios-renax .srv-modal-resultado span {
-    color: #e94a5e;
-    font-size: 10px;
-    letter-spacing: .15em;
-}
-
-body.servicios-renax .srv-modal-resultado p {
-    margin: 7px 0 0;
-    color: #d5d1d0;
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-body.servicios-renax .srv-modal-volver {
-    margin-top: 25px;
-    padding: 11px 15px;
-    border: 1px solid rgba(255,255,255,.2);
-    border-radius: 5px;
-    color: #f5f3f0;
-    background: transparent;
-    font: inherit;
-    font-size: 13px;
-    cursor: pointer;
-    transition: border-color .2s, background .2s;
-}
-
-body.servicios-renax .srv-modal-volver span {
-    margin-right: 7px;
-    color: #e21b36;
-}
-
-body.servicios-renax .srv-modal-volver:hover {
-    border-color: #c8102e;
-    background: rgba(200,16,46,.08);
-}
-
-@keyframes srvModalEntrada {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 500px) {
-    body.servicios-renax .srv-modal {
-        padding: 12px;
+  <!-- SCRIPT DE TRADUCCIÓN -->
+  <script>
+    const menuBoton = document.getElementById('srvMenuBoton');
+    const menu = document.getElementById('srvNav');
+    if (menuBoton && menu) {
+      menuBoton.addEventListener('click', () => {
+        const abierto = menu.classList.toggle('abierto');
+        menuBoton.setAttribute('aria-expanded', String(abierto));
+        menuBoton.innerHTML = abierto ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
+      });
     }
 
-    body.servicios-renax .srv-modal-panel {
-        max-height: calc(100vh - 24px);
-        padding: 28px 22px;
-    }
-}
+    let idiomaActual = "es";
+    const languageBtn = document.getElementById("languageBtn");
 
-@media (prefers-reduced-motion: reduce) {
-    body.servicios-renax .srv-modal-panel {
-        animation: none;
-    }
-}
-
-#tituloInteractivo {
-  color: #fff;
-  cursor: pointer;
-  transition: color 0.35s ease;
-}
-
-#tituloInteractivo em {
-  transition: color 0.35s ease;
-}
-
-#tituloInteractivo.rojo {
-  color: #ff2638;
-}
+    const translations = {
+      es: {
+        navInicio: "Inicio",
+        navNosotros: "Nosotros",
+        navPortafolio: "Portafolio",
+        navServicios: "Servicios",
+        navContacto: "Contáctanos",
+        loginButton: "INICIAR SESIÓN",
+        manifiestoEtiqueta: "QUÉ HACEMOS",
+        manifiestoTexto1: "En RENAX trabajamos con marcas que buscan actualizar su imagen, fortalecer su identidad y comunicar mejor lo que representan.",
+        manifiestoTexto2: "Nuestro trabajo parte de entender lo que ya existe para encontrar nuevas formas de hacerlo crecer.",
+        manifiestoFrase: "NO CAMBIAMOS TU ESENCIA.<br><em>LA HACEMOS EVOLUCIONAR.</em>",
+        serviciosEtiqueta: "NUESTROS SERVICIOS",
+        serviciosTitulo: "Lo que hacemos<br>para tu <em>marca.</em>",
+        serviciosTexto: "Cada proyecto parte de una necesidad diferente. Por eso desarrollamos soluciones que pueden adaptarse al momento y a los objetivos de cada marca.",
+        diagnosticoEtiqueta: "ENTENDER ANTES DE TRANSFORMAR",
+        diagnosticoTitulo: "Diagnóstico<br><em>de marca</em>",
+        diagnosticoTexto: "Analizamos la situación actual de tu marca para identificar oportunidades de evolución y reconocer aquello que vale la pena conservar.",
+        diagItem1: "Auditoría de marca",
+        diagItem2: "Análisis de identidad visual",
+        diagItem3: "Análisis de comunicación",
+        diagItem4: "Identificación de oportunidades",
+        renovacionEtiqueta: "EVOLUCIONAR SIN PERDER LA ESENCIA",
+        renovacionTitulo: "Renovación<br><em>de marca</em>",
+        renovacionTexto: "Modernizamos marcas existentes respetando su trayectoria, personalidad y reconocimiento.",
+        renovacionItem1: "Renovación de logotipo",
+        renovacionItem2: "Paleta de colores",
+        renovacionItem3: "Tipografías",
+        renovacionItem4: "Sistema visual",
+        renovacionItem5: "Manual de identidad",
+        comunicacionEtiqueta: "MENSAJES QUE CONECTAN",
+        comunicacionTitulo: "Contenido para<br><em>redes sociales</em>",
+        comunicacionTexto: "Desarrollamos piezas visuales para comunicar productos, servicios, campañas y mensajes de manera clara, atractiva y coherente.",
+        comunicacionItem1: "Piezas para redes sociales",
+        comunicacionItem2: "Campañas visuales",
+        comunicacionItem3: "Material publicitario",
+        comunicacionItem4: "Presentaciones",
+        comunicacionItem5: "Piezas digitales e impresas",
+        estrategiaEtiqueta: "UNA DIRECCIÓN COHERENTE",
+        estrategiaTitulo: "Estrategia<br><em>visual</em>",
+        estrategiaTexto: "Definimos una dirección visual coherente para que la marca pueda comunicar de manera consistente en diferentes medios y espacios.",
+        estrategiaItem1: "Dirección visual",
+        estrategiaItem2: "Concepto creativo",
+        estrategiaItem3: "Sistema gráfico",
+        estrategiaItem4: "Coherencia de marca",
+        procesoEtiqueta: "NUESTRO PROCESO",
+        procesoTitulo: "De la idea a la<br><em>transformación.</em>",
+        procesoTexto: "Cada proyecto comienza escuchando, continúa entendiendo y termina convirtiendo una idea en una identidad capaz de conectar.",
+        proceso1Titulo: "Conocemos",
+        proceso1Texto: "Entendemos la marca, su historia, su personalidad y aquello que quiere transmitir.",
+        proceso2Titulo: "Analizamos",
+        proceso2Texto: "Identificamos qué funciona, qué puede mejorar y dónde está la oportunidad.",
+        proceso3Titulo: "Transformamos",
+        proceso3Texto: "Desarrollamos una propuesta visual sin perder aquello que hace única a la marca.",
+        proceso4Titulo: "Conectamos",
+        proceso4Texto: "Llevamos la identidad a piezas y espacios donde pueda conectar con las personas.",
+        cierreEtiqueta: "HABLEMOS",
+        cierreTitulo: "¿Tu marca está lista<br>para <em>evolucionar?</em>",
+        cierreTexto: "Hablemos de cómo podemos transformar su identidad sin borrar su historia.",
+        cierreBoton: "HABLEMOS DE TU MARCA <span>↗</span>",
+        footerMenu: "MENÚ",
+        footerExplora: "EXPLORA RENAX ↘",
+        footerInicio: "INICIO",
+        footerInicio1: "Expertos en transformar marcas",
+        footerInicio2: "Vuelve a destacar sin perder tu esencia",
+        footerInicio3: "Tu historia merece una imagen que esté a su altura",
+        footerInicio4: "Preguntas frecuentes",
+        footerNosotros: "NOSOTROS",
+        footerNosotros1: "Quiénes somos",
+        footerNosotros2: "Visión",
+        footerNosotros3: "Misión",
+        footerNosotros4: "¿Por qué RENAX?",
+        footerPortafolio: "PORTAFOLIO",
+        footerPortafolio1: "Proyectos y trabajos realizados",
+        footerPortafolio2: "Casos de estudio",
+        footerServicios: "SERVICIOS",
+        footerServicio1: "Diagnóstico de marca",
+        footerServicio2: "Renovación de marca",
+        footerServicio3: "Comunicación",
+        footerServicio4: "Estrategia visual",
+        footerContacto: "CONTACTO",
+        footerContacto1: "Hablemos de tu proyecto"
+      },
+      en: {
+        navInicio: "Home",
+        navNosotros: "About Us",
+        navPortafolio: "Portfolio",
+        navServicios: "Services",
+        navContacto: "Contact",
+        loginButton: "SIGN IN",
+        manifiestoEtiqueta: "WHAT WE DO",
+        manifiestoTexto1: "At RENAX, we work with brands looking to update their image, strengthen their identity, and better communicate what they represent.",
+        manifiestoTexto2: "Our work begins by understanding what already exists and finding new ways to help it grow.",
+        manifiestoFrase: "WE DON'T CHANGE YOUR ESSENCE.<br><em>WE HELP IT EVOLVE.</em>",
+        serviciosEtiqueta: "OUR SERVICES",
+        serviciosTitulo: "What we do<br>for your <em>brand.</em>",
+        serviciosTexto: "Every project starts with a different need. That's why we develop solutions tailored to each brand's current stage and goals.",
+        diagnosticoEtiqueta: "UNDERSTAND BEFORE TRANSFORMING",
+        diagnosticoTitulo: "Brand<br><em>diagnosis</em>",
+        diagnosticoTexto: "We analyze your brand's current situation to identify opportunities for growth and recognize what is worth preserving.",
+        diagItem1: "Brand audit",
+        diagItem2: "Visual identity analysis",
+        diagItem3: "Communication analysis",
+        diagItem4: "Identifying opportunities",
+        renovacionEtiqueta: "EVOLVE WITHOUT LOSING YOUR ESSENCE",
+        renovacionTitulo: "Brand<br><em>refresh</em>",
+        renovacionTexto: "We modernize existing brands while respecting their history, personality, and recognition.",
+        renovacionItem1: "Logo refresh",
+        renovacionItem2: "Color palette",
+        renovacionItem3: "Typography",
+        renovacionItem4: "Visual system",
+        renovacionItem5: "Brand guidelines",
+        comunicacionEtiqueta: "MESSAGES THAT CONNECT",
+        comunicacionTitulo: "Social media<br><em>content</em>",
+        comunicacionTexto: "We create visual assets to communicate products, services, campaigns, and messages clearly, attractively, and consistently.",
+        comunicacionItem1: "Social media assets",
+        comunicacionItem2: "Visual campaigns",
+        comunicacionItem3: "Advertising material",
+        comunicacionItem4: "Present
