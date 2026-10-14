@@ -547,9 +547,11 @@
         document.body.style.overflow = "";
       }
 
-      document.querySelectorAll("[data-ventana]").forEach(boton => {
-        boton.addEventListener("click", () => {
-          abrirVentana(boton.dataset.ventana, boton);
+     document.querySelectorAll("[data-ventana]").forEach(boton => {
+        boton.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const clave = boton.getAttribute("data-ventana");
+          abrirVentana(clave);
         });
       });
 
