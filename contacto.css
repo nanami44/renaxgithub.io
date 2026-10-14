@@ -444,3 +444,12 @@ body.contacto-page {
     transform: translateX(calc(-50% - 15px));
   }
 }
+/* ==========================================================
+   CORRECCIÓN DEL TAMAÑO DEL LOGOTIPO EN EL FOOTER
+   ========================================================== */
+.contacto-footer-marca img {
+  max-height: 35px !important;
+  width: auto !important;
+  display: block;
+  object-fit: contain;
+}
