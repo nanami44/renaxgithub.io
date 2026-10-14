@@ -13,7 +13,7 @@
 }
 
 body.servicios-renax {
-  background-color: var(--bg-primary);
+  background-color: #030303 !important;
   color: var(--text-primary);
   font-family: var(--font-body);
   margin: 0;
@@ -22,26 +22,76 @@ body.servicios-renax {
   position: relative;
 }
 
+/* ==========================================================
+   FONDO LÁSER DINÁMICO RENAX
+   ========================================================== */
 .srv-fondo-reserva {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 50% 20%, #1a1a1a 0%, #050505 100%);
-  z-index: -1;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  background: #030303 !important;
+  overflow: hidden !important;
+}
+
+.srv-fondo-reserva::before {
+  content: '' !important;
+  position: absolute !important;
+  top: -50% !important;
+  left: -50% !important;
+  width: 200% !important;
+  height: 200% !important;
+  background-image: 
+    linear-gradient(115deg, transparent 48%, rgba(200, 16, 46, 0.85) 49.5%, rgba(255, 60, 80, 1) 50%, rgba(200, 16, 46, 0.85) 50.5%, transparent 52%),
+    linear-gradient(42deg, transparent 47%, rgba(200, 16, 46, 0.75) 49%, rgba(255, 30, 60, 0.95) 50%, rgba(200, 16, 46, 0.75) 51%, transparent 53%),
+    linear-gradient(-65deg, transparent 48%, rgba(180, 10, 35, 0.6) 49.5%, rgba(200, 16, 46, 0.8) 50%, rgba(180, 10, 35, 0.6) 50.5%, transparent 52%) !important;
+  background-size: 380px 380px, 520px 520px, 450px 450px !important;
+  filter: drop-shadow(0 0 8px #c8102e) drop-shadow(0 0 18px rgba(200, 16, 46, 0.6)) !important;
+  opacity: 0.85 !important;
+  animation: movimientoLaserSuave 28s linear infinite alternate !important;
+}
+
+.srv-fondo-reserva::after {
+  content: '' !important;
+  position: absolute !important;
+  top: -40% !important;
+  left: -40% !important;
+  width: 180% !important;
+  height: 180% !important;
+  background-image: 
+    linear-gradient(155deg, transparent 48.5%, rgba(255, 20, 50, 0.7) 49.7%, rgba(200, 16, 46, 0.9) 50%, transparent 51.5%),
+    linear-gradient(-25deg, transparent 48%, rgba(160, 0, 25, 0.5) 49.5%, rgba(200, 16, 46, 0.7) 50%, transparent 52%) !important;
+  background-size: 600px 600px, 420px 420px !important;
+  filter: drop-shadow(0 0 12px #ff173d) !important;
+  opacity: 0.6 !important;
+  animation: movimientoLaserCruzado 38s ease-in-out infinite alternate !important;
+}
+
+@keyframes movimientoLaserSuave {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate(-40px, 30px) rotate(1.5deg) scale(1.03); }
+  100% { transform: translate(30px, -40px) rotate(-1.5deg) scale(0.98); }
+}
+
+@keyframes movimientoLaserCruzado {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 0.5; }
+  50% { transform: translate(35px, -25px) rotate(-2deg); opacity: 0.8; }
+  100% { transform: translate(-30px, 40px) rotate(2deg); opacity: 0.5; }
 }
 
 /* ==========================================================
    HEADER Y NAVEGACIÓN
    ========================================================== */
 .srv-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
   height: 80px;
-  background-color: rgba(5, 5, 5, 0.85);
+  background-color: rgba(3, 3, 3, 0.85) !important;
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border-color);
   display: flex;
@@ -49,7 +99,7 @@ body.servicios-renax {
   justify-content: space-between;
   padding: 0 5%;
   box-sizing: border-box;
-  z-index: 1000;
+  z-index: 100 !important;
 }
 
 .srv-logo img {
@@ -136,24 +186,61 @@ body.servicios-renax {
 }
 
 /* ==========================================================
-   HERO / PORTADA
+   PORTADA FIJA AL FONDO (HERO)
    ========================================================== */
 .srv-hero {
-  width: 100%;
-  margin-top: 100px;
-  padding: 0 40px;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100vh !important;
+  z-index: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: opacity 0.4s ease;
 }
 
 .srv-hero-imagen {
-  width: 100%;
+  width: 100% !important;
+  height: 100% !important;
   max-width: 1400px;
-  height: 480px;
-  object-fit: cover;
-  border-radius: 24px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  max-height: 480px;
+  object-fit: cover !important;
+  border-radius: 24px !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+}
+
+/* ==========================================================
+   ESPACIADOR INVISIBLE PARA EL SCROLL
+   ========================================================== */
+.srv-scroll-trigger {
+  height: 220vh;
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ==========================================================
+   VELO OSCURO DESLIZANTE
+   ========================================================== */
+.srv-velo-contenido {
+  position: absolute !important;
+  top: 100vh !important;
+  left: 0 !important;
+  width: 100% !important;
+  z-index: 9999 !important;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 5, 5, 0.92) 0%,
+    rgba(130, 10, 25, 0.35) 40%,
+    rgba(5, 3, 3, 0.92) 100%
+  );
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(200, 16, 46, 0.25);
+  box-shadow: 0 -40px 60px rgba(0, 0, 0, 0.95);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* ==========================================================
@@ -205,7 +292,7 @@ body.servicios-renax {
 }
 
 /* ==========================================================
-   SECCIÓN DE SERVICIOS (INTERCALADOS / ZIG-ZAG)
+   SECCIÓN DE SERVICIOS (TARJETAS ZIG-ZAG)
    ========================================================== */
 .srv-servicios {
   padding: 40px 0;
@@ -237,14 +324,13 @@ body.servicios-renax {
   line-height: 1.6;
 }
 
-/* Estructura base de tarjetas intercaladas */
 .srv-servicio {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  gap: 50px;
   align-items: center;
   max-width: 1400px;
-  margin: 0 auto 80px;
+  margin: 80px auto;
   padding: 0 40px;
   box-sizing: border-box;
 }
@@ -259,11 +345,10 @@ body.servicios-renax {
 
 .srv-servicio-imagen img {
   width: 100%;
-  height: 450px;
+  height: 420px;
   object-fit: cover;
   border-radius: 20px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-  display: block;
 }
 
 .srv-card-etiqueta {
@@ -295,22 +380,21 @@ body.servicios-renax {
   margin-bottom: 25px;
 }
 
-/* Lista interactiva que abre modales */
 .srv-servicio-contenido ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
 }
 
 .srv-servicio-contenido ul li {
-  background: rgba(255, 255, 255, 0.03);
-  padding: 14px 20px;
-  border-radius: 10px;
+  background: rgba(255,255,255,0.03);
+  padding: 12px 18px;
+  border-radius: 8px;
   cursor: pointer;
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255,255,255,0.08);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -321,28 +405,29 @@ body.servicios-renax {
 }
 
 .srv-servicio-contenido ul li:hover {
-  background: rgba(200, 16, 46, 0.12);
-  border-color: var(--bg-red-accent);
-  transform: translateX(6px);
+  background: rgba(200, 16, 46, 0.15);
+  border-color: #c8102e;
+  transform: translateX(5px);
 }
 
 .srv-servicio-contenido ul li::after {
   content: '→';
   font-weight: bold;
-  color: var(--bg-red-accent);
+  color: #c8102e;
 }
 
 /* ==========================================================
    SECCIÓN DE PROCESO
    ========================================================== */
-.srv-proceso {
+.srv-proceso-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.4fr !important;
+  gap: 30px !important;
+  align-items: center !important;
   max-width: 1400px;
   margin: 120px auto;
   padding: 0 40px;
   box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 50px;
 }
 
 .srv-proceso-cabecera h2 {
@@ -403,6 +488,28 @@ body.servicios-renax {
   font-size: 0.95rem;
   line-height: 1.5;
   margin: 0;
+}
+
+.srv-proceso-decoracion {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.srv-proceso-decoracion img {
+  width: 100% !important;
+  max-width: 650px !important;
+  height: auto !important;
+  object-fit: contain !important;
+  opacity: 0.95 !important;
+  filter: drop-shadow(0 0 45px rgba(200, 16, 46, 0.45)) !important;
+  transition: transform 0.5s ease, filter 0.5s ease !important;
+}
+
+.srv-proceso-decoracion img:hover {
+  transform: scale(1.06) !important;
+  filter: drop-shadow(0 0 60px rgba(200, 16, 46, 0.65)) !important;
 }
 
 /* ==========================================================
@@ -474,7 +581,7 @@ body.servicios-renax {
 }
 
 /* ==========================================================
-   VENTANA MODAL (DETALLE DE SERVICIOS)
+   VENTANA MODAL
    ========================================================== */
 .srv-modal {
   position: fixed;
@@ -485,527 +592,6 @@ body.servicios-renax {
   justify-content: center;
   padding: 20px;
   box-sizing: border-box;
-}
-
-.srv-modal[hidden] {
-  display: none !important;
-}
-
-.srv-modal-fondo {
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px);
-}
-
-.srv-modal-panel {
-  position: relative;
-  background: #111;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 20px;
-  padding: 40px;
-  max-width: 650px;
-  width: 100%;
-  color: #fff;
-  z-index: 2;
-  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
-  max-height: 90vh;
-  overflow-y: auto;
-  box-sizing: border-box;
-}
-
-.srv-modal-cerrar {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 28px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.srv-modal-cerrar:hover {
-  color: var(--bg-red-accent);
-}
-
-.srv-modal-etiqueta {
-  font-size: 12px;
-  letter-spacing: 2px;
-  color: var(--bg-red-accent);
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-}
-
-.srv-modal-panel h2 {
-  font-size: 2rem;
-  font-weight: 900;
-  margin-bottom: 15px;
-  text-transform: uppercase;
-}
-
-.srv-modal-intro {
-  color: var(--text-muted);
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.srv-modal-linea {
-  height: 1px;
-  background: var(--border-color);
-  margin: 20px 0;
-}
-
-.srv-modal-panel h3 {
-  font-size: 1.1rem;
-  margin-bottom: 15px;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.srv-modal-lista {
-  list-style: disc;
-  padding-left: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  color: #ccc;
-  margin-bottom: 25px;
-  font-size: 0.95rem;
-}
-
-.srv-modal-resultado {
-  background: rgba(200, 16, 46, 0.1);
-  border-left: 4px solid var(--bg-red-accent);
-  padding: 15px;
-  border-radius: 4px;
-  margin-bottom: 25px;
-}
-
-.srv-modal-resultado span {
-  font-size: 11px;
-  letter-spacing: 1.5px;
-  color: var(--bg-red-accent);
-  font-weight: 700;
-  display: block;
-  margin-bottom: 5px;
-}
-
-.srv-modal-resultado p {
-  color: #fff;
-  font-size: 0.95rem;
-  margin: 0;
-  line-height: 1.5;
-}
-
-.srv-modal-volver {
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.srv-modal-volver:hover {
-  background: #fff;
-  color: #000;
-}
-
-/* ==========================================================
-   PIE DE PÁGINA (FOOTER 5 COLUMNAS)
-   ========================================================== */
-.srv-footer {
-  width: 100%;
-  background: var(--bg-primary);
-  color: var(--text-primary);
-  padding: 60px 40px 30px;
-/* ==========================================================
-   ILUSTRACIÓN DEL AVE EN LA SECCIÓN DE PROCESO
-   ========================================================== */
-.srv-proceso {
-  display: grid;
-  grid-template-columns: 280px 1fr 1fr;
-  align-items: center;
-  gap: 50px;
-}
-
-.srv-proceso-decoracion {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-}
-
-.srv-proceso-decoracion img {
-  width: 100%;
-  max-width: 480px;
-  height: auto;
-  object-fit: contain;
-  opacity: 0.9;
-  filter: drop-shadow(0 0 35px rgba(200, 16, 46, 0.3));
-  transition: transform 0.5s ease, filter 0.5s ease;
-}
-
-.srv-proceso-decoracion:hover img {
-  transform: scale(1.04);
-  filter: drop-shadow(0 0 45px rgba(200, 16, 46, 0.5));
-}
-
-@media (max-width: 1024px) {
-  .srv-proceso {
-    grid-template-columns: 1fr;
-  }
-  .srv-proceso-decoracion {
-    display: none;
-  }
-}
-/* ==========================================================
-   FONDO LÁSER DINÁMICO RENAX (LÍNEAS ROJAS NEÓN EN MOVIMIENTO)
-   ========================================================== */
-
-/* Fondo negro profundo para toda la página */
-body.servicios-renax {
-  background-color: #030303 !important;
-  position: relative;
-  overflow-x: hidden;
-}
-
-/* La portada mantiene fondo limpio sin interferencia */
-.srv-hero {
-  position: relative;
-  z-index: 5;
-}
-
-/* Contenedor fijo para la red de líneas láser */
-.srv-fondo-reserva {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100vw !important;
-  height: 100vh !important;
-  pointer-events: none !important;
-  z-index: 0 !important;
-  background: #030303 !important;
-  overflow: hidden !important;
-}
-
-/* Capa 1 de líneas láser rojas neón principales */
-.srv-fondo-reserva::before {
-  content: '' !important;
-  position: absolute !important;
-  top: -50% !important;
-  left: -50% !important;
-  width: 200% !important;
-  height: 200% !important;
-  background-image: 
-    linear-gradient(115deg, transparent 48%, rgba(200, 16, 46, 0.85) 49.5%, rgba(255, 60, 80, 1) 50%, rgba(200, 16, 46, 0.85) 50.5%, transparent 52%),
-    linear-gradient(42deg, transparent 47%, rgba(200, 16, 46, 0.75) 49%, rgba(255, 30, 60, 0.95) 50%, rgba(200, 16, 46, 0.75) 51%, transparent 53%),
-    linear-gradient(-65deg, transparent 48%, rgba(180, 10, 35, 0.6) 49.5%, rgba(200, 16, 46, 0.8) 50%, rgba(180, 10, 35, 0.6) 50.5%, transparent 52%) !important;
-  background-size: 380px 380px, 520px 520px, 450px 450px !important;
-  filter: drop-shadow(0 0 8px #c8102e) drop-shadow(0 0 18px rgba(200, 16, 46, 0.6)) !important;
-  opacity: 0.85 !important;
-  animation: movimientoLaserSuave 28s linear infinite alternate !important;
-}
-
-/* Capa 2 de líneas secundarias con resplandor suave y diferente ángulo */
-.srv-fondo-reserva::after {
-  content: '' !important;
-  position: absolute !important;
-  top: -40% !important;
-  left: -40% !important;
-  width: 180% !important;
-  height: 180% !important;
-  background-image: 
-    linear-gradient(155deg, transparent 48.5%, rgba(255, 20, 50, 0.7) 49.7%, rgba(200, 16, 46, 0.9) 50%, transparent 51.5%),
-    linear-gradient(-25deg, transparent 48%, rgba(160, 0, 25, 0.5) 49.5%, rgba(200, 16, 46, 0.7) 50%, transparent 52%) !important;
-  background-size: 600px 600px, 420px 420px !important;
-  filter: drop-shadow(0 0 12px #ff173d) !important;
-  opacity: 0.6 !important;
-  animation: movimientoLaserCruzado 38s ease-in-out infinite alternate !important;
-}
-
-/* Asegurar que el contenidoFlotante (textos, fotos, header, footer) quede por encima */
-.srv-header,
-.srv-main,
-.srv-footer,
-.srv-modal {
-  position: relative !important;
-  z-index: 2 !important;
-}
-
-/* ==========================================================
-   ANIMACIONES DE MOVIMIENTO SUAVE LÁSER
-   ========================================================== */
-
-@keyframes movimientoLaserSuave {
-  0% {
-    transform: translate(0, 0) rotate(0deg) scale(1);
-  }
-  50% {
-    transform: translate(-40px, 30px) rotate(1.5deg) scale(1.03);
-  }
-  100% {
-    transform: translate(30px, -40px) rotate(-1.5deg) scale(0.98);
-  }
-}
-
-@keyframes movimientoLaserCruzado {
-  0% {
-    transform: translate(0, 0) rotate(0deg);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translate(35px, -25px) rotate(-2deg);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate(-30px, 40px) rotate(2deg);
-    opacity: 0.5;
-  }
-}
-/* ==========================================================
-   TAMAÑO MÁS GRANDE PARA EL AVE EN LA SECCIÓN DE PROCESO
-   ========================================================== */
-.srv-proceso-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.4fr !important; /* Le da más espacio al contenedor del ave */
-  gap: 30px !important;
-  align-items: center !important;
-}
-
-.srv-proceso-decoracion {
-  display: flex !important;
-  justify-content: center !important;
-  align-items: center !important;
-  width: 100% !important;
-}
-
-.srv-proceso-decoracion img {
-  width: 100% !important;
-  max-width: 650px !important; /* Aumentado de 420px a 650px para lucir imponente */
-  height: auto !important;
-  object-fit: contain !important;
-  opacity: 0.95 !important;
-  filter: drop-shadow(0 0 45px rgba(200, 16, 46, 0.45)) !important;
-  transition: transform 0.5s ease, filter 0.5s ease !important;
-}
-
-.srv-proceso-decoracion img:hover {
-  transform: scale(1.06) !important;
-  filter: drop-shadow(0 0 60px rgba(200, 16, 46, 0.65)) !important;
-}
-/* ==========================================================
-   EFECTO DE VELO DESLIZANTE CON TONOS ROJIZOS Y NEGROS
-   ========================================================== */
-
-/* 1. Portada fija al fondo de la ventana */
-.srv-hero {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100vh !important;
-  z-index: 2 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  transition: opacity 0.4s ease;
-}
-
-.srv-hero-imagen {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* 2. Espaciador invisible para habilitar el desplazamiento de la página */
-.srv-scroll-trigger {
-  height: 220vh;
-  width: 100%;
-  position: relative;
-  z-index: 3;
-  pointer-events: none;
-}
-
-/* 3. Velo oscuro semitransparente con degradado rojizo difuminado */
-.srv-velo-contenido {
-  position: absolute;
-  top: 100vh;
-  left: 0;
-  width: 100%;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 5, 5, 0.92) 0%,
-    rgba(130, 10, 25, 0.35) 40%,
-    rgba(5, 3, 3, 0.92) 100%
-  );
-  backdrop-filter: blur(16px); /* Efecto de cristal ahumado */
-  z-index: 10;
-  border-top: 1px solid rgba(200, 16, 46, 0.25);
-  box-shadow: 0 -40px 60px rgba(0, 0, 0, 0.95);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* 4. Header siempre accesible en la parte superior */
-.srv-header {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  z-index: 100 !important;
-  background-color: rgba(3, 3, 3, 0.85) !important;
-  backdrop-filter: blur(10px);
-}
-/* ==========================================================
-   1. PORTADA FIJA AL FONDO
-   ========================================================== */
-.srv-hero {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  height: 100vh !important;
-  z-index: 1 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  transition: opacity 0.4s ease;
-}
-
-.srv-hero-imagen {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-}
-
-/* ==========================================================
-   2. ESPACIADOR INVISIBLE PARA EL SCROLL
-   ========================================================== */
-.srv-scroll-trigger {
-  height: 220vh;
-  width: 100%;
-  position: relative;
-  z-index: 3;
-  pointer-events: none;
-}
-
-/* ==========================================================
-   3. VELO OSCURO DESLIZANTE CON DEGRADADO ROJIZO
-   ========================================================== */
-.srv-velo-contenido {
-  position: absolute !important;
-  top: 100vh !important;
-  left: 0 !important;
-  width: 100% !important;
-  z-index: 9999 !important;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 5, 5, 0.92) 0%,
-    rgba(130, 10, 25, 0.35) 40%,
-    rgba(5, 3, 3, 0.92) 100%
-  );
-  backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(200, 16, 46, 0.25);
-  box-shadow: 0 -40px 60px rgba(0, 0, 0, 0.95);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* ==========================================================
-   4. HEADER FIJO ARRIBA
-   ========================================================== */
-.srv-header {
-  position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  z-index: 100 !important;
-  background-color: rgba(3, 3, 3, 0.85) !important;
-  backdrop-filter: blur(10px);
-}
-
-/* ==========================================================
-   5. ESTILOS DE TARJETAS Y MODALES
-   ========================================================== */
-.srv-servicio {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 50px;
-  align-items: center;
-  max-width: 1400px;
-  margin: 80px auto;
-  padding: 0 40px;
-}
-
-.srv-servicio.invertido {
-  direction: rtl;
-}
-
-.srv-servicio.invertido > * {
-  direction: ltr;
-}
-
-.srv-servicio-imagen img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 20px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-}
-
-.srv-servicio-contenido ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.srv-servicio-contenido ul li {
-  background: rgba(255,255,255,0.03);
-  padding: 12px 18px;
-  border-radius: 8px;
-  cursor: pointer;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.srv-servicio-contenido ul li:hover {
-  background: rgba(200, 16, 46, 0.15);
-  border-color: #c8102e;
-  transform: translateX(5px);
-}
-
-.srv-servicio-contenido ul li::after {
-  content: '→';
-  font-weight: bold;
-  color: #c8102e;
-}
-
-/* Modales estéticos */
-.srv-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
 }
 
 .srv-modal[hidden] {
@@ -1032,6 +618,7 @@ body.servicios-renax {
   box-shadow: 0 25px 50px rgba(0,0,0,0.8);
   max-height: 90vh;
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
 .srv-modal-cerrar {
@@ -1051,6 +638,7 @@ body.servicios-renax {
   color: #c8102e;
   font-weight: 700;
   margin-bottom: 10px;
+  text-transform: uppercase;
 }
 
 .srv-modal-panel h3 {
@@ -1083,7 +671,19 @@ body.servicios-renax {
 }
 
 /* ==========================================================
-   6. RESPONSIVO PARA MÓVILES
+   PIE DE PÁGINA
+   ========================================================== */
+.srv-footer {
+  width: 100%;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 60px 40px 30px;
+  position: relative;
+  z-index: 2 !important;
+}
+
+/* ==========================================================
+   RESPONSIVO MÓVILES
    ========================================================== */
 @media (max-width: 900px) {
   .srv-servicio, .srv-servicio.invertido {
@@ -1091,5 +691,11 @@ body.servicios-renax {
     direction: ltr;
     gap: 30px;
     padding: 0 20px;
+  }
+  .srv-proceso-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .srv-proceso-decoracion {
+    display: none !important;
   }
 }
