@@ -667,3 +667,88 @@ body.servicios-renax {
     display: none;
   }
 }
+/* ==========================================================
+   FONDO DINÁMICO RENAX: NEBLINA ROJA Y NEGRA EN MOVIEMIENTO
+   ========================================================== */
+
+/* 1. Fondo base con degradado suave rojo-negro */
+.servicios-renax {
+  position: relative;
+  background-color: #050505;
+  overflow-x: hidden;
+}
+
+/* 2. Capa de neblina dinámica animada */
+.srv-fondo-reserva {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 80% 10%, rgba(200, 16, 46, 0.45) 0%, transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(104, 0, 13, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(18, 18, 18, 0.8) 0%, #050505 100%);
+  filter: blur(60px);
+  animation: moverNeblinaRed 16s linear infinite;
+}
+
+/* Capa adicional de vapor/neblina flotante continua */
+.servicios-renax::before {
+  content: '';
+  position: fixed;
+  top: -60%;
+  right: -60%;
+  width: 220%;
+  height: 220%;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(
+    ellipse at top right,
+    rgba(200, 16, 46, 0.35) 0%,
+    rgba(80, 0, 10, 0.2) 30%,
+    rgba(5, 5, 5, 0.9) 70%,
+    transparent 100%
+  );
+  filter: blur(80px);
+  opacity: 0.85;
+  animation: recorridoEsquinaEsquina 22s ease-in-out infinite alternate;
+}
+
+/* ==========================================================
+   ANIMACIONES DE LA NEBLINA (RECORRIDO ESQUINA DERECHA A ABAJO)
+   ========================================================== */
+
+/* Movimiento continuo en diagonal descendente */
+@keyframes moverNeblinaRed {
+  0% {
+    transform: translate(25%, -25%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-10%, 15%) scale(1.15);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-35%, 35%) scale(1.05);
+    opacity: 0.6;
+  }
+}
+
+/* Efecto fluido de respiración y desplazamiento desde la esquina superior derecha */
+@keyframes recorridoEsquinaEsquina {
+  0% {
+    transform: translate(15%, -15%) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(-15%, 20%) rotate(5deg);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate(-30%, 40%) rotate(-5deg);
+    opacity: 0.4;
+  }
+}
