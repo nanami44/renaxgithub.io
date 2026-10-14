@@ -10,71 +10,7 @@
 
     
   <style>
-  /* ==========================================================
-     FONDO LÁSER SUAVE Y DELGADO (RENAX)
-     ========================================================== */
-  body.servicios-renax {
-    background-color: #030303 !important;
-    position: relative !important;
-    overflow-x: hidden !important;
-  }
-
-  /* Capa de fondo fija */
-  .srv-fondo-reserva {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    pointer-events: none !important;
-    z-index: 1 !important;
-    background: #030303 !important;
-    overflow: hidden !important;
-  }
-
-  /* Líneas láser principales: más delgadas, transparentes y difuminadas */
-  .srv-fondo-reserva::before {
-    content: '' !important;
-    position: absolute !important;
-    top: -50% !important;
-    left: -50% !important;
-    width: 200% !important;
-    height: 200% !important;
-    background-image: 
-      linear-gradient(115deg, transparent 49.3%, rgba(200, 16, 46, 0.35) 49.7%, rgba(255, 80, 100, 0.5) 50%, rgba(200, 16, 46, 0.35) 50.3%, transparent 50.7%),
-      linear-gradient(42deg, transparent 49.2%, rgba(200, 16, 46, 0.25) 49.7%, rgba(255, 50, 70, 0.4) 50%, rgba(200, 16, 46, 0.25) 50.3%, transparent 50.8%),
-      linear-gradient(-65deg, transparent 49.3%, rgba(180, 10, 35, 0.2) 49.7%, rgba(200, 16, 46, 0.35) 50%, rgba(180, 10, 35, 0.2) 50.3%, transparent 50.7%) !important;
-    background-size: 500px 500px, 700px 700px, 600px 600px !important;
-    filter: drop-shadow(0 0 6px rgba(200, 16, 46, 0.3)) blur(1px) !important;
-    opacity: 0.55 !important;
-    animation: movimientoLaserSuave 35s linear infinite alternate !important;
-  }
-
-  /* Capa secundaria de líneas cruzadas muy difuminadas */
-  .srv-fondo-reserva::after {
-    content: '' !important;
-    position: absolute !important;
-    top: -40% !important;
-    left: -40% !important;
-    width: 180% !important;
-    height: 180% !important;
-    background-image: 
-      linear-gradient(155deg, transparent 49.3%, rgba(255, 30, 60, 0.25) 49.7%, rgba(200, 16, 46, 0.35) 50%, transparent 50.7%),
-      linear-gradient(-25deg, transparent 49.2%, rgba(160, 0, 25, 0.2) 49.7%, rgba(200, 16, 46, 0.3) 50%, transparent 50.8%) !important;
-    background-size: 800px 800px, 650px 650px !important;
-    filter: drop-shadow(0 0 8px rgba(255, 23, 61, 0.25)) blur(1.5px) !important;
-    opacity: 0.4 !important;
-    animation: movimientoLaserCruzado 45s ease-in-out infinite alternate !important;
-  }
-
-  /* Contenido por encima del fondo */
-  .srv-header,
-  .srv-main,
-  .srv-footer,
-  .srv-modal {
-    position: relative !important;
-    z-index: 10 !important;
-  }
+ 
 
   /* Animaciones lentas y fluidas */
   @keyframes movimientoLaserSuave {
