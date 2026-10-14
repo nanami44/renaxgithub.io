@@ -41,11 +41,9 @@
        
 <img class="srv-hero-imagen" src="Servicio creativo.png" alt="Imagen de portada de Servicios RENAX">
     </section>
-    <!-- 2. ESPACIADOR INVISIBLE PARA ACTIVAR EL SCROLL -->
-  <div class="srv-scroll-trigger"></div>
+   
 
-  <!-- 3. VELO CONTENEDOR DESLIZANTE -->
-  <div class="srv-velo-contenido" id="srvVeloContenido">
+ 
 
     <!-- MANIFIESTO -->
     <section class="srv-manifiesto" aria-labelledby="srv-manifiesto-titulo">
@@ -453,7 +451,7 @@
     }
     cambiarIdioma();
   </script>
-</div>
+
   <!-- SCRIPT MODALES VENTANAS DINÁMICAS -->
   <script>
     (() => {
@@ -566,25 +564,6 @@
      
   </script>
    
-    <!-- SCRIPT DE CONTROL DEL VELO FLOTANTE -->
-  <script>
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const velo = document.getElementById('srvVeloContenido');
-      const hero = document.querySelector('.srv-hero');
-      
-      if (scrollY > 5) {
-        velo.style.transform = `translateY(-${Math.min(scrollY, window.innerHeight)}px)`;
-        if (hero) hero.style.opacity = Math.max(0.05, 1 - (scrollY / 350));
-      } else {
-        velo.style.transform = 'translateY(0px)';
-        if (hero) hero.style.opacity = '1';
-      }
-    });
-  </script>
-
-</body>
-</html>
-  </script>
+  
 </body>
 </html>
