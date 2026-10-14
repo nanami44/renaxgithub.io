@@ -453,3 +453,110 @@ body.contacto-page {
   display: block;
   object-fit: contain;
 }
+/* ==========================================================
+   DISEÑO OPTIMIZADO DEL FOOTER HORIZONTAL - RENAX
+   ========================================================== */
+.contacto-footer {
+  width: 100%;
+  background: #030303;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 60px 5% 30px;
+  margin-top: 100px;
+}
+
+.contacto-footer-contenedor {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.contacto-footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding-bottom: 15px;
+}
+
+.contacto-footer-titulo-menu {
+  color: #c2384a !important; /* Rojo opaco y elegante solicitado */
+}
+
+.contacto-footer-explora {
+  color: var(--text-muted);
+}
+
+.contacto-footer-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.contacto-footer-col h2 {
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.contacto-footer-col h2 a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.contacto-footer-col h2 a:hover {
+  color: #c2384a;
+}
+
+.contacto-footer-col a {
+  display: block;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  transition: color 0.3s ease;
+}
+
+.contacto-footer-col a:hover {
+  color: var(--text-primary);
+}
+
+.contacto-footer-bottom {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contacto-footer-marca img {
+  max-height: 35px !important;
+  width: auto !important;
+  display: block;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.contacto-footer-marca img:hover {
+  opacity: 1;
+}
+
+/* Responsivo para tablets y móviles */
+@media (max-width: 1024px) {
+  .contacto-footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contacto-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
