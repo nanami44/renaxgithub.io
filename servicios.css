@@ -172,15 +172,15 @@ body.servicios-renax {
   left: 0 !important;
   width: 100% !important;
   z-index: 9999 !important;
-  background: linear-gradient(
+background: linear-gradient(
     135deg,
-    rgba(10, 5, 5, 0.92) 0%,
-    rgba(130, 10, 25, 0.35) 40%,
-    rgba(5, 3, 3, 0.92) 100%
+    rgba(10, 5, 5, 0.45) 0%,
+    rgba(130, 10, 25, 0.15) 40%,
+    rgba(5, 3, 3, 0.45) 100%
   );
-  backdrop-filter: blur(16px);
-  border-top: 1px solid rgba(200, 16, 46, 0.25);
-  box-shadow: 0 -40px 60px rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(200, 16, 46, 0.2);
+  box-shadow: 0 -40px 60px rgba(0, 0, 0, 0.8);
   transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
