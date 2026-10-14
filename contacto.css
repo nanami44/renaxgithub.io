@@ -559,4 +559,117 @@ body.contacto-page {
     grid-template-columns: 1fr;
     gap: 30px;
   }
+/* ==========================================================
+   DISEÑO MODERNO - PREGUNTAS FRECUENTES (FAQ)
+   ========================================================== */
+.contacto-faq {
+  max-width: 1400px;
+  margin: 120px auto;
+  padding: 0 5%;
+}
+
+.contacto-faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.contacto-faq-intro h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.contacto-faq-intro h2 em {
+  color: #c2384a;
+  font-style: normal;
+}
+
+.contacto-faq-intro p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.contacto-faq-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background: rgba(15, 15, 15, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px 28px;
+  transition: all 0.3s ease;
+}
+
+.faq-item[open] {
+  border-color: rgba(194, 56, 74, 0.5);
+  background: rgba(20, 15, 16, 0.85);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.faq-item summary {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Icono circular dinámico para el acordeón */
+.faq-item summary::after {
+  content: '+';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  font-size: 1.2rem;
+  color: #c2384a;
+  font-weight: 400;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+  background: rgba(194, 56, 74, 0.15);
+  border-color: #c2384a;
+  transform: rotate(180deg);
+}
+
+.faq-item p {
+  color: var(--text-muted);
+  margin-top: 18px;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 16px;
+}
+
+/* Responsivo para móviles */
+@media (max-width: 1024px) {
+  .contacto-faq-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
 }
