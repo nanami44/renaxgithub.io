@@ -415,4 +415,9 @@ body.portafolio-renax {
     grid-template-columns: 1fr !important;
   }
 }
-
+/* AJUSTAR IMAGEN PARA QUE NO SE CORTE EN LAS TARJETAS */
+.renax-work-card .renax-work-image img,
+.portfolio-item img {
+  object-fit: contain !important;
+  background-color: #121212 !important; /* Fondo oscuro sutil por si la proporción deja bordes libres */
+}
