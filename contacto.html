@@ -210,50 +210,75 @@
         </a>
       </div>
     </section>
+<!-- SECCIÓN DE RESEÑAS EN CARRUSEL INFINITO -->
+<section class="contacto-resenas">
+  <div class="contacto-seccion-meta">
+    <span class="numero-paso">03</span>
+    <span class="contacto-hero-linea"></span>
+    <span data-lang="reviewsTag">LO QUE DICEN NUESTROS CLIENTES</span>
+  </div>
 
-    <!-- SECCIÓN 03: RESEÑAS Y TESTIMONIOS -->
-    <section class="contacto-resenas" id="contacto-resenas">
-      <div class="contacto-seccion-meta">
-        <span class="numero-paso">03</span>
-        <span data-lang="reviewsMeta">EXPERIENCIAS RENAX</span>
-      </div>
-
-      <div class="contacto-canales-cabecera">
-        <h2><span data-lang="reviewsTitle1">Lo que dicen quienes han</span> <em data-lang="reviewsTitle2">evolucionado con nosotros.</em></h2>
-      </div>
-
-      <div class="contacto-resenas-grid">
-        <!-- Reseña 1 -->
-        <div class="contacto-resena-card">
-          <div class="resena-estrellas">★★★★★</div>
-          <p class="resena-texto" data-lang="review1Text">"Lograron renovar nuestro logotipo y la línea gráfica de la empresa sin que nuestros clientes habituales sintieran un cambio brusco. Captaron nuestra historia a la perfección."</p>
-          <div class="resena-autor">
-            <strong>Carlos Mendoza</strong>
-            <small data-lang="review1Role">Fundador, Grupo Mendoza</small>
-          </div>
-        </div>
-
-        <!-- Reseña 2 -->
-        <div class="contacto-resena-card">
-          <div class="resena-estrellas">★★★★★</div>
-          <p class="resena-texto" data-lang="review2Text">"El diagnóstico de marca que realizaron abrió nuestros ojos a problemas visuales que no veíamos. El manual de identidad que nos entregaron es super completo."</p>
-          <div class="resena-autor">
-            <strong>Elena Rostova</strong>
-            <small data-lang="review2Role">Directora de Marketing</small>
-          </div>
-        </div>
-
-        <!-- Reseña 3 -->
-        <div class="contacto-resena-card">
-          <div class="resena-estrellas">★★★★★</div>
-          <p class="resena-texto" data-lang="review3Text">"Excelente atención por WhatsApp y entrega puntual. Rediseñaron nuestras redes sociales y el cambio en la percepción de los clientes fue inmediato."</p>
-          <div class="resena-autor">
-            <strong>Javier Silva</strong>
-            <small data-lang="review3Role">CEO, Studio Creativo</small>
-          </div>
+  <div class="contacto-carrusel-contenedor">
+    <div class="contacto-carrusel-track">
+      <!-- BLOQUE 1: Tus reseñas actuales -->
+      <div class="contacto-resena-card">
+        <div class="resena-estrellas">★★★★★</div>
+        <p class="resena-texto">"Excelente atención y profesionalismo. Captaron perfectamente lo que necesitábamos para nuestra institución."</p>
+        <div class="resena-autor">
+          <strong>Luis Ceballos</strong>
+          <small>Docente de la Institucion Eustaquio Palacio</small>
         </div>
       </div>
-    </section>
+
+      <div class="contacto-resena-card">
+        <div class="resena-estrellas">★★★★★</div>
+        <p class="resena-texto">"El cambio visual fue increíble. Muy recomendados por su compromiso y calidad."</p>
+        <div class="resena-autor">
+          <strong>Rosa</strong>
+          <small>Docente de la Institucion Eustaquio Palacio</small>
+        </div>
+      </div>
+
+      <div class="contacto-resena-card">
+        <div class="resena-estrellas">★★★★★</div>
+        <p class="resena-texto">"Excelente atención por WhatsApp y entrega puntual. Rediseñaron nuestra marca, el cambio fue inmediato."</p>
+        <div class="resena-autor">
+          <strong>Sandra Ruiz</strong>
+          <small>Fundadora de Skenzi Home</small>
+        </div>
+      </div>
+
+      <!-- BLOQUE 2: Duplicado exacto para asegurar el bucle continuo sin espacios -->
+      <div class="contacto-resena-card">
+        <div class="resena-estrellas">★★★★★</div>
+        <p class="resena-texto">"Excelente atención y profesionalismo. Captaron perfectamente lo que necesitábamos para nuestra institución."</p>
+        <div class="resena-autor">
+          <strong>Luis Ceballos</strong>
+          <small>Docente de la Institucion Eustaquio Palacio</small>
+        </div>
+      </div>
+
+      <div class="contacto-resena-card">
+        <div class="resena-estrellas">★★★★★</div>
+        <p class="resena-texto">"El cambio visual fue increíble. Muy recomendados por su compromiso y calidad."</p>
+        <div class="resena-autor">
+          <strong>Rosa</strong>
+          <small>Docente de la Institucion Eustaquio Palacio</small>
+        </div>
+      </div>
+
+      <div class="contacto-resena-card">
+        <div class="resena-estrellas">★★★★★</div>
+        <p class="resena-texto">"Excelente atención por WhatsApp y entrega puntual. Rediseñaron nuestra marca, el cambio fue inmediato."</p>
+        <div class="resena-autor">
+          <strong>Sandra Ruiz</strong>
+          <small>Fundadora de Skenzi Home</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  
 
     <!-- SECCIÓN 04: PREGUNTAS FRECUENTES -->
     <section class="contacto-faq" id="contacto-faq">
@@ -481,6 +506,25 @@
       });
     })();
   </script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const carruselContenedor = document.querySelector(".contacto-carrusel-contenedor");
 
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          carruselContenedor.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15
+    });
+
+    if (carruselContenedor) {
+      observer.observe(carruselContenedor);
+    }
+  });
+</script>
 </body>
 </html>
