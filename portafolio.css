@@ -388,3 +388,56 @@ body.portafolio-renax {
   width: auto;
   opacity: 0.9;
 }
+/* FORZAR ANCHO COMPLETO DE ESQUINA A ESQUINA */
+footer.renax-footer,
+.renax-footer {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 30px 40px 20px !important;
+  box-sizing: border-box !important;
+}
+
+footer.renax-footer .footer-wrapper,
+.renax-footer .footer-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+footer.renax-footer .footer-top-bar,
+.renax-footer .footer-top-bar {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-bottom: 25px !important;
+}
+
+footer.renax-footer .footer-columns-container,
+.renax-footer .footer-columns-container {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important; /* Fuerza las 5 columnas distribuidas */
+  width: 100% !important;
+  max-width: 100% !important;
+  gap: 30px !important;
+  padding-bottom: 20px !important;
+}
+
+footer.renax-footer .footer-column,
+.renax-footer .footer-column {
+  width: 100% !important;
+}
+
+footer.renax-footer .footer-menu-links,
+.renax-footer .footer-menu-links {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px !important; /* Reduce espacio alto vertical */
+}
+
+footer.renax-footer .footer-bottom-bar,
+.renax-footer .footer-bottom-bar {
+  width: 100% !important;
+  padding-top: 15px !important;
+}
