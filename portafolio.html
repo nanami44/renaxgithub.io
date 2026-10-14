@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="portafolio.css?v=1">
+
   <style>
     /* Estilos integrados para zoom en imágenes y botones flotantes */
     .portfolio-item, .renax-work-card {
@@ -49,7 +50,7 @@
     .renax-whatsapp { background-color: #25d366; }
     .renax-facebook { background-color: #1877f2; }
 
-    /* Estilos del pie de página exactos */
+    /* Estilos del pie de página */
     .renax-footer {
       background-color: #0b0b0b;
       color: #ffffff;
@@ -482,7 +483,27 @@
 
   <!-- SCRIPTS -->
   <script>
-    // CAMBIO DE IDIOMA
+    // 1. TRANSICIÓN DE PÁGINA (PANTALLA DE CARGA)
+    window.addEventListener("load", () => {
+      const transition = document.getElementById("renaxPageTransition");
+      if (transition) {
+        setTimeout(() => {
+          transition.classList.add("hide");
+        }, 500);
+      }
+    });
+
+    // 2. MENÚ RESPONSIVO (HAMBURGUESA)
+    const navToggle = document.getElementById("navToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    if (navToggle && navMenu) {
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("open");
+      });
+    }
+
+    // 3. CAMBIO DE IDIOMA (ESP / ENG)
     const languageBtn = document.getElementById("languageBtn");
     let english = false;
 
@@ -572,3 +593,41 @@
         footerExplore: "EXPLORE RENAX ↘",
         footerHomeTitle: "HOME",
         footerText1: "Brand transformation experts",
+        footerText2: "Stand out again without losing your essence",
+        footerText3: "Your story deserves an image to match it",
+        footerText4: "Frequently asked questions",
+        footerAboutTitle: "ABOUT US",
+        footerWho: "About Us",
+        footerVision: "Vision",
+        footerMission: "Mission",
+        footerWhy: "Why RENAX?",
+        footerPortfolioTitle: "PORTFOLIO",
+        footerProjects: "Projects and completed works",
+        footerCases: "Case studies",
+        footerServicesTitle: "SERVICES",
+        footerService1: "Brand Diagnosis",
+        footerService2: "Brand Renewal",
+        footerService3: "Communication",
+        footerService4: "Visual Strategy",
+        footerContactTitle: "CONTACT",
+        footerTalk: "Let's talk about your project"
+      }
+    };
+
+    if (languageBtn) {
+      languageBtn.addEventListener("click", () => {
+        english = !english;
+        const lang = english ? "en" : "es";
+        languageBtn.textContent = english ? "ESP" : "ENG";
+
+        document.querySelectorAll("[data-lang]").forEach((elem) => {
+          const key = elem.getAttribute("data-lang");
+          if (translations[lang] && translations[lang][key]) {
+            elem.innerHTML = translations[lang][key];
+          }
+        });
+      });
+    }
+  </script>
+</body>
+</html>
