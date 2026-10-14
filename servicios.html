@@ -452,7 +452,7 @@
     cambiarIdioma();
   </script>
 
-  <!-- SCRIPT MODALES VENTANAS DINÁMICAS -->
+ <!-- SCRIPT MODALES VENTANAS DINÁMICAS -->
   <script>
     (() => {
       const modal = document.getElementById("srvModal");
@@ -462,7 +462,6 @@
       const intro = document.getElementById("srvModalIntro");
       const lista = document.getElementById("srvModalLista");
       const resultado = document.getElementById("srvModalResultado");
-      const panel = modal.querySelector(".srv-modal-panel");
       const etiqueta = document.getElementById("srvModalEtiqueta");
       const subtitulo = document.getElementById("srvModalSubtitulo");
       const objLabel = document.getElementById("srvModalObjLabel");
@@ -484,72 +483,75 @@
             tipografias: { titulo: "Tipografías", intro: "Seleccionamos familias tipográficas que refuercen la voz y la personalidad de tu marca garantizando perfecta legibilidad.", puntos: ["Tipografías corporativas para títulos y textos.", "Jerarquía visual clara.", "Licencias y optimización digital."], resultado: "Aportar elegancia, consistencia y legibilidad a toda la comunicación escrita." },
             sistemaVisual: { titulo: "Sistema visual", intro: "Creamos un conjunto coherente de elementos gráficos que complementan tu identidad y dotan de dinamismo a tus piezas.", puntos: ["Patrones, texturas y formas de apoyo.", "Línea gráfica para aplicaciones corporativas.", "Flexibilidad de diseño."], resultado: "Construir una identidad rica, versátil y visualmente atractiva." },
             manualIdentidad: { titulo: "Manual de identidad", intro: "Documentamos todas las reglas y normas de uso de la marca para asegurar que se aplique correctamente en cualquier medio.", puntos: ["Normas de uso del logotipo y colores.", "Ejemplos de aplicación correcta e incorrecta.", "Lineamientos generales de diseño."], resultado: "Preservar la consistencia de la marca a lo largo del tiempo." },
-            piezasRedes: { titulo: "Piezas para redes sociales", intro: "Diseñamos contenido visual dinámico y estructurado para conectar con tu audiencia en plataformas digitales.", posts: ["Plantillas y publicaciones optimizadas.", "Historias y formatos de impacto.", "Línea gráfica para feeds."], resultado: "Mantener una presencia digital atractiva y profesional." },
+            piezasRedes: { titulo: "Piezas para redes sociales", intro: "Diseñamos contenido visual dinámico y estructurado para conectar con tu audiencia en plataformas digitales.", puntos: ["Plantillas y publicaciones optimizadas.", "Historias y formatos de impacto.", "Línea gráfica para feeds."], resultado: "Mantener una presencia digital atractiva y profesional." },
             campañasVisuales: { titulo: "Campañas visuales", intro: "Creamos conceptos visuales de alto impacto para lanzamientos, promociones o mensajes clave de la marca.", puntos: ["Dirección de arte para campañas.", "Adaptación a múltiples formatos y canales.", "Piezas gráficas promocionales."], resultado: "Captar la atención del público y transmitir mensajes comerciales con fuerza." },
             materialPublicitario: { titulo: "Material publicitario", intro: "Desarrollamos piezas gráficas comerciales diseñadas para destacar en puntos de venta o eventos.", puntos: ["Folletos, catálogos y presentaciones.", "Diseño de elementos promocionales.", "Adaptación de identidad a soportes físicos."], resultado: "Proyectar profesionalismo en cada interacción comercial." },
             presentaciones: { titulo: "Presentaciones", intro: "Estructuramos y diseñamos presentaciones corporativas claras, elegantes y persuasivas para inversores o clientes.", puntos: ["Diseño de diapositivas con identidad corporativa.", "Jerarquía visual de la información.", "Recursos gráficos personalizados."], resultado: "Comunicar ideas complejas de forma visualmente impecable." },
             piezasDigitales: { titulo: "Piezas digitales e impresas", intro: "Producimos cualquier formato gráfico que tu marca necesite, asegurando coherencia visual en todos los medios.", puntos: ["Banners web y piezas para pauta digital.", "Papelería corporativa.", "Adaptación a impresión y formatos digitales."], resultado: "Garantizar una imagen impecable en cualquier canal de comunicación." },
             dirVisual: { titulo: "Dirección visual", intro: "Guiamos y supervisamos la línea gráfica general de la marca para asegurar consistencia a largo plazo.", puntos: ["Supervisión de aplicaciones de marca.", "Criterios estéticos unificados.", "Evolución visual controlada."], resultado: "Mantener el orden y la coherencia en la estética de la marca." },
             conceptoCreativo: { titulo: "Concepto creativo", intro: "Ideamos el eje central conceptual que da sentido y personalidad a tus proyectos visuales.", puntos: ["Lluvia de ideas y propuestas conceptuales.", "Asociación de valores de marca con elementos gráficos.", "Estrategia de comunicación visual."], resultado: "Aportar un trasfondo sólido y diferenciador a los diseños." },
-            sistema gráfico: { titulo: "Sistema gráfico", intro: "Organizamos los elementos visuales en un sistema coherente y fácil de aplicar en el día a día de la empresa.", puntos: ["Librería de recursos gráficos.", "Normas de combinación visual.", "Estructura de plantillas."], resultado: "Facilitar la creación de nuevas piezas sin perder la identidad." },
+            sistemaGrafico: { titulo: "Sistema gráfico", intro: "Organizamos los elementos visuales en un sistema coherente y fácil de aplicar en el día a día de la empresa.", puntos: ["Librería de recursos gráficos.", "Normas de combinación visual.", "Estructura de plantillas."], resultado: "Facilitar la creación de nuevas piezas sin perder la identidad." },
             coherenciaMarca: { titulo: "Coherencia de marca", intro: "Alineamos cada punto de contacto de tu empresa para que la experiencia visual sea siempre idéntica y sólida.", puntos: ["Auditoría de puntos de contacto.", "Corrección de desviaciones de identidad.", "Unificación de criterios visuales."], resultado: "Construir una marca sólida, confiable y fácilmente reconocible." }
-          }
-        },
-        en: {
-          etiqueta: "RENAX / SERVICE DETAILS",
-          subtitulo: "What's included?",
-          objetivo: "OBJECTIVE",
-          volver: "← Back to section",
-          items: {
-            auditoria: { titulo: "Brand audit", intro: "We analyze your brand's current state to recognize strengths, detect inconsistencies, and discover opportunities for improvement.", puntos: ["Current brand identity and presentation.", "Consistency between image and values.", "Strengths and areas for improvement."], resultado: "Understand the brand's situation before proposing changes." },
-            identidad: { titulo: "Visual identity analysis", intro: "We evaluate graphic elements and how they work together to convey personality and differentiation.", puntos: ["Logo and its applications.", "Colors and typography.", "Consistency of visual elements."], resultado: "Identify what works and what needs reinforcement." },
-            comunicacion: { titulo: "Communication analysis", intro: "We review how messages are transmitted and whether communication aligns with brand identity.", puntos: ["Clarity of messages and tone.", "Digital and print content.", "Consistency between appearance and message."], resultado: "Recognize opportunities for clearer and more consistent communication." },
-            oportunidades: { titulo: "Identifying opportunities", intro: "We spot evolution possibilities that meet business needs without losing unique brand traits.", puntos: ["Aspects to update.", "Elements to preserve.", "Opportunities to strengthen presentation."], resultado: "Define improvement priorities to guide brand evolution." },
-            renovacionLogo: { titulo: "Logo refresh", intro: "We evolve your main symbol keeping recognition and adapting it to modern standards.", puntos: ["Esthetic and functional redesign.", "Adaptable versions.", "Digital and print optimization."], resultado: "Achieve a fresh, modern image without losing historical recognition." },
-            paletaColores: { titulo: "Color palette", intro: "We establish a professional color range evoking the right emotions and distinct character.", puntos: ["Main and secondary tone selection.", "Color code definitions.", "Application guide."], resultado: "Ensure visual harmony and immediate recognition." },
-            tipografias: { titulo: "Typography", intro: "We select font families that reinforce brand voice and guarantee perfect readability.", puntos: ["Corporate fonts.", "Visual hierarchy.", "Digital optimization."], resultado: "Bring elegance, consistency, and legibility." },
-            sistemaVisual: { titulo: "Visual system", intro: "We create a cohesive set of graphic elements complementing identity and dynamism.", puntos: ["Patterns and supporting shapes.", "Graphic line for corporate applications.", "Design flexibility."], resultado: "Build a rich, versatile, and appealing identity." },
-            manualIdentidad: { titulo: "Brand guidelines", intro: "We document all usage rules to ensure proper application across any medium.", puntos: ["Logo and color rules.", "Correct and incorrect examples.", "General design guidelines."], resultado: "Preserve brand consistency over time." }
           }
         }
       };
 
-      function abrirVentana(clave, botonTrigger) {
-        const langData = contenidosModal[idiomaActual] || contenidosModal.es;
+      function abrirVentana(clave) {
+        const langData = window.idiomaActual && contenidosModal[window.idiomaActual] ? contenidosModal[window.idiomaActual] : contenidosModal.es;
         const info = langData.items[clave];
         if (!info) return;
 
-        etiqueta.textContent = langData.etiqueta;
-        titulo.textContent = info.titulo;
-        intro.textContent = info.intro;
-        subtitulo.textContent = langData.subtitulo;
-        objLabel.textContent = langData.objetivo;
-        volverTexto.textContent = langData.volver;
+        if (etiqueta) etiqueta.textContent = langData.etiqueta;
+        if (titulo) titulo.textContent = info.titulo;
+        if (intro) intro.textContent = info.intro;
+        if (subtitulo) subtitulo.textContent = langData.subtitulo;
+        if (objLabel) objLabel.textContent = langData.objetivo;
+        if (volverTexto) volverTexto.textContent = langData.volver;
 
-        lista.innerHTML = "";
-        if (info.puntos && info.puntos.length > 0) {
-          info.puntos.forEach(punto => {
-            const li = document.createElement("li");
-            li.textContent = punto;
-            lista.appendChild(li);
-          });
+        if (lista) {
+          lista.innerHTML = "";
+          if (info.puntos && info.puntos.length > 0) {
+            info.puntos.forEach(punto => {
+              const li = document.createElement("li");
+              li.textContent = punto;
+              lista.appendChild(li);
+            });
+          }
         }
 
-        resultado.textContent = info.resultado;
-        modal.hidden = false;
+        if (resultado) resultado.textContent = info.resultado;
+        modal.removeAttribute("hidden");
+        modal.style.display = "flex";
         document.body.style.overflow = "hidden";
       }
 
       function cerrarVentana() {
-        modal.hidden = true;
+        modal.setAttribute("hidden", "true");
+        modal.style.display = "none";
         document.body.style.overflow = "";
       }
 
-     document.querySelectorAll("[data-ventana]").forEach(boton => {
-        boton.addEventListener("click", (e) => {
+      // Escucha tanto elementos con data-ventana como los elementos de las listas (li)
+      document.querySelectorAll("[data-ventana], .srv-servicio-contenido ul li").forEach(elemento => {
+        elemento.addEventListener("click", (e) => {
           e.stopPropagation();
-          const clave = boton.getAttribute("data-ventana");
-          abrirVentana(clave);
+          // Si el clic fue directo en un li, buscamos su posición o texto, o aseguramos que tenga la clave
+          let clave = elemento.getAttribute("data-ventana");
+          
+          // Si no tiene data-ventana directo pero es un li, intentamos mapearlo por su texto o índice si es necesario, 
+          // o asegúrate de que tus <li> en el HTML tengan el atributo data-ventana="auditoria", etc.
+          if (!clave) {
+            // Intento de rescate si el atributo está en un hijo o si el elemento es un li plano
+            const parentService = elemento.closest(".srv-servicio");
+            if (parentService) {
+              // Si tus li no tienen data-ventana en el HTML, puedes añadírselos. 
+              // Ejemplo: <li data-ventana="auditoria">Texto...</li>
+            }
+          }
+
+          if (clave) {
+            abrirVentana(clave);
+          }
         });
       });
 
@@ -558,10 +560,9 @@
       });
 
       document.addEventListener("keydown", e => {
-        if (e.key === "Escape" && !modal.hidden) cerrarVentana();
+        if (e.key === "Escape" && !modal.hasAttribute("hidden")) cerrarVentana();
       });
     })();
-     
   </script>
    
   
