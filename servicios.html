@@ -38,8 +38,14 @@
   <main class="srv-main">
     <!-- HERO -->
     <section class="srv-hero" id="inicio-servicios" aria-label="Portada de Servicios RENAX">
-      <img class="srv-hero-imagen" src="Servicio creativo.png" alt="Imagen de portada de Servicios RENAX">
+       
+<img class="srv-hero-imagen" src="Servicio creativo.png" alt="Imagen de portada de Servicios RENAX">
     </section>
+    <!-- 2. ESPACIADOR INVISIBLE PARA ACTIVAR EL SCROLL -->
+  <div class="srv-scroll-trigger"></div>
+
+  <!-- 3. VELO CONTENEDOR DESLIZANTE -->
+  <div class="srv-velo-contenido" id="srvVeloContenido">
 
     <!-- MANIFIESTO -->
     <section class="srv-manifiesto" aria-labelledby="srv-manifiesto-titulo">
@@ -569,6 +575,7 @@
         if (e.key === "Escape" && !modal.hidden) cerrarVentana();
       });
     })();
+    </div>
     <!-- SCRIPT DE CONTROL DEL VELO FLOTANTE -->
   <script>
     window.addEventListener('scroll', () => {
