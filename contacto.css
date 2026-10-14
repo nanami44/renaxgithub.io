@@ -381,3 +381,66 @@ body.contacto-page {
   position: relative;
   margin-bottom: 22px;
 }
+/* ==========================================================
+   EFECTO DE APARICIÓN GRADUAL (FADE REVEAL) - RESEÑAS
+   ========================================================== */
+.contacto-carrusel-contenedor {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 40px;
+  
+  /* Estado inicial antes de aparecer */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Máscaras de desvanecimiento en los laterales */
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+/* Estado final cuando se activa al hacer scroll */
+.contacto-carrusel-contenedor.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contacto-carrusel-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: deslizarCarrusel 35s linear infinite;
+}
+
+/* Pausar el movimiento al pasar el cursor */
+.contacto-carrusel-contenedor:hover .contacto-carrusel-track {
+  animation-play-state: paused;
+}
+
+.contacto-resena-card {
+  background: rgba(15, 15, 15, 0.6);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 35px;
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border-color 0.3s ease;
+}
+
+.contacto-resena-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+@keyframes deslizarCarrusel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 15px));
+  }
+}
