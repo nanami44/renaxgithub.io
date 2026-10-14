@@ -7,11 +7,8 @@
   <title>Servicios | RENAX</title>
   <link rel="stylesheet" href="servicios.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    
-  <style>
- 
-  /* 1. Portada fija al fondo de la pantalla */
+<style>
+  /* 1. Portada fija al fondo */
   .srv-hero {
     position: fixed !important;
     top: 0 !important;
@@ -33,7 +30,7 @@
     box-shadow: none !important;
   }
 
-  /* 2. Espaciador invisible para permitir el scroll */
+  /* 2. Espaciador invisible para habilitar el scroll */
   .srv-scroll-trigger {
     height: 220vh;
     width: 100%;
@@ -71,22 +68,8 @@
     background-color: rgba(3, 3, 3, 0.85) !important;
     backdrop-filter: blur(10px);
   }
-</style>
 
-  /* Animaciones lentas y fluidas */
-  @keyframes movimientoLaserSuave {
-    0% { transform: translate(0, 0) rotate(0deg) scale(1); }
-    50% { transform: translate(-20px, 15px) rotate(0.5deg) scale(1.01); }
-    100% { transform: translate(15px, -20px) rotate(-0.5deg) scale(0.99); }
-  }
-
-  @keyframes movimientoLaserCruzado {
-    0% { transform: translate(0, 0) rotate(0deg); opacity: 0.3; }
-    50% { transform: translate(20px, -15px) rotate(-0.8deg); opacity: 0.5; }
-    100% { transform: translate(-15px, 20px) rotate(0.8deg); opacity: 0.3; }
-  }
-
-  /* Estilos para las tarjetas */
+  /* 5. Estilos para las tarjetas y modales */
   .srv-servicio {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -96,186 +79,71 @@
     margin: 80px auto;
     padding: 0 40px;
   }
-</style>
 
-    /* Estilos mejorados integrados para tarjetas intercaladas, modales y bordes redondeados */
-    .srv-servicio {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-      align-items: center;
-      max-width: 1400px;
-      margin: 80px auto;
-      padding: 0 40px;
-    }
-    .srv-servicio.invertido {
-      direction: rtl;
-    }
-    .srv-servicio.invertido > * {
+  .srv-servicio.invertido {
+    direction: rtl;
+  }
+
+  .srv-servicio.invertido > * {
+    direction: ltr;
+  }
+
+  .srv-servicio-imagen img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+  }
+
+  .srv-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .srv-modal[hidden] {
+    display: none !important;
+  }
+
+  .srv-modal-fondo {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(8px);
+  }
+
+  .srv-modal-panel {
+    position: relative;
+    background: #111;
+    border: 1px solid rgba(200, 16, 46, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 650px;
+    width: 100%;
+    color: #fff;
+    z-index: 2;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.8);
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  @media (max-width: 900px) {
+    .srv-servicio, .srv-servicio.invertido {
+      grid-template-columns: 1fr;
       direction: ltr;
+      gap: 30px;
+      padding: 0 20px;
     }
-    .srv-servicio-imagen img {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
-    }
-    .srv-servicio-contenido ul {
-      list-style: none;
-      padding: 0;
-      margin-top: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    .srv-servicio-contenido ul li {
-      background: rgba(255,255,255,0.03);
-      padding: 12px 18px;
-      border-radius: 8px;
-      cursor: pointer;
-      border: 1px solid rgba(255,255,255,0.08);
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .srv-servicio-contenido ul li:hover {
-      background: rgba(200, 16, 46, 0.15);
-      border-color: #c8102e;
-      transform: translateX(5px);
-    }
-    .srv-servicio-contenido ul li::after {
-      content: '→';
-      font-weight: bold;
-      color: #c8102e;
-    }
+  }
+</style>
+    
+  
 
-    /* Modal estético */
-    .srv-modal {
-      position: fixed;
-      inset: 0;
-      z-index: 99999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .srv-modal[hidden] {
-      display: none !important;
-    }
-    .srv-modal-fondo {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(8px);
-    }
-    .srv-modal-panel {
-      position: relative;
-      background: #111;
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 20px;
-      padding: 40px;
-      max-width: 650px;
-      width: 100%;
-      color: #fff;
-      z-index: 2;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.8);
-      max-height: 90vh;
-      overflow-y: auto;
-    }
-    .srv-modal-cerrar {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 28px;
-      cursor: pointer;
-    }
-    .srv-modal-etiqueta {
-      font-size: 12px;
-      letter-spacing: 2px;
-      color: #c8102e;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .srv-modal-panel h2 {
-      font-size: 2rem;
-      font-weight: 900;
-      margin-bottom: 15px;
-      text-transform: uppercase;
-    }
-    .srv-modal-intro {
-      color: #aaa;
-      font-size: 1rem;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    .srv-modal-linea {
-      height: 1px;
-      background: rgba(255,255,255,0.1);
-      margin: 20px 0;
-    }
-    .srv-modal-panel h3 {
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-      color: #fff;
-    }
-    .srv-modal-lista {
-      list-style: disc;
-      padding-left: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      color: #ccc;
-      margin-bottom: 25px;
-    }
-    .srv-modal-resultado {
-      background: rgba(200, 16, 46, 0.1);
-      border-left: 4px solid #c8102e;
-      padding: 15px;
-      border-radius: 4px;
-      margin-bottom: 25px;
-    }
-    .srv-modal-resultado span {
-      font-size: 11px;
-      letter-spacing: 1.5px;
-      color: #c8102e;
-      font-weight: 700;
-      display: block;
-      margin-bottom: 5px;
-    }
-    .srv-modal-resultado p {
-      color: #fff;
-      font-size: 0.95rem;
-      margin: 0;
-    }
-    .srv-modal-volver {
-      background: transparent;
-      border: 1px solid #fff;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: 0.3s;
-    }
-    .srv-modal-volver:hover {
-      background: #fff;
-      color: #000;
-    }
-
-    @media(max-width: 900px) {
-      .srv-servicio, .srv-servicio.invertido {
-        grid-template-columns: 1fr;
-        direction: ltr;
-        gap: 30px;
-        padding: 0 20px;
-      }
-    }
-  </style>
 </head>
 <body class="servicios-renax">
   <div class="srv-fondo-reserva" aria-hidden="true"></div>
