@@ -856,4 +856,65 @@ body.contacto-page {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+/* ==========================================================
+   ESTILOS PARA LOGOS DE IMAGEN EN CANALES DE ATENCIÓN
+   ========================================================== */
+.canal-icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+.canal-img-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Colores permanentes en las tarjetas y bordes */
+.renax-canal-card:nth-child(1) {
+  border: 1px solid rgba(37, 211, 102, 0.25);
+}
+.renax-canal-card:nth-child(1) .canal-icon-wrapper {
+  background: rgba(37, 211, 102, 0.1);
+  border: 1px solid rgba(37, 211, 102, 0.2);
+}
+.renax-canal-card:nth-child(1) .canal-info h3 span {
+  color: #25d366;
+}
+
+.renax-canal-card:nth-child(2) {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+.renax-canal-card:nth-child(2) .canal-icon-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+.renax-canal-card:nth-child(2) .canal-info h3 span {
+  color: #ffffff;
+}
+
+.renax-canal-card:nth-child(3) {
+  border: 1px solid rgba(24, 119, 242, 0.25);
+}
+.renax-canal-card:nth-child(3) .canal-icon-wrapper {
+  background: rgba(24, 119, 242, 0.1);
+  border: 1px solid rgba(24, 119, 242, 0.2);
+}
+.renax-canal-card:nth-child(3) .canal-info h3 span {
+  color: #1877f2;
+}
+
+/* Efecto hover unificado (zoom y brillo rojo) */
+.renax-canal-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(194, 56, 74, 0.6) !important;
+  background: rgba(20, 15, 17, 0.9);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
 }
