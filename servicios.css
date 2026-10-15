@@ -635,3 +635,7 @@ body.servicios-renax {
     display: none !important;
   }
 }
+/* Ocultar las etiquetas de sección (01, 02, 03) */
+.srv-seccion-meta {
+  display: none !important;
+}
