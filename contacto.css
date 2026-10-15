@@ -784,3 +784,132 @@ body.contacto-page {
 .logo-canal-item:hover .logo-canal-img {
   transform: scale(1.1);
 }
+/* ==========================================================
+   ESTILOS DE RESEÑAS CON AVATAR EN LA ESQUINA SUPERIOR DERECHA
+   ========================================================== */
+.contacto-resena-card {
+  background: rgba(15, 15, 15, 0.65);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 35px;
+  width: 380px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  transition: border-color 0.3s ease;
+}
+
+.resena-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.resena-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(194, 56, 74, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.resena-texto {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.resena-autor strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+.resena-autor small {
+  font-size: 0.8rem;
+  color: #c2384a;
+  font-weight: 600;
+}
+
+/* ==========================================================
+   SECCIÓN PARA DEJAR UNA NUEVA RESEÑA
+   ========================================================== */
+.deja-tu-resena-contenedor {
+  max-width: 800px;
+  margin: 80px auto 0;
+}
+
+.deja-resena-caja {
+  background: rgba(12, 12, 12, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(194, 56, 74, 0.3);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+.deja-resena-caja h3 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.deja-resena-caja h3 em {
+  color: #c2384a;
+  font-style: normal;
+}
+
+.deja-resena-caja p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+.form-resena-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-group.full-width {
+  grid-column: span 2;
+}
+
+.input-estilo {
+  width: 100%;
+  background: rgba(20, 20, 20, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: #ffffff;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.input-estilo:focus {
+  border-color: #c2384a;
+  background: rgba(25, 18, 20, 0.9);
+  box-shadow: 0 0 15px rgba(194, 56, 74, 0.2);
+}
+
+textarea.input-estilo {
+  resize: vertical;
+}
+
+.btn-enviar-resena {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
+}
