@@ -110,53 +110,53 @@
         </div>
 
         <!-- FORMULARIO DIRECTO -->
-        <aside class="contacto-tarjeta-form">
-          <span class="contacto-tarjeta-etiqueta" data-lang="formTag">SOLICITUD DE COTIZACIÓN</span>
-          <h3 data-lang="tellBrand">Cuéntanos sobre tu proyecto</h3>
-          
-          <form class="contacto-form-element" action="https://formspree.io/f/xwlpjyda" method="POST" id="formContacto">
-            <div class="form-group">
-              <input type="text" id="nombre" name="nombre" placeholder=" " required>
-              <label for="nombre" data-lang="labelName">Nombre completo *</label>
-            </div>
+       <aside class="contacto-tarjeta-form">
+    <span class="contacto-tarjeta-etiqueta" data-lang="formTag">SOLICITUD DE COTIZACIÓN</span>
+    <h3 data-lang="tellBrand">Cuéntanos sobre tu proyecto</h3>
 
-            <div class="form-group">
-              <input type="email" id="email" name="email" placeholder=" " required>
-              <label for="email" data-lang="labelEmail">Correo electrónico *</label>
-            </div>
+    <form class="contacto-form-element" action="https://formspree.io/f/xwlpjyda" method="POST" id="formCotizacion">
+      <div class="form-group">
+        <input type="text" id="nombre" name="nombre" placeholder=" " required>
+        <label for="nombre" data-lang="labelName">Nombre completo *</label>
+      </div>
 
-            <div class="form-group">
-              <input type="tel" id="telefono" name="telefono" placeholder=" ">
-              <label for="telefono" data-lang="labelPhone">Teléfono / WhatsApp</label>
-            </div>
+      <div class="form-group">
+        <input type="email" id="email" name="email" placeholder=" " required>
+        <label for="email" data-lang="labelEmail">Correo electrónico *</label>
+      </div>
 
-            <div class="form-group">
-              <select id="servicio" name="servicio" required>
-                <option value="" disabled selected hidden></option>
-                <option value="diagnostico" data-lang="opt1">Auditoría / Diagnóstico de marca</option>
-                <option value="renovacion" data-lang="opt2">Renovación de Identidad / Logo</option>
-                <option value="comunicacion" data-lang="opt3">Contenido y Redes Sociales</option>
-                <option value="estrategia" data-lang="opt4">Estrategia Visual Completa</option>
-                <option value="otro" data-lang="opt5">Otro servicio</option>
-              </select>
-              <label for="servicio" data-lang="labelService">¿Qué servicio te interesa? *</label>
-            </div>
+      <div class="form-group">
+        <input type="tel" id="telefono" name="telefono" placeholder=" ">
+        <label for="telefono" data-lang="labelPhone">Teléfono / WhatsApp</label>
+      </div>
 
-            <div class="form-group">
-              <textarea id="mensaje" name="mensaje" rows="4" placeholder=" " required></textarea>
-              <label for="mensaje" data-lang="labelMessage">Detalles de tu proyecto *</label>
-            </div>
+      <div class="form-group">
+        <select id="servicio" name="servicio" required>
+          <option value="" disabled selected hidden></option>
+          <option value="diagnostico" data-lang="opt1">Auditoría / Diagnóstico de marca</option>
+          <option value="renovacion" data-lang="opt2">Renovación de Identidad / Logo</option>
+          <option value="comunicacion" data-lang="opt3">Contenido y Redes Sociales</option>
+          <option value="estrategia" data-lang="opt4">Estrategia Visual Completa</option>
+          <option value="otro" data-lang="opt5">Otro servicio</option>
+        </select>
+        <label for="servicio" data-lang="labelService">¿Qué servicio te interesa? *</label>
+      </div>
 
-            <button type="submit" class="contacto-boton contacto-boton-rojo">
-              <span data-lang="contactSubmit">ENVIAR SOLICITUD</span>
-              <span aria-hidden="true">→</span>
-            </button>
-          </form>
+      <div class="form-group">
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder=" " required></textarea>
+        <label for="mensaje" data-lang="labelMessage">Detalles de tu proyecto *</label>
+      </div>
 
-          <p class="contacto-nota" data-lang="contactNote">
-            Tu información es 100% confidencial.
-          </p>
-        </aside>
+      <button type="submit" class="contacto-boton contacto-boton-rojo">
+        <span data-lang="contactSubmit">ENVIAR SOLICITUD</span>
+        <span aria-hidden="true">→</span>
+      </button>
+    </form>
+
+    <p class="contacto-nota" data-lang="contactNote">
+      Tu información es 100% confidencial.
+    </p>
+  </aside>
       </div>
     </section>
 <!-- SECCIÓN 02: CANALES DE ATENCIÓN (SOLO LOGOS HORIZONTALES) -->
@@ -593,5 +593,29 @@
     }
   });
 </script>
+  <script>
+  document.getElementById('formCotizacion').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const form = e.target;
+    const data = new FormData(form);
+    
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+      
+      if (response.ok) {
+        alert('¡Solicitud enviada con éxito! Nos pondremos en contacto contigo pronto.');
+        form.reset(); // Esto vacía y limpia todos los campos del formulario
+      } else {
+        alert('Hubo un problema al enviar la solicitud. Por favor, intenta de nuevo.');
+      }
+    } catch (error) {
+      alert('Error de conexión. Verifica tu red e inténtalo nuevamente.');
+    }
+  });
+</scriptS
 </body>
 </html>
