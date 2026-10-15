@@ -194,9 +194,8 @@
     </a>
   </div>
 </section>
-  
-<!-- SECCIÓN DE RESEÑAS EN CARRUSEL INFINITO -->
-<section class="contacto-resenas">
+  <!-- SECCIÓN DE RESEÑAS CON FOTOS EN LA ESQUINA Y FORMULARIO NUEVO -->
+<section class="contacto-resenas-seccion">
   <div class="contacto-seccion-meta">
     <span class="numero-paso">03</span>
     <span class="contacto-hero-linea"></span>
@@ -205,9 +204,12 @@
 
   <div class="contacto-carrusel-contenedor">
     <div class="contacto-carrusel-track">
-      <!-- BLOQUE 1: Tus reseñas actuales -->
+      <!-- Tarjeta 1: Luis -->
       <div class="contacto-resena-card">
-        <div class="resena-estrellas">★★★★★</div>
+        <div class="resena-header-top">
+          <div class="resena-estrellas">★★★★★</div>
+          <img src="luis.jpg" alt="Luis Ceballos" class="resena-avatar">
+        </div>
         <p class="resena-texto">"Excelente atención y profesionalismo. Captaron perfectamente lo que necesitábamos para nuestra institución."</p>
         <div class="resena-autor">
           <strong>Luis Ceballos</strong>
@@ -215,8 +217,12 @@
         </div>
       </div>
 
+      <!-- Tarjeta 2: Rosa -->
       <div class="contacto-resena-card">
-        <div class="resena-estrellas">★★★★★</div>
+        <div class="resena-header-top">
+          <div class="resena-estrellas">★★★★★</div>
+          <img src="rosa.jpg" alt="Rosa" class="resena-avatar">
+        </div>
         <p class="resena-texto">"El cambio visual fue increíble. Muy recomendados por su compromiso y calidad."</p>
         <div class="resena-autor">
           <strong>Rosa</strong>
@@ -224,8 +230,12 @@
         </div>
       </div>
 
+      <!-- Tarjeta 3: Sandra -->
       <div class="contacto-resena-card">
-        <div class="resena-estrellas">★★★★★</div>
+        <div class="resena-header-top">
+          <div class="resena-estrellas">★★★★★</div>
+          <img src="sandra.jpeg" alt="Sandra Ruiz" class="resena-avatar">
+        </div>
         <p class="resena-texto">"Excelente atención por WhatsApp y entrega puntual. Rediseñaron nuestra marca, el cambio fue inmediato."</p>
         <div class="resena-autor">
           <strong>Sandra Ruiz</strong>
@@ -233,9 +243,12 @@
         </div>
       </div>
 
-      <!-- BLOQUE 2: Duplicado exacto para asegurar el bucle continuo sin espacios -->
+      <!-- Duplicado exacto para el loop continuo del carrusel -->
       <div class="contacto-resena-card">
-        <div class="resena-estrellas">★★★★★</div>
+        <div class="resena-header-top">
+          <div class="resena-estrellas">★★★★★</div>
+          <img src="luis.jpg" alt="Luis Ceballos" class="resena-avatar">
+        </div>
         <p class="resena-texto">"Excelente atención y profesionalismo. Captaron perfectamente lo que necesitábamos para nuestra institución."</p>
         <div class="resena-autor">
           <strong>Luis Ceballos</strong>
@@ -244,7 +257,10 @@
       </div>
 
       <div class="contacto-resena-card">
-        <div class="resena-estrellas">★★★★★</div>
+        <div class="resena-header-top">
+          <div class="resena-estrellas">★★★★★</div>
+          <img src="rosa.jpg" alt="Rosa" class="resena-avatar">
+        </div>
         <p class="resena-texto">"El cambio visual fue increíble. Muy recomendados por su compromiso y calidad."</p>
         <div class="resena-autor">
           <strong>Rosa</strong>
@@ -253,7 +269,10 @@
       </div>
 
       <div class="contacto-resena-card">
-        <div class="resena-estrellas">★★★★★</div>
+        <div class="resena-header-top">
+          <div class="resena-estrellas">★★★★★</div>
+          <img src="sandra.jpeg" alt="Sandra Ruiz" class="resena-avatar">
+        </div>
         <p class="resena-texto">"Excelente atención por WhatsApp y entrega puntual. Rediseñaron nuestra marca, el cambio fue inmediato."</p>
         <div class="resena-autor">
           <strong>Sandra Ruiz</strong>
@@ -262,7 +281,34 @@
       </div>
     </div>
   </div>
+
+  <!-- SECCIÓN NUEVA: DEJA TU RESEÑA -->
+  <div class="deja-tu-resena-contenedor">
+    <div class="deja-resena-caja">
+      <h3>Comparte tu experiencia con <em>RENAX</em></h3>
+      <p>¿Has trabajado con nosotros? Nos encantaría conocer tu opinión.</p>
+      
+      <form action="https://formspree.io/f/xwlpjyda" method="POST" class="form-resena-grid">
+        <div class="form-group">
+          <input type="text" name="nombre" placeholder="Tu Nombre y Apellido" required class="input-estilo">
+        </div>
+        <div class="form-group">
+          <input type="text" name="cargo" placeholder="Cargo / Institución o Empresa" required class="input-estilo">
+        </div>
+        <div class="form-group full-width">
+          <textarea name="mensaje" rows="4" placeholder="Escribe tu reseña aquí..." required class="input-estilo"></textarea>
+        </div>
+        <div class="form-group full-width">
+          <button type="submit" class="contacto-link-principal btn-enviar-resena">
+            <span>ENVIAR RESEÑA</span>
+            <span>↗</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
 </section>
+
   
 <!-- SECCIÓN 04: PREGUNTAS FRECUENTES (FAQ) -->
 <section class="renax-faq-section">
