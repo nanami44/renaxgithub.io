@@ -913,3 +913,7 @@ textarea.input-estilo {
   justify-content: center;
   margin-top: 10px;
 }
+/* Ocultar las etiquetas de pasos numerados en todas las secciones */
+.contacto-seccion-meta {
+  display: none !important;
+}
