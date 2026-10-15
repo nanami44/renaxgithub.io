@@ -917,3 +917,23 @@ textarea.input-estilo {
 .contacto-seccion-meta {
   display: none !important;
 }
+/* ==========================================================
+   ESTILO DE TÍTULO PESADO, GRANDE Y ALINEADO A LA IZQUIERDA
+   ========================================================== */
+.renax-titulo-pesado {
+  font-family: var(--font-main, sans-serif);
+  font-size: clamp(2.2rem, 4vw, 3.5rem); /* Tamaño grande y responsivo */
+  font-weight: 900;                      /* Tipografía muy pesada */
+  text-transform: uppercase;             /* O mayúsculas si prefieres el estilo corporativo */
+  color: #ffffff;                        /* Texto principal en blanco */
+  text-align: left;                      /* Alineado estrictamente a la izquierda */
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 15px;
+}
+
+/* La combinación en rojo característico de RENAX */
+.renax-titulo-pesado em {
+  color: #c2384a;                        /* Rojo vibrante RENAX */
+  font-style: normal;                    /* Elimina la cursiva si deseas que todo mantenga el bloque pesado */
+}
