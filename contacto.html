@@ -168,12 +168,12 @@
   </div>
 
   <div class="contacto-canales-intro">
-   <h2 class="renax-titulo-pesado">
+   <h2 class="renax-titulo-pesado" data-lang="channelsTitle">
   Conectemos con tu <em>próxima idea.</em>
 </h2>
-    <p class="renax-canales-desc" data-lang="channelsDesc">
-      Elige la vía de comunicación que te resulte más cómoda. Respondemos con agilidad a cada solicitud.
-    </p>
+<p class="renax-canales-desc" data-lang="channelsDesc">
+  Elige la vía de comunicación que te resulte más cómoda. Respondemos con agilidad a cada solicitud.
+</p>
   </div>
 
   <div class="contacto-logos-horizontal">
@@ -284,28 +284,28 @@
 
   <!-- SECCIÓN NUEVA: DEJA TU RESEÑA -->
   <div class="deja-tu-resena-contenedor">
-    <div class="deja-resena-caja">
-      <h3>Comparte tu experiencia con <em>RENAX</em></h3>
-      <p>¿Has trabajado con nosotros? Nos encantaría conocer tu opinión.</p>
-      
-      <form action="https://formspree.io/f/xwlpjyda" method="POST" class="form-resena-grid">
-        <div class="form-group">
-          <input type="text" name="nombre" placeholder="Tu Nombre y Apellido" required class="input-estilo">
-        </div>
-        <div class="form-group">
-          <input type="text" name="cargo" placeholder="Cargo / Institución o Empresa" required class="input-estilo">
-        </div>
-        <div class="form-group full-width">
-          <textarea name="mensaje" rows="4" placeholder="Escribe tu reseña aquí..." required class="input-estilo"></textarea>
-        </div>
-        <div class="form-group full-width">
-          <button type="submit" class="contacto-link-principal btn-enviar-resena">
-            <span>ENVIAR RESEÑA</span>
-            <span>↗</span>
-          </button>
-        </div>
-      </form>
+ <div class="deja-resena-caja">
+  <h3 data-lang="reviewBoxTitle">Comparte tu experiencia con <em>RENAX</em></h3>
+  <p data-lang="reviewBoxDesc">¿Has trabajado con nosotros? Nos encantaría conocer tu opinión.</p>
+  
+  <form action="https://formspree.io/f/xwlpjyda" method="POST" class="form-resena-grid">
+    <div class="form-group">
+      <input type="text" name="nombre" placeholder="Tu Nombre y Apellido" required class="input-estilo" data-lang-placeholder="reviewNamePlace">
     </div>
+    <div class="form-group">
+      <input type="text" name="cargo" placeholder="Cargo / Institución o Empresa" required class="input-estilo" data-lang-placeholder="reviewRolePlace">
+    </div>
+    <div class="form-group full-width">
+      <textarea name="mensaje" rows="4" placeholder="Escribe tu reseña aquí..." required class="input-estilo" data-lang-placeholder="reviewMsgPlace"></textarea>
+    </div>
+    <div class="form-group full-width">
+      <button type="submit" class="contacto-link-principal btn-enviar-resena">
+        <span data-lang="reviewBtnSubmit">ENVIAR RESEÑA</span>
+        <span>↗</span>
+      </button>
+    </div>
+  </form>
+</div>
   </div>
 </section>
 
@@ -318,11 +318,10 @@
     <span data-lang="faqTag">RESOLVEMOS TUS DUDAS</span>
   </div>
 
-  <div class="renax-faq-grid">
-    <div class="renax-faq-intro">
-      <h2>Preguntas <em>Frecuentes.</em></h2>
-      <p data-lang="faqDesc">Todo lo que necesitas saber sobre nuestros procesos de transformación visual, tiempos de entrega y metodología de trabajo con marcas.</p>
-    </div>
+ <div class="renax-faq-intro">
+  <h2 data-lang="faqTitle">Preguntas <em>Frecuentes.</em></h2>
+  <p data-lang="faqDesc">Todo lo que necesitas saber sobre nuestros procesos de transformación visual...</p>
+</div>
 
     <div class="renax-faq-lista">
       <details class="renax-faq-card">
@@ -358,19 +357,17 @@
   </div>
 
   <div class="renax-cta-contenido">
-    <h2 class="renax-cta-titulo">
-      TU HISTORIA<br>
-      MERECE <em>EVOLUCIONAR.</em>
-    </h2>
-    <p class="renax-cta-texto" data-lang="ctaDesc">
-      Las marcas que evolucionan no tienen que renunciar a lo que las hace especiales. En RENAX trabajamos para que su historia siga creciendo.
-    </p>
-
-    <div class="renax-cta-accion">
-      <a href="#formContacto" class="contacto-link-principal">
-        <span data-lang="ctaButton">COMENZAR AHORA</span>
-        <span aria-hidden="true">↗</span>
-      </a>
+    <h2 class="renax-titulo-pesado">
+  <span data-lang="ctaTitlePart1">TU HISTORIA</span><br>
+  <span data-lang="ctaTitlePart2">MERECE</span> <em data-lang="ctaTitlePart3">EVOLUCIONAR.</em>
+</h2>
+<p data-lang="ctaDesc">
+  Las marcas que evolucionan no tienen que renunciar a lo que las hace especiales. En RENAX trabajamos para que su historia siga creciendo.
+</p>
+<a href="contacto.html" class="contacto-link-principal">
+  <span data-lang="ctaBtn">COMENZAR AHORA</span>
+  <span>↗</span>
+</a>S
     </div>
 
     <div class="renax-cta-frase-final">
@@ -385,10 +382,10 @@
 <!-- PIE DE PÁGINA (FOOTER) -->
 <footer class="contacto-footer">
   <div class="contacto-footer-contenedor">
-    
+
     <div class="contacto-footer-top">
       <span class="contacto-footer-titulo-menu" data-lang="menuTitle">MENÚ</span>
-      <span class="contacto-footer-explora">EXPLORA RENAX ↘</span>
+      <span class="contacto-footer-explora" data-lang="footerExplora">EXPLORA RENAX ↗</span>
     </div>
 
     <div class="contacto-footer-grid">
@@ -437,7 +434,7 @@
     <div class="contacto-footer-bottom">
       <div class="contacto-footer-marca">
         <a href="index.html">
-         <img src="logo-renax-transparente.png" alt="RENAX Logo" class="renax-logo-img">
+          <img src="logo-renax-transparente.png" alt="RENAX Logo" class="renax-logo-img">
         </a>
       </div>
     </div>
@@ -617,5 +614,99 @@
     }
   });
 </scriptS
+  const translations = {
+  es: {
+    // 1. Canales de atención y títulos principales
+    channelsTitle: "Conectemos con tu próxima idea.",
+    channelsDesc: "Elige la vía de comunicación que te resulte más cómoda. Respondemos con agilidad a cada solicitud.",
+    
+    // 2. Preguntas Frecuentes
+    faqTitle: "Preguntas Frecuentes.",
+    faqDesc: "Todo lo que necesitas saber sobre nuestros procesos de transformación visual, tiempos de entrega y metodología de trabajo con marcas.",
+    
+    // 3. Sección de Reseñas
+    reviewBoxTitle: "Comparte tu experiencia con RENAX",
+    reviewBoxDesc: "¿Has trabajado con nosotros? Nos encantaría conocer tu opinión.",
+    reviewNamePlace: "Tu Nombre y Apellido",
+    reviewRolePlace: "Cargo / Institución o Empresa",
+    reviewMsgPlace: "Escribe tu reseña aquí...",
+    reviewBtnSubmit: "ENVIAR RESEÑA",
+
+    // 4. Pie de página (Footer)
+    menuTitle: "MENÚ",
+    footerExplora: "EXPLORA RENAX ↗",
+    
+    footerHome: "INICIO",
+    subHome1: "Expertos en transformar marcas",
+    subHome2: "Vuelve a destacar sin perder tu esencia",
+    subHome3: "Tu historia merece una imagen que esté a su altura",
+    subHome4: "Preguntas frecuentes",
+
+    footerAbout: "NOSOTROS",
+    subAbout1: "Quiénes somos",
+    subAbout2: "Visión",
+    subAbout3: "Misión",
+    subAbout4: "¿Por qué RENAX?",
+
+    footerPortfolio: "PORTAFOLIO",
+    subPort1: "Proyectos y trabajos realizados",
+    subPort2: "Casos de estudio",
+
+    footerServices: "SERVICIOS",
+    subServ1: "Diagnóstico de marca",
+    subServ2: "Identidad visual",
+    subServ3: "Comunicación",
+    subServ4: "Estrategia visual",
+
+    footerContact: "CONTACTO",
+    subContact1: "Hablemos de tu proyecto"
+  },
+  en: {
+    // 1. Channels and main titles
+    channelsTitle: "Let's connect with your next idea.",
+    channelsDesc: "Choose the communication channel that is most comfortable for you. We respond quickly to every request.",
+    
+    // 2. Frequently Asked Questions
+    faqTitle: "Frequently Asked Questions.",
+    faqDesc: "Everything you need to know about our visual transformation processes, delivery times, and brand working methodology.",
+    
+    // 3. Review Section
+    reviewBoxTitle: "Share your experience with RENAX",
+    reviewBoxDesc: "Have you worked with us? We would love to hear your thoughts.",
+    reviewNamePlace: "Your First and Last Name",
+    reviewRolePlace: "Role / Institution or Company",
+    reviewMsgPlace: "Write your review here...",
+    reviewBtnSubmit: "SUBMIT REVIEW",
+
+    // 4. Footer
+    menuTitle: "MENU",
+    footerExplora: "EXPLORE RENAX ↗",
+    
+    footerHome: "HOME",
+    subHome1: "Experts in transforming brands",
+    subHome2: "Stand out again without losing your essence",
+    subHome3: "Your story deserves an image that lives up to it",
+    subHome4: "Frequently asked questions",
+
+    footerAbout: "ABOUT US",
+    subAbout1: "Who we are",
+    subAbout2: "Vision",
+    subAbout3: "Mission",
+    subAbout4: "Why RENAX?",
+
+    footerPortfolio: "PORTFOLIO",
+    subPort1: "Completed projects and works",
+    subPort2: "Case studies",
+
+    footerServices: "SERVICES",
+    subServ1: "Brand diagnosis",
+    subServ2: "Visual identity",
+    subServ3: "Communication",
+    subServ4: "Visual strategy",
+
+    footerContact: "CONTACT",
+    subContact1: "Let's talk about your project"
+  }
+};
 </body>
 </html>
