@@ -978,10 +978,46 @@ textarea.input-estilo {
 }
 
 @media (max-width: 600px) {
+ 
+/* Título principal adaptable a todas las pantallas */
+#contactoHeroTitulo.titulo-do-more {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(3rem, 7.5vw, 7rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    text-transform: uppercase;
+    margin: 0;
+    max-width: 100%;
+}
+
+/* Letras delineadas */
+#contactoHeroTitulo .texto-contorno {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #f5f5f5;
+}
+
+/* Palabra destacada en rojo */
+#contactoHeroTitulo .texto-rojo {
+    color: #c92f49;
+    -webkit-text-stroke: 0;
+    font-style: normal;
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
     #contactoHeroTitulo.titulo-do-more {
-        font-size: clamp(2.2rem, 10vw, 3.2rem);
-        letter-spacing: -0.045em;
+        font-size: clamp(3.2rem, 7vw, 5.5rem);
     }
 }
 
+/* Celular */
+@media (max-width: 600px) {
+    #contactoHeroTitulo.titulo-do-more {
+        font-size: clamp(2.4rem, 10vw, 3.8rem);
+        letter-spacing: -0.045em;
+        overflow-wrap: normal;
+    }
+}
+   
 
