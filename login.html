@@ -137,11 +137,11 @@
 btnRegister.addEventListener('click', () => {
     const email = emailInput.value;
     const password = passwordInput.value;
-    // Aquí capturas los nuevos valores de tus inputs (asegúrate de crear sus constantes arriba)
-    const nombre = nombreInput.value;
-    const apellido = apellidoInput.value;
-    const ciudad = ciudadInput.value;
-    const telefono = telefonoInput.value;
+ // Continuación dentro del evento btnRegister
+    const nombre = document.getElementById('nombre').value;
+    const apellido = document.getElementById('apellido').value;
+    const ciudad = document.getElementById('ciudad').value;
+    const telefono = document.getElementById('telefono').value;
 
     if(!email || !password || !nombre || !apellido) {
         mensaje.style.color = "#e74c3c";
@@ -153,15 +153,16 @@ btnRegister.addEventListener('click', () => {
         .then((userCredential) => {
             const user = userCredential.user;
             
-            // Opcional: Actualizar perfil con el nombre y guardar datos extra
+            // Actualizar el perfil con el nombre y apellido
             updateProfile(user, {
                 displayName: `${nombre} ${apellido}`
             });
 
+            // Guardar datos adicionales en localStorage
             localStorage.setItem('renax_ciudad', ciudad);
             localStorage.setItem('renax_telefono', telefono);
 
-            // Redirigir al panel
+            // Redirigir al panel privado
             window.location.href = "dashboard.html";
         })
         .catch((error) => {
@@ -196,6 +197,36 @@ btnRegister.addEventListener('click', () => {
                 });
         });
     </script>
-
+<!-- Modal de Registro (Oculto por defecto) -->
+<div id="register-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000;">
+    <div style="background-color: #141414; border: 1px solid #e74c3c; border-radius: 12px; padding: 30px; width: 100%; max-width: 400px; box-sizing: border-box; box-shadow: 0 0 25px rgba(231, 76, 60, 0.2);">
+        <h3 style="color: #fff; margin-top: 0; text-align: center; letter-spacing: 1px;">CREAR CUENTA - RENAX</h3>
+        <p style="color: #aaa; font-size: 13px; text-align: center; margin-bottom: 20px;">Ingresa tus datos personales para continuar</p>
+        
+        <form id="form-registro-modal">
+            <div style="margin-bottom: 15px;">
+                <input type="text" id="reg-nombre" placeholder="Nombre" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <input type="text" id="reg-apellido" placeholder="Apellido" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <input type="tel" id="reg-celular" placeholder="Número Celular" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <input type="text" id="reg-ciudad" placeholder="Ciudad o País" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+            </div>
+            <div style="margin-bottom: 15px;">
+                <input type="email" id="reg-email" placeholder="Correo electrónico" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+            </div>
+            <div style="margin-bottom: 20px;">
+                <input type="password" id="reg-password" placeholder="Contraseña" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+            </div>
+            
+            <button type="submit" style="width: 100%; background-color: #e74c3c; color: #fff; padding: 12px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;">Enviar y Registrarse</button>
+            <button type="button" id="btn-cerrar-modal" style="width: 100%; background-color: transparent; color: #888; padding: 10px; border: none; margin-top: 10px; cursor: pointer;">Cancelar</button>
+        </form>
+    </div>
+</div>
 </body>
 </html>
