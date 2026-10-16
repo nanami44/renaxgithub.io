@@ -1360,3 +1360,40 @@ h1, h2, h3,
     width: 100% !important;
     box-sizing: border-box !important;
 }
+/* Ancho máximo amplio y cómodo con márgenes laterales elegantes */
+.contacto-hero,
+.contacto-conversacion,
+.renax-faq-section,
+.renax-cta-section {
+    max-width: 1300px !important; /* Limita el ancho para que no se pegue a los bordes en pantallas gigantes */
+    width: 90% !important;        /* Deja un margen lateral automático del 5% a cada lado */
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* Distribuir correctamente la grilla de la sección de conversación */
+.contacto-conversacion-grid {
+    display: grid !important;
+    grid-template-columns: 1.2fr 1fr !important;
+    gap: 50px !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Asegurar que la tarjeta del formulario mantenga su proporción */
+.contacto-tarjeta-form {
+    width: 100% !important;
+    max-width: 520px !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+.contacto-tarjeta-form input,
+.contacto-tarjeta-form select,
+.contacto-tarjeta-form textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
