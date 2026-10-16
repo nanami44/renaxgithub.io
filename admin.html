@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración - RENAX</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0b0b0b;
+            color: #ffffff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .header {
+            background-color: #141414;
+            border: 1px solid #e74c3c;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        h2 { color: #e74c3c; margin: 0; }
+        .chat-box {
+            background-color: #141414;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+        }
+        #messages-list {
+            background-color: #0b0b0b;
+            border: 1px solid #333;
+            border-radius: 8px;
+            height: 300px;
+            overflow-y: auto;
+            padding: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, button {
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        input {
+            background: #0b0b0b;
+            border: 1px solid #333;
+            color: #fff;
+            flex: 1;
+        }
+        button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h2>RENAX - Panel de Administración</h2>
+            <a href="dashboard.html" style="color: #aaa; text-decoration: none; font-size: 14px;">Ir al Panel de Cliente</a>
+        </div>
+
+        <div class="chat-box">
+            <h3>Conversación con el Cliente</h3>
+            <p style="font-size: 13px; color: #aaa;">Aquí puedes ver y responder los mensajes enviados por el usuario actual.</p>
+            
+            <div id="messages-list">
+                <span style="color: #666; font-size: 12px; text-align: center;">Cargando mensajes...</span>
+            </div>
+
+            <form id="admin-form" style="display: flex; gap: 10px;">
+                <input type="text" id="admin-input" placeholder="Escribe tu respuesta como Asesor..." required>
+                <button type="submit">Responder</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lógica de Firebase para Admin -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+        import { getAuth } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+        import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
+            authDomain: "renax-auth.firebaseapp.com",
+            projectId: "renax-auth",
+            storageBucket: "renax-auth.firebasestorage.app",
+            messagingSenderId: "155645649809",
+            appId: "1:155645649809:web:3b203ccb729bfc8672b030"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // OJO: Aquí colocas el UID del cliente cuyas conversaciones quieras revisar. 
+        // (Puedes copiar el UID largo que se genera en tu base de datos de Firestore dentro de la colección "chats").
+        const clienteUid = "PEGA_AQUI_EL_UID_DEL_CLIENTE"; 
+
+        const messagesList = document.getElementById('messages-list');
+        const adminForm = document.getElementById('admin-form');
+        const adminInput = document.getElementById('admin-input');
+
+        const mensajesRef = collection(db, `chats/${clienteUid}/mensajes`);
+        const q = query(mensajesRef, orderBy('createdAt', 'asc'));
+
+        // Escuchar los mensajes en tiempo real
+        onSnapshot(q, (snapshot) => {
+            messagesList.innerHTML = '';
+            if (snapshot.empty) {
+                messagesList.innerHTML = '<span style="color: #666; font-size: 12px; text-align: center;">No hay mensajes en este chat.</span>';
+                return;
+            }
+
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                const msgDiv = document.createElement('div');
+                msgDiv.style.padding = '8px 12px';
+                msgDiv.style.borderRadius = '6px';
+                msgDiv.style.maxWidth = '80%';
+                msgDiv.style.fontSize = '13px';
+                msgDiv.style.backgroundColor = '#1f1f1f';
+                msgDiv.style.color = '#fff';
+
+                msgDiv.textContent = `${data.remitente}: ${data.texto}`;
+                messagesList.appendChild(msgDiv);
+            });
+
+            messagesList.scrollTop = messagesList.scrollHeight;
+        });
+
+        // Enviar respuesta como Asesor
+        adminForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const texto = adminInput.value.trim();
+            if (!texto) return;
+
+            try {
+                await addDoc(mensajesRef, {
+                    texto: texto,
+                    remitente: "Asesor RENAX",
+                    createdAt: serverTimestamp()
+                });
+                adminInput.value = '';
+            } catch (error) {
+                console.error("Error al enviar respuesta:", error);
+            }
+        });
+    </script>
+</body>
+</html>
