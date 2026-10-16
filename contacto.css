@@ -1403,38 +1403,3 @@ h1, h2, h3,
     box-sizing: border-box !important;
 }
 
-/* FONDO VISUAL DE LA PÁGINA SERVICIOS - RENAX */
-
-body.servicios-page {
-    background: #050505;
-    position: relative;
-    isolation: isolate;
-}
-
-/* Imagen de fondo fija */
-body.servicios-page::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: -1;
-    pointer-events: none;
-
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.30),
-            rgba(0, 0, 0, 0.45)
-        ),
-        url("../IMAGENES/fondo-servicios.png");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Mantener el contenido por delante del fondo */
-body.servicios-page header,
-body.servicios-page main,
-body.servicios-page footer {
-    position: relative;
-    z-index: 1;
-}
