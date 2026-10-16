@@ -1118,3 +1118,34 @@ textarea.input-estilo {
     50% { transform: translate(25px, -25px) scale(1.05); }
     100% { transform: translate(-15px, 15px) scale(0.95); }
 }
+/* 1. Menú y textos normales con tipografía limpia y ligera */
+.contacto-nav a, 
+p, 
+small, 
+span, 
+input, 
+textarea, 
+label, 
+button {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important; /* Letra normal, no pesada */
+}
+
+/* 2. El menú principal asegurado sin grosor pesado */
+.contacto-nav a {
+    font-weight: 500 !important;
+    font-size: 14px !important;
+}
+
+/* 3. ÚNICAMENTE los títulos principales llevan la tipografía pesada (Montserrat Black) */
+h1, h2, h3, 
+.contacto-hero h1, 
+.contacto-conversacion h2, 
+.renax-faq-intro h2, 
+.renax-titulo-pesado, 
+.renax-cta-titulo {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 900 !important; /* Montserrat Black */
+    text-align: left !important;
+    text-transform: uppercase;
+}
