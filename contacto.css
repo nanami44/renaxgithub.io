@@ -1019,5 +1019,43 @@ textarea.input-estilo {
         overflow-wrap: normal;
     }
 }
-   
+ 
+/* Título principal de la sección de conversación */
+#contactoConversacionTitulo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+    text-transform: uppercase;
+    max-width: 100%;
+}
+
+#contactoConversacionTitulo span,
+#contactoConversacionTitulo em {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+}
+
+#contactoConversacionTitulo em {
+    color: #c92f49;
+    font-style: normal;
+}
+
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+    #contactoConversacionTitulo {
+        font-size: clamp(2.6rem, 5.5vw, 4rem);
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    #contactoConversacionTitulo {
+        font-size: clamp(2rem, 8vw, 3rem);
+        line-height: 1.08;
+        letter-spacing: -0.035em;
+    }
+}
+  
 
