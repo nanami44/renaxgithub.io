@@ -110,10 +110,42 @@
         <p id="mensaje"></p>
     </div>
 
+    <!-- Modal de Registro (Oculto por defecto) -->
+    <div id="register-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000;">
+        <div style="background-color: #141414; border: 1px solid #e74c3c; border-radius: 12px; padding: 30px; width: 100%; max-width: 400px; box-sizing: border-box; box-shadow: 0 0 25px rgba(231, 76, 60, 0.2);">
+            <h3 style="color: #fff; margin-top: 0; text-align: center; letter-spacing: 1px;">CREAR CUENTA - RENAX</h3>
+            <p style="color: #aaa; font-size: 13px; text-align: center; margin-bottom: 20px;">Ingresa tus datos personales para continuar</p>
+            
+            <form id="form-registro-modal">
+                <div style="margin-bottom: 15px;">
+                    <input type="text" id="reg-nombre" placeholder="Nombre" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <input type="text" id="reg-apellido" placeholder="Apellido" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <input type="tel" id="reg-celular" placeholder="Número Celular" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <input type="text" id="reg-ciudad" placeholder="Ciudad o País" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <input type="email" id="reg-email" placeholder="Correo electrónico" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="password" id="reg-password" placeholder="Contraseña" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
+                </div>
+                
+                <button type="submit" style="width: 100%; background-color: #e74c3c; color: #fff; padding: 12px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;">Enviar y Registrarse</button>
+                <button type="button" id="btn-cerrar-modal" style="width: 100%; background-color: transparent; color: #888; padding: 10px; border: none; margin-top: 10px; cursor: pointer;">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
     <!-- Firebase y Lógica de Autenticación -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
@@ -133,44 +165,56 @@
         const btnRegister = document.getElementById('btn-register');
         const mensaje = document.getElementById('mensaje');
 
-        // Registro de usuario
-btnRegister.addEventListener('click', () => {
-    const email = emailInput.value;
-    const password = passwordInput.value;
- // Continuación dentro del evento btnRegister
-    const nombre = document.getElementById('nombre').value;
-    const apellido = document.getElementById('apellido').value;
-    const ciudad = document.getElementById('ciudad').value;
-    const telefono = document.getElementById('telefono').value;
+        // Referencias del Modal
+        const modal = document.getElementById('register-modal');
+        const btnCerrarModal = document.getElementById('btn-cerrar-modal');
+        const formRegistroModal = document.getElementById('form-registro-modal');
 
-    if(!email || !password || !nombre || !apellido) {
-        mensaje.style.color = "#e74c3c";
-        mensaje.textContent = "Por favor completa los campos obligatorios.";
-        return;
-    }
-
-    createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            
-            // Actualizar el perfil con el nombre y apellido
-            updateProfile(user, {
-                displayName: `${nombre} ${apellido}`
-            });
-
-            // Guardar datos adicionales en localStorage
-            localStorage.setItem('renax_ciudad', ciudad);
-            localStorage.setItem('renax_telefono', telefono);
-
-            // Redirigir al panel privado
-            window.location.href = "dashboard.html";
-        })
-        .catch((error) => {
-            mensaje.style.color = "#e74c3c";
-            mensaje.textContent = error.message;
+        // Abrir modal al hacer clic en el botón Registrarse principal
+        btnRegister.addEventListener('click', () => {
+            modal.style.display = 'flex';
         });
-});
-        // Inicio de sesión y redirección al formulario principal
+
+        // Cerrar modal
+        btnCerrarModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        // Procesar el registro desde la ventana modal
+        formRegistroModal.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const nombre = document.getElementById('reg-nombre').value;
+            const apellido = document.getElementById('reg-apellido').value;
+            const celular = document.getElementById('reg-celular').value;
+            const ciudad = document.getElementById('reg-ciudad').value;
+            const email = document.getElementById('reg-email').value;
+            const password = document.getElementById('reg-password').value;
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                
+                // Actualizar el perfil con el nombre y apellido
+                await updateProfile(user, {
+                    displayName: `${nombre} ${apellido}`
+                });
+
+                // Guardar datos adicionales en localStorage
+                localStorage.setItem('renax_ciudad', ciudad);
+                localStorage.setItem('renax_telefono', celular);
+
+                alert("¡Registro exitoso! Redirigiendo a tu panel...");
+                modal.style.display = 'none';
+
+                // Redirigir al panel privado
+                window.location.href = "dashboard.html";
+            } catch (error) {
+                alert("Error en el registro: " + error.message);
+            }
+        });
+
+        // Inicio de sesión y redirección al panel principal
         btnLogin.addEventListener('click', () => {
             const email = emailInput.value;
             const password = passwordInput.value;
@@ -186,10 +230,9 @@ btnRegister.addEventListener('click', () => {
                     mensaje.style.color = "#3498db";
                     mensaje.textContent = "¡Inicio exitoso! Redirigiendo...";
                     
-                    // Redirige a tu página de formulario principal después de 1 segundo
                     setTimeout(() => {
-    window.location.href = "dashboard.html";
-}, 1000);
+                        window.location.href = "dashboard.html";
+                    }, 1000);
                 })
                 .catch((error) => {
                     mensaje.style.color = "#e74c3c";
@@ -197,36 +240,5 @@ btnRegister.addEventListener('click', () => {
                 });
         });
     </script>
-<!-- Modal de Registro (Oculto por defecto) -->
-<div id="register-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.85); justify-content: center; align-items: center; z-index: 1000;">
-    <div style="background-color: #141414; border: 1px solid #e74c3c; border-radius: 12px; padding: 30px; width: 100%; max-width: 400px; box-sizing: border-box; box-shadow: 0 0 25px rgba(231, 76, 60, 0.2);">
-        <h3 style="color: #fff; margin-top: 0; text-align: center; letter-spacing: 1px;">CREAR CUENTA - RENAX</h3>
-        <p style="color: #aaa; font-size: 13px; text-align: center; margin-bottom: 20px;">Ingresa tus datos personales para continuar</p>
-        
-        <form id="form-registro-modal">
-            <div style="margin-bottom: 15px;">
-                <input type="text" id="reg-nombre" placeholder="Nombre" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
-            </div>
-            <div style="margin-bottom: 15px;">
-                <input type="text" id="reg-apellido" placeholder="Apellido" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
-            </div>
-            <div style="margin-bottom: 15px;">
-                <input type="tel" id="reg-celular" placeholder="Número Celular" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
-            </div>
-            <div style="margin-bottom: 15px;">
-                <input type="text" id="reg-ciudad" placeholder="Ciudad o País" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
-            </div>
-            <div style="margin-bottom: 15px;">
-                <input type="email" id="reg-email" placeholder="Correo electrónico" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
-            </div>
-            <div style="margin-bottom: 20px;">
-                <input type="password" id="reg-password" placeholder="Contraseña" required style="width: 100%; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; box-sizing: border-box;">
-            </div>
-            
-            <button type="submit" style="width: 100%; background-color: #e74c3c; color: #fff; padding: 12px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.2s;">Enviar y Registrarse</button>
-            <button type="button" id="btn-cerrar-modal" style="width: 100%; background-color: transparent; color: #888; padding: 10px; border: none; margin-top: 10px; cursor: pointer;">Cancelar</button>
-        </form>
-    </div>
-</div>
 </body>
 </html>
