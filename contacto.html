@@ -9,11 +9,27 @@
   <!-- Estilos independientes -->
   <link rel="stylesheet" href="contacto.css">
 
-  <!-- Tipografías e Iconos -->
+  <!-- Tipografías e Iconos (Montserrat Black y Google Fonts) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Regla general de diseño: Montserrat Black para títulos y márgenes limpios */
+    h1, h2, h3, .contacto-hero h1, .contacto-conversacion h2, .renax-titulo-pesado {
+      font-family: 'Montserrat', sans-serif !important;
+      font-weight: 900 !important;
+      text-align: left !important;
+      letter-spacing: -1px;
+    }
+    
+    /* Control de márgenes laterales para que no queden pegados al borde */
+    .contacto-container, .contacto-hero, .contacto-conversacion, .contacto-canales-seccion, .contacto-resenas-seccion, .renax-faq-section, .renax-contacto-mapa, .renax-cta-section {
+      padding-left: max(5vw, 20px) !important;
+      padding-right: max(5vw, 20px) !important;
+    }
+  </style>
 </head>
 
 <body class="contacto-page">
@@ -35,8 +51,7 @@
     <div class="contacto-header-acciones">
       <button type="button" class="contacto-idioma" id="contactoIdioma" aria-label="Cambiar idioma">ESP</button>
       <a href="login.html" class="contacto-login" id="navLoginBtn">
-  <span data-lang="loginButton">INICIAR SESIÓN</span>
-</a>
+        <span data-lang="loginButton">INICIAR SESIÓN</span>
       </a>
       <button class="contacto-menu-toggle" id="contactoMenuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="contactoNav">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
@@ -180,14 +195,14 @@
 
       <div class="contacto-logos-horizontal">
         <a href="https://wa.me/573246464290" target="_blank" class="logo-canal-item" title="WhatsApp Oficial">
-        <img src="whasap.png" alt="WhatsApp" class="logo-canal-img">
-    </a>
+          <img src="whasap.png" alt="WhatsApp" class="logo-canal-img">
+        </a>
         <a href="mailto:renaxcreativit@gmail.com" class="logo-canal-item" title="Correo Oficial">
           <img src="Gmail.png" alt="Gmail" class="logo-canal-img">
         </a>
         <a href="https://www.facebook.com/profile.php?id=61595122299004" target="_blank" class="logo-canal-item" title="Facebook Oficial">
-        <img src="Facebook.png" alt="Facebook" class="logo-canal-img">
-    </a>
+          <img src="Facebook.png" alt="Facebook" class="logo-canal-img">
+        </a>
       </div>
     </section>
 
@@ -201,7 +216,7 @@
 
       <div class="contacto-carrusel-contenedor">
         <div class="contacto-carrusel-track">
-          <!-- Tarjeta 1: Luis -->
+          <!-- Tarjeta 1 -->
           <div class="contacto-resena-card">
             <div class="resena-header-top">
               <div class="resena-estrellas">★★★★★</div>
@@ -214,7 +229,7 @@
             </div>
           </div>
 
-          <!-- Tarjeta 2: Rosa -->
+          <!-- Tarjeta 2 -->
           <div class="contacto-resena-card">
             <div class="resena-header-top">
               <div class="resena-estrellas">★★★★★</div>
@@ -227,7 +242,7 @@
             </div>
           </div>
 
-          <!-- Tarjeta 3: Sandra -->
+          <!-- Tarjeta 3 -->
           <div class="contacto-resena-card">
             <div class="resena-header-top">
               <div class="resena-estrellas">★★★★★</div>
@@ -240,7 +255,7 @@
             </div>
           </div>
 
-          <!-- Duplicado exacto para el loop continuo -->
+          <!-- Duplicado para loop -->
           <div class="contacto-resena-card">
             <div class="resena-header-top">
               <div class="resena-estrellas">★★★★★</div>
@@ -337,14 +352,9 @@
       </div>
     </section>
 
-    <!-- MAPA DE UBICACIÓN COMPACTO -->
-    <section class="renax-contacto-mapa" style="width: 100%; max-width: 700px; margin: 40px auto; padding: 0 20px; text-align: left;">
-      <div class="srv-seccion-meta" style="display: none;"><span>05</span><span>UBICACIÓN</span></div>
-      
-      <h2 style="font-size: clamp(22px, 3vw, 32px); font-weight: 900; color: #fff; margin-bottom: 15px; text-transform: uppercase;">
-        NUESTRA <span style="color: #ff2a2a;">UBICACIÓN</span>
-      </h2>
-      
+    <!-- MAPA DE UBICACIÓN -->
+    <section class="renax-contacto-mapa">
+      <h2>NUESTRA <span style="color: #ff2a2a;">UBICACIÓN</span></h2>
       <div class="renax-mapa-contenedor" style="width: 100%; height: 280px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #111; box-shadow: 0 5px 20px rgba(0,0,0,0.6);">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15930.942699465102!2d-76.55915520206695!3d3.414468329300764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1seustaquio%20palacios!5e0!3m2!1ses-419!2sco!4v1792099953340!5m2!1ses-419!2sco" 
@@ -358,7 +368,7 @@
       </div>
     </section>
 
-    <!-- SECCIÓN FINAL: LLAMADO A LA ACCIÓN (CTA) -->
+    <!-- SECCIÓN FINAL: CTA -->
     <section class="renax-cta-section">
       <div class="contacto-seccion-meta">
         <span class="numero-paso">06</span>
@@ -388,7 +398,7 @@
 
   </main>
 
-  <!-- PIE DE PÁGINA (FOOTER) -->
+  <!-- PIE DE PÁGINA -->
   <footer class="contacto-footer">
     <div class="contacto-footer-contenedor">
       <div class="contacto-footer-top">
@@ -397,7 +407,6 @@
       </div>
 
       <div class="contacto-footer-grid">
-        <!-- Columna 1: INICIO -->
         <div class="contacto-footer-col">
           <h2><a href="index.html" data-lang="footerHome">INICIO</a></h2>
           <a href="index.html#expertos" data-lang="subHome1">Expertos en transformar marcas</a>
@@ -406,7 +415,6 @@
           <a href="index.html#faq" data-lang="subHome4">Preguntas frecuentes</a>
         </div>
 
-        <!-- Columna 2: NOSOTROS -->
         <div class="contacto-footer-col">
           <h2><a href="nosotros.html" data-lang="footerAbout">NOSOTROS</a></h2>
           <a href="nosotros.html#quienes" data-lang="subAbout1">Quiénes somos</a>
@@ -415,14 +423,12 @@
           <a href="nosotros.html#porque" data-lang="subAbout4">¿Por qué RENAX?</a>
         </div>
 
-        <!-- Columna 3: PORTAFOLIO -->
         <div class="contacto-footer-col">
           <h2><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h2>
           <a href="portafolio.html#proyectos" data-lang="subPort1">Proyectos y trabajos realizados</a>
           <a href="portafolio.html#casos" data-lang="subPort2">Casos de estudio</a>
         </div>
 
-        <!-- Columna 4: SERVICIOS -->
         <div class="contacto-footer-col">
           <h2><a href="servicios.html" data-lang="footerServices">SERVICIOS</a></h2>
           <a href="servicios.html#diagnostico" data-lang="subServ1">Diagnóstico de marca</a>
@@ -431,14 +437,12 @@
           <a href="servicios.html#estrategia" data-lang="subServ4">Estrategia visual</a>
         </div>
 
-        <!-- Columna 5: CONTACTO -->
         <div class="contacto-footer-col">
           <h2><a href="contacto.html" data-lang="footerContact">CONTACTO</a></h2>
           <a href="contacto.html#formContacto" data-lang="subContact1">Hablemos de tu proyecto</a>
         </div>
       </div>
 
-      <!-- Parte inferior con logotipo -->
       <div class="contacto-footer-bottom">
         <div class="contacto-footer-marca">
           <a href="index.html">
@@ -449,188 +453,84 @@
     </div>
   </footer>
 
-  <!-- SCRIPT CON TRADUCCIÓN E INTERACTIVIDAD -->
+  <!-- SCRIPTS FUNCIONALES -->
   <script>
-    (() => {
-      // Menú desplegable móvil
-      const boton = document.getElementById("contactoMenuToggle");
-      const nav = document.getElementById("contactoNav");
-      if (boton && nav) {
-        boton.addEventListener("click", () => {
-          const abierto = nav.classList.toggle("abierto");
-          boton.setAttribute("aria-expanded", String(abierto));
-          boton.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
-          boton.innerHTML = abierto
-            ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
-            : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-        });
+    // Menú desplegable móvil
+    const boton = document.getElementById("contactoMenuToggle");
+    const nav = document.getElementById("contactoNav");
+    if (boton && nav) {
+      boton.addEventListener("click", () => {
+        const abierto = nav.classList.toggle("abierto");
+        boton.setAttribute("aria-expanded", String(abierto));
+        boton.innerHTML = abierto ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>' : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+      });
+    }
 
-        nav.querySelectorAll("a").forEach((enlace) => {
-          enlace.addEventListener("click", () => {
-            nav.classList.remove("abierto");
-            boton.setAttribute("aria-expanded", "false");
-            boton.setAttribute("aria-label", "Abrir menú");
-            boton.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-          });
-        });
-      }
-
-      // Cambio de Idioma (ESP / ENG)
-      const botonIdioma = document.getElementById("contactoIdioma");
-      if (!botonIdioma) return;
-
+    // Traducción ESP/ENG
+    const botonIdioma = document.getElementById("contactoIdioma");
+    if (botonIdioma) {
       const textos = {
-        "navHome": "Home",
-        "navAbout": "About Us",
-        "navPortfolio": "Portfolio",
-        "navServices": "Services",
-        "navContact": "Contact Us",
-        "loginButton": "LOG IN",
-        "heroEyebrow": "RENAX / CONTACT US",
-        "contactTitle": "LET'S TALK",
-        "contactTitle2": "ABOUT YOUR BRAND.",
-        "contactDescription": "Each brand has a story to tell. Tell us yours and let's explore how to strengthen its identity, modernize its image, and project it toward new opportunities without losing its essence.",
-        "contactButton": "START CONVERSATION",
-        "contactIndicator": "01 / CONTACT",
-        "firstStep": "THE FIRST STEP",
-        "conversationTitle": "Every transformation begins with a",
-        "conversationWord": "conversation.",
-        "convP1": "At RENAX, we believe a brand doesn't need to forget its history to move forward. We want to get to know your business, understand your goals, and project your brand.",
-        "responseTimeTitle": "Response Time",
-        "responseTimeDesc": "We respond in less than 24 business hours.",
-        "meetingTitle": "Initial Consultation",
-        "meetingDesc": "First diagnostic consultation with no commitment.",
-        "formTag": "QUOTE REQUEST",
-        "tellBrand": "Tell us about your project",
-        "labelName": "Full name *",
-        "labelEmail": "Email address *",
-        "labelPhone": "Phone / WhatsApp",
-        "labelService": "Which service interests you? *",
-        "opt1": "Brand Audit / Diagnosis",
-        "opt2": "Brand Renewal / Logo",
-        "opt3": "Content & Social Media",
-        "opt4": "Full Visual Strategy",
-        "opt5": "Other service",
-        "labelMessage": "Project details *",
-        "contactSubmit": "SEND REQUEST",
-        "contactNote": "Your information is 100% confidential.",
-        "channelsTag": "CUSTOMER SERVICE CHANNELS",
-        "channelsTitle": "Let's connect with your next idea.",
-        "channelsDesc": "Choose the communication channel that is most comfortable for you. We respond quickly to every request.",
-        "reviewsTag": "WHAT OUR CLIENTS SAY",
-        "reviewBoxTitle": "Share your experience with RENAX",
+        "navHome": "Home", "navAbout": "About Us", "navPortfolio": "Portfolio", "navServices": "Services", "navContact": "Contact Us",
+        "loginButton": "LOG IN", "heroEyebrow": "RENAX / CONTACT US", "contactTitle": "LET'S TALK", "contactTitle2": "ABOUT YOUR BRAND.",
+        "contactDescription": "Each brand has a story to tell. Tell us yours and let's explore how to strengthen its identity, modernize its image, and project it.",
+        "contactButton": "START CONVERSATION", "contactIndicator": "01 / CONTACT", "firstStep": "THE FIRST STEP",
+        "conversationTitle": "Every transformation begins with a", "conversationWord": "conversation.",
+        "convP1": "At RENAX, we believe a brand doesn't need to forget its history to move forward.",
+        "responseTimeTitle": "Response Time", "responseTimeDesc": "We respond in less than 24 business hours.",
+        "meetingTitle": "Initial Consultation", "meetingDesc": "First diagnostic consultation with no commitment.",
+        "formTag": "QUOTE REQUEST", "tellBrand": "Tell us about your project",
+        "labelName": "Full name *", "labelEmail": "Email address *", "labelPhone": "Phone / WhatsApp",
+        "labelService": "Which service interests you? *", "labelMessage": "Project details *",
+        "contactSubmit": "SEND REQUEST", "contactNote": "Your information is 100% confidential.",
+        "channelsTag": "CUSTOMER SERVICE CHANNELS", "channelsTitle": "Let's connect with your next idea.",
+        "channelsDesc": "Choose the communication channel that is most comfortable for you.",
+        "reviewsTag": "WHAT OUR CLIENTS SAY", "reviewBoxTitle": "Share your experience with RENAX",
         "reviewBoxDesc": "Have you worked with us? We would love to hear your thoughts.",
-        "reviewBtnSubmit": "SUBMIT REVIEW",
-        "faqTag": "WE ANSWER YOUR QUESTIONS",
-        "faqTitle": "Frequently Asked Questions.",
-        "faqDesc": "Everything you need to know about our visual transformation processes...",
-        "faq1Q": "How long does a brand renewal process take?",
-        "faq1A": "It depends on the scale. A diagnosis takes 3-5 business days, while a full visual identity takes 2-4 weeks.",
-        "faq2Q": "What are the payment methods?",
-        "faq2A": "We handle a 50% deposit at project start and 50% upon final delivery of editable files and manuals.",
-        "faq3Q": "Do you work with brands outside the city or country?",
-        "faq3A": "Yes! We work 100% remotely via Zoom or Google Meet meetings and continuous communication on WhatsApp and email.",
-        "ctaTag": "THE NEXT STEP",
-        "ctaTitlePart1": "YOUR STORY",
-        "ctaTitlePart2": "DESERVES TO",
-        "ctaTitlePart3": "EVOLVE.",
-        "ctaDesc": "Brands that evolve don't have to give up what makes them special. At RENAX, we work so that their story continues to grow.",
-        "ctaBtn": "START NOW",
-        "menuTitle": "MENU",
-        "footerExplora": "EXPLORE RENAX ↘",
-        "footerHome": "HOME",
-        "subHome1": "Experts in transforming brands",
-        "subHome2": "Stand out again without losing your essence",
-        "subHome3": "Your story deserves an image that lives up to it",
-        "subHome4": "Frequently asked questions",
-        "footerAbout": "ABOUT US",
-        "subAbout1": "Who we are",
-        "subAbout2": "Vision",
-        "subAbout3": "Mission",
-        "subAbout4": "Why RENAX?",
-        "footerPortfolio": "PORTFOLIO",
-        "subPort1": "Completed projects and works",
-        "subPort2": "Case studies",
-        "footerServices": "SERVICES",
-        "subServ1": "Brand diagnosis",
-        "subServ2": "Visual identity",
-        "subServ3": "Communication",
-        "subServ4": "Visual strategy",
-        "footerContact": "CONTACT",
-        "subContact1": "Let's talk about your project"
+        "reviewBtnSubmit": "SUBMIT REVIEW", "faqTag": "WE ANSWER YOUR QUESTIONS",
+        "faqTitle": "Frequently Asked Questions.", "faqDesc": "Everything you need to know...",
+        "ctaTag": "THE NEXT STEP", "ctaTitlePart1": "YOUR STORY", "ctaTitlePart2": "DESERVES TO", "ctaTitlePart3": "EVOLVE.",
+        "ctaDesc": "Brands that evolve don't have to give up what makes them special.", "ctaBtn": "START NOW",
+        "menuTitle": "MENU", "footerExplora": "EXPLORE RENAX ↗", "footerHome": "HOME", "footerAbout": "ABOUT US",
+        "footerPortfolio": "PORTFOLIO", "footerServices": "SERVICES", "footerContact": "CONTACT"
       };
 
       const elementos = [...document.querySelectorAll("[data-lang]")];
-      const originales = elementos.map(elemento => ({
-        elemento,
-        clave: elemento.getAttribute("data-lang"),
-        html: elemento.innerHTML
-      }));
-
+      const originales = elementos.map(el => ({ el, clave: el.getAttribute("data-lang"), html: el.innerHTML }));
       let ingles = false;
 
       botonIdioma.addEventListener("click", () => {
         ingles = !ingles;
-        originales.forEach(({ elemento, clave, html }) => {
-          if (!ingles) {
-            elemento.innerHTML = html;
-          } else if (textos[clave]) {
-            elemento.textContent = textos[clave];
-          }
+        originales.forEach(({ el, clave, html }) => {
+          if (!ingles) el.innerHTML = html;
+          else if (textos[clave]) el.textContent = textos[clave];
         });
-
         botonIdioma.textContent = ingles ? "ENG" : "ESP";
         document.documentElement.lang = ingles ? "en" : "es";
       });
-    })();
-  </script>
+    }
 
-  <!-- SCRIPT PARA EL CARRUSEL Y FORMULARIO -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const carruselContenedor = document.querySelector(".contacto-carrusel-contenedor");
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            carruselContenedor.classList.add("visible");
-            observer.unobserve(entry.target);
+    // Formulario de Cotización con Formspree
+    const formCotizacion = document.getElementById('formCotizacion');
+    if (formCotizacion) {
+      formCotizacion.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        try {
+          const response = await fetch(form.action, { method: form.method, body: new FormData(form), headers: { 'Accept': 'application/json' } });
+          if (response.ok) {
+            alert('¡Solicitud enviada con éxito! Nos pondremos en contacto contigo pronto.');
+            form.reset();
+          } else {
+            alert('Hubo un problema al enviar la solicitud. Intenta de nuevo.');
           }
-        });
-      }, {
-        threshold: 0.15
-      });
-
-      if (carruselContenedor) {
-        observer.observe(carruselContenedor);
-      }
-    });
-  </script>
-
-  <script>
-    document.getElementById('formCotizacion').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        
-        if (response.ok) {
-          alert('¡Solicitud enviada con éxito! Nos pondremos en contacto contigo pronto.');
-          form.reset();
-        } else {
-          alert('Hubo un problema al enviar la solicitud. Por favor, intenta de nuevo.');
+        } catch (error) {
+          alert('Error de conexión.');
         }
-      } catch (error) {
-        alert('Error de conexión. Verifica tu red e inténtalo nuevamente.');
-      }
-    });
+      });
+    }
   </script>
+
+  <!-- Lógica Firebase -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
@@ -646,50 +546,27 @@
 
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
-
     const navLoginBtn = document.getElementById('navLoginBtn');
 
     onAuthStateChanged(auth, (user) => {
         if (navLoginBtn) {
             if (user) {
-                // Si ya inició sesión
                 navLoginBtn.href = "dashboard.html";
                 const span = navLoginBtn.querySelector('span');
                 if (span) span.textContent = "MI PANEL";
+                
+                const emailInput = document.getElementById('email');
+                if (emailInput && user.email) {
+                    emailInput.value = user.email;
+                    emailInput.readOnly = true;
+                }
             } else {
-                // Si no ha iniciado sesión
                 navLoginBtn.href = "login.html";
                 const span = navLoginBtn.querySelector('span');
                 if (span) span.textContent = "INICIAR SESIÓN";
             }
         }
     });
-</script>
- <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
-
-    const firebaseConfig = {
-        apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
-        authDomain: "renax-auth.firebaseapp.com",
-        projectId: "renax-auth",
-        storageBucket: "renax-auth.firebasestorage.app",
-        messagingSenderId: "155645649809",
-        appId: "1:155645649809:web:3b203ccb729bfc8672b030"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            const emailInput = document.getElementById('email');
-            if (emailInput && user.email) {
-                emailInput.value = user.email; // Rellena el correo automáticamente
-                emailInput.readOnly = true;    // Opcional: Evita que lo cambien si ya está logueados
-            }
-        }
-    });
-</script>
+  </script>
 </body>
 </html>
