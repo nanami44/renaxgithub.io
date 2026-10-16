@@ -1143,3 +1143,133 @@ h1, h2, h3,
     text-align: left !important;
     text-transform: uppercase;
 }
+
+/* ==========================================
+   RENAX — FONDO DINÁMICO DE TODA LA PÁGINA
+   ========================================== */
+
+body.contacto-page {
+    position: relative;
+    isolation: isolate;
+    background: #030303 !important;
+}
+
+/* Capa ambiental fija detrás de toda la página */
+body.contacto-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        radial-gradient(
+            circle at 15% 75%,
+            rgba(255, 35, 55, 0.20),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 95, 20, 0.15),
+            transparent 32%
+        ),
+        #030303;
+}
+
+/* La portada ya no debe tener un fondo propio */
+body.contacto-page .contacto-hero.fondo-esferas-renax {
+    background: transparent !important;
+}
+
+/* La capa de esferas acompaña a toda la página */
+body.contacto-page .esferas-container {
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100vh !important;
+    z-index: -1 !important;
+    overflow: hidden !important;
+    filter: none !important;
+    pointer-events: none !important;
+}
+
+/* Esferas luminosas con movimiento lento */
+body.contacto-page .esfera-1 {
+    width: clamp(240px, 32vw, 440px);
+    height: clamp(240px, 32vw, 440px);
+    left: -100px;
+    top: 45%;
+    bottom: auto;
+    background: radial-gradient(
+        circle at 35% 30%,
+        #fff0c0 0%,
+        #ffae45 22%,
+        #ff493c 48%,
+        #ed174e 68%,
+        transparent 100%
+    );
+    opacity: 0.72;
+    filter: blur(18px);
+    animation: renaxFondoLento 28s ease-in-out infinite alternate;
+}
+
+body.contacto-page .esfera-2 {
+    width: clamp(250px, 36vw, 480px);
+    height: clamp(250px, 36vw, 480px);
+    right: -100px;
+    top: 8%;
+    background: radial-gradient(
+        circle at 35% 30%,
+        #fff2b8 0%,
+        #ffd34f 20%,
+        #ff792b 45%,
+        #ff3046 68%,
+        transparent 100%
+    );
+    opacity: 0.76;
+    filter: blur(20px);
+    animation: renaxFondoLento 34s ease-in-out infinite alternate-reverse;
+}
+
+/* Mantener el contenido por delante */
+body.contacto-page .contacto-header,
+body.contacto-page .contacto-main,
+body.contacto-page .contacto-hero-contenido,
+body.contacto-page .contacto-hero-indice {
+    position: relative;
+    z-index: 1;
+}
+
+/* Movimiento suave y lento */
+@keyframes renaxFondoLento {
+    0% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(35px, -25px, 0) scale(1.06);
+    }
+    100% {
+        transform: translate3d(-20px, 30px, 0) scale(0.98);
+    }
+}
+
+/* En celulares se reduce el tamaño de las esferas */
+@media (max-width: 600px) {
+    body.contacto-page .esfera-1 {
+        width: 260px;
+        height: 260px;
+        left: -130px;
+    }
+
+    body.contacto-page .esfera-2 {
+        width: 280px;
+        height: 280px;
+        right: -150px;
+    }
+}
+
+/* Accesibilidad: evitar movimiento si el usuario lo solicita */
+@media (prefers-reduced-motion: reduce) {
+    body.contacto-page .esfera {
+        animation: none !important;
+    }
+}
