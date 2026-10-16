@@ -1057,5 +1057,74 @@ textarea.input-estilo {
         letter-spacing: -0.035em;
     }
 }
-  
+ /* Fondo general de la sección con esferas flotantes suaves */
+.fondo-esferas-renax {
+    position: relative;
+    background-color: #050505; /* Fondo negro profundo */
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Contenedor de las luces difuminadas */
+.esferas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    filter: blur(60px); /* Difuminado suave para un efecto moderno */
+    opacity: 0.6; /* Transparencia elegante para que no sature el texto */
+}
+
+/* Estilo base de cada esfera luminosa */
+.esfera {
+    position: absolute;
+    border-radius: 50%;
+    animation: movimientoSuave 12s ease-in-out infinite alternate;
+}
+
+/* Esfera Roja/Naranja Grande (Izquierda Abajo) */
+.esfera-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #e74c3c 0%, #8e1600 70%, transparent 100%);
+    bottom: -100px;
+    left: -50px;
+    animation-duration: 15s;
+}
+
+/* Esfera Naranja Brillante (Derecha Arriba) */
+.esfera-2 {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle, #ff7e5f 0%, #eb3b5a 60%, transparent 100%);
+    top: -50px;
+    right: 10%;
+    animation-duration: 18s;
+}
+
+/* Esfera Central Suave */
+.esfera-3 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, #d63031 0%, #e17055 70%, transparent 100%);
+    top: 40%;
+    left: 45%;
+    animation-duration: 20s;
+}
+
+/* Animación de flotación suave y lenta */
+@keyframes movimientoSuave {
+    0% {
+        transform: translate(0px, 0px) scale(1);
+    }
+    50% {
+        transform: translate(30px, -40px) scale(1.05);
+    }
+    100% {
+        transform: translate(-20px, 30px) scale(0.95);
+    }
+} 
 
