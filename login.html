@@ -134,27 +134,41 @@
         const mensaje = document.getElementById('mensaje');
 
         // Registro de usuario
-        btnRegister.addEventListener('click', () => {
-            const email = emailInput.value;
-            const password = passwordInput.value;
+btnRegister.addEventListener('click', () => {
+    const email = emailInput.value;
+    const password = passwordInput.value;
+    // Aquí capturas los nuevos valores de tus inputs (asegúrate de crear sus constantes arriba)
+    const nombre = nombreInput.value;
+    const apellido = apellidoInput.value;
+    const ciudad = ciudadInput.value;
+    const telefono = telefonoInput.value;
 
-            if(!email || !password) {
-                mensaje.style.color = "#e74c3c";
-                mensaje.textContent = "Por favor completa todos los campos.";
-                return;
-            }
+    if(!email || !password || !nombre || !apellido) {
+        mensaje.style.color = "#e74c3c";
+        mensaje.textContent = "Por favor completa los campos obligatorios.";
+        return;
+    }
 
-            createUserWithEmailAndPassword(auth, email, password)
-                .then((userCredential) => {
-                    mensaje.style.color = "#2ecc71";
-                    mensaje.textContent = "¡Registro exitoso! Ya puedes iniciar sesión.";
-                })
-                .catch((error) => {
-                    mensaje.style.color = "#e74c3c";
-                    mensaje.textContent = "Error: " + error.message;
-                });
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            
+            // Opcional: Actualizar perfil con el nombre y guardar datos extra
+            updateProfile(user, {
+                displayName: `${nombre} ${apellido}`
+            });
+
+            localStorage.setItem('renax_ciudad', ciudad);
+            localStorage.setItem('renax_telefono', telefono);
+
+            // Redirigir al panel
+            window.location.href = "dashboard.html";
+        })
+        .catch((error) => {
+            mensaje.style.color = "#e74c3c";
+            mensaje.textContent = error.message;
         });
-
+});
         // Inicio de sesión y redirección al formulario principal
         btnLogin.addEventListener('click', () => {
             const email = emailInput.value;
