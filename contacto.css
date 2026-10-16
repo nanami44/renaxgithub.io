@@ -1291,3 +1291,36 @@ span {
         animation: none !important;
     }
 }
+/* 1. Forzar a todos los párrafos y textos corrientes a un grosor fino y limpio */
+p, 
+span, 
+small, 
+label, 
+input, 
+textarea, 
+select, 
+.contacto-hero-texto, 
+.contacto-conversacion-texto p, 
+.renax-canales-desc, 
+.renax-faq-card p, 
+.renax-cta-contenido p {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important; /* Letra delgada y legible */
+}
+
+/* 2. Asegurar que el menú superior tenga un grosor normal/medio elegante */
+.contacto-nav a, 
+.contacto-header-acciones {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important; 
+}
+
+/* 3. ÚNICAMENTE los títulos principales mantienen la tipografía pesada (Montserrat Black) */
+h1, h2, h3, 
+.contacto-hero h1, 
+.contacto-conversacion h2, 
+.renax-faq-intro h2, 
+.renax-titulo-pesado {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 900 !important; /* Grosor pesado exclusivo para títulos */
+}
