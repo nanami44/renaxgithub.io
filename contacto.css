@@ -1060,7 +1060,7 @@ textarea.input-estilo {
 /* Contenedor principal con posición relativa */
 .fondo-esferas-renax {
     position: relative !important;
-    background-color: #0b0b0b !important;
+    background-color: #000000 !important;
     overflow: hidden !important;
 }
 .contacto-hero.fondo-esferas-renax {
