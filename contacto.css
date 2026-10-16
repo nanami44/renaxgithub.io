@@ -1266,41 +1266,28 @@ body.contacto-page .contacto-hero-indice {
         right: -150px;
     }
 }
-
+/* Párrafos y textos generales con estilo limpio y fino (igual a la segunda imagen) */
+p, 
+.contacto-hero-texto, 
+.contacto-conversacion-texto p, 
+.renax-canales-desc, 
+.renax-faq-intro p, 
+.renax-faq-card p, 
+.renax-cta-texto,
+small, 
+span {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important; /* Grosor normal y legible */
+    letter-spacing: normal !important;
+}
+.contacto-nav a {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important; /* Semi-negrita muy suave y elegante */
+    font-size: 14px !important;
+}
 /* Accesibilidad: evitar movimiento si el usuario lo solicita */
 @media (prefers-reduced-motion: reduce) {
     body.contacto-page .esfera {
         animation: none !important;
     }
-}
-/* 1. Menú y textos normales con tipografía limpia y ligera */
-.contacto-nav a, 
-p, 
-small, 
-span, 
-input, 
-textarea, 
-label, 
-button {
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 400 !important; /* Letra normal, no pesada */
-}
-
-/* 2. El menú principal asegurado sin grosor pesado */
-.contacto-nav a {
-    font-weight: 500 !important;
-    font-size: 14px !important;
-}
-
-/* 3. ÚNICAMENTE los títulos principales llevan la tipografía pesada (Montserrat Black) */
-h1, h2, h3, 
-.contacto-hero h1, 
-.contacto-conversacion h2, 
-.renax-faq-intro h2, 
-.renax-titulo-pesado, 
-.renax-cta-titulo {
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 900 !important; /* Montserrat Black */
-    text-align: left !important;
-    text-transform: uppercase;
 }
