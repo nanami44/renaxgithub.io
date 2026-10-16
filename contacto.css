@@ -1065,11 +1065,13 @@ textarea.input-estilo {
 }
 .contacto-hero.fondo-esferas-renax {
     position: relative !important;
-    min-height: 100vh; /* Asegura que la sección ocupe buena altura en la pantalla */
-    display: flex;
-    align-items: center;
+    background-color: #000000 !important; /* Forzamos fondo negro absoluto */
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+    overflow: hidden !important;
 }
-/* Capa de las esferas */
+
 /* Capa de las esferas fijas al fondo */
 .esferas-container {
     position: absolute !important;
@@ -1080,7 +1082,7 @@ textarea.input-estilo {
     pointer-events: none !important;
     z-index: 1 !important;
     filter: blur(50px) !important;
-    overflow: hidden !important;
+    opacity: 1 !important;
 }
 
 /* Esferas luminosas */
