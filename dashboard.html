@@ -3,177 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Panel - RENAX</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Panel de Cliente - RENAX</title>
     <style>
         body {
-            font-family: 'Montserrat', Arial, sans-serif;
+            font-family: Arial, sans-serif;
             background-color: #0b0b0b;
             color: #ffffff;
             margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        header {
-            background-color: #141414;
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #222;
-        }
-        .logo {
-            font-size: 20px;
-            font-weight: 800;
-            color: #fff;
-            letter-spacing: 2px;
-            text-decoration: none;
-        }
-        .logo span {
-            color: #e74c3c;
+            padding: 20px;
         }
         .container {
             max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            flex: 1;
-            width: 100%;
-            box-sizing: border-box;
+            margin: 0 auto;
         }
         .welcome-card {
             background-color: #141414;
             border: 1px solid #e74c3c;
             border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 0 20px rgba(231, 76, 60, 0.15);
-            margin-bottom: 30px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(231, 76, 60, 0.2);
         }
-        .welcome-card h2 {
-            margin-top: 0;
-            font-size: 26px;
-            color: #fff;
-        }
-        .welcome-card p {
-            color: #aaa;
-            font-size: 14px;
-        }
-        .user-email {
-            color: #e74c3c;
-            font-weight: bold;
-        }
-        .grid-cards {
+        .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: 1fr;
             gap: 20px;
-            margin-bottom: 30px;
         }
         .card {
             background-color: #141414;
             border: 1px solid #333;
-            border-radius: 10px;
-            padding: 25px;
-            transition: border-color 0.3s;
-        }
-        .card:hover {
-            border-color: #e74c3c;
-        }
-        .card h3 {
-            margin-top: 0;
-            font-size: 18px;
-            color: #fff;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .card h3 i {
-            color: #e74c3c;
-        }
-        .card p {
-            color: #888;
-            font-size: 13px;
-            line-height: 1.5;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #e74c3c;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 13px;
-            border: none;
-            cursor: pointer;
-            transition: background 0.2s;
-            margin-top: 10px;
-            text-align: center;
-        }
-        .btn:hover {
-            background-color: #c0392b;
-        }
-        .btn-outline {
-            background-color: transparent;
-            border: 1px solid #e74c3c;
-            color: #e74c3c;
-        }
-        .btn-outline:hover {
-            background-color: rgba(231, 76, 60, 0.1);
-            color: #fff;
-        }
-        footer {
-            text-align: center;
+            border-radius: 12px;
             padding: 20px;
-            color: #555;
-            font-size: 12px;
-            border-top: 1px solid #222;
+        }
+        h3 {
+            color: #e74c3c;
+            margin-top: 0;
+        }
+        .btn-logout {
+            background-color: transparent;
+            color: #e74c3c;
+            border: 1px solid #e74c3c;
+            padding: 8px 15px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            float: right;
+        }
+        .btn-logout:hover {
+            background-color: rgba(231, 76, 60, 0.1);
         }
     </style>
 </head>
 <body>
 
-<header>
-    <a href="index.html" class="logo">RENAX<span>.</span></a>
-    <div style="display: flex; gap: 15px; align-items: center;">
-        <a href="index.html" class="btn btn-outline" style="margin: 0; text-decoration: none; padding: 8px 16px; font-size: 13px;">Volver al Inicio</a>
-        <button id="btn-logout" class="btn btn-outline" style="margin:0;"><i class="fa-solid fa-right-from-bracket"></i> Cerrar Sesión</button>
-    </div>
-</header>
-
     <div class="container">
         <!-- Tarjeta de Bienvenida -->
         <div class="welcome-card">
+            <button id="btn-logout" class="btn-logout">Cerrar Sesión</button>
             <h2>Bienvenido a tu panel, RENAX</h2>
-            <p>Has iniciado sesión de forma segura como: <span id="user-email-display" class="user-email">Cargando...</span></p>
+            <p>Has iniciado sesión como: <span id="user-email-display" style="color: #e74c3c; font-weight: bold;">Cargando...</span></p>
+            <p style="margin: 5px 0; font-size: 13px;">Ciudad: <span id="perfil-ciudad" style="color: #fff;">-</span></p>
+            <p style="margin: 5px 0; font-size: 13px;">Celular: <span id="perfil-celular" style="color: #fff;">-</span></p>
         </div>
 
-        <!-- Secciones del Panel -->
-        <div class="grid-cards">
-            <!-- Estado del Proyecto -->
+        <div class="grid">
+            <!-- Sección de Chat Directo con el Diseñador -->
             <div class="card">
-                <h3><i class="fa-solid fa-chart-line"></i> Estado de Proyecto</h3>
-                <p>Tu identidad visual y estrategia se encuentran activas en el sistema de seguimiento de la agencia.</p>
-                <a href="contacto.html" class="btn">Contactar Asesor</a>
-            </div>
+                <h3>💬 Chat Directo con tu Asesor</h3>
+                <p style="font-size: 13px; color: #aaa;">Escribe tus dudas, cambios o sugerencias sobre tu proyecto directamente con el equipo.</p>
+                
+                <!-- Contenedor de mensajes -->
+                <div id="chat-messages" style="background-color: #0b0b0b; border: 1px solid #333; border-radius: 8px; height: 250px; overflow-y: auto; padding: 15px; margin-bottom: 15px; display: flex; flex-direction: column; gap: 10px;">
+                    <span style="color: #666; font-size: 12px; text-align: center;">Cargando conversación...</span>
+                </div>
 
-            <!-- Recursos Exclusivos -->
-            <div class="card">
-                <h3><i class="fa-solid fa-folder-open"></i> Recursos y Manual</h3>
-                <p>Accede rápidamente a los documentos compartidos y lineamientos de diseño de tu marca.</p>
-                <a href="https://www.canva.com/design/DAHOGJ8tLuc/b4Cc_XcdRbx-OImmCGWqTg/view" target="_blank" class="btn btn-outline">Ver Manual de Marca</a>
+                <!-- Formulario para enviar mensaje -->
+                <form id="chat-form" style="display: flex; gap: 10px;">
+                    <input type="text" id="chat-input" placeholder="Escribe un mensaje..." required style="flex: 1; padding: 12px; background: #0b0b0b; border: 1px solid #333; color: #fff; border-radius: 6px; font-size: 14px;">
+                    <button type="submit" style="background-color: #e74c3c; color: #fff; border: none; padding: 0 20px; border-radius: 6px; font-weight: bold; cursor: pointer;">Enviar</button>
+                </form>
             </div>
         </div>
     </div>
 
-    <footer>
-        <p>RENAX — Transformamos marcas sin borrar su historia. Todos los derechos reservados.</p>
-    </footer>
-
-    <!-- Lógica de Firebase para Protección y Datos -->
+    <!-- Firebase y Lógica del Panel y Chat -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
         import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+        import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
@@ -186,25 +103,81 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const db = getFirestore(app);
 
         const emailDisplay = document.getElementById('user-email-display');
         const btnLogout = document.getElementById('btn-logout');
 
-        // Proteger la ruta y mostrar el nombre completo o el correo
+        // Verificar autenticación y cargar datos de perfil y chat
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                // Si el usuario tiene un nombre guardado (displayName), lo usa; si no, muestra el correo
                 const nombreCliente = user.displayName ? user.displayName : user.email;
                 emailDisplay.textContent = nombreCliente;
+
+                // Cargar datos guardados en el registro
+                document.getElementById('perfil-ciudad').textContent = localStorage.getItem('renax_ciudad') || 'No especificada';
+                document.getElementById('perfil-celular').textContent = localStorage.getItem('renax_telefono') || 'No especificado';
+
+                const chatContainer = document.getElementById('chat-messages');
+                const chatForm = document.getElementById('chat-form');
+                const chatInput = document.getElementById('chat-input');
+
+                // Referencia al chat privado de este usuario en Firestore
+                const mensajesRef = collection(db, `chats/${user.uid}/mensajes`);
+                const q = query(mensajesRef, orderBy('createdAt', 'asc'));
+
+                // Escuchar mensajes en tiempo real
+                onSnapshot(q, (snapshot) => {
+                    chatContainer.innerHTML = '';
+                    if (snapshot.empty) {
+                        chatContainer.innerHTML = '<span style="color: #666; font-size: 12px; text-align: center;">No hay mensajes aún. ¡Comienza la conversación!</span>';
+                        return;
+                    }
+
+                    snapshot.forEach((doc) => {
+                        const data = doc.data();
+                        const msgDiv = document.createElement('div');
+                        msgDiv.style.padding = '8px 12px';
+                        msgDiv.style.borderRadius = '6px';
+                        msgDiv.style.maxWidth = '80%';
+                        msgDiv.style.fontSize = '13px';
+                        msgDiv.style.backgroundColor = '#1f1f1f';
+                        msgDiv.style.color = '#fff';
+
+                        msgDiv.textContent = `${data.remitente}: ${data.texto}`;
+                        chatContainer.appendChild(msgDiv);
+                    });
+
+                    chatContainer.scrollTop = chatContainer.scrollHeight;
+                });
+
+                // Enviar mensaje
+                chatForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const textoMensaje = chatInput.value.trim();
+                    if (!textoMensaje) return;
+
+                    try {
+                        await addDoc(mensajesRef, {
+                            texto: textoMensaje,
+                            remitente: nombreCliente,
+                            createdAt: serverTimestamp()
+                        });
+                        chatInput.value = '';
+                    } catch (error) {
+                        console.error("Error al enviar mensaje:", error);
+                    }
+                });
+
             } else {
                 window.location.href = "login.html";
             }
         });
 
-       // Botón de Cerrar Sesión
+        // Botón de Cerrar Sesión
         btnLogout.addEventListener('click', () => {
             signOut(auth).then(() => {
-                window.location.href = "index.html"; // Redirige a la página principal
+                window.location.href = "index.html";
             }).catch((error) => {
                 console.error("Error al cerrar sesión: ", error);
             });
