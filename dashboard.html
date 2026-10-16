@@ -190,10 +190,12 @@
         const emailDisplay = document.getElementById('user-email-display');
         const btnLogout = document.getElementById('btn-logout');
 
-        // Proteger la ruta: Si no hay usuario, expulsarlo al login
+        // Proteger la ruta y mostrar el nombre completo o el correo
         onAuthStateChanged(auth, (user) => {
             if (user) {
-                emailDisplay.textContent = user.email;
+                // Si el usuario tiene un nombre guardado (displayName), lo usa; si no, muestra el correo
+                const nombreCliente = user.displayName ? user.displayName : user.email;
+                emailDisplay.textContent = nombreCliente;
             } else {
                 window.location.href = "login.html";
             }
