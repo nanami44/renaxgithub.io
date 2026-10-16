@@ -630,5 +630,39 @@
       }
     });
   </script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
+        authDomain: "renax-auth.firebaseapp.com",
+        projectId: "renax-auth",
+        storageBucket: "renax-auth.firebasestorage.app",
+        messagingSenderId: "155645649809",
+        appId: "1:155645649809:web:3b203ccb729bfc8672b030"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const navLoginBtn = document.getElementById('navLoginBtn');
+
+    onAuthStateChanged(auth, (user) => {
+        if (navLoginBtn) {
+            if (user) {
+                // Si ya inició sesión
+                navLoginBtn.href = "dashboard.html";
+                const span = navLoginBtn.querySelector('span');
+                if (span) span.textContent = "MI PANEL";
+            } else {
+                // Si no ha iniciado sesión
+                navLoginBtn.href = "login.html";
+                const span = navLoginBtn.querySelector('span');
+                if (span) span.textContent = "INICIAR SESIÓN";
+            }
+        }
+    });
+</script>
 </body>
 </html>
