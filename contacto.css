@@ -937,3 +937,51 @@ textarea.input-estilo {
   color: #c2384a;                        /* Rojo vibrante RENAX */
   font-style: normal;                    /* Elimina la cursiva si deseas que todo mantenga el bloque pesado */
 }
+
+/* ========================================
+   RENAX — Título estilo DO MORE
+   ======================================== */
+
+#contactoHeroTitulo.titulo-do-more {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(2.6rem, 6vw, 4.2rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+#contactoHeroTitulo .titulo-linea {
+    display: block;
+}
+
+#contactoHeroTitulo .texto-solido {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: #f5f5f5;
+    font-style: normal;
+}
+
+#contactoHeroTitulo .texto-contorno {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    color: transparent;
+    -webkit-text-stroke: 1.5px #f5f5f5;
+    text-stroke: 1.5px #f5f5f5;
+}
+
+#contactoHeroTitulo .texto-rojo {
+    color: #c92f49;
+    -webkit-text-stroke: 0;
+    font-style: normal;
+}
+
+@media (max-width: 600px) {
+    #contactoHeroTitulo.titulo-do-more {
+        font-size: clamp(2.2rem, 10vw, 3.2rem);
+        letter-spacing: -0.045em;
+    }
+}
+
+
