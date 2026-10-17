@@ -1,12 +1,14 @@
+
+  
 /* ==========================================
-   ESTILOS GENERALES Y PORTADA FIJA
+   ESTILOS GENERALES Y FONDO GENERAL
    ========================================== */
 body.portafolio-renax {
   background-color: #0b0b0b;
-  background-image: url('fondo portafolio-rojo.jpeg');
+  background-image: url('fondo portafolio-rojo.jpeg'); /* Fondo general de la página */
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; /* Mantiene el fondo estático y elegante mientras haces scroll */
   color: #ffffff;
   font-family: system-ui, -apple-system, sans-serif;
   margin: 0;
@@ -14,20 +16,20 @@ body.portafolio-renax {
   overflow-x: hidden;
 }
 
-.renax-portfolio-cover {
-  position: fixed;
-  top: 0;
-  left: 0;
+/* PORTADA NORMAL ARRIBA (ANCHO TOTAL, SIN SCROLL ENCIMA) */
+.renax-portfolio-cover-normal {
   width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  height: 85vh;
   overflow: hidden;
+  background: #000;
 }
 
-.renax-portfolio-cover img {
+.renax-portfolio-cover-normal img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -37,19 +39,7 @@ body.portafolio-renax {
   position: relative;
   z-index: 1;
   background: transparent;
-  padding-right: 180px; 
-}
-
-.hero-spacer {
-  height: 90vh;
-  width: 100%;
-}
-
-/* Sin velo ni efectos translúcidos en las secciones */
-.portfolio-gallery-wrapper, 
-.renax-editorial-section, 
-.renax-portfolio-cierre {
-  background-color: transparent;
+  padding-right: 250px; /* Espacio para el carrusel vertical más grande a la derecha */
 }
 
 /* ==========================================
@@ -133,37 +123,38 @@ body.portafolio-renax {
 }
 
 /* ==========================================
-   CARRUSEL VERTICAL FLOTANTE (ESQUINA DERECHA)
+   CARRUSEL VERTICAL MÁS GRANDE (ESQUINA DERECHA)
    ========================================== */
 .vertical-ticker-container {
   position: fixed;
   top: 100px;
-  right: 20px;
-  width: 150px;
-  height: calc(100vh - 160px);
+  right: 25px;
+  width: 210px; /* Más grande */
+  height: calc(100vh - 140px);
   overflow: hidden;
   z-index: 99;
   pointer-events: auto;
-  background: rgba(0, 0, 0, 0.65);
-  border-radius: 12px;
+  background: rgba(10, 10, 10, 0.85);
+  border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
 .vertical-ticker-track {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding: 15px 10px;
+  gap: 20px;
+  padding: 20px 15px;
   will-change: transform;
 }
 
 .vertical-ticker-item {
-  width: 130px;
-  height: 110px;
-  border-radius: 8px;
+  width: 180px;
+  height: 150px; /* Imágenes más grandes y proporcionadas */
+  border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
   transition: transform 0.3s ease;
 }
 
@@ -178,78 +169,15 @@ body.portafolio-renax {
 }
 
 /* ==========================================
-   CARRUSEL HORIZONTAL (SECCIÓN GALERÍA)
-   ========================================== */
-.portfolio-gallery-wrapper {
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  margin-left: -50vw;
-  margin-right: -50vw;
-  overflow: hidden;
-  padding: 40px 0;
-  white-space: nowrap;
-}
-
-.portfolio-gallery {
-  display: inline-flex;
-  gap: 30px;
-  padding: 0 15px;
-  will-change: transform;
-}
-
-.portfolio-item {
-  position: relative;
-  width: 480px;
-  height: 320px;
-  border-radius: 16px;
-  overflow: hidden;
-  flex-shrink: 0;
-  display: inline-block;
-  background: #000;
-}
-
-.portfolio-img-container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.portfolio-img-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.portfolio-item:hover img {
-  transform: scale(1.08);
-}
-
-.portfolio-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  z-index: 2;
-}
-
-/* ==========================================
-   SECCIÓN PROYECTOS (ESTILO EDITORIAL ASIMÉTRICO)
+   DISEÑO EDITORIAL ASIMÉTRICO DINÁMICO (GALERÍA NO PLANA)
    ========================================== */
 .renax-editorial-section {
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
-  padding: 80px 30px;
+  padding: 90px 30px;
   display: grid;
   grid-template-columns: 300px 1fr;
-  gap: 40px;
+  gap: 50px;
   align-items: start;
 }
 
@@ -270,56 +198,63 @@ body.portafolio-renax {
 .renax-massive-title .red-text { color: #e50914; }
 .renax-massive-title .white-text { color: #ffffff; }
 
-.renax-work-layout {
+/* Grid Asimétrico Dinámico Estilo Mosaico Editorial */
+.renax-asymmetric-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 25px;
+  gap: 30px;
 }
 
-.renax-work-card {
+.renax-grid-card {
   text-decoration: none;
   color: #fff;
   display: flex;
   flex-direction: column;
-  background: rgba(15, 15, 15, 0.85);
+  background: rgba(15, 15, 15, 0.9);
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.08);
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.4s ease, border-color 0.3s ease;
 }
 
-.renax-work-card:hover {
-  transform: translateY(-5px);
+.renax-grid-card:hover {
+  transform: translateY(-6px);
   border-color: #e50914;
 }
 
-.renax-work-image {
+/* Diferentes alturas y proporciones para romper la monotonía (diseño no plano) */
+.card-large .renax-grid-img { height: 480px; }
+.card-medium .renax-grid-img { height: 320px; }
+.card-wide { grid-column: span 2; }
+.card-wide .renax-grid-img { height: 380px; }
+.card-tall .renax-grid-img { height: 440px; }
+
+.renax-grid-img {
   width: 100%;
-  height: 360px;
   overflow: hidden;
   background: #000;
 }
 
-.renax-work-image img {
+.renax-grid-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.6s ease;
 }
 
-.renax-work-card:hover .renax-work-image img {
-  transform: scale(1.08);
+.renax-grid-card:hover .renax-grid-img img {
+  transform: scale(1.06);
 }
 
-.renax-work-card h3 {
+.renax-grid-card h3 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  font-size: 16px;
-  margin: 18px;
+  font-size: 18px;
+  margin: 20px;
   color: #fff;
 }
 
-.renax-work-card h3 span {
+.renax-grid-card h3 span {
   color: #e50914;
   margin-left: 5px;
 }
@@ -330,7 +265,6 @@ body.portafolio-renax {
 .renax-portfolio-cierre {
   text-align: center;
   padding: 100px 20px;
-  background: transparent;
 }
 
 .portfolio-cierre-titulo {
@@ -361,7 +295,7 @@ body.portafolio-renax {
 .renax-floating-buttons {
   position: fixed;
   bottom: 25px;
-  right: 180px;
+  right: 250px; /* Ajustado al nuevo ancho del carrusel vertical */
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -393,7 +327,7 @@ body.portafolio-renax {
   background-color: #050505;
   color: #ffffff;
   padding: 60px 80px 40px 80px;
-  border-top: 2px solid #e50914; /* Línea roja superior característica */
+  border-top: 2px solid #e50914; /* Línea roja superior exacta */
   width: 100vw;
   position: relative;
   left: 50%;
@@ -424,7 +358,7 @@ body.portafolio-renax {
   font-size: 14px;
   font-weight: 900;
   letter-spacing: 3px;
-  color: #e50914; /* Título MENÚ en rojo */
+  color: #e50914;
   text-transform: uppercase;
 }
 
@@ -477,32 +411,12 @@ body.portafolio-renax {
   opacity: 0.9;
 }
 
-/* Responsive para pantallas medianas y móviles */
-@media (max-width: 1200px) {
-  .renax-footer {
-    padding: 50px 40px 30px 40px;
-  }
-  .footer-columns-container {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .renax-footer {
-    padding: 40px 20px 20px 20px;
-  }
-  .footer-columns-container {
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-}
 /* ==========================================
    RESPONSIVE
    ========================================== */
-@media (max-width: 1200px) {
+@media (max-width: 1300px) {
   .vertical-ticker-container {
-    display: none;
+    display: none; /* Se oculta en pantallas medianas para dar espacio limpio al grid */
   }
   #main-content {
     padding-right: 0;
@@ -510,14 +424,15 @@ body.portafolio-renax {
   .renax-floating-buttons {
     right: 25px;
   }
+}
+
+@media (max-width: 1024px) {
   .renax-editorial-section {
     grid-template-columns: 1fr;
     gap: 30px;
   }
   .renax-sticky-title { position: static; }
-}
-
-@media (max-width: 1024px) {
+  .card-wide { grid-column: span 1; }
   .footer-columns-container {
     grid-template-columns: repeat(2, 1fr);
     gap: 40px;
@@ -525,9 +440,10 @@ body.portafolio-renax {
 }
 
 @media (max-width: 600px) {
-  .renax-work-layout { grid-template-columns: 1fr; }
+  .renax-asymmetric-grid { grid-template-columns: 1fr; }
+  .card-wide { grid-column: span 1; }
   .footer-columns-container { grid-template-columns: 1fr; }
-  .renax-footer { padding: 30px 20px; }
+  .renax-footer { padding: 40px 20px 20px 20px; }
   .nav-menu {
     display: none;
     flex-direction: column;
