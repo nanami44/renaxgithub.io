@@ -9,7 +9,7 @@
   <!-- FontAwesome v6 & CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="portafolio.css?v=2">
+  <link rel="stylesheet" href="portafolio.css?v=1">
 
   <style>
     /* Estilos integrados para zoom en imágenes y botones flotantes */
@@ -49,62 +49,6 @@
     }
     .renax-whatsapp { background-color: #25d366; }
     .renax-facebook { background-color: #1877f2; }
-
-    /* Estructura para Portada Fija con Velo Transparente y Contenido Flotante */
-    .renax-hero-wrapper {
-      position: relative;
-      width: 100%;
-    }
-
-    /* Portada fija en el fondo de la sección hero */
-    .renax-portfolio-cover {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-    .renax-portfolio-cover img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* Velo gris transparente sobre la portada para apreciar el fondo */
-    .renax-hero-veil {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(40, 40, 40, 0.65); /* Velo gris transparente */
-      z-index: -1;
-      pointer-events: none;
-    }
-
-    /* Contenedor principal que pasa por encima de la portada fija */
-    #main-content {
-      position: relative;
-      z-index: 1;
-      background: transparent;
-    }
-
-    /* Espaciador inicial para que la portada fija se luzca antes de hacer scroll al contenido */
-    .hero-spacer {
-      height: 85vh;
-      width: 100%;
-    }
-
-    /* Fondo general para las secciones que suben */
-    .renax-work-grid, .portfolio-gallery-wrapper, .renax-portfolio-cierre, .renax-footer {
-      background-color: rgba(11, 11, 11, 0.92);
-      backdrop-filter: blur(8px);
-    }
 
     /* Estilos del pie de página */
     .renax-footer {
@@ -193,60 +137,6 @@
       .renax-footer { padding: 30px 20px; }
       .footer-columns-container { grid-template-columns: 1fr; }
     }
-    /* AJUSTE DEL TAMAÑO DE LAS IMÁGENES DEL PORTAFOLIO */
-.renax-work-image {
-  height: 300px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.renax-work-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-}
-   /* AJUSTE DE LA TARJETA DÍA DE LAS MATEMÁTICAS */
-.renax-work-card.renax-work-wide {
-  width: 85%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-}
-
-/* Imagen ajustada al contenedor */
-.renax-work-card.renax-work-wide .renax-work-image {
-  width: 100%;
-  height: 420px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0b0b0b;
-}
-
-.renax-work-card.renax-work-wide .renax-work-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-}
-
-/* Adaptación a móviles */
-@media (max-width: 700px) {
-  .renax-work-card.renax-work-wide {
-    width: 100%;
-  }
-
-  .renax-work-card.renax-work-wide .renax-work-image {
-    height: 260px;
-  }
-} 
   </style>
 </head>
 <body class="portafolio-renax">
@@ -254,7 +144,7 @@
   <!-- TRANSICIÓN RENAX -->
   <div class="renax-page-transition" id="renaxPageTransition">
     <div class="renax-transition-logo">
-      <img src="logo-renax-transparente.png" alt="RENAX" class="transition-logo-image">   
+      <img src="logo-renax-transparente.png" alt="RENAX" class="transition-logo-image">    
     </div>
   </div>
 
@@ -278,142 +168,111 @@
       </nav>
 
       <button class="language" id="languageBtn" type="button">ENG</button>
-      <a href="login.html" class="login-btn" id="navLoginBtn"><span>INICIAR SESIÓN</span></a>
+     <a href="login.html" class="login-btn" id="navLoginBtn"><span>INICIAR SESIÓN</span></a>
     </div>
   </header>
 
-  <!-- PORTADA FIJA Y VELO TRANSPARENTE -->
-  <div class="renax-portfolio-cover">
-    <img src="portafolio-final.png" alt="PORTAFOLIO RENAX">
-  </div>
-  <div class="renax-hero-veil"></div>
+  <div class="portafolio-fondo"></div>
 
-  <!-- MAIN CONTENT QUE PASA ENCIMA -->
+  <!-- MAIN CONTENT -->
   <main id="main-content">
 
-    <!-- ESPACIADOR PARA LA PORTADA -->
-    <div class="hero-spacer"></div>
+    <!-- HERO PORTAFOLIO -->
+    <section class="renax-portfolio-cover">
+      <img src="portafolio-final.png" alt="PORTAFOLIO RENAX">
+    </section>
 
-    <!-- GALERÍA DE PROYECTOS (CARRUSEL DE ANCHO COMPLETO) -->
-    <section class="portfolio-gallery-wrapper">
-      <div class="portfolio-gallery" id="portfolioGallery">
-        
-        <!-- Proyecto 1 -->
-        <article class="portfolio-item">
-          <div class="portfolio-img-container">
-            <img src="skenzi-carrusel01.jpeg" alt="Proyecto Skenzi">
-          </div>
-          <div class="portfolio-overlay">
-            <span data-lang="sneakers">SKENZI</span>
-          </div>
-        </article>
+    <!-- GALERÍA DE PROYECTOS (CARRUSEL) -->
+    <section class="portfolio-gallery">
+      <!-- Proyecto 1 -->
+      <article class="portfolio-item">
+        <img src="skenzi-carrusel01.jpeg" alt="Proyecto Skenzi">
+        <div class="portfolio-overlay">
+          <span data-lang="sneakers">SKENZI</span>
+        </div>
+      </article>
 
-        <!-- Proyecto 2 -->
-        <article class="portfolio-item">
-          <div class="portfolio-img-container">
-            <img src="Renax- carrusel 01.png" alt="RENAX">
-          </div>
-          <div class="portfolio-overlay">
-            <span data-lang="paraEllos">RENAX</span>
-          </div>
-        </article>
+      <!-- Proyecto 2 -->
+      <article class="portfolio-item">
+        <img src="Renax- carrusel 01.png" alt="RENAX">
+        <div class="portfolio-overlay">
+          <span data-lang="paraEllos">RENAX</span>
+        </div>
+      </article>
 
-        <!-- Proyecto 3 -->
-        <article class="portfolio-item">
-          <div class="portfolio-img-container">
-            <img src="Renax-carrusel02.png" alt="RENAX">
-          </div>
-          <div class="portfolio-overlay">
-            <span data-lang="strategy">RENAX</span>
-          </div>
-        </article>
+      <!-- Proyecto 3 -->
+      <article class="portfolio-item">
+        <img src="Renax-carrusel02.png" alt="RENAX">
+        <div class="portfolio-overlay">
+          <span data-lang="strategy">RENAX</span>
+        </div>
+      </article>
 
-        <!-- Proyecto 4 -->
-        <article class="portfolio-item">
-          <div class="portfolio-img-container">
-            <img src="Día-Matemáticas.png" alt="Día Internacional de las Matemáticas">
-          </div>
-          <div class="portfolio-overlay">
-            <span data-lang="matematicas">CAMPAÑA VISUAL · DÍA DE LAS MATEMÁTICAS</span>
-          </div>
-        </article>
+      <!-- Proyecto 4 -->
+      <article class="portfolio-item">
+        <img src="Día-Matemáticas.png" alt="Día Internacional de las Matemáticas">
+        <div class="portfolio-overlay">
+          <span data-lang="matematicas">CAMPAÑA VISUAL · DÍA DE LAS MATEMÁTICAS</span>
+        </div>
+      </article>
 
-        <!-- Proyecto 5 -->
-        <article class="portfolio-item">
-          <div class="portfolio-img-container">
-            <img src="sobre-renax.png.png" alt="Papelería RENAX">
-          </div>
-          <div class="portfolio-overlay">
-            <span data-lang="creative">RENAX</span>
-          </div>
-        </article>
+      <!-- Proyecto 5 -->
+      <article class="portfolio-item">
+        <img src="sobre-renax.png.png" alt="Papelería RENAX">
+        <div class="portfolio-overlay">
+          <span data-lang="creative">RENAX</span>
+        </div>
+      </article>
 
-        <!-- Proyecto 6 -->
-        <article class="portfolio-item">
-          <div class="portfolio-img-container">
-            <img src="renzi-fondo-verde.png" alt="Renzi">
-          </div>
-          <div class="portfolio-overlay">
-            <span data-lang="chat">SKENZI</span>
-          </div>
-        </article>
+      <!-- Proyecto 6 -->
+      <article class="portfolio-item">
+        <img src="renzi-fondo-verde.png" alt="Renzi">
+        <div class="portfolio-overlay">
+          <span data-lang="chat">SKENZI</span>
+        </div>
+      </article>
 
-        <!-- Proyecto 7 -->
-        <article class="portfolio-item">
-          <div class="portfolio-img-container">
-            <img src="donuts-bites.png.png" alt="Donut's Bites">
-          </div>
-          <div class="portfolio-overlay">
-            <span>DONUT'S BITES</span>
-          </div>
-        </article>
+      <!-- Proyecto 7 -->
+      <article class="portfolio-item">
+        <img src="donuts-bites.png.png" alt="Donut's Bites">
+        <div class="portfolio-overlay">
+          <span>DONUT'S BITES</span>
+        </div>
+      </article>
 
-        <!-- Proyecto 8 -->
-        <article class="portfolio-item">
-          <div class="portfolio-img-container">
-            <img src="skenzi-carrusel01.jpeg" alt="SKENZI">
-          </div>
-          <div class="portfolio-overlay">
-            <span data-lang="skenzi">SKENZI</span>
-          </div>
-        </article>
+      <!-- Proyecto 8 -->
+      <article class="portfolio-item">
+        <img src="skenzi-carrusel01.jpeg" alt="SKENZI">
+        <div class="portfolio-overlay">
+          <span data-lang="skenzi">SKENZI</span>
+        </div>
+      </article>
 
-        <!-- Proyecto 9 -->
-        <article class="portfolio-item">
-          <div class="portfolio-img-container">
-            <img src="DONUT'S BITES-carrusel01.png" alt="Donut's Bites">
-          </div>
-          <div class="portfolio-overlay">
-            <span>DONUT'S BITES</span>
-          </div>
-        </article>
+      <!-- Proyecto 9 -->
+      <article class="portfolio-item">
+        <img src="DONUT'S BITES-carrusel01.png" alt="Donut's Bites">
+        <div class="portfolio-overlay">
+          <span>DONUT'S BITES</span>
+        </div>
+      </article>
 
-        <!-- Proyecto 10 -->
-        <article class="portfolio-item">
-          <div class="portfolio-img-container">
-            <img src="Renax-carrusel02.png" alt="RENAX">
-          </div>
-          <div class="portfolio-overlay">
-            <span>RENAX</span>
-          </div>
-        </article>
-
-      </div>
+      <!-- Proyecto 10 -->
+      <article class="portfolio-item">
+        <img src="Renax-carrusel02.png" alt="RENAX">
+        <div class="portfolio-overlay">
+          <span>RENAX</span>
+        </div>
+      </article>
     </section>
 
     <!-- GRID DE TRABAJOS -->
- 
+    <section class="renax-work-grid" id="proyectos">
+      <div class="renax-work-heading">
+        <span data-lang="workSubtitle">RENAX · PORTAFOLIO</span>
+        <h2 data-lang="workTitle">TRABAJO<br><strong>CON IDENTIDAD.</strong></h2>
+      </div>
 
-<section class="renax-work-grid" id="proyectos">
-  <div class="renax-work-heading">
-    <span data-lang="workSubtitle">RENAX · PORTAFOLIO</span>
-    <h2 data-lang="workTitle">TRABAJO<br><strong>CON IDENTIDAD.</strong></h2>
-  </div>
-
-  <div class="renax-work-layout">
-
-
-    
+      <div class="renax-work-layout">
         <a href="proyecto-skenzi.html" class="renax-work-card renax-work-tall">
           <div class="renax-work-image">
             <img src="renzi-fondo-verde.png" alt="Renzi">
@@ -791,38 +650,18 @@
     onAuthStateChanged(auth, (user) => {
         if (navLoginBtn) {
             if (user) {
+                // Si ya inició sesión
                 navLoginBtn.href = "dashboard.html";
                 const span = navLoginBtn.querySelector('span');
                 if (span) span.textContent = "MI PANEL";
             } else {
+                // Si no ha iniciado sesión
                 navLoginBtn.href = "login.html";
                 const span = navLoginBtn.querySelector('span');
                 if (span) span.textContent = "INICIAR SESIÓN";
             }
         }
     });
-  </script>
-  
-  <script>
-    const portfolioGallery = document.getElementById("portfolioGallery");
-
-    if (portfolioGallery && !portfolioGallery.dataset.duplicated) {
-      portfolioGallery.innerHTML += portfolioGallery.innerHTML;
-      portfolioGallery.dataset.duplicated = "true";
-    }
-  </script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const titulo = document.querySelector(".renax-work-heading h2");
-
-  if (titulo) {
-    titulo.addEventListener("click", function () {
-      titulo.classList.toggle("titulo-rojo");
-    });
-  }
-});
 </script>
-
 </body>
 </html>
