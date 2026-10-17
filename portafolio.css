@@ -362,14 +362,18 @@ body.portafolio-renax {
 .renax-whatsapp { background: #25d366; }
 .renax-facebook { background: #1877f2; }
 
-/* Footer Renax */
+/* Footer Renax a todo lo ancho de la página */
 .renax-footer {
   background: #050505;
-  padding: 80px 20px 40px 20px;
+  padding: 80px 40px 40px 40px; /* Ajusta el relleno lateral si lo deseas */
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  width: 100%;
+  box-sizing: border-box;
 }
+
 .footer-wrapper {
-  max-width: 1300px;
+  width: 100%;
+  max-width: none; /* Quitamos la limitación para que expanda todo el ancho */
   margin: 0 auto;
 }
 .footer-top-bar {
