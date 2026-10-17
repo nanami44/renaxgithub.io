@@ -590,3 +590,15 @@ body.portafolio-renax {
     font-size: clamp(3rem, 12vw, 5rem);
   }
 }
+
+/* CAMBIO DE COLOR DEL TÍTULO AL HACER CLIC */
+.renax-work-heading h2 {
+  cursor: pointer;
+  transition: color 0.4s ease, text-shadow 0.4s ease;
+}
+
+.renax-work-heading h2.titulo-rojo,
+.renax-work-heading h2.titulo-rojo strong {
+  color: #e50914 !important;
+  text-shadow: 0 0 25px rgba(229, 9, 20, 0.35);
+}
