@@ -514,3 +514,61 @@ body.portafolio-renax {
   text-align: left;
   width: 100%;
 }
+
+/* PORTAFOLIO: TÍTULO GRANDE AL LADO DE LA PRIMERA IMAGEN */
+.renax-work-grid {
+  width: 100%;
+  max-width: 1600px;
+  margin: 60px auto 80px;
+  padding: 0 3%;
+  box-sizing: border-box;
+}
+
+.renax-work-heading {
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: right;
+  box-sizing: border-box;
+  padding: 40px 3%;
+}
+
+.renax-work-heading span {
+  align-self: flex-end;
+  color: #999;
+  font-size: 14px;
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.renax-work-heading h2 {
+  max-width: 750px;
+  margin: 0;
+  color: #fff;
+  font-family: 'Anton', Impact, sans-serif;
+  font-size: clamp(4rem, 8vw, 9rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.renax-work-heading h2 strong {
+  font-weight: 400;
+  color: #fff;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 700px) {
+  .renax-work-heading {
+    min-height: 300px;
+    padding: 30px 10px;
+  }
+
+  .renax-work-heading h2 {
+    font-size: clamp(3rem, 12vw, 5rem);
+  }
+}
