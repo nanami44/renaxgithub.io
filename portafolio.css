@@ -466,3 +466,15 @@ body.portafolio-renax {
   .nav-menu.open { display: flex; }
   .nav-toggle { display: block; }
 }
+
+/* Títulos enlazados del pie de página */
+.renax-footer .footer-column h3 a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+.renax-footer .footer-column h3 a:hover {
+  color: #e50914;
+}
