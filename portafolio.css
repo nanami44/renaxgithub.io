@@ -478,13 +478,22 @@ body.portafolio-renax {
 .renax-footer .footer-column h3 a:hover {
   color: #e50914;
 }
-
-/* Reducir el logo principal del portafolio */
-.portfolio-gallery > img {
-  width: 65%;
-  max-width: 850px;
-  height: 500px;
+/* ==========================================
+   1. CONTROLAR EL TAMAÑO CORRECTO DEL LOGO EN EL HEADER
+   ========================================== */
+.logo-renax {
+  height: 32px !important; /* Tamaño perfecto y elegante */
+  max-height: 32px;
+  width: auto;
   object-fit: contain;
-  display: block;
-  margin: 0 auto;
 }
+
+/* ==========================================
+   2. CONTROLAR EL TAMAÑO DEL LOGO EN EL PIE DE PÁGINA
+   ========================================== */
+.footer-logo {
+  height: 28px !important;
+  width: auto;
+  object-fit: contain;
+}
+
