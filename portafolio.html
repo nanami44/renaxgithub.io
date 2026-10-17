@@ -1111,7 +1111,39 @@
     });
 
   </script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const gallery = document.getElementById("portfolioGallery");
+    if (!gallery) return;
 
+    // Duplicar el contenido para crear el efecto de bucle infinito perfecto
+    if (!gallery.dataset.duplicated) {
+      gallery.innerHTML += gallery.innerHTML;
+      gallery.dataset.duplicated = "true";
+    }
+
+    let scrollPos = 0;
+    const speed = 0.8; // Velocidad de movimiento moderada (ni muy lenta ni muy rápida)
+
+    function step() {
+      scrollPos += speed;
+      // Cuando llega a la mitad (el final del primer bloque duplicado), reinicia suavemente
+      if (scrollPos >= gallery.scrollWidth / 2) {
+        scrollPos = 0;
+      }
+      gallery.style.transform = `translateX(-${scrollPos}px)`;
+      requestAnimationFrame(step);
+    }
+
+    // Pausar el movimiento automático cuando el usuario pase el cursor por encima
+    gallery.addEventListener("mouseenter", () => cancelAnimationFrame(animId));
+    
+    let animId = requestAnimationFrame(step);
+    gallery.addEventListener("mouseleave", () => {
+      animId = requestAnimationFrame(step);
+    });
+  });
+</script>
 </body>
 
 </html> 
