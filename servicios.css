@@ -761,3 +761,9 @@ h1, h2, h3, h4, h5, h6,
   margin-bottom: 30px !important;
   max-width: 480px !important;
 }
+/* ==========================================================
+   EFECTO BLANCO Y BRILLO PARA EL AVE DE RENAX
+   ========================================================== */
+.srv-proceso-decoracion img {
+  filter: brightness(0) invert(1) drop-shadow(0 0 25px rgba(255, 255, 255, 0.4)) !important;
+}
