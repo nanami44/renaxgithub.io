@@ -617,3 +617,54 @@ h1, h2, h3, h4, h5, h6,
     display: none !important;
   }
 }
+/* ==========================================================
+   ESTILOS PARA LA BANDEJA BLANCA DEL MANIFIESTO
+   ========================================================== */
+
+.srv-manifiesto-contenedor {
+  width: 100% !important;
+  background-color: #ffffff !important; /* Contenedor de extremo a extremo de color blanco */
+  padding: 80px 5% !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+}
+
+.srv-bandeja-blanca {
+  max-width: 1400px !important;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important; /* Todo alineado estrictamente a la izquierda */
+  text-align: left !important;
+}
+
+/* Título adaptado a color oscuro para resaltar sobre el fondo blanco */
+.srv-manifiesto-contenedor h2 {
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 900 !important;
+  font-size: clamp(36px, 5vw, 64px) !important;
+  line-height: 1.1 !important;
+  text-transform: uppercase !important;
+  color: #050505 !important; /* Texto negro principal */
+  margin: 0 0 25px 0 !important;
+  width: 100% !important;
+}
+
+.srv-manifiesto-contenedor h2 em {
+  color: var(--bg-red-accent) !important; /* Mantiene el rojo corporativo RENAX */
+  font-style: normal !important;
+}
+
+/* Texto alineado a la izquierda con color oscuro legible */
+.srv-manifiesto-contenedor .srv-manifiesto-texto {
+  width: 100% !important;
+  max-width: 900px !important;
+}
+
+.srv-manifiesto-contenedor .srv-manifiesto-texto p {
+  font-family: Arial, sans-serif !important;
+  font-size: 1.15rem !important;
+  line-height: 1.6 !important;
+  color: #333333 !important; /* Gris oscuro para una lectura elegante y limpia */
+  margin: 0 !important;
+}
