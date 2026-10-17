@@ -94,7 +94,7 @@ body.portafolio-renax {
   gap: 30px;
   padding: 0;
   overflow: visible;
-  animation: renaxPortfolioInfinito 45s linear infinite;
+  animation: renaxPortfolioInfinito 35s linear infinite;
   will-change: transform;
   flex-wrap: nowrap;
 }
