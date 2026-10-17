@@ -491,3 +491,39 @@ body.portafolio-renax {
     grid-template-columns: 1fr !important;
   }
 }
+/* ==========================================================
+   FONDO DINÁMICO CON MOVIMIENTO SUAVE Y CINEMATOGRÁFICO
+   ========================================================== */
+.portafolio-fondo {
+  position: fixed !important;
+  inset: -20px !important; /* Margen extra para que al moverse no se vean bordes */
+  z-index: -1 !important;
+  pointer-events: none !important;
+  background-image: 
+    linear-gradient(
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.75)
+    ),
+    url("fondo-portafolio.jpeg"); /* Asegúrate de que el nombre del archivo de imagen sea exactamente este */
+  background-size: 110% 110% !important; /* Ligeramente más grande para permitir el paneo */
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  /* Animación fluida de movimiento suave tipo respiración/desplazamiento */
+  animation: fondoMovimientoSuave 18s ease-in-out infinite alternate !important;
+}
+
+/* Keyframes que generan el movimiento orgánico y sutil */
+@keyframes fondoMovimientoSuave {
+  0% {
+    transform: scale(1) translate(0, 0);
+    background-position: 0% 0%;
+  }
+  50% {
+    transform: scale(1.05) translate(-1%, -1%);
+    background-position: 50% 50%;
+  }
+  100% {
+    transform: scale(1.02) translate(1%, 1%);
+    background-position: 100% 100%;
+  }
+}
