@@ -1,25 +1,23 @@
-/* Fondo de pantalla con la imagen solicitada */
+/* ==========================================================
+   ESTILOS GENERALES Y FONDO
+   ========================================================== */
 body.portafolio-renax {
   background-color: #0b0b0b;
-  background-image: url('fondo portafolio-rojo.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
   color: #ffffff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  position: relative;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
 }
 
-/* Capa de opacidad oscura para mejorar la legibilidad sobre la imagen roja */
 .portafolio-fondo {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.65); /* Ajusta este valor si quieres más o menos oscuridad */
+  background: radial-gradient(circle at 50% 20%, #1a1a1a 0%, #0b0b0b 100%);
   z-index: -1;
 }
 
@@ -73,86 +71,60 @@ body.portafolio-renax {
   border-radius: 12px;
 }
 
-
 /* ==========================================================
-   CARRUSEL RENAX: ANCHO COMPLETO Y MOVIMIENTO INFINITO
+   GALERÍA DE PROYECTOS (CARRUSEL HORIZONTAL)
    ========================================================== */
-
-.portfolio-gallery-wrapper {
-  width: 100%;
-  max-width: none;
-  margin: 0;
-  padding: 40px 0;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-
 .portfolio-gallery {
   display: flex;
-  width: max-content;
   gap: 30px;
-  padding: 0;
-  overflow: visible;
-  animation: renaxPortfolioInfinito 20s linear infinite;
-  will-change: transform;
-  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 40px;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
 }
 
-
-.portfolio-gallery:hover {
-  animation-play-state: paused;
+.portfolio-gallery::-webkit-scrollbar {
+  display: none;
 }
 
 .portfolio-item {
-  flex: 0 0 350px;
-  width: 350px;
   min-width: 350px;
   height: 450px;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
+  flex-shrink: 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.portfolio-item .portfolio-img-container {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.portfolio-item img {
-  display: block;
+/* EFECTO ZOOM EN LAS IMÁGENES */
+.portfolio-item img, 
+.renax-work-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
+  display: block;
 }
 
-.portfolio-item:hover img {
+.portfolio-item:hover img, 
+.renax-work-card:hover .renax-work-image img {
   transform: scale(1.08);
 }
 
-@keyframes renaxPortfolioInfinito {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+.portfolio-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #ffffff;
+  font-weight: bold;
+  letter-spacing: 1px;
+  box-sizing: border-box;
 }
-
-@media (max-width: 600px) {
-  .portfolio-item {
-    flex-basis: 75vw;
-    width: 75vw;
-    min-width: 75vw;
-    height: 350px;
-  }
-}
-
-
 
 /* ==========================================================
    CUADRÍCULA DE TRABAJOS Y CASOS DE ESTUDIO
@@ -212,24 +184,10 @@ body.portafolio-renax {
   box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-
 .renax-work-image {
   width: 100%;
-  height: 420px;
+  height: 300px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #161616;
-}
-
-.renax-work-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center;
-  transition: transform 0.5s ease;
 }
 
 /* TÍTULO DEBAJO DE CADA IMAGEN EN LAS TARJETAS */
@@ -456,149 +414,4 @@ body.portafolio-renax {
   .renax-footer .footer-columns-container {
     grid-template-columns: 1fr !important;
   }
-}
-/* Ajuste de distribución y medidas exactas para las tarjetas */
-.renax-work-layout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  align-items: start;
-}
-
-/* Permitir que las tarjetas se adapten de forma natural al tamaño completo de sus imágenes */
-.renax-work-card {
-  text-decoration: none;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  background: rgba(20, 20, 20, 0.6);
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.08);
-  transition: transform 0.3s ease, border-color 0.3s ease;
-}
-
-.renax-work-card:hover {
-  transform: translateY(-5px);
-  border-color: #e50914;
-}
-
-/* Contenedor flexible que se acopla a la medida real de cada imagen sin recortar */
-
-/* IMÁGENES COMPLETAS, CENTRADAS Y SIN RECORTES */
-.renax-work-image {
-  width: 100%;
-  height: auto;
-  max-height: none;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #0b0b0b;
-  box-sizing: border-box;
-}
-
-.renax-work-image img {
-  display: block;
-  width: 100%;
-  height: auto;
-  max-height: none;
-  object-fit: contain;
-  object-position: center;
-  margin: 0 auto;
-  transition: transform 0.6s ease;
-}
-
-/* Zoom suave sin agrandar demasiado la imagen */
-.renax-work-card:hover .renax-work-image img {
-  transform: scale(1.02);
-}
-
-}
-
-.renax-work-card:hover .renax-work-image img {
-  transform: scale(1.03);
-}
-
-.renax-work-card h3 {
-  font-size: 20px;
-  margin: 20px;
-  text-align: left;
-  width: 100%;
-}
-
-/* PORTAFOLIO: TÍTULO GRANDE AL LADO DE LA PRIMERA IMAGEN */
-.renax-work-grid {
-  width: 100%;
-  max-width: 1600px;
-  margin: 60px auto 80px;
-  padding: 0 3%;
-  box-sizing: border-box;
-}
-
-.renax-work-heading {
-  width: 100%;
-  min-height: 480px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-end;
-  text-align: right;
-  box-sizing: border-box;
-  padding: 40px 3% 0;
-  margin-bottom: -480px;
-  position: relative;
-  z-index: 2;
-  pointer-events: none;
-}
-
-
-
-.renax-work-heading span {
-  align-self: flex-end;
-  color: #999;
-  font-size: 14px;
-  letter-spacing: 4px;
-  margin-bottom: 25px;
-}
-
-.renax-work-heading h2 {
-  max-width: 750px;
-  margin: 0;
-  color: #fff;
-  font-family: 'Anton', Impact, sans-serif;
-  font-size: clamp(4rem, 8vw, 9rem);
-  font-weight: 400;
-  line-height: 0.95;
-  letter-spacing: -2px;
-  text-transform: uppercase;
-}
-
-.renax-work-heading h2 strong {
-  font-weight: 400;
-  color: #fff;
-}
-
-/* Adaptación para pantallas pequeñas */
-@media (max-width: 700px) {
-  .renax-work-heading {
-    min-height: 300px;
-    padding: 30px 10px;
-  }
-
-  .renax-work-heading h2 {
-    font-size: clamp(3rem, 12vw, 5rem);
-  }
-}
-
-/* CAMBIO DE COLOR DEL TÍTULO AL HACER CLIC */
-.renax-work-heading h2 {
-  cursor: pointer;
-  transition: color 0.4s ease, text-shadow 0.4s ease;
-}
-
-.renax-work-heading h2.titulo-rojo,
-.renax-work-heading h2.titulo-rojo strong {
-  color: #e50914 !important;
-  text-shadow: 0 0 25px rgba(229, 9, 20, 0.35);
 }
