@@ -668,3 +668,22 @@ h1, h2, h3, h4, h5, h6,
   color: #333333 !important; /* Gris oscuro para una lectura elegante y limpia */
   margin: 0 !important;
 }
+/* ==========================================================
+   EFECTO DE ZOOM EN LAS IMÁGENES AL PASAR EL CURSOR (HOVER)
+   ========================================================== */
+
+/* Contenedor de la imagen para que oculte el exceso de zoom (efecto limpio) */
+.srv-servicio-imagen {
+  overflow: hidden !important;
+  border-radius: 20px !important;
+}
+
+/* Transición suave y escala de la imagen al hacer hover */
+.srv-servicio-imagen img {
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
+  will-change: transform;
+}
+
+.srv-servicio-imagen:hover img {
+  transform: scale(1.08) !important; /* Hace un acercamiento del 8% de manera fluida */
+}
