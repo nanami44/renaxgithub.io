@@ -51,23 +51,15 @@ body.portafolio-renax {
   width: 100%;
 }
 
-/* Fondo translúcido para las secciones que hacen scroll */
-.portfolio-gallery-wrapper, 
-.renax-editorial-section, 
-.renax-work-grid, 
-.renax-casos-estudio, 
-.renax-portfolio-cierre {
-  background-color: rgba(11, 11, 11, 0.88);
-  backdrop-filter: blur(10px);
-}
+
 
 /* ==========================================
    HEADER GLOBAL Y NAVEGACIÓN
    ========================================== */
 .site-header {
-  position: sticky;
+
   top: 0;
-  background: rgba(11, 11, 11, 0.9);
+ background-color: transparent;
   backdrop-filter: blur(10px);
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -152,8 +144,8 @@ body.portafolio-renax {
   margin-right: -50vw;
   overflow: hidden; /* Oculta la barra manual para que el movimiento automático luzca limpio */
   padding: 40px 0;
-  background-color: rgba(11, 11, 11, 0.88);
-  backdrop-filter: blur(10px);
+ background-color: transparent;
+  
   white-space: nowrap;
 }
 
