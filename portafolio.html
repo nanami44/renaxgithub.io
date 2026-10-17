@@ -209,6 +209,44 @@
   object-position: center;
   display: block;
 }
+   /* AJUSTE DE LA TARJETA DÍA DE LAS MATEMÁTICAS */
+.renax-work-card.renax-work-wide {
+  width: 85%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+}
+
+/* Imagen ajustada al contenedor */
+.renax-work-card.renax-work-wide .renax-work-image {
+  width: 100%;
+  height: 420px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b0b0b;
+}
+
+.renax-work-card.renax-work-wide .renax-work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+/* Adaptación a móviles */
+@media (max-width: 700px) {
+  .renax-work-card.renax-work-wide {
+    width: 100%;
+  }
+
+  .renax-work-card.renax-work-wide .renax-work-image {
+    height: 260px;
+  }
+} 
   </style>
 </head>
 <body class="portafolio-renax">
