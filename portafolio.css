@@ -529,12 +529,18 @@ body.portafolio-renax {
   min-height: 480px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-end;
   text-align: right;
   box-sizing: border-box;
-  padding: 40px 3%;
+  padding: 40px 3% 0;
+  margin-bottom: -480px;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
 }
+
+
 
 .renax-work-heading span {
   align-self: flex-end;
