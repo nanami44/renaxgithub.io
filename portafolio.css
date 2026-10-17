@@ -36,17 +36,7 @@ body.portafolio-renax {
   object-fit: cover;
 }
 
-/* Velo gris transparente sobre la portada para apreciar el fondo */
-.renax-hero-veil {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(30, 30, 30, 0.7);
-  z-index: -1;
-  pointer-events: none;
-}
+
 
 /* Contenido principal que pasa por encima de la portada fija */
 #main-content {
@@ -152,9 +142,7 @@ body.portafolio-renax {
   background: #b20710;
 }
 
-/* ==========================================
-   CARRUSEL DE ANCHO COMPLETO FUNCIONAL
-   ========================================== */
+/* Carrusel de ancho completo de lado a lado sin bordes */
 .portfolio-gallery-wrapper {
   width: 100vw;
   position: relative;
@@ -162,29 +150,29 @@ body.portafolio-renax {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-  overflow-x: auto;
-  padding: 30px 0;
-  scrollbar-width: none;
-}
-
-.portfolio-gallery-wrapper::-webkit-scrollbar {
-  display: none;
+  overflow: hidden; /* Oculta la barra manual para que el movimiento automático luzca limpio */
+  padding: 40px 0;
+  background-color: rgba(11, 11, 11, 0.88);
+  backdrop-filter: blur(10px);
+  white-space: nowrap;
 }
 
 .portfolio-gallery {
-  display: flex;
-  gap: 25px;
-  padding: 0 40px;
-  width: max-content;
+  display: inline-flex;
+  gap: 30px;
+  padding: 0 15px;
+  will-change: transform;
 }
 
 .portfolio-item {
   position: relative;
-  width: 450px;
-  height: 300px;
+  width: 480px; /* Ancho de cada tarjeta del carrusel */
+  height: 320px;
   border-radius: 16px;
   overflow: hidden;
   flex-shrink: 0;
+  display: inline-block;
+  background: #000;
 }
 
 .portfolio-img-container {
@@ -210,10 +198,11 @@ body.portafolio-renax {
   left: 0;
   width: 100%;
   padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
   color: #fff;
   font-weight: bold;
   font-size: 18px;
+  z-index: 2;
 }
 
 /* ==========================================
