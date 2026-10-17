@@ -668,3 +668,34 @@ body.portafolio-renax {
     height: 300px;
   }
 }
+/* CENTRAR TRABAJO CON IDENTIDAD EN EL ESPACIO IZQUIERDO */
+#proyectos {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: center;
+}
+
+#proyectos .renax-sticky-title {
+  position: relative;
+  top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 480px;
+}
+
+#proyectos .renax-massive-title {
+  width: 100%;
+  text-align: center;
+  font-size: clamp(2.5rem, 4vw, 4.5rem);
+  line-height: 0.98;
+}
+
+@media (max-width: 1024px) {
+  #proyectos .renax-sticky-title {
+    min-height: auto;
+  }
+
+  #proyectos .renax-massive-title {
+    text-align: left;
+  }
+}
