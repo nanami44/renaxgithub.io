@@ -758,5 +758,17 @@
     }
   </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const titulo = document.querySelector(".renax-work-heading h2");
+
+  if (titulo) {
+    titulo.addEventListener("click", function () {
+      titulo.classList.toggle("titulo-rojo");
+    });
+  }
+});
+</script>
+
 </body>
 </html>
