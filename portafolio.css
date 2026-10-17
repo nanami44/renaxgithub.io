@@ -45,11 +45,11 @@ body.portafolio-renax {
   width: 100%;
 }
 
+/* Sin velo ni efectos translúcidos en las secciones */
 .portfolio-gallery-wrapper, 
 .renax-editorial-section, 
 .renax-portfolio-cierre {
-  background-color: rgba(11, 11, 11, 0.9);
-  backdrop-filter: blur(10px);
+  background-color: transparent;
 }
 
 /* ==========================================
@@ -58,8 +58,7 @@ body.portafolio-renax {
 .site-header {
   position: sticky;
   top: 0;
-  background: rgba(11, 11, 11, 0.9);
-  backdrop-filter: blur(10px);
+  background: #0b0b0b;
   z-index: 1000;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -145,10 +144,9 @@ body.portafolio-renax {
   overflow: hidden;
   z-index: 99;
   pointer-events: auto;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.65);
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .vertical-ticker-track {
@@ -283,7 +281,7 @@ body.portafolio-renax {
   color: #fff;
   display: flex;
   flex-direction: column;
-  background: rgba(20, 20, 20, 0.6);
+  background: rgba(15, 15, 15, 0.85);
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid rgba(255,255,255,0.08);
@@ -332,7 +330,7 @@ body.portafolio-renax {
 .renax-portfolio-cierre {
   text-align: center;
   padding: 100px 20px;
-  background: linear-gradient(to bottom, transparent, rgba(229, 9, 20, 0.15));
+  background: transparent;
 }
 
 .portfolio-cierre-titulo {
