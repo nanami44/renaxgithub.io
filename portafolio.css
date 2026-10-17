@@ -484,24 +484,36 @@ body.portafolio-renax {
 }
 
 /* Contenedor flexible que se acopla a la medida real de cada imagen sin recortar */
+
+/* IMÁGENES COMPLETAS, CENTRADAS Y SIN RECORTES */
 .renax-work-image {
   width: 100%;
-  height: auto; /* Altura automática para respetar las proporciones originales */
-  max-height: 550px;
+  height: auto;
+  max-height: none;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
   background: #0b0b0b;
+  box-sizing: border-box;
 }
 
 .renax-work-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain; /* Muestra la imagen completa sin que se corte ni sobrepase bordes */
   display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
   margin: 0 auto;
   transition: transform 0.6s ease;
+}
+
+/* Zoom suave sin agrandar demasiado la imagen */
+.renax-work-card:hover .renax-work-image img {
+  transform: scale(1.02);
+}
+
 }
 
 .renax-work-card:hover .renax-work-image img {
