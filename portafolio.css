@@ -527,3 +527,38 @@ body.portafolio-renax {
     background-position: 100% 100%;
   }
 }
+/* ==========================================================
+   FONDO DINÁMICO ANIMADO CON LA NUEVA IMAGEN
+   ========================================================== */
+.portafolio-fondo {
+  position: fixed !important;
+  inset: -20px !important;
+  z-index: -1 !important;
+  pointer-events: none !important;
+  background-image: 
+    linear-gradient(
+        rgba(0, 0, 0, 0.45),
+        rgba(0, 0, 0, 0.75)
+    ),
+    url("fondo portafolio-rojo.jpeg") !important;
+  background-size: 110% 110% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  animation: fondoMovimientoSuave 18s ease-in-out infinite alternate !important;
+}
+
+@keyframes fondoMovimientoSuave {
+  0% {
+    transform: scale(1) translate(0, 0);
+    background-position: 0% 0%;
+  }
+  50% {
+    transform: scale(1.05) translate(-1%, -1%);
+    background-position: 50% 50%;
+  }
+  100% {
+    transform: scale(1.02) translate(1%, 1%);
+    background-position: 100% 100%;
+  }
+}
