@@ -496,4 +496,63 @@ body.portafolio-renax {
   width: auto;
   object-fit: contain;
 }
+/* ==========================================
+   AJUSTE DE TARJETAS PARA QUE LA IMAGEN OCUPE TODO EL CONTENEDOR SIN ESPACIOS EXTRAS
+   ========================================== */
 
+.renax-grid-card {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  background: rgba(15, 15, 15, 0.9);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.4s ease, border-color 0.3s ease;
+  height: 100%; /* Permite que la tarjeta se adapte por completo */
+}
+
+/* Quitamos las alturas fijas estrictas y dejamos que la imagen determine el espacio de forma natural */
+.card-large .renax-grid-img, 
+.card-medium .renax-grid-img, 
+.card-wide .renax-grid-img, 
+.card-tall .renax-grid-img {
+  height: auto !important;
+  aspect-ratio: 16 / 10; /* Proporción ideal horizontal para que no se corte */
+  width: 100%;
+}
+
+.renax-grid-img {
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.renax-grid-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Llena el espacio perfectamente sin deformar */
+  transition: transform 0.6s ease;
+}
+
+.renax-grid-card:hover .renax-grid-img img {
+  transform: scale(1.06);
+}
+
+/* Contenedor del texto ajustado para que quede compacto y no sobre espacio innecesario */
+.renax-grid-card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 16px;
+  margin: 14px 20px;
+  color: #fff;
+}
+
+.renax-grid-card h3 span {
+  color: #e50914;
+  margin-left: 5px;
+}
