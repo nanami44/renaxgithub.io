@@ -159,29 +159,32 @@ h1, h2, h3, h4, h5, h6,
 }
 
 
+
 /* ==========================================================
-   PORTADA (HERO)
+   PORTADA (HERO) - ANCHO DE EXTREMO A EXTREMO
    ========================================================== */
 .srv-hero {
   position: relative !important;
   width: 100% !important;
-  min-height: 80vh;
+  width: 100vw !important;
+  min-height: auto !important;
   z-index: 1 !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 120px 20px 40px 20px;
-  box-sizing: border-box;
+  display: block !important;
+  padding: 80px 0 0 0 !important; /* Ajusta el espacio superior según la altura de tu header (80px) */
+  margin: 0 !important;
+  box-sizing: border-box !important;
 }
 
 .srv-hero-imagen {
   width: 100% !important;
-  height: 100% !important;
-  max-width: 1400px;
-  max-height: 480px;
+  height: auto !important;
+  max-width: 100% !important;
+  max-height: none !important;
   object-fit: cover !important;
-  border-radius: 24px !important;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5) !important;
+  border-radius: 0 !important; /* Elimina las esquinas redondeadas */
+  box-shadow: none !important;
+  display: block !important;
+  margin: 0 !important;
 }
 
 
