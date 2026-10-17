@@ -687,5 +687,15 @@
         }
     });
 </script>
+  
+<script>
+  const portfolioGallery = document.getElementById("portfolioGallery");
+
+  if (portfolioGallery && !portfolioGallery.dataset.duplicated) {
+    portfolioGallery.innerHTML += portfolioGallery.innerHTML;
+    portfolioGallery.dataset.duplicated = "true";
+  }
+</script>
+
 </body>
 </html>
