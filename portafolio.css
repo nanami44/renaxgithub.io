@@ -73,60 +73,86 @@ body.portafolio-renax {
   border-radius: 12px;
 }
 
+
 /* ==========================================================
-   GALERÍA DE PROYECTOS (CARRUSEL HORIZONTAL)
+   CARRUSEL RENAX: ANCHO COMPLETO Y MOVIMIENTO INFINITO
    ========================================================== */
-.portfolio-gallery {
-  display: flex;
-  gap: 30px;
-  overflow-x: auto;
-  padding: 40px;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
+
+.portfolio-gallery-wrapper {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 40px 0;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.portfolio-gallery::-webkit-scrollbar {
-  display: none;
+
+.portfolio-gallery {
+  display: flex;
+  width: max-content;
+  gap: 30px;
+  padding: 0;
+  overflow: visible;
+  animation: renaxPortfolioInfinito 45s linear infinite;
+  will-change: transform;
+  flex-wrap: nowrap;
+}
+
+
+.portfolio-gallery:hover {
+  animation-play-state: paused;
 }
 
 .portfolio-item {
+  flex: 0 0 350px;
+  width: 350px;
   min-width: 350px;
   height: 450px;
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
-  flex-shrink: 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* EFECTO ZOOM EN LAS IMÁGENES */
-.portfolio-item img, 
-.renax-work-image img {
+.portfolio-item .portfolio-img-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.portfolio-item img {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.5s ease;
-  display: block;
 }
 
-.portfolio-item:hover img, 
-.renax-work-card:hover .renax-work-image img {
+.portfolio-item:hover img {
   transform: scale(1.08);
 }
 
-.portfolio-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 20px;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-  color: #ffffff;
-  font-weight: bold;
-  letter-spacing: 1px;
-  box-sizing: border-box;
+@keyframes renaxPortfolioInfinito {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
+
+@media (max-width: 600px) {
+  .portfolio-item {
+    flex-basis: 75vw;
+    width: 75vw;
+    min-width: 75vw;
+    height: 350px;
+  }
+}
+
+
 
 /* ==========================================================
    CUADRÍCULA DE TRABAJOS Y CASOS DE ESTUDIO
