@@ -749,13 +749,15 @@ h1, h2, h3, h4, h5, h6,
   letter-spacing: -0.02em !important;
 }
 
-/* Aseguramos que el párrafo tenga su propio espacio limpio abajo */
+/* ==========================================================
+   SEPARACIÓN LIMPIA PARA EL TEXTO DESCRIPTIVO
+   ========================================================== */
 .srv-proceso-cabecera p {
   color: var(--text-muted) !important;
   font-family: Arial, sans-serif !important;
   font-size: 1.05rem !important;
   line-height: 1.6 !important;
-  margin-top: 20px !important; /* Margen superior limpio para evitar choques */
+  margin-top: 35px !important; /* Empuja el texto hacia abajo de forma limpia */
   margin-bottom: 30px !important;
   max-width: 480px !important;
 }
