@@ -387,53 +387,52 @@ body.portafolio-renax {
 .renax-facebook { background-color: #1877f2; }
 
 /* ==========================================
-   PIE DE PÁGINA (ANCHO TOTAL)
+   PIE DE PÁGINA (ANCHO TOTAL Y DISEÑO EXACTO)
    ========================================== */
 .renax-footer {
   background-color: #050505;
   color: #ffffff;
-  padding: 60px 40px 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.15);
-  width: 100%;
-  box-sizing: border-box;
+  padding: 60px 80px 40px 80px;
+  border-top: 2px solid #e50914; /* Línea roja superior característica */
+  width: 100vw;
   position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
   z-index: 100;
 }
 
 .footer-wrapper {
   width: 100%;
-  max-width: none;
+  max-width: 1600px;
   margin: 0 auto;
 }
 
 .footer-top-bar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding-bottom: 25px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 50px;
 }
 
 .footer-top-title {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.footer-top-link {
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  color: #ffffff;
-  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: #e50914; /* Título MENÚ en rojo */
+  text-transform: uppercase;
 }
 
 .footer-columns-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 30px;
-  padding-bottom: 60px;
+  gap: 40px;
+  padding-bottom: 50px;
 }
 
 .footer-column h3 {
@@ -441,6 +440,7 @@ body.portafolio-renax {
   font-weight: 900;
   font-size: 14px;
   letter-spacing: 1.5px;
+  color: #ffffff;
   margin-bottom: 25px;
   text-transform: uppercase;
 }
@@ -455,18 +455,48 @@ body.portafolio-renax {
   color: #a0a0a0;
   text-decoration: none;
   font-size: 13px;
+  line-height: 1.4;
   transition: color 0.3s ease;
 }
 
-.footer-menu-links a:hover { color: #ffffff; }
-
-.footer-bottom-bar {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 30px;
+.footer-menu-links a:hover {
+  color: #ffffff;
 }
 
-.footer-logo { height: 32px; }
+.footer-bottom-bar {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 30px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 
+.footer-logo {
+  height: 35px;
+  width: auto;
+  opacity: 0.9;
+}
+
+/* Responsive para pantallas medianas y móviles */
+@media (max-width: 1200px) {
+  .renax-footer {
+    padding: 50px 40px 30px 40px;
+  }
+  .footer-columns-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .renax-footer {
+    padding: 40px 20px 20px 20px;
+  }
+  .footer-columns-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
 /* ==========================================
    RESPONSIVE
    ========================================== */
