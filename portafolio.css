@@ -238,7 +238,7 @@ body.portafolio-renax {
 .renax-grid-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+ object-fit: contain;
   transition: transform 0.6s ease;
 }
 
@@ -555,4 +555,16 @@ body.portafolio-renax {
 .renax-grid-card h3 span {
   color: #e50914;
   margin-left: 5px;
+}
+/* Ajustar imagen del Día de las Matemáticas */
+.renax-grid-card:has(img[alt="Día de las Matemáticas"]) .renax-grid-img {
+    height: 100%;
+    overflow: hidden;
+}
+
+.renax-grid-card:has(img[alt="Día de las Matemáticas"]) .renax-grid-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
