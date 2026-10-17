@@ -443,3 +443,21 @@ body.portafolio-renax {
     grid-template-columns: 1fr !important;
   }
 }
+/* Corrección y ajuste para que las imágenes se vean completas y centradas */
+.renax-work-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0b0b0b;
+}
+
+.renax-work-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: #0b0b0b;
+  transition: transform 0.6s ease;
+}
