@@ -478,3 +478,13 @@ body.portafolio-renax {
 .renax-footer .footer-column h3 a:hover {
   color: #e50914;
 }
+
+/* Reducir el logo principal del portafolio */
+.portfolio-gallery > img {
+  width: 65%;
+  max-width: 850px;
+  height: 500px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
