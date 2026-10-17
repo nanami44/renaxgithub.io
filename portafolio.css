@@ -1,564 +1,458 @@
-/* ==========================================================
-   ESTILOS GENERALES Y FONDO DINÁMICO TEXTURIZADO ROJO Y NEGRO
-   ========================================================== */
+/* Estilos generales para el portafolio RENAX */
 body.portafolio-renax {
-  background-color: #030303 !important;
-  color: #ffffff !important;
-  overflow-x: hidden !important;
-  position: relative !important;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
-  margin: 0 !important;
-  padding: 0 !important;
+  background-color: #0b0b0b;
+  background-image: url('fondo portafolio-rojo.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
+/* Fondo dinámico texturizado */
 .portafolio-fondo {
-  position: fixed !important;
-  inset: 0 !important;
-  z-index: -1 !important;
-  pointer-events: none !important;
-  background-image: 
-    linear-gradient(
-        rgba(0, 0, 0, 0.4),
-        rgba(0, 0, 0, 0.7)
-    ),
-    url("fondo-portafolio.jpeg"); /* Fondo texturizado rojo/negro proporcionado */
-  background-size: cover !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: -1;
 }
 
-/* ==========================================================
-   TRANSICIÓN DE PÁGINA RENAX
-   ========================================================== */
+/* Transición Renax */
 .renax-page-transition {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #0b0b0b;
+  background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 99999;
-  transition: opacity 0.6s ease, visibility 0.6s ease;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
 }
-
 .renax-page-transition.hide {
   opacity: 0;
   visibility: hidden;
 }
-
 .transition-logo-image {
   width: 150px;
-  animation: pulseLogo 1.5s infinite alternate;
+  animation: pulseLogo 1.5s infinite;
 }
-
 @keyframes pulseLogo {
   0% { transform: scale(1); opacity: 0.8; }
-  100% { transform: scale(1.08); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
 }
 
-/* ==========================================================
-   PORTADA HERO
-   ========================================================== */
+/* Header Global */
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(11, 11, 11, 0.9);
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nav-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+}
+.logo-renax {
+  height: 40px;
+}
+.nav-menu {
+  display: flex;
+  gap: 30px;
+}
+.nav-link {
+  color: #bbb;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+.nav-link:hover, .nav-link.active {
+  color: #e50914;
+}
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+.language {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 5px 12px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 4px;
+  transition: all 0.3s;
+}
+.language:hover {
+  background: #e50914;
+  border-color: #e50914;
+}
+.login-btn {
+  background: #e50914;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+.login-btn:hover {
+  background: #b20710;
+}
+
+/* Hero Portafolio */
 .renax-portfolio-cover {
-  width: 100% !important;
-  margin-top: 80px !important;
-  display: flex !important;
-  justify-content: center !important;
-  padding: 40px 20px !important;
-  box-sizing: border-box !important;
+  width: 100%;
+  text-align: center;
+  padding: 60px 0 20px 0;
 }
-
 .renax-portfolio-cover img {
-  max-width: 100% !important;
-  height: auto !important;
-  border-radius: 12px !important;
+  max-width: 90%;
+  height: auto;
+  border-radius: 12px;
 }
 
-/* ==========================================================
-   GALERÍA CARRUSEL DE ANCHO COMPLETO (REPARADO Y FUNCIONAL)
-   ========================================================== */
+/* Carrusel de Ancho Completo sin bordes */
 .portfolio-gallery-wrapper {
-  width: 100% !important;
-  max-width: 100% !important;
-  overflow: hidden !important;
-  margin: 20px 0 60px 0 !important;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  overflow-x: auto;
+  padding: 30px 0;
+  background: rgba(0, 0, 0, 0.4);
+  scrollbar-width: none;
 }
-
+.portfolio-gallery-wrapper::-webkit-scrollbar {
+  display: none;
+}
 .portfolio-gallery {
-  display: flex !important;
-  gap: 30px !important;
-  overflow-x: auto !important;
-  padding: 20px 40px !important;
-  scroll-behavior: smooth !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-  scrollbar-width: thin;
-  scrollbar-color: #c8102e #161616;
+  display: flex;
+  gap: 25px;
+  padding: 0 30px;
+  width: max-content;
 }
-
-.portfolio-gallery::-webkit-scrollbar {
-  height: 8px !important;
-}
-
-.portfolio-gallery::-webkit-scrollbar-track {
-  background: #111111 !important;
-}
-
-.portfolio-gallery::-webkit-scrollbar-thumb {
-  background: #c8102e !important;
-  border-radius: 4px !important;
-}
-
 .portfolio-item {
-  min-width: 380px !important;
-  height: 460px !important;
-  position: relative !important;
-  border-radius: 16px !important;
-  overflow: hidden !important;
-  cursor: pointer !important;
-  flex-shrink: 0 !important;
-  background-color: #111111 !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6) !important;
-  display: flex !important;
-  flex-direction: column !important;
+  position: relative;
+  width: 450px;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
 }
-
-/* IMÁGENES CENTRADAS Y SIN CORTES EN CONTENEDORES */
 .portfolio-img-container {
-  width: 100% !important;
-  height: 100% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background-color: #0b0b0b !important;
-  overflow: hidden !important;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
-
-.portfolio-item img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
-  display: block !important;
+.portfolio-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
-
-.portfolio-item:hover img {
-  transform: scale(1.08) !important;
+.portfolio-item:hover .portfolio-img-container img {
+  transform: scale(1.1);
 }
-
 .portfolio-overlay {
-  position: absolute !important;
-  bottom: 0 !important;
-  left: 0 !important;
-  width: 100% !important;
-  padding: 25px 20px !important;
-  background: linear-gradient(to top, rgba(0,0,0,0.9), transparent) !important;
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  letter-spacing: 1px !important;
-  box-sizing: border-box !important;
-  pointer-events: none !important;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
 }
 
-/* ==========================================================
-   CUADRÍCULA DE TRABAJOS Y CASOS DE ESTUDIO (GALERÍA INTERCALADA)
-   ========================================================== */
-.renax-work-grid {
-  max-width: 1400px !important;
-  margin: 100px auto !important;
-  padding: 0 40px !important;
-  box-sizing: border-box !important;
+/* Secciones de Trabajos / Galerías Intercaladas */
+.renax-work-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
 }
-
 .renax-work-heading {
-  margin-bottom: 50px !important;
+  text-align: center;
+  margin-bottom: 50px;
 }
-
 .renax-work-heading span {
-  color: #c8102e !important;
-  font-size: 13px !important;
-  letter-spacing: 2px !important;
-  text-transform: uppercase !important;
-  font-weight: 700 !important;
+  color: #e50914;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-size: 14px;
+  text-transform: uppercase;
 }
-
 .renax-work-heading h2 {
-  font-size: 42px !important;
-  margin-top: 10px !important;
-  line-height: 1.1 !important;
-  text-transform: uppercase !important;
+  font-size: 42px;
+  margin-top: 10px;
+  line-height: 1.2;
 }
-
 .renax-work-heading p {
-  color: #aaaaaa !important;
-  margin-top: 15px !important;
-  max-width: 650px !important;
-  font-size: 16px !important;
-  line-height: 1.6 !important;
+  color: #aaa;
+  max-width: 600px;
+  margin: 15px auto 0 auto;
 }
 
+/* Layout Intercalado con imágenes centradas, bordes redondos y títulos abajo */
 .renax-work-layout {
-  display: grid !important;
-  grid-template-columns: repeat(3, 1fr) !important;
-  gap: 30px !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
 }
-
 .renax-work-card {
-  background: rgba(15, 15, 15, 0.9) !important;
-  border-radius: 16px !important;
-  overflow: hidden !important;
-  text-decoration: none !important;
-  color: #ffffff !important;
-  display: flex !important;
-  flex-direction: column !important;
-  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease !important;
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(20, 20, 20, 0.6);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
-
 .renax-work-card:hover {
-  transform: translateY(-6px) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6) !important;
-  border-color: rgba(200, 16, 46, 0.5) !important;
+  transform: translateY(-5px);
+  border-color: #e50914;
 }
-
 .renax-work-image {
-  width: 100% !important;
-  height: 320px !important;
-  overflow: hidden !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  background-color: #080808 !important;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000;
 }
-
 .renax-work-image img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1) !important;
-  display: block !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
 }
-
 .renax-work-card:hover .renax-work-image img {
-  transform: scale(1.08) !important;
+  transform: scale(1.1);
 }
-
-/* TÍTULO DEBAJO DE CADA IMAGEN EN LAS TARJETAS */
 .renax-work-card h3 {
-  padding: 22px 25px !important;
-  font-size: 15px !important;
-  font-weight: 700 !important;
-  margin: 0 !important;
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  background-color: rgba(15, 15, 15, 0.95) !important;
-  letter-spacing: 1px !important;
+  font-size: 20px;
+  margin: 20px 0;
+  text-align: center;
+  width: 100%;
+  padding: 0 15px;
+}
+.renax-work-card h3 span {
+  color: #e50914;
+  margin-left: 5px;
 }
 
-/* MODIFICADORES DE TAMAÑO PARA INTERCALAR */
-.renax-work-tall {
-  grid-row: span 2 !important;
+/* Bloque extra grande para Diseño de Marca */
+.renax-extra-large-block {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.renax-extra-large-card {
+  display: block;
+  background: rgba(20, 20, 20, 0.6);
+  border-radius: 20px;
+  overflow: hidden;
+  text-decoration: none;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.08);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+.renax-extra-large-card:hover {
+  transform: translateY(-5px);
+  border-color: #e50914;
+}
+.renax-extra-large-image {
+  width: 100%;
+  height: 550px;
+  overflow: hidden;
+}
+.renax-extra-large-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.renax-extra-large-card:hover .renax-extra-large-image img {
+  transform: scale(1.05);
+}
+.renax-extra-large-card h3 {
+  font-size: 28px;
+  margin: 30px 0;
 }
 
-.renax-work-tall .renax-work-image {
-  height: 670px !important;
-}
-
-.renax-work-wide {
-  grid-column: span 2 !important;
-}
-
-/* ==========================================================
-   SECCIÓN DE CIERRE
-   ========================================================== */
+/* Cierre Portafolio */
 .renax-portfolio-cierre {
-  text-align: center !important;
-  padding: 120px 20px !important;
-  background: radial-gradient(circle at center, rgba(200, 16, 46, 0.15) 0%, rgba(5, 5, 5, 0.95) 80%) !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-  margin-top: 80px !important;
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(to bottom, transparent, rgba(229, 9, 20, 0.15));
 }
-
 .portfolio-cierre-titulo {
-  font-size: 52px !important;
-  line-height: 1.1 !important;
-  margin-bottom: 30px !important;
-  font-weight: 800 !important;
-  text-transform: uppercase !important;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  line-height: 1.1;
 }
-
 .portfolio-cierre-boton {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 15px !important;
-  background-color: #ffffff !important;
-  color: #030303 !important;
-  padding: 16px 36px !important;
-  border-radius: 30px !important;
-  text-decoration: none !important;
-  font-weight: 800 !important;
-  letter-spacing: 1px !important;
-  transition: transform 0.3s ease, background-color 0.3s ease !important;
+  display: inline-block;
+  background: #e50914;
+  color: #fff;
+  padding: 16px 36px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background 0.3s, transform 0.3s;
 }
-
 .portfolio-cierre-boton:hover {
-  background-color: #e0e0e0 !important;
-  transform: scale(1.05) !important;
+  background: #b20710;
+  transform: scale(1.05);
 }
 
-/* ==========================================================
-   BOTONES FLOTANTES
-   ========================================================== */
+/* Botones Flotantes */
 .renax-floating-buttons {
-  position: fixed !important;
-  bottom: 25px !important;
-  right: 25px !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 12px !important;
-  z-index: 9999 !important;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
 }
-
 .renax-float-btn {
-  width: 50px !important;
-  height: 50px !important;
-  border-radius: 50% !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  color: #ffffff !important;
-  font-size: 24px !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
-  transition: transform 0.3s ease !important;
-  text-decoration: none !important;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s;
+  text-decoration: none;
 }
-
 .renax-float-btn:hover {
-  transform: scale(1.1) !important;
+  transform: scale(1.1);
 }
+.renax-whatsapp { background: #25d366; }
+.renax-facebook { background: #1877f2; }
 
-.renax-whatsapp {
-  background-color: #25d366 !important;
-}
-
-.renax-facebook {
-  background-color: #1877f2 !important;
-}
-
-/* ==========================================================
-   PIE DE PÁGINA (FOOTER RENAX) - CON LA PALABRA MENÚ EN ROJO
-   ========================================================== */
+/* Footer Renax */
 .renax-footer {
-  display: block !important;
-  width: 100% !important;
-  max-width: 100% !important;
-  background-color: #030303 !important;
-  color: #ffffff !important;
-  padding: 40px 5% 30px !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-  box-sizing: border-box !important;
+  background: #050505;
+  padding: 80px 20px 40px 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.footer-wrapper {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.footer-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 25px;
+  margin-bottom: 50px;
+}
+.footer-top-title {
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #888;
+}
+.footer-top-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+.footer-top-link:hover {
+  color: #e50914;
+}
+.footer-columns-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.footer-column h3 {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.footer-menu-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.footer-menu-links a {
+  color: #888;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+.footer-menu-links a:hover {
+  color: #fff;
+}
+.footer-bottom-bar {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+.footer-logo {
+  height: 45px;
+  opacity: 0.8;
 }
 
-.renax-footer .footer-wrapper {
-  width: 100% !important;
-  max-width: 1400px !important;
-  margin: 0 auto !important;
-  box-sizing: border-box !important;
-}
-
-.renax-footer .footer-top-bar {
-  display: flex !important;
-  justify-content: space-between !important;
-  align-items: center !important;
-  width: 100% !important;
-  padding-bottom: 20px !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-  margin-bottom: 40px !important;
-  box-sizing: border-box !important;
-}
-
-/* PALABRA MENÚ EN COLOR ROJO CORPORATIVO */
-.renax-footer .footer-top-title {
-  font-size: 13px !important;
-  font-weight: 700 !important;
-  letter-spacing: 1.5px !important;
-  color: #c8102e !important; 
-}
-
-.renax-footer .footer-top-link {
-  font-size: 12px !important;
-  font-weight: 600 !important;
-  letter-spacing: 1.5px !important;
-  color: #ffffff !important;
-  text-decoration: none !important;
-  transition: opacity 0.3s ease !important;
-}
-
-.renax-footer .footer-top-link:hover {
-  opacity: 0.7 !important;
-}
-
-.renax-footer .footer-columns-container {
-  display: grid !important;
-  grid-template-columns: repeat(5, 1fr) !important;
-  gap: 30px !important;
-  width: 100% !important;
-  padding-bottom: 40px !important;
-  box-sizing: border-box !important;
-}
-
-.renax-footer .footer-column {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 12px !important;
-}
-
-.renax-footer .footer-column h3 {
-  font-size: 13px !important;
-  font-weight: 800 !important;
-  letter-spacing: 1.5px !important;
-  color: #ffffff !important;
-  margin: 0 0 15px 0 !important;
-  text-transform: uppercase !important;
-}
-
-.renax-footer .footer-menu-links {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 12px !important;
-}
-
-.renax-footer .footer-menu-links a {
-  color: #aaaaaa !important;
-  text-decoration: none !important;
-  font-size: 13px !important;
-  line-height: 1.4 !important;
-  transition: color 0.3s ease !important;
-}
-
-.renax-footer .footer-menu-links a:hover {
-  color: #ffffff !important;
-}
-
-.renax-footer .footer-bottom-bar {
-  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-  padding-top: 25px !important;
-  display: flex !important;
-  align-items: center !important;
-  width: 100% !important;
-  box-sizing: border-box !important;
-}
-
-.renax-footer .footer-logo {
-  height: 30px !important;
-  width: auto !important;
-  opacity: 0.9 !important;
-}
-
-/* RESPONSIVO */
-@media (max-width: 1024px) {
+@media(max-width: 900px) {
   .renax-work-layout {
-    grid-template-columns: repeat(2, 1fr) !important;
+    grid-template-columns: 1fr;
   }
-  .renax-work-tall {
-    grid-row: span 1 !important;
+  .footer-columns-container {
+    grid-template-columns: repeat(2, 1fr);
   }
-  .renax-work-tall .renax-work-image {
-    height: 320px !important;
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #111;
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
   }
-  .renax-work-wide {
-    grid-column: span 1 !important;
+  .nav-menu.open {
+    display: flex;
   }
-  .renax-footer .footer-columns-container {
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 30px !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .renax-work-layout {
-    grid-template-columns: 1fr !important;
-  }
-  .renax-footer .footer-columns-container {
-    grid-template-columns: 1fr !important;
-  }
-}
-/* ==========================================================
-   FONDO DINÁMICO CON MOVIMIENTO SUAVE Y CINEMATOGRÁFICO
-   ========================================================== */
-.portafolio-fondo {
-  position: fixed !important;
-  inset: -20px !important; /* Margen extra para que al moverse no se vean bordes */
-  z-index: -1 !important;
-  pointer-events: none !important;
-  background-image: 
-    linear-gradient(
-        rgba(0, 0, 0, 0.45),
-        rgba(0, 0, 0, 0.75)
-    ),
-    url("fondo-portafolio.jpeg"); /* Asegúrate de que el nombre del archivo de imagen sea exactamente este */
-  background-size: 110% 110% !important; /* Ligeramente más grande para permitir el paneo */
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  /* Animación fluida de movimiento suave tipo respiración/desplazamiento */
-  animation: fondoMovimientoSuave 18s ease-in-out infinite alternate !important;
-}
-
-/* Keyframes que generan el movimiento orgánico y sutil */
-@keyframes fondoMovimientoSuave {
-  0% {
-    transform: scale(1) translate(0, 0);
-    background-position: 0% 0%;
-  }
-  50% {
-    transform: scale(1.05) translate(-1%, -1%);
-    background-position: 50% 50%;
-  }
-  100% {
-    transform: scale(1.02) translate(1%, 1%);
-    background-position: 100% 100%;
-  }
-}
-/* ==========================================================
-   FONDO DINÁMICO ANIMADO CON LA NUEVA IMAGEN
-   ========================================================== */
-.portafolio-fondo {
-  position: fixed !important;
-  inset: -20px !important;
-  z-index: -1 !important;
-  pointer-events: none !important;
-  background-image: 
-    linear-gradient(
-        rgba(0, 0, 0, 0.45),
-        rgba(0, 0, 0, 0.75)
-    ),
-    url("fondo portafolio-rojo.jpeg") !important;
-  background-size: 110% 110% !important;
-  background-position: center !important;
-  background-repeat: no-repeat !important;
-  background-attachment: fixed !important;
-  animation: fondoMovimientoSuave 18s ease-in-out infinite alternate !important;
-}
-
-@keyframes fondoMovimientoSuave {
-  0% {
-    transform: scale(1) translate(0, 0);
-    background-position: 0% 0%;
-  }
-  50% {
-    transform: scale(1.05) translate(-1%, -1%);
-    background-position: 50% 50%;
-  }
-  100% {
-    transform: scale(1.02) translate(1%, 1%);
-    background-position: 100% 100%;
+  .nav-toggle {
+    display: block;
   }
 }
