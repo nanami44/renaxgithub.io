@@ -445,7 +445,7 @@ body.portafolio-renax {
 }
 
 /* ==========================================================
-   PORTAFOLIO RENAX — GALERÍA UNIFORME
+   GALERÍA EDITORIAL RENAX — TARJETAS INTERCALADAS
    ========================================================== */
 
 .renax-work-grid {
@@ -459,26 +459,30 @@ body.portafolio-renax {
 .renax-work-layout {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 220px;
+  grid-auto-flow: dense;
   gap: 24px;
   width: 100%;
   align-items: stretch;
 }
 
-/* Todas las tarjetas del mismo tamaño */
-.renax-work-card,
-.renax-work-tall,
-.renax-work-wide {
-  grid-column: auto;
-  grid-row: auto;
+/* Tarjeta estándar */
+.renax-work-card {
   min-width: 0;
+  min-height: 0;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
-/* Imágenes alineadas y de altura uniforme */
-.renax-work-image,
-.renax-work-tall .renax-work-image {
+/* Imagen adaptada al tamaño de su tarjeta */
+.renax-work-image {
   width: 100%;
-  height: 320px;
+  height: 100%;
+  min-height: 0;
+  flex: 1;
   overflow: hidden;
 }
 
@@ -491,14 +495,32 @@ body.portafolio-renax {
   transition: transform 0.5s ease;
 }
 
-/* Adaptación a pantallas medianas */
+/* Tarjetas verticales */
+.renax-work-tall {
+  grid-row: span 2;
+}
+
+/* Tarjetas horizontales */
+.renax-work-wide {
+  grid-column: span 2;
+}
+
+/* Evita que los modificadores deformen las imágenes */
+.renax-work-tall .renax-work-image,
+.renax-work-wide .renax-work-image {
+  height: auto;
+  flex: 1;
+}
+
+/* Tabletas */
 @media (max-width: 1000px) {
   .renax-work-layout {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 200px;
   }
 }
 
-/* Adaptación a celulares */
+/* Celulares */
 @media (max-width: 600px) {
   .renax-work-grid {
     padding: 0 16px;
@@ -506,11 +528,14 @@ body.portafolio-renax {
 
   .renax-work-layout {
     grid-template-columns: 1fr;
-    gap: 20px;
+    grid-auto-rows: 280px;
+    gap: 18px;
   }
 
-  .renax-work-image,
-  .renax-work-tall .renax-work-image {
-    height: 280px;
+  .renax-work-tall,
+  .renax-work-wide {
+    grid-column: auto;
+    grid-row: auto;
   }
 }
+
