@@ -9,7 +9,7 @@
   <!-- FontAwesome v6 & CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="portafolio.css?v=1">
+  <link rel="stylesheet" href="portafolio.css?v=2">
 
   <style>
     /* Estilos integrados para zoom en imágenes y botones flotantes */
@@ -49,6 +49,62 @@
     }
     .renax-whatsapp { background-color: #25d366; }
     .renax-facebook { background-color: #1877f2; }
+
+    /* Estructura para Portada Fija con Velo Transparente y Contenido Flotante */
+    .renax-hero-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    /* Portada fija en el fondo de la sección hero */
+    .renax-portfolio-cover {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .renax-portfolio-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Velo gris transparente sobre la portada para apreciar el fondo */
+    .renax-hero-veil {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(40, 40, 40, 0.65); /* Velo gris transparente */
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Contenedor principal que pasa por encima de la portada fija */
+    #main-content {
+      position: relative;
+      z-index: 1;
+      background: transparent;
+    }
+
+    /* Espaciador inicial para que la portada fija se luzca antes de hacer scroll al contenido */
+    .hero-spacer {
+      height: 85vh;
+      width: 100%;
+    }
+
+    /* Fondo general para las secciones que suben */
+    .renax-work-grid, .portfolio-gallery-wrapper, .renax-portfolio-cierre, .renax-footer {
+      background-color: rgba(11, 11, 11, 0.92);
+      backdrop-filter: blur(8px);
+    }
 
     /* Estilos del pie de página */
     .renax-footer {
@@ -144,7 +200,7 @@
   <!-- TRANSICIÓN RENAX -->
   <div class="renax-page-transition" id="renaxPageTransition">
     <div class="renax-transition-logo">
-      <img src="logo-renax-transparente.png" alt="RENAX" class="transition-logo-image">    
+      <img src="logo-renax-transparente.png" alt="RENAX" class="transition-logo-image">   
     </div>
   </div>
 
@@ -168,21 +224,23 @@
       </nav>
 
       <button class="language" id="languageBtn" type="button">ENG</button>
-     <a href="login.html" class="login-btn" id="navLoginBtn"><span>INICIAR SESIÓN</span></a>
+      <a href="login.html" class="login-btn" id="navLoginBtn"><span>INICIAR SESIÓN</span></a>
     </div>
   </header>
 
-  <div class="portafolio-fondo"></div>
+  <!-- PORTADA FIJA Y VELO TRANSPARENTE -->
+  <div class="renax-portfolio-cover">
+    <img src="portafolio-final.png" alt="PORTAFOLIO RENAX">
+  </div>
+  <div class="renax-hero-veil"></div>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN CONTENT QUE PASA ENCIMA -->
   <main id="main-content">
 
-    <!-- HERO PORTAFOLIO -->
-    <section class="renax-portfolio-cover">
-      <img src="portafolio-final.png" alt="PORTAFOLIO RENAX">
-    </section>
+    <!-- ESPACIADOR PARA LA PORTADA -->
+    <div class="hero-spacer"></div>
 
-  <!-- GALERÍA DE PROYECTOS (CARRUSEL DE ANCHO COMPLETO) -->
+    <!-- GALERÍA DE PROYECTOS (CARRUSEL DE ANCHO COMPLETO) -->
     <section class="portfolio-gallery-wrapper">
       <div class="portfolio-gallery" id="portfolioGallery">
         
@@ -674,28 +732,26 @@
     onAuthStateChanged(auth, (user) => {
         if (navLoginBtn) {
             if (user) {
-                // Si ya inició sesión
                 navLoginBtn.href = "dashboard.html";
                 const span = navLoginBtn.querySelector('span');
                 if (span) span.textContent = "MI PANEL";
             } else {
-                // Si no ha iniciado sesión
                 navLoginBtn.href = "login.html";
                 const span = navLoginBtn.querySelector('span');
                 if (span) span.textContent = "INICIAR SESIÓN";
             }
         }
     });
-</script>
+  </script>
   
-<script>
-  const portfolioGallery = document.getElementById("portfolioGallery");
+  <script>
+    const portfolioGallery = document.getElementById("portfolioGallery");
 
-  if (portfolioGallery && !portfolioGallery.dataset.duplicated) {
-    portfolioGallery.innerHTML += portfolioGallery.innerHTML;
-    portfolioGallery.dataset.duplicated = "true";
-  }
-</script>
+    if (portfolioGallery && !portfolioGallery.dataset.duplicated) {
+      portfolioGallery.innerHTML += portfolioGallery.innerHTML;
+      portfolioGallery.dataset.duplicated = "true";
+    }
+  </script>
 
 </body>
 </html>
