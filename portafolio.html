@@ -414,35 +414,7 @@
     });
   </script>
 
-window.addEventListener("DOMContentLoaded", () => {
-  const verticalTicker = document.getElementById("verticalTicker");
-  if (!verticalTicker) return;
 
-  // ¡ESTA LÍNEA ES LA QUE FALTA EN TU CÓDIGO ACTUAL!
-  if (!verticalTicker.dataset.duplicated) {
-    verticalTicker.innerHTML += verticalTicker.innerHTML;
-    verticalTicker.dataset.duplicated = "true";
-  }
-
-  let vScrollPos = 0;
-  const vSpeed = 0.5; // Movimiento moderado fluido
-  let vAnimId;
-
-  function vStep() {
-    vScrollPos += vSpeed;
-    if (vScrollPos >= verticalTicker.scrollHeight / 2) {
-      vScrollPos = 0;
-    }
-    verticalTicker.style.transform = `translateY(-${vScrollPos}px)`;
-    vAnimId = requestAnimationFrame(vStep);
-  }
-
-  verticalTicker.addEventListener("mouseenter", () => cancelAnimationFrame(vAnimId));
-  vAnimId = requestAnimationFrame(vStep);
-  verticalTicker.addEventListener("mouseleave", () => {
-    vAnimId = requestAnimationFrame(vStep);
-  });
-});
   </script>
 </body>
 </html>
