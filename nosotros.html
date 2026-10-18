@@ -25,10 +25,10 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* FONDO GENERAL DE LA PÁGINA */
+        /* FONDO GENERAL DE LA PÁGINA CON TU IMAGEN PORTAFOLIO-ROJO.JPEG */
         html, body {
             background-color: #050505;
-            background-image: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.90)), url('portafolio-rojo.jpeg');
+            background-image: linear-gradient(rgba(5, 5, 5, 0.82), rgba(5, 5, 5, 0.88)), url('portafolio-rojo.jpeg');
             background-position: center top;
             background-size: cover;
             background-repeat: no-repeat;
@@ -171,7 +171,7 @@
         }
 
         .card-box {
-            background: rgba(10, 5, 5, 0.78);
+            background: rgba(10, 5, 5, 0.85);
             padding: 40px;
             border-radius: 20px;
             border: 1px solid #330000;
@@ -218,6 +218,9 @@
             margin: 40px auto 30px;
             padding: 30px 20px;
             text-align: left;
+            background: rgba(10, 5, 5, 0.75);
+            border-radius: 16px;
+            border: 1px solid rgba(204, 0, 0, 0.3);
         }
 
         .text-content h2 {
@@ -257,6 +260,10 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
+            background: rgba(10, 5, 5, 0.75);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(204, 0, 0, 0.3);
         }
 
         .content-block h2 {
@@ -277,6 +284,8 @@
         .why-renax {
             max-width: 1100px;
             margin: 0 auto;
+            background: transparent;
+            padding: 0;
         }
 
         .why-renax h2 {
@@ -297,7 +306,7 @@
         }
 
         .why-renax li {
-            background: linear-gradient(135deg, rgba(40, 3, 3, 0.85), rgba(15, 2, 2, 0.90));
+            background: linear-gradient(135deg, rgba(40, 3, 3, 0.88), rgba(15, 2, 2, 0.94));
             padding: 30px;
             border-radius: 16px;
             border: 1px solid rgba(204, 0, 0, 0.4);
@@ -338,7 +347,7 @@
             flex: 0 0 400px;
             min-height: 185px;
             padding: 30px 25px;
-            background: rgba(10, 5, 5, 0.85);
+            background: rgba(15, 2, 2, 0.90);
             border: 1px solid #8b0000;
             border-radius: 20px;
             display: flex;
@@ -370,7 +379,7 @@
             to { transform: translateX(calc(-50% - 12px)); }
         }
 
-        /* 9. FOOTER (IDÉNTICO AL INDEX) */
+        /* 9. FOOTER */
         .renax-footer {
             width: 100%;
             background: #080808;
@@ -527,7 +536,7 @@
         </div>
     </section>
 
-    <!-- 4. DOS IMAGENES Y TEXTO (karol - 2.png y karol-renax..png) -->
+    <!-- 4. DOS IMAGENES Y TEXTO -->
     <section>
         <div class="images-text-section">
             <div class="img-container">
@@ -614,20 +623,20 @@
                 </article>
                 <!-- Copia carrusel infinito -->
                 <article class="renax-carousel-card" aria-hidden="true">
-                    <h3>MÁS RECONOCIMIENTO</h3>
-                    <p>Una imagen que facilita que tus clientes recuerden tu marca.</p>
+                    <h3 data-es="MÁS RECONOCIMIENTO" data-en="MORE RECOGNITION">MÁS RECONOCIMIENTO</h3>
+                    <p data-es="Una imagen que facilita que tus clientes recuerden tu marca." data-en="An image that helps your customers remember your brand.">Una imagen que facilita que tus clientes recuerden tu marca.</p>
                 </article>
                 <article class="renax-carousel-card" aria-hidden="true">
-                    <h3>MÁS CONFIANZA</h3>
-                    <p>Una identidad profesional que refleja la experiencia de tu negocio.</p>
+                    <h3 data-es="MÁS CONFIANZA" data-en="MORE TRUST">MÁS CONFIANZA</h3>
+                    <p data-es="Una identidad profesional que refleja la experiencia de tu negocio." data-en="A professional identity that reflects your business experience.">Una identidad profesional que refleja la experiencia de tu negocio.</p>
                 </article>
                 <article class="renax-carousel-card" aria-hidden="true">
-                    <h3>MÁS CONEXIÓN</h3>
-                    <p>Una comunicación visual capaz de acercarte a nuevos públicos.</p>
+                    <h3 data-es="MÁS CONEXIÓN" data-en="MORE CONNECTION">MÁS CONEXIÓN</h3>
+                    <p data-es="Una comunicación visual capaz de acercarte a nuevos públicos." data-en="Visual communication that helps you connect with new audiences.">Una comunicación visual capaz de acercarte a nuevos públicos.</p>
                 </article>
                 <article class="renax-carousel-card" aria-hidden="true">
-                    <h3>MÁS COHERENCIA</h3>
-                    <p>Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
+                    <h3 data-es="MÁS COHERENCIA" data-en="MORE CONSISTENCY">MÁS COHERENCIA</h3>
+                    <p data-es="Una marca preparada para comunicarse de manera consistente en medios físicos y digitales." data-en="A brand ready to communicate consistently across physical and digital media.">Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
                 </article>
             </div>
         </div>
@@ -730,7 +739,7 @@
             en: {
                 footerInicio: "HOME",
                 footerNosotros: "ABOUT US",
-                footerPortfolio: "PORTFOLIO",
+                footerPortfolio: "PORTAFOLIO",
                 footerServices: "SERVICES",
                 footerContact: "CONTACT",
                 footerMenu: "MENU",
@@ -758,17 +767,26 @@
                 const language = english ? translations.en : translations.es;
                 languageBtn.textContent = english ? "ENG" : "ESP";
 
+                // Traduce elementos del footer con data-lang
                 document.querySelectorAll("[data-lang]").forEach(function(element) {
                     const key = element.getAttribute("data-lang");
                     if (language[key]) {
                         element.innerHTML = language[key];
                     }
                 });
+
+                // Traduce elementos de la página con data-es / data-en
+                document.querySelectorAll("[data-es]").forEach(function(element) {
+                    const text = english ? element.getAttribute("data-en") : element.getAttribute("data-es");
+                    if (text) {
+                        element.innerHTML = text;
+                    }
+                });
             });
         }
     </script>
 
-    <!-- FIREBASE AUTH SCRIPT (INICIO DE SESIÓN DINÁMICO) -->
+    <!-- FIREBASE AUTH SCRIPT -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
