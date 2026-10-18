@@ -699,3 +699,55 @@ body.portafolio-renax {
     text-align: left;
   }
 }
+/* CASOS DE ESTUDIO: TÍTULO ENCIMA DE LAS IMÁGENES */
+#casos-estudio {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 35px;
+}
+
+#casos-estudio > .renax-sticky-title {
+  position: relative;
+  top: auto;
+  width: 100%;
+  min-height: auto;
+  padding: 40px 4% 0;
+  box-sizing: border-box;
+}
+
+#casos-estudio .renax-massive-title {
+  width: 100%;
+  max-width: 100%;
+  text-align: left;
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 0.98;
+  margin: 0;
+}
+
+#casos-estudio > .renax-asymmetric-grid {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Conserva las proporciones de las imágenes */
+#casos-estudio .renax-grid-img {
+  overflow: hidden;
+}
+
+#casos-estudio .renax-grid-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 700px) {
+  #casos-estudio > .renax-sticky-title {
+    padding: 30px 5% 0;
+  }
+
+  #casos-estudio .renax-massive-title {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+  }
+}
