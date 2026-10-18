@@ -9,7 +9,7 @@
   <!-- FontAwesome v6 & Estilos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css?v=2">
-  <link rel="stylesheet" href="nosotros-nuevo.css?v=1">
+  <link rel="stylesheet" href="nosotros-nuevo.css?v=3">
 </head>
 <body class="nosotros-renax">
 
@@ -49,7 +49,7 @@
   <!-- MAIN CONTENT -->
   <main id="main-content">
 
-    <!-- HERO ABOUT (PORTADA) -->
+    <!-- PORTADA (IMAGEN / HERO) -->
     <section class="about-hero" id="quienes-somos">
       <div style="z-index: 2;">
         <div class="about-hero-accents">
@@ -75,30 +75,28 @@
       </iframe>
     </div>
 
-    <!-- RESEÑA HISTÓRICA (Acordeón funcional corregido) -->
+    <!-- RESEÑA HISTÓRICA (Efecto Hover: Sin abrir ventanas, cambia con el mouse) -->
     <section class="about-manifest">
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="history-question" type="button" aria-expanded="false">
-            <span data-lang="historyTitle">RESEÑA HISTÓRICA</span>
-            <img src="logo-renax-transparente.png" class="renax-history-bird" alt="">
-          </button>
-          <div class="faq-answer">
-            <p data-lang="historyText1">
-              Muchas marcas tienen una historia que contar, pero con el paso del tiempo su imagen deja de reflejar todo lo que han construido.
-            </p>
-            <p data-lang="historyText2">
-              RENAX nace para transformar esa realidad: una agencia de diseño gráfico e identidad visual que renueva marcas con trayectoria, combinando estrategia, creatividad e innovación para modernizar su imagen sin perder su esencia.
-            </p>
-            <p data-lang="historyText3">
-              Cada proyecto comienza con un análisis profundo de la historia, valores y elementos que hacen única a la empresa, permitiendo crear identidades visuales actuales que fortalecen su reconocimiento, conexión con nuevos públicos y presencia en el mercado.
-            </p>
-          </div>
+      <div class="history-hover-card">
+        <div class="history-title-wrapper">
+          <h2 data-lang="historyTitle">RESEÑA HISTÓRICA</h2>
+          <img src="logo-renax-transparente.png" class="renax-history-bird" alt="">
+        </div>
+        <div class="history-hover-content">
+          <p data-lang="historyText1">
+            Muchas marcas tienen una historia que contar, pero con el paso del tiempo su imagen deja de reflejar todo lo que han construido.
+          </p>
+          <p data-lang="historyText2">
+            RENAX nace para transformar esa realidad: una agencia de diseño gráfico e identidad visual que renueva marcas con trayectoria, combinando estrategia, creatividad e innovación para modernizar su imagen sin perder su esencia.
+          </p>
+          <p data-lang="historyText3">
+            Cada proyecto comienza con un análisis profundo de la historia, valores y elementos que hacen única a la empresa, permitiendo crear identidades visuales actuales que fortalecen su reconocimiento, conexión con nuevos públicos y presencia en el mercado.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- MISIÓN Y VISIÓN (Dos tarjetas elegantes) -->
+    <!-- MISIÓN Y VISIÓN -->
     <section class="about-mission-vision">
       <div class="mission-vision-card mission-card" id="mision">
         <div class="orange-effect"></div>
@@ -120,86 +118,39 @@
       </div>
     </section>
 
-  <!-- EQUIPO (HOLA, SOY KAROL con galería elegante de imágenes y textos debajo) -->
+    <!-- EQUIPO (HOLA, SOY KAROL con estructura intercalada, imágenes moderadas y texto debajo) -->
     <section class="renax-team-section" id="por-que-renax">
-      <div class="team-container-grid">
-        <div class="renax-team-card-elegant">
-          
-          <!-- Galería de las 2 imágenes del equipo -->
-          <div class="renax-team-images-gallery">
-            <div class="team-img-frame">
-              <img src="karol - 2.png" alt="Karol Yuliana Montenegro Ruiz - Foto 1" class="team-photo">
-            </div>
-            <div class="team-img-frame">
-              <img src="karol-renax..png" alt="Karol Yuliana Montenegro Ruiz - Foto 2" class="team-photo">
-            </div>
+      <div class="renax-team-card-intercalada">
+        <div class="renax-team-images-intercalada">
+          <div class="team-img-frame img-offset-1">
+            <img src="karol - 2.png" alt="Karol Yuliana Montenegro Ruiz - Foto 1" class="team-photo">
           </div>
-
-          <!-- Información debajo de las imágenes -->
-          <div class="renax-team-text-box">
-            <h2 data-lang="team">HOLA, SOY KAROL</h2>
-            <p data-lang="teamText1">
-              Soy la creadora de RENAX, una agencia enfocada en la identidad visual y la comunicación gráfica. Mi propósito es ayudar a marcas con trayectoria a modernizar su imagen sin perder la esencia que las ha hecho reconocibles.
-            </p>
-            <p data-lang="teamText2">
-              Desde RENAX desarrollo propuestas de identidad visual, diseño gráfico y comunicación, buscando conectar la historia de cada marca con una imagen actual, coherente y preparada para evolucionar.
-            </p>
+          <div class="team-img-frame img-offset-2">
+            <img src="karol-renax..png" alt="Karol Yuliana Montenegro Ruiz - Foto 2" class="team-photo">
           </div>
-
+        </div>
+        <div class="renax-team-text-box">
+          <h2 data-lang="team">HOLA, SOY KAROL</h2>
+          <p data-lang="teamText1">
+            Soy la creadora de RENAX, una agencia enfocada en la identidad visual y la comunicación gráfica. Mi propósito es ayudar a marcas con trayectoria a modernizar su imagen sin perder la esencia que las ha hecho reconocibles.
+          </p>
+          <p data-lang="teamText2">
+            Desde RENAX desarrollo propuestas de identidad visual, diseño gráfico y comunicación, buscando conectar la historia de cada marca con una imagen actual, coherente y preparada para evolucionar.
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- SECCIÓN EXCLUSIVA RENAX (Ventanas dinámicas con modo oscuro/claro interactivo colocado debajo del equipo)[cite: 11, 12] -->
-    <section class="renax-exclusive-space">
-      <!-- VENTANA 1 -->
-      <div class="exclusive-panel exclusive-panel-agency">
-        <button type="button" class="exclusive-theme-toggle" aria-label="Cambiar colores del cuadro" aria-pressed="false">
-            <span class="toggle-icon">☀</span>
-            <span class="toggle-label">MODO OSCURO</span>
-        </button>
-        <h2 data-lang="secAgencyTitle">SOMOS UNA AGENCIA DE IDENTIDAD VISUAL</h2>
+    <!-- SECCIÓN: SOMOS UNA AGENCIA (Fondo blanco, cuadro ajustado, títulos rojos con negro) -->
+    <section class="renax-agency-white-section">
+      <div class="agency-white-box">
+        <h2 class="agency-title-red-black" data-lang="secAgencyTitle">SOMOS UNA AGENCIA DE IDENTIDAD VISUAL</h2>
         <p data-lang="secAgencyText1">
           Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria.
         </p>
         <p data-lang="secAgencyText2">
           RENAX nace para transformar esa realidad: una agencia de diseño gráfico e identidad visual que renueva marcas con trayectoria, combinando estrategia, creatividad e innovación para modernizar su imagen sin perder su esencia.
         </p>
-      </div>
-
-      <!-- VENTANA 2 -->
-      <div class="exclusive-panel exclusive-panel-what">
-        <h2 data-lang="whatTitle">QUÉ HACEMOS</h2>
-        <p data-lang="whatText">
-          Modernizamos tu marca sin hacerte perder lo que eres. Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria.
-        </p>
-      </div>
-
-      <!-- VENTANA 3 -->
-      <div class="exclusive-panel exclusive-panel-benefits">
-        <div class="exclusive-benefits">
-          <div class="exclusive-benefit">
-            <h3 data-lang="benefit1">MÁS RECONOCIMIENTO</h3>
-            <p data-lang="benefitText1">Una imagen que facilita que tus clientes recuerden tu marca.</p>
-          </div>
-          <div class="exclusive-benefit">
-            <h3 data-lang="benefit2">MÁS CONFIANZA</h3>
-            <p data-lang="benefitText2">Una identidad profesional que refleja la experiencia de tu negocio.</p>
-          </div>
-          <div class="exclusive-benefit">
-            <h3 data-lang="benefit3">MÁS CONEXIÓN</h3>
-            <p data-lang="benefitText3">Una comunicación visual capaz de acercarte a nuevos públicos.</p>
-          </div>
-          <div class="exclusive-benefit">
-            <h3 data-lang="benefit4">MÁS COHERENCIA</h3>
-            <p data-lang="benefitText4">Una marca preparada para comunicarse de manera consistente.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- VENTANA 4 -->
-      <div class="exclusive-panel exclusive-panel-logo">
-        <img src="logo-renax-transparente.png" alt="RENAX">
       </div>
     </section>
 
@@ -217,17 +168,17 @@
 
   <section class="renax-black-section"></section>
 
-  <!-- PIE DE PÁGINA (FOOTER 5 COLUMNAS - Basado exactamente en tu referencia)[cite: 13] -->
-  <footer class="srv-footer">
+  <!-- PIE DE PÁGINA HORIZONTAL (Ancho total, menú en rojo, logo pequeño) -->
+  <footer class="srv-footer-horizontal">
     <div class="srv-footer-wrapper">
       <div class="srv-footer-top">
-        <span data-lang="footerMenu">MENÚ</span>
-        <a href="servicios.html#servicios" data-lang="footerExplora">EXPLORA RENAX ↘</a>
+        <span class="footer-menu-red" data-lang="footerMenu">MENÚ</span>
+        <a href="servicios.html#servicios" class="footer-menu-red" data-lang="footerExplora">EXPLORA RENAX ↘</a>
       </div>
       
       <div class="srv-footer-grid">
         <div class="srv-footer-col">
-          <h3 data-lang="footerInicio">INICIO</h3>
+          <h3 class="footer-menu-red" data-lang="footerInicio">INICIO</h3>
           <a href="index.html#hero-inicio" data-lang="footerInicio1">Expertos en transformar marcas</a>
           <a href="index.html#esencia-marca" data-lang="footerInicio2">Vuelve a destacar sin perder tu esencia</a>
           <a href="index.html#historia-marca" data-lang="footerInicio3">Tu historia merece una imagen que esté a su altura</a>
@@ -235,7 +186,7 @@
         </div>
 
         <div class="srv-footer-col">
-          <h3 data-lang="footerNosotros">NOSOTROS</h3>
+          <h3 class="footer-menu-red" data-lang="footerNosotros">NOSOTROS</h3>
           <a href="nosotros.html" data-lang="footerNosotros1">Quiénes somos</a>
           <a href="nosotros.html#vision" data-lang="footerNosotros2">Visión</a>
           <a href="nosotros.html#mision" data-lang="footerNosotros3">Misión</a>
@@ -243,13 +194,13 @@
         </div>
 
         <div class="srv-footer-col">
-          <h3 data-lang="footerPortafolio">PORTAFOLIO</h3>
+          <h3 class="footer-menu-red" data-lang="footerPortafolio">PORTAFOLIO</h3>
           <a href="portafolio.html#proyectos" data-lang="footerPortafolio1">Proyectos y trabajos realizados</a>
           <a href="portafolio.html#casos-estudio" data-lang="footerPortafolio2">Casos de estudio</a>
         </div>
 
         <div class="srv-footer-col">
-          <h3 data-lang="footerServicios">SERVICIOS</h3>
+          <h3 class="footer-menu-red" data-lang="footerServicios">SERVICIOS</h3>
           <a href="servicios.html#diagnostico" data-lang="footerServicio1">Diagnóstico de marca</a>
           <a href="servicios.html#renovacion" data-lang="footerServicio2">Renovación de marca</a>
           <a href="servicios.html#comunicacion" data-lang="footerServicio3">Comunicación</a>
@@ -257,13 +208,13 @@
         </div>
 
         <div class="srv-footer-col">
-          <h3 data-lang="footerContacto">CONTACTO</h3>
+          <h3 class="footer-menu-red" data-lang="footerContacto">CONTACTO</h3>
           <a href="contacto.html" data-lang="footerContacto1">Hablemos de tu proyecto</a>
         </div>
       </div>
 
       <div class="srv-footer-bottom">
-        <img src="logo-renax-transparente.png" alt="RENAX">
+        <img src="logo-renax-transparente.png" alt="RENAX" class="footer-logo-small">
       </div>
     </div>
   </footer>
@@ -290,12 +241,6 @@
         secAgencyTitle: "SOMOS UNA AGENCIA DE IDENTIDAD VISUAL",
         secAgencyText1: "Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria.",
         secAgencyText2: "RENAX nace para transformar esa realidad: una agencia de diseño gráfico e identidad visual que renueva marcas con trayectoria, combinando estrategia, creatividad e innovación para modernizar su imagen sin perder su esencia.",
-        whatTitle: "QUÉ HACEMOS",
-        whatText: "Modernizamos tu marca sin hacerte perder lo que eres. Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria.",
-        benefit1: "MÁS RECONOCIMIENTO", benefitText1: "Una imagen que facilita que tus clientes recuerden tu marca.",
-        benefit2: "MÁS CONFIANZA", benefitText2: "Una identidad profesional que refleja la experiencia de tu negocio.",
-        benefit3: "MÁS CONEXIÓN", benefitText3: "Una comunicación visual capaz de acercarte a nuevos públicos.",
-        benefit4: "MÁS COHERENCIA", benefitText4: "Una marca preparada para comunicarse de manera consistente.",
         footerMenu: "MENÚ", footerExplora: "EXPLORA RENAX ↘",
         footerInicio: "INICIO", footerInicio1: "Expertos en transformar marcas", footerInicio2: "Vuelve a destacar sin perder tu esencia", footerInicio3: "Tu historia merece una imagen que esté a su altura", footerInicio4: "Preguntas frecuentes",
         footerNosotros: "NOSOTROS", footerNosotros1: "Quiénes somos", footerNosotros2: "Visión", footerNosotros3: "Misión", footerNosotros4: "¿Por qué RENAX?",
@@ -319,12 +264,6 @@
         secAgencyTitle: "WE ARE A VISUAL IDENTITY AGENCY",
         secAgencyText1: "We are a visual identity and graphic communication agency specialized in modernizing established brands.",
         secAgencyText2: "RENAX was born to transform that reality: a graphic design and visual identity agency that renews established brands, combining strategy, creativity, and innovation to modernize their image without losing their essence.",
-        whatTitle: "WHAT WE DO",
-        whatText: "We modernize your brand without making you lose who you are. We are a visual identity and graphic communication agency specialized in modernizing established brands.",
-        benefit1: "MORE RECOGNITION", benefitText1: "An image that makes it easier for your customers to remember your brand.",
-        benefit2: "MORE TRUST", benefitText2: "A professional identity that reflects the experience of your business.",
-        benefit3: "MORE CONNECTION", benefitText3: "Visual communication capable of connecting you with new audiences.",
-        benefit4: "MORE CONSISTENCY", benefitText4: "A brand prepared to communicate consistently.",
         footerMenu: "MENU", footerExplora: "EXPLORE RENAX ↘",
         footerInicio: "HOME", footerInicio1: "Experts in transforming brands", footerInicio2: "Stand out again without losing your essence", footerInicio3: "Your story deserves an image that lives up to it", footerInicio4: "Frequently asked questions",
         footerNosotros: "ABOUT US", footerNosotros1: "Who we are", footerNosotros2: "Vision", footerNosotros3: "Mission", footerNosotros4: "Why RENAX?",
@@ -351,67 +290,6 @@
       });
     }
     cambiarIdioma();
-  </script>
-
-  <!-- SCRIPT PARA EL ACORDEÓN CORREGIDO (Reseña histórica)[cite: 11] -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const botones = document.querySelectorAll(".history-question");
-      botones.forEach(function (boton) {
-        boton.addEventListener("click", function () {
-          const faqItem = boton.closest(".faq-item");
-          if (!faqItem) return;
-          const respuesta = faqItem.querySelector(".faq-answer");
-          if (!respuesta) return;
-
-          const estaAbierta = respuesta.classList.toggle("is-open");
-          boton.setAttribute("aria-expanded", String(estaAbierta));
-        });
-      });
-    });
-  </script>
-
-  <!-- SCRIPT BUCLE DE VENTANAS EXCLUSIVAS Y MODO OSCURO/CLARO[cite: 11, 12] -->
-  <script>
-    (function () {
-      const panels = document.querySelectorAll('.renax-exclusive-space .exclusive-panel');
-      if (panels.length === 0) return;
-
-      let currentIndex = 0;
-      setInterval(() => {
-        panels[currentIndex].style.display = 'none';
-        currentIndex = (currentIndex + 1) % panels.length;
-        panels[currentIndex].style.display = 'block';
-      }, 5000);
-
-      panels.forEach((p, idx) => {
-        p.style.display = idx === 0 ? 'block' : 'none';
-      });
-
-      const agencyPanel = document.querySelector('.exclusive-panel-agency');
-      const themeToggle = agencyPanel ? agencyPanel.querySelector('.exclusive-theme-toggle') : null;
-
-      if (themeToggle && agencyPanel) {
-        themeToggle.addEventListener('click', () => {
-          const isDark = themeToggle.getAttribute('aria-pressed') !== 'true';
-          themeToggle.setAttribute('aria-pressed', String(isDark));
-          themeToggle.querySelector('.toggle-label').textContent = isDark ? 'MODO CLARO' : 'MODO OSCURO';
-          themeToggle.querySelector('.toggle-icon').textContent = isDark ? '☾' : '☀';
-          
-          if (isDark) {
-            agencyPanel.style.background = '#f5f5f5';
-            agencyPanel.style.color = '#111';
-            agencyPanel.querySelectorAll('p').forEach(p => p.style.color = '#333');
-            agencyPanel.querySelector('h2').style.color = '#111';
-          } else {
-            agencyPanel.style.background = '#0d0d0d';
-            agencyPanel.style.color = '#fff';
-            agencyPanel.querySelectorAll('p').forEach(p => p.style.color = '#bbb');
-            agencyPanel.querySelector('h2').style.color = '#fff';
-          }
-        });
-      }
-    })();
   </script>
 
   <!-- FIREBASE AUTH LOGIN SCRIPT -->
