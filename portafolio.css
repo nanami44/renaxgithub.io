@@ -1250,3 +1250,26 @@ object-fit: cover;
         font-size: clamp(2.5rem, 10vw, 4rem) !important;
     }
 }
+/* CORRECCIÓN DEFINITIVA DEL ESPACIO DEL TÍTULO */
+#proyectos .renax-sticky-title.renax-title-vertical {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#proyectos .renax-massive-title {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0 !important;
+    line-height: 0.82 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#proyectos .renax-massive-title span {
+    display: block !important;
+    line-height: 0.82 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
