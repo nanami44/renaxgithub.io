@@ -1095,3 +1095,69 @@ object-fit: cover;
   height: 100%;
   object-fit: cover; /* Llena el espacio de forma perfecta */
 }
+/* ==========================================
+   CARRUSEL HORIZONTAL CON MARGEN RESPECTO A LA PORTADA
+   ========================================== */
+.renax-horizontal-ticker-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 50px; /* <--- Esto le da el espacio y margen que deseas respecto a la portada */
+  background: #080808;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  padding: 40px 0;
+  z-index: 5;
+}
+/* ==========================================
+   CARRUSEL HORIZONTAL — TAMAÑO EXTRA GRANDE
+   ========================================== */
+.renax-horizontal-ticker-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  margin-top: 50px; /* Margen de separación respecto a la portada */
+  background: #080808;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  overflow: hidden;
+  padding: 50px 0; /* Espacio vertical amplio para el carrusel grande */
+  z-index: 5;
+}
+
+.renax-horizontal-ticker-track {
+  display: flex;
+  gap: 35px; /* Espacio cómodo entre las tarjetas grandes */
+  width: max-content;
+  will-change: transform;
+}
+
+.horizontal-item {
+  width: 450px;  /* Ancho sustancialmente mayor para formato banner */
+  height: 280px; /* Altura grande y destacada */
+  border-radius: 18px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.horizontal-item:hover {
+  transform: scale(1.03);
+  border-color: #e50914;
+}
+
+.horizontal-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Llena por completo el contenedor amplio sin deformarse */
+}
