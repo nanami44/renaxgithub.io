@@ -1,5 +1,5 @@
 /* ==========================================================
-   ESTILOS NUEVOS RENAX - ESTRUCTURA PROFESIONAL & TIPOGRAFÍA
+   ESTILOS NUEVOS RENAX - ESTRUCTURA LIMPIA & MONTGOMERY BLACK
    ========================================================== */
 
 .montserrat-title {
@@ -27,21 +27,21 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.76);
     z-index: -1;
 }
 
-/* Reseña Histórica con Hover (Rojo/Negro elegante) */
-.about-manifest {
+/* 3. Sección en limpio: Reseña Histórica Hover */
+.about-manifest-clean {
     max-width: 1100px;
-    margin: 40px auto;
+    margin: 50px auto;
     padding: 0 20px;
 }
 .history-hover-card {
     background: linear-gradient(135deg, #120303 0%, #080808 100%);
     border: 2px solid #ff2a2a;
     border-radius: 12px;
-    padding: 30px;
+    padding: 35px;
     transition: all 0.4s ease;
     box-shadow: 0 0 15px rgba(255, 42, 42, 0.3);
 }
@@ -83,41 +83,14 @@
     margin-bottom: 12px;
 }
 
-/* Misión y Visión */
-.about-mission-vision {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 0 20px;
-}
-.mission-vision-card {
-    background: rgba(15, 15, 15, 0.92);
-    padding: 35px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
-.mission-vision-card h3 {
-    color: #ff2a2a;
-    font-size: 22px;
-    margin-bottom: 15px;
-}
-.mission-vision-card p {
-    color: #bbb;
-    line-height: 1.7;
-    font-size: 14px;
-}
-
-/* Sección de Equipo (Estructura intercalada inspirada en tus referencias) */
+/* 4. Sección para dos imágenes del equipo (Karol) */
 .renax-team-section {
     max-width: 1100px;
     margin: 60px auto;
     padding: 0 20px;
 }
-.team-reference-container {
-    background: rgba(10, 10, 10, 0.9);
+.team-clean-container {
+    background: rgba(10, 10, 10, 0.88);
     border: 1px solid rgba(255, 42, 42, 0.3);
     border-radius: 14px;
     padding: 50px 30px;
@@ -131,15 +104,15 @@
     margin-bottom: 40px;
 }
 .team-photo-box {
-    width: 220px;
-    height: 270px;
+    width: 210px;
+    height: 260px;
     border-radius: 10px;
     overflow: hidden;
     border: 2px solid rgba(255, 42, 42, 0.4);
     background: #111;
     box-shadow: 0 8px 25px rgba(0,0,0,0.6);
 }
-.frame-primary { transform: translateY(-15px); }
+.frame-primary { transform: translateY(-10px); }
 .frame-secondary { transform: translateY(15px); }
 .team-img-file {
     width: 100%;
@@ -163,20 +136,40 @@
     margin: 0 auto 15px auto;
 }
 
-/* Sección "Somos una agencia" (Cuadro ajustado, fondo blanco, títulos en rojo con negro) */
-.renax-agency-white-section {
+/* 5. Otra sección en limpio (Misión, Visión y Agencia) */
+.about-clean-blocks {
     max-width: 1100px;
-    margin: 50px auto;
+    margin: 60px auto;
     padding: 0 20px;
-    display: flex;
-    justify-content: center;
 }
-.agency-white-box {
+.about-mission-vision-clean {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+.mission-vision-card {
+    background: rgba(15, 15, 15, 0.92);
+    padding: 35px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+.mission-vision-card h3 {
+    color: #ff2a2a;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+.mission-vision-card p {
+    color: #bbb;
+    line-height: 1.7;
+    font-size: 14px;
+}
+.agency-clean-box {
     background: #ffffff;
     color: #111111;
     border-radius: 12px;
-    padding: 40px;
-    max-width: 900px;
+    padding: 45px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 .agency-title-red-black {
@@ -185,7 +178,7 @@
     text-shadow: 1px 1px 2px #000000;
     margin-bottom: 20px;
 }
-.agency-white-box p {
+.agency-clean-box p {
     color: #333333;
     line-height: 1.7;
     font-size: 16px;
@@ -218,12 +211,12 @@
 .float-wa { background: #25d366; color: #fff; }
 .float-fb { background: #1877f2; color: #fff; }
 
-/* Pie de Página Horizontal (Ancho total, menú en rojo, logo pequeño) */
+/* 6. Pie de Página Horizontal (Referencia exacta) */
 .srv-footer-horizontal {
     width: 100%;
     background: #050505;
     color: #fff;
-    padding: 40px 30px 20px;
+    padding: 45px 30px 25px;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 .srv-footer-wrapper {
@@ -272,146 +265,14 @@
     padding-top: 15px;
 }
 .footer-logo-small {
-    height: 24px; /* Logo pequeño y elegante */
+    height: 24px;
     filter: brightness(0) invert(1);
-}
-
-/* TARJETA ROJA: SOMOS UNA AGENCIA */
-.renax-agency-white-section {
-    max-width: 1100px;
-    margin: 80px auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.agency-white-box {
-    width: 100%;
-    max-width: 1100px;
-    box-sizing: border-box;
-    padding: 55px;
-    color: #ffffff;
-    background: linear-gradient(135deg, #f02b25 0%, #c91518 60%, #8f1015 100%);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 5px;
-    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.4);
-}
-
-.agency-title-red-black {
-    color: #ffffff !important;
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: clamp(30px, 4vw, 54px);
-    font-weight: 900 !important;
-    line-height: 1.1;
-    letter-spacing: -1.5px;
-    text-transform: uppercase;
-    text-shadow: none;
-    margin: 0 0 28px;
-}
-
-.agency-white-box p {
-    color: #ffffff !important;
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 17px;
-    font-weight: 400;
-    line-height: 1.9;
-    margin-bottom: 18px;
-}
-
-@media (max-width: 600px) {
-    .renax-agency-white-section {
-        margin: 55px auto;
-        padding: 0 14px;
-    }
-
-    .agency-white-box {
-        padding: 30px 22px;
-    }
-
-    .agency-title-red-black {
-        font-size: 30px;
-    }
-
-    .agency-white-box p {
-        font-size: 15px;
-    }
 }
 
 /* Responsivo para celulares */
 @media (max-width: 768px) {
-    .about-mission-vision { grid-template-columns: 1fr; }
+    .about-mission-vision-clean { grid-template-columns: 1fr; }
     .srv-footer-grid { grid-template-columns: 1fr; gap: 25px; }
     .team-images-split { flex-direction: column; }
     .frame-primary, .frame-secondary { transform: translateY(0); }
 }
-
-/* =====================================================
-   RENAX - TARJETA SOMOS UNA AGENCIA
-   TÍTULO MONTSERRAT BLACK Y TEXTO BLANCO
-   ===================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-
-.nosotros-renax .exclusive-panel-agency {
-    background: linear-gradient(
-        135deg,
-        #f02b25 0%,
-        #c91518 58%,
-        #8f1015 100%
-    ) !important;
-
-    color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important;
-    border-radius: 8px !important;
-    padding: clamp(30px, 5vw, 65px) !important;
-    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
-    box-sizing: border-box;
-}
-
-/* TÍTULO GRANDE */
-.nosotros-renax .exclusive-panel-agency h2 {
-    color: #ffffff !important;
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: clamp(30px, 4vw, 52px) !important;
-    font-weight: 900 !important;
-    line-height: 1.12 !important;
-    letter-spacing: -1.5px;
-    text-transform: uppercase;
-    margin-bottom: 28px !important;
-}
-
-/* PÁRRAFOS */
-.nosotros-renax .exclusive-panel-agency p {
-    color: #ffffff !important;
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 17px !important;
-    font-weight: 400 !important;
-    line-height: 1.9 !important;
-    margin-bottom: 18px !important;
-}
-
-/* BOTÓN DE MODO CLARO/OSCURO */
-.nosotros-renax .exclusive-panel-agency .exclusive-theme-toggle {
-    background: rgba(20, 10, 10, 0.35) !important;
-    color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.45) !important;
-}
-
-/* AJUSTES PARA CELULARES */
-@media (max-width: 600px) {
-    .nosotros-renax .exclusive-panel-agency {
-        padding: 30px 22px !important;
-    }
-
-    .nosotros-renax .exclusive-panel-agency h2 {
-        font-size: 29px !important;
-        letter-spacing: -0.8px;
-        padding-top: 35px;
-    }
-
-    .nosotros-renax .exclusive-panel-agency p {
-        font-size: 15px !important;
-        line-height: 1.8 !important;
-    }
-}
-
