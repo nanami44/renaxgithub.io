@@ -425,19 +425,27 @@
     cambiarIdioma();
   </script>
 
-  <!-- SCRIPT PARA EL ACORDEÓN DE RESEÑA HISTÓRICA -->
-  <script>
-    document.querySelectorAll('.history-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const answer = button.nextElementSibling;
-        if (answer.style.display === "block") {
-          answer.style.display = "none";
-        } else {
-          answer.style.display = "block";
-        }
-      });
+
+<!-- SCRIPT PARA EL ACORDEÓN DE RESEÑA HISTÓRICA -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const botones = document.querySelectorAll(".history-question");
+
+  botones.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+      const respuesta = boton.parentElement.querySelector(".faq-answer");
+
+      if (!respuesta) return;
+
+      const estaAbierta = respuesta.style.display === "block";
+
+      respuesta.style.display = estaAbierta ? "none" : "block";
+      boton.setAttribute("aria-expanded", String(!estaAbierta));
     });
-  </script>
+  });
+});
+</script>
+
 
   <!-- SCRIPT PARA EL BUCLE DE VENTANAS EXCLUSIVAS Y MODO OSCURO/CLARO -->
   <script>
