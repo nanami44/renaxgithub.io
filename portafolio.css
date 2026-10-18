@@ -953,4 +953,51 @@ object-fit: cover;
 
 .renax-massive-title .red-text { color: #e50914; }
 .renax-massive-title .white-text { color: #ffffff; }
+}
+/* ==========================================
+   CARRUSEL HORIZONTAL DEBAJO DE LA PORTADA
+   ========================================== */
+.renax-horizontal-ticker-wrapper {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  background: #080808;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  padding: 25px 0;
+  z-index: 5;
+}
 
+.renax-horizontal-ticker-track {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+  will-change: transform;
+}
+
+.horizontal-item {
+  width: 220px;
+  height: 140px;
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.horizontal-item:hover {
+  transform: scale(1.05);
+  border-color: #e50914;
+}
+
+.horizontal-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
