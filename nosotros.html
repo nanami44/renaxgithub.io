@@ -630,6 +630,105 @@
                 font-size: 11vw;
             }
         }
+      
+/* ==========================================
+   RENAX: CARRUSEL A ANCHO COMPLETO
+   TARJETAS BLANCAS, TEXTO NEGRO Y LUZ ROJA
+   ========================================== */
+
+/* Romper el límite del contenedor exterior */
+.renax-carousel-section {
+    width: 100vw !important;
+    max-width: none !important;
+    position: relative !important;
+    left: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+/* Ventana visible del carrusel */
+.renax-carousel-section .renax-carousel {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: 40px 0 !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+/* Pista que contiene y mueve las tarjetas */
+.renax-carousel-section .renax-carousel-track {
+    display: flex !important;
+    width: max-content !important;
+    max-width: none !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+}
+
+/* Tarjetas blancas con borde e iluminación rojos */
+.renax-carousel-section .renax-carousel-card {
+    background: #ffffff !important;
+    border: 2px solid #e00000 !important;
+    border-radius: 24px !important;
+    box-shadow:
+        0 0 10px rgba(255, 0, 0, 0.35),
+        0 0 24px rgba(255, 0, 0, 0.22),
+        0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    color: #000000 !important;
+    box-sizing: border-box !important;
+    transition: box-shadow 0.3s ease,
+                transform 0.3s ease !important;
+}
+
+/* Títulos negros */
+.renax-carousel-section .renax-carousel-card h1,
+.renax-carousel-section .renax-carousel-card h2,
+.renax-carousel-section .renax-carousel-card h3,
+.renax-carousel-section .renax-carousel-card h4 {
+    color: #000000 !important;
+}
+
+/* Párrafos y demás textos negros */
+.renax-carousel-section .renax-carousel-card p,
+.renax-carousel-section .renax-carousel-card span,
+.renax-carousel-section .renax-carousel-card li {
+    color: #000000 !important;
+}
+
+/* Resplandor rojo al pasar el mouse */
+.renax-carousel-section .renax-carousel-card:hover {
+    box-shadow:
+        0 0 14px rgba(255, 0, 0, 0.65),
+        0 0 32px rgba(255, 0, 0, 0.45),
+        0 12px 30px rgba(0, 0, 0, 0.18) !important;
+    transform: translateY(-4px);
+}
+
+/* Evitar que las imágenes o textos se salgan */
+.renax-carousel-section .renax-carousel-card * {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .renax-carousel-section .renax-carousel {
+        padding: 28px 0 !important;
+    }
+
+    .renax-carousel-section .renax-carousel-track {
+        gap: 16px !important;
+    }
+
+    .renax-carousel-section .renax-carousel-card {
+        flex-basis: 290px;
+    }
+}
+  
     </style>
 </head>
 <body>
