@@ -386,16 +386,49 @@ object-fit: cover;
   gap: 12px !important;
 }
 
+
+/* ENLACES DEL PIE DE PÁGINA */
 .renax-footer .footer-menu-links a {
-  color: #bdbdbd !important;
-  font-size: 14px !important;
-  line-height: 1.6;
-  text-decoration: none;
+    position: relative;
+    display: inline-block;
+    width: fit-content;
+    color: #bdbdbd !important;
+    font-size: 14px;
+    line-height: 1.6;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
-.renax-footer .footer-menu-links a:hover {
-  color: #ffffff !important;
+/* LÍNEA ROJA */
+.renax-footer .footer-menu-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #e50914;
+    transition: width 0.3s ease;
 }
+
+/* AL PASAR EL CURSOR */
+.renax-footer .footer-menu-links a:hover {
+    color: #e50914 !important;
+}
+
+.renax-footer .footer-menu-links a:hover::after {
+    width: 100%;
+}
+
+/* PÁGINA ACTUAL */
+.renax-footer .footer-menu-links a.active {
+    color: #e50914 !important;
+}
+
+.renax-footer .footer-menu-links a.active::after {
+    width: 100%;
+}
+
 
 .renax-footer .footer-bottom-bar {
   width: 100% !important;
