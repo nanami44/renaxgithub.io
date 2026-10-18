@@ -3,7 +3,7 @@
    ========================================================== */
 
 .nosotros-renax {
-    background-image: url('fondo-servcio.jpeg');
+    background-image: url('fondo-portafolio-rojo.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -14,7 +14,6 @@
     overflow-x: hidden;
 }
 
-/* Capa oscura para que el texto resalte legible */
 .nosotros-renax::before {
     content: '';
     position: fixed;
@@ -22,231 +21,207 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.72);
     z-index: -1;
 }
 
-/* Acordeón de Reseña Histórica */
+/* Reseña Histórica con Hover (Sin abrir ventanas, cambia color y muestra texto) */
 .about-manifest {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 40px auto;
-    padding: 0 40px;
+    padding: 0 20px;
 }
-.faq-item {
-    border: 1px solid rgba(255,255,255,0.1);
-    background: #0a0a0a;
+.history-hover-card {
+    background: linear-gradient(135deg, #110000 0%, #050505 100%);
+    border: 2px solid #ff2a2a;
     border-radius: 12px;
     padding: 30px;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 15px rgba(255, 42, 42, 0.3);
 }
-.history-question {
-    background: none;
-    border: none;
-    color: #fff;
-    width: 100%;
+.history-hover-card:hover {
+    background: linear-gradient(135deg, #ff2a2a 0%, #110000 100%);
+    box-shadow: 0 0 25px rgba(255, 42, 42, 0.7);
+}
+.history-title-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+.history-hover-card h2 {
+    color: #ffffff;
     font-size: 22px;
     font-weight: 800;
     text-transform: uppercase;
-    cursor: pointer;
-    position: relative;
-    padding-right: 50px;
+    margin: 0;
 }
 .renax-history-bird {
-    height: 30px;
+    height: 28px;
     filter: brightness(0) invert(1);
-    transition: transform 0.3s ease;
 }
-.faq-answer {
-    display: none;
-    margin-top: 25px;
-    color: #ccc;
-    line-height: 1.8;
-    font-size: 16px;
-    border-top: 1px solid rgba(255,255,255,0.08);
-    padding-top: 20px;
+.history-hover-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    margin-top: 0;
 }
-.faq-answer.is-open {
-    display: block !important;
+.history-hover-card:hover .history-hover-content {
+    max-height: 400px;
+    opacity: 1;
+    margin-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    padding-top: 15px;
+}
+.history-hover-content p {
+    color: #ffffff;
+    line-height: 1.7;
+    font-size: 15px;
+    margin-bottom: 12px;
 }
 
 /* Tarjetas Misión y Visión */
 .about-mission-vision {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 40px;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 .mission-vision-card {
-    background: #111111;
-    padding: 45px;
-    border-radius: 12px;
-    border: 1px solid rgba(255,255,255,0.08);
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background: rgba(15, 15, 15, 0.9);
+    padding: 35px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
 .mission-vision-card h3 {
     color: #ff2a2a;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 800;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+    margin-bottom: 15px;
 }
 .mission-vision-card p {
     color: #bbb;
-    line-height: 1.8;
-    font-size: 15px;
+    line-height: 1.7;
+    font-size: 14px;
 }
 
-/* Sección Elegante Equipo de Renax (Hola soy Karol - Imagen arriba, textos abajo) */
+/* Sección de Equipo (Karol con estructura intercalada y moderada) */
 .renax-team-section {
-    max-width: 1200px;
-    margin: 80px auto;
-    padding: 0 40px;
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
 }
-.renax-team-card-elegant {
-    background: linear-gradient(145deg, #0e0e0e, #080808);
-    border: 1px solid rgba(255, 42, 42, 0.2);
-    border-radius: 16px;
-    padding: 50px;
+.renax-team-card-intercalada {
+    background: rgba(10, 10, 10, 0.88);
+    border: 1px solid rgba(255, 42, 42, 0.25);
+    border-radius: 12px;
+    padding: 40px 30px;
     text-align: center;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
 }
-.renax-team-image-wrapper {
+.renax-team-images-intercalada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
     margin-bottom: 35px;
 }
-.team-img-karol {
-    max-width: 280px;
+.team-img-frame {
+    width: 170px;
+    height: 210px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 42, 42, 0.4);
+    background: #111;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+.img-offset-1 { transform: translateY(-10px); }
+.img-offset-2 { transform: translateY(15px); }
+.team-photo {
     width: 100%;
-    height: auto;
-    border-radius: 50%;
-    border: 3px solid #ff2a2a;
-    box-shadow: 0 0 25px rgba(255, 42, 42, 0.3);
+    height: 100%;
     object-fit: cover;
+    display: block;
 }
 .renax-team-text-box h2 {
-    font-size: 36px;
-    font-weight: 900;
-    color: #fff;
-    margin-bottom: 25px;
-    letter-spacing: 1.5px;
-}
-.renax-team-text-box p {
-    color: #bbb;
-    line-height: 1.8;
-    font-size: 16px;
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-}
-
-/* Espacio Exclusivo Renax (Debajo del equipo) */
-.renax-exclusive-space {
-    max-width: 1200px;
-    margin: 60px auto;
-    padding: 0 40px;
-}
-.exclusive-panel {
-    background: #0d0d0d;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 12px;
-    padding: 45px;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-.exclusive-theme-toggle {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    background: #222;
-    border: 1px solid #444;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: 600;
-    font-size: 13px;
-    transition: 0.3s;
-}
-.exclusive-theme-toggle:hover {
-    background: #333;
-}
-.exclusive-panel h2 {
     font-size: 30px;
     font-weight: 900;
     color: #fff;
     margin-bottom: 20px;
 }
-.exclusive-panel p {
+.renax-team-text-box p {
     color: #bbb;
-    line-height: 1.8;
-    margin-bottom: 15px;
-    font-size: 16px;
-}
-.exclusive-benefits {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-.exclusive-benefit h3 {
-    color: #ff2a2a;
-    font-size: 18px;
-    font-weight: 800;
-    margin-bottom: 10px;
-}
-.exclusive-benefit p {
-    color: #bbb;
-    font-size: 14px;
-}
-.exclusive-panel-logo {
-    text-align: center;
-}
-.exclusive-panel-logo img {
-    max-height: 70px;
-    filter: brightness(0) invert(1);
+    line-height: 1.7;
+    font-size: 15px;
+    max-width: 750px;
+    margin: 0 auto 15px auto;
 }
 
-/* Botones Flotantes Sociales */
+/* Sección "Somos una agencia" (Fondo blanco, cuadro ajustado, títulos rojo con negro) */
+.renax-agency-white-section {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+.agency-white-box {
+    background: #ffffff;
+    color: #111111;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 900px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.agency-title-red-black {
+    font-size: 28px;
+    font-weight: 900;
+    color: #ff2a2a;
+    text-shadow: 1px 1px 2px #000000;
+    margin-bottom: 20px;
+}
+.agency-white-box p {
+    color: #333333;
+    line-height: 1.7;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Botones Flotantes */
 .renax-floating-social {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 25px;
+    right: 25px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
     z-index: 999;
 }
 .renax-floating-social a {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 24px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    font-size: 22px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     text-decoration: none;
     transition: transform 0.3s;
 }
-.renax-floating-social a:hover {
-    transform: scale(1.1);
-}
+.renax-floating-social a:hover { transform: scale(1.1); }
 .float-wa { background: #25d366; color: #fff; }
 .float-fb { background: #1877f2; color: #fff; }
 
-/* Estilos de Footer de 5 Columnas */
-.srv-footer {
+/* Pie de Página Horizontal (Ancho total, menú en rojo, logo pequeño) */
+.srv-footer-horizontal {
     width: 100%;
     background: #050505;
     color: #fff;
-    padding: 60px 40px 30px;
+    padding: 40px 20px 20px;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 .srv-footer-wrapper {
@@ -258,66 +233,52 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 20px;
-    margin-bottom: 40px;
+    padding-bottom: 15px;
+    margin-bottom: 30px;
 }
-.srv-footer-top span {
+.footer-menu-red {
+    color: #ff2a2a !important;
     font-size: 13px;
-    font-weight: 700;
+    font-weight: 800;
     letter-spacing: 1.5px;
-}
-.srv-footer-top a {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    color: #fff;
     text-decoration: none;
 }
 .srv-footer-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
-    padding-bottom: 50px;
+    gap: 20px;
+    padding-bottom: 30px;
 }
 .srv-footer-col {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 .srv-footer-col h3 {
-    font-size: 14px;
-    font-weight: 800;
-    letter-spacing: 1.5px;
+    font-size: 13px;
+    letter-spacing: 1px;
     text-transform: uppercase;
 }
 .srv-footer-col a {
-    color: #aaa;
-    font-size: 13px;
+    color: #bbb;
+    font-size: 12px;
     text-decoration: none;
     transition: color 0.2s;
 }
-.srv-footer-col a:hover {
-    color: #ff2a2a;
-}
+.srv-footer-col a:hover { color: #ff2a2a; }
 .srv-footer-bottom {
     border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 25px;
+    padding-top: 15px;
 }
-.srv-footer-bottom img {
-    height: 32px;
+.footer-logo-small {
+    height: 22px; /* Logo pequeño como lo solicitaste */
     filter: brightness(0) invert(1);
 }
 
 /* Responsivo para celulares */
 @media (max-width: 768px) {
-    .about-mission-vision {
-        grid-template-columns: 1fr;
-    }
-    .exclusive-benefits {
-        grid-template-columns: 1fr;
-    }
-    .srv-footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
+    .about-mission-vision { grid-template-columns: 1fr; }
+    .srv-footer-grid { grid-template-columns: 1fr; gap: 25px; }
+    .renax-team-images-intercalada { flex-direction: column; }
+    .img-offset-1, .img-offset-2 { transform: translateY(0); }
 }
