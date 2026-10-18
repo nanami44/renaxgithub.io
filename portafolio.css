@@ -923,68 +923,66 @@ object-fit: cover;
     }
 }
 
-/* CINTURÓN VERTICAL LARGO RENAX */
-.renax-belt {
-    height: 1000px !important;
-    min-height: 1000px;
-    overflow: hidden;
-    grid-template-columns: 1fr 1fr;
-    align-items: stretch;
-    gap: 12px;
-}
-
-.renax-belt-track {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 28px;
+/* TÍTULO VERTICAL SIN CINTURÓN */
+.renax-title-vertical {
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    height: auto;
+    padding: 45px 20px;
+    margin: 0;
     overflow: visible;
-    font-size: clamp(38px, 4vw, 66px);
-    font-weight: 900;
-    line-height: 1;
-    text-align: center;
-    will-change: transform;
+    background: transparent;
+    border: none;
+    box-sizing: border-box;
 }
 
-.renax-word {
+.renax-title-vertical .renax-massive-title {
     display: flex;
     flex-direction: column;
     align-items: center;
-    line-height: 1.02;
+    justify-content: center;
+    gap: 8px;
+    margin: 0 auto;
+    max-width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(42px, 7vw, 100px);
+    font-weight: 900;
+    line-height: 0.95;
+    text-align: center;
+    overflow-wrap: anywhere;
 }
 
-.renax-word span {
-    display: block;
-    opacity: 1;
+.renax-word-trabajo {
+    color: #e50914;
 }
 
-/* Movimientos en sentidos opuestos */
-.renax-belt-down {
-    animation: renaxBeltDown 18s linear infinite;
+.renax-word-con {
+    color: #fff;
 }
 
-.renax-belt-up {
-    animation: renaxBeltUp 18s linear infinite;
+.renax-word-identidad {
+    color: #fff;
 }
 
-@keyframes renaxBeltDown {
-    from { transform: translateY(-20%); }
-    to   { transform: translateY(20%); }
+/* Mantener la galería en su tamaño original */
+.renax-editorial-section .renax-asymmetric-grid {
+    min-width: 0;
+    width: 100%;
 }
 
-@keyframes renaxBeltUp {
-    from { transform: translateY(20%); }
-    to   { transform: translateY(-20%); }
+.renax-editorial-section .renax-grid-card {
+    min-width: 0;
+    max-width: 100%;
 }
 
 @media (max-width: 600px) {
-    .renax-belt {
-        height: 800px !important;
-        min-height: 800px;
+    .renax-title-vertical {
+        padding: 30px 10px;
     }
 
-    .renax-belt-track {
-        font-size: clamp(30px, 7vw, 42px);
+    .renax-title-vertical .renax-massive-title {
+        font-size: clamp(36px, 10vw, 58px);
     }
 }
+
