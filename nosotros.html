@@ -48,7 +48,7 @@
             line-height: 1.6;
         }
 
-        /* HEADER / MENÚ DE NAVEGACIÓN IDÉNTICO AL DE INICIO */
+        /* HEADER / MENÚ DE NAVEGACIÓN */
         .site-header {
             position: fixed;
             top: 0;
@@ -94,7 +94,6 @@
             color: var(--accent-red);
         }
 
-        /* Línea roja indicadora idéntica a la página de inicio */
         .nav-link.active::after {
             content: '';
             position: absolute;
@@ -175,20 +174,11 @@
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
         }
 
-        /* VIDEO CORPORATIVO RENAX CON FONDO CORREGIDO */
+        /* VIDEO CORPORATIVO RENAX CON FONDO NEGRO PURO */
         .video-wrapper-section {
             width: 100%;
             box-sizing: border-box;
-            background-color: #080808;
-            background-image:
-                linear-gradient(
-                    rgba(0, 0, 0, 0.4),
-                    rgba(0, 0, 0, 0.55)
-                ),
-                url("fondo-video-renax.jpeg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
+            background-color: #050505;
             padding: 80px 5%;
             display: flex;
             justify-content: center;
@@ -204,13 +194,13 @@
             max-width: 1100px;
             height: 600px;
             background-color: #111;
-            border: 1px solid #ddd;
+            border: 1px solid #222;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
         }
 
         .video-section iframe {
@@ -726,10 +716,10 @@
 
     <!-- 1. PORTADA -->
     <div class="hero-banner">
-        <h1 class="titulo-conocenos">CONÓCENOS</h1>
+        <h1 class="titulo-conocenos" data-es="CONÓCENOS" data-en="ABOUT US">CONÓCENOS</h1>
     </div>
 
-    <!-- 2. VIDEO INSTITUCIONAL CON FONDO DE IMAGEN CORREGIDO -->
+    <!-- 2. VIDEO INSTITUCIONAL CON FONDO NEGRO PURO -->
     <div class="video-wrapper-section">
         <div class="video-section">
             <iframe
@@ -784,10 +774,10 @@
     <!-- 5. CINTURÓN INFINITO -->
     <div class="infinite-belt-section">
         <div class="belt-track-left">
-            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item solid" data-es="LA EVOLUCIÓN ESTÁ AQUÍ" data-en="EVOLUTION IS HERE">LA EVOLUCIÓN ESTÁ AQUÍ</span>
         </div>
         <div class="belt-track-right">
-            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item outline" data-es="LA EVOLUCIÓN ESTÁ AQUÍ" data-en="EVOLUTION IS HERE">LA EVOLUCIÓN ESTÁ AQUÍ</span>
         </div>
     </div>
 
