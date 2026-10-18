@@ -219,7 +219,7 @@
             gap: 40px;
         }
 
-        /* TARJETAS INTERACTIVAS CON ZOOM Y FUNCIONALIDAD */
+        /* TARJETAS EXCLUSIVAMENTE CON HOVER (SIN CLIC) Y TEXTO CENTRADO */
         .vision-mission-container .card-box {
             position: relative;
             min-height: 320px;
@@ -228,7 +228,8 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            cursor: pointer;
+            align-items: center;
+            text-align: center;
             box-sizing: border-box;
             background: #ffffff;
             border: 2px solid #000000;
@@ -237,11 +238,8 @@
             transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .vision-mission-container .card-box:hover {
-            transform: scale(1.02);
-        }
-
         .vision-mission-container .card-box h2 {
+            width: 100%;
             min-height: 200px;
             display: flex;
             align-items: center;
@@ -261,7 +259,8 @@
             max-height: 0;
             opacity: 0;
             overflow: hidden;
-            margin: 0;
+            margin: 0 auto;
+            text-align: center;
             padding: 0 28px;
             color: #000000;
             line-height: 1.8;
@@ -272,45 +271,49 @@
             transition: max-height 0.7s ease, opacity 0.5s ease, transform 0.5s ease, padding 0.5s ease;
         }
 
-        /* 1ra TARJETA (VISIÓN) -> ZAPOTE */
-        .vision-mission-container .card-box:nth-child(1).is-open {
+        /* 1ra TARJETA (VISIÓN): ZAPOTE AL PASAR EL MOUSE + TEXTO BLANCO */
+        .vision-mission-container .card-box:nth-child(1):hover {
             background: #FF7518 !important;
             border-color: #000000;
             box-shadow: 0 15px 40px rgba(255, 117, 24, 0.6);
             transform: scale(1.06);
             z-index: 10;
         }
-        .vision-mission-container .card-box:nth-child(1).is-open h2 {
+        .vision-mission-container .card-box:nth-child(1):hover h2 {
             min-height: 90px;
             transform: scale(0.95);
-            color: #cc0000 !important;
+            color: #ffffff !important;
+        }
+        .vision-mission-container .card-box:nth-child(1):hover p {
+            color: #ffffff !important;
         }
 
-        /* 2da TARJETA (MISIÓN) -> ROJO */
-        .vision-mission-container .card-box:nth-child(2).is-open {
+        /* 2da TARJETA (MISIÓN): ROJO AL PASAR EL MOUSE + TEXTO BLANCO */
+        .vision-mission-container .card-box:nth-child(2):hover {
             background: #cc0000 !important;
             border-color: #000000;
             box-shadow: 0 15px 40px rgba(204, 0, 0, 0.6);
             transform: scale(1.06);
             z-index: 10;
         }
-        .vision-mission-container .card-box:nth-child(2).is-open h2 {
+        .vision-mission-container .card-box:nth-child(2):hover h2 {
             min-height: 90px;
             transform: scale(0.95);
             color: #ffffff !important;
         }
-        .vision-mission-container .card-box:nth-child(2).is-open p {
+        .vision-mission-container .card-box:nth-child(2):hover p {
             color: #ffffff !important;
         }
 
-        .vision-mission-container .card-box.is-open p {
+        /* ANIMACIÓN DE APERTURA AL HACER HOVER */
+        .vision-mission-container .card-box:hover p {
             max-height: 500px;
             opacity: 1;
             padding: 10px 28px 35px;
             transform: scale(1);
         }
 
-        /* 4. SECCIÓN "HOLA, SOY KAROL" A ANCHO DE PÁGINA (GRANDE Y DESTACADA) */
+        /* 4. SECCIÓN "HOLA, SOY KAROL" A ANCHO DE PÁGINA */
         .karol-section-full {
             width: 100%;
             background: #ffffff;
@@ -351,14 +354,22 @@
             text-align: left;
         }
 
-        .karol-text-content h2 {
+        .karol-text-content h2.titulo-karol {
+            color: #000000 !important;
             font-family: 'Montserrat', sans-serif;
+            font-size: clamp(42px, 4vw, 64px);
             font-weight: 900;
-            font-size: 52px;
-            line-height: 1.1;
-            color: #cc0000;
-            margin: 0 0 20px 0;
-            text-transform: uppercase;
+            line-height: 1.08;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+
+        .karol-text-content h2.titulo-karol span {
+            display: block;
+            color: #000000 !important;
+            -webkit-text-fill-color: #000000;
         }
 
         .karol-text-content h3 {
@@ -376,9 +387,57 @@
             margin: 0;
         }
 
+        /* 5. CINTURÓN INFINITO */
+        .infinite-belt-section {
+            width: 100%;
+            overflow: hidden;
+            padding: 35px 0;
+            background: #080808;
+            display: flex;
+            flex-direction: column;
+            gap: 38px;
         }
 
-        /* 6. ¿QUIÉNES SOMOS? (FONDO NEGRO Y TEXTO UNIFICADO CON RAZONES DE RENAX) */
+        .belt-track-left,
+        .belt-track-right {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .belt-item {
+            display: block;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(42px, 8vw, 130px);
+            font-weight: 900;
+            line-height: 1.15;
+            text-align: center;
+        }
+
+        .belt-track-left .belt-item {
+            color: #ffffff;
+            animation: encuentroIzquierda 4s ease-in-out infinite alternate;
+        }
+
+        .belt-track-right .belt-item {
+            color: transparent;
+            -webkit-text-stroke: 2px #ffffff;
+            animation: encuentroDerecha 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes encuentroIzquierda {
+            from { transform: translateX(25vw); }
+            to   { transform: translateX(-25vw); }
+        }
+
+        @keyframes encuentroDerecha {
+            from { transform: translateX(-25vw); }
+            to   { transform: translateX(25vw); }
+        }
+
+        /* 6. ¿QUIÉNES SOMOS? (FONDO NEGRO, SIN BORDE Y ALINEADO A LA DERECHA) */
         .quienes-somos-section {
             max-width: 1000px;
             margin: 60px auto;
@@ -389,8 +448,8 @@
             background: #000000;
             padding: 50px 40px;
             border-radius: 20px;
-            border: 2px solid rgba(204, 0, 0, 0.4);
-            text-align: center;
+            border: none;
+            text-align: right;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
@@ -410,7 +469,7 @@
             margin-bottom: 20px;
         }
 
-        /* 7. CARRUSEL DE IMPACTO A ANCHO DE PÁGINA Y BORDES ZAPOTE */
+        /* 7. CARRUSEL DE IMPACTO A ANCHO TOTAL Y BORDES ALTERNADOS BLANCO Y ROJO */
         .renax-carousel-section {
             width: 100%;
             padding: 50px 0;
@@ -437,12 +496,20 @@
             min-height: 200px;
             padding: 30px 25px;
             background: rgba(15, 2, 2, 0.95);
-            border: 2px solid #FF7518; /* Borde color zapote */
             border-radius: 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            box-shadow: 0 8px 20px rgba(255, 117, 24, 0.15);
+        }
+
+        .renax-carousel-card:nth-child(odd) {
+            border: 2px solid #ffffff;
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
+        }
+
+        .renax-carousel-card:nth-child(even) {
+            border: 2px solid #cc0000;
+            box-shadow: 0 8px 20px rgba(204, 0, 0, 0.25);
         }
 
         .renax-carousel-card h3 {
@@ -559,100 +626,10 @@
             .renax-carousel-card {
                 flex-basis: 290px;
             }
+            .belt-item {
+                font-size: 11vw;
+            }
         }
-        
-/* CINTURÓN RENAX: ENCUENTRO Y RETORNO */
-
-.infinite-belt-section {
-    width: 100%;
-    overflow: hidden;
-    padding: 35px 0;
-    background: #080808;
-    display: flex;
-    flex-direction: column;
-    gap: 38px;
-}
-
-.belt-track-left,
-.belt-track-right {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.belt-item {
-    display: block;
-    white-space: nowrap;
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(42px, 8vw, 130px);
-    font-weight: 900;
-    line-height: 1.15;
-    text-align: center;
-}
-
-/* Frase superior: blanca y sólida */
-.belt-track-left .belt-item {
-    color: #ffffff;
-    animation: encuentroIzquierda 4s ease-in-out infinite alternate;
-}
-
-/* Frase inferior: contorno blanco */
-.belt-track-right .belt-item {
-    color: transparent;
-    -webkit-text-stroke: 2px #ffffff;
-    animation: encuentroDerecha 4s ease-in-out infinite alternate;
-}
-
-@keyframes encuentroIzquierda {
-    from { transform: translateX(25vw); }
-    to   { transform: translateX(-25vw); }
-}
-
-@keyframes encuentroDerecha {
-    from { transform: translateX(-25vw); }
-    to   { transform: translateX(25vw); }
-}
-
-/* Adaptación a móviles */
-@media (max-width: 600px) {
-    .infinite-belt-section {
-        gap: 25px;
-        padding: 25px 0;
-    }
-
-    .belt-item {
-        font-size: 11vw;
-    }
-
-    .belt-track-left .belt-item {
-        animation-name: encuentroIzquierda;
-    }
-
-    .belt-track-right .belt-item {
-        animation-name: encuentroDerecha;
-    }
-}
-
-/* TÍTULO HOLA / SOY KAROL */
-.karol-text-content h2.titulo-karol {
-    color: #000000 !important;
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(42px, 4vw, 64px);
-    font-weight: 900;
-    line-height: 1.08;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 25px;
-}
-
-.karol-text-content h2.titulo-karol span {
-    display: block;
-    color: #000000 !important;
-    -webkit-text-fill-color: #000000;
-}
-
     </style>
 </head>
 <body>
@@ -705,7 +682,7 @@
     <!-- 3. VISIÓN Y MISIÓN CON FONDO DETRÁS A ANCHO DE PÁGINA -->
     <div class="vision-mission-full-wrapper">
         <div class="vision-mission-container">
-            <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
+            <div class="card-box">
                 <h2 data-es="VISIÓN" data-en="VISION">VISIÓN</h2>
                 <p data-es="Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales."
                    data-en="By 2030, RENAX aspires to be a departmental leader in visual identity and graphic communication, recognized for modernizing established brands and promoting the growth of local businesses.">
@@ -713,7 +690,7 @@
                 </p>
             </div>
 
-            <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
+            <div class="card-box">
                 <h2 data-es="MISIÓN" data-en="MISSION">MISIÓN</h2>
                 <p data-es="Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia."
                    data-en="Our mission is to offer strategic design and visual identity services for small and medium-sized businesses, modernizing established brands, strengthening their competitiveness, and always preserving their essence.">
@@ -723,19 +700,17 @@
         </div>
     </div>
 
-    <!-- 4. SECCIÓN "HOLA, SOY KAROL" A ANCHO DE PÁGINA (GRANDE Y DESTACADA) -->
+    <!-- 4. SECCIÓN "HOLA, SOY KAROL" A ANCHO DE PÁGINA -->
     <div class="karol-section-full">
         <div class="karol-content-container">
             <div class="karol-img-container">
                 <img src="karol - 2.png" alt="Karol RENAX">
             </div>
             <div class="karol-text-content">
-               
-<h2 class="titulo-karol" data-es="HOLA, SOY KAROL" data-en="HELLO, I'M KAROL">
-    <span data-es="HOLA," data-en="HELLO,">HOLA,</span>
-    <span data-es="SOY KAROL" data-en="I'M KAROL">SOY KAROL</span>
-</h2>
-
+                <h2 class="titulo-karol" data-es="HOLA, SOY KAROL" data-en="HELLO, I'M KAROL">
+                    <span data-es="HOLA," data-en="HELLO,">HOLA,</span>
+                    <span data-es="SOY KAROL" data-en="I'M KAROL">SOY KAROL</span>
+                </h2>
                 <h3 data-es="Una visión creativa que transforma marcas." data-en="A creative vision that transforms brands.">Creatividad, estrategia y compromiso con cada marca.</h3>
                 <p data-es="RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades."
                    data-en="RENAX was born from my passion for design and my purpose of helping brands evolve without losing their essence. As founder, I work with creativity, strategy, and dedication to build visual identities that inspire trust, reflect stories, and open new opportunities.">
@@ -745,20 +720,17 @@
         </div>
     </div>
 
-    <!-- 5. CINTURÓN INFINITO (MARQUESINA RÁPIDA) -->
+    <!-- 5. CINTURÓN INFINITO -->
     <div class="infinite-belt-section">
-        
-    <div class="belt-track-left">
-        <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+        <div class="belt-track-left">
+            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+        </div>
+        <div class="belt-track-right">
+            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+        </div>
     </div>
 
-    <div class="belt-track-right">
-        <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-    </div>
-
-        
-
-    <!-- 6. ¿QUIÉNES SOMOS? (FONDO NEGRO Y TEXTO UNIFICADO CON RAZONES DE RENAX) -->
+    <!-- 6. ¿QUIÉNES SOMOS? (FONDO NEGRO, SIN BORDE Y ALINEADO A LA DERECHA) -->
     <section class="quienes-somos-section" id="quienes-somos">
         <div class="quienes-somos-box">
             <h2 data-es="¿QUIÉNES SOMOS?" data-en="WHO WE ARE?">¿QUIÉNES SOMOS?</h2>
@@ -773,7 +745,7 @@
         </div>
     </section>
 
-    <!-- 7. CARRUSEL DE IMPACTO A ANCHO DE PÁGINA -->
+    <!-- 7. CARRUSEL DE IMPACTO A ANCHO TOTAL -->
     <section class="renax-carousel-section">
         <div class="renax-carousel">
             <div class="renax-carousel-track">
@@ -986,32 +958,6 @@
                     if (span) span.textContent = "INICIAR SESIÓN";
                 }
             }
-        });
-    </script>
-    
-    <!-- SCRIPT DE INTERACTIVIDAD DE TARJETAS -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const tarjetas = document.querySelectorAll(".vision-mission-container .card-box");
-
-            tarjetas.forEach(function (tarjeta) {
-                if (tarjeta.dataset.renaxClick === "true") return;
-                tarjeta.dataset.renaxClick = "true";
-
-                function alternarTarjeta() {
-                    const abierta = tarjeta.classList.toggle("is-open");
-                    tarjeta.setAttribute("aria-expanded", String(abierta));
-                }
-
-                tarjeta.addEventListener("click", alternarTarjeta);
-
-                tarjeta.addEventListener("keydown", function (evento) {
-                    if (evento.key === "Enter" || evento.key === " ") {
-                        evento.preventDefault();
-                        alternarTarjeta();
-                    }
-                });
-            });
         });
     </script>
 
