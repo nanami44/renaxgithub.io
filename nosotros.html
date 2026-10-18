@@ -731,6 +731,73 @@ background-image:
     transform: scale(1);
 }
 
+/* CORRECCIÓN: APERTURA DE TARJETAS VISIÓN Y MISIÓN */
+
+.vision-mission .card-box {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background 0.6s ease,
+                border-color 0.6s ease,
+                box-shadow 0.6s ease,
+                transform 0.5s ease;
+}
+
+.vision-mission .card-box h2 {
+    position: relative;
+    z-index: 2;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    text-align: center;
+    transition: min-height 0.6s ease,
+                transform 0.5s ease;
+}
+
+.vision-mission .card-box p {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: scale(0.85);
+    margin: 0;
+    padding: 0 28px;
+    color: #ffffff;
+    transition: max-height 0.7s ease,
+                opacity 0.5s ease,
+                transform 0.6s ease,
+                padding 0.5s ease;
+}
+
+/* AL HACER CLIC */
+.vision-mission .card-box.is-open {
+    background: linear-gradient(
+        135deg,
+        #080808 0%,
+        #520000 55%,
+        #160000 100%
+    ) !important;
+    border-color: #ff3333;
+    box-shadow: 0 0 30px rgba(204, 0, 0, 0.3);
+}
+
+.vision-mission .card-box.is-open h2 {
+    min-height: 100px;
+    transform: scale(0.96);
+}
+
+.vision-mission .card-box.is-open p {
+    max-height: 500px;
+    opacity: 1;
+    transform: scale(1);
+    padding: 10px 28px 35px;
+}
+
     </style>
 </head>
 <body>
