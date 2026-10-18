@@ -1299,3 +1299,17 @@ object-fit: cover;
         bottom: 15px !important;
     }
 }
+/* ACERCAR LA GALERÍA AL CARRUSEL */
+.renax-horizontal-ticker-wrapper {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.renax-asymmetric-grid {
+    margin-top: 0 !important;
+}
+
+.renax-galeria-extra {
+    margin-top: 0 !important;
+    padding-top: 20px !important;
+}
