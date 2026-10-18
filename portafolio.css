@@ -1273,3 +1273,29 @@ object-fit: cover;
     margin: 0 !important;
     padding: 0 !important;
 }
+/* BOTONES SOCIALES JUNTO A "TU MARCA ESTÁ LISTA" */
+.renax-floating-buttons {
+    position: absolute !important;
+    right: 35px !important;
+    bottom: 35px !important;
+    top: auto !important;
+    left: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 12px !important;
+    z-index: 10 !important;
+}
+
+/* CONTENEDOR DE LA SECCIÓN FINAL */
+.renax-cta-section {
+    position: relative !important;
+}
+
+/* EVITAR QUE SE DESPLACEN EN MÓVILES */
+@media (max-width: 600px) {
+    .renax-floating-buttons {
+        right: 15px !important;
+        bottom: 15px !important;
+    }
+}
