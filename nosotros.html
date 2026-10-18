@@ -376,58 +376,6 @@
             margin: 0;
         }
 
-        /* 5. CINTURÓN INFINITO (MARQUESINA RÁPIDA Y CONTRARIA) */
-        .infinite-belt-section {
-            width: 100%;
-            background: #000000;
-            padding: 25px 0;
-            overflow: hidden;
-            border-top: 2px solid rgba(204, 0, 0, 0.4);
-            border-bottom: 2px solid rgba(204, 0, 0, 0.4);
-            margin: 50px 0;
-        }
-
-        .belt-track-left, .belt-track-right {
-            display: flex;
-            width: max-content;
-            gap: 40px;
-            white-space: nowrap;
-        }
-
-        .belt-track-left {
-            animation: scrollLeft 12s linear infinite;
-        }
-
-        .belt-track-right {
-            animation: scrollRight 12s linear infinite;
-            margin-top: 10px;
-        }
-
-        .belt-item {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 38px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .belt-item.solid {
-            color: #ffffff;
-        }
-
-        .belt-item.outline {
-            color: transparent;
-            -webkit-text-stroke: 2px #ffffff;
-        }
-
-        @keyframes scrollLeft {
-            from { transform: translateX(0); }
-            to { transform: translateX(-50%); }
-        }
-
-        @keyframes scrollRight {
-            from { transform: translateX(-50%); }
-            to { transform: translateX(0); }
         }
 
         /* 6. ¿QUIÉNES SOMOS? (FONDO NEGRO Y TEXTO UNIFICADO CON RAZONES DE RENAX) */
@@ -612,6 +560,80 @@
                 flex-basis: 290px;
             }
         }
+        
+/* CINTURÓN RENAX: ENCUENTRO Y RETORNO */
+
+.infinite-belt-section {
+    width: 100%;
+    overflow: hidden;
+    padding: 35px 0;
+    background: #080808;
+    display: flex;
+    flex-direction: column;
+    gap: 38px;
+}
+
+.belt-track-left,
+.belt-track-right {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.belt-item {
+    display: block;
+    white-space: nowrap;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(42px, 8vw, 130px);
+    font-weight: 900;
+    line-height: 1.15;
+    text-align: center;
+}
+
+/* Frase superior: blanca y sólida */
+.belt-track-left .belt-item {
+    color: #ffffff;
+    animation: encuentroIzquierda 4s ease-in-out infinite alternate;
+}
+
+/* Frase inferior: contorno blanco */
+.belt-track-right .belt-item {
+    color: transparent;
+    -webkit-text-stroke: 2px #ffffff;
+    animation: encuentroDerecha 4s ease-in-out infinite alternate;
+}
+
+@keyframes encuentroIzquierda {
+    from { transform: translateX(25vw); }
+    to   { transform: translateX(-25vw); }
+}
+
+@keyframes encuentroDerecha {
+    from { transform: translateX(-25vw); }
+    to   { transform: translateX(25vw); }
+}
+
+/* Adaptación a móviles */
+@media (max-width: 600px) {
+    .infinite-belt-section {
+        gap: 25px;
+        padding: 25px 0;
+    }
+
+    .belt-item {
+        font-size: 11vw;
+    }
+
+    .belt-track-left .belt-item {
+        animation-name: encuentroIzquierda;
+    }
+
+    .belt-track-right .belt-item {
+        animation-name: encuentroDerecha;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -701,23 +723,16 @@
 
     <!-- 5. CINTURÓN INFINITO (MARQUESINA RÁPIDA) -->
     <div class="infinite-belt-section">
-        <div class="belt-track-left">
-            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-        </div>
-        <div class="belt-track-right">
-            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
-        </div>
+        
+    <div class="belt-track-left">
+        <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
     </div>
+
+    <div class="belt-track-right">
+        <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+    </div>
+
+        
 
     <!-- 6. ¿QUIÉNES SOMOS? (FONDO NEGRO Y TEXTO UNIFICADO CON RAZONES DE RENAX) -->
     <section class="quienes-somos-section" id="quienes-somos">
