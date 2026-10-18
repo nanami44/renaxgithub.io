@@ -922,67 +922,56 @@ object-fit: cover;
         animation: none;
     }
 }
-
-/* TÍTULO VERTICAL SIN CINTURÓN */
-.renax-title-vertical {
-    width: 100%;
-    max-width: 100%;
-    min-height: 0;
-    height: auto;
-    padding: 45px 20px;
-    margin: 0;
-    overflow: visible;
-    background: transparent;
-    border: none;
-    box-sizing: border-box;
+/* ==========================================
+   DISEÑO DE TÍTULO VERTICAL ESTILO EDITORIAL
+   ========================================== */
+#proyectos {
+  display: grid;
+  grid-template-columns: 220px 1fr; /* Columna estrecha para el texto vertical y amplia para el grid */
+  gap: 40px;
+  align-items: start;
 }
 
-.renax-title-vertical .renax-massive-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin: 0 auto;
-    max-width: 100%;
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(42px, 7vw, 100px);
-    font-weight: 900;
-    line-height: 0.95;
-    text-align: center;
-    overflow-wrap: anywhere;
+#proyectos .renax-sticky-title {
+  position: sticky;
+  top: 130px;
 }
 
-.renax-word-trabajo {
-    color: #e50914;
+/* Estilo vertical apilado para el título */
+.renax-massive-title.vertical-title {
+  display: flex;
+  flex-direction: column; /* Apila cada palabra/línea hacia abajo */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;      /* Tamaño equilibrado para que luzca elegante y vertical */
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0;
+  letter-spacing: -1px;
 }
 
-.renax-word-con {
-    color: #fff;
+.renax-massive-title.vertical-title .red-text {
+  color: #e50914;
+  margin-bottom: 5px;
 }
 
-.renax-word-identidad {
-    color: #fff;
+.renax-massive-title.vertical-title .white-text {
+  color: #ffffff;
+  margin-bottom: 4px;
 }
 
-/* Mantener la galería en su tamaño original */
-.renax-editorial-section .renax-asymmetric-grid {
-    min-width: 0;
-    width: 100%;
+/* Responsivo para móviles y pantallas medianas */
+@media (max-width: 1024px) {
+  #proyectos {
+    grid-template-columns: 1fr; /* Vuelve a una columna en pantallas pequeñas */
+  }
+  #proyectos .renax-sticky-title {
+    position: static;
+  }
+  .renax-massive-title.vertical-title {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 3rem;
+  }
 }
-
-.renax-editorial-section .renax-grid-card {
-    min-width: 0;
-    max-width: 100%;
-}
-
-@media (max-width: 600px) {
-    .renax-title-vertical {
-        padding: 30px 10px;
-    }
-
-    .renax-title-vertical .renax-massive-title {
-        font-size: clamp(36px, 10vw, 58px);
-    }
-}
-
