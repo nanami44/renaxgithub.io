@@ -285,6 +285,25 @@
             opacity: 1;
             padding: 10px 28px 35px;
             transform: scale(1);
+           
+/* ZOOM AL PASAR EL CURSOR */
+.vision-mission .card-box:hover {
+    transform: scale(1.04);
+    box-shadow: 0 12px 30px rgba(204, 0, 0, 0.25);
+    z-index: 5;
+}
+
+/* ZOOM CUANDO LA TARJETA ESTÁ ABIERTA */
+.vision-mission .card-box.is-open {
+    transform: scale(1.04);
+    z-index: 5;
+}
+
+/* ZOOM UN POCO MAYOR AL TOCAR UNA TARJETA ABIERTA */
+.vision-mission .card-box.is-open:hover {
+    transform: scale(1.06);
+}
+ 
         }
 
         /* 4. DOS IMAGENES Y TEXTO */
