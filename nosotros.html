@@ -636,19 +636,20 @@
    TARJETAS BLANCAS, TEXTO NEGRO Y LUZ ROJA
    ========================================== */
 
-/* Romper el límite del contenedor exterior */
+/* CARRUSEL RENAX A ANCHO COMPLETO */
 .renax-carousel-section {
-    width: 100vw !important;
+    width: 100% !important;
     max-width: none !important;
+    margin: 60px 0 0 !important;
+    padding: 35px 0 !important;
     position: relative !important;
-    left: 50% !important;
-    margin-left: -50vw !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    box-sizing: border-box !important;
+    left: auto !important;
     overflow: hidden !important;
+    box-sizing: border-box !important;
+    background: #050505 !important;
 }
+
+
 
 /* Ventana visible del carrusel */
 .renax-carousel-section .renax-carousel {
@@ -669,20 +670,38 @@
     align-items: stretch !important;
 }
 
-/* Tarjetas blancas con borde e iluminación rojos */
+
+/* TARJETAS BLANCAS CON BORDE Y LUZ ROJA */
 .renax-carousel-section .renax-carousel-card {
+    flex: 0 0 420px !important;
+    min-height: 200px;
+    padding: 30px 25px;
     background: #ffffff !important;
     border: 2px solid #e00000 !important;
-    border-radius: 24px !important;
-    box-shadow:
-        0 0 10px rgba(255, 0, 0, 0.35),
-        0 0 24px rgba(255, 0, 0, 0.22),
-        0 8px 25px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 20px !important;
     color: #000000 !important;
-    box-sizing: border-box !important;
-    transition: box-shadow 0.3s ease,
-                transform 0.3s ease !important;
+    box-shadow:
+        0 0 10px rgba(255, 0, 0, 0.4),
+        0 0 25px rgba(255, 0, 0, 0.25) !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
+.renax-carousel-section .renax-carousel-card h3,
+.renax-carousel-section .renax-carousel-card p {
+    color: #000000 !important;
+}
+
+.renax-carousel-section .renax-carousel-card:hover {
+    box-shadow:
+        0 0 16px rgba(255, 0, 0, 0.7),
+        0 0 35px rgba(255, 0, 0, 0.45) !important;
+    transform: translateY(-4px);
+}
+
 
 /* Títulos negros */
 .renax-carousel-section .renax-carousel-card h1,
