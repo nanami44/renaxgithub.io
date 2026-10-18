@@ -1,870 +1,551 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RENAX - Nosotros - Transformamos marcas sin borrar su historia.">
+    <title>RENAX | Nosotros - Transformamos marcas sin borrar su historia</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #050505;
+            --card-bg: #120303;
+            --primary-red: #8B0000;
+            --accent-red: #cc0000;
+            --text-color: #ffffff;
+            --text-muted: #cccccc;
+        }
 
-  <meta name="description"
-        content="RENAX - Transformamos marcas sin borrar su historia.">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-  <title>RENAX | Transformamos marcas sin borrar su historia</title>
+        /* FONDO GENERAL DE LA PÁGINA CON TU IMAGEN PORTAFOLIO-ROJO.JPEG */
+        html, body {
+            background-color: #050505;
+            background-image: linear-gradient(rgba(5, 5, 5, 0.82), rgba(5, 5, 5, 0.88)), url('portafolio-rojo.jpeg');
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        /* HEADER */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(5, 5, 5, 0.95);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
 
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="inicio.css?v=1">
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+        }
+
+        .logo-renax {
+            height: 35px;
+            display: block;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-red);
+        }
+
+        .language {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .login-btn {
+            background-color: var(--primary-red);
+            color: #fff;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .login-btn:hover {
+            background-color: var(--accent-red);
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* SECTIONS GENERAL */
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* PORTADA A TODO EL ANCHO */
+        .hero-banner {
+            width: 100%;
+            height: 580px;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.50)), url('nosotros-bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 70px;
+            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+        }
+
+        /* 2. VIDEO */
+        .video-section {
+            width: 85%;
+            max-width: 1200px;
+            height: 650px;
+            margin: 0 auto;
+            background-color: #111;
+            border: 1px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .video-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* 3. VISION Y MISION */
+        .vision-mission {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .card-box {
+            background: rgba(10, 5, 5, 0.85);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #330000;
+        }
+
+        .card-box h2 {
+            color: #ff3333;
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        /* 4. DOS IMAGENES Y TEXTO */
+        .images-text-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .img-container {
+            width: 100%;
+            max-width: 520px;
+            height: 300px;
+            margin: 0 auto;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .text-content {
+            width: 100%;
+            max-width: 1100px;
+            margin: 40px auto 30px;
+            padding: 30px 20px;
+            text-align: left;
+            background: rgba(10, 5, 5, 0.75);
+            border-radius: 16px;
+            border: 1px solid rgba(204, 0, 0, 0.3);
+        }
+
+        .text-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 46px;
+            line-height: 1.15;
+            color: #cc0000;
+            margin: 0 0 18px 0;
+            text-transform: uppercase;
+        }
+
+        .text-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 23px;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+        }
+
+        .text-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #ffffff;
+            margin: 0 0 18px 0;
+        }
+
+        .text-content .frase-renax {
+            font-weight: 900;
+            font-size: 18px;
+            color: #ffffff;
+            margin-top: 25px;
+        }
+
+        /* 5 & 6. QUIENES SOMOS Y QUE HACEMOS */
+        .content-block {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(10, 5, 5, 0.75);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(204, 0, 0, 0.3);
+        }
+
+        .content-block h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            color: #cc0000;
+            margin-bottom: 25px;
+        }
+
+        .content-block p {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        /* 7. POR QUE RENAX */
+        .why-renax {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: transparent;
+            padding: 0;
+        }
+
+        .why-renax h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            color: #cc0000;
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .why-renax ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .why-renax li {
+            background: linear-gradient(135deg, rgba(40, 3, 3, 0.88), rgba(15, 2, 2, 0.94));
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(204, 0, 0, 0.4);
+            font-size: 18px;
+            font-weight: 500;
+            color: #ffffff;
+            text-align: left;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .why-renax li:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 51, 51, 0.8);
+        }
+
+        /* 8. CARRUSEL INFINITO DE TARJETAS DE IMPACTO */
+        .renax-carousel-section {
+            width: 100%;
+            padding: 45px 0;
+            overflow: hidden;
+        }
+
+        .renax-carousel {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .renax-carousel-track {
+            display: flex;
+            width: max-content;
+            gap: 24px;
+            animation: renaxInfiniteScroll 32s linear infinite;
+        }
+
+        .renax-carousel-card {
+            box-sizing: border-box;
+            flex: 0 0 400px;
+            min-height: 185px;
+            padding: 30px 25px;
+            background: rgba(15, 2, 2, 0.90);
+            border: 1px solid #8b0000;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .renax-carousel-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: #ff4545;
+            margin: 0 0 18px;
+        }
+
+        .renax-carousel-card p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .renax-carousel:hover .renax-carousel-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes renaxInfiniteScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(-50% - 12px)); }
+        }
+
+        /* 9. FOOTER */
+        .renax-footer {
+            width: 100%;
+            background: #080808;
+            border-top: 1px solid #650000;
+            padding: 45px 5% 35px;
+            color: #ffffff;
+        }
+
+        .footer-titulo {
+            display: block;
+            text-align: center;
+            color: #e60026;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            margin: 0 0 45px;
+        }
+
+        .footer-secciones {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 35px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 a {
+            color: #bcbcbc;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .footer-column h3 a:hover {
+            color: #ff3344;
+        }
+
+        .footer-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-menu-links a {
+            color: #f0f0f0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14px;
+            line-height: 1.6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-menu-links a:hover {
+            color: #ff3344;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1000px) {
+            .vision-mission, .images-text-section, .why-renax ul {
+                grid-template-columns: 1fr;
+            }
+            .footer-secciones {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            .nav-container {
+                padding: 15px 20px;
+            }
+            .nav-menu {
+                display: none;
+            }
+            .nav-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-secciones {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .renax-carousel-card {
+                flex-basis: 290px;
+            }
+        }
+    </style>
 </head>
-
-<body class="inicio-renax">
-
-
-
-
-  <!-- ================= HEADER ================= -->
-
-  <header class="site-header">
-    <div class="nav-container">
-
-   <a href="index.html" data-lang="footerDescription">
-    <img src="logo-renax-transparente.png" alt="RENAX" class="logo-renax">
-</a>
-
-      <button class="nav-toggle"
-              id="navToggle"
-              aria-label="Abrir menú">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-
-      <nav class="nav-menu" id="navMenu">
-
-        <a href="index.html"
-           class="nav-link active">
-          Inicio
-        </a>
-
-        <a href="nosotros.html"
-           class="nav-link">
-          Nosotros
-        </a>
-
-        <a href="portafolio.html"
-           class="nav-link">
-          Portafolio
-        </a>
-
-        <a href="servicios.html"
-           class="nav-link">
-          Servicios
-        </a>
-
-        <a href="contacto.html"
-           class="nav-link">
-          Contáctanos
-        </a>
-
-      </nav>
-
-      <button class="language" id="languageBtn" type="button">ESP</button>
-<a href="login.html" class="login-btn" id="navLoginBtn"><span>INICIAR SESIÓN</span></a>
-    </div>
-  </header>
-  
-<!-- CINTURÓN ANIMADO RENAX -->
-<div class="renax-cinturon" aria-label="RENAX">
-  <div class="renax-cinturon-pista">
-    <span>RENAX ✦ TRANSFORMAMOS MARCAS</span>
-    <span>RENAX ✦ TRANSFORMAMOS MARCAS</span>
-    <span>RENAX ✦ TRANSFORMAMOS MARCAS</span>
-    <span>RENAX ✦ TRANSFORMAMOS MARCAS</span>
-  </div>
-</div>
-
-<div class="inicio-fondo"></div>
-
-
-
-  <!-- ================= CONTENIDO ================= -->
-
-  <main>
-
-    <!-- HERO -->
-
-   <section class="renax-hero" id="hero-inicio">
-
-
-      <div class="renax-hero-content">
-
-        <p class="hero-small-text" data-lang="heroSmall">
-    HOLA, SOMOS
-</p>
-
-        <h1 class="hero-collage-title">
-
-    EXPERTOS EN
-
-   
-
-    <br>
-
-    TRANSFORMAR
-
-    
-
-    <br>
-
-    MARCAS
-
-</h1>
-
-<p class="hero-subtitle" data-lang="heroText">
-    Sin borrar la historia que las hace únicas
-</p>
-       
-        
-
-        <a href="portafolio.html" class="renax-button">
-    <span data-lang="heroButton">Ver nuestro portafolio</span>
-    <span>×</span>
-</a>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= FRASE PRINCIPAL ================= -->
-
-   <section class="renax-statement" id="esencia-marca">
-
-      <div class="statement-main">
-
-       <h2 class="statement-title" data-lang="statement">
-
-    <span class="statement-line">
-        VUELVE A
-        <img src="renax-persona.jpg" alt="RENAX" class="statement-img statement-img-persona">
-    </span>
-
-    <span class="statement-line">
-    DESTACAR
-    <img src="renax-rojo.jpg" alt="RENAX" class="statement-img statement-img-rojo">
-</span>
-
-    <span class="statement-line">
-        SIN
-        <img src="renax-mirada.jpg" alt="RENAX" class="statement-img statement-img-mirada">
-        PERDER
-    </span>
-
-    <span class="statement-line">
-        TU ESENCIA
-    </span>
-
-</h2>
-
-      </div>
-
-      <div class="statement-description">
-
-        <p data-lang="statementText">
-    Transformamos marcas con historia en identidades actuales,
-    sin perder aquello que las hace únicas
-</p>
-
-       <a href="contacto.html" class="renax-button small">
-    <span data-lang="transformButton">TRANSFORMA TU MARCA</span> →
-</a>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= HISTORIA ================= -->
-
-  <section class="history-section" id="historia-marca">
-      <h2 data-lang="historyTitle">
-    TU HISTORIA MERECE
-    <br>
-    UNA IMAGEN QUE ESTÉ A
-    <br>
-    SU ALTURA
-</h2>
-
-      <div class="history-cards">
-
-        <article>
-         <h3 data-lang="history1">HISTORIA</h3>
-
-         <p data-lang="historyText">
-    Una marca que lleva años construyendo confianza
-    tiene algo que una marca nueva todavía no posee:
-    historia.
-</p>
-        </article>
-
-
-        <article>
-          <h3 data-lang="history2">ESENCIA</h3>
-
-          <p data-lang="essenceText">
-    En RENAX no queremos borrarla. Queremos descubrir
-    qué hace especial tu negocio y conservar su esencia.
-</p>
-        </article>
-
-
-        <article>
-         <h3 data-lang="history3">EVOLUCIÓN</h3>
-
-         <p data-lang="evolutionText">
-    Convertimos esa esencia en una identidad visual
-    moderna, coherente y preparada para el presente.
-</p>
-        </article>
-
-      </div>
-
-     <p class="history-bottom" data-lang="historyBottom">
-    Impulsamos la evolución de marcas con historia,
-    conservando su esencia y proyectándolas hacia nuevas
-    oportunidades.
-</p>
-
-    </section>
-<!-- ================= FRASE EN MOVIMIENTO ================= -->
-
-<section class="renax-marquee">
-
-  <div class="marquee-track">
-
-    <div class="marquee-content">
-      <span>CONSERVAMOS LA ESENCIA DE TU MARCA.</span>
-      <span>ANALIZAMOS ANTES DE DISEÑAR.</span>
-      <span>UNIMOS ESTRATEGIA Y DISEÑO.</span>
-      <span>CREAMOS UNA IDENTIDAD PREPARADA PARA EVOLUCIONAR.</span>
-
-      <!-- Repetición para crear movimiento continuo -->
-      <span>CONSERVAMOS LA ESENCIA DE TU MARCA.</span>
-      <span>ANALIZAMOS ANTES DE DISEÑAR.</span>
-      <span>UNIMOS ESTRATEGIA Y DISEÑO.</span>
-      <span>CREAMOS UNA IDENTIDAD PREPARADA PARA EVOLUCIONAR.</span>
-    </div>
-
-  </div>
-
-</section>
-
-    <!-- ================= PORTAFOLIO DESTACADO ================= -->
-
-<section class="renax-work" id="proyectos">
-<div class="work-label" data-lang="workLabel" style="font-size: 11rem !important; line-height: 0.9;">
-  WORK
-  </div>
-  
-      <div class="work-content">
-
-    <div class="work-main-image">
-
-        <img src="mate2.png" alt="Día de las Matemáticas">
-
-        <h3>Día de las Matemáticas</h3>
-
-        <a href="dia-matematicas.html" class="renax-button centered">
-            VER PROYECTO →
-        </a>
-
-    </div>
-
-        
-
-        <div class="work-side">
-
-          <div class="work-card skenzi-card">
-           <img src="skenzi.png" alt="Proyecto Skenzi">
-            <h3 data-lang="skenziTitle">Skenzi</h3>
-            </div>
-         <div class="work-card design-card">
-    <img src="iea-logo.png.jpeg" alt="Proyecto YDEAS">
-    <h3>DONUT’S BITES</h3>
-</div>
-
-          
-
-        
-          <a href="portafolio.html"
-class="renax-button centered">
-<span data-lang="portfolioButton">VER NUESTRO PORTAFOLIO</span> →
-</a>
-          
-          </div>
-
-
-        
-
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="logo-renax-transparente.png" alt="RENAX" class="logo-renax">
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-lang="footerInicio">Inicio</a>
+                <a href="nosotros.html" class="nav-link active" data-lang="footerNosotros">Nosotros</a>
+                <a href="portafolio.html" class="nav-link" data-lang="footerPortfolio">Portafolio</a>
+                <a href="servicios.html" class="nav-link" data-lang="footerServices">Servicios</a>
+                <a href="contacto.html" class="nav-link" data-lang="footerContact">Contáctanos</a>
+            </nav>
+
+            <button class="language" id="languageBtn" type="button">ESP</button>
+            <a href="login.html" class="login-btn" id="navLoginBtn"><span>INICIAR SESIÓN</span></a>
         </div>
+    </header>
 
-      </div>
-
- 
-
+    <!-- 1. PORTADA -->
+    <section>
+        <div class="hero-banner" data-es="Sobre Nosotros - RENAX" data-en="About Us - RENAX">
+            Sobre Nosotros - RENAX
+        </div>
     </section>
 
-<!-- PREGUNTAS FRECUENTES RENAX -->
-<section class="renax-faq" id="preguntas-frecuentes">
-  <div class="faq-container">
-    <span class="faq-eyebrow">RENAX · ACOMPAÑAMOS TU EVOLUCIÓN</span>
-    <h2>Preguntas frecuentes<span>.</span></h2>
-    <p class="faq-intro">
-      Resolvemos tus dudas para dar el siguiente paso con tu marca.
-    </p>
-
-    <div class="faq-list">
-
-      <button class="faq-question" data-faq="0" type="button">
-        <span>¿Qué tipo de marcas trabaja RENAX?</span>
-        <span class="faq-arrow">
-    <img src="logo-renax-transparente.png" alt="RENAX">
-</span>
-      </button>
-
-      <button class="faq-question" data-faq="1" type="button">
-        <span>¿Cómo funciona el proceso de renovación de una marca?</span>
-        <span class="faq-arrow">
-    <img src="logo-renax-transparente.png" alt="RENAX">
-</span>
-      </button>
-
-      <button class="faq-question" data-faq="2" type="button">
-        <span>¿RENAX cambia completamente mi logo?</span>
-<span class="faq-arrow">
-    <img src="logo-renax-transparente.png" alt="RENAX">
-</span>
-      </button>
-
-      <button class="faq-question" data-faq="3" type="button">
-        <span>¿Qué incluye un proyecto de identidad visual?</span>
-       <span class="faq-arrow">
-    <img src="logo-renax-transparente.png" alt="RENAX">
-</span>
-      </button>
-
-      <button class="faq-question" data-faq="4" type="button">
-        <span>¿Cómo sé qué servicio necesita mi marca?</span>
-        <span class="faq-arrow">
-    <img src="logo-renax-transparente.png" alt="RENAX">
-</span>
-      </button>
-
-      <button class="faq-question" data-faq="5" type="button">
-        <span>¿Puedo contratar solo diseño gráfico?</span>
-        <span class="faq-arrow">
-    <img src="logo-renax-transparente.png" alt="RENAX">
-</span>
-      </button>
-
-      <button class="faq-question" data-faq="6" type="button">
-        <span>¿Trabajan con marcas que ya tienen varios años?</span>
-        <span class="faq-arrow">
-    <img src="logo-renax-transparente.png" alt="RENAX">
-</span>
-      </button>
-
-      <button class="faq-question" data-faq="7" type="button">
-        <span>¿Cómo puedo iniciar un proyecto con RENAX?</span>
-        <span class="faq-arrow">
-    <img src="logo-renax-transparente.png" alt="RENAX">
-</span>
-      </button>
-
-    </div>
-  </div>
-</section>
-
-<!-- VENTANA INDIVIDUAL DE RESPUESTAS -->
-<div class="faq-modal" id="faqModal" aria-hidden="true">
-  <div class="faq-modal-card" role="dialog"
-       aria-modal="true" aria-label="Respuesta a pregunta frecuente">
-
-    
-<div class="faq-modal-top">
-    <button class="faq-back" id="faqBack" type="button" aria-label="Volver a las preguntas">Volver</button>
-</div>
-
-
-    <div class="faq-modal-content">
-      <p id="faqAnswer" aria-live="polite"></p>
-    </div>
-
-   
-  </div>
-</div>
-
-    <!-- ================= CTA ================= -->
-
-    <section class="renax-final-cta">
-
-     <h2 data-lang="finalTitle">
-    ¿TU MARCA ESTÁ
-    <br>
-        LISTA?
-      </h2>
-
-     <div style="display: flex; flex-direction: column; align-items: center; gap: 16px; margin-left: -20px;">
-
-  <a href="contacto.html" class="renax-button">
-    <span data-lang="contactButton">HABLEMOS DE TU MARCA</span> →
-  </a>
-
-  <a href="https://www.canva.com/design/DAHOGJ8tLuc/b4Cc_XcdRbx-OImmCGWqTg/view"
-     target="_blank"
-     rel="noopener noreferrer"
-     class="renax-button">
-    MANUAL DE MARCA ↗
-  </a>
-
-</div>
-
+    <!-- 2. VIDEO INSTITUCIONAL -->
+    <section>
+        <div class="video-section">
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/PIPt26J40WE"
+                title="Video institucional de RENAX"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
     </section>
 
-  </main>
-
-
- 
-<!-- ================ FOOTER RENAX ================ -->
-
-<footer class="renax-footer" id="footer-renax">
-
-    <h2 class="footer-titulo" data-lang="footerMenu">MENÚ</h2>
-
-    <div class="footer-secciones">
-
-        <!-- INICIO -->
-        <nav class="footer-column">
-           <h3><a href="index.html" data-lang="footerInicio">INICIO</a></h3>
-            <div class="footer-menu-links">
-                <a href="index.html#hero-inicio" data-lang="footerHomeHero">
-                    Expertos en transformar marcas
-                </a>
-                <a href="index.html#esencia-marca" data-lang="footerHomeEssence">
-                    Vuelve a destacar sin perder tu esencia
-                </a>
-                <a href="index.html#historia-marca" data-lang="footerHomeHistory">
-                    Tu historia merece una imagen que esté a su altura
-                </a>
-                <a href="index.html#preguntas-frecuentes" data-lang="footerHomeFAQ">
-                    Preguntas frecuentes
-                </a>
+    <!-- 3. VISION Y MISION -->
+    <section>
+        <div class="vision-mission">
+            <div class="card-box">
+                <h2 data-es="VISIÓN" data-en="VISION">VISIÓN</h2>
+                <p data-es="Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales." 
+                   data-en="By 2030, RENAX aspires to be a departmental leader in visual identity and graphic communication, recognized for modernizing established brands and driving the growth of local businesses.">
+                    Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales.
+                </p>
             </div>
-        </nav>
-
-        <!-- NOSOTROS -->
-        <nav class="footer-column">
-         <h3><a href="nosotros.html" data-lang="footerNosotros">NOSOTROS</a></h3>
-            <div class="footer-menu-links">
-                <a href="nosotros.html#quienes-somos" data-lang="footerWho">
-                    Quiénes somos
-                </a>
-                <a href="nosotros.html#vision" data-lang="footerVision">
-                    Visión
-                </a>
-                <a href="nosotros.html#mision" data-lang="footerMission">
-                    Misión
-                </a>
-                <a href="nosotros.html#por-que-renax" data-lang="footerWhy">
-                    ¿Por qué RENAX?
-                </a>
+            <div class="card-box">
+                <h2 data-es="MISIÓN" data-en="MISSION">MISIÓN</h2>
+                <p data-es="Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia."
+                   data-en="Our mission is to offer strategic design and visual identity services for small and medium-sized enterprises, modernizing established brands, strengthening their competitiveness, and always maintaining their essence.">
+                    Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia.
+                </p>
             </div>
-        </nav>
+        </div>
+    </section>
 
-        <!-- PORTAFOLIO -->
-        <nav class="footer-column">
-          <h3><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h3>
-            <div class="footer-menu-links">
-                <a href="portafolio.html#proyectos" data-lang="footerProjects">
-                    Proyectos y trabajos realizados
-                </a>
-              
-<a href="portafolio.html#casos-estudio" data-lang="footerCases">
-    Casos de estudio
-</a>
-
+    <!-- 4. DOS IMAGENES Y TEXTO -->
+    <section>
+        <div class="images-text-section">
+            <div class="img-container">
+                <img src="karol - 2.png" alt="Imagen 1 RENAX">
             </div>
-        </nav>
-
-        <!-- SERVICIOS -->
-        <nav class="footer-column">
-           
-<h3><a href="servicios.html" data-lang="footerServices">SERVICIOS</a></h3>
-
-            <div class="footer-menu-links">
-                <a href="servicios.html#diagnostico" data-lang="footerService1">
-                    Diagnóstico de marca
-                </a>
-                <a href="servicios.html#identidad" data-lang="footerService2">
-                    Identidad visual
-                </a>
-                <a href="servicios.html#comunicacion" data-lang="footerService3">
-                    Comunicación
-                </a>
-                <a href="servicios.html#estrategia" data-lang="footerService4">
-                    Estrategia visual
-                </a>
+            <div class="img-container">
+                <img src="karol-renax..png" alt="Imagen 2 RENAX">
             </div>
-        </nav>
-
-        <!-- CONTACTO -->
-        <nav class="footer-column">
-           
-<h3><a href="contacto.html" data-lang="footerContact">CONTACTO</a></h3>
-
-            <div class="footer-menu-links">
-                <a href="contacto.html#contacto-formulario" data-lang="footerTalk">
-                    Hablemos de tu proyecto
-                </a>
-            </div>
-        </nav>
-
-    </div>
-
-</footer>
-
-
-
-
-
-
-
-  <!-- ================= JAVASCRIPT ================= -->
-
- <script>
-const navToggle = document.getElementById("navToggle");
-const navMenu = document.getElementById("navMenu");
-const languageBtn = document.getElementById("languageBtn");
-
-// Menú móvil
-if (navToggle && navMenu) {
-    navToggle.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
-    });
-}
-
-// ===============================
-// TRADUCCIÓN ESPAÑOL / INGLÉS
-// ===============================
-
-let english = false;
-
-const translations = {
-
-    es: {
-        heroSmall: "HOLA, SOMOS",
-        heroTitle: "EXPERTOS EN<br>TRANSFORMAR<br>MARCAS",
-        heroText: "Sin borrar la historia que las hace únicas.",
-        heroButton: "Ver nuestro portafolio",
-
-       statement: `<span class="statement-line">VUELVE A <img src="renax-persona.jpg" class="statement-img statement-img-persona"></span><span class="statement-line">DESTACAR <img src="renax-rojo.jpg" class="statement-img statement-img-rojo"></span><span class="statement-line">SIN <img src="renax-mirada.jpg" class="statement-img statement-img-mirada"> PERDER</span><span class="statement-line">TU ESENCIA</span>`,
-        statementText: "Transformamos marcas con historia en identidades actuales, sin perder aquello que las hace únicas.",
-
-        transformButton: "TRANSFORMA TU MARCA",
-
-        historyTitle: "TU HISTORIA MERECE<br>UNA IMAGEN QUE ESTÉ A<br>SU ALTURA.",
-        historyText: "Una marca que lleva años construyendo confianza tiene algo que una marca nueva todavía no posee: historia.",
-        history1: "HISTORIA",
-        history2: "ESENCIA",
-        history3: "EVOLUCIÓN",
-
-        essenceText: "En RENAX no queremos borrarla. Queremos descubrir qué hace especial tu negocio y conservar su esencia.",
-        evolutionText: "Convertimos esa esencia en una identidad visual moderna, coherente y preparada para el presente.",
-        historyBottom: "Impulsamos la evolución de marcas con historia, conservando su esencia y proyectándolas hacia nuevas oportunidades.",
-
-        workLabel: "WORK",
-        workDescription: "Proyectos de transformación de marca",
-
-        skenziTitle: "Skenzi",
-        skenziText: "Renovación de identidad visual.",
-
-        transformationTitle: "Transformación",
-        transformationText: "Marcas que evolucionan sin perder su esencia.",
-
-        portfolioButton: "VER NUESTRO PORTAFOLIO",
-
-        finalTitle: "¿TU MARCA ESTÁ<br>LISTA?",
-        contactButton: "HABLEMOS DE TU MARCA",
-
-        footerInicio: "INICIO",
-        footerDescription: "Transformamos marcas sin borrar su historia.",
-        footerNosotros: "NOSOTROS",
-        footerWho: "Quiénes somos",
-        footerVision: "Visión",
-        footerMission: "Misión",
-        footerWhy: "¿Por qué RENAX?",
-        footerPortfolio: "PORTAFOLIO",
-        footerProjects: "Proyectos y trabajos realizados",
-       
-footerContact: "CONTACTO",
-footerTalk: "Hablemos de tu proyecto",
-
-footerMenu: "MENÚ",
-footerServices: "Servicios",
-footerContactPage: "Contáctanos",
-footerHomeTitle: "INICIO",
-footerHomeHero: "Expertos en transformar marcas",
-footerHomeEssence: "Vuelve a destacar sin perder tu esencia",
-footerHomeHistory: "Tu historia merece una imagen que esté a su altura",
-footerHomeFAQ: "Preguntas frecuentes"
-
-footerService1: "Diagnóstico de marca",
-footerService2: "Identidad visual",
-footerService3: "Comunicación",
-footerService4: "Estrategia visual",
-
-    },
-
-    en: {
-        heroSmall: "HELLO, WE ARE",
-        heroTitle: "EXPERTS IN<br>TRANSFORMING<br>BRANDS",
-        heroText: "Without erasing the history that makes them unique.",
-        heroButton: "View our portfolio",
-
-       statement: `<span class="statement-line">STAND OUT AGAIN <img src="renax-persona.jpg" class="statement-img statement-img-persona"></span><span class="statement-line">STAND OUT <img src="renax-rojo.jpg" class="statement-img statement-img-rojo"></span><span class="statement-line">WITHOUT <img src="renax-mirada.jpg" class="statement-img statement-img-mirada"> LOSING</span><span class="statement-line">YOUR ESSENCE</span>`,
-        statementText: "We transform brands with history into modern identities without losing what makes them unique.",
-
-        transformButton: "TRANSFORM YOUR BRAND",
-
-        historyTitle: "YOUR STORY DESERVES<br>AN IMAGE THAT LIVES UP TO<br>ITS VALUE.",
-        historyText: "A brand that has spent years building trust has something a new brand does not yet have: history.",
-        history1: "HISTORY",
-        history2: "ESSENCE",
-        history3: "EVOLUTION",
-
-        essenceText: "At RENAX, we don't want to erase it. We want to discover what makes your business special and preserve its essence.",
-        evolutionText: "We transform that essence into a modern, coherent visual identity prepared for the present.",
-        historyBottom: "We drive the evolution of brands with history, preserving their essence and projecting them toward new opportunities.",
-
-        workLabel: "WORK",
-        workDescription: "Brand transformation projects",
-
-        skenziTitle: "Skenzi",
-        skenziText: "Visual identity renewal.",
-
-        transformationTitle: "Transformation",
-        transformationText: "Brands that evolve without losing their essence.",
-
-        portfolioButton: "VIEW OUR PORTFOLIO",
-
-        finalTitle: "IS YOUR BRAND<br>READY?",
-        contactButton: "LET'S TALK ABOUT YOUR BRAND",
-
-        footerInicio: "HOME",
-        footerDescription: "We transform brands without erasing their history.",
-        footerNosotros: "ABOUT US",
-        footerWho: "Who we are",
-        footerVision: "Vision",
-        footerMission: "Mission",
-        footerWhy: "Why RENAX?",
-        footerPortfolio: "PORTFOLIO",
-        footerProjects: "Projects and completed work",
-        
-footerContact: "CONTACT",
-footerTalk: "Let's talk about your project",
-
-footerMenu: "MENU",
-footerServices: "Services",
-footerContactPage: "Contact us",
-footerHomeTitle: "HOME",
-footerHomeHero: "Experts in transforming brands",
-footerHomeEssence: "Stand out again without losing your essence",
-footerHomeHistory: "Your story deserves an image that lives up to it",
-footerHomeFAQ: "Frequently asked questions",
-          
-footerService1: "Brand diagnosis",
-footerService2: "Visual identity",
-footerService3: "Communication",
-footerService4: "Visual strategy",
-
-    }
-};
-
-
-if (languageBtn) {
-    languageBtn.addEventListener("click", function () {
-
-        english = !english;
-
-        const language = english ? translations.en : translations.es;
-
-        // Cambiar el texto del botón
-        languageBtn.textContent = english ? "ESP" : "ENG";
-
-        // Cambiar todos los textos de la página
-        document.querySelectorAll("[data-lang]").forEach(function(element) {
-
-            const key = element.getAttribute("data-lang");
-
-            if (language[key]) {
-                element.innerHTML = language[key];
-            }
-
-        });
-// Ocultar descripción y botón en inglés
-const statementDescription = document.querySelector(".statement-description");
-
-if (statementDescription) {
-    statementDescription.style.display = english ? "none" : "";
-}
-    });
-}
-</script>
-
-<script>
-window.addEventListener("load", function () {
-
-    const transicion = document.getElementById("renaxPageTransition");
-
-    if (transicion) {
-        setTimeout(function () {
-            transicion.classList.add("hide");
-        }, 900);
-    }
-
-});
-document.querySelectorAll("a[href]").forEach(function (enlace) {
-
-    enlace.addEventListener("click", function (e) {
-
-        const destino = enlace.getAttribute("href");
-
-        if (
-            !destino ||
-            destino.startsWith("#") ||
-            destino.startsWith("http") ||
-            destino.startsWith("mailto:")
-        ) {
-            return;
-        }
-
-        e.preventDefault();
-
-        const transicion = document.getElementById("renaxPageTransition");
-
-        if (transicion) {
-            transicion.classList.remove("hide");
-
-            setTimeout(function () {
-                window.location.href = destino;
-            }, 1400);
-
-        } else {
-            window.location.href = destino;
-        }
-
-    });
-
-});  
-  
-
-
-</script>
-  
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const modal = document.getElementById('faqModal');
-    const answer = document.getElementById('faqAnswer');
-    const back = document.getElementById('faqBack');
-    
-    if (!modal || !answer || !back) {
-        console.error('RENAX FAQ: faltan elementos de la ventana.');
-        return;
-    }
-
-    const responses = [
-        'RENAX trabaja con pequeñas y medianas empresas que desean modernizar su identidad visual, fortalecer su presencia y conservar la esencia de su marca.',
-        'Comenzamos conociendo la historia, los valores y la identidad actual de la marca. Después desarrollamos una propuesta visual que busca modernizarla sin borrar su historia.',
-        'No necesariamente. El objetivo es evaluar qué elementos deben conservarse y cuáles pueden actualizarse para lograr una identidad más clara, coherente y actual.',
-        'El contenido depende del servicio contratado y de las necesidades de cada marca. Antes de iniciar, definimos el alcance del proyecto.',
-        'Podemos revisar juntos la situación actual de tu marca y conversar sobre los objetivos que deseas alcanzar para identificar el servicio más adecuado.',
-        'Sí. Puedes consultar por un servicio específico de diseño gráfico, según las necesidades de tu negocio.',
-        'Sí. RENAX busca revitalizar marcas con trayectoria, respetando los elementos que forman parte de su historia y actualizando su identidad visual.',
-        'Puedes comunicarte con RENAX mediante la sección de contacto para conversar sobre tu marca y las necesidades de tu proyecto.'
-    ];
-
-    function openAnswer(index) {
-        const response = responses[index];
-        if (!response) return;
-
-        answer.textContent = response;
-        modal.classList.add('faq-modal-visible');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        back.focus();
-    }
-
-    function closeAnswer() {
-        modal.classList.remove('faq-modal-visible');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-    }
-
-    document.querySelectorAll('.faq-question[data-faq]').forEach(function (button) {
-        button.addEventListener('click', function () {
-            openAnswer(Number(button.dataset.faq));
-        });
-    });
-
-    back.addEventListener('click', closeAnswer);
-  
-
-    modal.addEventListener('click', function (event) {
-        if (event.target === modal) closeAnswer();
-    });
-
-    document.addEventListener('keydown', function (event) {
-        if (event.key === 'Escape' &&
-            modal.classList.contains('faq-modal-visible')) {
-            closeAnswer();
-        }
-    });
-});
-</script>
-
-
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
-
-    const firebaseConfig = {
-        apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
-        authDomain: "renax-auth.firebaseapp.com",
-        projectId: "renax-auth",
-        storageBucket: "renax-auth.firebasestorage.app",
-        messagingSenderId: "155645649809",
-        appId: "1:155645649809:web:3b203ccb729bfc8672b030"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    const navLoginBtn = document.getElementById('navLoginBtn');
-
-    onAuthStateChanged(auth, (user) => {
-        if (navLoginBtn) {
-            if (user) {
-                // Si ya inició sesión
-                navLoginBtn.href = "dashboard.html";
-                const span = navLoginBtn.querySelector('span');
-                if (span) span.textContent = "MI PANEL";
-            } else {
-                // Si no ha iniciado sesión
-                navLoginBtn.href = "login.html";
-                const span = navLoginBtn.querySelector('span');
-                if (span) span.textContent = "INICIAR SESIÓN";
-            }
-        }
-    });
-</script>
-
-</body>
-</html>
+        </div>
+        <div class="text-content">
+            <h2 data-es="HOLA, SOY KAROL" data-en="HELLO, I'M KAROL">HOLA, SOY KAROL</h2>
+            <h3 data-es="Una
