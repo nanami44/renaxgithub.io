@@ -751,3 +751,48 @@ body.portafolio-renax {
     font-size: clamp(2rem, 8vw, 3.5rem);
   }
 }
+
+/* CARRUSEL IZQUIERDO DE RENAX */
+.vertical-ticker-left {
+  left: 25px;
+  right: auto;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+/* Mantiene el contenido principal por delante */
+#main-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* En pantallas medianas y pequeñas, ocultamos el carrusel izquierdo */
+@media (max-width: 1300px) {
+  .vertical-ticker-left {
+    display: none;
+  }
+}
+/* LIMITAR LOS CARRUSELES A SU ZONA VISIBLE */
+.vertical-ticker-container {
+    position: fixed;
+    top: 150px;
+    bottom: 160px;
+    max-height: calc(100vh - 310px);
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Mantener el contenido principal por encima */
+.site-header,
+footer,
+#main-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Evitar que el carrusel tape los controles flotantes */
+.renax-floating-buttons {
+    z-index: 1000;
+}
