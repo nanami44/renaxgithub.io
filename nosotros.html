@@ -940,6 +940,100 @@ max-width: none;
     }
 }
 
+/* VIDEO CORPORATIVO RENAX: BURBUJAS ANIMADAS */
+.video-wrapper-section {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: linear-gradient(
+        145deg,
+        #65000d 0%,
+        #d90000 35%,
+        #ff3b00 68%,
+        #ffc928 100%
+    );
+}
+
+/* Capa que contiene las burbujas */
+.video-bubbles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Cada burbuja */
+.video-bubble {
+    position: absolute;
+    left: var(--x);
+    bottom: -100px;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 210, 190, 0.75);
+
+    background: radial-gradient(
+        circle at 28% 25%,
+        rgba(255, 255, 255, 0.75) 0%,
+        rgba(255, 120, 80, 0.38) 12%,
+        rgba(255, 30, 0, 0.12) 45%,
+        rgba(255, 180, 60, 0.20) 75%,
+        rgba(255, 255, 255, 0.35) 100%
+    );
+
+    box-shadow:
+        inset -5px -7px 12px rgba(120, 0, 0, 0.25),
+        inset 3px 3px 8px rgba(255, 255, 255, 0.24),
+        0 0 15px rgba(255, 70, 20, 0.35);
+
+    opacity: 0;
+    animation: videoBubbleRise var(--duration) linear var(--delay) infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes videoBubbleRise {
+    0% {
+        transform: translate3d(0, 0, 0) scale(0.7);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: translate3d(var(--drift), -45vh, 0) scale(1);
+        opacity: 0.6;
+    }
+
+    85% {
+        opacity: 0.45;
+    }
+
+    100% {
+        transform: translate3d(
+            calc(var(--drift) * -0.5),
+            -100vh,
+            0
+        ) scale(1.15);
+        opacity: 0;
+    }
+}
+
+/* Video y contenido por encima de las burbujas */
+.video-wrapper-section > *:not(.video-bubbles) {
+    position: relative;
+    z-index: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .video-bubble {
+        animation: none;
+        display: none;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -1296,6 +1390,33 @@ if (cuadro && !cuadro.querySelector(".bubble-layer")) {
     cuadro.prepend(capa);
 }
  
+document.addEventListener("DOMContentLoaded", () => {
+    const seccion = document.querySelector(".video-wrapper-section");
+
+    if (!seccion || seccion.querySelector(".video-bubbles")) return;
+
+    const capa = document.createElement("div");
+    capa.className = "video-bubbles";
+    capa.setAttribute("aria-hidden", "true");
+
+    for (let i = 0; i < 26; i++) {
+        const burbuja = document.createElement("span");
+        burbuja.className = "video-bubble";
+
+        const duracion = 10 + Math.random() * 12;
+
+        burbuja.style.setProperty("--x", `${Math.random() * 98}%`);
+        burbuja.style.setProperty("--size", `${12 + Math.random() * 52}px`);
+        burbuja.style.setProperty("--duration", `${duracion}s`);
+        burbuja.style.setProperty("--delay", `${-(Math.random() * duracion)}s`);
+        burbuja.style.setProperty("--drift", `${-70 + Math.random() * 140}px`);
+
+        capa.appendChild(burbuja);
+    }
+
+    seccion.prepend(capa);
+});
+
     </script>
 
 </body>
