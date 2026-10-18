@@ -54,8 +54,7 @@
 
   <!-- CONTENIDO PRINCIPAL DEBAJO DE LA PORTADA -->
   <main id="main-content">
-
-    <!-- CARRUSEL VERTICAL MÁS GRANDE (FLOTANTE EN LA ESQUINA DERECHA) -->
+<!-- CARRUSEL VERTICAL DERECHO (LLENO CON TODAS LAS IMÁGENES) -->
     <aside class="vertical-ticker-container" aria-label="Carrusel Vertical Destacado">
       <div class="vertical-ticker-track" id="verticalTicker">
         <div class="vertical-ticker-item"><img src="skenzi-carrusel01.jpeg" alt="Skenzi"></div>
@@ -65,10 +64,10 @@
         <div class="vertical-ticker-item"><img src="sobre-renax.png.png" alt="Papelería"></div>
         <div class="vertical-ticker-item"><img src="renzi-fondo-verde.png" alt="Renzi"></div>
         <div class="vertical-ticker-item"><img src="donuts-bites.png.png" alt="Donuts"></div>
-        <!-- Duplicados para bucle infinito -->
-        <div class="vertical-ticker-item"><img src="skenzi-carrusel01.jpeg" alt="Skenzi"></div>
-        <div class="vertical-ticker-item"><img src="Renax- carrusel 01.png" alt="RENAX"></div>
-        <div class="vertical-ticker-item"><img src="Renax-carrusel02.png" alt="RENAX"></div>
+        <div class="vertical-ticker-item"><img src="DONUT'S BITES-casos-estudio02.jpeg" alt="Donuts Caso"></div>
+        <div class="vertical-ticker-item"><img src="Renax-galeria03.png" alt="Renax Galería"></div>
+        <div class="vertical-ticker-item"><img src="skenzi-galeria03.png" alt="Skenzi Galería"></div>
+        <!-- Duplicados automáticos (el script los manejará perfectamente al tener esta cantidad) -->
       </div>
     </aside>
 
@@ -406,70 +405,35 @@
     });
   </script>
 
-  <!-- SCRIPT PARA CARRUSEL VERTICAL MÁS GRANDE FLOTANTE -->
-  <script>
-    window.addEventListener("DOMContentLoaded", () => {
-      const verticalTicker = document.getElementById("verticalTicker");
-      if (!verticalTicker) return;
+window.addEventListener("DOMContentLoaded", () => {
+  const verticalTicker = document.getElementById("verticalTicker");
+  if (!verticalTicker) return;
 
-      let vScrollPos = 0;
-      const vSpeed = 0.5; // Movimiento moderado fluido
-      let vAnimId;
+  // ¡ESTA LÍNEA ES LA QUE FALTA EN TU CÓDIGO ACTUAL!
+  if (!verticalTicker.dataset.duplicated) {
+    verticalTicker.innerHTML += verticalTicker.innerHTML;
+    verticalTicker.dataset.duplicated = "true";
+  }
 
-      function vStep() {
-        vScrollPos += vSpeed;
-        if (vScrollPos >= verticalTicker.scrollHeight / 2) {
-          vScrollPos = 0;
-        }
-        verticalTicker.style.transform = `translateY(-${vScrollPos}px)`;
-        vAnimId = requestAnimationFrame(vStep);
-      }
+  let vScrollPos = 0;
+  const vSpeed = 0.5; // Movimiento moderado fluido
+  let vAnimId;
 
-      verticalTicker.addEventListener("mouseenter", () => cancelAnimationFrame(vAnimId));
-      vAnimId = requestAnimationFrame(vStep);
-      verticalTicker.addEventListener("mouseleave", () => {
-        vAnimId = requestAnimationFrame(vStep);
-      });
-    });
-   <script>
-    // FUNCIÓN GENÉRICA PARA CUALQUIER CARRUSEL VERTICAL (INFINITO Y SUAVE)
-    function initVerticalTicker(containerId, speed) {
-      const container = document.getElementById(containerId);
-      if (!container) return;
-
-      // Duplicar el contenido automáticamente para lograr el bucle infinito perfecto
-      if (!container.dataset.duplicated) {
-        container.innerHTML += container.innerHTML;
-        container.dataset.duplicated = "true";
-      }
-
-      let pos = 0;
-      let animId;
-
-      function step() {
-        pos += speed;
-        // Si llega a la mitad (fin del primer bloque), se reinicia sin que se note
-        if (pos >= container.scrollHeight / 2) {
-          pos = 0;
-        }
-        container.style.transform = `translateY(-${pospx || pos}px)`;
-        container.style.transform = `translateY(-${pos}px)`;
-        animId = requestAnimationFrame(step);
-      }
-
-      container.addEventListener("mouseenter", () => cancelAnimationFrame(animId));
-      animId = requestAnimationFrame(step);
-      container.addEventListener("mouseleave", () => {
-        animId = requestAnimationFrame(step);
-      });
+  function vStep() {
+    vScrollPos += vSpeed;
+    if (vScrollPos >= verticalTicker.scrollHeight / 2) {
+      vScrollPos = 0;
     }
+    verticalTicker.style.transform = `translateY(-${vScrollPos}px)`;
+    vAnimId = requestAnimationFrame(vStep);
+  }
 
-    // Inicializar ambos carruseles verticalmente de forma perfecta
-    window.addEventListener("DOMContentLoaded", () => {
-      initVerticalTicker("verticalTicker", 0.5);     // Carrusel derecho
-      initVerticalTicker("verticalTickerLeft", 0.5); // Carrusel izquierdo
-    });
-  </script>
+  verticalTicker.addEventListener("mouseenter", () => cancelAnimationFrame(vAnimId));
+  vAnimId = requestAnimationFrame(vStep);
+  verticalTicker.addEventListener("mouseleave", () => {
+    vAnimId = requestAnimationFrame(vStep);
+  });
+});
   </script>
 </body>
 </html>
