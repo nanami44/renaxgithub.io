@@ -11,7 +11,6 @@
     <style>
         :root {
             --bg-color: #050505;
-            --card-bg: #120303;
             --primary-red: #8B0000;
             --accent-red: #cc0000;
             --text-color: #ffffff;
@@ -25,34 +24,29 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-/* =========================================
-   FONDO GENERAL RENAX - IMAGEN VISIBLE
-   ========================================= */
+        html {
+            min-height: 100%;
+            background-color: #050505;
+        }
 
-html {
-    min-height: 100%;
-    background-color: #050505;
-}
-
-body {
-    min-height: 100vh;
-    margin: 0;
-    background-color: #050505;
-  
-background-image:
-    linear-gradient(
-        rgba(5, 5, 5, 0.25),
-        rgba(5, 5, 5, 0.40)
-    ),
-    url("./fondo portafolio-rojo.jpeg");
-
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: var(--text-color);
-    line-height: 1.6;
-}
+        /* FONDO GENERAL DE LA PÁGINA: fondo nosotros.png */
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background-color: #050505;
+            background-image:
+                linear-gradient(
+                    rgba(5, 5, 5, 0.45),
+                    rgba(5, 5, 5, 0.60)
+                ),
+                url("fondo nosotros.png");
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
         /* HEADER */
         .site-header {
@@ -139,7 +133,6 @@ background-image:
             margin: 0 auto;
         }
 
-        /* SECCIÓN DE LA PORTADA A ANCHO COMPLETO */
         section:has(.hero-banner) {
             max-width: none;
             width: 100%;
@@ -147,7 +140,6 @@ background-image:
             margin-top: 70px;
         }
 
-        /* PORTADA EXPANDIDA A TODO EL ANCHO */
         .hero-banner {
             width: 100%;
             height: 580px;
@@ -159,7 +151,6 @@ background-image:
             justify-content: center;
             align-items: center;
             margin-top: 0;
-            border-radius: 0;
             color: #fff;
             font-size: 36px;
             font-weight: bold;
@@ -189,11 +180,111 @@ background-image:
             display: block;
         }
 
-        /* 3. VISION Y MISION */
+        /* =========================================
+           CONTENEDOR DETRÁS DE LAS TARJETAS (fondo-m-v.png)
+           ========================================= */
+        .vision-mission-wrapper {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), url('fondo-m-v.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 50px 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(204, 0, 0, 0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        /* 3. VISION Y MISION GRID */
         .vision-mission {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
+        }
+
+        /* TARJETAS: FONDO BLANCO INICIAL Y EFECTOS INDIVIDUALES */
+        .vision-mission .card-box {
+            position: relative;
+            min-height: 280px;
+            height: auto;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            box-sizing: border-box;
+            background: #ffffff; /* Fondo blanco inicial */
+            border: 2px solid #000000; /* Borde negro */
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease, transform 0.5s ease;
+        }
+
+        .vision-mission .card-box h2 {
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            color: #000000; /* Título negro inicialmente */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(32px, 4vw, 48px);
+            transition: min-height 0.5s ease, transform 0.5s ease, color 0.5s ease;
+        }
+
+        .vision-mission .card-box p {
+            display: block;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0 28px;
+            color: #000000; /* Texto negro al abrirse */
+            line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            font-weight: 500;
+            transform: scale(0.85);
+            transition: max-height 0.7s ease, opacity 0.5s ease, transform 0.5s ease, padding 0.5s ease;
+        }
+
+        /* 1ra TARJETA (VISIÓN): CAMBIA A ZAPOTE AL ABRIRSE + ZOOM */
+        .vision-mission .card-box:nth-child(1).is-open {
+            background: #FF7518 !important;
+            border-color: #000000;
+            box-shadow: 0 0 35px rgba(255, 117, 24, 0.6);
+            transform: scale(1.04);
+        }
+        .vision-mission .card-box:nth-child(1).is-open h2 {
+            min-height: 90px;
+            transform: scale(0.95);
+            color: #cc0000 !important;
+        }
+
+        /* 2da TARJETA (MISIÓN): CAMBIA A ROJO AL ABRIRSE + ZOOM */
+        .vision-mission .card-box:nth-child(2).is-open {
+            background: #cc0000 !important;
+            border-color: #000000;
+            box-shadow: 0 0 35px rgba(204, 0, 0, 0.6);
+            transform: scale(1.04);
+        }
+        .vision-mission .card-box:nth-child(2).is-open h2 {
+            min-height: 90px;
+            transform: scale(0.95);
+            color: #ffffff !important;
+        }
+        .vision-mission .card-box:nth-child(2).is-open p {
+            color: #ffffff !important; /* Texto blanco sobre fondo rojo */
+        }
+
+        /* ESTILOS COMUNES AL ABRIR */
+        .vision-mission .card-box.is-open p {
+            max-height: 500px;
+            opacity: 1;
+            padding: 10px 28px 35px;
+            transform: scale(1);
         }
 
         /* 4. DOS IMAGENES Y TEXTO */
@@ -329,7 +420,7 @@ background-image:
             border-color: rgba(255, 51, 51, 0.8);
         }
 
-        /* 8. CARRUSEL INFINITO DE TARJETAS DE IMPACTO */
+        /* 8. CARRUSEL INFINITO */
         .renax-carousel-section {
             width: 100%;
             padding: 45px 0;
@@ -448,7 +539,6 @@ background-image:
             color: #ff3344;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 1000px) {
             .vision-mission, .images-text-section, .why-renax ul {
                 grid-template-columns: 1fr;
@@ -474,84 +564,11 @@ background-image:
             .renax-carousel-card {
                 flex-basis: 290px;
             }
-        }
-        
-        /* =========================================
-           TARJETAS INTERACTIVAS RENAX (VISIÓN Y MISIÓN)
-           ========================================= */
-        .vision-mission .card-box {
-            position: relative;
-            min-height: 280px;
-            height: auto;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            cursor: pointer;
-            box-sizing: border-box;
-            background: linear-gradient(135deg, #080808, #240000, #080808);
-            border: 1px solid #650000;
-            border-radius: 24px;
-            transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease, transform 0.5s ease;
-        }
-
-        .vision-mission .card-box h2 {
-            min-height: 180px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            margin: 0;
-            padding: 20px;
-            color: #ff3333;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: clamp(32px, 4vw, 48px);
-            transition: min-height 0.5s ease, transform 0.5s ease, color 0.5s ease;
-        }
-
-        .vision-mission .card-box p {
-            display: block;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            margin: 0;
-            padding: 0 28px;
-            color: #ffffff;
-            line-height: 1.8;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 17px;
-            transform: scale(0.85);
-            transition: max-height 0.7s ease, opacity 0.5s ease, transform 0.5s ease, padding 0.5s ease;
-        }
-
-        /* TARJETA ABIERTA */
-        .vision-mission .card-box.is-open {
-            background: linear-gradient(135deg, #080808 0%, #520000 55%, #160000 100%) !important;
-            border-color: #ff3333;
-            box-shadow: 0 0 30px rgba(204, 0, 0, 0.3);
-            transform: scale(1.025);
-        }
-
-        .vision-mission .card-box.is-open h2 {
-            min-height: 100px;
-            transform: scale(0.96);
-            color: #ff4545;
-        }
-
-        .vision-mission .card-box.is-open p {
-            max-height: 500px;
-            opacity: 1;
-            padding: 10px 28px 35px;
-            transform: scale(1);
-        }
-
-        @media (max-width: 700px) {
-            .vision-mission {
-                grid-template-columns: 1fr;
-            }
             .vision-mission .card-box h2 {
                 font-size: 34px;
+            }
+            .vision-mission-wrapper {
+                padding: 20px 15px;
             }
         }
     </style>
@@ -601,23 +618,25 @@ background-image:
         </div>
     </section>
 
-    <!-- 3. VISION Y MISION -->
+    <!-- 3. VISION Y MISION CON CONTENEDOR DETRÁS (fondo-m-v.png) -->
     <section>
-        <div class="vision-mission">
-            <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
-                <h2 data-es="VISIÓN" data-en="VISION">VISIÓN</h2>
-                <p data-es="Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales."
-                   data-en="By 2030, RENAX aspires to be a departmental leader in visual identity and graphic communication, recognized for modernizing established brands and promoting the growth of local businesses.">
-                    Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales.
-                </p>
-            </div>
+        <div class="vision-mission-wrapper">
+            <div class="vision-mission">
+                <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
+                    <h2 data-es="VISIÓN" data-en="VISION">VISIÓN</h2>
+                    <p data-es="Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales."
+                       data-en="By 2030, RENAX aspires to be a departmental leader in visual identity and graphic communication, recognized for modernizing established brands and promoting the growth of local businesses.">
+                        Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales.
+                    </p>
+                </div>
 
-            <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
-                <h2 data-es="MISIÓN" data-en="MISSION">MISIÓN</h2>
-                <p data-es="Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia."
-                   data-en="Our mission is to offer strategic design and visual identity services for small and medium-sized businesses, modernizing established brands, strengthening their competitiveness, and always preserving their essence.">
-                    Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia.
-                </p>
+                <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
+                    <h2 data-es="MISIÓN" data-en="MISSION">MISIÓN</h2>
+                    <p data-es="Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia."
+                       data-en="Our mission is to offer strategic design and visual identity services for small and medium-sized businesses, modernizing established brands, strengthening their competitiveness, and always preserving their essence.">
+                        Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia.
+                    </p>
+                </div>
             </div>
         </div>
     </section>
@@ -781,7 +800,7 @@ background-image:
         </div>
     </footer>
 
-    <!-- SCRIPT DE MENÚ Y TRADUCCIÓN -->
+    <!-- SCRIPTS -->
     <script>
         const navToggle = document.getElementById("navToggle");
         const navMenu = document.getElementById("navMenu");
@@ -867,7 +886,7 @@ background-image:
         }
     </script>
 
-    <!-- FIREBASE AUTH SCRIPT -->
+    <!-- FIREBASE AUTH -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
         import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
@@ -900,21 +919,13 @@ background-image:
         });
     </script>
     
-    <!-- SCRIPT CORREGIDO PARA TARJETAS INTERACTIVAS -->
+    <!-- SCRIPT DE INTERACTIVIDAD DE TARJETAS -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const tarjetas = document.querySelectorAll(
-                ".vision-mission .card-box, " +
-                "#vision, #mision, " +
-                ".about-mission-vision .mission-vision-card, " +
-                ".about-mission-vision .vision-card"
-            );
+            const tarjetas = document.querySelectorAll(".vision-mission .card-box");
 
-            const unicas = [...new Set(tarjetas)];
-
-            unicas.forEach(function (tarjeta) {
+            tarjetas.forEach(function (tarjeta) {
                 if (tarjeta.dataset.renaxClick === "true") return;
-
                 tarjeta.dataset.renaxClick = "true";
 
                 function alternarTarjeta() {
