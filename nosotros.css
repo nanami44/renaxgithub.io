@@ -276,6 +276,67 @@
     filter: brightness(0) invert(1);
 }
 
+/* TARJETA ROJA: SOMOS UNA AGENCIA */
+.renax-agency-white-section {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.agency-white-box {
+    width: 100%;
+    max-width: 1100px;
+    box-sizing: border-box;
+    padding: 55px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #f02b25 0%, #c91518 60%, #8f1015 100%);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.4);
+}
+
+.agency-title-red-black {
+    color: #ffffff !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: clamp(30px, 4vw, 54px);
+    font-weight: 900 !important;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+    text-shadow: none;
+    margin: 0 0 28px;
+}
+
+.agency-white-box p {
+    color: #ffffff !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+@media (max-width: 600px) {
+    .renax-agency-white-section {
+        margin: 55px auto;
+        padding: 0 14px;
+    }
+
+    .agency-white-box {
+        padding: 30px 22px;
+    }
+
+    .agency-title-red-black {
+        font-size: 30px;
+    }
+
+    .agency-white-box p {
+        font-size: 15px;
+    }
+}
+
 /* Responsivo para celulares */
 @media (max-width: 768px) {
     .about-mission-vision { grid-template-columns: 1fr; }
