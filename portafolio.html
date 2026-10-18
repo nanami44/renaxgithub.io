@@ -443,28 +443,45 @@
         vAnimId = requestAnimationFrame(vStep);
       });
     });
-    // MOVIMIENTO DEL CARRUSEL VERTICAL IZQUIERDO
-const verticalTickerLeft = document.getElementById("verticalTickerLeft");
+   <script>
+    // FUNCIÓN GENÉRICA PARA CUALQUIER CARRUSEL VERTICAL (INFINITO Y SUAVE)
+    function initVerticalTicker(containerId, speed) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
 
-if (verticalTickerLeft) {
-    let leftScrollPos = 0;
-    const leftSpeed = 0.5;
+      // Duplicar el contenido automáticamente para lograr el bucle infinito perfecto
+      if (!container.dataset.duplicated) {
+        container.innerHTML += container.innerHTML;
+        container.dataset.duplicated = "true";
+      }
 
-    function leftStep() {
-        leftScrollPos += leftSpeed;
+      let pos = 0;
+      let animId;
 
-        if (leftScrollPos >= verticalTickerLeft.scrollHeight / 2) {
-            leftScrollPos = 0;
+      function step() {
+        pos += speed;
+        // Si llega a la mitad (fin del primer bloque), se reinicia sin que se note
+        if (pos >= container.scrollHeight / 2) {
+          pos = 0;
         }
+        container.style.transform = `translateY(-${pospx || pos}px)`;
+        container.style.transform = `translateY(-${pos}px)`;
+        animId = requestAnimationFrame(step);
+      }
 
-        verticalTickerLeft.style.transform =
-            `translateY(-${leftScrollPos}px)`;
-
-        requestAnimationFrame(leftStep);
+      container.addEventListener("mouseenter", () => cancelAnimationFrame(animId));
+      animId = requestAnimationFrame(step);
+      container.addEventListener("mouseleave", () => {
+        animId = requestAnimationFrame(step);
+      });
     }
 
-    requestAnimationFrame(leftStep);
-}
+    // Inicializar ambos carruseles verticalmente de forma perfecta
+    window.addEventListener("DOMContentLoaded", () => {
+      initVerticalTicker("verticalTicker", 0.5);     // Carrusel derecho
+      initVerticalTicker("verticalTickerLeft", 0.5); // Carrusel izquierdo
+    });
+  </script>
   </script>
 </body>
 </html>
