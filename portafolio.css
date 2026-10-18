@@ -1161,3 +1161,48 @@ object-fit: cover;
   height: 100%;
   object-fit: cover; /* Llena por completo el contenedor amplio sin deformarse */
 }
+/* ==========================================
+   SECCIÓN PROYECTOS Y TÍTULO GRANDE E IMPONENTE
+   ========================================== */
+#proyectos {
+  max-width: 1350px; /* Ampliamos ligeramente el contenedor general para darle más aire */
+  margin: 0 auto;
+  padding: 100px 30px;
+  display: grid;
+  grid-template-columns: 420px 1fr; /* Damos más espacio a la columna izquierda para que el título grande respire */
+  gap: 40px;
+  align-items: start;
+}
+
+#proyectos .renax-sticky-title {
+  position: sticky;
+  top: 160px; /* Posición fija perfecta mientras haces scroll en la sección */
+  padding-top: 20px;
+}
+
+/* Título masivo ampliado y limpio en dos bloques */
+.renax-massive-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 4.5vw, 5.2rem); /* <--- Título mucho más grande, escalable y moderno */
+  line-height: 0.95;
+  text-transform: uppercase;
+  margin: 0;
+  word-break: break-word; /* Evita que las palabras largas se salgan de su columna */
+}
+
+.renax-massive-title .red-text { 
+  color: #e50914; 
+}
+
+.renax-massive-title .white-text { 
+  color: #ffffff; 
+}
+
+/* Asegurar que las tarjetas de la derecha mantengan sus proporciones intactas */
+#proyectos .renax-asymmetric-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  min-width: 0; /* Evita que los elementos del grid se desborden */
+}
