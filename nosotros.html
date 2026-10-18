@@ -169,24 +169,34 @@
 
        
 /* VIDEO CORPORATIVO CON FONDO DEGRADADO RENAX */
+
+/* VIDEO CORPORATIVO RENAX CON FONDO DE IMAGEN */
 .video-wrapper-section {
     width: 100%;
     box-sizing: border-box;
-    background: linear-gradient(
-        155deg,
-        #65000d 0%,
-        #e00000 35%,
-        #ff3d00 65%,
-        #ffd52a 100%
-    );
+
+    background-color: #080808;
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.50)
+        ),
+        url("fondo-video-renax.jpeg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
     padding: 80px 5%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 40px 0;
     position: relative;
+    isolation: isolate;
     overflow: hidden;
 }
+
 
 
         .video-section {
