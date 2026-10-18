@@ -11,8 +11,8 @@
     <style>
         :root {
             --bg-color: #050505;
-            --primary-red: #8B0000;
-            --accent-red: #cc0000;
+            --primary-red: #c8102e;
+            --accent-red: #ff304b;
             --text-color: #ffffff;
             --text-muted: #cccccc;
         }
@@ -48,7 +48,7 @@
             line-height: 1.6;
         }
 
-        /* HEADER / MENÚ DE NAVEGACIÓN REACOMODADO */
+        /* HEADER / MENÚ DE NAVEGACIÓN IDÉNTICO AL DE INICIO */
         .site-header {
             position: fixed;
             top: 0;
@@ -79,18 +79,30 @@
             gap: 25px;
             align-items: center;
             margin-left: auto;
-            margin-right: 20px;
         }
 
         .nav-link {
+            position: relative;
             color: var(--text-color);
             text-decoration: none;
             font-size: 15px;
+            padding: 8px 0;
             transition: color 0.3s;
         }
 
         .nav-link:hover, .nav-link.active {
             color: var(--accent-red);
+        }
+
+        /* Línea roja indicadora idéntica a la página de inicio */
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-red);
         }
 
         .nav-actions {
@@ -103,27 +115,30 @@
             background: #fff;
             color: #000;
             border: none;
-            padding: 6px 15px;
+            padding: 8px 16px;
             border-radius: 20px;
             font-weight: bold;
             cursor: pointer;
+            font-size: 13px;
         }
 
         .login-btn {
             background-color: var(--primary-red);
             color: #fff;
             border: none;
-            padding: 8px 20px;
+            padding: 10px 22px;
             border-radius: 20px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             transition: background 0.3s;
             display: inline-block;
+            font-size: 13px;
+            letter-spacing: 1px;
         }
 
         .login-btn:hover {
-            background-color: var(--accent-red);
+            background-color: #a50d25;
         }
 
         .nav-toggle {
@@ -142,13 +157,6 @@
             margin: 0 auto;
         }
 
-        section:has(.hero-banner) {
-            max-width: none;
-            width: 100%;
-            padding: 0;
-            margin-top: 70px;
-        }
-
         .hero-banner {
             width: 100%;
             height: 580px;
@@ -159,7 +167,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 0;
+            margin-top: 70px;
             color: #fff;
             font-size: 36px;
             font-weight: bold;
@@ -167,38 +175,29 @@
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
         }
 
-       
-
-
-/* VIDEO CORPORATIVO RENAX CON FONDO DE IMAGEN */
-.video-wrapper-section {
-    width: 100%;
-    box-sizing: border-box;
-
-    background-color: #080808;
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.50)
-        ),
-        url("fondo-video-renax.jpeg");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    padding: 80px 5%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 40px 0;
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-}
-
-
-
+        /* VIDEO CORPORATIVO RENAX CON FONDO CORREGIDO */
+        .video-wrapper-section {
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #080808;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.4),
+                    rgba(0, 0, 0, 0.55)
+                ),
+                url("fondo-video-renax.jpeg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 80px 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+        }
 
         .video-section {
             width: 100%;
@@ -221,7 +220,7 @@
             display: block;
         }
 
-        /* 3. VISIÓN Y MISIÓN: FONDO DETRÁS A ANCHO DE PÁGINA */
+        /* VISIÓN Y MISIÓN */
         .vision-mission-full-wrapper {
             width: 100%;
             background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), url('fondo-m-v.png');
@@ -241,7 +240,6 @@
             gap: 40px;
         }
 
-        /* TARJETAS EXCLUSIVAMENTE CON HOVER (SIN CLIC) Y TEXTO CENTRADO */
         .vision-mission-container .card-box {
             position: relative;
             min-height: 320px;
@@ -252,12 +250,11 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            box-sizing: border-box;
             background: #ffffff;
             border: 2px solid #000000;
             border-radius: 24px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease, transform 0.4s ease;
         }
 
         .vision-mission-container .card-box h2 {
@@ -266,7 +263,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
             margin: 0;
             padding: 20px;
             color: #000000;
@@ -293,7 +289,6 @@
             transition: max-height 0.7s ease, opacity 0.5s ease, transform 0.5s ease, padding 0.5s ease;
         }
 
-        /* 1ra TARJETA (VISIÓN): ZAPOTE AL PASAR EL MOUSE + TEXTO BLANCO */
         .vision-mission-container .card-box:nth-child(1):hover {
             background: #FF7518 !important;
             border-color: #000000;
@@ -301,16 +296,11 @@
             transform: scale(1.06);
             z-index: 10;
         }
-        .vision-mission-container .card-box:nth-child(1):hover h2 {
-            min-height: 90px;
-            transform: scale(0.95);
-            color: #ffffff !important;
-        }
+        .vision-mission-container .card-box:nth-child(1):hover h2,
         .vision-mission-container .card-box:nth-child(1):hover p {
             color: #ffffff !important;
         }
 
-        /* 2da TARJETA (MISIÓN): ROJO AL PASAR EL MOUSE + TEXTO BLANCO */
         .vision-mission-container .card-box:nth-child(2):hover {
             background: #cc0000 !important;
             border-color: #000000;
@@ -318,16 +308,11 @@
             transform: scale(1.06);
             z-index: 10;
         }
-        .vision-mission-container .card-box:nth-child(2):hover h2 {
-            min-height: 90px;
-            transform: scale(0.95);
-            color: #ffffff !important;
-        }
+        .vision-mission-container .card-box:nth-child(2):hover h2,
         .vision-mission-container .card-box:nth-child(2):hover p {
             color: #ffffff !important;
         }
 
-        /* ANIMACIÓN DE APERTURA AL HACER HOVER */
         .vision-mission-container .card-box:hover p {
             max-height: 500px;
             opacity: 1;
@@ -335,7 +320,7 @@
             transform: scale(1);
         }
 
-        /* 4. SECCIÓN "HOLA, SOY KAROL" A ANCHO DE PÁGINA */
+        /* SECCIÓN "HOLA, SOY KAROL" */
         .karol-section-full {
             width: 100%;
             background: #ffffff;
@@ -382,16 +367,7 @@
             font-size: clamp(42px, 4vw, 64px);
             font-weight: 900;
             line-height: 1.08;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
             margin-bottom: 25px;
-        }
-
-        .karol-text-content h2.titulo-karol span {
-            display: block;
-            color: #000000 !important;
-            -webkit-text-fill-color: #000000;
         }
 
         .karol-text-content h3 {
@@ -409,7 +385,7 @@
             margin: 0;
         }
 
-        /* 5. CINTURÓN INFINITO */
+        /* CINTURÓN INFINITO */
         .infinite-belt-section {
             width: 100%;
             overflow: hidden;
@@ -459,170 +435,104 @@
             to   { transform: translateX(25vw); }
         }
 
-        /* 6. ¿QUIÉNES SOMOS? (FONDO NEGRO, SIN BORDE Y ALINEADO A LA DERECHA) */
+        /* ¿QUIÉNES SOMOS? */
         .quienes-somos-section {
-            
-width: 100%;
-max-width: none;
-min-height: 0;
-padding: 65px 80px;
-box-sizing: border-box;
-
+            width: 100%;
+            max-width: none;
+            padding: 65px 80px;
+            box-sizing: border-box;
         }
 
-       
+        .quienes-somos-box {
+            position: relative;
+            width: 100%;
+            margin: 60px auto;
+            padding: 65px 70px;
+            box-sizing: border-box;
+            background-color: #080808;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.12),
+                    rgba(0, 0, 0, 0.22)
+                ),
+                url('descargar.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid rgba(255, 0, 0, 0.75);
+            border-radius: 28px;
+            box-shadow:
+                0 0 15px rgba(255, 0, 0, 0.25),
+                0 0 35px rgba(255, 0, 0, 0.15),
+                0 18px 45px rgba(0, 0, 0, 0.45);
+            text-align: left;
+            overflow: hidden;
+            isolation: isolate;
+        }
 
-.quienes-somos-box {
-    position: relative;
-   width: 100%;
-max-width: none;
-    margin: 60px auto;
-    padding: 65px 70px;
-    box-sizing: border-box;
+        .quienes-somos-box h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(42px, 4vw, 60px);
+            line-height: 1.15;
+            color: #ffffff !important;
+            margin-top: 0;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            text-align: left;
+        }
 
-    background-color: #080808;
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.12),
-            rgba(0, 0, 0, 0.22)
-        ),
-        url('descargar.jpeg');
+        .quienes-somos-box p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(19px, 1.6vw, 24px);
+            font-weight: 400;
+            color: #ffffff !important;
+            line-height: 1.8;
+            margin-bottom: 28px;
+            text-align: left;
+        }
 
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    border: 1px solid rgba(255, 0, 0, 0.75);
-    border-radius: 28px;
-
-    box-shadow:
-        0 0 15px rgba(255, 0, 0, 0.25),
-        0 0 35px rgba(255, 0, 0, 0.15),
-        0 18px 45px rgba(0, 0, 0, 0.45);
-
-    text-align: left;
-}
-
-.quienes-somos-box h2 {
-    text-align: left;
-    margin-top: 0;
-    margin-bottom: 28px;
-    line-height: 1.15;
-    color: #ffffff !important;
-}
-
-.quienes-somos-box p {
-    text-align: left;
-    line-height: 1.8;
-    margin-bottom: 24px;
-    color: #ffffff !important;
-}
-
-@media (max-width: 768px) {
-    .quienes-somos-box {
-        width: calc(100% - 30px);
-        margin: 35px auto;
-        padding: 35px 24px;
-        border-radius: 20px;
-    }
-}
-  
-/* TÍTULO ¿QUIÉNES SOMOS? */
-.quienes-somos-box h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: clamp(42px, 4vw, 60px);
-    line-height: 1.15;
-    color: #ffffff !important;
-    margin-top: 0;
-    margin-bottom: 35px;
-    text-transform: uppercase;
-    text-align: left;
-}
-
-/* TEXTOS DESCRIPTIVOS */
-.quienes-somos-box p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(19px, 1.6vw, 24px);
-    font-weight: 400;
-    color: #ffffff !important;
-    line-height: 1.8;
-    margin-bottom: 28px;
-    text-align: left;
-}
-
-/* AJUSTE PARA CELULARES */
-@media (max-width: 768px) {
-    .quienes-somos-box h2 {
-        font-size: 36px;
-        margin-bottom: 25px;
-    }
-
-    .quienes-somos-box p {
-        font-size: 18px;
-        line-height: 1.7;
-        margin-bottom: 20px;
-    }
-}
-
-
-        /* 7. CARRUSEL DE IMPACTO A ANCHO TOTAL Y BORDES ALTERNADOS BLANCO Y ROJO */
+        /* CARRUSEL */
         .renax-carousel-section {
-            width: 100%;
-            padding: 50px 0;
-            overflow: hidden;
-            background: rgba(0,0,0,0.6);
-            margin-top: 60px;
+            width: 100% !important;
+            max-width: none !important;
+            margin: 60px 0 0 !important;
+            padding: 35px 0 !important;
+            background: #050505 !important;
+            overflow: hidden !important;
         }
 
-        .renax-carousel {
-            width: 100%;
-            overflow: hidden;
+        .renax-carousel-section .renax-carousel {
+            width: 100% !important;
+            padding: 40px 0 !important;
+            overflow: hidden !important;
         }
 
-        .renax-carousel-track {
-            display: flex;
-            width: max-content;
-            gap: 24px;
+        .renax-carousel-section .renax-carousel-track {
+            display: flex !important;
+            width: max-content !important;
+            gap: 24px !important;
+            align-items: stretch !important;
             animation: renaxInfiniteScroll 30s linear infinite;
         }
 
-        .renax-carousel-card {
-            box-sizing: border-box;
-            flex: 0 0 420px;
+        .renax-carousel-section .renax-carousel-card {
+            flex: 0 0 420px !important;
             min-height: 200px;
             padding: 30px 25px;
-            background: rgba(15, 2, 2, 0.95);
-            border-radius: 20px;
+            background: #ffffff !important;
+            border: 2px solid #e00000 !important;
+            border-radius: 20px !important;
+            color: #000000 !important;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.35) !important;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
 
-        .renax-carousel-card:nth-child(odd) {
-            border: 2px solid #ffffff;
-            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.15);
-        }
-
-        .renax-carousel-card:nth-child(even) {
-            border: 2px solid #cc0000;
-            box-shadow: 0 8px 20px rgba(204, 0, 0, 0.25);
-        }
-
-        .renax-carousel-card h3 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 24px;
-            font-weight: 900;
-            color: #ff4545;
-            margin: 0 0 18px;
-        }
-
-        .renax-carousel-card p {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 16px;
-            color: #ffffff;
-            margin: 0;
-            line-height: 1.6;
+        .renax-carousel-section .renax-carousel-card h3,
+        .renax-carousel-section .renax-carousel-card p {
+            color: #000000 !important;
         }
 
         .renax-carousel:hover .renax-carousel-track {
@@ -634,7 +544,7 @@ max-width: none;
             to { transform: translateX(calc(-50% - 12px)); }
         }
 
-        /* 8. FOOTER RENAX */
+        /* FOOTER RENAX */
         .renax-footer {
             width: 100%;
             background: #080808;
@@ -697,6 +607,61 @@ max-width: none;
             color: #ff3344;
         }
 
+        /* TÍTULO CONÓCENOS */
+        .titulo-conocenos {
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(55px, 10vw, 160px);
+            font-weight: 900;
+            text-align: center;
+            letter-spacing: 3px;
+            margin: 0;
+            animation: crecerConocenos 2.5s ease-in-out infinite;
+            text-shadow: 0 4px 18px rgba(0, 0, 0, 0.8);
+            transform-origin: center;
+        }
+
+        @keyframes crecerConocenos {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+        }
+
+        /* BURBUJAS FLOTANTES */
+        .bubble-layer, .video-bubbles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .quienes-somos-box > :not(.bubble-layer),
+        .video-wrapper-section > *:not(.video-bubbles) {
+            position: relative;
+            z-index: 1;
+        }
+
+        .bubble, .video-bubble {
+            position: absolute;
+            bottom: -70px;
+            left: var(--x);
+            width: var(--size);
+            height: var(--size);
+            border-radius: 50%;
+            border: 1px solid rgba(255, 90, 90, 0.65);
+            background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.42), rgba(255, 30, 30, 0.16) 30%, rgba(160, 0, 0, 0.06) 70%, rgba(255, 40, 40, 0.22));
+            opacity: 0;
+            animation: renaxBubbleFloat var(--duration) ease-in-out var(--delay) infinite;
+        }
+
+        @keyframes renaxBubbleFloat {
+            0% { transform: translate3d(0, 0, 0) scale(0.75); opacity: 0; }
+            15% { opacity: 0.65; }
+            50% { transform: translate3d(var(--drift), -220px, 0) scale(1); opacity: 0.45; }
+            85% { opacity: 0.35; }
+            100% { transform: translate3d(calc(var(--drift) * -0.5), -480px, 0) scale(0.85); opacity: 0; }
+        }
+
         /* RESPONSIVE */
         @media (max-width: 1000px) {
             .vision-mission-container, .karol-content-container {
@@ -705,11 +670,19 @@ max-width: none;
             .footer-secciones {
                 grid-template-columns: repeat(3, minmax(0, 1fr));
             }
-            .nav-container {
-                padding: 15px 20px;
-            }
             .nav-menu {
                 display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(5, 5, 5, 0.98);
+                flex-direction: column;
+                padding: 20px 0;
+                border-bottom: 1px solid #222;
+            }
+            .nav-menu.active {
+                display: flex;
             }
             .nav-toggle {
                 display: block;
@@ -720,331 +693,7 @@ max-width: none;
             .footer-secciones {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
-            .renax-carousel-card {
-                flex-basis: 290px;
-            }
-            .belt-item {
-                font-size: 11vw;
-            }
         }
-      
-/* ==========================================
-   RENAX: CARRUSEL A ANCHO COMPLETO
-   TARJETAS BLANCAS, TEXTO NEGRO Y LUZ ROJA
-   ========================================== */
-
-/* CARRUSEL RENAX A ANCHO COMPLETO */
-.renax-carousel-section {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 60px 0 0 !important;
-    padding: 35px 0 !important;
-    position: relative !important;
-    left: auto !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-    background: #050505 !important;
-}
-
-
-
-/* Ventana visible del carrusel */
-.renax-carousel-section .renax-carousel {
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    padding: 40px 0 !important;
-    overflow: hidden !important;
-    box-sizing: border-box !important;
-}
-
-/* Pista que contiene y mueve las tarjetas */
-.renax-carousel-section .renax-carousel-track {
-    display: flex !important;
-    width: max-content !important;
-    max-width: none !important;
-    gap: 24px !important;
-    align-items: stretch !important;
-}
-
-
-/* TARJETAS BLANCAS CON BORDE Y LUZ ROJA */
-.renax-carousel-section .renax-carousel-card {
-    flex: 0 0 420px !important;
-    min-height: 200px;
-    padding: 30px 25px;
-    background: #ffffff !important;
-    border: 2px solid #e00000 !important;
-    border-radius: 20px !important;
-    color: #000000 !important;
-    box-shadow:
-        0 0 10px rgba(255, 0, 0, 0.4),
-        0 0 25px rgba(255, 0, 0, 0.25) !important;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    box-sizing: border-box;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.renax-carousel-section .renax-carousel-card h3,
-.renax-carousel-section .renax-carousel-card p {
-    color: #000000 !important;
-}
-
-.renax-carousel-section .renax-carousel-card:hover {
-    box-shadow:
-        0 0 16px rgba(255, 0, 0, 0.7),
-        0 0 35px rgba(255, 0, 0, 0.45) !important;
-    transform: translateY(-4px);
-}
-
-
-/* Títulos negros */
-.renax-carousel-section .renax-carousel-card h1,
-.renax-carousel-section .renax-carousel-card h2,
-.renax-carousel-section .renax-carousel-card h3,
-.renax-carousel-section .renax-carousel-card h4 {
-    color: #000000 !important;
-}
-
-/* Párrafos y demás textos negros */
-.renax-carousel-section .renax-carousel-card p,
-.renax-carousel-section .renax-carousel-card span,
-.renax-carousel-section .renax-carousel-card li {
-    color: #000000 !important;
-}
-
-/* Resplandor rojo al pasar el mouse */
-.renax-carousel-section .renax-carousel-card:hover {
-    box-shadow:
-        0 0 14px rgba(255, 0, 0, 0.65),
-        0 0 32px rgba(255, 0, 0, 0.45),
-        0 12px 30px rgba(0, 0, 0, 0.18) !important;
-    transform: translateY(-4px);
-}
-
-/* Evitar que las imágenes o textos se salgan */
-.renax-carousel-section .renax-carousel-card * {
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-/* Ajuste para pantallas pequeñas */
-@media (max-width: 768px) {
-    .renax-carousel-section .renax-carousel {
-        padding: 28px 0 !important;
-    }
-
-    .renax-carousel-section .renax-carousel-track {
-        gap: 16px !important;
-    }
-
-    .renax-carousel-section .renax-carousel-card {
-        flex-basis: 290px;
-    }
-}
-  
-/* TÍTULO CONÓCENOS: CRECE Y VUELVE A SU TAMAÑO */
-.titulo-conocenos {
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(55px, 10vw, 160px);
-    font-weight: 900;
-    text-align: center;
-    letter-spacing: 3px;
-    margin: 0;
-   transform: scale(1.18);
-    animation: crecerConocenos 2.5s ease-in-out infinite;
-    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.8);
-    transform-origin: center;
-}
-
-@keyframes crecerConocenos {
-    0%, 100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.25);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .titulo-conocenos {
-        animation: none;
-    }
-}
-
-/* BURBUJAS ROJAS FLOTANTES — RENAX */
-.quienes-somos-box {
-    position: relative;
-    overflow: hidden;
-    isolation: isolate;
-}
-
-/* Capa de burbujas dentro del cuadro */
-.quienes-somos-box .bubble-layer {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 0;
-    pointer-events: none;
-    border-radius: inherit;
-}
-
-/* Mantener el contenido por delante */
-.quienes-somos-box > :not(.bubble-layer) {
-    position: relative;
-    z-index: 1;
-}
-
-/* Burbujas transparentes con reflejo rojo */
-.quienes-somos-box .bubble {
-    position: absolute;
-    bottom: -70px;
-    left: var(--x);
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    border: 1px solid rgba(255, 90, 90, 0.65);
-    background: radial-gradient(
-        circle at 30% 25%,
-        rgba(255, 255, 255, 0.42),
-        rgba(255, 30, 30, 0.16) 30%,
-        rgba(160, 0, 0, 0.06) 70%,
-        rgba(255, 40, 40, 0.22)
-    );
-    box-shadow:
-        inset -3px -4px 9px rgba(255, 0, 0, 0.15),
-        0 0 10px rgba(255, 0, 0, 0.16);
-    opacity: 0;
-    animation: renaxBubbleFloat var(--duration) ease-in-out var(--delay) infinite;
-    will-change: transform, opacity;
-}
-
-@keyframes renaxBubbleFloat {
-    0% {
-        transform: translate3d(0, 0, 0) scale(0.75);
-        opacity: 0;
-    }
-    15% {
-        opacity: 0.65;
-    }
-    50% {
-        transform: translate3d(var(--drift), -220px, 0) scale(1);
-        opacity: 0.45;
-    }
-    85% {
-        opacity: 0.35;
-    }
-    100% {
-        transform: translate3d(calc(var(--drift) * -0.5), -480px, 0) scale(0.85);
-        opacity: 0;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .quienes-somos-box .bubble {
-        animation: none;
-        display: none;
-    }
-}
-
-/* VIDEO CORPORATIVO RENAX: BURBUJAS ANIMADAS */
-.video-wrapper-section {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    background: linear-gradient(
-        145deg,
-        #65000d 0%,
-        #d90000 35%,
-        #ff3b00 68%,
-        #ffc928 100%
-    );
-}
-
-/* Capa que contiene las burbujas */
-.video-bubbles {
-    position: absolute;
-    inset: 0;
-    overflow: hidden;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* Cada burbuja */
-.video-bubble {
-    position: absolute;
-    left: var(--x);
-    bottom: -100px;
-    width: var(--size);
-    height: var(--size);
-    border-radius: 50%;
-    border: 1px solid rgba(255, 210, 190, 0.75);
-
-    background: radial-gradient(
-        circle at 28% 25%,
-        rgba(255, 255, 255, 0.75) 0%,
-        rgba(255, 120, 80, 0.38) 12%,
-        rgba(255, 30, 0, 0.12) 45%,
-        rgba(255, 180, 60, 0.20) 75%,
-        rgba(255, 255, 255, 0.35) 100%
-    );
-
-    box-shadow:
-        inset -5px -7px 12px rgba(120, 0, 0, 0.25),
-        inset 3px 3px 8px rgba(255, 255, 255, 0.24),
-        0 0 15px rgba(255, 70, 20, 0.35);
-
-    opacity: 0;
-    animation: videoBubbleRise var(--duration) linear var(--delay) infinite;
-    will-change: transform, opacity;
-}
-
-@keyframes videoBubbleRise {
-    0% {
-        transform: translate3d(0, 0, 0) scale(0.7);
-        opacity: 0;
-    }
-
-    12% {
-        opacity: 0.75;
-    }
-
-    50% {
-        transform: translate3d(var(--drift), -45vh, 0) scale(1);
-        opacity: 0.6;
-    }
-
-    85% {
-        opacity: 0.45;
-    }
-
-    100% {
-        transform: translate3d(
-            calc(var(--drift) * -0.5),
-            -100vh,
-            0
-        ) scale(1.15);
-        opacity: 0;
-    }
-}
-
-/* Video y contenido por encima de las burbujas */
-.video-wrapper-section > *:not(.video-bubbles) {
-    position: relative;
-    z-index: 1;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .video-bubble {
-        animation: none;
-        display: none;
-    }
-}
-
     </style>
 </head>
 <body>
@@ -1076,14 +725,11 @@ max-width: none;
     </header>
 
     <!-- 1. PORTADA -->
-    
-<div class="hero-banner">
-    <h1 class="titulo-conocenos">CONÓCENOS</h1>
-</div>
+    <div class="hero-banner">
+        <h1 class="titulo-conocenos">CONÓCENOS</h1>
+    </div>
 
-    </section>
-
-    <!-- 2. VIDEO INSTITUCIONAL CON FONDO BLANCO A ANCHO DE PÁGINA -->
+    <!-- 2. VIDEO INSTITUCIONAL CON FONDO DE IMAGEN CORREGIDO -->
     <div class="video-wrapper-section">
         <div class="video-section">
             <iframe
@@ -1095,7 +741,7 @@ max-width: none;
         </div>
     </div>
 
-    <!-- 3. VISIÓN Y MISIÓN CON FONDO DETRÁS A ANCHO DE PÁGINA -->
+    <!-- 3. VISIÓN Y MISIÓN -->
     <div class="vision-mission-full-wrapper">
         <div class="vision-mission-container">
             <div class="card-box">
@@ -1116,7 +762,7 @@ max-width: none;
         </div>
     </div>
 
-    <!-- 4. SECCIÓN "HOLA, SOY KAROL" A ANCHO DE PÁGINA -->
+    <!-- 4. SECCIÓN "HOLA, SOY KAROL" -->
     <div class="karol-section-full">
         <div class="karol-content-container">
             <div class="karol-img-container">
@@ -1124,10 +770,9 @@ max-width: none;
             </div>
             <div class="karol-text-content">
                 <h2 class="titulo-karol" data-es="HOLA, SOY KAROL" data-en="HELLO, I'M KAROL">
-                    <span data-es="HOLA," data-en="HELLO,">HOLA,</span>
-                    <span data-es="SOY KAROL" data-en="I'M KAROL">SOY KAROL</span>
+                    HOLA, SOY KAROL
                 </h2>
-                <h3 data-es="Una visión creativa que transforma marcas." data-en="A creative vision that transforms brands.">Creatividad, estrategia y compromiso con cada marca.</h3>
+                <h3 data-es="Creatividad, estrategia y compromiso con cada marca." data-en="A creative vision that transforms brands.">Creatividad, estrategia y compromiso con cada marca.</h3>
                 <p data-es="RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades."
                    data-en="RENAX was born from my passion for design and my purpose of helping brands evolve without losing their essence. As founder, I work with creativity, strategy, and dedication to build visual identities that inspire trust, reflect stories, and open new opportunities.">
                     RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades.
@@ -1146,7 +791,7 @@ max-width: none;
         </div>
     </div>
 
-    <!-- 6. ¿QUIÉNES SOMOS? (FONDO NEGRO, SIN BORDE Y ALINEADO A LA DERECHA) -->
+    <!-- 6. ¿QUIÉNES SOMOS? -->
     <section class="quienes-somos-section" id="quienes-somos">
         <div class="quienes-somos-box">
             <h2 data-es="¿QUIÉNES SOMOS?" data-en="WHO WE ARE?">¿QUIÉNES SOMOS?</h2>
@@ -1161,7 +806,7 @@ max-width: none;
         </div>
     </section>
 
-    <!-- 7. CARRUSEL DE IMPACTO A ANCHO TOTAL -->
+    <!-- 7. CARRUSEL DE IMPACTO -->
     <section class="renax-carousel-section">
         <div class="renax-carousel">
             <div class="renax-carousel-track">
@@ -1181,23 +826,6 @@ max-width: none;
                     <h3 data-es="MÁS COHERENCIA" data-en="MORE CONSISTENCY">MÁS COHERENCIA</h3>
                     <p data-es="Una marca preparada para comunicarse de manera consistente en medios físicos y digitales." data-en="A brand ready to communicate consistently across physical and digital media.">Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
                 </article>
-                <!-- Copia carrusel infinito -->
-                <article class="renax-carousel-card" aria-hidden="true">
-                    <h3 data-es="MÁS RECONOCIMIENTO" data-en="MORE RECOGNITION">MÁS RECONOCIMIENTO</h3>
-                    <p data-es="Una imagen que facilita que tus clientes recuerden tu marca." data-en="An image that helps your customers remember your brand.">Una imagen que facilita que tus clientes recuerden tu marca.</p>
-                </article>
-                <article class="renax-carousel-card" aria-hidden="true">
-                    <h3 data-es="MÁS CONFIANZA" data-en="MORE TRUST">MÁS CONFIANZA</h3>
-                    <p data-es="Una identidad profesional que refleja la experiencia de tu negocio." data-en="A professional identity that reflects your business experience.">Una identidad profesional que refleja la experiencia de tu negocio.</p>
-                </article>
-                <article class="renax-carousel-card" aria-hidden="true">
-                    <h3 data-es="MÁS CONEXIÓN" data-en="MORE CONNECTION">MÁS CONEXIÓN</h3>
-                    <p data-es="Una comunicación visual capaz de acercarte a nuevos públicos." data-en="Visual communication that helps you connect with new audiences.">Una comunicación visual capaz de acercarte a nuevos públicos.</p>
-                </article>
-                <article class="renax-carousel-card" aria-hidden="true">
-                    <h3 data-es="MÁS COHERENCIA" data-en="MORE CONSISTENCY">MÁS COHERENCIA</h3>
-                    <p data-es="Una marca preparada para comunicarse de manera consistente en medios físicos y digitales." data-en="A brand ready to communicate consistently across physical and digital media.">Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
-                </article>
             </div>
         </div>
     </section>
@@ -1206,7 +834,6 @@ max-width: none;
     <footer class="renax-footer" id="footer-renax">
         <h2 class="footer-titulo" data-lang="footerMenu">MENÚ</h2>
         <div class="footer-secciones">
-            <!-- INICIO -->
             <nav class="footer-column">
                 <h3><a href="index.html" data-lang="footerInicio">INICIO</a></h3>
                 <div class="footer-menu-links">
@@ -1217,7 +844,6 @@ max-width: none;
                 </div>
             </nav>
 
-            <!-- NOSOTROS -->
             <nav class="footer-column">
                 <h3><a href="nosotros.html" data-lang="footerNosotros">NOSOTROS</a></h3>
                 <div class="footer-menu-links">
@@ -1228,7 +854,6 @@ max-width: none;
                 </div>
             </nav>
 
-            <!-- PORTAFOLIO -->
             <nav class="footer-column">
                 <h3><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h3>
                 <div class="footer-menu-links">
@@ -1237,7 +862,6 @@ max-width: none;
                 </div>
             </nav>
 
-            <!-- SERVICIOS -->
             <nav class="footer-column">
                 <h3><a href="servicios.html" data-lang="footerServices">SERVICIOS</a></h3>
                 <div class="footer-menu-links">
@@ -1248,7 +872,6 @@ max-width: none;
                 </div>
             </nav>
 
-            <!-- CONTACTO -->
             <nav class="footer-column">
                 <h3><a href="contacto.html" data-lang="footerContact">CONTACTO</a></h3>
                 <div class="footer-menu-links">
@@ -1271,53 +894,18 @@ max-width: none;
         }
 
         let english = false;
-
         const translations = {
             es: {
-                footerInicio: "INICIO",
-                footerNosotros: "NOSOTROS",
-                footerPortfolio: "PORTAFOLIO",
-                footerServices: "SERVICIOS",
-                footerContact: "CONTACTO",
-                footerMenu: "MENÚ",
-                footerHomeHero: "Expertos en transformar marcas",
-                footerHomeEssence: "Vuelve a destacar sin perder tu esencia",
-                footerHomeHistory: "Tu historia merece una imagen que esté a su altura",
-                footerHomeFAQ: "Preguntas frecuentes",
-                footerWho: "Quiénes somos",
-                footerVision: "Visión",
-                footerMission: "Misión",
-                footerWhy: "¿Por qué RENAX?",
-                footerProjects: "Proyectos y trabajos realizados",
-                footerCases: "Casos de estudio",
-                footerService1: "Diagnóstico de marca",
-                footerService2: "Identidad visual",
-                footerService3: "Comunicación",
-                footerService4: "Estrategia visual",
-                footerTalk: "Hablemos de tu proyecto"
+                footerInicio: "INICIO", footerNosotros: "NOSOTROS", footerPortfolio: "PORTAFOLIO", footerServices: "SERVICIOS", footerContact: "CONTACTO", footerMenu: "MENÚ",
+                footerHomeHero: "Expertos en transformar marcas", footerHomeEssence: "Vuelve a destacar sin perder tu esencia", footerHomeHistory: "Tu historia merece una imagen que esté a su altura", footerHomeFAQ: "Preguntas frecuentes",
+                footerWho: "Quiénes somos", footerVision: "Visión", footerMission: "Misión", footerWhy: "¿Por qué RENAX?", footerProjects: "Proyectos y trabajos realizados", footerCases: "Casos de estudio",
+                footerService1: "Diagnóstico de marca", footerService2: "Identidad visual", footerService3: "Comunicación", footerService4: "Estrategia visual", footerTalk: "Hablemos de tu proyecto"
             },
             en: {
-                footerInicio: "HOME",
-                footerNosotros: "ABOUT US",
-                footerPortfolio: "PORTAFOLIO",
-                footerServices: "SERVICES",
-                footerContact: "CONTACT",
-                footerMenu: "MENU",
-                footerHomeHero: "Experts in transforming brands",
-                footerHomeEssence: "Stand out again without losing your essence",
-                footerHomeHistory: "Your story deserves an image that lives up to it",
-                footerHomeFAQ: "Frequently asked questions",
-                footerWho: "Who we are",
-                footerVision: "Vision",
-                footerMission: "Mission",
-                footerWhy: "Why RENAX?",
-                footerProjects: "Projects and completed work",
-                footerCases: "Case studies",
-                footerService1: "Brand diagnosis",
-                footerService2: "Visual identity",
-                footerService3: "Communication",
-                footerService4: "Visual strategy",
-                footerTalk: "Let's talk about your project"
+                footerInicio: "HOME", footerNosotros: "ABOUT US", footerPortfolio: "PORTAFOLIO", footerServices: "SERVICES", footerContact: "CONTACT", footerMenu: "MENU",
+                footerHomeHero: "Experts in transforming brands", footerHomeEssence: "Stand out again without losing your essence", footerHomeHistory: "Your story deserves an image that lives up to it", footerHomeFAQ: "Frequently asked questions",
+                footerWho: "Who we are", footerVision: "Vision", footerMission: "Mission", footerWhy: "Why RENAX?", footerProjects: "Projects and completed work", footerCases: "Case studies",
+                footerService1: "Brand diagnosis", footerService2: "Visual identity", footerService3: "Communication", footerService4: "Visual strategy", footerTalk: "Let's talk about your project"
             }
         };
 
@@ -1329,106 +917,56 @@ max-width: none;
 
                 document.querySelectorAll("[data-lang]").forEach(function(element) {
                     const key = element.getAttribute("data-lang");
-                    if (language[key]) {
-                        element.innerHTML = language[key];
-                    }
+                    if (language[key]) { element.innerHTML = language[key]; }
                 });
 
                 document.querySelectorAll("[data-es]").forEach(function(element) {
                     const text = english ? element.getAttribute("data-en") : element.getAttribute("data-es");
-                    if (text) {
-                        element.innerHTML = text;
-                    }
+                    if (text) { element.innerHTML = text; }
                 });
             });
         }
-    </script>
 
-    <!-- FIREBASE AUTH -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
-
-        const firebaseConfig = {
-            apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
-            authDomain: "renax-auth.firebaseapp.com",
-            projectId: "renax-auth",
-            storageBucket: "renax-auth.firebasestorage.app",
-            messagingSenderId: "155645649809",
-            appId: "1:155645649809:web:3b203ccb729bfc8672b030"
-        };
-
-        const app = initializeApp(firebaseConfig);
-        const auth = getAuth(app);
-        const navLoginBtn = document.getElementById('navLoginBtn');
-
-        onAuthStateChanged(auth, (user) => {
-            if (navLoginBtn) {
-                if (user) {
-                    navLoginBtn.href = "dashboard.html";
-                    const span = navLoginBtn.querySelector('span');
-                    if (span) span.textContent = "MI PANEL";
-                } else {
-                    navLoginBtn.href = "login.html";
-                    const span = navLoginBtn.querySelector('span');
-                    if (span) span.textContent = "INICIAR SESIÓN";
-                }
+        // Script de burbujas flotantes para cuadros
+        const cuadro = document.querySelector(".quienes-somos-box");
+        if (cuadro && !cuadro.querySelector(".bubble-layer")) {
+            const capa = document.createElement("div");
+            capa.className = "bubble-layer";
+            capa.setAttribute("aria-hidden", "true");
+            for (let i = 0; i < 18; i++) {
+                const burbuja = document.createElement("span");
+                burbuja.className = "bubble";
+                const duracion = 9 + Math.random() * 10;
+                burbuja.style.setProperty("--x", `${Math.random() * 96}%`);
+                burbuja.style.setProperty("--size", `${10 + Math.random() * 34}px`);
+                burbuja.style.setProperty("--duration", `${duracion}s`);
+                burbuja.style.setProperty("--delay", `${-(Math.random() * duracion)}s`);
+                burbuja.style.setProperty("--drift", `${-35 + Math.random() * 70}px`);
+                capa.appendChild(burbuja);
             }
+            cuadro.prepend(capa);
+        }
+
+        // Script de burbujas flotantes para la sección de video
+        document.addEventListener("DOMContentLoaded", () => {
+            const seccion = document.querySelector(".video-wrapper-section");
+            if (!seccion || seccion.querySelector(".video-bubbles")) return;
+            const capa = document.createElement("div");
+            capa.className = "video-bubbles";
+            capa.setAttribute("aria-hidden", "true");
+            for (let i = 0; i < 26; i++) {
+                const burbuja = document.createElement("span");
+                burbuja.className = "video-bubble";
+                const duracion = 10 + Math.random() * 12;
+                burbuja.style.setProperty("--x", `${Math.random() * 98}%`);
+                burbuja.style.setProperty("--size", `${12 + Math.random() * 52}px`);
+                burbuja.style.setProperty("--duration", `${duracion}s`);
+                burbuja.style.setProperty("--delay", `${-(Math.random() * duracion)}s`);
+                burbuja.style.setProperty("--drift", `${-70 + Math.random() * 140}px`);
+                capa.appendChild(burbuja);
+            }
+            seccion.prepend(capa);
         });
-       
-const cuadro = document.querySelector(".quienes-somos-box");
-
-if (cuadro && !cuadro.querySelector(".bubble-layer")) {
-    const capa = document.createElement("div");
-    capa.className = "bubble-layer";
-    capa.setAttribute("aria-hidden", "true");
-
-    for (let i = 0; i < 18; i++) {
-        const burbuja = document.createElement("span");
-        burbuja.className = "bubble";
-
-        const duracion = 9 + Math.random() * 10;
-
-        burbuja.style.setProperty("--x", `${Math.random() * 96}%`);
-        burbuja.style.setProperty("--size", `${10 + Math.random() * 34}px`);
-        burbuja.style.setProperty("--duration", `${duracion}s`);
-        burbuja.style.setProperty("--delay", `${-(Math.random() * duracion)}s`);
-        burbuja.style.setProperty("--drift", `${-35 + Math.random() * 70}px`);
-
-        capa.appendChild(burbuja);
-    }
-
-    cuadro.prepend(capa);
-}
- 
-document.addEventListener("DOMContentLoaded", () => {
-    const seccion = document.querySelector(".video-wrapper-section");
-
-    if (!seccion || seccion.querySelector(".video-bubbles")) return;
-
-    const capa = document.createElement("div");
-    capa.className = "video-bubbles";
-    capa.setAttribute("aria-hidden", "true");
-
-    for (let i = 0; i < 26; i++) {
-        const burbuja = document.createElement("span");
-        burbuja.className = "video-bubble";
-
-        const duracion = 10 + Math.random() * 12;
-
-        burbuja.style.setProperty("--x", `${Math.random() * 98}%`);
-        burbuja.style.setProperty("--size", `${12 + Math.random() * 52}px`);
-        burbuja.style.setProperty("--duration", `${duracion}s`);
-        burbuja.style.setProperty("--delay", `${-(Math.random() * duracion)}s`);
-        burbuja.style.setProperty("--drift", `${-70 + Math.random() * 140}px`);
-
-        capa.appendChild(burbuja);
-    }
-
-    seccion.prepend(capa);
-});
-
     </script>
-
 </body>
 </html>
