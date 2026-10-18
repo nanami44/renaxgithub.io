@@ -317,60 +317,107 @@ section {
             font-size: 14px;
         }
 
-        /* FOOTER */
-        footer {
-            background-color: #020202;
-            border-top: 1px solid #222;
-            padding: 60px 20px 30px 20px;
-            margin-top: 80px;
-        }
+  
+/* =========================================
+   PIE DE PÁGINA RENAX
+   ========================================= */
 
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 30px;
-        }
+footer {
+    width: 100%;
+    box-sizing: border-box;
+    background: #080808;
+    border-top: 1px solid #650000;
+    padding: 45px 5% 35px;
+    color: #ffffff;
+}
 
-        .footer-col h4 {
-            color: #ff3333;
-            margin-bottom: 20px;
-            font-size: 16px;
-            text-transform: uppercase;
-        }
+<div class="footer-logo">
+    <img src="logo-renax-transparente.png"
+         alt="Logo de RENAX">
+</div>
 
-        .footer-col ul {
-            list-style: none;
-        }
+/* TÍTULO MENÚ */
+footer .footer-title {
+    display: block;
+    text-align: center;
+    color: #e60026;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin: 0 0 45px;
+}
 
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
+/* COLUMNAS */
+footer .footer-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 35px;
+    max-width: 1500px;
+    margin: 0 auto;
+}
 
-        .footer-col ul li a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
+/* ENCABEZADOS */
+footer .footer-column h3 {
+    color: #bcbcbc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    margin: 0 0 35px;
+}
 
-        .footer-col ul li a:hover {
-            color: #fff;
-        }
+/* ENLACES Y TEXTOS */
+footer .footer-column a,
+footer .footer-column p {
+    display: block;
+    color: #f0f0f0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 1.8;
+    text-decoration: none;
+    margin: 0 0 17px;
+}
 
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .vision-mission, .images-text-section, .why-renax ul, .impact-grid, .footer-container {
-                grid-template-columns: 1fr;
-            }
-            header {
-                padding: 15px 20px;
-            }
-            nav {
-                display: none;
-            }
-        }
+footer .footer-column a:hover {
+    color: #ff3344;
+}
+
+/* TABLET */
+@media (max-width: 1000px) {
+    footer .footer-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    footer {
+        padding: 35px 22px;
+    }
+
+    footer .footer-title {
+        margin-bottom: 30px;
+    }
+
+    footer .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 18px;
+    }
+
+    footer .footer-column h3 {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    footer .footer-column a,
+    footer .footer-column p {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+    }
+}
+
         
 /* MANTENER EL ESPACIADO DEL CONTENIDO INTERNO */
 section:not(:has(.hero-banner)) {
@@ -636,6 +683,22 @@ html, body {
     .renax-carousel-track {
         animation: none;
     }
+}
+
+/* LOGO RENAX EN EL PIE DE PÁGINA */
+footer .footer-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+footer .footer-logo img {
+    display: block;
+    width: 160px;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
     </style>
