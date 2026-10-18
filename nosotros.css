@@ -1,278 +1,287 @@
-/* ==========================================================
-   ESTILOS NUEVOS RENAX - ESTRUCTURA LIMPIA & MONTGOMERY BLACK
-   ========================================================== */
-
-.montserrat-title {
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 900 !important;
-    letter-spacing: 1px;
+:root {
+    --bg-color: #050505;
+    --card-bg: #120303;
+    --primary-red: #8B0000;
+    --accent-red: #cc0000;
+    --text-color: #ffffff;
+    --text-muted: #cccccc;
 }
 
-.nosotros-renax {
-    background-image: url('fondo-portafolio-rojo.jpeg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #ffffff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+* {
     margin: 0;
-    overflow-x: hidden;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.nosotros-renax::before {
-    content: '';
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* HEADER */
+header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.76);
-    z-index: -1;
-}
-
-/* 3. Sección en limpio: Reseña Histórica Hover */
-.about-manifest-clean {
-    max-width: 1100px;
-    margin: 50px auto;
-    padding: 0 20px;
-}
-.history-hover-card {
-    background: linear-gradient(135deg, #120303 0%, #080808 100%);
-    border: 2px solid #ff2a2a;
-    border-radius: 12px;
-    padding: 35px;
-    transition: all 0.4s ease;
-    box-shadow: 0 0 15px rgba(255, 42, 42, 0.3);
-}
-.history-hover-card:hover {
-    background: linear-gradient(135deg, #ff2a2a 0%, #0d0202 100%);
-    box-shadow: 0 0 25px rgba(255, 42, 42, 0.7);
-}
-.history-title-wrapper {
+    background-color: rgba(5, 5, 5, 0.95);
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-.history-hover-card h2 {
-    color: #ffffff;
-    font-size: 24px;
-    margin: 0;
-}
-.renax-history-bird {
-    height: 28px;
-    filter: brightness(0) invert(1);
-}
-.history-hover-content {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.5s ease, opacity 0.5s ease;
-}
-.history-hover-card:hover .history-hover-content {
-    max-height: 400px;
-    opacity: 1;
-    margin-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
-    padding-top: 15px;
-}
-.history-hover-content p {
-    color: #ffffff;
-    line-height: 1.7;
-    font-size: 15px;
-    margin-bottom: 12px;
+    padding: 15px 50px;
+    z-index: 1000;
+    border-bottom: 1px solid #222;
 }
 
-/* 4. Sección para dos imágenes del equipo (Karol) */
-.renax-team-section {
-    max-width: 1100px;
-    margin: 60px auto;
-    padding: 0 20px;
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff;
+    letter-spacing: 2px;
 }
-.team-clean-container {
-    background: rgba(10, 10, 10, 0.88);
-    border: 1px solid rgba(255, 42, 42, 0.3);
-    border-radius: 14px;
-    padding: 50px 30px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
 }
-.team-images-split {
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent-red);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn-lang {
+    background: #fff;
+    color: #000;
+    border: none;
+    padding: 6px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-login {
+    background-color: var(--primary-red);
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.btn-login:hover {
+    background-color: var(--accent-red);
+}
+
+/* SECTIONS */
+section {
+    padding: 100px 20px 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 1. PORTADA */
+.hero-banner {
+    width: 100%;
+    height: 500px;
+    background-color: #1a1a1a;
+    border: 2px dashed #444;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 35px;
-    margin-bottom: 40px;
-}
-.team-photo-box {
-    width: 210px;
-    height: 260px;
-    border-radius: 10px;
-    overflow: hidden;
-    border: 2px solid rgba(255, 42, 42, 0.4);
-    background: #111;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
-}
-.frame-primary { transform: translateY(-10px); }
-.frame-secondary { transform: translateY(15px); }
-.team-img-file {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.team-info-box {
-    text-align: center;
-}
-.team-info-box h2 {
-    font-size: 32px;
-    color: #fff;
-    margin-bottom: 20px;
-}
-.team-info-box p {
-    color: #bbb;
-    line-height: 1.8;
-    font-size: 15px;
-    max-width: 780px;
-    margin: 0 auto 15px auto;
+    border-radius: 12px;
+    margin-top: 80px;
+    color: #777;
+    font-size: 18px;
 }
 
-/* 5. Otra sección en limpio (Misión, Visión y Agencia) */
-.about-clean-blocks {
-    max-width: 1100px;
-    margin: 60px auto;
-    padding: 0 20px;
+/* 2. VIDEO */
+.video-section {
+    width: 100%;
+    height: 400px;
+    background-color: #1a1a1a;
+    border: 2px dashed #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    color: #777;
+    font-size: 18px;
 }
-.about-mission-vision-clean {
+
+/* 3. VISION Y MISION */
+.vision-mission {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
-    margin-bottom: 40px;
 }
-.mission-vision-card {
-    background: rgba(15, 15, 15, 0.92);
-    padding: 35px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+
+.card-box {
+    background-color: var(--card-bg);
+    padding: 40px;
+    border-radius: 20px;
+    border: 1px solid #330000;
 }
-.mission-vision-card h3 {
-    color: #ff2a2a;
-    font-size: 22px;
+
+.card-box h2 {
+    color: #ff3333;
     margin-bottom: 15px;
-}
-.mission-vision-card p {
-    color: #bbb;
-    line-height: 1.7;
-    font-size: 14px;
-}
-.agency-clean-box {
-    background: #ffffff;
-    color: #111111;
-    border-radius: 12px;
-    padding: 45px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-}
-.agency-title-red-black {
     font-size: 28px;
-    color: #ff2a2a;
-    text-shadow: 1px 1px 2px #000000;
-    margin-bottom: 20px;
-}
-.agency-clean-box p {
-    color: #333333;
-    line-height: 1.7;
-    font-size: 16px;
-    margin-bottom: 15px;
 }
 
-/* Botones Flotantes */
-.renax-floating-social {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    z-index: 999;
-}
-.renax-floating-social a {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
+/* 4. DOS IMAGENES Y TEXTO */
+.images-text-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     align-items: center;
-    justify-content: center;
-    font-size: 22px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-    text-decoration: none;
-    transition: transform 0.3s;
 }
-.renax-floating-social a:hover { transform: scale(1.1); }
-.float-wa { background: #25d366; color: #fff; }
-.float-fb { background: #1877f2; color: #fff; }
 
-/* 6. Pie de Página Horizontal (Referencia exacta) */
-.srv-footer-horizontal {
-    width: 100%;
-    background: #050505;
-    color: #fff;
-    padding: 45px 30px 25px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+.img-placeholder {
+    height: 250px;
+    background: #1a1a1a;
+    border: 2px dashed #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    color: #777;
 }
-.srv-footer-wrapper {
-    max-width: 1400px;
+
+.text-content {
+    padding: 20px;
+}
+
+/* 5 & 6. QUIENES SOMOS Y QUE HACEMOS */
+.content-block {
+    text-align: center;
+    max-width: 800px;
     margin: 0 auto;
 }
-.srv-footer-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 15px;
-    margin-bottom: 30px;
-}
-.footer-menu-red {
-    color: #ff2a2a !important;
-    font-size: 14px;
-    letter-spacing: 1.5px;
-    text-decoration: none;
-}
-.srv-footer-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 25px;
-    padding-bottom: 30px;
-}
-.srv-footer-col {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.srv-footer-col h3 {
-    font-size: 13px;
+
+.content-block h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
     letter-spacing: 1px;
-    text-transform: uppercase;
-}
-.srv-footer-col a {
-    color: #bbb;
-    font-size: 12px;
-    text-decoration: none;
-    transition: color 0.2s;
-}
-.srv-footer-col a:hover { color: #ff2a2a; }
-.srv-footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 15px;
-}
-.footer-logo-small {
-    height: 24px;
-    filter: brightness(0) invert(1);
 }
 
-/* Responsivo para celulares */
-@media (max-width: 768px) {
-    .about-mission-vision-clean { grid-template-columns: 1fr; }
-    .srv-footer-grid { grid-template-columns: 1fr; gap: 25px; }
-    .team-images-split { flex-direction: column; }
-    .frame-primary, .frame-secondary { transform: translateY(0); }
+.content-block p {
+    color: var(--text-muted);
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* 7. POR QUE RENAX */
+.why-renax ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.why-renax li {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid var(--primary-red);
+    font-size: 18px;
+}
+
+/* 8. TARJETAS DE IMPACTO */
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.impact-card {
+    background: linear-gradient(135deg, #2b0000, #0a0a0a);
+    padding: 30px 20px;
+    border-radius: 15px;
+    border: 1px solid #400;
+}
+
+.impact-card h3 {
+    color: #ff4d4d;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.impact-card p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* FOOTER */
+footer {
+    background-color: #020202;
+    border-top: 1px solid #222;
+    padding: 60px 20px 30px 20px;
+    margin-top: 80px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
+
+.footer-col h4 {
+    color: #ff3333;
+    margin-bottom: 20px;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .vision-mission, .images-text-section, .why-renax ul, .impact-grid, .footer-container {
+        grid-template-columns: 1fr;
+    }
+    header {
+        padding: 15px 20px;
+    }
+    nav {
+        display: none;
+    }
 }
