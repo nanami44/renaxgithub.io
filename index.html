@@ -8,7 +8,7 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="inicio.css?v=4">
+  <link rel="stylesheet" href="inicio.css?v=5">
 </head>
 
 <body class="inicio-renax">
@@ -230,50 +230,61 @@
     </section>
   </main>
 
-  <!-- ================ FOOTER RENAX ================ -->
+  <!-- ================ FOOTER RENAX (MENÚ RESTAURADO) ================ -->
   <footer class="renax-footer" id="footer-renax">
     <h2 class="footer-titulo" data-lang="footerMenu">MENÚ</h2>
-    <div class="footer-secciones" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 30px;">
+    <div class="footer-secciones">
+      
+      <!-- INICIO -->
       <nav class="footer-column">
-        <h3><a href="index.html">INICIO</a></h3>
+        <h3><a href="index.html" data-lang="footerInicio">INICIO</a></h3>
         <div class="footer-menu-links">
-          <a href="index.html#hero-inicio">Expertos en transformar marcas</a>
-          <a href="index.html#esencia-marca">Vuelve a destacar sin perder tu esencia</a>
-          <a href="index.html#historia-marca">Tu historia merece una imagen que esté a su altura</a>
-          <a href="index.html#preguntas-frecuentes">Preguntas frecuentes</a>
+          <a href="index.html#hero-inicio" data-lang="footerHomeHero">Expertos en transformar marcas</a>
+          <a href="index.html#esencia-marca" data-lang="footerHomeEssence">Vuelve a destacar sin perder tu esencia</a>
+          <a href="index.html#historia-marca" data-lang="footerHomeHistory">Tu historia merece una imagen que esté a su altura</a>
+          <a href="index.html#preguntas-frecuentes" data-lang="footerHomeFAQ">Preguntas frecuentes</a>
         </div>
       </nav>
+
+      <!-- NOSOTROS -->
       <nav class="footer-column">
-        <h3><a href="nosotros.html">NOSOTROS</a></h3>
+        <h3><a href="nosotros.html" data-lang="footerNosotros">NOSOTROS</a></h3>
         <div class="footer-menu-links">
-          <a href="nosotros.html#quienes-somos">Quiénes somos</a>
-          <a href="nosotros.html#vision">Visión</a>
-          <a href="nosotros.html#mision">Misión</a>
-          <a href="nosotros.html#por-que-renax">¿Por qué RENAX?</a>
+          <a href="nosotros.html#quienes-somos" data-lang="footerWho">Quiénes somos</a>
+          <a href="nosotros.html#vision" data-lang="footerVision">Visión</a>
+          <a href="nosotros.html#mision" data-lang="footerMission">Misión</a>
+          <a href="nosotros.html#por-que-renax" data-lang="footerWhy">¿Por qué RENAX?</a>
         </div>
       </nav>
+
+      <!-- PORTAFOLIO -->
       <nav class="footer-column">
-        <h3><a href="portafolio.html">PORTAFOLIO</a></h3>
+        <h3><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h3>
         <div class="footer-menu-links">
-          <a href="portafolio.html#proyectos">Proyectos y trabajos realizados</a>
-          <a href="portafolio.html#casos-estudio">Casos de estudio</a>
+          <a href="portafolio.html#proyectos" data-lang="footerProjects">Proyectos y trabajos realizados</a>
+          <a href="portafolio.html#casos-estudio" data-lang="footerCases">Casos de estudio</a>
         </div>
       </nav>
+
+      <!-- SERVICIOS -->
       <nav class="footer-column">
-        <h3><a href="servicios.html">SERVICIOS</a></h3>
+        <h3><a href="servicios.html" data-lang="footerServices">SERVICIOS</a></h3>
         <div class="footer-menu-links">
-          <a href="servicios.html#diagnostico">Diagnóstico de marca</a>
-          <a href="servicios.html#identidad">Identidad visual</a>
-          <a href="servicios.html#comunicacion">Comunicación</a>
-          <a href="servicios.html#estrategia">Estrategia visual</a>
+          <a href="servicios.html#diagnostico" data-lang="footerService1">Diagnóstico de marca</a>
+          <a href="servicios.html#identidad" data-lang="footerService2">Identidad visual</a>
+          <a href="servicios.html#comunicacion" data-lang="footerService3">Comunicación</a>
+          <a href="servicios.html#estrategia" data-lang="footerService4">Estrategia visual</a>
         </div>
       </nav>
+
+      <!-- CONTACTO -->
       <nav class="footer-column">
-        <h3><a href="contacto.html">CONTACTO</a></h3>
+        <h3><a href="contacto.html" data-lang="footerContact">CONTACTO</a></h3>
         <div class="footer-menu-links">
-          <a href="contacto.html#contacto-formulario">Hablemos de tu proyecto</a>
+          <a href="contacto.html#contacto-formulario" data-lang="footerTalk">Hablemos de tu proyecto</a>
         </div>
       </nav>
+
     </div>
   </footer>
 
@@ -293,7 +304,7 @@
         const responses = [
             'RENAX trabaja con pequeñas y medianas empresas que desean modernizar su identidad visual, fortalecer su presencia y conservar la esencia de su marca.',
             'Comenzamos conociendo la historia, los valores y la identidad actual de la marca. Después desarrollamos una propuesta visual que busca modernizarla sin borrar su historia.',
-            'No necessarily. El objetivo es evaluar qué elementos deben conservarse y cuáles pueden actualizarse para lograr una identidad más clara, coherente y actual.',
+            'No necesariamente. El objetivo es evaluar qué elementos deben conservarse y cuáles pueden actualizarse para lograr una identidad más clara, coherente y actual.',
             'El contenido depende del servicio contratado y de las necesidades de cada marca. Antes de iniciar, definimos el alcance del proyecto.',
             'Podemos revisar juntos la situación actual de tu marca y conversar sobre los objetivos que deseas alcanzar para identificar el servicio más adecuado.',
             'Sí. Puedes consultar por un servicio específico de diseño gráfico, según las necesidades de tu negocio.',
@@ -315,7 +326,7 @@
         });
 
         if(back) back.addEventListener('click', closeAnswer);
-        if(modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeAnswer(); });
+        if(modal) modal.addEventListener('click', (e) => { if (event.target === modal) closeAnswer(); });
     });
   </script>
 </body>
