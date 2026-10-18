@@ -922,3 +922,69 @@ object-fit: cover;
         animation: none;
     }
 }
+
+/* CINTURÓN VERTICAL LARGO RENAX */
+.renax-belt {
+    height: 1000px !important;
+    min-height: 1000px;
+    overflow: hidden;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 12px;
+}
+
+.renax-belt-track {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    overflow: visible;
+    font-size: clamp(38px, 4vw, 66px);
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+    will-change: transform;
+}
+
+.renax-word {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.02;
+}
+
+.renax-word span {
+    display: block;
+    opacity: 1;
+}
+
+/* Movimientos en sentidos opuestos */
+.renax-belt-down {
+    animation: renaxBeltDown 18s linear infinite;
+}
+
+.renax-belt-up {
+    animation: renaxBeltUp 18s linear infinite;
+}
+
+@keyframes renaxBeltDown {
+    from { transform: translateY(-20%); }
+    to   { transform: translateY(20%); }
+}
+
+@keyframes renaxBeltUp {
+    from { transform: translateY(20%); }
+    to   { transform: translateY(-20%); }
+}
+
+@media (max-width: 600px) {
+    .renax-belt {
+        height: 800px !important;
+        min-height: 800px;
+    }
+
+    .renax-belt-track {
+        font-size: clamp(30px, 7vw, 42px);
+    }
+}
