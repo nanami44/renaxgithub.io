@@ -21,18 +21,17 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-       
-body {
-    background-color: #050505;
-    background-image: url('portafolio-rojo.jpeg');
-    background-size: cover;
-    background-position: center top;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: var(--text-color);
-    line-height: 1.6;
-}
-
+        /* FONDO GENERAL DE LA PÁGINA */
+        html, body {
+            background-color: #050505;
+            background-image: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.90)), url('portafolio-rojo.jpeg');
+            background-position: center top;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
         /* HEADER */
         header {
@@ -106,82 +105,57 @@ body {
         }
 
         /* SECTIONS */
-       
-section {
-    padding: 0;
-    max-width: none;
-    width: 100%;
-    margin: 0;
-}
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-        
+        section:has(.hero-banner) {
+            padding: 0;
+            max-width: none;
+        }
 
-/* PORTADA A TODO EL ANCHO DE LA PÁGINA */
-.hero-banner {
-    width: 100%;
-    height: 580px;
-
-    background:
-        linear-gradient(
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.50)
-        ),
-        url('nosotros-bg.jpeg');
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 0;
-    margin: 0;
-    margin-top: 70px;
-
-    color: #fff;
-    font-size: 36px;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
-
-    border: none;
-}
-
+        /* PORTADA A TODO EL ANCHO DE LA PÁGINA */
+        .hero-banner {
+            width: 100%;
+            height: 580px;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.50)), url('nosotros-bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 70px;
+            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+        }
 
         /* 2. VIDEO */
-       
-.video-section {
-    width: 85%;
-    max-width: 1200px;
-    height: 650px;
-    margin: 0 auto;
-    background-color: #111;
-    border: 1px solid #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 12px;
-    overflow: hidden;
-}
+        .video-section {
+            width: 85%;
+            max-width: 1200px;
+            height: 650px;
+            margin: 0 auto;
+            background-color: #111;
+            border: 1px solid #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 12px;
+            overflow: hidden;
+        }
 
-.video-section iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-}
-
-
-        
-.video-section iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: block;
-}
-
+        .video-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
 
         /* 3. VISION Y MISION */
         .vision-mission {
@@ -191,7 +165,7 @@ section {
         }
 
         .card-box {
-            background-color: var(--card-bg);
+            background: rgba(10, 5, 5, 0.78);
             padding: 40px;
             border-radius: 20px;
             border: 1px solid #330000;
@@ -203,7 +177,7 @@ section {
             font-size: 28px;
         }
 
-        /* 4. DOS IMAGENES Y TEXTO (karol - 2.png y karol-renax..png) */
+        /* 4. DOS IMAGENES Y TEXTO */
         .images-text-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -211,29 +185,66 @@ section {
             align-items: center;
         }
 
-        
-.img-container {
-    width: 100%;
-    max-width: 520px;
-    height: 300px;
-    margin: 0 auto;
-    background: #111;
-    border: 1px solid #333;
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .img-container {
+            width: 100%;
+            max-width: 520px;
+            height: 300px;
+            margin: 0 auto;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
 
-.img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
+        .text-content {
+            width: 100%;
+            max-width: 1100px;
+            margin: 40px auto 30px;
+            padding: 30px 20px;
+            text-align: left;
+        }
 
+        .text-content h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 46px;
+            line-height: 1.15;
+            color: #cc0000;
+            margin: 0 0 18px 0;
+            text-transform: uppercase;
+        }
+
+        .text-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 23px;
+            color: #ffffff;
+            margin: 0 0 20px 0;
+        }
+
+        .text-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #ffffff;
+            margin: 0 0 18px 0;
+        }
+
+        .text-content .frase-renax {
+            font-weight: 900;
+            font-size: 18px;
+            color: #ffffff;
+            margin-top: 25px;
+        }
 
         /* 5 & 6. QUIENES SOMOS Y QUE HACEMOS */
         .content-block {
@@ -242,17 +253,13 @@ section {
             margin: 0 auto;
         }
 
-       
-.content-block h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 48px;
-    color: #cc0000;
-    text-align: center;
-    letter-spacing: 1px;
-    margin-bottom: 25px;
-    line-height: 1.15;
-}
+        .content-block h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            color: #cc0000;
+            margin-bottom: 25px;
+        }
 
         .content-block p {
             color: var(--text-muted);
@@ -260,429 +267,178 @@ section {
             margin-bottom: 15px;
         }
 
-     /* 7. POR QUE RENAX */
-    .why-renax {
-        max-width: 1100px;
-        margin: 0 auto;
-    }
+        /* 7. POR QUE RENAX (TARJETAS OSCURAS) */
+        .why-renax {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
 
-    .why-renax ul {
-        list-style: none;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 25px;
-        margin-top: 35px;
-    }
+        .why-renax h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 48px;
+            color: #cc0000;
+            text-align: center;
+            margin-bottom: 35px;
+        }
 
-    .why-renax li {
-        background: linear-gradient(135deg, rgba(40, 3, 3, 0.85), rgba(15, 2, 2, 0.90));
-        padding: 30px;
-        border-radius: 16px;
-        border: 1px solid rgba(204, 0, 0, 0.4);
-        font-size: 18px;
-        font-weight: 500;
-        color: #ffffff;
-        text-align: left;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-        transition: transform 0.3s ease, border-color 0.3s ease;
-    }
-
-    .why-renax li:hover {
-        transform: translateY(-5px);
-        border-color: rgba(255, 51, 51, 0.8);
-    }
-
-        /* 8. TARJETAS DE IMPACTO */
-        .impact-grid {
+        .why-renax ul {
+            list-style: none;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 25px;
+            margin-top: 35px;
         }
 
-        .impact-card {
-            background: linear-gradient(135deg, #2b0000, #0a0a0a);
-            padding: 30px 20px;
-            border-radius: 15px;
-            border: 1px solid #400;
+        .why-renax li {
+            background: linear-gradient(135deg, rgba(40, 3, 3, 0.85), rgba(15, 2, 2, 0.90));
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid rgba(204, 0, 0, 0.4);
+            font-size: 18px;
+            font-weight: 500;
+            color: #ffffff;
+            text-align: left;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
-        .impact-card h3 {
-            color: #ff4d4d;
-            font-size: 20px;
-            margin-bottom: 15px;
+        .why-renax li:hover {
+            transform: translateY(-5px);
+            border-color: rgba(255, 51, 51, 0.8);
         }
 
-        .impact-card p {
-            color: var(--text-muted);
+        /* 8. CARRUSEL INFINITO DE TARJETAS DE IMPACTO */
+        .renax-carousel-section {
+            width: 100%;
+            padding: 45px 0;
+            overflow: hidden;
+        }
+
+        .renax-carousel {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .renax-carousel-track {
+            display: flex;
+            width: max-content;
+            gap: 24px;
+            animation: renaxInfiniteScroll 32s linear infinite;
+        }
+
+        .renax-carousel-card {
+            box-sizing: border-box;
+            flex: 0 0 400px;
+            min-height: 185px;
+            padding: 30px 25px;
+            background: rgba(10, 5, 5, 0.85);
+            border: 1px solid #8b0000;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .renax-carousel-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-weight: 900;
+            color: #ff4545;
+            margin: 0 0 18px;
+        }
+
+        .renax-carousel-card p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .renax-carousel:hover .renax-carousel-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes renaxInfiniteScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(-50% - 12px)); }
+        }
+
+        /* 9. FOOTER LIMPIO Y ORDENADO */
+        footer {
+            width: 100%;
+            background: #080808;
+            border-top: 1px solid #650000;
+            padding: 45px 5% 35px;
+            color: #ffffff;
+        }
+
+        footer .footer-container {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 35px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        footer .footer-col h4 {
+            color: #bcbcbc;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        footer .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        footer .footer-col ul li a {
+            display: block;
+            color: #f0f0f0;
+            font-family: 'Montserrat', sans-serif;
             font-size: 14px;
+            line-height: 1.6;
+            text-decoration: none;
+            transition: color 0.3s;
         }
 
-  
-/* =========================================
-   PIE DE PÁGINA RENAX
-   ========================================= */
+        footer .footer-col ul li a:hover {
+            color: #ff3344;
+        }
 
-footer {
-    width: 100%;
-    box-sizing: border-box;
-    background: #080808;
-    border-top: 1px solid #650000;
-    padding: 45px 5% 35px;
-    color: #ffffff;
-}
+        /* RESPONSIVE */
+        @media (max-width: 1000px) {
+            .vision-mission, .images-text-section, .why-renax ul {
+                grid-template-columns: 1fr;
+            }
+            footer .footer-container {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            header {
+                padding: 15px 20px;
+            }
+            nav {
+                display: none;
+            }
+        }
 
-
-
-/* TÍTULO MENÚ */
-footer .footer-title {
-    display: block;
-    text-align: center;
-    color: #e60026;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 5px;
-    margin: 0 0 45px;
-}
-
-/* COLUMNAS */
-footer .footer-container {
-    display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 35px;
-    max-width: 1500px;
-    margin: 0 auto;
-}
-
-/* ENCABEZADOS */
-footer .footer-column h3 {
-    color: #bcbcbc;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-    margin: 0 0 35px;
-}
-
-/* ENLACES Y TEXTOS */
-footer .footer-column a,
-footer .footer-column p {
-    display: block;
-    color: #f0f0f0;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    line-height: 1.8;
-    text-decoration: none;
-    margin: 0 0 17px;
-}
-
-footer .footer-column a:hover {
-    color: #ff3344;
-}
-
-/* TABLET */
-@media (max-width: 1000px) {
-    footer .footer-container {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 30px;
-    }
-}
-
-/* CELULARES */
-@media (max-width: 600px) {
-    footer {
-        padding: 35px 22px;
-    }
-
-    footer .footer-title {
-        margin-bottom: 30px;
-    }
-
-    footer .footer-container {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 25px 18px;
-    }
-
-    footer .footer-column h3 {
-        font-size: 13px;
-        margin-bottom: 20px;
-    }
-
-    footer .footer-column a,
-    footer .footer-column p {
-        font-size: 12px;
-        overflow-wrap: anywhere;
-    }
-}
-
-        
-/* MANTENER EL ESPACIADO DEL CONTENIDO INTERNO */
-section:not(:has(.hero-banner)) {
-    padding: 60px 20px;
-}
-
-/* AJUSTE DE LA PORTADA */
-section:has(.hero-banner) {
-    padding: 0;
-}
-
-/* FONDO GENERAL DE LA PÁGINA NOSOTROS */
-html,
-body {
-    background-color: #050505 !important;
-    background-image: url('portafolio-rojo.jpeg') !important;
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-/* TARJETAS CON TRANSPARENCIA PARA VER EL FONDO */
-.card-box,
-.why-renax li,
-.impact-card {
-    background: rgba(10, 5, 5, 0.78);
-}
-
-/* =========================================
-   PRESENTACIÓN DE LA FUNDADORA RENAX
-   ========================================= */
-
-.text-content {
-    width: 100%;
-    max-width: 1100px;
-    margin: 40px auto 30px;
-    padding: 30px 20px;
-    text-align: left;
-}
-
-/* TÍTULO PRINCIPAL - MONTSERRAT BLACK */
-.text-content h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 46px;
-    line-height: 1.15;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #cc0000;
-    text-align: left;
-    margin: 0 0 18px 0;
-}
-
-/* SUBTÍTULO */
-.text-content h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 23px;
-    line-height: 1.4;
-    color: #ffffff;
-    text-align: left;
-    margin: 0 0 20px 0;
-}
-
-/* DESCRIPCIÓN */
-.text-content p {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 17px;
-    line-height: 1.8;
-    color: #ffffff;
-    text-align: left;
-    margin: 0 0 18px 0;
-}
-
-/* FRASE FINAL DE RENAX */
-.text-content .frase-renax {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 18px;
-    line-height: 1.6;
-    color: #ffffff;
-    text-align: left;
-    margin-top: 25px;
-}
-
-/* ADAPTACIÓN PARA CELULARES */
-@media (max-width: 700px) {
-    .text-content {
-        padding: 25px 15px;
-        margin: 25px auto;
-    }
-
-    .text-content h2 {
-        font-size: 32px;
-        letter-spacing: 0.5px;
-    }
-
-    .text-content h3 {
-        font-size: 20px;
-    }
-
-    .text-content p {
-        font-size: 15px;
-        line-height: 1.7;
-    }
-
-    .text-content .frase-renax {
-        font-size: 16px;
-    }
-}
-/* FONDO GENERAL DE LA PÁGINA */
-html, body {
-    background-color: #050505;
-    background-image: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.90)), url('portafolio-rojo.jpeg');
-    background-position: center top;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: var(--text-color);
-    line-height: 1.6;
-}
-        
-/* SECCIÓN ¿POR QUÉ RENAX? - FONDO BLANCO */
-.why-renax {
-    background-color: #ffffff;
-    max-width: none;
-    width: 100%;
-    padding: 60px 20px;
-}
-
-/* TÍTULO NEGRO */
-.why-renax h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: 48px;
-    color: #111111;
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-/* TARJETAS BLANCAS CON TEXTO NEGRO */
-.why-renax li {
-    background: #ffffff;
-    color: #111111;
-    border: 1px solid #cc0000;
-    border-left: 4px solid #cc0000;
-    border-radius: 14px;
-    padding: 30px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 18px;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-}
-
-/* DISTRIBUCIÓN DE TARJETAS */
-.why-renax ul {
-    max-width: 1200px;
-    margin: 30px auto 0;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 25px;
-}
-
-@media (max-width: 700px) {
-    .why-renax h2 {
-        font-size: 32px;
-    }
-
-    .why-renax ul {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ======================================
-   CARRUSEL INFINITO DE RENAX
-   ====================================== */
-
-.renax-carousel-section {
-    width: 100%;
-    padding: 45px 0;
-    overflow: hidden;
-}
-
-.renax-carousel {
-    width: 100%;
-    overflow: hidden;
-}
-
-.renax-carousel-track {
-    display: flex;
-    width: max-content;
-    gap: 24px;
-    animation: renaxInfiniteScroll 32s linear infinite;
-}
-
-.renax-carousel-card {
-    box-sizing: border-box;
-    flex: 0 0 400px;
-    min-height: 185px;
-    padding: 30px 25px;
-    background: #080505;
-    border: 1px solid #8b0000;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.renax-carousel-card h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: 900;
-    color: #ff4545;
-    margin: 0 0 18px;
-}
-
-.renax-carousel-card p {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.7;
-    color: #ffffff;
-    margin: 0;
-}
-
-.renax-carousel:hover .renax-carousel-track {
-    animation-play-state: paused;
-}
-
-@keyframes renaxInfiniteScroll {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        transform: translateX(calc(-50% - 12px));
-    }
-}
-
-/* CELULARES */
-@media (max-width: 700px) {
-    .renax-carousel-section {
-        padding: 30px 0;
-    }
-
-    .renax-carousel-card {
-        flex-basis: 290px;
-        min-height: 175px;
-        padding: 24px 20px;
-    }
-
-    .renax-carousel-card h3 {
-        font-size: 20px;
-    }
-
-    .renax-carousel-card p {
-        font-size: 14px;
-    }
-}
-
-/* RESPETA LA PREFERENCIA DE MOVIMIENTO REDUCIDO */
-@media (prefers-reduced-motion: reduce) {
-    .renax-carousel-track {
-        animation: none;
-    }
-}
-
-
+        @media (max-width: 600px) {
+            footer .footer-container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+            .renax-carousel-card {
+                flex-basis: 290px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -703,26 +459,24 @@ html, body {
         </div>
     </header>
 
-    <!-- 1. PORTADA CON IMAGEN DE FONDO (nosotros-bg.jpeg) -->
+    <!-- 1. PORTADA -->
     <section>
         <div class="hero-banner" data-es="Sobre Nosotros - RENAX" data-en="About Us - RENAX">
             Sobre Nosotros - RENAX
         </div>
     </section>
 
-  
-<!-- 2. VIDEO INSTITUCIONAL -->
-<section>
-    <div class="video-section">
-        <iframe
-            src="https://www.youtube-nocookie.com/embed/PIPt26J40WE"
-            title="Video institucional de RENAX"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen>
-        </iframe>
-    </div>
-</section>
-
+    <!-- 2. VIDEO INSTITUCIONAL -->
+    <section>
+        <div class="video-section">
+            <iframe
+                src="https://www.youtube-nocookie.com/embed/PIPt26J40WE"
+                title="Video institucional de RENAX"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </section>
 
     <!-- 3. VISION Y MISION -->
     <section>
@@ -744,7 +498,7 @@ html, body {
         </div>
     </section>
 
-    <!-- 4. DOS IMAGENES Y TEXTO (karol - 2.png y karol-renax..png) -->
+    <!-- 4. DOS IMAGENES Y TEXTO -->
     <section>
         <div class="images-text-section">
             <div class="img-container">
@@ -754,32 +508,17 @@ html, body {
                 <img src="karol-renax..png" alt="Imagen 2 RENAX">
             </div>
         </div>
-       
-<div class="text-content">
-
-<h2 data-es="HOLA, SOY KAROL"
-    data-en="HELLO, I'M KAROL">
-    HOLA, SOY KAROL
-</h2>
-
-    <h3 data-es="Una visión creativa que transforma marcas."
-        data-en="A creative vision that transforms brands.">
-      Creatividad, estrategia y compromiso con cada marca.
-    </h3>
-
-    <p data-es="RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades."
-       data-en="RENAX was born from my passion for design and my purpose of helping brands evolve without losing their essence. As founder, I work with creativity, strategy, and dedication to build visual identities that inspire trust, reflect stories, and open new opportunities.">
-        RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades.
-    </p>
-
-    <p class="frase-renax"
-       data-es="RENAX: transformamos marcas sin borrar su historia."
-       data-en="RENAX: we transform brands without erasing their history.">
-        RENAX: transformamos marcas sin borrar su historia.
-    </p>
-
-</div>
-
+        <div class="text-content">
+            <h2 data-es="HOLA, SOY KAROL" data-en="HELLO, I'M KAROL">HOLA, SOY KAROL</h2>
+            <h3 data-es="Una visión creativa que transforma marcas." data-en="A creative vision that transforms brands.">Creatividad, estrategia y compromiso con cada marca.</h3>
+            <p data-es="RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades."
+               data-en="RENAX was born from my passion for design and my purpose of helping brands evolve without losing their essence. As founder, I work with creativity, strategy, and dedication to build visual identities that inspire trust, reflect stories, and open new opportunities.">
+                RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades.
+            </p>
+            <p class="frase-renax" data-es="RENAX: transformamos marcas sin borrar su historia." data-en="RENAX: we transform brands without erasing their history.">
+                RENAX: transformamos marcas sin borrar su historia.
+            </p>
+        </div>
     </section>
 
     <!-- 5. QUIENES SOMOS -->
@@ -824,74 +563,46 @@ html, body {
         </div>
     </section>
 
-    <!-- 8. TARJETAS DE IMPACTO -->
- 
-<!-- CARRUSEL INFINITO RENAX -->
-<section class="renax-carousel-section">
-    <div class="renax-carousel">
-        <div class="renax-carousel-track">
-
-            <article class="renax-carousel-card">
-                <h3 data-es="MÁS RECONOCIMIENTO"
-                    data-en="MORE RECOGNITION">MÁS RECONOCIMIENTO</h3>
-                <p data-es="Una imagen que facilita que tus clientes recuerden tu marca."
-                   data-en="An image that helps your customers remember your brand.">
-                   Una imagen que facilita que tus clientes recuerden tu marca.
-                </p>
-            </article>
-
-            <article class="renax-carousel-card">
-                <h3 data-es="MÁS CONFIANZA"
-                    data-en="MORE TRUST">MÁS CONFIANZA</h3>
-                <p data-es="Una identidad profesional que refleja la experiencia de tu negocio."
-                   data-en="A professional identity that reflects your business experience.">
-                   Una identidad profesional que refleja la experiencia de tu negocio.
-                </p>
-            </article>
-
-            <article class="renax-carousel-card">
-                <h3 data-es="MÁS CONEXIÓN"
-                    data-en="MORE CONNECTION">MÁS CONEXIÓN</h3>
-                <p data-es="Una comunicación visual capaz de acercarte a nuevos públicos."
-                   data-en="Visual communication that helps you connect with new audiences.">
-                   Una comunicación visual capaz de acercarte a nuevos públicos.
-                </p>
-            </article>
-
-            <article class="renax-carousel-card">
-                <h3 data-es="MÁS COHERENCIA"
-                    data-en="MORE CONSISTENCY">MÁS COHERENCIA</h3>
-                <p data-es="Una marca preparada para comunicarse de manera consistente en medios físicos y digitales."
-                   data-en="A brand ready to communicate consistently across physical and digital media.">
-                   Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.
-                </p>
-            </article>
-
-            <!-- COPIA PARA CREAR EL BUCLE INFINITO -->
-            <article class="renax-carousel-card" aria-hidden="true">
-                <h3>MÁS RECONOCIMIENTO</h3>
-                <p>Una imagen que facilita que tus clientes recuerden tu marca.</p>
-            </article>
-
-            <article class="renax-carousel-card" aria-hidden="true">
-                <h3>MÁS CONFIANZA</h3>
-                <p>Una identidad profesional que refleja la experiencia de tu negocio.</p>
-            </article>
-
-            <article class="renax-carousel-card" aria-hidden="true">
-                <h3>MÁS CONEXIÓN</h3>
-                <p>Una comunicación visual capaz de acercarte a nuevos públicos.</p>
-            </article>
-
-            <article class="renax-carousel-card" aria-hidden="true">
-                <h3>MÁS COHERENCIA</h3>
-                <p>Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
-            </article>
-
+    <!-- 8. CARRUSEL DE IMPACTO -->
+    <section class="renax-carousel-section">
+        <div class="renax-carousel">
+            <div class="renax-carousel-track">
+                <article class="renax-carousel-card">
+                    <h3 data-es="MÁS RECONOCIMIENTO" data-en="MORE RECOGNITION">MÁS RECONOCIMIENTO</h3>
+                    <p data-es="Una imagen que facilita que tus clientes recuerden tu marca." data-en="An image that helps your customers remember your brand.">Una imagen que facilita que tus clientes recuerden tu marca.</p>
+                </article>
+                <article class="renax-carousel-card">
+                    <h3 data-es="MÁS CONFIANZA" data-en="MORE TRUST">MÁS CONFIANZA</h3>
+                    <p data-es="Una identidad profesional que refleja la experiencia de tu negocio." data-en="A professional identity that reflects your business experience.">Una identidad profesional que refleja la experiencia de tu negocio.</p>
+                </article>
+                <article class="renax-carousel-card">
+                    <h3 data-es="MÁS CONEXIÓN" data-en="MORE CONNECTION">MÁS CONEXIÓN</h3>
+                    <p data-es="Una comunicación visual capaz de acercarte a nuevos públicos." data-en="Visual communication that helps you connect with new audiences.">Una comunicación visual capaz de acercarte a nuevos públicos.</p>
+                </article>
+                <article class="renax-carousel-card">
+                    <h3 data-es="MÁS COHERENCIA" data-en="MORE CONSISTENCY">MÁS COHERENCIA</h3>
+                    <p data-es="Una marca preparada para comunicarse de manera consistente en medios físicos y digitales." data-en="A brand ready to communicate consistently across physical and digital media.">Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
+                </article>
+                <!-- Copia carrusel infinito -->
+                <article class="renax-carousel-card" aria-hidden="true">
+                    <h3>MÁS RECONOCIMIENTO</h3>
+                    <p>Una imagen que facilita que tus clientes recuerden tu marca.</p>
+                </article>
+                <article class="renax-carousel-card" aria-hidden="true">
+                    <h3>MÁS CONFIANZA</h3>
+                    <p>Una identidad profesional que refleja la experiencia de tu negocio.</p>
+                </article>
+                <article class="renax-carousel-card" aria-hidden="true">
+                    <h3>MÁS CONEXIÓN</h3>
+                    <p>Una comunicación visual capaz de acercarte a nuevos públicos.</p>
+                </article>
+                <article class="renax-carousel-card" aria-hidden="true">
+                    <h3>MÁS COHERENCIA</h3>
+                    <p>Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
+                </article>
+            </div>
         </div>
-    </div>
-</section>
-
+    </section>
 
     <!-- 9. FOOTER -->
     <footer id="contacto">
@@ -918,7 +629,7 @@ html, body {
                 <h4 data-es="Portafolio" data-en="Portfolio">Portafolio</h4>
                 <ul>
                     <li><a href="#" data-es="Proyectos y trabajos realizados" data-en="Projects and completed work">Proyectos y trabajos realizados</a></li>
-                    <li><a href="#" data-es="Casos de estudio" data-en="Case studies">Casos de estudio</a></li>
+                    <li><a href="#" data-es="Casos de estudio" data-en="Casos de estudio">Casos de estudio</a></li>
                 </ul>
             </div>
             <div class="footer-col">
@@ -933,7 +644,7 @@ html, body {
             <div class="footer-col">
                 <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
                 <ul>
-                    <li><a href="#" data-es="Hablemos de tu proyecto" data-en="Let's talk about your project">Hablemos de tu proyecto</a></li>
+                    <li><a href="#" data-es="Hablemos de tu proyecto" data-en="Hablemos de tu proyecto">Hablemos de tu proyecto</a></li>
                 </ul>
             </div>
         </div>
