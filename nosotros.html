@@ -3,296 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RENAX - Agencia de Branding e Identidad Visual</title>
-    <style>
-        :root {
-            --bg-color: #050505;
-            --card-bg: #120303;
-            --primary-red: #8B0000;
-            --accent-red: #cc0000;
-            --text-color: #ffffff;
-            --text-muted: #cccccc;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        /* HEADER */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(5, 5, 5, 0.95);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 50px;
-            z-index: 1000;
-            border-bottom: 1px solid #222;
-        }
-
-        .logo {
-            font-weight: bold;
-            font-size: 24px;
-            color: #fff;
-            letter-spacing: 2px;
-        }
-
-        nav {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 15px;
-            transition: color 0.3s;
-        }
-
-        nav a:hover, nav a.active {
-            color: var(--accent-red);
-        }
-
-        .nav-buttons {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .btn-lang {
-            background: #fff;
-            color: #000;
-            border: none;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .btn-login {
-            background-color: var(--primary-red);
-            color: #fff;
-            border: none;
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .btn-login:hover {
-            background-color: var(--accent-red);
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 100px 20px 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* 1. PORTADA */
-        .hero-banner {
-            width: 100%;
-            height: 500px;
-            background-color: #1a1a1a;
-            border: 2px dashed #444;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
-            margin-top: 80px;
-            color: #777;
-            font-size: 18px;
-        }
-
-        /* 2. VIDEO */
-        .video-section {
-            width: 100%;
-            height: 400px;
-            background-color: #1a1a1a;
-            border: 2px dashed #444;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 12px;
-            color: #777;
-            font-size: 18px;
-        }
-
-        /* 3. VISION Y MISION */
-        .vision-mission {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-        }
-
-        .card-box {
-            background-color: var(--card-bg);
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #330000;
-        }
-
-        .card-box h2 {
-            color: #ff3333;
-            margin-bottom: 15px;
-            font-size: 28px;
-        }
-
-        /* 4. DOS IMAGENES Y TEXTO */
-        .images-text-section {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            align-items: center;
-        }
-
-        .img-placeholder {
-            height: 250px;
-            background: #1a1a1a;
-            border: 2px dashed #444;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            color: #777;
-        }
-
-        .text-content {
-            padding: 20px;
-        }
-
-        /* 5 & 6. QUIENES SOMOS Y QUE HACEMOS */
-        .content-block {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .content-block h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
-        }
-
-        .content-block p {
-            color: var(--text-muted);
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        /* 7. POR QUE RENAX */
-        .why-renax ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .why-renax li {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary-red);
-            font-size: 18px;
-        }
-
-        /* 8. TARJETAS DE IMPACTO */
-        .impact-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .impact-card {
-            background: linear-gradient(135deg, #2b0000, #0a0a0a);
-            padding: 30px 20px;
-            border-radius: 15px;
-            border: 1px solid #400;
-        }
-
-        .impact-card h3 {
-            color: #ff4d4d;
-            font-size: 20px;
-            margin-bottom: 15px;
-        }
-
-        .impact-card p {
-            color: var(--text-muted);
-            font-size: 14px;
-        }
-
-        /* FOOTER */
-        footer {
-            background-color: #020202;
-            border-top: 1px solid #222;
-            padding: 60px 20px 30px 20px;
-            margin-top: 80px;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 30px;
-        }
-
-        .footer-col h4 {
-            color: #ff3333;
-            margin-bottom: 20px;
-            font-size: 16px;
-            text-transform: uppercase;
-        }
-
-        .footer-col ul {
-            list-style: none;
-        }
-
-        .footer-col ul li {
-            margin-bottom: 10px;
-        }
-
-        .footer-col ul li a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 14px;
-            transition: color 0.3s;
-        }
-
-        .footer-col ul li a:hover {
-            color: #fff;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            .vision-mission, .images-text-section, .why-renax ul, .impact-grid, .footer-container {
-                grid-template-columns: 1fr;
-            }
-            header {
-                padding: 15px 20px;
-            }
-            nav {
-                display: none;
-            }
-        }
-    </style>
+    <title>RENAX - Nosotros / About Us</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -300,29 +12,29 @@
     <header>
         <div class="logo">RENAX</div>
         <nav>
-            <a href="#inicio" class="active" data-es="Inicio" data-en="Home">Inicio</a>
-            <a href="#nosotros" data-es="Nosotros" data-en="About Us">Nosotros</a>
-            <a href="#portafolio" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
-            <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
-            <a href="#contacto" data-es="Contáctanos" data-en="Contact Us">Contáctanos</a>
+            <a href="index.html" data-es="Inicio" data-en="Home">Inicio</a>
+            <a href="nosotros.html" class="active" data-es="Nosotros" data-en="About Us">Nosotros</a>
+            <a href="portafolio.html" data-es="Portafolio" data-en="Portfolio">Portafolio</a>
+            <a href="servicios.html" data-es="Servicios" data-en="Services">Servicios</a>
+            <a href="contacto.html" data-es="Contáctanos" data-en="Contact Us">Contáctanos</a>
         </nav>
         <div class="nav-buttons">
             <button class="btn-lang" id="langToggle" onclick="toggleLanguage()">ESP</button>
-            <a href="#login" class="btn-login" data-es="INICIAR SESIÓN" data-en="LOG IN">INICIAR SESIÓN</a>
+            <a href="login.html" class="btn-login" data-es="INICIAR SESIÓN" data-en="LOG IN">INICIAR SESIÓN</a>
         </div>
     </header>
 
-    <!-- 1. PORTADA -->
+    <!-- 1. PORTADA DE LA SECCIÓN -->
     <section>
-        <div class="hero-banner" data-es="[ Espacio para Imagen de Portada Grande ]" data-en="[ Space for Large Cover Image ]">
-            [ Espacio para Imagen de Portada Grande ]
+        <div class="hero-banner" data-es="[ Imagen de Portada - Sección Nosotros ]" data-en="[ Cover Image - About Us Section ]">
+            [ Imagen de Portada - Sección Nosotros ]
         </div>
     </section>
 
-    <!-- 2. VIDEO -->
+    <!-- 2. VIDEO INSTITUCIONAL -->
     <section>
-        <div class="video-section" data-es="[ Espacio para Subir / Mostrar Video ]" data-en="[ Space to Upload / Show Video ]">
-            [ Espacio para Subir / Mostrar Video ]
+        <div class="video-section" data-es="[ Video Institucional RENAX ]" data-en="[ RENAX Institutional Video ]">
+            [ Video Institucional RENAX ]
         </div>
     </section>
 
@@ -349,12 +61,12 @@
     <!-- 4. DOS IMAGENES Y TEXTO -->
     <section>
         <div class="images-text-section">
-            <div class="img-placeholder" data-es="[ Imagen 1 ]" data-en="[ Image 1 ]">[ Imagen 1 ]</div>
-            <div class="img-placeholder" data-es="[ Imagen 2 ]" data-en="[ Image 2 ]">[ Imagen 2 ]</div>
+            <div class="img-placeholder" data-es="[ Imagen Equipo / Historia 1 ]" data-en="[ Team / History Image 1 ]">[ Imagen Equipo / Historia 1 ]</div>
+            <div class="img-placeholder" data-es="[ Imagen Equipo / Historia 2 ]" data-en="[ Team / History Image 2 ]">[ Imagen Equipo / Historia 2 ]</div>
         </div>
         <div class="text-content" style="text-align: center; margin-top: 30px;">
-            <p data-es="Espacio reservado para el texto descriptivo de esta sección." data-en="Reserved space for the descriptive text of this section.">
-                Espacio reservado para el texto descriptivo de esta sección.
+            <p data-es="Nuestra trayectoria se construye paso a paso, uniendo la experiencia de los negocios locales con el diseño moderno." data-en="Our journey is built step by step, uniting the experience of local businesses with modern design.">
+                Nuestra trayectoria se construye paso a paso, uniendo la experiencia de los negocios locales con el diseño moderno.
             </p>
         </div>
     </section>
@@ -362,7 +74,7 @@
     <!-- 5. QUIENES SOMOS -->
     <section id="nosotros">
         <div class="content-block">
-            <h2 data-es="SOMOS UNA AGENCIA DE BRANDING" data-en="WE ARE A BRANDING AGENCY">SOMOS UNA AGENCIA DE BRANDING</h2>
+            <h2 data-es="¿QUIÉNES SOMOS?" data-en="WHO WE ARE?">¿QUIÉNES SOMOS?</h2>
             <p data-es="Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria."
                data-en="We are a visual identity and graphic communication agency specialized in modernizing established brands.">
                 Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria.
@@ -379,3 +91,113 @@
         <div class="content-block">
             <h2 data-es="¿QUÉ HACEMOS?" data-en="WHAT WE DO?">¿QUÉ HACEMOS?</h2>
             <p data-es="Modernizamos tu marca sin hacerte perder lo que eres." data-en="We modernize your brand without making you lose who you are.">
+                Modernizamos tu marca sin hacerte perder lo que eres.
+            </p>
+            <p data-es="Trabajamos con pequeñas y medianas empresas que quieren evolucionar visualmente sin perder aquello que las hizo reconocidas."
+               data-en="We work with small and medium-sized enterprises that want to evolve visually without losing what made them recognized.">
+                Trabajamos con pequeñas y medianas empresas que quieren evolucionar visualmente sin perder aquello que las hizo reconocidas.
+            </p>
+        </div>
+    </section>
+
+    <!-- 7. POR QUE RENAX -->
+    <section>
+        <div class="content-block why-renax">
+            <h2 data-es="¿POR QUÉ RENAX?" data-en="WHY RENAX?">¿POR QUÉ RENAX?</h2>
+            <ul>
+                <li data-es="Conservamos la esencia de tu marca." data-en="We preserve the essence of your brand.">Conservamos la esencia de tu marca.</li>
+                <li data-es="Analizamos antes de diseñar." data-en="We analyze before designing.">Analizamos antes de diseñar.</li>
+                <li data-es="Unimos estrategia y diseño." data-en="We unite strategy and design.">Unimos estrategia y diseño.</li>
+                <li data-es="Creamos una identidad preparada para evolucionar." data-en="We create an identity prepared to evolve.">Creamos una identidad preparada para evolucionar.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 8. TARJETAS DE IMPACTO -->
+    <section>
+        <div class="impact-grid">
+            <div class="impact-card">
+                <h3 data-es="MÁS RECONOCIMIENTO" data-en="MORE RECOGNITION">MÁS RECONOCIMIENTO</h3>
+                <p data-es="Una imagen que facilita que tus clientes recuerden tu marca." data-en="An image that makes it easy for your clients to remember your brand.">Una imagen que facilita que tus clientes recuerden tu marca.</p>
+            </div>
+            <div class="impact-card">
+                <h3 data-es="MÁS CONFIANZA" data-en="MORE TRUST">MÁS CONFIANZA</h3>
+                <p data-es="Una identidad profesional que refleja la experiencia de tu negocio." data-en="A professional identity that reflects your business experience.">Una identidad profesional que refleja la experiencia de tu negocio.</p>
+            </div>
+            <div class="impact-card">
+                <h3 data-es="MÁS CONEXIÓN" data-en="MORE CONNECTION">MÁS CONEXIÓN</h3>
+                <p data-es="Una comunicación visual capaz de acercarte a nuevos públicos." data-en="A visual communication capable of reaching new audiences.">Una comunicación visual capaz de acercarte a nuevos públicos.</p>
+            </div>
+            <div class="impact-card">
+                <h3 data-es="MÁS COHERENCIA" data-en="MORE COHERENCE">MÁS COHERENCIA</h3>
+                <p data-es="Una marca preparada para comunicarse de manera consistente en medios físicos y digitales." data-en="A brand prepared to communicate consistently across physical and digital media.">Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. FOOTER -->
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4 data-es="Inicio" data-en="Home">Inicio</h4>
+                <ul>
+                    <li><a href="#" data-es="Expertos en transformar marcas" data-en="Experts in transforming brands">Expertos en transformar marcas</a></li>
+                    <li><a href="#" data-es="Vuelve a destacar sin perder tu esencia" data-en="Stand out without losing your essence">Vuelve a destacar sin perder tu esencia</a></li>
+                    <li><a href="#" data-es="Tu historia merece una imagen que esté a su altura" data-en="Your story deserves a matching image">Tu historia merece una imagen que esté a su altura</a></li>
+                    <li><a href="#" data-es="Preguntas frecuentes" data-en="Frequently asked questions">Preguntas frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-es="Nosotros" data-en="About Us">Nosotros</h4>
+                <ul>
+                    <li><a href="nosotros.html" data-es="Quiénes somos" data-en="Who we are">Quiénes somos</a></li>
+                    <li><a href="nosotros.html" data-es="Visión" data-en="Vision">Visión</a></li>
+                    <li><a href="nosotros.html" data-es="Misión" data-en="Mission">Misión</a></li>
+                    <li><a href="nosotros.html" data-es="¿Por qué RENAX?" data-en="Why RENAX?">¿Por qué RENAX?</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-es="Portafolio" data-en="Portfolio">Portafolio</h4>
+                <ul>
+                    <li><a href="#" data-es="Proyectos y trabajos realizados" data-en="Projects and completed work">Proyectos y trabajos realizados</a></li>
+                    <li><a href="#" data-es="Casos de estudio" data-en="Case studies">Casos de estudio</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-es="Servicios" data-en="Services">Servicios</h4>
+                <ul>
+                    <li><a href="#" data-es="Diagnóstico de marca" data-en="Brand diagnosis">Diagnóstico de marca</a></li>
+                    <li><a href="#" data-es="Identidad visual" data-en="Visual identity">Identidad visual</a></li>
+                    <li><a href="#" data-es="Comunicación" data-en="Communication">Comunicación</a></li>
+                    <li><a href="#" data-es="Estrategia visual" data-en="Visual strategy">Estrategia visual</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4 data-es="Contacto" data-en="Contact">Contacto</h4>
+                <ul>
+                    <li><a href="#" data-es="Hablemos de tu proyecto" data-en="Let's talk about your project">Hablemos de tu proyecto</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE TRADUCCIÓN -->
+    <script>
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            document.getElementById('langToggle').innerText = currentLang === 'es' ? 'ESP' : 'ENG';
+            
+            const elements = document.querySelectorAll('[data-es]');
+            elements.forEach(el => {
+                if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                    el.placeholder = el.getAttribute(`data-${currentLang}`);
+                } else {
+                    el.innerText = el.getAttribute(`data-${currentLang}`);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
