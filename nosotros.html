@@ -1241,12 +1241,14 @@ misionTexto: "Our mission is to provide strategic design and visual identity ser
     </script>
     
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+
     const tarjetas = document.querySelectorAll(
+        ".vision-mission .card-box, " +
         "#vision, #mision, " +
         ".about-mission-vision .mission-vision-card, " +
         ".about-mission-vision .vision-card"
     );
+
 
     const unicas = [...new Set(tarjetas)];
 
