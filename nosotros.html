@@ -524,5 +524,27 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 </script>
+  <!-- SCRIPT PARA EL ACORDEÓN DE RESEÑA HISTÓRICA CORREGIDO -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const botones = document.querySelectorAll(".history-question");
+
+  botones.forEach(function (boton) {
+    boton.addEventListener("click", function () {
+      // Buscamos el contenedor principal (.faq-item) y dentro de él la respuesta (.faq-answer)
+      const faqItem = boton.closest(".faq-item");
+      if (!faqItem) return;
+      
+      const respuesta = faqItem.querySelector(".faq-answer");
+      if (!respuesta) return;
+
+      const estaAbierta = respuesta.style.display === "block";
+
+      respuesta.style.display = estaAbierta ? "none" : "block";
+      boton.setAttribute("aria-expanded", String(!estaAbierta));
+    });
+  });
+});
+</script>
 </body>
 </html>
