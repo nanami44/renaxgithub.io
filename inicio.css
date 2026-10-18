@@ -634,3 +634,25 @@
     transform: translateY(-3px);
 }
 
+/* EFECTO BLANCO PARA LAS TARJETAS DE HISTORIA */
+
+.history-cards article {
+    transition: background 0.4s ease,
+                color 0.4s ease,
+                border-color 0.4s ease,
+                transform 0.4s ease,
+                box-shadow 0.4s ease;
+}
+
+.history-cards article:hover {
+    background: #ffffff !important;
+    border-color: #ffffff !important;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.20);
+}
+
+.history-cards article:hover h3,
+.history-cards article:hover p {
+    color: #000000 !important;
+}
+
