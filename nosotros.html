@@ -751,6 +751,37 @@
     }
 }
   
+/* TÍTULO CONÓCENOS: CRECE Y VUELVE A SU TAMAÑO */
+.titulo-conocenos {
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(42px, 8vw, 110px);
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: 3px;
+    margin: 0;
+    transform: scale(1);
+    animation: crecerConocenos 2.5s ease-in-out infinite;
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.8);
+    transform-origin: center;
+}
+
+@keyframes crecerConocenos {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.25);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .titulo-conocenos {
+        animation: none;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -782,10 +813,11 @@
     </header>
 
     <!-- 1. PORTADA -->
-    <section>
-        <div class="hero-banner" data-es="Sobre Nosotros - RENAX" data-en="About Us - RENAX">
-            Sobre Nosotros - RENAX
-        </div>
+    
+<div class="hero-banner">
+    <h1 class="titulo-conocenos">CONÓCENOS</h1>
+</div>
+
     </section>
 
     <!-- 2. VIDEO INSTITUCIONAL CON FONDO BLANCO A ANCHO DE PÁGINA -->
