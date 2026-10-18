@@ -500,24 +500,45 @@
         border-radius: 20px;
     }
 }
+  
+/* TÍTULO ¿QUIÉNES SOMOS? */
+.quienes-somos-box h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(42px, 4vw, 60px);
+    line-height: 1.15;
+    color: #ffffff !important;
+    margin-top: 0;
+    margin-bottom: 35px;
+    text-transform: uppercase;
+    text-align: left;
+}
 
+/* TEXTOS DESCRIPTIVOS */
+.quienes-somos-box p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(19px, 1.6vw, 24px);
+    font-weight: 400;
+    color: #ffffff !important;
+    line-height: 1.8;
+    margin-bottom: 28px;
+    text-align: left;
+}
 
-        .quienes-somos-box h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 46px;
-            color: #ffffff;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-            text-align: left;
-        }
+/* AJUSTE PARA CELULARES */
+@media (max-width: 768px) {
+    .quienes-somos-box h2 {
+        font-size: 36px;
+        margin-bottom: 25px;
+    }
 
-        .quienes-somos-box p {
-            color: #ffffff;
-            font-size: 18px;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
+    .quienes-somos-box p {
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 20px;
+    }
+}
+
 
         /* 7. CARRUSEL DE IMPACTO A ANCHO TOTAL Y BORDES ALTERNADOS BLANCO Y ROJO */
         .renax-carousel-section {
