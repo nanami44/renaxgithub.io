@@ -517,6 +517,160 @@ background-image:
                 flex-basis: 290px;
             }
         }
+        
+/* =========================================
+   TARJETAS INTERACTIVAS RENAX
+   ========================================= */
+
+#vision,
+#mision,
+.about-mission-vision .mission-vision-card,
+.about-mission-vision .vision-card {
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: linear-gradient(
+        135deg,
+        #080808 0%,
+        #170000 50%,
+        #080808 100%
+    );
+    border: 1px solid #650000;
+    border-radius: 24px;
+    transition:
+        background 0.6s ease,
+        border-color 0.6s ease,
+        box-shadow 0.6s ease,
+        transform 0.5s ease;
+}
+
+/* TÍTULO GRANDE Y CENTRADO */
+#vision h2,
+#mision h2,
+.about-mission-vision .mission-vision-card h2,
+.about-mission-vision .vision-card h2 {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 180px;
+    margin: 0;
+    padding: 25px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(32px, 4vw, 48px);
+    text-align: center;
+    color: #ff3333;
+    transition:
+        min-height 0.6s ease,
+        color 0.5s ease,
+        transform 0.6s ease;
+}
+
+/* TEXTO OCULTO INICIALMENTE */
+#vision p,
+#mision p,
+.about-mission-vision .mission-vision-card p,
+.about-mission-vision .vision-card p {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: scale(0.88);
+    transform-origin: center top;
+    margin: 0;
+    padding: 0 28px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 17px;
+    line-height: 1.8;
+    transition:
+        max-height 0.7s ease,
+        opacity 0.5s ease,
+        transform 0.6s ease,
+        padding 0.5s ease;
+}
+
+/* TARJETA ABIERTA */
+#vision.is-open,
+#mision.is-open,
+.about-mission-vision .mission-vision-card.is-open,
+.about-mission-vision .vision-card.is-open {
+    background: linear-gradient(
+        135deg,
+        #080808 0%,
+        #520000 55%,
+        #160000 100%
+    );
+    border-color: #ff3333;
+    box-shadow: 0 0 30px rgba(204, 0, 0, 0.25);
+    transform: scale(1.025);
+}
+
+/* EL TÍTULO SE REDUCE SUAVEMENTE */
+#vision.is-open h2,
+#mision.is-open h2,
+.about-mission-vision .is-open h2 {
+    min-height: 100px;
+    color: #ff4545;
+    transform: scale(0.96);
+}
+
+/* APARICIÓN DEL TEXTO CON ZOOM */
+#vision.is-open p,
+#mision.is-open p,
+.about-mission-vision .mission-vision-card.is-open p,
+.about-mission-vision .vision-card.is-open p {
+    max-height: 500px;
+    opacity: 1;
+    transform: scale(1);
+    padding: 10px 28px 35px;
+}
+
+/* INDICADOR VISUAL */
+#vision::after,
+#mision::after {
+    content: "+";
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    color: #ff4545;
+    font-size: 26px;
+    font-weight: 700;
+    transition: transform 0.4s ease;
+}
+
+#vision.is-open::after,
+#mision.is-open::after {
+    content: "−";
+    transform: rotate(180deg);
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    #vision,
+    #mision,
+    #vision *,
+    #mision * {
+        transition: none !important;
+    }
+}
+
+@media (max-width: 600px) {
+    #vision h2,
+    #mision h2 {
+        min-height: 140px;
+        font-size: 32px;
+    }
+
+    #vision p,
+    #mision p {
+        font-size: 15px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -866,5 +1020,41 @@ background-image:
             }
         });
     </script>
+    
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const tarjetas = document.querySelectorAll(
+        "#vision, #mision, " +
+        ".about-mission-vision .mission-vision-card, " +
+        ".about-mission-vision .vision-card"
+    );
+
+    const unicas = [...new Set(tarjetas)];
+
+    unicas.forEach(function (tarjeta) {
+        if (tarjeta.dataset.renaxClick === "true") return;
+
+        tarjeta.dataset.renaxClick = "true";
+        tarjeta.setAttribute("role", "button");
+        tarjeta.setAttribute("tabindex", "0");
+        tarjeta.setAttribute("aria-expanded", "false");
+
+        function alternarTarjeta() {
+            const abierta = tarjeta.classList.toggle("is-open");
+            tarjeta.setAttribute("aria-expanded", String(abierta));
+        }
+
+        tarjeta.addEventListener("click", alternarTarjeta);
+
+        tarjeta.addEventListener("keydown", function (evento) {
+            if (evento.key === "Enter" || evento.key === " ") {
+                evento.preventDefault();
+                alternarTarjeta();
+            }
+        });
+    });
+});
+</script>
+
 </body>
 </html>
