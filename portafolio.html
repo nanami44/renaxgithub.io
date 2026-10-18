@@ -312,7 +312,7 @@
 
         <!-- PORTAFOLIO -->
         <div class="footer-column">
-          <h3 data-lang="footerPortfolioTitle">PORTAFOLIO</h3>
+         <h3><a class="footer-title-link" href="portafolio.html" data-lang="footerPortfolioTitle">PORTAFOLIO</a></h3>
           <div class="footer-menu-links">
             <a href="portafolio.html#proyectos" data-lang="footerProjects">Proyectos y trabajos realizados</a>
             <a href="portafolio.html#casos-estudio" data-lang="footerCases">Casos de estudio</a>
@@ -321,7 +321,7 @@
 
         <!-- SERVICIOS -->
         <div class="footer-column">
-          <h3 data-lang="footerServicesTitle">SERVICIOS</h3>
+        <h3><a class="footer-title-link" href="servicios.html" data-lang="footerServicesTitle">SERVICIOS</a></h3>
           <div class="footer-menu-links">
             <a href="servicios.html#diagnostico" data-lang="footerService1">Diagnóstico de marca</a>
             <a href="servicios.html#renovacion" data-lang="footerService2">Renovación de marca</a>
@@ -332,7 +332,7 @@
 
         <!-- CONTACTO -->
         <div class="footer-column">
-          <h3 data-lang="footerContactTitle">CONTACTO</h3>
+  <h3><a class="footer-title-link" href="contacto.html" data-lang="footerContactTitle">CONTACTO</a></h3>
           <div class="footer-menu-links">
             <a href="contacto.html#contacto-formulario" data-lang="footerTalk">Hablemos de tu proyecto</a>
           </div>
@@ -521,5 +521,27 @@ document.addEventListener("DOMContentLoaded", () => {
   animacionId = requestAnimationFrame(mover);
 });
 </script>
+  
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const currentPage = window.location.pathname
+        .split("/")
+        .pop()
+        .toLowerCase();
+
+    document.querySelectorAll(
+        ".renax-footer .footer-title-link"
+    ).forEach(link => {
+        const linkPage = link.getAttribute("href")
+            .split("#")[0]
+            .toLowerCase();
+
+        if (linkPage === currentPage) {
+            link.classList.add("active");
+        }
+    });
+});
+</script>
+
 </body>
 </html>
