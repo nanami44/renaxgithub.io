@@ -590,6 +590,59 @@
                 padding: 20px 15px;
             }
         }
+        
+/* =========================================
+   HOLA, SOY KAROL — IMÁGENES ASIMÉTRICAS
+   ========================================= */
+
+.images-text-section {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.images-text-section .img-container {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.images-text-section .img-container:first-child {
+    height: 420px;
+}
+
+.images-text-section .img-container:last-child {
+    height: 300px;
+}
+
+.images-text-section .img-container img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.images-text-section .img-container:hover img {
+    transform: scale(1.05);
+}
+
+@media (max-width: 700px) {
+    .images-text-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .images-text-section .img-container:first-child {
+        height: 350px;
+    }
+
+    .images-text-section .img-container:last-child {
+        height: 260px;
+    }
+}
+
     </style>
 </head>
 <body>
