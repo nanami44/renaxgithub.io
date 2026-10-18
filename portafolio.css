@@ -797,14 +797,14 @@ body.portafolio-renax {
   bottom: 40px;
   right: 25px;
   width: 210px;
-  height: auto; /* Permite que el contenedor se ajuste al espacio absolute */
-  overflow: hidden; /* Oculta lo que sale del contenedor visible */
+  height: auto;
+  overflow: hidden;
   z-index: 2;
   pointer-events: auto;
   background: rgba(10, 10, 10, 0.85);
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
 .vertical-ticker-track {
