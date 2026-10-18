@@ -341,12 +341,18 @@ color: rgba(220, 0, 20, 0.85);
     letter-spacing: 3px;
 }
 
+
 .renax-faq h2 {
-    margin: 14px 0;
-    font-family: 'Baloo 2', sans-serif;
-    font-size: clamp(36px, 5vw, 60px);
-    font-weight: 800;
+    margin: 14px 0 30px;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: clamp(48px, 7vw, 96px) !important;
+    font-weight: 900 !important;
+    line-height: 0.95 !important;
+    letter-spacing: -3px !important;
+    text-transform: uppercase !important;
+    color: #ffffff !important;
 }
+
 
 .renax-faq h2 span {
     color: #e0002b;
