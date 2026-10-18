@@ -1,709 +1,1005 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contacta con RENAX. Transformamos marcas sin borrar su historia.">
-  <title>Contáctanos | RENAX</title>
-
-  <!-- Estilos independientes -->
-  <link rel="stylesheet" href="contacto.css">
-
-  <!-- Tipografías e Iconos -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-
-<body class="contacto-page">
-
-  <!-- ENCABEZADO / NAVEGACIÓN -->
-  <header class="contacto-header">
-    <a class="contacto-logo" href="index.html" aria-label="RENAX, ir al inicio">
-      <img src="logo-renax-transparente.png" alt="RENAX">
-    </a>
-
-    <nav class="contacto-nav" id="contactoNav" aria-label="Menú principal">
-      <a href="index.html" data-lang="navHome">Inicio</a>
-      <a href="nosotros.html" data-lang="navAbout">Nosotros</a>
-      <a href="portafolio.html" data-lang="navPortfolio">Portafolio</a>
-      <a href="servicios.html" data-lang="navServices">Servicios</a>
-      <a href="contacto.html" class="activo" aria-current="page" data-lang="navContact">Contáctanos</a>
-    </nav>
-
-    <div class="contacto-header-acciones">
-      <button type="button" class="contacto-idioma" id="contactoIdioma" aria-label="Cambiar idioma">ESP</button>
-      <a href="login.html" class="contacto-login" id="navLoginBtn">
-  <span data-lang="loginButton">INICIAR SESIÓN</span>
-</a>
-      </a>
-      <button class="contacto-menu-toggle" id="contactoMenuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="contactoNav">
-        <i class="fa-solid fa-bars" aria-hidden="true"></i>
-      </button>
-    </div>
-  </header>
-
-  <!-- CONTENIDO PRINCIPAL -->
-  <main class="contacto-main">
-
-    <!-- HERO / PORTADA -->
-<section class="contacto-hero fondo-esferas-renax" id="contacto-inicio" aria-labelledby="contactoHeroTitulo">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RENAX - Nosotros - Transformamos marcas sin borrar su historia.">
+    <title>RENAX | Nosotros - Transformamos marcas sin borrar su historia</title>
     
-    <!-- Contenedor de las esferas luminosas -->
-    <div class="esferas-container">
-        <div class="esfera esfera-1"></div>
-        <div class="esfera esfera-2"></div>
-    </div>
-      <div class="contacto-hero-contenido">
-        <p class="contacto-eyebrow" data-lang="heroEyebrow"><span class="indicador-punto"></span> RENAX / CONTÁCTANOS</p>
-        
-      
-<h1 id="contactoHeroTitulo" class="titulo-do-more">
-  <span class="titulo-linea">
-    <span class="texto-solido" data-lang="contactTitle">HABLEMOS</span>
-  </span>
-  <span class="titulo-linea">
-    <span class="texto-contorno" data-lang="contactTitle2">DE TU</span>
-    <em class="texto-solido texto-rojo" data-lang="contactTitle3">MARCA.</em>
-  </span>
-</h1>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap');
 
+        :root {
+            --bg-color: #050505;
+            --primary-red: #c8102e;
+            --accent-red: #ff304b;
+            --text-color: #ffffff;
+            --text-muted: #cccccc;
+        }
 
-        <p class="contacto-hero-texto" data-lang="contactDescription">
-          Cada marca tiene una historia que contar. Cuéntanos la tuya y exploremos cómo fortalecer su identidad, modernizar su imagen y proyectarla hacia nuevas oportunidades sin perder su esencia.
-        </p>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-        <a class="contacto-link-principal" href="#contacto-formulario">
-          <span data-lang="contactButton">INICIAR CONVERSACIÓN</span>
-          <span class="flecha-icono" aria-hidden="true">↘</span>
-        </a>
-      </div>
+        html {
+            min-height: 100%;
+            background-color: #050505;
+        }
 
-      <div class="contacto-hero-indice" aria-hidden="true">
-        <span>RENAX</span>
-        <span class="contacto-hero-linea"></span>
-        <span data-lang="contactIndicator">01 / CONTACTO</span>
-      </div>
-    </section>
+        /* FONDO DINÁMICO EXACTO DEL INDEX */
+        body.inicio-renax {
+            min-height: 100vh;
+            margin: 0;
+            background-color: #050505;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
 
-    <!-- SECCIÓN 01: FORMULARIO DINÁMICO DE CONTACTO -->
-    <section class="contacto-conversacion" id="contacto-formulario" aria-labelledby="contactoConversacionTitulo">
-      <div class="contacto-seccion-meta">
-        <span class="numero-paso">01</span>
-        <span class="etiqueta-paso" data-lang="firstStep">EL PRIMER PASO</span>
-      </div>
+        .inicio-fondo {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+            background: #050505;
+        }
 
-      <div class="contacto-conversacion-grid">
-        <div class="contacto-conversacion-texto">
-          <h2 id="contactoConversacionTitulo">
-            <span data-lang="conversationTitle">Toda transformación comienza con una</span>
-            <em data-lang="conversationWord">conversación.</em>
-          </h2>
-          <p data-lang="convP1">
-            En RENAX creemos que una marca no necesita olvidar su historia para avanzar. Queremos conocer tu negocio, entender tus objetivos y proyectar tu marca.
-          </p>
+        .inicio-fondo::before {
+            content: "";
+            position: absolute;
+            width: 75vw;
+            height: 180vh;
+            top: -45vh;
+            left: 48%;
+            background: linear-gradient(135deg, transparent 0%, transparent 20%, rgba(200,16,46,0.08) 30%, rgba(200,16,46,0.65) 45%, #c8102e 50%, rgba(200,16,46,0.55) 56%, rgba(200,16,46,0.08) 72%, transparent 82%);
+            filter: blur(8px);
+            animation: inicioRedMove 18s ease-in-out infinite alternate;
+        }
 
-          <!-- Tarjeta con tiempos e información clave -->
-          <div class="contacto-info-rapida">
-            <div class="contacto-info-item">
-              <i class="fa-regular fa-clock"></i>
-              <div>
-                <strong data-lang="responseTimeTitle">Tiempo de Respuesta</strong>
-                <p data-lang="responseTimeDesc">Respondemos en menos de 24 horas hábiles.</p>
-              </div>
-            </div>
-            <div class="contacto-info-item">
-              <i class="fa-regular fa-calendar-check"></i>
-              <div>
-                <strong data-lang="meetingTitle">Asesoría Inicial</strong>
-                <p data-lang="meetingDesc">Primera consulta diagnóstica sin compromiso.</p>
-              </div>
-            </div>
-          </div>
-        </div>
+        .inicio-fondo::after {
+            content: "";
+            position: absolute;
+            width: 55vw;
+            height: 150vh;
+            top: -25vh;
+            left: 58%;
+            background: linear-gradient(135deg, transparent 35%, rgba(200,16,46,0.25) 48%, rgba(200,16,46,0.05) 65%, transparent 75%);
+            filter: blur(25px);
+            animation: inicioRedGlow 14s ease-in-out infinite alternate;
+        }
 
-        <!-- FORMULARIO DIRECTO -->
-        <aside class="contacto-tarjeta-form">
-          <span class="contacto-tarjeta-etiqueta" data-lang="formTag">SOLICITUD DE COTIZACIÓN</span>
-          <h3 data-lang="tellBrand">Cuéntanos sobre tu proyecto</h3>
+        @keyframes inicioRedMove {
+            0% { transform: translateX(-15vw) rotate(-8deg) scale(1); }
+            50% { transform: translateX(5vw) rotate(-3deg) scale(1.08); }
+            100% { transform: translateX(18vw) rotate(5deg) scale(1.12); }
+        }
 
-          <form class="contacto-form-element" action="https://formspree.io/f/xrperlgd" method="POST" id="formCotizacion">
-            <div class="form-group">
-              <input type="text" id="nombre" name="nombre" placeholder=" " required>
-              <label for="nombre" data-lang="labelName">Nombre completo *</label>
-            </div>
+        @keyframes inicioRedGlow {
+            0% { transform: translateX(10vw) rotate(-5deg); }
+            100% { transform: translateX(-10vw) rotate(5deg); }
+        }
 
-            <div class="form-group">
-              <input type="email" id="email" name="email" placeholder=" " required>
-              <label for="email" data-lang="labelEmail">Correo electrónico *</label>
-            </div>
+        /* HEADER / MENÚ DE NAVEGACIÓN */
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(5, 5, 5, 0.95);
+            z-index: 1000;
+            border-bottom: 1px solid #222;
+        }
 
-            <div class="form-group">
-              <input type="tel" id="telefono" name="telefono" placeholder=" ">
-              <label for="telefono" data-lang="labelPhone">Teléfono / WhatsApp</label>
-            </div>
+        .nav-container {
+            max-width: 1500px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            gap: 20px;
+        }
 
-            <div class="form-group">
-              <select id="servicio" name="servicio" required>
-                <option value="" disabled selected hidden></option>
-                <option value="diagnostico" data-lang="opt1">Auditoría / Diagnóstico de marca</option>
-                <option value="renovacion" data-lang="opt2">Renovación de Identidad / Logo</option>
-                <option value="comunicacion" data-lang="opt3">Contenido y Redes Sociales</option>
-                <option value="estrategia" data-lang="opt4">Estrategia Visual Completa</option>
-                <option value="otro" data-lang="opt5">Otro servicio</option>
-              </select>
-              <label for="servicio" data-lang="labelService">¿Qué servicio te interesa? *</label>
-            </div>
+        .logo-renax {
+            height: 35px;
+            display: block;
+        }
 
-            <div class="form-group">
-              <textarea id="mensaje" name="mensaje" rows="4" placeholder=" " required></textarea>
-              <label for="mensaje" data-lang="labelMessage">Detalles de tu proyecto *</label>
-            </div>
+        .nav-menu {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            margin-left: auto;
+        }
 
-            <button type="submit" class="contacto-boton contacto-boton-rojo">
-              <span data-lang="contactSubmit">ENVIAR SOLICITUD</span>
-              <span aria-hidden="true">→</span>
+        .nav-link {
+            position: relative;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 15px;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--accent-red);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-red);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .language {
+            background: #fff;
+            color: #000;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        .login-btn {
+            background-color: var(--primary-red);
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.3s;
+            display: inline-block;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .login-btn:hover {
+            background-color: #a50d25;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* CONTENIDO GENERAL SOBRE EL FONDO DINÁMICO */
+        main {
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-banner {
+            width: 100%;
+            height: 580px;
+            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.50)), url('nosotros-bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 70px;
+            color: #fff;
+            font-size: 36px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
+        }
+
+        /* VIDEO CORPORATIVO RENAX CON FONDO NEGRO PURO */
+        .video-wrapper-section {
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #050505;
+            padding: 80px 5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        .video-section {
+            width: 100%;
+            max-width: 1100px;
+            height: 600px;
+            background-color: #111;
+            border: 1px solid #222;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+        }
+
+        .video-section iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* VISIÓN Y MISIÓN */
+        .vision-mission-full-wrapper {
+            width: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), url('fondo-m-v.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 90px 5%;
+            margin: 40px 0;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+        }
+
+        .vision-mission-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .vision-mission-container .card-box {
+            position: relative;
+            min-height: 320px;
+            height: auto;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #ffffff;
+            border: 2px solid #000000;
+            border-radius: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease, transform 0.4s ease;
+        }
+
+        .vision-mission-container .card-box h2 {
+            width: 100%;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            color: #000000;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(32px, 4vw, 48px);
+            transition: min-height 0.5s ease, transform 0.5s ease, color 0.5s ease;
+        }
+
+        .vision-mission-container .card-box p {
+            display: block;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 28px;
+            color: #000000;
+            line-height: 1.8;
+            font-size: 17px;
+            font-weight: 500;
+            transform: scale(0.9);
+            transition: max-height 0.7s ease, opacity 0.5s ease, transform 0.5s ease, padding 0.5s ease;
+        }
+
+        .vision-mission-container .card-box:nth-child(1):hover {
+            background: #FF7518 !important;
+            border-color: #000000;
+            box-shadow: 0 15px 40px rgba(255, 117, 24, 0.6);
+            transform: scale(1.06);
+            z-index: 10;
+        }
+        .vision-mission-container .card-box:nth-child(1):hover h2,
+        .vision-mission-container .card-box:nth-child(1):hover p {
+            color: #ffffff !important;
+        }
+
+        .vision-mission-container .card-box:nth-child(2):hover {
+            background: #cc0000 !important;
+            border-color: #000000;
+            box-shadow: 0 15px 40px rgba(204, 0, 0, 0.6);
+            transform: scale(1.06);
+            z-index: 10;
+        }
+        .vision-mission-container .card-box:nth-child(2):hover h2,
+        .vision-mission-container .card-box:nth-child(2):hover p {
+            color: #ffffff !important;
+        }
+
+        .vision-mission-container .card-box:hover p {
+            max-height: 500px;
+            opacity: 1;
+            padding: 10px 28px 35px;
+            transform: scale(1);
+        }
+
+        /* SECCIÓN "HOLA, SOY KAROL" */
+        .karol-section-full {
+            width: 100%;
+            background: #ffffff;
+            padding: 80px 5%;
+            margin: 60px 0;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .karol-content-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .karol-img-container {
+            width: 100%;
+            height: 480px;
+            background: #111;
+            border-radius: 20px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .karol-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .karol-text-content {
+            text-align: left;
+        }
+
+        .karol-text-content h2.titulo-karol {
+            color: #000000 !important;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(42px, 4vw, 64px);
+            font-weight: 900;
+            line-height: 1.08;
+            margin-bottom: 25px;
+        }
+
+        .karol-text-content h3 {
+            font-weight: 700;
+            font-size: 24px;
+            color: #222222;
+            margin: 0 0 25px 0;
+        }
+
+        .karol-text-content p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #444444;
+            margin: 0;
+        }
+
+        /* CINTURÓN INFINITO */
+        .infinite-belt-section {
+            width: 100%;
+            overflow: hidden;
+            padding: 35px 0;
+            background: #080808;
+            display: flex;
+            flex-direction: column;
+            gap: 38px;
+        }
+
+        .belt-track-left,
+        .belt-track-right {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .belt-item {
+            display: block;
+            white-space: nowrap;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(42px, 8vw, 130px);
+            font-weight: 900;
+            line-height: 1.15;
+            text-align: center;
+        }
+
+        .belt-track-left .belt-item {
+            color: #ffffff;
+            animation: encuentroIzquierda 4s ease-in-out infinite alternate;
+        }
+
+        .belt-track-right .belt-item {
+            color: transparent;
+            -webkit-text-stroke: 2px #ffffff;
+            animation: encuentroDerecha 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes encuentroIzquierda {
+            from { transform: translateX(25vw); }
+            to   { transform: translateX(-25vw); }
+        }
+
+        @keyframes encuentroDerecha {
+            from { transform: translateX(-25vw); }
+            to   { transform: translateX(25vw); }
+        }
+
+        /* ¿QUIÉNES SOMOS? */
+        .quienes-somos-section {
+            width: 100%;
+            max-width: none;
+            padding: 65px 80px;
+            box-sizing: border-box;
+        }
+
+        .quienes-somos-box {
+            position: relative;
+            width: 100%;
+            margin: 60px auto;
+            padding: 65px 70px;
+            box-sizing: border-box;
+            background-color: #080808;
+            background-image:
+                linear-gradient(
+                    rgba(0, 0, 0, 0.12),
+                    rgba(0, 0, 0, 0.22)
+                ),
+                url('descargar.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid rgba(255, 0, 0, 0.75);
+            border-radius: 28px;
+            box-shadow:
+                0 0 15px rgba(255, 0, 0, 0.25),
+                0 0 35px rgba(255, 0, 0, 0.15),
+                0 18px 45px rgba(0, 0, 0, 0.45);
+            text-align: left;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .quienes-somos-box h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(42px, 4vw, 60px);
+            line-height: 1.15;
+            color: #ffffff !important;
+            margin-top: 0;
+            margin-bottom: 35px;
+            text-transform: uppercase;
+            text-align: left;
+        }
+
+        .quienes-somos-box p {
+            font-size: clamp(19px, 1.6vw, 24px);
+            font-weight: 400;
+            color: #ffffff !important;
+            line-height: 1.8;
+            margin-bottom: 28px;
+            text-align: left;
+        }
+
+        /* CARRUSEL */
+        .renax-carousel-section {
+            width: 100% !important;
+            max-width: none !important;
+            margin: 60px 0 0 !important;
+            padding: 35px 0 !important;
+            background: #050505 !important;
+            overflow: hidden !important;
+        }
+
+        .renax-carousel-section .renax-carousel {
+            width: 100% !important;
+            padding: 40px 0 !important;
+            overflow: hidden !important;
+        }
+
+        .renax-carousel-section .renax-carousel-track {
+            display: flex !important;
+            width: max-content !important;
+            gap: 24px !important;
+            align-items: stretch !important;
+            animation: renaxInfiniteScroll 30s linear infinite;
+        }
+
+        .renax-carousel-section .renax-carousel-card {
+            flex: 0 0 420px !important;
+            min-height: 200px;
+            padding: 30px 25px;
+            background: #ffffff !important;
+            border: 2px solid #e00000 !important;
+            border-radius: 20px !important;
+            color: #000000 !important;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.35) !important;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .renax-carousel-section .renax-carousel-card h3,
+        .renax-carousel-section .renax-carousel-card p {
+            color: #000000 !important;
+        }
+
+        .renax-carousel:hover .renax-carousel-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes renaxInfiniteScroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(calc(-50% - 12px)); }
+        }
+
+        /* FOOTER RENAX */
+        .renax-footer {
+            width: 100%;
+            background: #080808;
+            border-top: 1px solid #650000;
+            padding: 45px 5% 35px;
+            color: #ffffff;
+            position: relative;
+            z-index: 5;
+        }
+
+        .footer-titulo {
+            display: block;
+            text-align: center;
+            color: #e60026;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 5px;
+            margin: 0 0 45px;
+        }
+
+        .footer-secciones {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 35px;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+
+        .footer-column h3 a {
+            color: #bcbcbc;
+            font-size: 16px;
+            font-weight: 900;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .footer-column h3 a:hover {
+            color: #ff3344;
+        }
+
+        .footer-menu-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-menu-links a {
+            color: #f0f0f0;
+            font-size: 14px;
+            line-height: 1.6;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-menu-links a:hover {
+            color: #ff3344;
+        }
+
+        /* TÍTULO CONÓCENOS */
+        .titulo-conocenos {
+            color: #ffffff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(55px, 10vw, 160px);
+            font-weight: 900;
+            text-align: center;
+            letter-spacing: 3px;
+            margin: 0;
+            animation: crecerConocenos 2.5s ease-in-out infinite;
+            text-shadow: 0 4px 18px rgba(0, 0, 0, 0.8);
+            transform-origin: center;
+        }
+
+        @keyframes crecerConocenos {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.25); }
+        }
+
+        /* BURBUJAS FLOTANTES */
+        .bubble-layer, .video-bubbles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .quienes-somos-box > :not(.bubble-layer),
+        .video-wrapper-section > *:not(.video-bubbles) {
+            position: relative;
+            z-index: 1;
+        }
+
+        .bubble, .video-bubble {
+            position: absolute;
+            bottom: -70px;
+            left: var(--x);
+            width: var(--size);
+            height: var(--size);
+            border-radius: 50%;
+            border: 1px solid rgba(255, 90, 90, 0.65);
+            background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.42), rgba(255, 30, 30, 0.16) 30%, rgba(160, 0, 0, 0.06) 70%, rgba(255, 40, 40, 0.22));
+            opacity: 0;
+            animation: renaxBubbleFloat var(--duration) ease-in-out var(--delay) infinite;
+        }
+
+        @keyframes renaxBubbleFloat {
+            0% { transform: translate3d(0, 0, 0) scale(0.75); opacity: 0; }
+            15% { opacity: 0.65; }
+            50% { transform: translate3d(var(--drift), -220px, 0) scale(1); opacity: 0.45; }
+            85% { opacity: 0.35; }
+            100% { transform: translate3d(calc(var(--drift) * -0.5), -480px, 0) scale(0.85); opacity: 0; }
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1000px) {
+            .vision-mission-container, .karol-content-container {
+                grid-template-columns: 1fr;
+            }
+            .footer-secciones {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(5, 5, 5, 0.98);
+                flex-direction: column;
+                padding: 20px 0;
+                border-bottom: 1px solid #222;
+            }
+            .nav-menu.active {
+                display: flex;
+            }
+            .nav-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-secciones {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+<body class="inicio-renax">
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html">
+                <img src="logo-renax-transparente.png" alt="RENAX" class="logo-renax">
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
             </button>
-          </form>
 
-          <p class="contacto-nota" data-lang="contactNote">
-            Tu información es 100% confidencial.
-          </p>
-        </aside>
-      </div>
-    </section>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link" data-lang="footerInicio">Inicio</a>
+                <a href="nosotros.html" class="nav-link active" data-lang="footerNosotros">Nosotros</a>
+                <a href="portafolio.html" class="nav-link" data-lang="footerPortfolio">Portafolio</a>
+                <a href="servicios.html" class="nav-link" data-lang="footerServices">Servicios</a>
+                <a href="contacto.html" class="nav-link" data-lang="footerContact">Contáctanos</a>
+            </nav>
 
-    <!-- SECCIÓN 02: CANALES DE ATENCIÓN -->
-    <section class="contacto-canales-seccion">
-      <div class="contacto-seccion-meta">
-        <span class="numero-paso">02</span>
-        <span class="contacto-hero-linea"></span>
-        <span data-lang="channelsTag">CANALES DE ATENCIÓN</span>
-      </div>
-
-      <div class="contacto-canales-intro">
-        <h2 class="renax-titulo-pesado" data-lang="channelsTitle">
-          Conectemos con tu <em>próxima idea.</em>
-        </h2>
-        <p class="renax-canales-desc" data-lang="channelsDesc">
-          Elige la vía de comunicación que te resulte más cómoda. Respondemos con agilidad a cada solicitud.
-        </p>
-      </div>
-
-      <div class="contacto-logos-horizontal">
-        <a href="https://wa.me/573246464290" target="_blank" class="logo-canal-item" title="WhatsApp Oficial">
-        <img src="whasap.png" alt="WhatsApp" class="logo-canal-img">
-    </a>
-        <a href="mailto:renaxcreativit@gmail.com" class="logo-canal-item" title="Correo Oficial">
-          <img src="Gmail.png" alt="Gmail" class="logo-canal-img">
-        </a>
-        <a href="https://www.facebook.com/profile.php?id=61595122299004" target="_blank" class="logo-canal-item" title="Facebook Oficial">
-        <img src="Facebook.png" alt="Facebook" class="logo-canal-img">
-    </a>
-      </div>
-    </section>
-
-    <!-- SECCIÓN 03: RESEÑAS -->
-    <section class="contacto-resenas-seccion">
-      <div class="contacto-seccion-meta">
-        <span class="numero-paso">03</span>
-        <span class="contacto-hero-linea"></span>
-        <span data-lang="reviewsTag">LO QUE DICEN NUESTROS CLIENTES</span>
-      </div>
-
-      <div class="contacto-carrusel-contenedor">
-        <div class="contacto-carrusel-track">
-          <!-- Tarjeta 1: Luis -->
-          <div class="contacto-resena-card">
-            <div class="resena-header-top">
-              <div class="resena-estrellas">★★★★★</div>
-              <img src="luis.jpg" alt="Luis Ceballos" class="resena-avatar">
+            <div class="nav-actions">
+                <button class="language" id="languageBtn" type="button">ESP</button>
+                <a href="login.html" class="login-btn" id="navLoginBtn"><span>INICIAR SESIÓN</span></a>
             </div>
-            <p class="resena-texto">"Excelente atención y profesionalismo. Captaron perfectamente lo que necesitábamos para nuestra institución."</p>
-            <div class="resena-autor">
-              <strong>Luis Ceballos</strong>
-              <small>Docente de la Institucion Eustaquio Palacio</small>
-            </div>
-          </div>
-
-          <!-- Tarjeta 2: Rosa -->
-          <div class="contacto-resena-card">
-            <div class="resena-header-top">
-              <div class="resena-estrellas">★★★★★</div>
-              <img src="rosa.jpg" alt="Rosa" class="resena-avatar">
-            </div>
-            <p class="resena-texto">"El cambio visual fue increíble. Muy recomendados por su compromiso y calidad."</p>
-            <div class="resena-autor">
-              <strong>Rosa</strong>
-              <small>Docente de la Institucion Eustaquio Palacio</small>
-            </div>
-          </div>
-
-          <!-- Tarjeta 3: Sandra -->
-          <div class="contacto-resena-card">
-            <div class="resena-header-top">
-              <div class="resena-estrellas">★★★★★</div>
-              <img src="sandra.jpeg" alt="Sandra Ruiz" class="resena-avatar">
-            </div>
-            <p class="resena-texto">"Excelente atención por WhatsApp y entrega puntual. Rediseñaron nuestra marca, el cambio fue inmediato."</p>
-            <div class="resena-autor">
-              <strong>Sandra Ruiz</strong>
-              <small>Fundadora de Skenzi Home</small>
-            </div>
-          </div>
-
-          <!-- Duplicado exacto para el loop continuo -->
-          <div class="contacto-resena-card">
-            <div class="resena-header-top">
-              <div class="resena-estrellas">★★★★★</div>
-              <img src="luis.jpg" alt="Luis Ceballos" class="resena-avatar">
-            </div>
-            <p class="resena-texto">"Excelente atención y profesionalismo. Captaron perfectamente lo que necesitábamos para nuestra institución."</p>
-            <div class="resena-autor">
-              <strong>Luis Ceballos</strong>
-              <small>Docente de la Institucion Eustaquio Palacio</small>
-            </div>
-          </div>
-
-          <div class="contacto-resena-card">
-            <div class="resena-header-top">
-              <div class="resena-estrellas">★★★★★</div>
-              <img src="rosa.jpg" alt="Rosa" class="resena-avatar">
-            </div>
-            <p class="resena-texto">"El cambio visual fue increíble. Muy recomendados por su compromiso y calidad."</p>
-            <div class="resena-autor">
-              <strong>Rosa</strong>
-              <small>Docente de la Institucion Eustaquio Palacio</small>
-            </div>
-          </div>
-
-          <div class="contacto-resena-card">
-            <div class="resena-header-top">
-              <div class="resena-estrellas">★★★★★</div>
-              <img src="sandra.jpeg" alt="Sandra Ruiz" class="resena-avatar">
-            </div>
-            <p class="resena-texto">"Excelente atención por WhatsApp y entrega puntual. Rediseñaron nuestra marca, el cambio fue inmediato."</p>
-            <div class="resena-autor">
-              <strong>Sandra Ruiz</strong>
-              <small>Fundadora de Skenzi Home</small>
-            </div>
-          </div>
         </div>
-      </div>
+    </header>
 
-      <!-- DEJA TU RESEÑA -->
-      <div class="deja-tu-resena-contenedor">
-        <div class="deja-resena-caja">
-          <h3 data-lang="reviewBoxTitle">Comparte tu experiencia con <em>RENAX</em></h3>
-          <p data-lang="reviewBoxDesc">¿Has trabajado con nosotros? Nos encantaría conocer tu opinión.</p>
-          
-          <form action="https://formspree.io/f/xyeklpye" method="POST" class="form-resena-grid">
-            <div class="form-group">
-              <input type="text" name="nombre" placeholder="Tu Nombre y Apellido" required class="input-estilo">
-            </div>
-            <div class="form-group">
-              <input type="text" name="cargo" placeholder="Cargo / Institución o Empresa" required class="input-estilo">
-            </div>
-            <div class="form-group full-width">
-              <textarea name="mensaje" rows="4" placeholder="Escribe tu reseña aquí..." required class="input-estilo"></textarea>
-            </div>
-            <div class="form-group full-width">
-              <button type="submit" class="contacto-link-principal btn-enviar-resena">
-                <span data-lang="reviewBtnSubmit">ENVIAR RESEÑA</span>
-                <span>↗</span>
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-      
-    <!-- SECCIÓN 04: PREGUNTAS FRECUENTES (FAQ) -->
-    <section class="renax-faq-section">
-      <div class="contacto-seccion-meta">
-        <span class="numero-paso">04</span>
-        <span class="contacto-hero-linea"></span>
-        <span data-lang="faqTag">RESOLVEMOS TUS DUDAS</span>
-      </div>
+    <!-- FONDO DINÁMICO DE LUCES ROJAS IGUAL AL INDEX -->
+    <div class="inicio-fondo"></div>
 
-      <div class="renax-faq-intro">
-        <h2 data-lang="faqTitle">Preguntas <em>Frecuentes.</em></h2>
-        <p data-lang="faqDesc">Todo lo que necesitas saber sobre nuestros procesos de transformación visual...</p>
-      </div>
-
-      <div class="renax-faq-lista">
-        <details class="renax-faq-card">
-          <summary><span data-lang="faq1Q">¿Cuánto tiempo toma un proceso de renovación?</span></summary>
-          <p data-lang="faq1A">El tiempo varía según la magnitud del proyecto. Una auditoría o diagnóstico básico puede tomar de 1 a 2 semanas, mientras que una renovación integral de identidad visual y estrategia toma entre 3 y 5 semanas.</p>
-        </details>
-
-        <details class="renax-faq-card">
-          <summary><span data-lang="faq2Q">¿Cómo son los métodos de pago?</span></summary>
-          <p data-lang="faq2A">Trabajamos bajo un esquema fraccionado estándar: un anticipo inicial del 50% para iniciar la fase creativa y el 50% restante al finalizar y aprobar la identidad visual.</p>
-        </details>
-
-        <details class="renax-faq-card">
-          <summary><span data-lang="faq3Q">¿Trabajan con marcas fuera de la ciudad?</span></summary>
-          <p data-lang="faq3A">Sí, de manera totalmente digital y remota. Colaboramos con marcas, empresas e instituciones en diferentes ciudades y países mediante reuniones virtuales y entregas optimizadas.</p>
-        </details>
-      </div>
-    </section>
-
-    <!-- MAPA DE UBICACIÓN COMPACTO -->
-    <section class="renax-contacto-mapa" style="width: 100%; max-width: 700px; margin: 40px auto; padding: 0 20px; text-align: left;">
-      <div class="srv-seccion-meta" style="display: none;"><span>05</span><span>UBICACIÓN</span></div>
-      
-      <h2 style="font-size: clamp(22px, 3vw, 32px); font-weight: 900; color: #fff; margin-bottom: 15px; text-transform: uppercase;">
-        NUESTRA <span style="color: #ff2a2a;">UBICACIÓN</span>
-      </h2>
-      
-      <div class="renax-mapa-contenedor" style="width: 100%; height: 280px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #111; box-shadow: 0 5px 20px rgba(0,0,0,0.6);">
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15930.942699465102!2d-76.55915520206695!3d3.414468329300764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1seustaquio%20palacios!5e0!3m2!1ses-419!2sco!4v1792099953340!5m2!1ses-419!2sco" 
-          width="100%" 
-          height="100%" 
-          style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(120%);" 
-          allowfullscreen="" 
-          loading="lazy" 
-          referrerpolicy="strict-origin-when-cross-origin">
-        </iframe>
-      </div>
-    </section>
-
-    <!-- SECCIÓN FINAL: LLAMADO A LA ACCIÓN (CTA) -->
-    <section class="renax-cta-section">
-      <div class="contacto-seccion-meta">
-        <span class="numero-paso">06</span>
-        <span class="contacto-hero-linea"></span>
-        <span data-lang="ctaTag">EL SIGUIENTE PASO</span>
-      </div>
-
-      <div class="renax-cta-contenido">
-        <h2 class="renax-titulo-pesado">
-          <span data-lang="ctaTitlePart1">TU HISTORIA</span><br>
-          <span data-lang="ctaTitlePart2">MERECE</span> <em data-lang="ctaTitlePart3">EVOLUCIONAR.</em>
-        </h2>
-        <p data-lang="ctaDesc">
-          Las marcas que evolucionan no tienen que renunciar a lo que las hace especiales. En RENAX trabajamos para que su historia siga creciendo.
-        </p>
-        <a href="contacto.html" class="contacto-link-principal">
-          <span data-lang="ctaBtn">COMENZAR AHORA</span>
-          <span>↗</span>
-        </a>
-      </div>
-
-      <div class="renax-cta-frase-final">
-        <span>RENAX — TRANSFORMAMOS MARCAS</span>
-        <span>SIN BORRAR SU HISTORIA.</span>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- PIE DE PÁGINA (FOOTER) -->
-  <footer class="contacto-footer">
-    <div class="contacto-footer-contenedor">
-      <div class="contacto-footer-top">
-        <span class="contacto-footer-titulo-menu" data-lang="menuTitle">MENÚ</span>
-        <span class="contacto-footer-explora" data-lang="footerExplora">EXPLORA RENAX ↗</span>
-      </div>
-
-      <div class="contacto-footer-grid">
-        <!-- Columna 1: INICIO -->
-        <div class="contacto-footer-col">
-          <h2><a href="index.html" data-lang="footerHome">INICIO</a></h2>
-          <a href="index.html#expertos" data-lang="subHome1">Expertos en transformar marcas</a>
-          <a href="index.html#destacar" data-lang="subHome2">Vuelve a destacar sin perder tu esencia</a>
-          <a href="index.html#altura" data-lang="subHome3">Tu historia merece una imagen que esté a su altura</a>
-          <a href="index.html#faq" data-lang="subHome4">Preguntas frecuentes</a>
+    <main>
+        <!-- 1. PORTADA -->
+        <div class="hero-banner">
+            <h1 class="titulo-conocenos" data-es="CONÓCENOS" data-en="ABOUT US">CONÓCENOS</h1>
         </div>
 
-        <!-- Columna 2: NOSOTROS -->
-        <div class="contacto-footer-col">
-          <h2><a href="nosotros.html" data-lang="footerAbout">NOSOTROS</a></h2>
-          <a href="nosotros.html#quienes" data-lang="subAbout1">Quiénes somos</a>
-          <a href="nosotros.html#vision" data-lang="subAbout2">Visión</a>
-          <a href="nosotros.html#mision" data-lang="subAbout3">Misión</a>
-          <a href="nosotros.html#porque" data-lang="subAbout4">¿Por qué RENAX?</a>
+        <!-- 2. VIDEO INSTITUCIONAL CON FONDO NEGRO PURO -->
+        <div class="video-wrapper-section">
+            <div class="video-section">
+                <iframe
+                    src="https://www.youtube-nocookie.com/embed/PIPt26J40WE"
+                    title="Video institucional de RENAX"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen>
+                </iframe>
+            </div>
         </div>
 
-        <!-- Columna 3: PORTAFOLIO -->
-        <div class="contacto-footer-col">
-          <h2><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h2>
-          <a href="portafolio.html#proyectos" data-lang="subPort1">Proyectos y trabajos realizados</a>
-          <a href="portafolio.html#casos" data-lang="subPort2">Casos de estudio</a>
+        <!-- 3. VISIÓN Y MISIÓN -->
+        <div class="vision-mission-full-wrapper">
+            <div class="vision-mission-container">
+                <div class="card-box">
+                    <h2 data-es="VISIÓN" data-en="VISION">VISIÓN</h2>
+                    <p data-es="Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales."
+                       data-en="By 2030, RENAX aspires to be a departmental leader in visual identity and graphic communication, recognized for modernizing established brands and promoting the growth of local businesses.">
+                        Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales.
+                    </p>
+                </div>
+
+                <div class="card-box">
+                    <h2 data-es="MISIÓN" data-en="MISSION">MISIÓN</h2>
+                    <p data-es="Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia."
+                       data-en="Our mission is to offer strategic design and visual identity services for small and medium-sized businesses, modernizing established brands, strengthening their competitiveness, and always preserving their essence.">
+                        Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia.
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <!-- Columna 4: SERVICIOS -->
-        <div class="contacto-footer-col">
-          <h2><a href="servicios.html" data-lang="footerServices">SERVICIOS</a></h2>
-          <a href="servicios.html#diagnostico" data-lang="subServ1">Diagnóstico de marca</a>
-          <a href="servicios.html#renovacion" data-lang="subServ2">Identidad visual</a>
-          <a href="servicios.html#sociales" data-lang="subServ3">Comunicación</a>
-          <a href="servicios.html#estrategia" data-lang="subServ4">Estrategia visual</a>
+        <!-- 4. SECCIÓN "HOLA, SOY KAROL" -->
+        <div class="karol-section-full">
+            <div class="karol-content-container">
+                <div class="karol-img-container">
+                    <img src="karol - 2.png" alt="Karol RENAX">
+                </div>
+                <div class="karol-text-content">
+                    <h2 class="titulo-karol" data-es="HOLA, SOY KAROL" data-en="HELLO, I'M KAROL">
+                        HOLA, SOY KAROL
+                    </h2>
+                    <h3 data-es="Creatividad, estrategia y compromiso con cada marca." data-en="A creative vision that transforms brands.">Creatividad, estrategia y compromiso con cada marca.</h3>
+                    <p data-es="RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades."
+                       data-en="RENAX was born from my passion for design and my purpose of helping brands evolve without losing their essence. As founder, I work with creativity, strategy, and dedication to build visual identities that inspire trust, reflect stories, and open new opportunities.">
+                        RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades.
+                    </p>
+                </div>
+            </div>
         </div>
 
-        <!-- Columna 5: CONTACTO -->
-        <div class="contacto-footer-col">
-          <h2><a href="contacto.html" data-lang="footerContact">CONTACTO</a></h2>
-          <a href="contacto.html#formContacto" data-lang="subContact1">Hablemos de tu proyecto</a>
+        <!-- 5. CINTURÓN INFINITO -->
+        <div class="infinite-belt-section">
+            <div class="belt-track-left">
+                <span class="belt-item solid" data-es="LA EVOLUCIÓN ESTÁ AQUÍ" data-en="EVOLUTION IS HERE">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            </div>
+            <div class="belt-track-right">
+                <span class="belt-item outline" data-es="LA EVOLUCIÓN ESTÁ AQUÍ" data-en="EVOLUTION IS HERE">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            </div>
         </div>
-      </div>
 
-      <!-- Parte inferior con logotipo -->
-      <div class="contacto-footer-bottom">
-        <div class="contacto-footer-marca">
-          <a href="index.html">
-            <img src="logo-renax-transparente.png" alt="RENAX Logo" class="renax-logo-img">
-          </a>
+        <!-- 6. ¿QUIÉNES SOMOS? -->
+        <section class="quienes-somos-section" id="quienes-somos">
+            <div class="quienes-somos-box">
+                <h2 data-es="¿QUIÉNES SOMOS?" data-en="WHO WE ARE?">¿QUIÉNES SOMOS?</h2>
+                <p data-es="Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria."
+                   data-en="We are a visual identity and graphic communication agency specialized in modernizing established brands.">
+                    Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria.
+                </p>
+                <p data-es="Analizamos la historia, los valores, la identidad y las necesidades de cada negocio para crear soluciones visuales que conecten su trayectoria con una nueva generación de clientes. En RENAX conservamos la esencia de tu marca, analizamos antes de diseñar, unimos estrategia y diseño, y creamos una identidad preparada para evolucionar."
+                   data-en="We analyze the history, values, identity, and needs of each business to create visual solutions that connect their legacy with a new generation of clients. At RENAX we preserve the essence of your brand, analyze before designing, unite strategy and design, and create an identity prepared to evolve.">
+                    Analizamos la historia, los valores, la identidad y las necesidades de cada negocio para crear soluciones visuales que conecten su trayectoria con una nueva generación de clientes. En RENAX conservamos la esencia de tu marca, analizamos antes de diseñar, unimos estrategia y diseño, y creamos una identidad preparada para evolucionar.
+                </p>
+            </div>
+        </section>
+
+        <!-- 7. CARRUSEL DE IMPACTO -->
+        <section class="renax-carousel-section">
+            <div class="renax-carousel">
+                <div class="renax-carousel-track">
+                    <article class="renax-carousel-card">
+                        <h3 data-es="MÁS RECONOCIMIENTO" data-en="MORE RECOGNITION">MÁS RECONOCIMIENTO</h3>
+                        <p data-es="Una imagen que facilita que tus clientes recuerden tu marca." data-en="An image that helps your customers remember your brand.">Una imagen que facilita que tus clientes recuerden tu marca.</p>
+                    </article>
+                    <article class="renax-carousel-card">
+                        <h3 data-es="MÁS CONFIANZA" data-en="MORE TRUST">MÁS CONFIANZA</h3>
+                        <p data-es="Una identidad profesional que refleja la experiencia de tu negocio." data-en="A professional identity that reflects your business experience.">Una identidad profesional que refleja la experiencia de tu negocio.</p>
+                    </article>
+                    <article class="renax-carousel-card">
+                        <h3 data-es="MÁS CONEXIÓN" data-en="MORE CONNECTION">MÁS CONEXIÓN</h3>
+                        <p data-es="Una comunicación visual capaz de acercarte a nuevos públicos." data-en="Visual communication that helps you connect with new audiences.">Una comunicación visual capaz de acercarte a nuevos públicos.</p>
+                    </article>
+                    <article class="renax-carousel-card">
+                        <h3 data-es="MÁS COHERENCIA" data-en="MORE CONSISTENCY">MÁS COHERENCIA</h3>
+                        <p data-es="Una marca preparada para comunicarse de manera consistente en medios físicos y digitales." data-en="A brand ready to communicate consistently across physical and digital media.">Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================ FOOTER RENAX ================ -->
+    <footer class="renax-footer" id="footer-renax">
+        <h2 class="footer-titulo" data-lang="footerMenu">MENÚ</h2>
+        <div class="footer-secciones">
+            <nav class="footer-column">
+                <h3><a href="index.html" data-lang="footerInicio">INICIO</a></h3>
+                <div class="footer-menu-links">
+                    <a href="index.html#hero-inicio" data-lang="footerHomeHero">Expertos en transformar marcas</a>
+                    <a href="index.html#esencia-marca" data-lang="footerHomeEssence">Vuelve a destacar sin perder tu esencia</a>
+                    <a href="index.html#historia-marca" data-lang="footerHomeHistory">Tu historia merece una imagen que esté a su altura</a>
+                    <a href="index.html#preguntas-frecuentes" data-lang="footerHomeFAQ">Preguntas frecuentes</a>
+                </div>
+            </nav>
+
+            <nav class="footer-column">
+                <h3><a href="nosotros.html" data-lang="footerNosotros">NOSOTROS</a></h3>
+                <div class="footer-menu-links">
+                    <a href="nosotros.html#quienes-somos" data-lang="footerWho">Quiénes somos</a>
+                    <a href="nosotros.html#vision" data-lang="footerVision">Visión</a>
+                    <a href="nosotros.html#mision" data-lang="footerMission">Misión</a>
+                    <a href="nosotros.html#por-que-renax" data-lang="footerWhy">¿Por qué RENAX?</a>
+                </div>
+            </nav>
+
+            <nav class="footer-column">
+                <h3><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h3>
+                <div class="footer-menu-links">
+                    <a href="portafolio.html#proyectos" data-lang="footerProjects">Proyectos y trabajos realizados</a>
+                    <a href="portafolio.html#casos-estudio" data-lang="footerCases">Casos de estudio</a>
+                </div>
+            </nav>
+
+            <nav class="footer-column">
+                <h3><a href="servicios.html" data-lang="footerServices">SERVICIOS</a></h3>
+                <div class="footer-menu-links">
+                    <a href="servicios.html#diagnostico" data-lang="footerService1">Diagnóstico de marca</a>
+                    <a href="servicios.html#identidad" data-lang="footerService2">Identidad visual</a>
+                    <a href="servicios.html#comunicacion" data-lang="footerService3">Comunicación</a>
+                    <a href="servicios.html#estrategia" data-lang="footerService4">Estrategia visual</a>
+                </div>
+            </nav>
+
+            <nav class="footer-column">
+                <h3><a href="contacto.html" data-lang="footerContact">CONTACTO</a></h3>
+                <div class="footer-menu-links">
+                    <a href="contacto.html#contacto-formulario" data-lang="footerTalk">Hablemos de tu proyecto</a>
+                </div>
+            </nav>
         </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
-  <!-- SCRIPT CON TRADUCCIÓN E INTERACTIVIDAD -->
-  <script>
-    (() => {
-      // Menú desplegable móvil
-      const boton = document.getElementById("contactoMenuToggle");
-      const nav = document.getElementById("contactoNav");
-      if (boton && nav) {
-        boton.addEventListener("click", () => {
-          const abierto = nav.classList.toggle("abierto");
-          boton.setAttribute("aria-expanded", String(abierto));
-          boton.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
-          boton.innerHTML = abierto
-            ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
-            : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-        });
+    <!-- SCRIPTS -->
+    <script>
+        const navToggle = document.getElementById("navToggle");
+        const navMenu = document.getElementById("navMenu");
+        const languageBtn = document.getElementById("languageBtn");
 
-        nav.querySelectorAll("a").forEach((enlace) => {
-          enlace.addEventListener("click", () => {
-            nav.classList.remove("abierto");
-            boton.setAttribute("aria-expanded", "false");
-            boton.setAttribute("aria-label", "Abrir menú");
-            boton.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
-          });
-        });
-      }
-
-      // Cambio de Idioma (ESP / ENG)
-      const botonIdioma = document.getElementById("contactoIdioma");
-      if (!botonIdioma) return;
-
-      const textos = {
-        "navHome": "Home",
-        "navAbout": "About Us",
-        "navPortfolio": "Portfolio",
-        "navServices": "Services",
-        "navContact": "Contact Us",
-        "loginButton": "LOG IN",
-        "heroEyebrow": "RENAX / CONTACT US",
-        "contactTitle": "LET'S TALK",
-        "contactTitle2": "ABOUT YOUR BRAND.",
-         "contactTitle3": "BRAND.",
-        "contactDescription": "Each brand has a story to tell. Tell us yours and let's explore how to strengthen its identity, modernize its image, and project it toward new opportunities without losing its essence.",
-        "contactButton": "START CONVERSATION",
-        "contactIndicator": "01 / CONTACT",
-        "firstStep": "THE FIRST STEP",
-        "conversationTitle": "Every transformation begins with a",
-        "conversationWord": "conversation.",
-        "convP1": "At RENAX, we believe a brand doesn't need to forget its history to move forward. We want to get to know your business, understand your goals, and project your brand.",
-        "responseTimeTitle": "Response Time",
-        "responseTimeDesc": "We respond in less than 24 business hours.",
-        "meetingTitle": "Initial Consultation",
-        "meetingDesc": "First diagnostic consultation with no commitment.",
-        "formTag": "QUOTE REQUEST",
-        "tellBrand": "Tell us about your project",
-        "labelName": "Full name *",
-        "labelEmail": "Email address *",
-        "labelPhone": "Phone / WhatsApp",
-        "labelService": "Which service interests you? *",
-        "opt1": "Brand Audit / Diagnosis",
-        "opt2": "Brand Renewal / Logo",
-        "opt3": "Content & Social Media",
-        "opt4": "Full Visual Strategy",
-        "opt5": "Other service",
-        "labelMessage": "Project details *",
-        "contactSubmit": "SEND REQUEST",
-        "contactNote": "Your information is 100% confidential.",
-        "channelsTag": "CUSTOMER SERVICE CHANNELS",
-        "channelsTitle": "Let's connect with your next idea.",
-        "channelsDesc": "Choose the communication channel that is most comfortable for you. We respond quickly to every request.",
-        "reviewsTag": "WHAT OUR CLIENTS SAY",
-        "reviewBoxTitle": "Share your experience with RENAX",
-        "reviewBoxDesc": "Have you worked with us? We would love to hear your thoughts.",
-        "reviewBtnSubmit": "SUBMIT REVIEW",
-        "faqTag": "WE ANSWER YOUR QUESTIONS",
-        "faqTitle": "Frequently Asked Questions.",
-        "faqDesc": "Everything you need to know about our visual transformation processes...",
-        "faq1Q": "How long does a brand renewal process take?",
-        "faq1A": "It depends on the scale. A diagnosis takes 3-5 business days, while a full visual identity takes 2-4 weeks.",
-        "faq2Q": "What are the payment methods?",
-        "faq2A": "We handle a 50% deposit at project start and 50% upon final delivery of editable files and manuals.",
-        "faq3Q": "Do you work with brands outside the city or country?",
-        "faq3A": "Yes! We work 100% remotely via Zoom or Google Meet meetings and continuous communication on WhatsApp and email.",
-        "ctaTag": "THE NEXT STEP",
-        "ctaTitlePart1": "YOUR STORY",
-        "ctaTitlePart2": "DESERVES TO",
-        "ctaTitlePart3": "EVOLVE.",
-        "ctaDesc": "Brands that evolve don't have to give up what makes them special. At RENAX, we work so that their story continues to grow.",
-        "ctaBtn": "START NOW",
-        "menuTitle": "MENU",
-        "footerExplora": "EXPLORE RENAX ↘",
-        "footerHome": "HOME",
-        "subHome1": "Experts in transforming brands",
-        "subHome2": "Stand out again without losing your essence",
-        "subHome3": "Your story deserves an image that lives up to it",
-        "subHome4": "Frequently asked questions",
-        "footerAbout": "ABOUT US",
-        "subAbout1": "Who we are",
-        "subAbout2": "Vision",
-        "subAbout3": "Mission",
-        "subAbout4": "Why RENAX?",
-        "footerPortfolio": "PORTFOLIO",
-        "subPort1": "Completed projects and works",
-        "subPort2": "Case studies",
-        "footerServices": "SERVICES",
-        "subServ1": "Brand diagnosis",
-        "subServ2": "Visual identity",
-        "subServ3": "Communication",
-        "subServ4": "Visual strategy",
-        "footerContact": "CONTACT",
-        "subContact1": "Let's talk about your project"
-      };
-
-      const elementos = [...document.querySelectorAll("[data-lang]")];
-      const originales = elementos.map(elemento => ({
-        elemento,
-        clave: elemento.getAttribute("data-lang"),
-        html: elemento.innerHTML
-      }));
-
-      let ingles = false;
-
-      botonIdioma.addEventListener("click", () => {
-        ingles = !ingles;
-        originales.forEach(({ elemento, clave, html }) => {
-          if (!ingles) {
-            elemento.innerHTML = html;
-          } else if (textos[clave]) {
-            elemento.textContent = textos[clave];
-          }
-        });
-
-        botonIdioma.textContent = ingles ? "ENG" : "ESP";
-        document.documentElement.lang = ingles ? "en" : "es";
-      });
-    })();
-  </script>
-
-  <!-- SCRIPT PARA EL CARRUSEL Y FORMULARIO -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const carruselContenedor = document.querySelector(".contacto-carrusel-contenedor");
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            carruselContenedor.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, {
-        threshold: 0.15
-      });
-
-      if (carruselContenedor) {
-        observer.observe(carruselContenedor);
-      }
-    });
-  </script>
-
-  <script>
-    document.getElementById('formCotizacion').addEventListener('submit', async function(e) {
-      e.preventDefault();
-      const form = e.target;
-      const data = new FormData(form);
-      
-      try {
-        const response = await fetch(form.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
-        
-        if (response.ok) {
-          alert('¡Solicitud enviada con éxito! Nos pondremos en contacto contigo pronto.');
-          form.reset();
-        } else {
-          alert('Hubo un problema al enviar la solicitud. Por favor, intenta de nuevo.');
+        if (navToggle && navMenu) {
+            navToggle.addEventListener("click", function () {
+                navMenu.classList.toggle("active");
+            });
         }
-      } catch (error) {
-        alert('Error de conexión. Verifica tu red e inténtalo nuevamente.');
-      }
-    });
-  </script>
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
-    const firebaseConfig = {
-        apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
-        authDomain: "renax-auth.firebaseapp.com",
-        projectId: "renax-auth",
-        storageBucket: "renax-auth.firebasestorage.app",
-        messagingSenderId: "155645649809",
-        appId: "1:155645649809:web:3b203ccb729bfc8672b030"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    const navLoginBtn = document.getElementById('navLoginBtn');
-
-    onAuthStateChanged(auth, (user) => {
-        if (navLoginBtn) {
-            if (user) {
-                // Si ya inició sesión
-                navLoginBtn.href = "dashboard.html";
-                const span = navLoginBtn.querySelector('span');
-                if (span) span.textContent = "MI PANEL";
-            } else {
-                // Si no ha iniciado sesión
-                navLoginBtn.href = "login.html";
-                const span = navLoginBtn.querySelector('span');
-                if (span) span.textContent = "INICIAR SESIÓN";
+        let english = false;
+        const translations = {
+            es: {
+                footerInicio: "INICIO", footerNosotros: "NOSOTROS", footerPortfolio: "PORTAFOLIO", footerServices: "SERVICIOS", footerContact: "CONTACTO", footerMenu: "MENÚ",
+                footerHomeHero: "Expertos en transformar marcas", footerHomeEssence: "Vuelve a destacar sin perder tu esencia", footerHomeHistory: "Tu historia merece una imagen que esté a su altura", footerHomeFAQ: "Preguntas frecuentes",
+                footerWho: "Quiénes somos", footerVision: "Visión", footerMission: "Misión", footerWhy: "¿Por qué RENAX?", footerProjects: "Proyectos y trabajos realizados", footerCases: "Casos de estudio",
+                footerService1: "Diagnóstico de marca", footerService2: "Identidad visual", footerService3: "Comunicación", footerService4: "Estrategia visual", footerTalk: "Hablemos de tu proyecto"
+            },
+            en: {
+                footerInicio: "HOME", footerNosotros: "ABOUT US", footerPortfolio: "PORTAFOLIO", footerServices: "SERVICES", footerContact: "CONTACT", footerMenu: "MENU",
+                footerHomeHero: "Experts in transforming brands", footerHomeEssence: "Stand out again without losing your essence", footerHomeHistory: "Your story deserves an image that lives up to it", footerHomeFAQ: "Frequently asked questions",
+                footerWho: "Who we are", footerVision: "Vision", footerMission: "Mission", footerWhy: "Why RENAX?", footerProjects: "Projects and completed work", footerCases: "Case studies",
+                footerService1: "Brand diagnosis", footerService2: "Visual identity", footerService3: "Communication", footerService4: "Visual strategy", footerTalk: "Let's talk about your project"
             }
+        };
+
+        if (languageBtn) {
+            languageBtn.addEventListener("click", function () {
+                english = !english;
+                const language = english ? translations.en : translations.es;
+                languageBtn.textContent = english ? "ENG" : "ESP";
+
+                document.querySelectorAll("[data-lang]").forEach(function(element) {
+                    const key = element.getAttribute("data-lang");
+                    if (language[key]) { element.innerHTML = language[key]; }
+                });
+
+                document.querySelectorAll("[data-es]").forEach(function(element) {
+                    const text = english ? element.getAttribute("data-en") : element.getAttribute("data-es");
+                    if (text) { element.innerHTML = text; }
+                });
+            });
         }
-    });
-</script>
- <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
-    const firebaseConfig = {
-        apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
-        authDomain: "renax-auth.firebaseapp.com",
-        projectId: "renax-auth",
-        storageBucket: "renax-auth.firebasestorage.app",
-        messagingSenderId: "155645649809",
-        appId: "1:155645649809:web:3b203ccb729bfc8672b030"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-
-    onAuthStateChanged(auth, (user) => {
-        if (user) {
-            const emailInput = document.getElementById('email');
-            if (emailInput && user.email) {
-                emailInput.value = user.email; // Rellena el correo automáticamente
-                emailInput.readOnly = true;    // Opcional: Evita que lo cambien si ya está logueados
+        // Script de burbujas flotantes para cuadros
+        const cuadro = document.querySelector(".quienes-somos-box");
+        if (cuadro && !cuadro.querySelector(".bubble-layer")) {
+            const capa = document.createElement("div");
+            capa.className = "bubble-layer";
+            capa.setAttribute("aria-hidden", "true");
+            for (let i = 0; i < 18; i++) {
+                const burbuja = document.createElement("span");
+                burbuja.className = "bubble";
+                const duracion = 9 + Math.random() * 10;
+                burbuja.style.setProperty("--x", `${Math.random() * 96}%`);
+                burbuja.style.setProperty("--size", `${10 + Math.random() * 34}px`);
+                burbuja.style.setProperty("--duration", `${duracion}s`);
+                burbuja.style.setProperty("--delay", `${-(Math.random() * duracion)}s`);
+                burbuja.style.setProperty("--drift", `${-35 + Math.random() * 70}px`);
+                capa.appendChild(burbuja);
             }
+            cuadro.prepend(capa);
         }
-    });
-</script>
+
+        // Script de burbujas flotantes para la sección de video
+        document.addEventListener("DOMContentLoaded", () => {
+            const seccion = document.querySelector(".video-wrapper-section");
+            if (!seccion || seccion.querySelector(".video-bubbles")) return;
+            const capa = document.createElement("div");
+            capa.className = "video-bubbles";
+            capa.setAttribute("aria-hidden", "true");
+            for (let i = 0; i < 26; i++) {
+                const burbuja = document.createElement("span");
+                burbuja.className = "video-bubble";
+                const duracion = 10 + Math.random() * 12;
+                burbuja.style.setProperty("--x", `${Math.random() * 98}%`);
+                burbuja.style.setProperty("--size", `${12 + Math.random() * 52}px`);
+                burbuja.style.setProperty("--duration", `${duracion}s`);
+                burbuja.style.setProperty("--delay", `${-(Math.random() * duracion)}s`);
+                burbuja.style.setProperty("--drift", `${-70 + Math.random() * 140}px`);
+                capa.appendChild(burbuja);
+            }
+            seccion.prepend(capa);
+        });
+    </script>
 </body>
 </html>
