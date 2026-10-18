@@ -792,14 +792,13 @@ body.portafolio-renax {
    LIMITAR LOS CARRUSELES DENTRO DEL CONTENIDO (DEBAJO DE PORTADA HASTA ANTES DEL FOOTER)
    ========================================== */
 .vertical-ticker-container {
-  position: absolute; /* Cambiado de fixed a absolute para que respete los límites del main */
-  top: 40px;          /* Empieza justo al inicio del main-content (debajo de la portada) */
-  bottom: 40px;       /* Termina antes de que acabe el main-content (antes del footer) */
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
   right: 25px;
   width: 210px;
-  height: auto;       /* Se adapta dinámicamente al espacio entre el top y el bottom */
-  max-height: none;
-  overflow: hidden;
+  height: auto; /* Permite que el contenedor se ajuste al espacio absolute */
+  overflow: hidden; /* Oculta lo que sale del contenedor visible */
   z-index: 2;
   pointer-events: auto;
   background: rgba(10, 10, 10, 0.85);
@@ -808,15 +807,10 @@ body.portafolio-renax {
   box-shadow: 0 10px 30px rgba(0,0,0,0.6);
 }
 
-/* Si también tienes el carrusel izquierdo configurado, aplica la misma lógica */
-.vertical-ticker-left {
-  position: absolute;
-  top: 40px;
-  bottom: 40px;
-  left: 25px;
-  right: auto;
-  height: auto;
-  z-index: 2;
-  pointer-events: none;
-  opacity: 0.65;
+.vertical-ticker-track {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 15px;
+  will-change: transform;
 }
