@@ -1206,3 +1206,29 @@ object-fit: cover;
   gap: 30px;
   min-width: 0; /* Evita que los elementos del grid se desborden */
 }
+/* TÍTULO TRABAJO CON IDENTIDAD — TAMAÑO CORREGIDO */
+#proyectos .renax-massive-title {
+    width: 100%;
+    font-size: clamp(3.5rem, 6.5vw, 7rem) !important;
+    line-height: 0.95;
+    font-weight: 900;
+    text-align: center;
+    overflow-wrap: normal;
+    word-break: normal;
+}
+
+#proyectos .renax-massive-title span {
+    display: block;
+    white-space: nowrap;
+}
+
+/* Mantener las imágenes de la galería sin cambios */
+#proyectos .renax-asymmetric-grid {
+    min-width: 0;
+}
+
+@media (max-width: 600px) {
+    #proyectos .renax-massive-title {
+        font-size: clamp(2.5rem, 10vw, 4rem) !important;
+    }
+}
