@@ -1,8 +1,8 @@
-/* ==========================================================
-   RENAX · INICIO
-   FONDO DINÁMICO ESTILO SERVICIOS
-   ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap');
 
+/* ==========================================================
+   RENAX · ESTILOS GENERALES Y DISEÑO AJUSTADO
+   ========================================================== */
 .inicio-renax {
     margin: 0;
     background: #050505;
@@ -26,20 +26,8 @@
     height: 180vh;
     top: -45vh;
     left: 48%;
-    background:
-        linear-gradient(
-            135deg,
-            transparent 0%,
-            transparent 20%,
-            rgba(200,16,46,0.08) 30%,
-            rgba(200,16,46,0.65) 45%,
-            #c8102e 50%,
-            rgba(200,16,46,0.55) 56%,
-            rgba(200,16,46,0.08) 72%,
-            transparent 82%
-        );
+    background: linear-gradient(135deg, transparent 0%, transparent 20%, rgba(200,16,46,0.08) 30%, rgba(200,16,46,0.65) 45%, #c8102e 50%, rgba(200,16,46,0.55) 56%, rgba(200,16,46,0.08) 72%, transparent 82%);
     filter: blur(8px);
-    transform: rotate(0deg);
     animation: inicioRedMove 18s ease-in-out infinite alternate;
 }
 
@@ -50,493 +38,403 @@
     height: 150vh;
     top: -25vh;
     left: 58%;
-    background:
-        linear-gradient(
-            135deg,
-            transparent 35%,
-            rgba(200,16,46,0.25) 48%,
-            rgba(200,16,46,0.05) 65%,
-            transparent 75%
-        );
+    background: linear-gradient(135deg, transparent 35%, rgba(200,16,46,0.25) 48%, rgba(200,16,46,0.05) 65%, transparent 75%);
     filter: blur(25px);
     animation: inicioRedGlow 14s ease-in-out infinite alternate;
 }
 
 @keyframes inicioRedMove {
-    0% {
-        transform: translateX(-15vw) rotate(-8deg) scale(1);
-    }
-
-    50% {
-        transform: translateX(5vw) rotate(-3deg) scale(1.08);
-    }
-
-    100% {
-        transform: translateX(18vw) rotate(5deg) scale(1.12);
-    }
+    0% { transform: translateX(-15vw) rotate(-8deg) scale(1); }
+    50% { transform: translateX(5vw) rotate(-3deg) scale(1.08); }
+    100% { transform: translateX(18vw) rotate(5deg) scale(1.12); }
 }
 
 @keyframes inicioRedGlow {
-    0% {
-        transform: translateX(10vw) rotate(-5deg);
-    }
-
-    100% {
-        transform: translateX(-10vw) rotate(5deg);
-    }
+    0% { transform: translateX(10vw) rotate(-5deg); }
+    100% { transform: translateX(-10vw) rotate(5deg); }
 }
 
 .inicio-renax main {
     position: relative;
     z-index: 1;
-}
-
-/* Mostrar las respuestas de las preguntas frecuentes */
-.renax-faq .faq-answer {
-    display: none;
-}
-
-.renax-faq .faq-answer.faq-abierta {
-    display: block;
-}
-
-/* RENAX: permitir que se vea el fondo dinámico */
-.inicio-renax main,
-.inicio-renax .work-side {
     background: transparent !important;
 }
 
 /* ==========================================
-   RENAX FAQ — DISEÑO ELEGANTE
-   Tipografías: Baloo 2 ExtraBold + Poppins
-========================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap');
-
-.renax-faq {
-  position: relative;
-  padding: 110px 7%;
-  background: #050505;
-  color: #fff;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-}
-
-.renax-faq::before {
-  content: "";
-  position: absolute;
-  width: 360px;
-  height: 360px;
-  top: 5%;
-  left: -180px;
-  background: radial-gradient(circle, rgba(220, 0, 35, .16), transparent 70%);
-  pointer-events: none;
-}
-
-.faq-container {
-  position: relative;
-  max-width: 1050px;
-  margin: auto;
-}
-
-.faq-eyebrow {
-  color: #ff5a1f;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 3px;
-}
-
-.renax-faq h2 {
-  margin: 14px 0;
-  font-family: 'Baloo 2', sans-serif;
-  font-size: clamp(42px, 6vw, 72px);
-  font-weight: 800;
-  line-height: 1.1;
-}
-
-.renax-faq h2 span {
-  color: #e0002b;
-}
-
-.faq-intro {
-  color: #bcbcbc;
-  font-size: 15px;
-  margin-bottom: 42px;
-}
-
-.faq-list {
-  display: grid;
-  gap: 14px;
-}
-
-.faq-question {
-  width: 100%;
-  min-height: 76px;
-  padding: 20px 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  text-align: left;
-  color: #f7f7f7;
-  background: linear-gradient(110deg, #160709, #090909 65%);
-  border: 1px solid #382024;
-  border-radius: 16px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  cursor: pointer;
-  transition: border-color .3s ease,
-              transform .3s ease,
-              box-shadow .3s ease,
-              background .3s ease;
-}
-
-.faq-question:hover,
-.faq-question:focus-visible {
-  outline: none;
-  border-color: #ff5a1f;
-  background: linear-gradient(110deg, #310610, #100b0a 70%);
-  box-shadow: 0 0 18px rgba(255, 70, 25, .15),
-              inset 0 0 12px rgba(220, 0, 43, .07);
-  transform: translateY(-2px);
-}
-
-.faq-arrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  flex: 0 0 38px;
-  overflow: hidden;
-}
-
-.faq-arrow img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: transform .3s ease;
-}
-
-.faq-question:hover .faq-arrow img {
-  transform: scale(1.12);
-}
-
-.faq-question:hover .faq-arrow {
-  transform: translate(3px, -3px);
-}
-
-/* Ventana individual de respuesta */
-
-.faq-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 99999;
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 22px;
-  background: rgba(0, 0, 0, .82);
-  backdrop-filter: blur(9px);
-  -webkit-backdrop-filter: blur(9px);
-}
-
-.faq-modal.faq-modal-visible {
-  display: flex;
-  animation: faqFondo .25s ease both;
-}
-
-.faq-modal-card {
-  position: relative;
-  width: min(100%, 520px);
-  max-height: 85vh;
-  overflow-y: auto;
-  padding: 22px 25px;
-  color: #f7f7f7;
-  background: linear-gradient(145deg, #101010, #050505 75%);
-  border: 1px solid #ff5a1f;
-  border-radius: 20px;
-  box-shadow: 0 0 8px rgba(255, 90, 31, .65),
-              0 0 28px rgba(220, 0, 43, .22),
-              inset 0 0 18px rgba(255, 90, 31, .035);
-  animation: faqVentana .3s ease both;
-}
-
-.faq-modal-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  padding-bottom: 17px;
-  border-bottom: 1px solid #482016;
-}
-
-.faq-modal-top > span {
-  color: #ff5a1f;
-  font-family: 'Poppins', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: .5px;
-}
-
-.faq-modal-top i {
-  color: #e0002b;
-  font-style: normal;
-}
-
-.faq-back {
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  border: 0;
-  border-radius: 50%;
-  color: #ff5a1f;
-  background: #21100c;
-  font-size: 24px;
-  cursor: pointer;
-  transition: background .25s ease, transform .25s ease;
-}
-
-.faq-back:hover {
-  background: #42100e;
-  transform: translateX(-3px);
-}
-
-.faq-modal-content {
-  padding: 20px 0;
-}
-
-.faq-modal-content p {
-  margin: 0;
-  color: #dedede;
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  line-height: 1.9;
-  overflow-wrap: anywhere;
-}
-
-.faq-back-text {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 15px 0 0;
-  border: 0;
-  border-top: 1px solid #482016;
-  width: 100%;
-  color: #ff5a1f;
-  background: transparent;
-  font-family: 'Poppins', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  text-align: left;
-  cursor: pointer;
-}
-
-.faq-back-text:hover {
-  color: #ff7847;
-}
-
-@keyframes faqFondo {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes faqVentana {
-  from { opacity: 0; transform: translateY(12px) scale(.97); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
-}
-
-@media (max-width: 600px) {
-  .renax-faq {
-    padding: 75px 6%;
-  }
-
-  .faq-question {
-    min-height: 68px;
-    padding: 17px;
-    border-radius: 13px;
-    font-size: 13px;
-  }
-
-  .faq-modal {
-    padding: 16px;
-  }
-
-  .faq-modal-card {
-    padding: 19px;
-    border-radius: 17px;
-  }
-
-  .faq-modal-content p {
-    font-size: 14px;
-    line-height: 1.8;
-  }
-
-  .faq-modal-top > span {
-    font-size: 10px;
-  }
-}
-/* ==========================================================
-   RENAX · VENTANA DEL MANUAL DE MARCA
-   ========================================================== */
-
-.manual-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    padding: 20px;
-    box-sizing: border-box;
-    background: rgba(0, 0, 0, 0.90);
-    align-items: center;
-    justify-content: center;
-}
-
-.manual-modal.activo {
-    display: flex;
-}
-
-.manual-modal-contenido {
-    position: relative;
-    width: min(1100px, 100%);
-    height: min(90vh, 850px);
-    box-sizing: border-box;
-    padding: 48px 12px 12px;
-    background: #111;
-    border: 1px solid #c8102e;
-    border-radius: 14px;
-    box-shadow: 0 0 30px rgba(200, 16, 46, 0.25);
-}
-
-.manual-cerrar {
-    position: absolute;
-    top: 8px;
-    right: 12px;
-    width: 38px;
-    height: 38px;
-    border: none;
-    border-radius: 50%;
+   CINTURÓN ANIMADO DE DOBLE BLOQUE (ENCONTRADOS)
+   ========================================== */
+.renax-cinturon-container {
     background: #c8102e;
-    color: #fff;
-    font-size: 22px;
-    cursor: pointer;
-    z-index: 2;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    padding: 8px 0;
+    box-shadow: 0 5px 25px rgba(200, 16, 46, 0.4);
+    transition: transform 0.4s ease;
 }
 
-.manual-cerrar:hover {
-    background: #a50d25;
+.renax-cinturon-container:hover {
+    transform: scale(1.02); /* Efecto de zoom solicitado */
 }
 
-.manual-modal-contenido iframe {
-    display: block;
+.renax-cinturon-fila {
     width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 8px;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 6px 0;
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: #fff;
 }
 
-@media (max-width: 600px) {
-    .manual-modal {
-        padding: 8px;
-    }
+.renax-pista {
+    display: inline-block;
+    white-space: nowrap;
+}
 
-    .manual-modal-contenido {
-        width: 100%;
-        height: 92vh;
-        padding: 45px 6px 6px;
-    }
+/* Fila 1: Se desplaza de Izquierda a Derecha */
+.fila-izquierda .renax-pista {
+    animation: moverIzquierdaDerecha 22s linear infinite;
+}
+
+/* Fila 2: Se desplaza de Derecha a Izquierda (encontrándose con la superior) */
+.fila-derecha .pista-inversa {
+    animation: moverDerechaIzquierda 22s linear infinite;
+}
+
+.renax-pista span {
+    margin-right: 40px;
+}
+
+@keyframes moverIzquierdaDerecha {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0%); }
+}
+
+@keyframes moverDerechaIzquierda {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
 }
 
 /* ==========================================
-   RENAX · FOOTER CON CINCO APARTADOS
-========================================== */
-
-.inicio-renax .renax-footer {
-    position: relative;
-    z-index: 5;
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 45px 5% 55px;
-    color: #ffffff;
-    background: #080808;
-    border-top: 1px solid rgba(200, 16, 46, 0.5);
-}
-
-.inicio-renax .footer-titulo {
-    margin: 0 0 35px;
-    color: #c8102e;
-    font-size: 14px;
-    letter-spacing: 4px;
+   SECCIÓN HISTORIA (TARJETAS HORIZONTALES)
+   ========================================== */
+.history-section {
+    padding: 80px 7%;
     text-align: center;
 }
 
-.inicio-renax .footer-secciones {
+.history-section h2 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 50px;
+}
+
+.history-cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.history-cards article {
+    background: linear-gradient(145deg, #101010, #050505);
+    border: 1px solid #382024;
+    border-radius: 16px;
+    padding: 30px;
+    flex: 1;
+    min-width: 280px;
+    max-width: 360px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.history-cards h3 {
+    color: #ff5a1f;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.history-cards p {
+    color: #cecece;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.history-bottom {
+    color: #a0a0a0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* ==========================================
+   SECCIÓN WORK (RECTANGULAR Y ESPECIALIDADES AJUSTADAS)
+   ========================================== */
+.renax-work {
+    padding: 80px 7%;
+    position: relative;
+}
+
+.work-label {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03);
+    position: absolute;
+    top: 20px;
+    left: 5%;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.work-content {
+    position: relative;
+    z-index: 2;
     display: grid;
-    grid-template-columns: 1.15fr 1fr 1fr 1fr 1fr;
-    gap: 30px;
-    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
 }
 
-.inicio-renax .renax-footer .footer-column {
+.work-main-image {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    min-width: 0;
+    align-items: center;
+    text-align: center;
 }
 
-.inicio-renax .renax-footer .footer-column h3 {
-    margin: 0 0 20px;
-    color: #ffffff;
-    font-size: 12px;
-    letter-spacing: 1.5px;
-}
-
-.inicio-renax .renax-footer .footer-menu-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 13px;
+/* Imagen de matemáticas rectangular limpia */
+.rect-math-img {
     width: 100%;
+    max-width: 480px;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid #382024;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 30px rgba(200,16,46,0.25);
 }
 
-.inicio-renax .renax-footer .footer-menu-links a {
-    color: #c9c9c9;
+.work-main-image h3 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.work-side {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    justify-content: center;
+    background: transparent !important;
+}
+
+.work-card {
+    background: linear-gradient(145deg, #121212, #080808);
+    border: 1px solid #382024;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-5px);
+    border-color: #ff5a1f;
+}
+
+.work-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.work-card h3 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 20px;
+    margin: 0;
+    color: #fff;
+}
+
+/* Imagen de especialidades menos ancha y sin cortes */
+.work-especialidades-bottom {
+    margin-top: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.especialidades-img-ajustada {
+    width: 100%;
+    max-width: 750px;
+    height: auto;
+    max-height: 420px;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 1px solid #382024;
+    background: #000;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* ==========================================
+   PREGUNTAS FRECUENTES
+   ========================================== */
+.renax-faq {
+    position: relative;
+    padding: 100px 7%;
+    background: #050505;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.faq-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.faq-eyebrow {
+    color: #ff5a1f;
     font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.renax-faq h2 {
+    margin: 14px 0;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 800;
+}
+
+.renax-faq h2 span {
+    color: #e0002b;
+}
+
+.faq-intro {
+    color: #bcbcbc;
+    font-size: 15px;
+    margin-bottom: 40px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    text-align: left;
+    color: #f7f7f7;
+    background: linear-gradient(110deg, #160709, #090909 65%);
+    border: 1px solid #382024;
+    border-radius: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-question:hover {
+    border-color: #ff5a1f;
+    background: linear-gradient(110deg, #310610, #100b0a 70%);
+    transform: translateY(-2px);
+}
+
+.faq-arrow {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.faq-arrow img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.faq-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+}
+
+.faq-modal.faq-modal-visible {
+    display: flex;
+}
+
+.faq-modal-card {
+    width: min(100%, 500px);
+    padding: 24px;
+    background: #101010;
+    border: 1px solid #ff5a1f;
+    border-radius: 18px;
+    box-shadow: 0 0 30px rgba(255, 90, 31, 0.3);
+}
+
+.faq-modal-top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.faq-back {
+    background: #c8102e;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.faq-modal-content p {
+    color: #dedede;
+    font-size: 15px;
     line-height: 1.7;
+    margin: 0;
+}
+
+.renax-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 28px;
+    background: #c8102e;
+    color: #fff;
     text-decoration: none;
-    overflow-wrap: anywhere;
-    transition: color 0.25s ease, transform 0.25s ease;
+    border-radius: 30px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s ease;
 }
-
-.inicio-renax .renax-footer .footer-menu-links a:hover {
-    color: #ff304b;
-    transform: translateX(3px);
-}
-
-/* TABLETAS */
-@media (max-width: 900px) {
-    .inicio-renax .footer-secciones {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 35px 25px;
-    }
-}
-
-/* CELULARES */
-@media (max-width: 560px) {
-    .inicio-renax .renax-footer {
-        padding: 35px 7%;
-    }
-
-    .inicio-renax .footer-secciones {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 30px 20px;
-    }
-
-    .inicio-renax .footer-titulo {
-        margin-bottom: 30px;
-    }
-}
-
+.renax-button:hover { background: #a50d25; }
+.renax-button.centered { margin: 15px auto 0; }
