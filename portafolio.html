@@ -444,9 +444,78 @@
             }
         }
     });
-  </script>
-
 
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const carrusel = document.getElementById("verticalTicker");
+
+  if (!carrusel || carrusel.dataset.movimientoActivo === "true") return;
+
+  carrusel.dataset.movimientoActivo = "true";
+
+  // Guardamos y duplicamos las imágenes para crear el ciclo infinito.
+  const imagenesOriginales = Array.from(carrusel.children);
+
+  imagenesOriginales.forEach((imagen) => {
+    carrusel.appendChild(imagen.cloneNode(true));
+  });
+
+  let posicion = 0;
+  let ultimoTiempo = 0;
+  let alturaCiclo = 0;
+  let animacionId;
+  let pausado = false;
+
+  // Velocidad: suave, continua y moderadamente rápida.
+  const velocidad = 45; // píxeles por segundo
+
+  function calcularAltura() {
+    const espacio = parseFloat(getComputedStyle(carrusel).rowGap) || 0;
+
+    alturaCiclo = imagenesOriginales.reduce(
+      (total, imagen) => total + imagen.getBoundingClientRect().height,
+      0
+    ) + espacio * imagenesOriginales.length;
+  }
+
+  function mover(tiempo) {
+    if (!ultimoTiempo) ultimoTiempo = tiempo;
+
+    const segundos = Math.min((tiempo - ultimoTiempo) / 1000, 0.05);
+    ultimoTiempo = tiempo;
+
+    if (!pausado && alturaCiclo > 0) {
+      posicion += velocidad * segundos;
+
+      if (posicion >= alturaCiclo) {
+        posicion -= alturaCiclo;
+      }
+
+      carrusel.style.transform = `translate3d(0, -${posicion}px, 0)`;
+    }
+
+    animacionId = requestAnimationFrame(mover);
+  }
+
+  const contenedor = carrusel.closest(".vertical-ticker-container");
+
+  if (contenedor) {
+    contenedor.addEventListener("mouseenter", () => {
+      pausado = true;
+    });
+
+    contenedor.addEventListener("mouseleave", () => {
+      pausado = false;
+      ultimoTiempo = 0;
+    });
+  }
+
+  calcularAltura();
+  window.addEventListener("resize", calcularAltura);
+
+  animacionId = requestAnimationFrame(mover);
+});
+</script>
 </body>
 </html>
