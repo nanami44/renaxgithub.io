@@ -9861,3 +9861,46 @@ footer.servicios-footer-aislado * {
         font-size: 11px;
     }
 }
+/* ==========================================================
+   CORRECCIÓN DE SUPERPOSICIÓN - RESEÑA HISTÓRICA
+   ========================================================== */
+
+.about-manifest button.history-question {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 220px !important;
+    padding: 40px 140px 40px 70px !important; /* Dificulta que el texto toque el icono dejando espacio a la derecha */
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important; /* Separa texto e icono de manera fluida */
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    color: #ffffff !important;
+    text-align: left !important;
+}
+
+/* Evitamos posicionamiento absoluto estricto que cause solapamiento */
+.about-manifest button.history-question span {
+    position: static !important;
+    transform: none !important;
+    color: #ffffff !important;
+    font-size: clamp(2rem, 3vw, 3.2rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.1 !important;
+    word-break: break-word;
+}
+
+/* Ajustamos el logo/ave para que mantenga su espacio sin pisar el texto */
+.about-manifest button.history-question img.renax-history-bird {
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+    transform: none !important;
+    width: 90px !important;
+    height: 90px !important;
+    object-fit: contain !important;
+    flex-shrink: 0 !important;
+    margin-left: 20px !important;
+}
