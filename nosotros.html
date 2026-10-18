@@ -545,6 +545,99 @@ html, body {
     }
 }
 
+/* ======================================
+   CARRUSEL INFINITO DE RENAX
+   ====================================== */
+
+.renax-carousel-section {
+    width: 100%;
+    padding: 45px 0;
+    overflow: hidden;
+}
+
+.renax-carousel {
+    width: 100%;
+    overflow: hidden;
+}
+
+.renax-carousel-track {
+    display: flex;
+    width: max-content;
+    gap: 24px;
+    animation: renaxInfiniteScroll 32s linear infinite;
+}
+
+.renax-carousel-card {
+    box-sizing: border-box;
+    flex: 0 0 400px;
+    min-height: 185px;
+    padding: 30px 25px;
+    background: #080505;
+    border: 1px solid #8b0000;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.renax-carousel-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+    color: #ff4545;
+    margin: 0 0 18px;
+}
+
+.renax-carousel-card p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #ffffff;
+    margin: 0;
+}
+
+.renax-carousel:hover .renax-carousel-track {
+    animation-play-state: paused;
+}
+
+@keyframes renaxInfiniteScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-50% - 12px));
+    }
+}
+
+/* CELULARES */
+@media (max-width: 700px) {
+    .renax-carousel-section {
+        padding: 30px 0;
+    }
+
+    .renax-carousel-card {
+        flex-basis: 290px;
+        min-height: 175px;
+        padding: 24px 20px;
+    }
+
+    .renax-carousel-card h3 {
+        font-size: 20px;
+    }
+
+    .renax-carousel-card p {
+        font-size: 14px;
+    }
+}
+
+/* RESPETA LA PREFERENCIA DE MOVIMIENTO REDUCIDO */
+@media (prefers-reduced-motion: reduce) {
+    .renax-carousel-track {
+        animation: none;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -687,26 +780,73 @@ html, body {
     </section>
 
     <!-- 8. TARJETAS DE IMPACTO -->
-    <section>
-        <div class="impact-grid">
-            <div class="impact-card">
-                <h3 data-es="MÁS RECONOCIMIENTO" data-en="MORE RECOGNITION">MÁS RECONOCIMIENTO</h3>
-                <p data-es="Una imagen que facilita que tus clientes recuerden tu marca." data-en="An image that makes it easy for your clients to remember your brand.">Una imagen que facilita que tus clientes recuerden tu marca.</p>
-            </div>
-            <div class="impact-card">
-                <h3 data-es="MÁS CONFIANZA" data-en="MORE TRUST">MÁS CONFIANZA</h3>
-                <p data-es="Una identidad profesional que refleja la experiencia de tu negocio." data-en="A professional identity that reflects your business experience.">Una identidad profesional que refleja la experiencia de tu negocio.</p>
-            </div>
-            <div class="impact-card">
-                <h3 data-es="MÁS CONEXIÓN" data-en="MORE CONNECTION">MÁS CONEXIÓN</h3>
-                <p data-es="Una comunicación visual capaz de acercarte a nuevos públicos." data-en="A visual communication capable of reaching new audiences.">Una comunicación visual capaz de acercarte a nuevos públicos.</p>
-            </div>
-            <div class="impact-card">
-                <h3 data-es="MÁS COHERENCIA" data-en="MORE COHERENCE">MÁS COHERENCIA</h3>
-                <p data-es="Una marca preparada para comunicarse de manera consistente en medios físicos y digitales." data-en="A brand prepared to communicate consistently across physical and digital media.">Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
-            </div>
+ 
+<!-- CARRUSEL INFINITO RENAX -->
+<section class="renax-carousel-section">
+    <div class="renax-carousel">
+        <div class="renax-carousel-track">
+
+            <article class="renax-carousel-card">
+                <h3 data-es="MÁS RECONOCIMIENTO"
+                    data-en="MORE RECOGNITION">MÁS RECONOCIMIENTO</h3>
+                <p data-es="Una imagen que facilita que tus clientes recuerden tu marca."
+                   data-en="An image that helps your customers remember your brand.">
+                   Una imagen que facilita que tus clientes recuerden tu marca.
+                </p>
+            </article>
+
+            <article class="renax-carousel-card">
+                <h3 data-es="MÁS CONFIANZA"
+                    data-en="MORE TRUST">MÁS CONFIANZA</h3>
+                <p data-es="Una identidad profesional que refleja la experiencia de tu negocio."
+                   data-en="A professional identity that reflects your business experience.">
+                   Una identidad profesional que refleja la experiencia de tu negocio.
+                </p>
+            </article>
+
+            <article class="renax-carousel-card">
+                <h3 data-es="MÁS CONEXIÓN"
+                    data-en="MORE CONNECTION">MÁS CONEXIÓN</h3>
+                <p data-es="Una comunicación visual capaz de acercarte a nuevos públicos."
+                   data-en="Visual communication that helps you connect with new audiences.">
+                   Una comunicación visual capaz de acercarte a nuevos públicos.
+                </p>
+            </article>
+
+            <article class="renax-carousel-card">
+                <h3 data-es="MÁS COHERENCIA"
+                    data-en="MORE CONSISTENCY">MÁS COHERENCIA</h3>
+                <p data-es="Una marca preparada para comunicarse de manera consistente en medios físicos y digitales."
+                   data-en="A brand ready to communicate consistently across physical and digital media.">
+                   Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.
+                </p>
+            </article>
+
+            <!-- COPIA PARA CREAR EL BUCLE INFINITO -->
+            <article class="renax-carousel-card" aria-hidden="true">
+                <h3>MÁS RECONOCIMIENTO</h3>
+                <p>Una imagen que facilita que tus clientes recuerden tu marca.</p>
+            </article>
+
+            <article class="renax-carousel-card" aria-hidden="true">
+                <h3>MÁS CONFIANZA</h3>
+                <p>Una identidad profesional que refleja la experiencia de tu negocio.</p>
+            </article>
+
+            <article class="renax-carousel-card" aria-hidden="true">
+                <h3>MÁS CONEXIÓN</h3>
+                <p>Una comunicación visual capaz de acercarte a nuevos públicos.</p>
+            </article>
+
+            <article class="renax-carousel-card" aria-hidden="true">
+                <h3>MÁS COHERENCIA</h3>
+                <p>Una marca preparada para comunicarse de manera consistente en medios físicos y digitales.</p>
+            </article>
+
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- 9. FOOTER -->
     <footer id="contacto">
