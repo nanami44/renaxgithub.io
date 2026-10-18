@@ -1209,17 +1209,35 @@ object-fit: cover;
 /* TÍTULO TRABAJO CON IDENTIDAD — TAMAÑO CORREGIDO */
 #proyectos .renax-massive-title {
     width: 100%;
-    font-size: clamp(3.5rem, 6.5vw, 7rem) !important;
-    line-height: 0.95;
+    font-size: clamp(3rem, 5.5vw, 6rem) !important;
+    line-height: 0.88 !important;
     font-weight: 900;
     text-align: center;
-    overflow-wrap: normal;
-    word-break: normal;
+    margin: 0;
 }
 
 #proyectos .renax-massive-title span {
     display: block;
     white-space: nowrap;
+    margin: 0;
+    padding: 0;
+}
+
+#proyectos .renax-word-trabajo {
+    color: #e50914;
+}
+
+#proyectos .renax-word-con {
+    color: #ffffff;
+}
+
+#proyectos .renax-word-identidad {
+    color: #ffffff;
+}
+
+#proyectos .renax-sticky-title {
+    align-self: center;
+    min-width: 0;
 }
 
 /* Mantener las imágenes de la galería sin cambios */
