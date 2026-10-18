@@ -192,19 +192,21 @@
 }
 
 .work-label {
-    font-family: 'Baloo 2', sans-serif;
-    font-weight: 800;
-    font-size: clamp(100px, 15vw, 230px);
-    color: #ff0000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(100px, 18vw, 280px);
+    font-weight: 900;
+    letter-spacing: -0.08em;
+    line-height: 0.85;
+    color: rgba(255, 0, 0, 0.28);
     position: absolute;
-    top: 50%;
-    left: 2%;
-    transform: translateY(-50%);
-    line-height: 0.8;
-    z-index: 1;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 0;
     pointer-events: none;
     user-select: none;
-    text-align: center;
+    white-space: nowrap;
 }
 
 .work-content {
