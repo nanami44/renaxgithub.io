@@ -29,7 +29,7 @@
             background-color: #050505;
         }
 
-        /* FONDO GENERAL DE LA PÁGINA: fondo nosotros.png */
+        /* FONDO GENERAL DE LA PÁGINA */
         body {
             min-height: 100vh;
             margin: 0;
@@ -48,7 +48,7 @@
             line-height: 1.6;
         }
 
-        /* HEADER */
+        /* HEADER / MENÚ DE NAVEGACIÓN REACOMODADO */
         .site-header {
             position: fixed;
             top: 0;
@@ -60,12 +60,13 @@
         }
 
         .nav-container {
-            max-width: 1400px;
+            max-width: 1500px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 50px;
+            padding: 15px 40px;
+            gap: 20px;
         }
 
         .logo-renax {
@@ -77,6 +78,8 @@
             display: flex;
             gap: 25px;
             align-items: center;
+            margin-left: auto;
+            margin-right: 20px;
         }
 
         .nav-link {
@@ -88,6 +91,12 @@
 
         .nav-link:hover, .nav-link.active {
             color: var(--accent-red);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
         }
 
         .language {
@@ -158,19 +167,29 @@
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
         }
 
-        /* 2. VIDEO */
-        .video-section {
-            width: 85%;
-            max-width: 1200px;
-            height: 650px;
-            margin: 0 auto;
-            background-color: #111;
-            border: 1px solid #333;
+        /* 2. VIDEO CON FONDO BLANCO EXTENDIDO A ANCHO DE PÁGINA */
+        .video-wrapper-section {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 80px 20px;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 12px;
+            margin: 40px 0;
+        }
+
+        .video-section {
+            width: 100%;
+            max-width: 1100px;
+            height: 600px;
+            background-color: #111;
+            border: 1px solid #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 16px;
             overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
         }
 
         .video-section iframe {
@@ -180,31 +199,30 @@
             display: block;
         }
 
-        /* =========================================
-           CONTENEDOR DETRÁS DE LAS TARJETAS (fondo-m-v.png)
-           ========================================= */
-        .vision-mission-wrapper {
+        /* 3. VISIÓN Y MISIÓN: FONDO DETRÁS A ANCHO DE PÁGINA */
+        .vision-mission-full-wrapper {
+            width: 100%;
             background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.85)), url('fondo-m-v.png');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            padding: 50px 40px;
-            border-radius: 30px;
-            border: 1px solid rgba(204, 0, 0, 0.3);
+            padding: 90px 5%;
+            margin: 40px 0;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
         }
 
-        /* 3. VISION Y MISION GRID */
-        .vision-mission {
+        .vision-mission-container {
+            max-width: 1200px;
+            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 40px;
         }
 
-        /* TARJETAS: FONDO BLANCO INICIAL Y EFECTOS INDIVIDUALES */
-        .vision-mission .card-box {
+        /* TARJETAS INTERACTIVAS CON ZOOM Y FUNCIONALIDAD */
+        .vision-mission-container .card-box {
             position: relative;
-            min-height: 280px;
+            min-height: 320px;
             height: auto;
             overflow: hidden;
             display: flex;
@@ -212,238 +230,245 @@
             justify-content: center;
             cursor: pointer;
             box-sizing: border-box;
-            background: #ffffff; /* Fondo blanco inicial */
-            border: 2px solid #000000; /* Borde negro */
+            background: #ffffff;
+            border: 2px solid #000000;
             border-radius: 24px;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease, transform 0.5s ease;
+            transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
-        .vision-mission .card-box h2 {
-            min-height: 180px;
+        .vision-mission-container .card-box:hover {
+            transform: scale(1.02);
+        }
+
+        .vision-mission-container .card-box h2 {
+            min-height: 200px;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             margin: 0;
             padding: 20px;
-            color: #000000; /* Título negro inicialmente */
+            color: #000000;
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: clamp(32px, 4vw, 48px);
             transition: min-height 0.5s ease, transform 0.5s ease, color 0.5s ease;
         }
 
-        .vision-mission .card-box p {
+        .vision-mission-container .card-box p {
             display: block;
             max-height: 0;
             opacity: 0;
             overflow: hidden;
             margin: 0;
             padding: 0 28px;
-            color: #000000; /* Texto negro al abrirse */
+            color: #000000;
             line-height: 1.8;
             font-family: 'Montserrat', sans-serif;
             font-size: 17px;
             font-weight: 500;
-            transform: scale(0.85);
+            transform: scale(0.9);
             transition: max-height 0.7s ease, opacity 0.5s ease, transform 0.5s ease, padding 0.5s ease;
         }
 
-        /* 1ra TARJETA (VISIÓN): CAMBIA A ZAPOTE AL ABRIRSE + ZOOM */
-        .vision-mission .card-box:nth-child(1).is-open {
+        /* 1ra TARJETA (VISIÓN) -> ZAPOTE */
+        .vision-mission-container .card-box:nth-child(1).is-open {
             background: #FF7518 !important;
             border-color: #000000;
-            box-shadow: 0 0 35px rgba(255, 117, 24, 0.6);
-            transform: scale(1.04);
+            box-shadow: 0 15px 40px rgba(255, 117, 24, 0.6);
+            transform: scale(1.06);
+            z-index: 10;
         }
-        .vision-mission .card-box:nth-child(1).is-open h2 {
+        .vision-mission-container .card-box:nth-child(1).is-open h2 {
             min-height: 90px;
             transform: scale(0.95);
             color: #cc0000 !important;
         }
 
-        /* 2da TARJETA (MISIÓN): CAMBIA A ROJO AL ABRIRSE + ZOOM */
-        .vision-mission .card-box:nth-child(2).is-open {
+        /* 2da TARJETA (MISIÓN) -> ROJO */
+        .vision-mission-container .card-box:nth-child(2).is-open {
             background: #cc0000 !important;
             border-color: #000000;
-            box-shadow: 0 0 35px rgba(204, 0, 0, 0.6);
-            transform: scale(1.04);
+            box-shadow: 0 15px 40px rgba(204, 0, 0, 0.6);
+            transform: scale(1.06);
+            z-index: 10;
         }
-        .vision-mission .card-box:nth-child(2).is-open h2 {
+        .vision-mission-container .card-box:nth-child(2).is-open h2 {
             min-height: 90px;
             transform: scale(0.95);
             color: #ffffff !important;
         }
-        .vision-mission .card-box:nth-child(2).is-open p {
-            color: #ffffff !important; /* Texto blanco sobre fondo rojo */
+        .vision-mission-container .card-box:nth-child(2).is-open p {
+            color: #ffffff !important;
         }
 
-        /* ESTILOS COMUNES AL ABRIR */
-        .vision-mission .card-box.is-open p {
+        .vision-mission-container .card-box.is-open p {
             max-height: 500px;
             opacity: 1;
             padding: 10px 28px 35px;
             transform: scale(1);
-           
-/* ZOOM AL PASAR EL CURSOR */
-.vision-mission .card-box:hover {
-    transform: scale(1.04);
-    box-shadow: 0 12px 30px rgba(204, 0, 0, 0.25);
-    z-index: 5;
-}
-
-/* ZOOM CUANDO LA TARJETA ESTÁ ABIERTA */
-.vision-mission .card-box.is-open {
-    transform: scale(1.04);
-    z-index: 5;
-}
-
-/* ZOOM UN POCO MAYOR AL TOCAR UNA TARJETA ABIERTA */
-.vision-mission .card-box.is-open:hover {
-    transform: scale(1.06);
-}
- 
         }
 
-        /* 4. DOS IMAGENES Y TEXTO */
-        .images-text-section {
+        /* 4. SECCIÓN "HOLA, SOY KAROL" A ANCHO DE PÁGINA (GRANDE Y DESTACADA) */
+        .karol-section-full {
+            width: 100%;
+            background: #ffffff;
+            padding: 80px 5%;
+            margin: 60px 0;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .karol-content-container {
+            max-width: 1400px;
+            margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 60px;
             align-items: center;
         }
 
-        .img-container {
+        .karol-img-container {
             width: 100%;
-            max-width: 520px;
-            height: 300px;
-            margin: 0 auto;
+            height: 480px;
             background: #111;
-            border: 1px solid #333;
-            border-radius: 12px;
+            border-radius: 20px;
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
-        .img-container img {
+        .karol-img-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             object-position: center;
         }
 
-        .text-content {
-            width: 100%;
-            max-width: 1100px;
-            margin: 40px auto 30px;
-            padding: 30px 20px;
+        .karol-text-content {
             text-align: left;
-            background: rgba(10, 5, 5, 0.75);
-            border-radius: 16px;
-            border: 1px solid rgba(204, 0, 0, 0.3);
         }
 
-        .text-content h2 {
+        .karol-text-content h2 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: 46px;
-            line-height: 1.15;
+            font-size: 52px;
+            line-height: 1.1;
             color: #cc0000;
-            margin: 0 0 18px 0;
+            margin: 0 0 20px 0;
             text-transform: uppercase;
         }
 
-        .text-content h3 {
+        .karol-text-content h3 {
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
-            font-size: 23px;
-            color: #ffffff;
-            margin: 0 0 20px 0;
+            font-size: 24px;
+            color: #222222;
+            margin: 0 0 25px 0;
         }
 
-        .text-content p {
-            font-size: 17px;
+        .karol-text-content p {
+            font-size: 19px;
             line-height: 1.8;
-            color: #ffffff;
-            margin: 0 0 18px 0;
+            color: #444444;
+            margin: 0;
         }
 
-        /* 5 & 6. QUIENES SOMOS Y QUE HACEMOS */
-        .content-block {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(10, 5, 5, 0.75);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid rgba(204, 0, 0, 0.3);
+        /* 5. CINTURÓN INFINITO (MARQUESINA RÁPIDA Y CONTRARIA) */
+        .infinite-belt-section {
+            width: 100%;
+            background: #000000;
+            padding: 25px 0;
+            overflow: hidden;
+            border-top: 2px solid rgba(204, 0, 0, 0.4);
+            border-bottom: 2px solid rgba(204, 0, 0, 0.4);
+            margin: 50px 0;
         }
 
-        .content-block h2 {
+        .belt-track-left, .belt-track-right {
+            display: flex;
+            width: max-content;
+            gap: 40px;
+            white-space: nowrap;
+        }
+
+        .belt-track-left {
+            animation: scrollLeft 12s linear infinite;
+        }
+
+        .belt-track-right {
+            animation: scrollRight 12s linear infinite;
+            margin-top: 10px;
+        }
+
+        .belt-item {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: 48px;
-            color: #cc0000;
+            font-size: 38px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .belt-item.solid {
+            color: #ffffff;
+        }
+
+        .belt-item.outline {
+            color: transparent;
+            -webkit-text-stroke: 2px #ffffff;
+        }
+
+        @keyframes scrollLeft {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+
+        @keyframes scrollRight {
+            from { transform: translateX(-50%); }
+            to { transform: translateX(0); }
+        }
+
+        /* 6. ¿QUIÉNES SOMOS? (FONDO NEGRO Y TEXTO UNIFICADO CON RAZONES DE RENAX) */
+        .quienes-somos-section {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .quienes-somos-box {
+            background: #000000;
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(204, 0, 0, 0.4);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .quienes-somos-box h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 46px;
+            color: #ffffff;
             margin-bottom: 25px;
+            text-transform: uppercase;
         }
 
-        .content-block p {
-            color: var(--text-muted);
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        /* 7. POR QUE RENAX */
-        .why-renax {
-            max-width: 1100px;
-            margin: 0 auto;
-            background: transparent;
-            padding: 0;
-        }
-
-        .why-renax h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: 48px;
-            color: #cc0000;
-            text-align: center;
-            margin-bottom: 35px;
-        }
-
-        .why-renax ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 25px;
-            margin-top: 35px;
-        }
-
-        .why-renax li {
-            background: linear-gradient(135deg, rgba(40, 3, 3, 0.88), rgba(15, 2, 2, 0.94));
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid rgba(204, 0, 0, 0.4);
-            font-size: 18px;
-            font-weight: 500;
+        .quienes-somos-box p {
             color: #ffffff;
-            text-align: left;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 20px;
         }
 
-        .why-renax li:hover {
-            transform: translateY(-5px);
-            border-color: rgba(255, 51, 51, 0.8);
-        }
-
-        /* 8. CARRUSEL INFINITO */
+        /* 7. CARRUSEL DE IMPACTO A ANCHO DE PÁGINA Y BORDES ZAPOTE */
         .renax-carousel-section {
             width: 100%;
-            padding: 45px 0;
+            padding: 50px 0;
             overflow: hidden;
+            background: rgba(0,0,0,0.6);
+            margin-top: 60px;
         }
 
         .renax-carousel {
@@ -455,20 +480,21 @@
             display: flex;
             width: max-content;
             gap: 24px;
-            animation: renaxInfiniteScroll 32s linear infinite;
+            animation: renaxInfiniteScroll 30s linear infinite;
         }
 
         .renax-carousel-card {
             box-sizing: border-box;
-            flex: 0 0 400px;
-            min-height: 185px;
+            flex: 0 0 420px;
+            min-height: 200px;
             padding: 30px 25px;
-            background: rgba(15, 2, 2, 0.90);
-            border: 1px solid #8b0000;
+            background: rgba(15, 2, 2, 0.95);
+            border: 2px solid #FF7518; /* Borde color zapote */
             border-radius: 20px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            box-shadow: 0 8px 20px rgba(255, 117, 24, 0.15);
         }
 
         .renax-carousel-card h3 {
@@ -484,6 +510,7 @@
             font-size: 16px;
             color: #ffffff;
             margin: 0;
+            line-height: 1.6;
         }
 
         .renax-carousel:hover .renax-carousel-track {
@@ -495,7 +522,7 @@
             to { transform: translateX(calc(-50% - 12px)); }
         }
 
-        /* 9. FOOTER */
+        /* 8. FOOTER RENAX */
         .renax-footer {
             width: 100%;
             background: #080808;
@@ -558,8 +585,9 @@
             color: #ff3344;
         }
 
+        /* RESPONSIVE */
         @media (max-width: 1000px) {
-            .vision-mission, .images-text-section, .why-renax ul {
+            .vision-mission-container, .karol-content-container {
                 grid-template-columns: 1fr;
             }
             .footer-secciones {
@@ -583,66 +611,7 @@
             .renax-carousel-card {
                 flex-basis: 290px;
             }
-            .vision-mission .card-box h2 {
-                font-size: 34px;
-            }
-            .vision-mission-wrapper {
-                padding: 20px 15px;
-            }
         }
-        
-/* =========================================
-   HOLA, SOY KAROL — IMÁGENES ASIMÉTRICAS
-   ========================================= */
-
-.images-text-section {
-    display: grid;
-    grid-template-columns: 1.3fr 0.9fr;
-    gap: 30px;
-    align-items: center;
-}
-
-.images-text-section .img-container {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 14px;
-}
-
-.images-text-section .img-container:first-child {
-    height: 420px;
-}
-
-.images-text-section .img-container:last-child {
-    height: 300px;
-}
-
-.images-text-section .img-container img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.images-text-section .img-container:hover img {
-    transform: scale(1.05);
-}
-
-@media (max-width: 700px) {
-    .images-text-section {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .images-text-section .img-container:first-child {
-        height: 350px;
-    }
-
-    .images-text-section .img-container:last-child {
-        height: 260px;
-    }
-}
-
     </style>
 </head>
 <body>
@@ -666,8 +635,10 @@
                 <a href="contacto.html" class="nav-link" data-lang="footerContact">Contáctanos</a>
             </nav>
 
-            <button class="language" id="languageBtn" type="button">ESP</button>
-            <a href="login.html" class="login-btn" id="navLoginBtn"><span>INICIAR SESIÓN</span></a>
+            <div class="nav-actions">
+                <button class="language" id="languageBtn" type="button">ESP</button>
+                <a href="login.html" class="login-btn" id="navLoginBtn"><span>INICIAR SESIÓN</span></a>
+            </div>
         </div>
     </header>
 
@@ -678,8 +649,8 @@
         </div>
     </section>
 
-    <!-- 2. VIDEO INSTITUCIONAL -->
-    <section>
+    <!-- 2. VIDEO INSTITUCIONAL CON FONDO BLANCO A ANCHO DE PÁGINA -->
+    <div class="video-wrapper-section">
         <div class="video-section">
             <iframe
                 src="https://www.youtube-nocookie.com/embed/PIPt26J40WE"
@@ -688,94 +659,82 @@
                 allowfullscreen>
             </iframe>
         </div>
-    </section>
+    </div>
 
-    <!-- 3. VISION Y MISION CON CONTENEDOR DETRÁS (fondo-m-v.png) -->
-    <section>
-        <div class="vision-mission-wrapper">
-            <div class="vision-mission">
-                <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
-                    <h2 data-es="VISIÓN" data-en="VISION">VISIÓN</h2>
-                    <p data-es="Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales."
-                       data-en="By 2030, RENAX aspires to be a departmental leader in visual identity and graphic communication, recognized for modernizing established brands and promoting the growth of local businesses.">
-                        Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales.
-                    </p>
-                </div>
+    <!-- 3. VISIÓN Y MISIÓN CON FONDO DETRÁS A ANCHO DE PÁGINA -->
+    <div class="vision-mission-full-wrapper">
+        <div class="vision-mission-container">
+            <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
+                <h2 data-es="VISIÓN" data-en="VISION">VISIÓN</h2>
+                <p data-es="Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales."
+                   data-en="By 2030, RENAX aspires to be a departmental leader in visual identity and graphic communication, recognized for modernizing established brands and promoting the growth of local businesses.">
+                    Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales.
+                </p>
+            </div>
 
-                <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
-                    <h2 data-es="MISIÓN" data-en="MISSION">MISIÓN</h2>
-                    <p data-es="Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia."
-                       data-en="Our mission is to offer strategic design and visual identity services for small and medium-sized businesses, modernizing established brands, strengthening their competitiveness, and always preserving their essence.">
-                        Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia.
-                    </p>
-                </div>
+            <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
+                <h2 data-es="MISIÓN" data-en="MISSION">MISIÓN</h2>
+                <p data-es="Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia."
+                   data-en="Our mission is to offer strategic design and visual identity services for small and medium-sized businesses, modernizing established brands, strengthening their competitiveness, and always preserving their essence.">
+                    Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia.
+                </p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- 4. DOS IMAGENES Y TEXTO -->
-    <section>
-        <div class="images-text-section">
-            <div class="img-container">
-                <img src="karol - 2.png" alt="Imagen 1 RENAX">
+    <!-- 4. SECCIÓN "HOLA, SOY KAROL" A ANCHO DE PÁGINA (GRANDE Y DESTACADA) -->
+    <div class="karol-section-full">
+        <div class="karol-content-container">
+            <div class="karol-img-container">
+                <img src="karol - 2.png" alt="Karol RENAX">
             </div>
-            <div class="img-container">
-                <img src="karol-renax..png" alt="Imagen 2 RENAX">
+            <div class="karol-text-content">
+                <h2 data-es="HOLA, SOY KAROL" data-en="HELLO, I'M KAROL">HOLA, SOY KAROL</h2>
+                <h3 data-es="Una visión creativa que transforma marcas." data-en="A creative vision that transforms brands.">Creatividad, estrategia y compromiso con cada marca.</h3>
+                <p data-es="RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades."
+                   data-en="RENAX was born from my passion for design and my purpose of helping brands evolve without losing their essence. As founder, I work with creativity, strategy, and dedication to build visual identities that inspire trust, reflect stories, and open new opportunities.">
+                    RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades.
+                </p>
             </div>
         </div>
-        <div class="text-content">
-            <h2 data-es="HOLA, SOY KAROL" data-en="HELLO, I'M KAROL">HOLA, SOY KAROL</h2>
-            <h3 data-es="Una visión creativa que transforma marcas." data-en="A creative vision that transforms brands.">Creatividad, estrategia y compromiso con cada marca.</h3>
-            <p data-es="RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades."
-               data-en="RENAX was born from my passion for design and my purpose of helping brands evolve without losing their essence. As founder, I work with creativity, strategy, and dedication to build visual identities that inspire trust, reflect stories, and open new opportunities.">
-                RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades.
-            </p>
-        </div>
-    </section>
+    </div>
 
-    <!-- 5. QUIENES SOMOS -->
-    <section id="quienes-somos">
-        <div class="content-block">
+    <!-- 5. CINTURÓN INFINITO (MARQUESINA RÁPIDA) -->
+    <div class="infinite-belt-section">
+        <div class="belt-track-left">
+            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+        </div>
+        <div class="belt-track-right">
+            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item outline">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+            <span class="belt-item solid">LA EVOLUCIÓN ESTÁ AQUÍ</span>
+        </div>
+    </div>
+
+    <!-- 6. ¿QUIÉNES SOMOS? (FONDO NEGRO Y TEXTO UNIFICADO CON RAZONES DE RENAX) -->
+    <section class="quienes-somos-section" id="quienes-somos">
+        <div class="quienes-somos-box">
             <h2 data-es="¿QUIÉNES SOMOS?" data-en="WHO WE ARE?">¿QUIÉNES SOMOS?</h2>
             <p data-es="Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria."
                data-en="We are a visual identity and graphic communication agency specialized in modernizing established brands.">
                 Somos una agencia de identidad visual y comunicación gráfica especializada en la modernización de marcas con trayectoria.
             </p>
-            <p data-es="Analizamos la historia, los valores, la identidad y las necesidades de cada negocio para crear soluciones visuales que conecten su trayectoria con una nueva generación de clientes."
-               data-en="We analyze the history, values, identity, and needs of each business to create visual solutions that connect their legacy with a new generation of clients.">
-                Analizamos la historia, los valores, la identidad y las necesidades de cada negocio para crear soluciones visuales que conecten su trayectoria con una nueva generación de clientes.
+            <p data-es="Analizamos la historia, los valores, la identidad y las necesidades de cada negocio para crear soluciones visuales que conecten su trayectoria con una nueva generación de clientes. En RENAX conservamos la esencia de tu marca, analizamos antes de diseñar, unimos estrategia y diseño, y creamos una identidad preparada para evolucionar."
+               data-en="We analyze the history, values, identity, and needs of each business to create visual solutions that connect their legacy with a new generation of clients. At RENAX we preserve the essence of your brand, analyze before designing, unite strategy and design, and create an identity prepared to evolve.">
+                Analizamos la historia, los valores, la identidad y las necesidades de cada negocio para crear soluciones visuales que conecten su trayectoria con una nueva generación de clientes. En RENAX conservamos la esencia de tu marca, analizamos antes de diseñar, unimos estrategia y diseño, y creamos una identidad preparada para evolucionar.
             </p>
         </div>
     </section>
 
-    <!-- 6. QUE HACEMOS -->
-    <section id="vision">
-        <div class="content-block">
-            <h2 data-es="¿QUÉ HACEMOS?" data-en="WHAT WE DO?">¿QUÉ HACEMOS?</h2>
-            <p data-es="Modernizamos tu marca sin hacerte perder lo que eres." data-en="We modernize your brand without making you lose who you are.">
-                Modernizamos tu marca sin hacerte perder lo que eres.
-            </p>
-            <p data-es="Trabajamos con pequeñas y medianas empresas que quieren evolucionar visualmente sin perder aquello que las hizo reconocidas."
-               data-en="We work with small and medium-sized enterprises that want to evolve visually without losing what made them recognized.">
-                Trabajamos con pequeñas y medianas empresas que quieren evolucionar visualmente sin perder aquello que las hizo reconocidas.
-            </p>
-        </div>
-    </section>
-
-    <!-- 7. POR QUE RENAX -->
-    <section id="por-que-renax">
-        <div class="content-block why-renax">
-            <h2 data-es="¿POR QUÉ RENAX?" data-en="WHY RENAX?">¿POR QUÉ RENAX?</h2>
-            <ul>
-                <li data-es="Conservamos la esencia de tu marca." data-en="We preserve the essence of your brand.">Conservamos la esencia de tu marca.</li>
-                <li data-es="Analizamos antes de diseñar." data-en="We analyze before designing.">Analizamos antes de diseñar.</li>
-                <li data-es="Unimos estrategia y diseño." data-en="We unite strategy and design.">Unimos estrategia y diseño.</li>
-                <li data-es="Creamos una identidad preparada para evolucionar." data-en="We create an identity prepared to evolve.">Creamos una identidad preparada para evolucionar.</li>
-            </ul>
-        </div>
-    </section>
-
-    <!-- 8. CARRUSEL DE IMPACTO -->
+    <!-- 7. CARRUSEL DE IMPACTO A ANCHO DE PÁGINA -->
     <section class="renax-carousel-section">
         <div class="renax-carousel">
             <div class="renax-carousel-track">
@@ -994,7 +953,7 @@
     <!-- SCRIPT DE INTERACTIVIDAD DE TARJETAS -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const tarjetas = document.querySelectorAll(".vision-mission .card-box");
+            const tarjetas = document.querySelectorAll(".vision-mission-container .card-box");
 
             tarjetas.forEach(function (tarjeta) {
                 if (tarjeta.dataset.renaxClick === "true") return;
