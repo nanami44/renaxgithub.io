@@ -282,18 +282,20 @@
 }
 
 
+
 .especialidades-img-ajustada {
     display: block;
-    width: 100%;
-    max-width: 100%;
+    width: 85%;
+    max-width: 650px;
     height: auto;
-    max-height: none;
+    max-height: 350px;
     object-fit: contain;
     object-position: center;
+    margin: 0 auto;
     border-radius: 16px;
     border: 1px solid #382024;
     background: #000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 
