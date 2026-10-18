@@ -611,3 +611,19 @@
     }
 }
 
+/* BOTÓN TRANSPARENTE CON BORDE ROJO EN EL INICIO */
+#hero-inicio a.renax-button {
+    background: transparent !important;
+    border: 2px solid #ff0000 !important;
+    color: #ffffff !important;
+    box-shadow: none;
+    transition: all 0.3s ease;
+}
+
+#hero-inicio a.renax-button:hover {
+    background: rgba(255, 0, 0, 0.12) !important;
+    border-color: #ff3030 !important;
+    box-shadow: 0 0 18px rgba(255, 0, 0, 0.45);
+    transform: translateY(-3px);
+}
+
