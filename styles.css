@@ -5921,11 +5921,14 @@ letter-spacing: 8px !important;
     transform: translateX(8px) scale(1.08);
 }
 
-/* EL TEXTO NO SE VE EN EL CUADRO CERRADO */
+/* OCULTAR EL TEXTO SOLO CUANDO LA VENTANA ESTÁ CERRADA */
 .about-manifest .faq-answer {
-    display: none !important;
+    display: none;
 }
 
+.about-manifest .faq-answer.abierto {
+    display: block !important;
+}
 /* VISTA DE LA VENTANA */
 .about-manifest .faq-detail {
     width: 100%;
