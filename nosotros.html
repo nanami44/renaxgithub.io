@@ -798,6 +798,84 @@ background-image:
     padding: 10px 28px 35px;
 }
 
+/* CORRECCIÓN FINAL: TARJETAS VISIÓN Y MISIÓN */
+
+.vision-mission .card-box {
+    position: relative;
+    min-height: 280px;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.vision-mission .card-box h2 {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+    color: #ff3333;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: clamp(32px, 4vw, 48px);
+    transition: min-height 0.5s ease, transform 0.5s ease;
+}
+
+.vision-mission .card-box p {
+    display: block;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 28px;
+    color: #ffffff;
+    line-height: 1.8;
+    transform: scale(0.85);
+    transition: max-height 0.7s ease,
+                opacity 0.5s ease,
+                transform 0.5s ease,
+                padding 0.5s ease;
+}
+
+.vision-mission .card-box.is-open {
+    background: linear-gradient(
+        135deg,
+        #080808,
+        #520000,
+        #160000
+    ) !important;
+    border-color: #ff3333;
+    box-shadow: 0 0 30px rgba(204, 0, 0, 0.3);
+}
+
+.vision-mission .card-box.is-open h2 {
+    min-height: 100px;
+    transform: scale(0.96);
+}
+
+.vision-mission .card-box.is-open p {
+    max-height: 500px;
+    opacity: 1;
+    padding: 10px 28px 35px;
+    transform: scale(1);
+}
+
+@media (max-width: 700px) {
+    .vision-mission {
+        grid-template-columns: 1fr;
+    }
+
+    .vision-mission .card-box h2 {
+        font-size: 34px;
+    }
+}
+
     </style>
 </head>
 <body>
