@@ -105,33 +105,42 @@
             margin: 0 auto;
         }
 
-        /* 1. PORTADA */
+        /* 1. PORTADA CON IMAGEN DE FONDO (nosotros-bg.jpeg) */
         .hero-banner {
             width: 100%;
             height: 500px;
-            background-color: #1a1a1a;
-            border: 2px dashed #444;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url('nosotros-bg.jpeg');
+            background-size: cover;
+            background-position: center;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 12px;
             margin-top: 80px;
-            color: #777;
-            font-size: 18px;
+            color: #fff;
+            font-size: 32px;
+            font-weight: bold;
+            text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+            border: 1px solid #333;
         }
 
         /* 2. VIDEO */
         .video-section {
             width: 100%;
-            height: 400px;
-            background-color: #1a1a1a;
-            border: 2px dashed #444;
+            height: 450px;
+            background-color: #111;
+            border: 1px solid #333;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 12px;
-            color: #777;
-            font-size: 18px;
+            overflow: hidden;
+        }
+
+        .video-section video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         /* 3. VISION Y MISION */
@@ -154,7 +163,7 @@
             font-size: 28px;
         }
 
-        /* 4. DOS IMAGENES Y TEXTO */
+        /* 4. DOS IMAGENES Y TEXTO (karol - 2.png y karol-renax..png) */
         .images-text-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -162,19 +171,27 @@
             align-items: center;
         }
 
-        .img-placeholder {
-            height: 250px;
-            background: #1a1a1a;
-            border: 2px dashed #444;
+        .img-container {
+            height: 350px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
-            border-radius: 10px;
-            color: #777;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .text-content {
             padding: 20px;
+            text-align: center;
+            margin-top: 20px;
         }
 
         /* 5 & 6. QUIENES SOMOS Y QUE HACEMOS */
@@ -313,17 +330,20 @@
         </div>
     </header>
 
-    <!-- 1. PORTADA DE LA SECCIÓN -->
+    <!-- 1. PORTADA CON IMAGEN DE FONDO (nosotros-bg.jpeg) -->
     <section>
-        <div class="hero-banner" data-es="[ Imagen de Portada - Sección Nosotros ]" data-en="[ Cover Image - About Us Section ]">
-            [ Imagen de Portada - Sección Nosotros ]
+        <div class="hero-banner" data-es="Sobre Nosotros - RENAX" data-en="About Us - RENAX">
+            Sobre Nosotros - RENAX
         </div>
     </section>
 
     <!-- 2. VIDEO INSTITUCIONAL -->
     <section>
-        <div class="video-section" data-es="[ Video Institucional RENAX ]" data-en="[ RENAX Institutional Video ]">
-            [ Video Institucional RENAX ]
+        <div class="video-section">
+            <video controls>
+                <source src="video.mp4" type="video/mp4">
+                Tu navegador no soporta la reproducción de video.
+            </video>
         </div>
     </section>
 
@@ -347,13 +367,17 @@
         </div>
     </section>
 
-    <!-- 4. DOS IMAGENES Y TEXTO -->
+    <!-- 4. DOS IMAGENES Y TEXTO (karol - 2.png y karol-renax..png) -->
     <section>
         <div class="images-text-section">
-            <div class="img-placeholder" data-es="[ Imagen Equipo / Historia 1 ]" data-en="[ Team / History Image 1 ]">[ Imagen Equipo / Historia 1 ]</div>
-            <div class="img-placeholder" data-es="[ Imagen Equipo / Historia 2 ]" data-en="[ Team / History Image 2 ]">[ Imagen Equipo / Historia 2 ]</div>
+            <div class="img-container">
+                <img src="karol - 2.png" alt="Imagen 1 RENAX">
+            </div>
+            <div class="img-container">
+                <img src="karol-renax..png" alt="Imagen 2 RENAX">
+            </div>
         </div>
-        <div class="text-content" style="text-align: center; margin-top: 30px;">
+        <div class="text-content">
             <p data-es="Nuestra trayectoria se construye paso a paso, uniendo la experiencia de los negocios locales con el diseño moderno." data-en="Our journey is built step by step, uniting the experience of local businesses with modern design.">
                 Nuestra trayectoria se construye paso a paso, uniendo la experiencia de los negocios locales con el diseño moderno.
             </p>
