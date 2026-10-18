@@ -344,3 +344,74 @@
     .team-images-split { flex-direction: column; }
     .frame-primary, .frame-secondary { transform: translateY(0); }
 }
+
+/* =====================================================
+   RENAX - TARJETA SOMOS UNA AGENCIA
+   TÍTULO MONTSERRAT BLACK Y TEXTO BLANCO
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+.nosotros-renax .exclusive-panel-agency {
+    background: linear-gradient(
+        135deg,
+        #f02b25 0%,
+        #c91518 58%,
+        #8f1015 100%
+    ) !important;
+
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 8px !important;
+    padding: clamp(30px, 5vw, 65px) !important;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
+    box-sizing: border-box;
+}
+
+/* TÍTULO GRANDE */
+.nosotros-renax .exclusive-panel-agency h2 {
+    color: #ffffff !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: clamp(30px, 4vw, 52px) !important;
+    font-weight: 900 !important;
+    line-height: 1.12 !important;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+    margin-bottom: 28px !important;
+}
+
+/* PÁRRAFOS */
+.nosotros-renax .exclusive-panel-agency p {
+    color: #ffffff !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 17px !important;
+    font-weight: 400 !important;
+    line-height: 1.9 !important;
+    margin-bottom: 18px !important;
+}
+
+/* BOTÓN DE MODO CLARO/OSCURO */
+.nosotros-renax .exclusive-panel-agency .exclusive-theme-toggle {
+    background: rgba(20, 10, 10, 0.35) !important;
+    color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.45) !important;
+}
+
+/* AJUSTES PARA CELULARES */
+@media (max-width: 600px) {
+    .nosotros-renax .exclusive-panel-agency {
+        padding: 30px 22px !important;
+    }
+
+    .nosotros-renax .exclusive-panel-agency h2 {
+        font-size: 29px !important;
+        letter-spacing: -0.8px;
+        padding-top: 35px;
+    }
+
+    .nosotros-renax .exclusive-panel-agency p {
+        font-size: 15px !important;
+        line-height: 1.8 !important;
+    }
+}
+
