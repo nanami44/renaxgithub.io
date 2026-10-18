@@ -923,55 +923,34 @@ object-fit: cover;
     }
 }
 /* ==========================================
-   DISEÑO DE TÍTULO VERTICAL ESTILO EDITORIAL
+    TÍTULO HORIZONTAL POSICIONADO MÁS ABAJO
    ========================================== */
+
 #proyectos {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 120px 30px 90px 30px; /* Incrementamos el padding superior para separarlo más */
   display: grid;
-  grid-template-columns: 220px 1fr; /* Columna estrecha para el texto vertical y amplia para el grid */
-  gap: 40px;
+  grid-template-columns: 320px 1fr;
+  gap: 50px;
   align-items: start;
 }
 
 #proyectos .renax-sticky-title {
   position: sticky;
-  top: 130px;
+  top: 180px; /* Empuja el título más abajo mientras haces scroll */
+  padding-top: 40px; /* Espacio extra interno arriba del título */
 }
 
-/* Estilo vertical apilado para el título */
-.renax-massive-title.vertical-title {
-  display: flex;
-  flex-direction: column; /* Apila cada palabra/línea hacia abajo */
+.renax-massive-title {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
-  font-size: 2.5rem;      /* Tamaño equilibrado para que luzca elegante y vertical */
+  font-size: 3.8rem;
   line-height: 0.95;
   text-transform: uppercase;
   margin: 0;
-  letter-spacing: -1px;
 }
 
-.renax-massive-title.vertical-title .red-text {
-  color: #e50914;
-  margin-bottom: 5px;
-}
+.renax-massive-title .red-text { color: #e50914; }
+.renax-massive-title .white-text { color: #ffffff; }
 
-.renax-massive-title.vertical-title .white-text {
-  color: #ffffff;
-  margin-bottom: 4px;
-}
-
-/* Responsivo para móviles y pantallas medianas */
-@media (max-width: 1024px) {
-  #proyectos {
-    grid-template-columns: 1fr; /* Vuelve a una columna en pantallas pequeñas */
-  }
-  #proyectos .renax-sticky-title {
-    position: static;
-  }
-  .renax-massive-title.vertical-title {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 10px;
-    font-size: 3rem;
-  }
-}
