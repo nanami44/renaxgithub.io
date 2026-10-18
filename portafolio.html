@@ -72,6 +72,20 @@
       </div>
     </aside>
 
+<!-- CARRUSEL VERTICAL IZQUIERDO -->
+<aside class="vertical-ticker-container vertical-ticker-left"
+       aria-label="Carrusel vertical izquierdo">
+  <div class="vertical-ticker-track" id="verticalTickerLeft">
+    <div class="vertical-ticker-item"><img src="skenzi-carrusel01.jpeg" alt="Skenzi"></div>
+    <div class="vertical-ticker-item"><img src="Renax- carrusel 01.png" alt="RENAX"></div>
+    <div class="vertical-ticker-item"><img src="Renax-carrusel02.png" alt="RENAX"></div>
+    <div class="vertical-ticker-item"><img src="Día-Matemáticas.png" alt="Matemáticas"></div>
+    <div class="vertical-ticker-item"><img src="sobre-renax.png.png" alt="Papelería"></div>
+    <div class="vertical-ticker-item"><img src="renzi-fondo-verde.png" alt="Renzi"></div>
+    <div class="vertical-ticker-item"><img src="donuts-bites.png.png" alt="Donuts"></div>
+  </div>
+</aside>
+
 <section class="renax-editorial-section" id="proyectos">
   <div class="renax-sticky-title">
    <h2 class="renax-massive-title" data-lang="workBigTitle">
@@ -429,6 +443,28 @@
         vAnimId = requestAnimationFrame(vStep);
       });
     });
+    // MOVIMIENTO DEL CARRUSEL VERTICAL IZQUIERDO
+const verticalTickerLeft = document.getElementById("verticalTickerLeft");
+
+if (verticalTickerLeft) {
+    let leftScrollPos = 0;
+    const leftSpeed = 0.5;
+
+    function leftStep() {
+        leftScrollPos += leftSpeed;
+
+        if (leftScrollPos >= verticalTickerLeft.scrollHeight / 2) {
+            leftScrollPos = 0;
+        }
+
+        verticalTickerLeft.style.transform =
+            `translateY(-${leftScrollPos}px)`;
+
+        requestAnimationFrame(leftStep);
+    }
+
+    requestAnimationFrame(leftStep);
+}
   </script>
 </body>
 </html>
