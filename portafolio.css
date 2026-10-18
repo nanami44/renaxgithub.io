@@ -773,26 +773,50 @@ body.portafolio-renax {
     display: none;
   }
 }
-/* LIMITAR LOS CARRUSELES A SU ZONA VISIBLE */
-.vertical-ticker-container {
-    position: fixed;
-    top: 150px;
-    bottom: 160px;
-    max-height: calc(100vh - 310px);
-    overflow: hidden;
-    z-index: 0;
-    pointer-events: none;
-}
-
-/* Mantener el contenido principal por encima */
-.site-header,
-footer,
-#main-content {
-    position: relative;
-    z-index: 2;
-}
 
 /* Evitar que el carrusel tape los controles flotantes */
 .renax-floating-buttons {
     z-index: 1000;
+}
+/* ==========================================
+   CONTENEDOR PRINCIPAL RELATIVO PARA LOS CARRUSELES
+   ========================================== */
+#main-content {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  padding-right: 250px; 
+}
+
+/* ==========================================
+   LIMITAR LOS CARRUSELES DENTRO DEL CONTENIDO (DEBAJO DE PORTADA HASTA ANTES DEL FOOTER)
+   ========================================== */
+.vertical-ticker-container {
+  position: absolute; /* Cambiado de fixed a absolute para que respete los límites del main */
+  top: 40px;          /* Empieza justo al inicio del main-content (debajo de la portada) */
+  bottom: 40px;       /* Termina antes de que acabe el main-content (antes del footer) */
+  right: 25px;
+  width: 210px;
+  height: auto;       /* Se adapta dinámicamente al espacio entre el top y el bottom */
+  max-height: none;
+  overflow: hidden;
+  z-index: 2;
+  pointer-events: auto;
+  background: rgba(10, 10, 10, 0.85);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Si también tienes el carrusel izquierdo configurado, aplica la misma lógica */
+.vertical-ticker-left {
+  position: absolute;
+  top: 40px;
+  bottom: 40px;
+  left: 25px;
+  right: auto;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.65;
 }
