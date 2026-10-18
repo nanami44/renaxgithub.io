@@ -212,16 +212,21 @@
     text-align: center;
 }
 
+
 .rect-math-img {
+    display: block;
     width: 100%;
     max-width: 480px;
     height: 380px;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    background: #000;
     border-radius: 16px;
     border: 1px solid #382024;
     margin-bottom: 20px;
-    box-shadow: 0 10px 30px rgba(200,16,46,0.25);
+    box-shadow: 0 10px 30px rgba(200, 16, 46, 0.25);
 }
+
 
 .work-main-image h3 {
     font-family: 'Baloo 2', sans-serif;
