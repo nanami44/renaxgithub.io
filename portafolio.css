@@ -132,7 +132,7 @@ body.portafolio-renax {
   width: 210px; /* Más grande */
   height: calc(100vh - 140px);
   overflow: hidden;
-  z-index: 99;
+ z-index: 0;
   pointer-events: auto;
   background: rgba(10, 10, 10, 0.85);
   border-radius: 16px;
