@@ -1001,3 +1001,50 @@ object-fit: cover;
   height: 100%;
   object-fit: cover;
 }
+/* ==========================================
+   SECCIÓN PROYECTOS Y TÍTULO EN DOS BLOQUES
+   ========================================== */
+#proyectos {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 120px 30px 90px 30px;
+  display: grid;
+  grid-template-columns: 350px 1fr; /* Columna adecuada para los dos bloques de texto */
+  gap: 50px;
+  align-items: start;
+}
+
+#proyectos .renax-sticky-title {
+  position: sticky;
+  top: 180px;
+  padding-top: 40px;
+}
+
+.renax-massive-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 3.5rem; /* Tamaño óptimo para que "TRABAJO CON" y "IDENTIDAD." respiren perfectamente */
+  line-height: 1.05;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.renax-massive-title .red-text { 
+  color: #e50914; 
+}
+
+.renax-massive-title .white-text { 
+  color: #ffffff; 
+}
+
+/* Responsivo para pantallas medianas y móviles */
+@media (max-width: 1024px) {
+  #proyectos {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  #proyectos .renax-sticky-title {
+    position: static;
+    padding-top: 0;
+  }
+}
