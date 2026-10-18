@@ -494,6 +494,57 @@ html, body {
     color: var(--text-color);
     line-height: 1.6;
 }
+        
+/* SECCIÓN ¿POR QUÉ RENAX? - FONDO BLANCO */
+.why-renax {
+    background-color: #ffffff;
+    max-width: none;
+    width: 100%;
+    padding: 60px 20px;
+}
+
+/* TÍTULO NEGRO */
+.why-renax h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: 48px;
+    color: #111111;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* TARJETAS BLANCAS CON TEXTO NEGRO */
+.why-renax li {
+    background: #ffffff;
+    color: #111111;
+    border: 1px solid #cc0000;
+    border-left: 4px solid #cc0000;
+    border-radius: 14px;
+    padding: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+/* DISTRIBUCIÓN DE TARJETAS */
+.why-renax ul {
+    max-width: 1200px;
+    margin: 30px auto 0;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+@media (max-width: 700px) {
+    .why-renax h2 {
+        font-size: 32px;
+    }
+
+    .why-renax ul {
+        grid-template-columns: 1fr;
+    }
+}
+
     </style>
 </head>
 <body>
