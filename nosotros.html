@@ -865,6 +865,81 @@ max-width: none;
     }
 }
 
+/* BURBUJAS ROJAS FLOTANTES — RENAX */
+.quienes-somos-box {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* Capa de burbujas dentro del cuadro */
+.quienes-somos-box .bubble-layer {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: inherit;
+}
+
+/* Mantener el contenido por delante */
+.quienes-somos-box > :not(.bubble-layer) {
+    position: relative;
+    z-index: 1;
+}
+
+/* Burbujas transparentes con reflejo rojo */
+.quienes-somos-box .bubble {
+    position: absolute;
+    bottom: -70px;
+    left: var(--x);
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    border: 1px solid rgba(255, 90, 90, 0.65);
+    background: radial-gradient(
+        circle at 30% 25%,
+        rgba(255, 255, 255, 0.42),
+        rgba(255, 30, 30, 0.16) 30%,
+        rgba(160, 0, 0, 0.06) 70%,
+        rgba(255, 40, 40, 0.22)
+    );
+    box-shadow:
+        inset -3px -4px 9px rgba(255, 0, 0, 0.15),
+        0 0 10px rgba(255, 0, 0, 0.16);
+    opacity: 0;
+    animation: renaxBubbleFloat var(--duration) ease-in-out var(--delay) infinite;
+    will-change: transform, opacity;
+}
+
+@keyframes renaxBubbleFloat {
+    0% {
+        transform: translate3d(0, 0, 0) scale(0.75);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.65;
+    }
+    50% {
+        transform: translate3d(var(--drift), -220px, 0) scale(1);
+        opacity: 0.45;
+    }
+    85% {
+        opacity: 0.35;
+    }
+    100% {
+        transform: translate3d(calc(var(--drift) * -0.5), -480px, 0) scale(0.85);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .quienes-somos-box .bubble {
+        animation: none;
+        display: none;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -1195,6 +1270,32 @@ max-width: none;
                 }
             }
         });
+       
+const cuadro = document.querySelector(".quienes-somos-box");
+
+if (cuadro && !cuadro.querySelector(".bubble-layer")) {
+    const capa = document.createElement("div");
+    capa.className = "bubble-layer";
+    capa.setAttribute("aria-hidden", "true");
+
+    for (let i = 0; i < 18; i++) {
+        const burbuja = document.createElement("span");
+        burbuja.className = "bubble";
+
+        const duracion = 9 + Math.random() * 10;
+
+        burbuja.style.setProperty("--x", `${Math.random() * 96}%`);
+        burbuja.style.setProperty("--size", `${10 + Math.random() * 34}px`);
+        burbuja.style.setProperty("--duration", `${duracion}s`);
+        burbuja.style.setProperty("--delay", `${-(Math.random() * duracion)}s`);
+        burbuja.style.setProperty("--drift", `${-35 + Math.random() * 70}px`);
+
+        capa.appendChild(burbuja);
+    }
+
+    cuadro.prepend(capa);
+}
+ 
     </script>
 
 </body>
