@@ -25,7 +25,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-     
 /* =========================================
    FONDO GENERAL RENAX - IMAGEN VISIBLE
    ========================================= */
@@ -54,7 +53,6 @@ background-image:
     color: var(--text-color);
     line-height: 1.6;
 }
-
 
         /* HEADER */
         .site-header {
@@ -168,26 +166,6 @@ background-image:
             text-align: center;
             text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
         }
-        
-
-        /* PORTADA A TODO EL ANCHO */
-        .hero-banner {
-            width: 100%;
-            height: 580px;
-            background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.50)), url('nosotros-bg.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 70px;
-            color: #fff;
-            font-size: 36px;
-            font-weight: bold;
-            text-align: center;
-            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.9);
-        }
 
         /* 2. VIDEO */
         .video-section {
@@ -216,19 +194,6 @@ background-image:
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 30px;
-        }
-
-        .card-box {
-         background: rgba(10, 5, 5, 0.55) !important;
-            padding: 40px;
-            border-radius: 20px;
-            border: 1px solid #330000;
-        }
-
-        .card-box h2 {
-            color: #ff3333;
-            margin-bottom: 15px;
-            font-size: 28px;
         }
 
         /* 4. DOS IMAGENES Y TEXTO */
@@ -294,13 +259,6 @@ background-image:
             line-height: 1.8;
             color: #ffffff;
             margin: 0 0 18px 0;
-        }
-
-        .text-content .frase-renax {
-            font-weight: 900;
-            font-size: 18px;
-            color: #ffffff;
-            margin-top: 25px;
         }
 
         /* 5 & 6. QUIENES SOMOS Y QUE HACEMOS */
@@ -518,364 +476,84 @@ background-image:
             }
         }
         
-/* =========================================
-   TARJETAS INTERACTIVAS RENAX
-   ========================================= */
+        /* =========================================
+           TARJETAS INTERACTIVAS RENAX (VISIÓN Y MISIÓN)
+           ========================================= */
+        .vision-mission .card-box {
+            position: relative;
+            min-height: 280px;
+            height: auto;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;
+            box-sizing: border-box;
+            background: linear-gradient(135deg, #080808, #240000, #080808);
+            border: 1px solid #650000;
+            border-radius: 24px;
+            transition: background 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease, transform 0.5s ease;
+        }
 
-#vision,
-#mision,
-.about-mission-vision .mission-vision-card,
-.about-mission-vision .vision-card {
-    position: relative;
-    overflow: hidden;
-    box-sizing: border-box;
-    cursor: pointer;
-    background: linear-gradient(
-        135deg,
-        #080808 0%,
-        #170000 50%,
-        #080808 100%
-    );
-    border: 1px solid #650000;
-    border-radius: 24px;
-    transition:
-        background 0.6s ease,
-        border-color 0.6s ease,
-        box-shadow 0.6s ease,
-        transform 0.5s ease;
-}
+        .vision-mission .card-box h2 {
+            min-height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+            color: #ff3333;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(32px, 4vw, 48px);
+            transition: min-height 0.5s ease, transform 0.5s ease, color 0.5s ease;
+        }
 
-/* TÍTULO GRANDE Y CENTRADO */
-#vision h2,
-#mision h2,
-.about-mission-vision .mission-vision-card h2,
-.about-mission-vision .vision-card h2 {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 180px;
-    margin: 0;
-    padding: 25px;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: clamp(32px, 4vw, 48px);
-    text-align: center;
-    color: #ff3333;
-    transition:
-        min-height 0.6s ease,
-        color 0.5s ease,
-        transform 0.6s ease;
-}
+        .vision-mission .card-box p {
+            display: block;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            margin: 0;
+            padding: 0 28px;
+            color: #ffffff;
+            line-height: 1.8;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 17px;
+            transform: scale(0.85);
+            transition: max-height 0.7s ease, opacity 0.5s ease, transform 0.5s ease, padding 0.5s ease;
+        }
 
-/* TEXTO OCULTO INICIALMENTE */
-#vision p,
-#mision p,
-.about-mission-vision .mission-vision-card p,
-.about-mission-vision .vision-card p {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transform: scale(0.88);
-    transform-origin: center top;
-    margin: 0;
-    padding: 0 28px;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 17px;
-    line-height: 1.8;
-    transition:
-        max-height 0.7s ease,
-        opacity 0.5s ease,
-        transform 0.6s ease,
-        padding 0.5s ease;
-}
+        /* TARJETA ABIERTA */
+        .vision-mission .card-box.is-open {
+            background: linear-gradient(135deg, #080808 0%, #520000 55%, #160000 100%) !important;
+            border-color: #ff3333;
+            box-shadow: 0 0 30px rgba(204, 0, 0, 0.3);
+            transform: scale(1.025);
+        }
 
-/* TARJETA ABIERTA */
-#vision.is-open,
-#mision.is-open,
-.about-mission-vision .mission-vision-card.is-open,
-.about-mission-vision .vision-card.is-open {
-    background: linear-gradient(
-        135deg,
-        #080808 0%,
-        #520000 55%,
-        #160000 100%
-    );
-    border-color: #ff3333;
-    box-shadow: 0 0 30px rgba(204, 0, 0, 0.25);
-    transform: scale(1.025);
-}
+        .vision-mission .card-box.is-open h2 {
+            min-height: 100px;
+            transform: scale(0.96);
+            color: #ff4545;
+        }
 
-/* EL TÍTULO SE REDUCE SUAVEMENTE */
-#vision.is-open h2,
-#mision.is-open h2,
-.about-mission-vision .is-open h2 {
-    min-height: 100px;
-    color: #ff4545;
-    transform: scale(0.96);
-}
+        .vision-mission .card-box.is-open p {
+            max-height: 500px;
+            opacity: 1;
+            padding: 10px 28px 35px;
+            transform: scale(1);
+        }
 
-/* APARICIÓN DEL TEXTO CON ZOOM */
-#vision.is-open p,
-#mision.is-open p,
-.about-mission-vision .mission-vision-card.is-open p,
-.about-mission-vision .vision-card.is-open p {
-    max-height: 500px;
-    opacity: 1;
-    transform: scale(1);
-    padding: 10px 28px 35px;
-}
-
-/* INDICADOR VISUAL */
-#vision::after,
-#mision::after {
-    content: "+";
-    position: absolute;
-    top: 18px;
-    right: 22px;
-    color: #ff4545;
-    font-size: 26px;
-    font-weight: 700;
-    transition: transform 0.4s ease;
-}
-
-#vision.is-open::after,
-#mision.is-open::after {
-    content: "−";
-    transform: rotate(180deg);
-}
-
-/* ACCESIBILIDAD */
-@media (prefers-reduced-motion: reduce) {
-    #vision,
-    #mision,
-    #vision *,
-    #mision * {
-        transition: none !important;
-    }
-}
-
-@media (max-width: 600px) {
-    #vision h2,
-    #mision h2 {
-        min-height: 140px;
-        font-size: 32px;
-    }
-
-    #vision p,
-    #mision p {
-        font-size: 15px;
-    }
-}
-
-/* TARJETAS VISIÓN Y MISIÓN: ESTADO CERRADO */
-.vision-mission .interactive-card {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    text-align: center;
-    background: linear-gradient(135deg, #080808, #240000, #080808);
-    border: 1px solid #650000;
-    border-radius: 24px;
-    transition: background 0.6s ease, transform 0.6s ease,
-                box-shadow 0.6s ease, border-color 0.6s ease;
-}
-
-.vision-mission .interactive-card h2 {
-    min-height: 180px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 25px;
-    color: #ff2222;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: clamp(36px, 4vw, 52px);
-    text-align: center;
-    transition: min-height 0.6s ease, transform 0.6s ease;
-}
-
-.vision-mission .interactive-card p {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    padding: 0 28px;
-    margin: 0;
-    color: #ffffff;
-    line-height: 1.8;
-    transform: scale(0.85);
-    transition: max-height 0.7s ease, opacity 0.5s ease,
-                transform 0.6s ease, padding 0.5s ease;
-}
-
-/* TARJETA ABIERTA */
-.vision-mission .interactive-card.is-open {
-    background: linear-gradient(135deg, #080808, #650000, #1b0000);
-    border-color: #ff3333;
-    box-shadow: 0 0 30px rgba(204, 0, 0, 0.3);
-    transform: scale(1.02);
-}
-
-.vision-mission .interactive-card.is-open h2 {
-    min-height: 100px;
-}
-
-.vision-mission .interactive-card.is-open p {
-    max-height: 400px;
-    opacity: 1;
-    padding: 10px 28px 35px;
-    transform: scale(1);
-}
-
-/* CORRECCIÓN: APERTURA DE TARJETAS VISIÓN Y MISIÓN */
-
-.vision-mission .card-box {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    min-height: 280px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: background 0.6s ease,
-                border-color 0.6s ease,
-                box-shadow 0.6s ease,
-                transform 0.5s ease;
-}
-
-.vision-mission .card-box h2 {
-    position: relative;
-    z-index: 2;
-    min-height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    text-align: center;
-    transition: min-height 0.6s ease,
-                transform 0.5s ease;
-}
-
-.vision-mission .card-box p {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transform: scale(0.85);
-    margin: 0;
-    padding: 0 28px;
-    color: #ffffff;
-    transition: max-height 0.7s ease,
-                opacity 0.5s ease,
-                transform 0.6s ease,
-                padding 0.5s ease;
-}
-
-/* AL HACER CLIC */
-.vision-mission .card-box.is-open {
-    background: linear-gradient(
-        135deg,
-        #080808 0%,
-        #520000 55%,
-        #160000 100%
-    ) !important;
-    border-color: #ff3333;
-    box-shadow: 0 0 30px rgba(204, 0, 0, 0.3);
-}
-
-.vision-mission .card-box.is-open h2 {
-    min-height: 100px;
-    transform: scale(0.96);
-}
-
-.vision-mission .card-box.is-open p {
-    max-height: 500px;
-    opacity: 1;
-    transform: scale(1);
-    padding: 10px 28px 35px;
-}
-
-/* CORRECCIÓN FINAL: TARJETAS VISIÓN Y MISIÓN */
-
-.vision-mission .card-box {
-    position: relative;
-    min-height: 280px;
-    height: auto;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    cursor: pointer;
-    box-sizing: border-box;
-}
-
-.vision-mission .card-box h2 {
-    min-height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    margin: 0;
-    padding: 20px;
-    color: #ff3333;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 900;
-    font-size: clamp(32px, 4vw, 48px);
-    transition: min-height 0.5s ease, transform 0.5s ease;
-}
-
-.vision-mission .card-box p {
-    display: block;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    margin: 0;
-    padding: 0 28px;
-    color: #ffffff;
-    line-height: 1.8;
-    transform: scale(0.85);
-    transition: max-height 0.7s ease,
-                opacity 0.5s ease,
-                transform 0.5s ease,
-                padding 0.5s ease;
-}
-
-.vision-mission .card-box.is-open {
-    background: linear-gradient(
-        135deg,
-        #080808,
-        #520000,
-        #160000
-    ) !important;
-    border-color: #ff3333;
-    box-shadow: 0 0 30px rgba(204, 0, 0, 0.3);
-}
-
-.vision-mission .card-box.is-open h2 {
-    min-height: 100px;
-    transform: scale(0.96);
-}
-
-.vision-mission .card-box.is-open p {
-    max-height: 500px;
-    opacity: 1;
-    padding: 10px 28px 35px;
-    transform: scale(1);
-}
-
-@media (max-width: 700px) {
-    .vision-mission {
-        grid-template-columns: 1fr;
-    }
-
-    .vision-mission .card-box h2 {
-        font-size: 34px;
-    }
-}
-
+        @media (max-width: 700px) {
+            .vision-mission {
+                grid-template-columns: 1fr;
+            }
+            .vision-mission .card-box h2 {
+                font-size: 34px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -924,30 +602,25 @@ background-image:
     </section>
 
     <!-- 3. VISION Y MISION -->
-   
-<!-- 3. VISIÓN Y MISIÓN -->
-<section>
-    <div class="vision-mission">
+    <section>
+        <div class="vision-mission">
+            <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
+                <h2 data-es="VISIÓN" data-en="VISION">VISIÓN</h2>
+                <p data-es="Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales."
+                   data-en="By 2030, RENAX aspires to be a departmental leader in visual identity and graphic communication, recognized for modernizing established brands and promoting the growth of local businesses.">
+                    Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales.
+                </p>
+            </div>
 
-        <div class="card-box interactive-card">
-            <h2 data-es="VISIÓN" data-en="VISION">VISIÓN</h2>
-            <p data-es="Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales."
-               data-en="By 2030, RENAX aspires to be a departmental leader in visual identity and graphic communication, recognized for modernizing established brands and promoting the growth of local businesses.">
-                Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales.
-            </p>
+            <div class="card-box interactive-card" role="button" tabindex="0" aria-expanded="false">
+                <h2 data-es="MISIÓN" data-en="MISSION">MISIÓN</h2>
+                <p data-es="Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia."
+                   data-en="Our mission is to offer strategic design and visual identity services for small and medium-sized businesses, modernizing established brands, strengthening their competitiveness, and always preserving their essence.">
+                    Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia.
+                </p>
+            </div>
         </div>
-
-        <div class="card-box interactive-card">
-            <h2 data-es="MISIÓN" data-en="MISSION">MISIÓN</h2>
-            <p data-es="Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia."
-               data-en="Our mission is to offer strategic design and visual identity services for small and medium-sized businesses, modernizing established brands, strengthening their competitiveness, and always preserving their essence.">
-                Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia.
-            </p>
-        </div>
-
-    </div>
-</section>
-
+    </section>
 
     <!-- 4. DOS IMAGENES Y TEXTO -->
     <section>
@@ -965,9 +638,6 @@ background-image:
             <p data-es="RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades."
                data-en="RENAX was born from my passion for design and my purpose of helping brands evolve without losing their essence. As founder, I work with creativity, strategy, and dedication to build visual identities that inspire trust, reflect stories, and open new opportunities.">
                 RENAX nace de mi pasión por el diseño y mi propósito de ayudar a las marcas a evolucionar sin perder su esencia. Como fundadora, trabajo con creatividad, estrategia y dedicación para construir identidades visuales que transmitan confianza, reflejen historias y abran nuevas oportunidades.
-            </p>
-            <p class="frase-renax" data-es="RENAX: transformamos marcas sin borrar su historia." data-en="RENAX: we transform brands without erasing their history.">
-               
             </p>
         </div>
     </section>
@@ -1148,10 +818,6 @@ background-image:
                 footerService3: "Comunicación",
                 footerService4: "Estrategia visual",
                 footerTalk: "Hablemos de tu proyecto"
-               visionTitulo: "VISIÓN",
-visionTexto: "Para 2030, RENAX aspira a ser líder departamental en identidad visual y comunicación gráfica, reconocida por modernizar marcas con trayectoria e impulsar el crecimiento de empresas locales.",
-misionTitulo: "MISIÓN",
-misionTexto: "Nuestra misión es ofrecer servicios estratégicos de diseño e identidad visual para pequeñas y medianas empresas, modernizando marcas con trayectoria, fortaleciendo su competitividad y manteniendo siempre su esencia.", 
             },
             en: {
                 footerInicio: "HOME",
@@ -1174,11 +840,7 @@ misionTexto: "Nuestra misión es ofrecer servicios estratégicos de diseño e id
                 footerService2: "Visual identity",
                 footerService3: "Communication",
                 footerService4: "Visual strategy",
-                footerTalk: "Let's talk about your project",
-            visionTitulo: "VISION",
-visionTexto: "By 2030, RENAX aims to become a departmental leader in visual identity and graphic communication, recognized for modernizing established brands and supporting local business growth.",
-misionTitulo: "MISSION",
-misionTexto: "Our mission is to provide strategic design and visual identity services for small and medium-sized businesses, modernizing established brands, strengthening their competitiveness, and preserving their essence.",
+                footerTalk: "Let's talk about your project"
             }
         };
 
@@ -1188,7 +850,6 @@ misionTexto: "Our mission is to provide strategic design and visual identity ser
                 const language = english ? translations.en : translations.es;
                 languageBtn.textContent = english ? "ENG" : "ESP";
 
-                // Traduce elementos del footer con data-lang
                 document.querySelectorAll("[data-lang]").forEach(function(element) {
                     const key = element.getAttribute("data-lang");
                     if (language[key]) {
@@ -1196,7 +857,6 @@ misionTexto: "Our mission is to provide strategic design and visual identity ser
                     }
                 });
 
-                // Traduce elementos de la página con data-es / data-en
                 document.querySelectorAll("[data-es]").forEach(function(element) {
                     const text = english ? element.getAttribute("data-en") : element.getAttribute("data-es");
                     if (text) {
@@ -1240,42 +900,39 @@ misionTexto: "Our mission is to provide strategic design and visual identity ser
         });
     </script>
     
-<script>
+    <!-- SCRIPT CORREGIDO PARA TARJETAS INTERACTIVAS -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const tarjetas = document.querySelectorAll(
+                ".vision-mission .card-box, " +
+                "#vision, #mision, " +
+                ".about-mission-vision .mission-vision-card, " +
+                ".about-mission-vision .vision-card"
+            );
 
-    const tarjetas = document.querySelectorAll(
-        ".vision-mission .card-box, " +
-        "#vision, #mision, " +
-        ".about-mission-vision .mission-vision-card, " +
-        ".about-mission-vision .vision-card"
-    );
+            const unicas = [...new Set(tarjetas)];
 
+            unicas.forEach(function (tarjeta) {
+                if (tarjeta.dataset.renaxClick === "true") return;
 
-    const unicas = [...new Set(tarjetas)];
+                tarjeta.dataset.renaxClick = "true";
 
-    unicas.forEach(function (tarjeta) {
-        if (tarjeta.dataset.renaxClick === "true") return;
+                function alternarTarjeta() {
+                    const abierta = tarjeta.classList.toggle("is-open");
+                    tarjeta.setAttribute("aria-expanded", String(abierta));
+                }
 
-        tarjeta.dataset.renaxClick = "true";
-        tarjeta.setAttribute("role", "button");
-        tarjeta.setAttribute("tabindex", "0");
-        tarjeta.setAttribute("aria-expanded", "false");
+                tarjeta.addEventListener("click", alternarTarjeta);
 
-        function alternarTarjeta() {
-            const abierta = tarjeta.classList.toggle("is-open");
-            tarjeta.setAttribute("aria-expanded", String(abierta));
-        }
-
-        tarjeta.addEventListener("click", alternarTarjeta);
-
-        tarjeta.addEventListener("keydown", function (evento) {
-            if (evento.key === "Enter" || evento.key === " ") {
-                evento.preventDefault();
-                alternarTarjeta();
-            }
+                tarjeta.addEventListener("keydown", function (evento) {
+                    if (evento.key === "Enter" || evento.key === " ") {
+                        evento.preventDefault();
+                        alternarTarjeta();
+                    }
+                });
+            });
         });
-    });
-});
-</script>
+    </script>
 
 </body>
 </html>
