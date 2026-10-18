@@ -7,429 +7,8 @@
   <title>RENAX | Transformamos marcas sin borrar su historia</title>
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    /* ==========================================================
-       RENAX · ESTILOS GENERALES Y DISEÑO AJUSTADO
-       ========================================================== */
-    .inicio-renax {
-        margin: 0;
-        background: #050505;
-        color: #ffffff;
-        overflow-x: hidden;
-    }
-
-    .inicio-fondo {
-        position: fixed;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-        overflow: hidden;
-        background: #050505;
-    }
-
-    .inicio-fondo::before {
-        content: "";
-        position: absolute;
-        width: 75vw;
-        height: 180vh;
-        top: -45vh;
-        left: 48%;
-        background: linear-gradient(135deg, transparent 0%, transparent 20%, rgba(200,16,46,0.08) 30%, rgba(200,16,46,0.65) 45%, #c8102e 50%, rgba(200,16,46,0.55) 56%, rgba(200,16,46,0.08) 72%, transparent 82%);
-        filter: blur(8px);
-        transform: rotate(0deg);
-        animation: inicioRedMove 18s ease-in-out infinite alternate;
-    }
-
-    .inicio-fondo::after {
-        content: "";
-        position: absolute;
-        width: 55vw;
-        height: 150vh;
-        top: -25vh;
-        left: 58%;
-        background: linear-gradient(135deg, transparent 35%, rgba(200,16,46,0.25) 48%, rgba(200,16,46,0.05) 65%, transparent 75%);
-        filter: blur(25px);
-        animation: inicioRedGlow 14s ease-in-out infinite alternate;
-    }
-
-    @keyframes inicioRedMove {
-        0% { transform: translateX(-15vw) rotate(-8deg) scale(1); }
-        50% { transform: translateX(5vw) rotate(-3deg) scale(1.08); }
-        100% { transform: translateX(18vw) rotate(5deg) scale(1.12); }
-    }
-
-    @keyframes inicioRedGlow {
-        0% { transform: translateX(10vw) rotate(-5deg); }
-        100% { transform: translateX(-10vw) rotate(5deg); }
-    }
-
-    .inicio-renax main {
-        position: relative;
-        z-index: 1;
-        background: transparent !important;
-    }
-
-    /* ==========================================
-       CINTURÓN ANIMADO CON EFECTO ZOOM Y TIPOGRAFÍA
-       ========================================== */
-    @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap');
-
-    .renax-cinturon {
-        background: #c8102e;
-        overflow: hidden;
-        white-space: nowrap;
-        padding: 12px 0;
-        font-family: 'Baloo 2', sans-serif;
-        font-weight: 800;
-        font-size: 1.2rem;
-        letter-spacing: 2px;
-        color: #fff;
-        position: relative;
-        z-index: 10;
-        transition: transform 0.4s ease;
-    }
-
-    .renax-cinturon:hover {
-        transform: scale(1.03); /* Efecto de zoom solicitado */
-    }
-
-    .renax-cinturon-pista {
-        display: inline-block;
-        animation: marqueeCinturon 20s linear infinite;
-    }
-
-    .renax-cinturon-pista span {
-        margin-right: 40px;
-    }
-
-    @keyframes marqueeCinturon {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-50%); }
-    }
-
-    /* ==========================================
-       SECCIÓN HISTORIA (TARJETAS HORIZONTALES)
-       ========================================== */
-    .history-section {
-        padding: 80px 7%;
-        text-align: center;
-    }
-
-    .history-section h2 {
-        font-family: 'Baloo 2', sans-serif;
-        font-size: clamp(32px, 4.5vw, 56px);
-        font-weight: 800;
-        line-height: 1.15;
-        margin-bottom: 50px;
-    }
-
-    .history-cards {
-        display: flex;
-        flex-direction: row; /* Alineadas horizontalmente */
-        justify-content: center;
-        gap: 24px;
-        flex-wrap: wrap;
-        margin-bottom: 40px;
-    }
-
-    .history-cards article {
-        background: linear-gradient(145deg, #101010, #050505);
-        border: 1px solid #382024;
-        border-radius: 16px;
-        padding: 30px;
-        flex: 1;
-        min-width: 280px;
-        max-width: 360px;
-        text-align: left;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-    }
-
-    .history-cards h3 {
-        color: #ff5a1f;
-        font-family: 'Baloo 2', sans-serif;
-        font-size: 20px;
-        margin-bottom: 12px;
-    }
-
-    .history-cards p {
-        color: #cecece;
-        font-family: 'Poppins', sans-serif;
-        font-size: 14px;
-        line-height: 1.6;
-        margin: 0;
-    }
-
-    .history-bottom {
-        color: #a0a0a0;
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px;
-        max-width: 700px;
-        margin: 0 auto;
-    }
-
-    /* ==========================================
-       SECCIÓN WORK (DISTRIBUCIÓN EXACTA)
-       ========================================== */
-    .renax-work {
-        padding: 80px 7%;
-        position: relative;
-    }
-
-    .work-label {
-        font-family: 'Baloo 2', sans-serif;
-        font-weight: 800;
-        color: rgba(255, 255, 255, 0.03);
-        position: absolute;
-        top: 20px;
-        left: 5%;
-        z-index: 0;
-        pointer-events: none;
-        user-select: none;
-    }
-
-    .work-content {
-        position: relative;
-        z-index: 2;
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        align-items: center;
-    }
-
-    /* Imagen triangular de matemáticas a la izquierda */
-    .work-main-image {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .work-main-image img {
-        width: 100%;
-        max-width: 480px;
-        height: auto;
-        clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* Forma triangular solicitada */
-        object-fit: cover;
-        margin-bottom: 20px;
-        box-shadow: 0 10px 30px rgba(200,16,46,0.3);
-    }
-
-    .work-main-image h3 {
-        font-family: 'Baloo 2', sans-serif;
-        font-size: 24px;
-        margin-bottom: 15px;
-    }
-
-    /* Columna derecha: Skenzi y Donut's Bites una debajo de otra */
-    .work-side {
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-        justify-content: center;
-        background: transparent !important;
-    }
-
-    .work-card {
-        background: linear-gradient(145deg, #121212, #080808);
-        border: 1px solid #382024;
-        border-radius: 16px;
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        transition: transform 0.3s ease;
-    }
-
-    .work-card:hover {
-        transform: translateY(-5px);
-        border-color: #ff5a1f;
-    }
-
-    .work-card img {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        border-radius: 10px;
-        margin-bottom: 12px;
-    }
-
-    .work-card h3 {
-        font-family: 'Baloo 2', sans-serif;
-        font-size: 20px;
-        margin: 0;
-        color: #fff;
-    }
-
-    /* Imagen inferior especialidades horizontal */
-    .work-especialidades-bottom {
-        margin-top: 60px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .work-especialidades-bottom img {
-        width: 100%;
-        max-height: 400px;
-        object-fit: cover;
-        border-radius: 16px;
-        border: 1px solid #382024;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    }
-
-    /* ==========================================
-       PREGUNTAS FRECUENTES (REORGANIZADAS Y FUNCIONALES)
-       ========================================== */
-    .renax-faq {
-        position: relative;
-        padding: 100px 7%;
-        background: #050505;
-        color: #fff;
-        font-family: 'Poppins', sans-serif;
-    }
-
-    .faq-container {
-        max-width: 900px;
-        margin: auto;
-    }
-
-    .faq-eyebrow {
-        color: #ff5a1f;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: 3px;
-    }
-
-    .renax-faq h2 {
-        margin: 14px 0;
-        font-family: 'Baloo 2', sans-serif;
-        font-size: clamp(36px, 5vw, 60px);
-        font-weight: 800;
-    }
-
-    .renax-faq h2 span {
-        color: #e0002b;
-    }
-
-    .faq-intro {
-        color: #bcbcbc;
-        font-size: 15px;
-        margin-bottom: 40px;
-    }
-
-    .faq-list {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-    }
-
-    .faq-question {
-        width: 100%;
-        padding: 20px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 20px;
-        text-align: left;
-        color: #f7f7f7;
-        background: linear-gradient(110deg, #160709, #090909 65%);
-        border: 1px solid #382024;
-        border-radius: 14px;
-        font-family: 'Poppins', sans-serif;
-        font-size: 15px;
-        font-weight: 500;
-        cursor: pointer;
-        transition: all 0.3s ease;
-    }
-
-    .faq-question:hover {
-        border-color: #ff5a1f;
-        background: linear-gradient(110deg, #310610, #100b0a 70%);
-        transform: translateY(-2px);
-    }
-
-    .faq-arrow {
-        width: 32px;
-        height: 32px;
-        flex-shrink: 0;
-    }
-
-    .faq-arrow img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    /* Modal de Preguntas */
-    .faq-modal {
-        position: fixed;
-        inset: 0;
-        z-index: 99999;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        padding: 20px;
-        background: rgba(0, 0, 0, 0.85);
-        backdrop-filter: blur(8px);
-    }
-
-    .faq-modal.faq-modal-visible {
-        display: flex;
-    }
-
-    .faq-modal-card {
-        width: min(100%, 500px);
-        padding: 24px;
-        background: #101010;
-        border: 1px solid #ff5a1f;
-        border-radius: 18px;
-        box-shadow: 0 0 30px rgba(255, 90, 31, 0.3);
-    }
-
-    .faq-modal-top {
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 15px;
-    }
-
-    .faq-back {
-        background: #c8102e;
-        color: #fff;
-        border: none;
-        padding: 8px 16px;
-        border-radius: 20px;
-        cursor: pointer;
-        font-weight: 600;
-    }
-
-    .faq-modal-content p {
-        color: #dedede;
-        font-size: 15px;
-        line-height: 1.7;
-        margin: 0;
-    }
-
-    /* Estilos base de botones y enlaces originales preservados */
-    .renax-button {
-        display: inline-flex;
-        align-items: center;
-        gap: 10px;
-        padding: 12px 28px;
-        background: #c8102e;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 30px;
-        font-weight: 600;
-        font-family: 'Poppins', sans-serif;
-        transition: background 0.3s ease;
-    }
-    .renax-button:hover { background: #a50d25; }
-    .renax-button.centered { margin: 15px auto 0; }
-  </style>
-
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="inicio.css?v=1">
+  <link rel="stylesheet" href="inicio.css?v=4">
 </head>
 
 <body class="inicio-renax">
@@ -437,7 +16,7 @@
   <!-- ================= HEADER ================= -->
   <header class="site-header">
     <div class="nav-container">
-      <a href="index.html" data-lang="footerDescription">
+      <a href="index.html">
         <img src="logo-renax-transparente.png" alt="RENAX" class="logo-renax">
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
@@ -455,13 +34,34 @@
     </div>
   </header>
   
-  <!-- CINTURÓN ANIMADO RENAX (CON EFECTO ZOOM Y TIPOGRAFÍA) -->
-  <div class="renax-cinturon" aria-label="RENAX">
-    <div class="renax-cinturon-pista">
-      <span>RENAX ✦ TRANSFORMAMOS MARCAS</span>
-      <span>RENAX ✦ TRANSFORMAMOS MARCAS</span>
-      <span>RENAX ✦ TRANSFORMAMOS MARCAS</span>
-      <span>RENAX ✦ TRANSFORMAMOS MARCAS</span>
+  <!-- ================= CINTURÓN ANIMADO DE DOBLE BLOQUE (ENCONTRADOS) ================= -->
+  <div class="renax-cinturon-container" aria-label="RENAX">
+    <!-- Fila 1: Se mueve de Izquierda a Derecha -->
+    <div class="renax-cinturon-fila fila-izquierda">
+      <div class="renax-pista">
+        <span>RENAX ✦ TRANSFORMAMOS MARCAS</span>
+        <span>✦</span>
+        <span>VUELVE A DESTACAR SIN PERDER TU ESENCIA</span>
+        <span>✦</span>
+        <span>RENAX ✦ TRANSFORMAMOS MARCAS</span>
+        <span>✦</span>
+        <span>VUELVE A DESTACAR SIN PERDER TU ESENCIA</span>
+        <span>✦</span>
+      </div>
+    </div>
+
+    <!-- Fila 2: Se mueve de Derecha a Izquierda (encontrándose con la de arriba) -->
+    <div class="renax-cinturon-fila fila-derecha">
+      <div class="renax-pista pista-inversa">
+        <span>TU HISTORIA MERECE UNA IMAGEN A SU ALTURA</span>
+        <span>✦</span>
+        <span>CONSERVAMOS LA ESENCIA DE TU NEGOCIO</span>
+        <span>✦</span>
+        <span>TU HISTORIA MERECE UNA IMAGEN A SU ALTURA</span>
+        <span>✦</span>
+        <span>CONSERVAMOS LA ESENCIA DE TU NEGOCIO</span>
+        <span>✦</span>
+      </div>
     </div>
   </div>
 
@@ -526,31 +126,19 @@
       </p>
     </section>
 
-    <!-- ================= FRASE EN MOVIMIENTO ================= -->
-    <section class="renax-marquee">
-      <div class="marquee-track">
-        <div class="marquee-content">
-          <span>CONSERVAMOS LA ESENCIA DE TU MARCA.</span>
-          <span>ANALIZAMOS ANTES DE DISEÑAR.</span>
-          <span>UNIMOS ESTRATEGIA Y DISEÑO.</span>
-          <span>CREAMOS UNA IDENTIDAD PREPARADA PARA EVOLUCIONAR.</span>
-        </div>
-      </div>
-    </section>
-
     <!-- ================= PORTAFOLIO DESTACADO (WORK) ================= -->
     <section class="renax-work" id="proyectos">
       <div class="work-label" data-lang="workLabel" style="font-size: 11rem !important; line-height: 0.9;">WORK</div>
       
       <div class="work-content">
-        <!-- Imagen triangular al lado izquierdo -->
+        <!-- Imagen rectangular de Matemáticas a la izquierda -->
         <div class="work-main-image">
-          <img src="mate2.png" alt="Día de las Matemáticas">
+          <img src="mate2.png" alt="Día de las Matemáticas" class="rect-math-img">
           <h3>Día de las Matemáticas</h3>
           <a href="dia-matematicas.html" class="renax-button centered">VER PROYECTO →</a>
         </div>
 
-        <!-- Columna derecha con Skenzi y Donut's Bites una debajo de la otra -->
+        <!-- Columna derecha con Skenzi y Donut's Bites -->
         <div class="work-side">
           <div class="work-card skenzi-card">
             <img src="skenzi.png" alt="Proyecto Skenzi">
@@ -566,9 +154,9 @@
         </div>
       </div>
 
-      <!-- Imagen inferior especialidades en formato horizontal -->
+      <!-- Imagen inferior especialidades ajustada (menos ancha y sin cortes) -->
       <div class="work-especialidades-bottom">
-        <img src="especialidades-9.jpeg" alt="Especialidades RENAX">
+        <img src="especialidades-9.jpeg" alt="Especialidades RENAX" class="especialidades-img-ajustada">
       </div>
     </section>
 
@@ -616,7 +204,7 @@
       </div>
     </section>
 
-    <!-- VENTANA INDIVIDUAL DE RESPUESTAS -->
+    <!-- VENTANA DE RESPUESTAS -->
     <div class="faq-modal" id="faqModal" aria-hidden="true">
       <div class="faq-modal-card" role="dialog" aria-modal="true">
         <div class="faq-modal-top">
@@ -647,7 +235,7 @@
     <h2 class="footer-titulo" data-lang="footerMenu">MENÚ</h2>
     <div class="footer-secciones" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 30px;">
       <nav class="footer-column">
-        <h3><a href="index.html" data-lang="footerInicio">INICIO</a></h3>
+        <h3><a href="index.html">INICIO</a></h3>
         <div class="footer-menu-links">
           <a href="index.html#hero-inicio">Expertos en transformar marcas</a>
           <a href="index.html#esencia-marca">Vuelve a destacar sin perder tu esencia</a>
@@ -689,7 +277,7 @@
     </div>
   </footer>
 
-  <!-- ================= JAVASCRIPT ================= -->
+  <!-- JAVASCRIPT INTERACCIONES -->
   <script>
     const navToggle = document.getElementById("navToggle");
     const navMenu = document.getElementById("navMenu");
@@ -697,7 +285,6 @@
         navToggle.addEventListener("click", () => navMenu.classList.toggle("active"));
     }
 
-    // FAQ Funcionalidad de apertura y cierre conservada
     document.addEventListener('DOMContentLoaded', function () {
         const modal = document.getElementById('faqModal');
         const answer = document.getElementById('faqAnswer');
@@ -706,7 +293,7 @@
         const responses = [
             'RENAX trabaja con pequeñas y medianas empresas que desean modernizar su identidad visual, fortalecer su presencia y conservar la esencia de su marca.',
             'Comenzamos conociendo la historia, los valores y la identidad actual de la marca. Después desarrollamos una propuesta visual que busca modernizarla sin borrar su historia.',
-            'No necesariamente. El objetivo es evaluar qué elementos deben conservarse y cuáles pueden actualizarse para lograr una identidad más clara, coherente y actual.',
+            'No necessarily. El objetivo es evaluar qué elementos deben conservarse y cuáles pueden actualizarse para lograr una identidad más clara, coherente y actual.',
             'El contenido depende del servicio contratado y de las necesidades de cada marca. Antes de iniciar, definimos el alcance del proyecto.',
             'Podemos revisar juntos la situación actual de tu marca y conversar sobre los objetivos que deseas alcanzar para identificar el servicio más adecuado.',
             'Sí. Puedes consultar por un servicio específico de diseño gráfico, según las necesidades de tu negocio.',
