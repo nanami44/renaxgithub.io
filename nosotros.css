@@ -1,6 +1,12 @@
 /* ==========================================================
-   ESTILOS NUEVOS PARA LA ESTRUCTURA RENAX - NOSOTROS
+   ESTILOS NUEVOS RENAX - ESTRUCTURA PROFESIONAL & TIPOGRAFÍA
    ========================================================== */
+
+.montserrat-title {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 900 !important;
+    letter-spacing: 1px;
+}
 
 .nosotros-renax {
     background-image: url('fondo-portafolio-rojo.jpeg');
@@ -21,18 +27,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.72);
+    background-color: rgba(0, 0, 0, 0.75);
     z-index: -1;
 }
 
-/* Reseña Histórica con Hover (Sin abrir ventanas, cambia color y muestra texto) */
+/* Reseña Histórica con Hover (Rojo/Negro elegante) */
 .about-manifest {
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
 }
 .history-hover-card {
-    background: linear-gradient(135deg, #110000 0%, #050505 100%);
+    background: linear-gradient(135deg, #120303 0%, #080808 100%);
     border: 2px solid #ff2a2a;
     border-radius: 12px;
     padding: 30px;
@@ -40,7 +46,7 @@
     box-shadow: 0 0 15px rgba(255, 42, 42, 0.3);
 }
 .history-hover-card:hover {
-    background: linear-gradient(135deg, #ff2a2a 0%, #110000 100%);
+    background: linear-gradient(135deg, #ff2a2a 0%, #0d0202 100%);
     box-shadow: 0 0 25px rgba(255, 42, 42, 0.7);
 }
 .history-title-wrapper {
@@ -50,9 +56,7 @@
 }
 .history-hover-card h2 {
     color: #ffffff;
-    font-size: 22px;
-    font-weight: 800;
-    text-transform: uppercase;
+    font-size: 24px;
     margin: 0;
 }
 .renax-history-bird {
@@ -64,7 +68,6 @@
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.5s ease, opacity 0.5s ease;
-    margin-top: 0;
 }
 .history-hover-card:hover .history-hover-content {
     max-height: 400px;
@@ -80,7 +83,7 @@
     margin-bottom: 12px;
 }
 
-/* Tarjetas Misión y Visión */
+/* Misión y Visión */
 .about-mission-vision {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -90,7 +93,7 @@
     padding: 0 20px;
 }
 .mission-vision-card {
-    background: rgba(15, 15, 15, 0.9);
+    background: rgba(15, 15, 15, 0.92);
     padding: 35px;
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -98,8 +101,7 @@
 }
 .mission-vision-card h3 {
     color: #ff2a2a;
-    font-size: 20px;
-    font-weight: 800;
+    font-size: 22px;
     margin-bottom: 15px;
 }
 .mission-vision-card p {
@@ -108,59 +110,60 @@
     font-size: 14px;
 }
 
-/* Sección de Equipo (Karol con estructura intercalada y moderada) */
+/* Sección de Equipo (Estructura intercalada inspirada en tus referencias) */
 .renax-team-section {
     max-width: 1100px;
     margin: 60px auto;
     padding: 0 20px;
 }
-.renax-team-card-intercalada {
-    background: rgba(10, 10, 10, 0.88);
-    border: 1px solid rgba(255, 42, 42, 0.25);
-    border-radius: 12px;
-    padding: 40px 30px;
-    text-align: center;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
+.team-reference-container {
+    background: rgba(10, 10, 10, 0.9);
+    border: 1px solid rgba(255, 42, 42, 0.3);
+    border-radius: 14px;
+    padding: 50px 30px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
 }
-.renax-team-images-intercalada {
+.team-images-split {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px;
-    margin-bottom: 35px;
+    gap: 35px;
+    margin-bottom: 40px;
 }
-.team-img-frame {
-    width: 170px;
-    height: 210px;
-    border-radius: 8px;
+.team-photo-box {
+    width: 220px;
+    height: 270px;
+    border-radius: 10px;
     overflow: hidden;
     border: 2px solid rgba(255, 42, 42, 0.4);
     background: #111;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.6);
 }
-.img-offset-1 { transform: translateY(-10px); }
-.img-offset-2 { transform: translateY(15px); }
-.team-photo {
+.frame-primary { transform: translateY(-15px); }
+.frame-secondary { transform: translateY(15px); }
+.team-img-file {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
-.renax-team-text-box h2 {
-    font-size: 30px;
-    font-weight: 900;
+.team-info-box {
+    text-align: center;
+}
+.team-info-box h2 {
+    font-size: 32px;
     color: #fff;
     margin-bottom: 20px;
 }
-.renax-team-text-box p {
+.team-info-box p {
     color: #bbb;
-    line-height: 1.7;
+    line-height: 1.8;
     font-size: 15px;
-    max-width: 750px;
+    max-width: 780px;
     margin: 0 auto 15px auto;
 }
 
-/* Sección "Somos una agencia" (Fondo blanco, cuadro ajustado, títulos rojo con negro) */
+/* Sección "Somos una agencia" (Cuadro ajustado, fondo blanco, títulos en rojo con negro) */
 .renax-agency-white-section {
     max-width: 1100px;
     margin: 50px auto;
@@ -178,7 +181,6 @@
 }
 .agency-title-red-black {
     font-size: 28px;
-    font-weight: 900;
     color: #ff2a2a;
     text-shadow: 1px 1px 2px #000000;
     margin-bottom: 20px;
@@ -221,7 +223,7 @@
     width: 100%;
     background: #050505;
     color: #fff;
-    padding: 40px 20px 20px;
+    padding: 40px 30px 20px;
     border-top: 1px solid rgba(255,255,255,0.1);
 }
 .srv-footer-wrapper {
@@ -238,15 +240,14 @@
 }
 .footer-menu-red {
     color: #ff2a2a !important;
-    font-size: 13px;
-    font-weight: 800;
+    font-size: 14px;
     letter-spacing: 1.5px;
     text-decoration: none;
 }
 .srv-footer-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    gap: 25px;
     padding-bottom: 30px;
 }
 .srv-footer-col {
@@ -271,7 +272,7 @@
     padding-top: 15px;
 }
 .footer-logo-small {
-    height: 22px; /* Logo pequeño como lo solicitaste */
+    height: 24px; /* Logo pequeño y elegante */
     filter: brightness(0) invert(1);
 }
 
@@ -279,6 +280,6 @@
 @media (max-width: 768px) {
     .about-mission-vision { grid-template-columns: 1fr; }
     .srv-footer-grid { grid-template-columns: 1fr; gap: 25px; }
-    .renax-team-images-intercalada { flex-direction: column; }
-    .img-offset-1, .img-offset-2 { transform: translateY(0); }
+    .team-images-split { flex-direction: column; }
+    .frame-primary, .frame-secondary { transform: translateY(0); }
 }
