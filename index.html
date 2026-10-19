@@ -569,6 +569,64 @@
     }
 }
 
+/* RENAX — FRASE PRINCIPAL A ANCHO COMPLETO */
+#esencia-marca.renax-statement {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
+}
+
+#esencia-marca .statement-main {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+}
+
+/* VELO BLANCO METALIZADO — RENAX */
+#esencia-marca .statement-title {
+    color: #ed101b;
+}
+
+#esencia-marca .statement-line {
+    background: linear-gradient(
+        180deg,
+        #ed101b 0%,
+        #ed101b 30%,
+        #ffffff 43%,
+        #d9dce1 48%,
+        #ffffff 53%,
+        #ed101b 68%,
+        #ed101b 100%
+    );
+
+    background-size: 100% 300%;
+    background-position: 50% 0%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    animation: renaxVeloMetalico 5s linear infinite;
+}
+
+@keyframes renaxVeloMetalico {
+    0% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 50% 100%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #esencia-marca .statement-line {
+        animation: none;
+    }
+}
+
     </style>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
