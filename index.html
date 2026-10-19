@@ -91,20 +91,74 @@
             background: #b20710;
         }
 
-        /* PORTADA (DOS BLOQUES - ANCHO DE PÁGINA) */
-        .portada-section {
-            width: 100%;
-            min-height: 95vh;
-            padding-top: 80px;
-            background-color: #0b0b0b;
-        }
+       
+/* ================= PORTADA PRINCIPAL RENAX ================= */
 
-        .portada-grid {
-            width: 100%;
-            min-height: calc(95vh - 80px);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
+.portada-section {
+    position: relative;
+    width: 100%;
+    min-height: 95vh;
+    min-height: 95svh;
+    padding-top: 80px;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.38) 0%,
+            rgba(0, 0, 0, 0.12) 60%,
+            rgba(0, 0, 0, 0.05) 100%
+        ),
+        url("luz2.jpg");
+
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-color: #050505;
+}
+
+.portada-grid {
+    position: relative;
+    width: 100%;
+    min-height: calc(95vh - 80px);
+    min-height: calc(95svh - 80px);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.portada-bloque-1,
+.portada-bloque-2 {
+    min-width: 0;
+    padding: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    border: none;
+    background: transparent;
+}
+
+/* ADAPTACIÓN A CELULARES */
+@media (max-width: 900px) {
+    .portada-section {
+        min-height: 80vh;
+        min-height: 80svh;
+        background-position: 58% center;
+    }
+
+    .portada-grid {
+        grid-template-columns: 1fr;
+        min-height: calc(80vh - 80px);
+        min-height: calc(80svh - 80px);
+    }
+
+    .portada-bloque-1,
+    .portada-bloque-2 {
+        padding: 30px 20px;
+    }
+}
+
 
         .portada-bloque-1, .portada-bloque-2 {
             padding: 50px;
