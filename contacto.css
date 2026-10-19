@@ -2098,16 +2098,16 @@ h1, h2, h3,
         padding-bottom: 60px;
     }
 
-    .renax-faq-section .renax-faq-card summary {
-        min-height: 85px;
-        padding: 22px 20px !important;
-        font-size: 16px !important;
-    }
+  .renax-faq-section .renax-faq-card summary {
+    min-height: initial;
+    padding: initial;
+    font-size: initial;
+}
 
-    .renax-faq-section .renax-faq-card summary::after {
-        width: 40px;
-        height: 40px;
-        flex-basis: 40px;
-        font-size: 23px !important;
-    }
+.renax-faq-section .renax-faq-card summary::after {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    font-size: 24px !important;
+}
 }
