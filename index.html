@@ -18,55 +18,44 @@ html {
 
 body {
     position: relative;
-    isolation: isolate;
-    background: transparent;
-    color: #ffffff;
+    background: #000;
+    color: #fff;
     overflow-x: hidden;
 }
-/* FONDO ANIMADO GLOBAL RENAX */
+
+/* Fondo animado de toda la página */
 .fondo-liquido-renax {
     position: fixed;
     inset: -5%;
-    z-index: -1;
+   z-index: -1;
     pointer-events: none;
 
-    background-image:
+    background:
         linear-gradient(
             120deg,
-            rgba(0, 0, 0, 0.30),
-            rgba(90, 0, 0, 0.10),
-            rgba(0, 0, 0, 0.35)
+            rgba(0, 0, 0, .15),
+            rgba(100, 0, 0, .08),
+            rgba(0, 0, 0, .20)
         ),
-        url("fondo-rojo-renax.png");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+        url("fondo-rojo-renax.png") center / cover no-repeat;
 
     animation: renaxFondoMovimiento 12s ease-in-out infinite alternate;
+    will-change: transform;
 }
-
 
 @keyframes renaxFondoMovimiento {
     0% {
         transform: scale(1) translate3d(-1%, 0, 0);
     }
-
     50% {
-        transform: scale(1.10) translate3d(1%, -1%, 0);
+        transform: scale(1.08) translate3d(1%, -1%, 0);
     }
-
     100% {
-        transform: scale(1.15) translate3d(-1%, 1%, 0);
+        transform: scale(1.13) translate3d(-1%, 1%, 0);
     }
 }
 
 
-@media (prefers-reduced-motion: reduce) {
-    .fondo-liquido-renax {
-        animation: none;
-    }
-}
         /* MENÚ DE NAVEGACIÓN SUPERIOR */
         .site-header {
             position: fixed;
@@ -1200,7 +1189,8 @@ body {
 </head>
     
 <body>
-
+<!-- FONDO ANIMADO GLOBAL RENAX -->
+<div class="fondo-liquido-renax"></div>
     <!-- ================= MENÚ DE NAVEGACIÓN ================= -->
     <header class="site-header">
         <div class="nav-container">
