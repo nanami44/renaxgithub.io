@@ -205,3 +205,28 @@ body {
         grid-template-columns: 1fr 1fr;
     }
 }
+
+/* TARJETAS DE HISTORIA, ESENCIA Y EVOLUCIÓN */
+.history-cards article {
+    background-color: #ff7518 !important;
+    color: #ffffff !important;
+    border: 1px solid #ff4d00 !important;
+    transition: background-color 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease,
+                transform 0.35s ease;
+}
+
+/* TEXTO BLANCO */
+.history-cards article h3,
+.history-cards article p {
+    color: #ffffff !important;
+}
+
+/* AL PASAR EL RATÓN: ROJO */
+.history-cards article:hover {
+    background-color: #e60000 !important;
+    border-color: #ff2638 !important;
+    box-shadow: 0 0 24px rgba(255, 0, 0, 0.55) !important;
+    transform: translateY(-5px);
+}
