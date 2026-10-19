@@ -84,8 +84,7 @@
         #galeria h2, #proyectos h2 { color: #fff; font-weight: 800; }
         #galeria p, #proyectos p { color: #aaa; }
         #galeria .text-red-600, #proyectos .text-red-600 { color: #ff304b !important; }
-        #galeria .bg-gray-200 { background: #151515 !important; border: 1px solid #292929; }
-        #galeria .text-gray-400 { color: #777 !important; }
+        #galeria .card-galeria { background: #151515 !important; border: 1px solid #292929; }
         #galeria h3 { color: #fff !important; }
         #proyectos { border-color: #292929 !important; }
         #proyectos a.group {
@@ -189,7 +188,7 @@
     <!-- Contenido Principal -->
     <main class="flex-grow">
 
-        <!-- Sección de Portada con la imagen Renax-carrusel02.png integrada -->
+        <!-- Sección de Portada con Renax-carrusel02.png -->
         <section id="portada" class="w-full text-white py-32 md:py-48 px-6 text-center">
             <div class="max-w-4xl mx-auto space-y-6 z-10">
                 <span class="text-xs font-bold uppercase tracking-widest">RENAX · PORTAFOLIO</span>
@@ -201,7 +200,7 @@
             </div>
         </section>
 
-        <!-- Sección de Galería -->
+        <!-- Sección de Galería con tus imágenes nuevas -->
         <section id="galeria" class="px-6 py-24">
             <div class="mb-14 text-center md:text-left">
                 <span class="text-xs font-bold uppercase tracking-widest text-red-600">RENAX / PROYECTOS VISUALES</span>
@@ -210,63 +209,79 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <!-- Imagen 1 a 8 -->
+                
+                <!-- Imagen 1: skenzi-caso.png -->
                 <div class="group cursor-pointer">
-                    <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 1</span>
+                    <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
+                        <img src="skenzi-caso.png" alt="Proyecto Skenzi Caso" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 1</h3>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">Skenzi — Caso de Estudio</h3>
                     <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
+
+                <!-- Imagen 2: DONUT'S BITES-casos-estudio03.png -->
                 <div class="group cursor-pointer">
-                    <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 2</span>
+                    <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
+                        <img src="DONUT'S BITES-casos-estudio03.png" alt="Donut's Bites Caso de Estudio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 2</h3>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">DONUT'S BITES — Estudio Visual</h3>
+                    <p class="text-sm text-gray-500">Branding · Packaging</p>
+                </div>
+
+                <!-- Imagen 3: renzi-empaque.png.png -->
+                <div class="group cursor-pointer">
+                    <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
+                        <img src="renzi-empaque.png.png" alt="Renzi Empaque" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">Renzi — Diseño de Empaque</h3>
+                    <p class="text-sm text-gray-500">Empaque · Identidad</p>
+                </div>
+
+                <!-- Imagen 4: skenzi-bolsas.png -->
+                <div class="group cursor-pointer">
+                    <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
+                        <img src="skenzi-bolsas.png" alt="Skenzi Bolsas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">Skenzi — Línea de Bolsas</h3>
+                    <p class="text-sm text-gray-500">Merchandising · Diseño</p>
+                </div>
+
+                <!-- Imagen 5: DONUT'S -carro.png -->
+                <div class="group cursor-pointer">
+                    <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
+                        <img src="DONUT'S -carro.png" alt="Donut's Carro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">DONUT'S — Vehículo Comercial</h3>
+                    <p class="text-sm text-gray-500">Vehicular · Branding</p>
+                </div>
+
+                <!-- Imagen 6: DONUT'S BITES-galeria 01.png -->
+                <div class="group cursor-pointer">
+                    <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
+                        <img src="DONUT'S BITES-galeria 01.png" alt="Donut's Bites Galería 01" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">DONUT'S BITES — Galería 01</h3>
+                    <p class="text-sm text-gray-500">Concepto · Fotografía</p>
+                </div>
+
+                <!-- Imagen 7: Renax-galeria01.png -->
+                <div class="group cursor-pointer">
+                    <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
+                        <img src="Renax-galeria01.png" alt="Renax Galería 01" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">RENAX — Proyecto Visual 01</h3>
                     <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
+
+                <!-- Imagen 8: Renax-galeria03.png -->
                 <div class="group cursor-pointer">
-                    <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 3</span>
+                    <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
+                        <img src="Renax-galeria03.png" alt="Renax Galería 03" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 3</h3>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">RENAX — Proyecto Visual 03</h3>
                     <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 4</span>
-                    </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 4</h3>
-                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 5</span>
-                    </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 5</h3>
-                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 6</span>
-                    </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 6</h3>
-                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 7</span>
-                    </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 7</h3>
-                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
-                </div>
-                <div class="group cursor-pointer">
-                    <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 8</span>
-                    </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 8</h3>
-                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
-                </div>
+
             </div>
         </section>
 
@@ -367,12 +382,4 @@
 
         <div class="footer-bottom">
             <a href="index.html" class="footer-logo-link" aria-label="Volver al inicio de RENAX">
-                <img src="logo-renax-transparente.png" alt="RENAX" class="footer-logo">
-            </a>
-            <span>© 2026 RENAX. Todos los derechos reservados.</span>
-            <a class="footer-contacto" href="contacto.html">CONTACTO ↗</a>
-        </div>
-    </footer>
-
-</body>
-</html>
+                <img src="logo-renax-transparente
