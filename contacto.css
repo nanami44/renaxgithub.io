@@ -1682,3 +1682,87 @@ h1, h2, h3,
     border: 0 !important;
     border-radius: 0 !important;
 }
+/* FONDO MAPA MUNDIAL - SECCIÓN EVOLUCIÓN RENAX */
+.renax-evolucion {
+    position: relative;
+    width: 100%;
+    min-height: 520px;
+    padding: 90px 8%;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(12, 12, 12, 0.94) 0%,
+            rgba(12, 12, 12, 0.78) 55%,
+            rgba(12, 12, 12, 0.45) 100%
+        ),
+        url("mapa-mundial-renax.png") center center / cover no-repeat;
+
+    display: flex;
+    align-items: center;
+}
+
+/* CONTENIDO SOBRE EL MAPA */
+.renax-evolucion .contenido-evolucion {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* TÍTULO */
+.renax-evolucion h2 {
+    color: #ffffff;
+    font-size: clamp(38px, 6vw, 76px);
+    line-height: 1.05;
+    font-weight: 900;
+    margin: 0 0 25px;
+    text-transform: uppercase;
+}
+
+/* ACENTO ROJO */
+.renax-evolucion h2 span {
+    color: #ff3038;
+}
+
+/* TEXTO DESCRIPTIVO */
+.renax-evolucion p {
+    max-width: 650px;
+    color: #eeeeee;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+/* BOTÓN */
+.renax-evolucion .btn-evolucion {
+    display: inline-block;
+    padding: 15px 26px;
+    border: 1px solid #ff3038;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.renax-evolucion .btn-evolucion:hover {
+    background: #ff3038;
+    color: #ffffff;
+}
+
+/* VERSIÓN PARA CELULAR */
+@media (max-width: 768px) {
+    .renax-evolucion {
+        min-height: 430px;
+        padding: 65px 7%;
+        background-position: center;
+    }
+
+    .renax-evolucion p {
+        font-size: 15px;
+    }
+}
