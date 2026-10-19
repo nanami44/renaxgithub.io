@@ -152,6 +152,12 @@
                     <label>Contraseña</label>
                     <input type="password" id="reg-password" required placeholder="Mínimo 6 caracteres">
                 </div>
+                
+<div class="input-group">
+    <label>Nombre completo</label>
+    <input type="text" id="reg-nombre" required placeholder="Tu nombre completo">
+</div>
+
                 <div class="input-group">
                     <label>Ciudad</label>
                     <input type="text" id="reg-ciudad" required placeholder="Ej. Bogotá">
@@ -184,6 +190,7 @@
 
             <div class="links-container">
                 <button type="button" class="action-link" id="back-to-login-from-forgot">← Volver al inicio de sesión</button>
+    
             </div>
         </div>
     </div>
@@ -192,7 +199,7 @@
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
         import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
-
+import { getFirestore, doc, setDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
         const firebaseConfig = {
             apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
             authDomain: "renax-auth.firebaseapp.com",
@@ -204,8 +211,8 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
-
-const CORREOS_ADMINISTRADORES = [
+const db = getFirestore(app);
+        const CORREOS_ADMINISTRADORES = [
     "naoco2008@gmail.com",
     "renaxcreativit@gmail.com"
 ].map(correo => correo.trim().toLowerCase());
@@ -279,7 +286,7 @@ if (CORREOS_ADMINISTRADORES.includes(correoUsuario)) {
             e.preventDefault();
             regMsg.style.color = "#aaa";
             regMsg.textContent = "Creando cuenta...";
-
+const nombre = document.getElementById('reg-nombre').value.trim();
             const email = document.getElementById('reg-email').value.trim();
             const password = document.getElementById('reg-password').value.trim();
             const ciudad = document.getElementById('reg-ciudad').value.trim();
@@ -288,6 +295,17 @@ if (CORREOS_ADMINISTRADORES.includes(correoUsuario)) {
             try {
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
                 
+const usuario = userCredential.user;
+
+await setDoc(doc(db, "usuarios", usuario.uid), {
+    uid: usuario.uid,
+    nombre: nombre,
+    email: usuario.email,
+    ciudad: ciudad,
+    telefono: telefono,
+    creadoEn: serverTimestamp()
+});
+
                 // Guardar datos adicionales en el LocalStorage para que el dashboard los lea
                 localStorage.setItem('renax_ciudad', ciudad);
                 localStorage.setItem('renax_telefono', telefono);
