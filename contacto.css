@@ -1402,3 +1402,39 @@ h1, h2, h3,
     width: 100% !important;
     box-sizing: border-box !important;
 }
+/* Textos generales, párrafos y descripciones: delgados y normales */
+p, 
+span, 
+small, 
+label, 
+input, 
+textarea, 
+select, 
+.contacto-hero-texto, 
+.contacto-conversacion-texto p, 
+.renax-canales-desc, 
+.renax-faq-card p, 
+.renax-cta-texto {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 400 !important; /* Grosor delgado y normal (no grueso) */
+    letter-spacing: normal !important;
+}
+
+/* Menú de navegación con un grosor medio y elegante */
+.contacto-nav a {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important; 
+    font-size: 14px !important;
+}
+
+/* ÚNICAMENTE los títulos principales llevan la tipografía pesada */
+h1, h2, h3, 
+.contacto-hero h1, 
+.contacto-conversacion h2, 
+.renax-faq-intro h2, 
+.renax-titulo-pesado, 
+.renax-cta-titulo {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 900 !important; /* Montserrat Black (muy grueso) */
+    text-transform: uppercase;
+}
