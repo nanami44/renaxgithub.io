@@ -1512,3 +1512,46 @@ h1, h2, h3,
     font-weight: 900 !important;
 }
 
+/* BOTONES TRANSPARENTES CON BORDE ROJO - RENAX */
+.contacto-link-principal,
+.renax-cta-accion a,
+.btn-enviar-resena {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    padding: 13px 26px !important;
+    background: transparent !important;
+    border: 1.5px solid #ff2a3d !important;
+    border-radius: 50px !important;
+
+    color: #ffffff !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    text-transform: uppercase;
+
+    transition: background 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+.contacto-link-principal:hover,
+.renax-cta-accion a:hover,
+.btn-enviar-resena:hover {
+    background: rgba(255, 42, 61, 0.12) !important;
+    border-color: #ff4052 !important;
+    box-shadow: 0 0 18px rgba(255, 42, 61, 0.2);
+    transform: translateY(-2px);
+}
+
+/* QUITAR SUBRAYADO DE LOS ENLACES */
+.contacto-link-principal span,
+.renax-cta-accion a span {
+    color: #ffffff !important;
+    text-decoration: none !important;
+}
+
