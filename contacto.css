@@ -2028,3 +2028,12 @@ h1, h2, h3,
 .contacto-resenas-seccion .deja-resena-caja::before {
     display: block !important;
 }
+
+/* CENTRAR EL TÍTULO SOBRE EL MAPA DE UBICACIÓN */
+.renax-contacto-mapa h2 {
+    text-align: center !important;
+    width: 100%;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box;
+}
