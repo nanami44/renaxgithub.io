@@ -285,3 +285,13 @@ footer {
         display: none;
     }
 }
+
+/* HACER MÁS VISIBLE EL FONDO NUEVA EVOLUCIÓN */
+.nosotros-renax::before {
+    opacity: 0.85 !important;
+}
+
+/* REDUCIR EL OSCURECIMIENTO DE LA CAPA DE FONDO */
+.nosotros-renax {
+    background-blend-mode: normal;
+}
