@@ -926,7 +926,7 @@ body.contacto-page {
   font-weight: 900;
   text-transform: uppercase;
   margin-bottom: 10px;
-  color: #ffffff;
+ color: #111111 !important;
 }
 
 .deja-resena-caja h3 em {
