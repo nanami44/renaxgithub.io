@@ -337,24 +337,60 @@
                 </div>
             </div>
 
-            <!-- SECCIÓN 4: COTIZACIÓN Y RECIBOS -->
+          <!-- SECCIÓN 4: COTIZACIÓN Y RECIBOS -->
             <div id="seccion-comprobantes" class="panel-section">
-                <h3>Generador de Cotizaciones y Recibos</h3>
-                <p style="font-size:13px;color:#aaa;">Crea comprobantes formales con la imagen corporativa de RENAX.</p>
+                <h3>Generador de Cotizaciones y Recibos - RENAX</h3>
+                <p style="font-size:13px;color:#aaa;">Selecciona los servicios de la agencia, calcula el total automáticamente y genera el documento.</p>
                 
                 <form id="form-comprobante" style="margin-top: 15px;">
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-                        <input type="text" id="comp-cliente" placeholder="Nombre del Cliente / Empresa" required>
-                        <select id="comp-tipo">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom:15px;">
+                        <input type="text" id="comp-cliente" placeholder="Nombre del Cliente / Empresa" required style="margin-bottom:0;">
+                        <select id="comp-tipo" style="margin-bottom:0;">
                             <option value="COTIZACIÓN">Cotización de Servicios</option>
                             <option value="RECIBO DE PAGO">Recibo de Pago</option>
                         </select>
                     </div>
-                    <textarea id="comp-detalle" rows="3" placeholder="Detalle de los servicios (Ej: Diseño de marca + Campaña Ads...)" required></textarea>
-                    <input type="text" id="comp-valor" placeholder="Valor Total (Ej: $500.000 COP)" required>
-                    <button type="button" class="btn-main" onclick="generarComprobante()">Generar Vista Previa / Imprimir 🖨️</button>
+
+                    <p style="font-size: 13px; color: #e74c3c; font-weight: bold; margin-bottom: 8px;">Selecciona los servicios a cotizar:</p>
+                    
+                    <!-- LISTA DE SERVICIOS CON PRECIOS Y CHECKBOXES -->
+                    <div style="background: #0b0b0b; border: 1px solid #333; padding: 15px; border-radius: 8px; max-height: 250px; overflow-y: auto; margin-bottom: 15px; display: flex; flex-direction: column; gap: 10px;">
+                        
+                        <!-- Categoría 1 -->
+                        <p style="margin:0; font-size:12px; color:#aaa; font-weight:bold;">🔍 DIAGNÓSTICO DE MARCA</p>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Auditoría de marca" data-precio="100000"> Auditoría de marca ($100.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Análisis de identidad visual" data-precio="120000"> Análisis de identidad visual ($120.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Análisis de comunicación" data-precio="100000"> Análisis de comunicación ($100.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Identificación de oportunidades" data-precio="130000"> Identificación de oportunidades ($130.000 COP)</label>
+
+                        <!-- Categoría 2 -->
+                        <p style="margin:5px 0 0 0; font-size:12px; color:#aaa; font-weight:bold;">🔄 RENOVACIÓN DE MARCA</p>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Renovación de logotipo" data-precio="350000"> Renovación de logotipo ($350.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Paleta de colores" data-precio="80000"> Paleta de colores ($80.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Tipografías" data-precio="70000"> Tipografías ($70.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Sistema visual" data-precio="150000"> Sistema visual ($150.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Manual de identidad" data-precio="250000"> Manual de identidad ($250.000 COP)</label>
+
+                        <!-- Categoría 3 -->
+                        <p style="margin:5px 0 0 0; font-size:12px; color:#aaa; font-weight:bold;">📱 CONTENIDO PARA REDES SOCIALES</p>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Piezas para redes sociales (Mensual)" data-precio="450000"> Piezas para redes sociales - Pack mensual ($450.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Campañas visuales" data-precio="300000"> Campañas visuales ($300.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Material publicitario" data-precio="200000"> Material publicitario ($200.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Presentaciones corporativas" data-precio="180000"> Presentaciones corporativas ($180.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Piezas digitales e impresas" data-precio="220000"> Piezas digitales e impresas ($220.000 COP)</label>
+
+                        <!-- Categoría 4 -->
+                        <p style="margin:5px 0 0 0; font-size:12px; color:#aaa; font-weight:bold;">🎨 ESTRATEGIA VISUAL</p>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Dirección visual" data-precio="250000"> Dirección visual ($250.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Concepto creativo" data-precio="200000"> Concepto creativo ($200.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Sistema gráfico" data-precio="180000"> Sistema gráfico ($180.000 COP)</label>
+                        <label style="font-size:13px; cursor:pointer;"><input type="checkbox" class="servicio-chk" value="Coherencia de marca" data-precio="150000"> Coherencia de marca ($150.000 COP)</label>
+                    </div>
+
+                    <button type="button" class="btn-main" onclick="generarComprobanteSeleccionado()">Generar Vista Previa del Documento 🖨️</button>
                 </form>
 
+                <!-- VISTA PREVIA IMPRIMIBLE -->
                 <div id="area-impresion" style="display:none;" class="doc-preview">
                     <div style="display:flex; justify-content:space-between; align-items:center;">
                         <h2 style="margin:0;" id="print-titulo">RENAX - COTIZACIÓN</h2>
@@ -363,10 +399,10 @@
                     <p style="margin: 15px 0 5px 0;"><strong>Fecha:</strong> <span id="print-fecha"></span></p>
                     <p style="margin: 0 0 15px 0;"><strong>Cliente:</strong> <span id="print-cliente"></span></p>
                     <hr style="border:0; border-top:1px solid #ccc; margin:15px 0;">
-                    <p><strong>Concepto / Servicios:</strong></p>
-                    <p id="print-detalle" style="background:#f9f9f9; padding:10px; border-radius:4px;"></p>
-                    <h3 style="text-align:right; margin-top:20px; color:#0b0b0b;">Total: <span id="print-valor"></span></h3>
-                    <button onclick="window.print()" class="menu-btn" style="background:#0b0b0b; color:#fff; width:100%; text-align:center; margin-top:20px;">Imprimir o Guardar como PDF</button>
+                    <p><strong>Servicios Seleccionados:</strong></p>
+                    <ul id="print-lista-servicios" style="background:#f9f9f9; padding:15px 25px; border-radius:4px; color:#333; margin:0;"></ul>
+                    <h3 style="text-align:right; margin-top:20px; color:#0b0b0b;">Total a Pagar: <span id="print-valor" style="color:#e74c3c;"></span></h3>
+                    <button onclick="window.print()" class="menu-btn" style="background:#0b0b0b; color:#fff; width:100%; text-align:center; margin-top:20px; border:none;">Imprimir o Guardar como PDF 📄</button>
                 </div>
             </div>
 
