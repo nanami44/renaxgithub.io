@@ -124,20 +124,13 @@
     text-align: center;
 }
 
-
 .history-section h2 {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: clamp(38px, 5.2vw, 76px) !important;
-    font-weight: 900 !important;
-    line-height: 0.98 !important;
-    letter-spacing: -2.5px !important;
-    text-transform: uppercase !important;
-    color: #ffffff !important;
-    text-align: center;
-    max-width: 1100px;
-    margin: 0 auto 50px;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 50px;
 }
-
 
 .history-cards {
     display: flex;
@@ -191,29 +184,17 @@
     position: relative;
 }
 
-
 .work-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(110px, 18vw, 280px);
-    font-weight: 900;
-    letter-spacing: -0.07em;
-    line-height: 0.85;
-
-color: rgba(220, 0, 20, 0.85);
-
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 800;
+    color: rgba(255, 255, 255, 0.03);
     position: absolute;
-    top: 35px;
-    left: 0;
-
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-
+    top: 20px;
+    left: 5%;
     z-index: 0;
     pointer-events: none;
     user-select: none;
-    white-space: nowrap;
 }
-
 
 .work-content {
     position: relative;
@@ -341,18 +322,12 @@ color: rgba(220, 0, 20, 0.85);
     letter-spacing: 3px;
 }
 
-
 .renax-faq h2 {
-    margin: 14px 0 30px;
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: clamp(48px, 7vw, 96px) !important;
-    font-weight: 900 !important;
-    line-height: 0.95 !important;
-    letter-spacing: -3px !important;
-    text-transform: uppercase !important;
-    color: #ffffff !important;
+    margin: 14px 0;
+    font-family: 'Baloo 2', sans-serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 800;
 }
-
 
 .renax-faq h2 span {
     color: #e0002b;
@@ -650,27 +625,5 @@ color: rgba(220, 0, 20, 0.85);
     border-color: #ff3030 !important;
     box-shadow: 0 0 18px rgba(255, 0, 0, 0.45);
     transform: translateY(-3px);
-}
-
-/* EFECTO BLANCO PARA LAS TARJETAS DE HISTORIA */
-
-.history-cards article {
-    transition: background 0.4s ease,
-                color 0.4s ease,
-                border-color 0.4s ease,
-                transform 0.4s ease,
-                box-shadow 0.4s ease;
-}
-
-.history-cards article:hover {
-    background: #ffffff !important;
-    border-color: #ffffff !important;
-    transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.20);
-}
-
-.history-cards article:hover h3,
-.history-cards article:hover p {
-    color: #000000 !important;
 }
 
