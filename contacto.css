@@ -1771,3 +1771,36 @@ h1, h2, h3,
         gap: 8px;
     }
 }
+
+/* CTA RENAX A TODO EL ANCHO DE LA PÁGINA */
+.renax-cta-section {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+
+    /* Elimina los espacios laterales */
+    box-sizing: border-box;
+    border-radius: 0 !important;
+
+    /* Conserva el mapa como fondo */
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Evita que el contenedor principal limite el ancho */
+.contacto-main {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .renax-cta-section {
+        width: 100% !important;
+        padding-left: 7% !important;
+        padding-right: 7% !important;
+    }
+}
