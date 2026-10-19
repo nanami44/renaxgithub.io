@@ -859,14 +859,67 @@ body.contacto-page {
   margin: 80px auto 0;
 }
 
+
+/* CUADRO DE RESEÑAS: FONDO BLANCO */
 .deja-resena-caja {
-  background: rgba(12, 12, 12, 0.85);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(194, 56, 74, 0.3);
-  border-radius: 24px;
-  padding: 40px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    background: #ffffff !important;
+    backdrop-filter: none !important;
+    border: 1px solid #e5e5e5 !important;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    color: #111111 !important;
 }
+
+/* TÍTULO NEGRO */
+.deja-resena-caja h3,
+.deja-resena-caja h3 span {
+    color: #111111 !important;
+}
+
+/* RENAX EN ROJO */
+.deja-resena-caja h3 em {
+    color: #c2384a !important;
+    font-style: normal;
+}
+
+/* TEXTO DESCRIPTIVO */
+.deja-resena-caja p {
+    color: #444444 !important;
+}
+
+/* CAMPOS DE TEXTO */
+.deja-resena-caja .input-estilo {
+    background: #f7f7f7 !important;
+    color: #111111 !important;
+    border: 1px solid #d6d6d6 !important;
+}
+
+/* TEXTO DE AYUDA DENTRO DE LOS CAMPOS */
+.deja-resena-caja .input-estilo::placeholder {
+    color: #777777 !important;
+    opacity: 1;
+}
+
+/* BORDE DE LOS CAMPOS AL SELECCIONARLOS */
+.deja-resena-caja .input-estilo:focus {
+    background: #ffffff !important;
+    border-color: #c2384a !important;
+    box-shadow: 0 0 12px rgba(194, 56, 74, 0.15);
+}
+
+/* CONSERVAR EL BOTÓN CON SU ESTILO ROJO ACTUAL */
+.deja-resena-caja .btn-enviar-resena {
+    background: transparent !important;
+    border: 1.5px solid #ff2a3d !important;
+    color: #111111 !important;
+}
+
+.deja-resena-caja .btn-enviar-resena:hover {
+    background: rgba(255, 42, 61, 0.12) !important;
+    border-color: #ff4052 !important;
+}
+
 
 .deja-resena-caja h3 {
   font-size: 1.8rem;
