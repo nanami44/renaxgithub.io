@@ -1804,3 +1804,81 @@ h1, h2, h3,
         padding-right: 7% !important;
     }
 }
+
+/* CINTURÓN ROJO ANIMADO DE UBICACIÓN */
+.renax-cinturon-ubicacion {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(100deg, #8d0007, #ff1825, #a90009);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 21px 0;
+    box-sizing: border-box;
+}
+
+/* PISTA QUE SE DESPLAZA CONTINUAMENTE */
+.renax-cinturon-pista {
+    display: flex;
+    width: max-content;
+    animation: renaxCinturonMovimiento 32s linear infinite;
+    will-change: transform;
+}
+
+/* CADA REPETICIÓN DEL MENSAJE */
+.renax-cinturon-grupo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 32px;
+    padding-right: 32px;
+    white-space: nowrap;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(13px, 1.4vw, 18px);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* PALABRA PRINCIPAL */
+.renax-cinturon-grupo span:first-child {
+    font-size: clamp(18px, 2vw, 25px);
+    font-weight: 900;
+}
+
+/* SEPARADORES */
+.renax-cinturon-punto {
+    color: #ffffff;
+    font-size: 18px;
+}
+
+/* MOVIMIENTO CONTINUO HACIA LA IZQUIERDA */
+@keyframes renaxCinturonMovimiento {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* CELULARES */
+@media (max-width: 768px) {
+    .renax-cinturon-ubicacion {
+        padding: 17px 0;
+    }
+
+    .renax-cinturon-grupo {
+        gap: 20px;
+        padding-right: 20px;
+        letter-spacing: 1px;
+    }
+}
+
+/* RESPETA LA PREFERENCIA DE MOVIMIENTO REDUCIDO */
+@media (prefers-reduced-motion: reduce) {
+    .renax-cinturon-pista {
+        animation: none;
+    }
+}
