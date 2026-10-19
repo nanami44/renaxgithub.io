@@ -2377,3 +2377,20 @@ body.contacto-page .contacto-hero-contenido {
     content: none !important;
     display: none !important;
 }
+
+/* SOLO TEXTO NEGRO EN MENÚ E INICIO DEL PIE DE PÁGINA */
+
+/* Título MENÚ */
+.contacto-footer .contacto-footer-titulo-menu {
+    color: #000000 !important;
+}
+
+/* Título INICIO y sus enlaces */
+.contacto-footer .contacto-footer-grid
+.contacto-footer-col:first-child h2,
+.contacto-footer .contacto-footer-grid
+.contacto-footer-col:first-child h2 a,
+.contacto-footer .contacto-footer-grid
+.contacto-footer-col:first-child > a {
+    color: #000000 !important;
+}
