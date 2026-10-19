@@ -12,19 +12,8 @@
   <!-- Tipografías e Iconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <style>
-    /* Reglas tipográficas aplicadas estrictamente según lo solicitado */
-    body, p, span, a, input, select, textarea, label, button, small, strong {
-      font-family: 'Plus Jakarta Sans', sans-serif !important;
-    }
-    h1, h2, h3, h4, h5, h6, .renax-titulo-pesado, .titulo-do-more {
-      font-family: 'Montserrat', sans-serif !important;
-      font-weight: 900 !important;
-    }
-  </style>
 </head>
 
 <body class="contacto-page">
@@ -46,8 +35,8 @@
     <div class="contacto-header-acciones">
       <button type="button" class="contacto-idioma" id="contactoIdioma" aria-label="Cambiar idioma">ESP</button>
       <a href="login.html" class="contacto-login" id="navLoginBtn">
-  <span data-lang="loginButton">INICIAR SESIÓN</span>
-</a>
+        <span data-lang="loginButton">INICIAR SESIÓN</span>
+      </a>
       <button class="contacto-menu-toggle" id="contactoMenuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="contactoNav">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
@@ -58,27 +47,25 @@
   <main class="contacto-main">
 
     <!-- HERO / PORTADA -->
-<section class="contacto-hero fondo-esferas-renax" id="contacto-inicio" aria-labelledby="contactoHeroTitulo">
-    
-    <!-- Contenedor de las esferas luminosas -->
-    <div class="esferas-container">
+    <section class="contacto-hero fondo-esferas-renax" id="contacto-inicio" aria-labelledby="contactoHeroTitulo">
+      <!-- Contenedor de las esferas luminosas -->
+      <div class="esferas-container">
         <div class="esfera esfera-1"></div>
         <div class="esfera esfera-2"></div>
-    </div>
+      </div>
+      
       <div class="contacto-hero-contenido">
         <p class="contacto-eyebrow" data-lang="heroEyebrow"><span class="indicador-punto"></span> RENAX / CONTÁCTANOS</p>
         
-      
-<h1 id="contactoHeroTitulo" class="titulo-do-more">
-  <span class="titulo-linea">
-    <span class="texto-solido" data-lang="contactTitle">HABLEMOS</span>
-  </span>
-  <span class="titulo-linea">
-    <span class="texto-contorno" data-lang="contactTitle2">DE TU</span>
-    <em class="texto-solido texto-rojo" data-lang="contactTitle3">MARCA.</em>
-  </span>
-</h1>
-
+        <h1 id="contactoHeroTitulo" class="titulo-do-more">
+          <span class="titulo-linea">
+            <span class="texto-solido" data-lang="contactTitle">HABLEMOS</span>
+          </span>
+          <span class="titulo-linea">
+            <span class="texto-contorno" data-lang="contactTitle2">DE TU</span>
+            <em class="texto-solido texto-rojo" data-lang="contactTitle3">MARCA.</em>
+          </span>
+        </h1>
 
         <p class="contacto-hero-texto" data-lang="contactDescription">
           Cada marca tiene una historia que contar. Cuéntanos la tuya y exploremos cómo fortalecer su identidad, modernizar su imagen y proyectarla hacia nuevas oportunidades sin perder su esencia.
@@ -99,11 +86,6 @@
 
     <!-- SECCIÓN 01: FORMULARIO DINÁMICO DE CONTACTO -->
     <section class="contacto-conversacion" id="contacto-formulario" aria-labelledby="contactoConversacionTitulo">
-      <div class="contacto-seccion-meta">
-        <span class="numero-paso">01</span>
-        <span class="etiqueta-paso" data-lang="firstStep">EL PRIMER PASO</span>
-      </div>
-
       <div class="contacto-conversacion-grid">
         <div class="contacto-conversacion-texto">
           <h2 id="contactoConversacionTitulo">
@@ -186,12 +168,6 @@
 
     <!-- SECCIÓN 02: CANALES DE ATENCIÓN -->
     <section class="contacto-canales-seccion">
-      <div class="contacto-seccion-meta">
-        <span class="numero-paso">02</span>
-        <span class="contacto-hero-linea"></span>
-        <span data-lang="channelsTag">CANALES DE ATENCIÓN</span>
-      </div>
-
       <div class="contacto-canales-intro">
         <h2 class="renax-titulo-pesado" data-lang="channelsTitle">
           Conectemos con tu <em>próxima idea.</em>
@@ -203,25 +179,19 @@
 
       <div class="contacto-logos-horizontal">
         <a href="https://wa.me/573246464290" target="_blank" class="logo-canal-item" title="WhatsApp Oficial">
-        <img src="whasap.png" alt="WhatsApp" class="logo-canal-img">
-    </a>
+          <img src="whasap.png" alt="WhatsApp" class="logo-canal-img">
+        </a>
         <a href="mailto:renaxcreativit@gmail.com" class="logo-canal-item" title="Correo Oficial">
           <img src="Gmail.png" alt="Gmail" class="logo-canal-img">
         </a>
         <a href="https://www.facebook.com/profile.php?id=61595122299004" target="_blank" class="logo-canal-item" title="Facebook Oficial">
-        <img src="Facebook.png" alt="Facebook" class="logo-canal-img">
-    </a>
+          <img src="Facebook.png" alt="Facebook" class="logo-canal-img">
+        </a>
       </div>
     </section>
 
     <!-- SECCIÓN 03: RESEÑAS -->
     <section class="contacto-resenas-seccion">
-      <div class="contacto-seccion-meta">
-        <span class="numero-paso">03</span>
-        <span class="contacto-hero-linea"></span>
-        <span data-lang="reviewsTag">LO QUE DICEN NUESTROS CLIENTES</span>
-      </div>
-
       <div class="contacto-carrusel-contenedor">
         <div class="contacto-carrusel-track">
           <!-- Tarjeta 1: Luis -->
@@ -331,12 +301,6 @@
       
     <!-- SECCIÓN 04: PREGUNTAS FRECUENTES (FAQ) -->
     <section class="renax-faq-section">
-      <div class="contacto-seccion-meta">
-        <span class="numero-paso">04</span>
-        <span class="contacto-hero-linea"></span>
-        <span data-lang="faqTag">RESOLVEMOS TUS DUDAS</span>
-      </div>
-
       <div class="renax-faq-intro">
         <h2 data-lang="faqTitle">Preguntas <em>Frecuentes.</em></h2>
         <p data-lang="faqDesc">Todo lo que necesitas saber sobre nuestros procesos de transformación visual...</p>
@@ -362,9 +326,7 @@
 
     <!-- MAPA DE UBICACIÓN COMPACTO -->
     <section class="renax-contacto-mapa" style="width: 100%; max-width: 700px; margin: 40px auto; padding: 0 20px; text-align: left;">
-      <div class="srv-seccion-meta" style="display: none;"><span>05</span><span>UBICACIÓN</span></div>
-      
-      <h2 style="font-size: clamp(22px, 3vw, 32px); font-weight: 900; color: #fff; margin-bottom: 15px; text-transform: uppercase;">
+      <h2 style="font-family: 'Montserrat', sans-serif !important; font-weight: 900 !important; font-size: clamp(22px, 3vw, 32px); color: #fff; margin-bottom: 15px; text-transform: uppercase;">
         NUESTRA <span style="color: #ff2a2a;">UBICACIÓN</span>
       </h2>
       
@@ -383,24 +345,20 @@
 
     <!-- SECCIÓN FINAL: LLAMADO A LA ACCIÓN (CTA) -->
     <section class="renax-cta-section">
-      <div class="contacto-seccion-meta">
-        <span class="numero-paso">06</span>
-        <span class="contacto-hero-linea"></span>
-        <span data-lang="ctaTag">EL SIGUIENTE PASO</span>
-      </div>
-
       <div class="renax-cta-contenido">
-        <h2 class="renax-titulo-pesado">
+        <h2 class="renax-titulo-pesado renax-cta-titulo">
           <span data-lang="ctaTitlePart1">TU HISTORIA</span><br>
           <span data-lang="ctaTitlePart2">MERECE</span> <em data-lang="ctaTitlePart3">EVOLUCIONAR.</em>
         </h2>
-        <p data-lang="ctaDesc">
+        <p class="renax-cta-texto" data-lang="ctaDesc">
           Las marcas que evolucionan no tienen que renunciar a lo que las hace especiales. En RENAX trabajamos para que su historia siga creciendo.
         </p>
-        <a href="contacto.html" class="contacto-link-principal">
-          <span data-lang="ctaBtn">COMENZAR AHORA</span>
-          <span>↗</span>
-        </a>
+        <div class="renax-cta-accion">
+          <a href="contacto.html" class="contacto-link-principal">
+            <span data-lang="ctaBtn">COMENZAR AHORA</span>
+            <span>↗</span>
+          </a>
+        </div>
       </div>
 
       <div class="renax-cta-frase-final">
@@ -512,7 +470,7 @@
         "heroEyebrow": "RENAX / CONTACT US",
         "contactTitle": "LET'S TALK",
         "contactTitle2": "ABOUT YOUR BRAND.",
-         "contactTitle3": "BRAND.",
+        "contactTitle3": "BRAND.",
         "contactDescription": "Each brand has a story to tell. Tell us yours and let's explore how to strengthen its identity, modernize its image, and project it toward new opportunities without losing its essence.",
         "contactButton": "START CONVERSATION",
         "contactIndicator": "01 / CONTACT",
@@ -655,6 +613,8 @@
       }
     });
   </script>
+
+  <!-- FIREBASE AUTH SCRIPTS -->
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
@@ -676,20 +636,19 @@
     onAuthStateChanged(auth, (user) => {
         if (navLoginBtn) {
             if (user) {
-                // Si ya inició sesión
                 navLoginBtn.href = "dashboard.html";
                 const span = navLoginBtn.querySelector('span');
                 if (span) span.textContent = "MI PANEL";
             } else {
-                // Si no ha iniciado sesión
                 navLoginBtn.href = "login.html";
                 const span = navLoginBtn.querySelector('span');
                 if (span) span.textContent = "INICIAR SESIÓN";
             }
         }
     });
-</script>
- <script type="module">
+  </script>
+
+  <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
@@ -709,11 +668,11 @@
         if (user) {
             const emailInput = document.getElementById('email');
             if (emailInput && user.email) {
-                emailInput.value = user.email; // Rellena el correo automáticamente
-                emailInput.readOnly = true;    // Opcional: Evita que lo cambien si ya está logueados
+                emailInput.value = user.email;
+                emailInput.readOnly = true;
             }
         }
     });
-</script>
+  </script>
 </body>
 </html>
