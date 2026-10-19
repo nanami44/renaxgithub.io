@@ -157,15 +157,25 @@ body.contacto-page {
 /* ==========================================================
    HERO / PORTADA DE CONTACTO
    ========================================================== */
+
+
 .contacto-hero {
-  min-height: 85vh;
-  padding: 140px 5% 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-  max-width: 1400px;
-  margin: 0 auto;
+   min-height: 100vh;
+   width: 100%;
+   max-width: 100%;
+   margin: 0;
+   padding: 140px 5% 60px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   position: relative;
+   box-sizing: border-box;
+   background-image:
+       linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.20)),
+       url("fondo-contacto.png");
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
 }
 
 .contacto-eyebrow {
