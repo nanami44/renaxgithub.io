@@ -47,8 +47,9 @@
         .renax-lang-button {
             border: 0; border-radius: 999px; padding: 8px 13px;
             background: #fff; color: #080808; font-size: 11px; font-weight: 800;
-            cursor: pointer;
+            cursor: pointer; transition: background 0.2s ease;
         }
+        .renax-lang-button:hover { background: #e0e0e0; }
         .renax-login-button {
             display: inline-flex; align-items: center; justify-content: center;
             padding: 11px 18px; border-radius: 999px; background: #ed0018;
@@ -171,16 +172,16 @@
             </a>
 
             <nav class="renax-nav-links" aria-label="Navegación principal">
-                <a href="index.html">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="portafolio.html" aria-current="page">Portafolio</a>
-                <a href="servicios.html">Servicios</a>
-                <a href="contacto.html">Contáctanos</a>
+                <a href="index.html" data-i18n="nav-inicio">Inicio</a>
+                <a href="nosotros.html" data-i18n="nav-nosotros">Nosotros</a>
+                <a href="portafolio.html" aria-current="page" data-i18n="nav-portafolio">Portafolio</a>
+                <a href="servicios.html" data-i18n="nav-servicios">Servicios</a>
+                <a href="contacto.html" data-i18n="nav-contacto">Contáctanos</a>
             </nav>
 
             <div class="renax-nav-actions">
-                <button class="renax-lang-button" type="button" aria-label="Idioma español">ESP</button>
-                <a href="contacto.html" class="renax-login-button">Iniciar sesión</a>
+                <button id="langToggleBtn" class="renax-lang-button" type="button" aria-label="Cambiar idioma" onclick="toggleLanguage()">ESP</button>
+                <a href="contacto.html" class="renax-login-button" data-i18n="btn-login">Iniciar sesión</a>
             </div>
         </div>
     </header>
@@ -188,143 +189,143 @@
     <!-- Contenido Principal -->
     <main class="flex-grow">
 
-        <!-- Sección de Portada con Renax-carrusel02.png -->
+        <!-- Sección de Portada -->
         <section id="portada" class="w-full text-white py-32 md:py-48 px-6 text-center">
             <div class="max-w-4xl mx-auto space-y-6 z-10">
-                <span class="text-xs font-bold uppercase tracking-widest">RENAX · PORTAFOLIO</span>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight">PORTAFOLIO RENAX: IDENTIDAD, DISEÑO Y EVOLUCIÓN</h1>
-                <p class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto">Explora proyectos donde renovamos identidades visuales sin perder la esencia de cada marca.</p>
+                <span class="text-xs font-bold uppercase tracking-widest" data-i18n="hero-tag">RENAX · PORTAFOLIO</span>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight" data-i18n="hero-title">PORTAFOLIO RENAX: IDENTIDAD, DISEÑO Y EVOLUCIÓN</h1>
+                <p class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto" data-i18n="hero-desc">Explora proyectos donde renovamos identidades visuales sin perder la esencia de cada marca.</p>
                 <div class="pt-6">
-                    <a href="#proyectos" class="btn-portada inline-block font-medium px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-wider shadow-lg">Ver Proyectos</a>
+                    <a href="#proyectos" class="btn-portada inline-block font-medium px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-wider shadow-lg" data-i18n="hero-btn">Ver Proyectos</a>
                 </div>
             </div>
         </section>
 
-        <!-- Sección de Galería con tus imágenes nuevas -->
+        <!-- Sección de Galería -->
         <section id="galeria" class="px-6 py-24">
             <div class="mb-14 text-center md:text-left">
-                <span class="text-xs font-bold uppercase tracking-widest text-red-600">RENAX / PROYECTOS VISUALES</span>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-1">Proyectos visuales</h2>
-                <p class="text-gray-500 text-sm mt-2">Una selección de identidades, conceptos y piezas desarrolladas.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-red-600" data-i18n="galeria-tag">RENAX / PROYECTOS VISUALES</span>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-1" data-i18n="galeria-title">Proyectos visuales</h2>
+                <p class="text-gray-500 text-sm mt-2" data-i18n="galeria-desc">Una selección de identidades, conceptos y piezas desarrolladas.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
                 
-                <!-- Imagen 1: skenzi-caso.png -->
+                <!-- Imagen 1 -->
                 <div class="group cursor-pointer">
                     <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
                         <img src="skenzi-caso.png" alt="Proyecto Skenzi Caso" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">Skenzi — Caso de Estudio</h3>
-                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors" data-i18n="gal-1-title">Skenzi — Caso de Estudio</h3>
+                    <p class="text-sm text-gray-500" data-i18n="gal-1-sub">Identidad visual · Diseño</p>
                 </div>
 
-                <!-- Imagen 2: DONUT'S BITES-casos-estudio03.png -->
+                <!-- Imagen 2 -->
                 <div class="group cursor-pointer">
                     <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
                         <img src="DONUT'S BITES-casos-estudio03.png" alt="Donut's Bites Caso de Estudio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">DONUT'S BITES — Estudio Visual</h3>
-                    <p class="text-sm text-gray-500">Branding · Packaging</p>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors" data-i18n="gal-2-title">DONUT'S BITES — Estudio Visual</h3>
+                    <p class="text-sm text-gray-500" data-i18n="gal-2-sub">Branding · Packaging</p>
                 </div>
 
-                <!-- Imagen 3: renzi-empaque.png.png -->
+                <!-- Imagen 3 -->
                 <div class="group cursor-pointer">
                     <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
                         <img src="renzi-empaque.png.png" alt="Renzi Empaque" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">Renzi — Diseño de Empaque</h3>
-                    <p class="text-sm text-gray-500">Empaque · Identidad</p>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors" data-i18n="gal-3-title">Renzi — Diseño de Empaque</h3>
+                    <p class="text-sm text-gray-500" data-i18n="gal-3-sub">Empaque · Identidad</p>
                 </div>
 
-                <!-- Imagen 4: skenzi-bolsas.png -->
+                <!-- Imagen 4 -->
                 <div class="group cursor-pointer">
                     <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
                         <img src="skenzi-bolsas.png" alt="Skenzi Bolsas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">Skenzi — Línea de Bolsas</h3>
-                    <p class="text-sm text-gray-500">Merchandising · Diseño</p>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors" data-i18n="gal-4-title">Skenzi — Línea de Bolsas</h3>
+                    <p class="text-sm text-gray-500" data-i18n="gal-4-sub">Merchandising · Diseño</p>
                 </div>
 
-                <!-- Imagen 5: DONUT'S -carro.png -->
+                <!-- Imagen 5 -->
                 <div class="group cursor-pointer">
                     <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
                         <img src="DONUT'S -carro.png" alt="Donut's Carro" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">DONUT'S — Vehículo Comercial</h3>
-                    <p class="text-sm text-gray-500">Vehicular · Branding</p>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors" data-i18n="gal-5-title">DONUT'S — Vehículo Comercial</h3>
+                    <p class="text-sm text-gray-500" data-i18n="gal-5-sub">Vehicular · Branding</p>
                 </div>
 
-                <!-- Imagen 6: DONUT'S BITES-galeria 01.png -->
+                <!-- Imagen 6 -->
                 <div class="group cursor-pointer">
                     <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
                         <img src="DONUT'S BITES-galeria 01.png" alt="Donut's Bites Galería 01" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">DONUT'S BITES — Galería 01</h3>
-                    <p class="text-sm text-gray-500">Concepto · Fotografía</p>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors" data-i18n="gal-6-title">DONUT'S BITES — Galería 01</h3>
+                    <p class="text-sm text-gray-500" data-i18n="gal-6-sub">Concepto · Fotografía</p>
                 </div>
 
-                <!-- Imagen 7: Renax-galeria01.png -->
+                <!-- Imagen 7 -->
                 <div class="group cursor-pointer">
                     <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
                         <img src="Renax-galeria01.png" alt="Renax Galería 01" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">RENAX — Proyecto Visual 01</h3>
-                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors" data-i18n="gal-7-title">RENAX — Proyecto Visual 01</h3>
+                    <p class="text-sm text-gray-500" data-i18n="gal-7-sub">Identidad visual · Diseño</p>
                 </div>
 
-                <!-- Imagen 8: Renax-galeria03.png -->
+                <!-- Imagen 8 -->
                 <div class="group cursor-pointer">
                     <div class="card-galeria w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl">
                         <img src="Renax-galeria03.png" alt="Renax Galería 03" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
                     </div>
-                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors">RENAX — Proyecto Visual 03</h3>
-                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
+                    <h3 class="font-semibold text-lg group-hover:text-red-600 transition-colors" data-i18n="gal-8-title">RENAX — Proyecto Visual 03</h3>
+                    <p class="text-sm text-gray-500" data-i18n="gal-8-sub">Identidad visual · Diseño</p>
                 </div>
 
             </div>
         </section>
 
-        <!-- Sección de Proyectos -->
+        <!-- Sección de Proyectos Destacados -->
         <section id="proyectos" class="px-6 py-24 border-t border-gray-200">
             <div class="mb-14">
-                <span class="text-xs font-bold uppercase tracking-widest text-red-600">TRABAJO DESTACADO</span>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-1">Proyectos Destacados</h2>
-                <p class="text-gray-500 text-sm mt-2">Explora los proyectos de RENAX y descubre cómo evoluciona cada identidad.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-red-600" data-i18n="proy-tag">TRABAJO DESTACADO</span>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-1" data-i18n="proy-title">Proyectos Destacados</h2>
+                <p class="text-gray-500 text-sm mt-2" data-i18n="proy-desc">Explora los proyectos de RENAX y descubre cómo evoluciona cada identidad.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <a href="proyecto-skenzi.html"class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
+                <a href="proyecto-skenzi.html" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 01</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
                     <h3 class="text-3xl md:text-5xl font-bold tracking-tight">Skenzi</h3>
-                    <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
+                    <p class="text-sm text-gray-500 mt-4" data-i18n="ver-proyecto">Ver proyecto</p>
                 </a>
-                <a href="dia-matematicas.html"class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
+                <a href="dia-matematicas.html" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 02</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight">Día de las Matemáticas</h3>
-                    <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight" data-i18n="p2-name">Día de las Matemáticas</h3>
+                    <p class="text-sm text-gray-500 mt-4" data-i18n="ver-proyecto">Ver proyecto</p>
                 </a>
-                <a href="dia-especialidades.html"class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
+                <a href="dia-especialidades.html" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 03</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight">Día de las Especialidades</h3>
-                    <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight" data-i18n="p3-name">Día de las Especialidades</h3>
+                    <p class="text-sm text-gray-500 mt-4" data-i18n="ver-proyecto">Ver proyecto</p>
                 </a>
-                <a href="donuts-bites.html"class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
+                <a href="donuts-bites.html" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 04</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
                     <h3 class="text-3xl md:text-5xl font-bold tracking-tight">DONUT'S BITES</h3>
-                    <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
+                    <p class="text-sm text-gray-500 mt-4" data-i18n="ver-proyecto">Ver proyecto</p>
                 </a>
             </div>
         </section>
@@ -334,52 +335,204 @@
     <!-- Pie de página -->
     <footer class="renax-footer" id="footer-renax">
         <div class="footer-topbar">
-            <span class="footer-titulo">MENÚ</span>
-            <a class="footer-explora" href="index.html">EXPLORA RENAX <span aria-hidden="true">↘</span></a>
+            <span class="footer-titulo" data-i18n="f-menu">MENÚ</span>
+            <a class="footer-explora" href="index.html"><span data-i18n="f-explora">EXPLORA RENAX</span> <span aria-hidden="true">↘</span></a>
         </div>
 
         <div class="footer-secciones">
             <div class="footer-column">
-                <span class="footer-column-title">INICIO</span>
+                <span class="footer-column-title" data-i18n="f-c1-title">INICIO</span>
                 <nav class="footer-menu-links">
-                    <a href="index.html">Expertos en transformar marcas</a>
-                    <a href="index.html#esencia-marca">Vuelve a destacar sin perder tu esencia</a>
-                    <a href="index.html#esencia-marca">Tu historia merece una imagen que esté a su altura</a>
+                    <a href="index.html" data-i18n="f-c1-l1">Expertos en transformar marcas</a>
+                    <a href="index.html#esencia-marca" data-i18n="f-c1-l2">Vuelve a destacar sin perder tu esencia</a>
+                    <a href="index.html#esencia-marca" data-i18n="f-c1-l3">Tu historia merece una imagen que esté a su altura</a>
                 </nav>
             </div>
             <div class="footer-column">
-                <span class="footer-column-title">NOSOTROS</span>
+                <span class="footer-column-title" data-i18n="f-c2-title">NOSOTROS</span>
                 <nav class="footer-menu-links">
-                    <a href="nosotros.html">Quiénes somos</a>
-                    <a href="nosotros.html#vision">Visión</a>
-                    <a href="nosotros.html#mision">Misión</a>
-                    <a href="nosotros.html#porque-renax">¿Por qué RENAX?</a>
+                    <a href="nosotros.html" data-i18n="f-c2-l1">Quiénes somos</a>
+                    <a href="nosotros.html#vision" data-i18n="f-c2-l2">Visión</a>
+                    <a href="nosotros.html#mision" data-i18n="f-c2-l3">Misión</a>
+                    <a href="nosotros.html#porque-renax" data-i18n="f-c2-l4">¿Por qué RENAX?</a>
                 </nav>
             </div>
             <div class="footer-column">
-                <span class="footer-column-title">PORTAFOLIO</span>
+                <span class="footer-column-title" data-i18n="f-c3-title">PORTAFOLIO</span>
                 <nav class="footer-menu-links">
-                    <a href="portafolio.html">Proyectos y trabajos realizados</a>
-                    <a href="portafolio.html#proyectos">Casos de estudio</a>
+                    <a href="portafolio.html" data-i18n="f-c3-l1">Proyectos y trabajos realizados</a>
+                    <a href="portafolio.html#proyectos" data-i18n="f-c3-l2">Casos de estudio</a>
                 </nav>
             </div>
             <div class="footer-column">
-                <span class="footer-column-title">SERVICIOS</span>
+                <span class="footer-column-title" data-i18n="f-c4-title">SERVICIOS</span>
                 <nav class="footer-menu-links">
-                    <a href="servicios.html">Diagnóstico de marca</a>
-                    <a href="servicios.html">Identidad visual</a>
-                    <a href="servicios.html">Comunicación</a>
-                    <a href="servicios.html">Estrategia visual</a>
+                    <a href="servicios.html" data-i18n="f-c4-l1">Diagnóstico de marca</a>
+                    <a href="servicios.html" data-i18n="f-c4-l2">Identidad visual</a>
+                    <a href="servicios.html" data-i18n="f-c4-l3">Comunicación</a>
+                    <a href="servicios.html" data-i18n="f-c4-l4">Estrategia visual</a>
                 </nav>
             </div>
             <div class="footer-column">
-                <span class="footer-column-title">CONTACTO</span>
+                <span class="footer-column-title" data-i18n="f-c5-title">CONTACTO</span>
                 <nav class="footer-menu-links">
-                    <a href="contacto.html">Hablemos de tu proyecto</a>
+                    <a href="contacto.html" data-i18n="f-c5-l1">Hablemos de tu proyecto</a>
                 </nav>
             </div>
         </div>
 
         <div class="footer-bottom">
             <a href="index.html" class="footer-logo-link" aria-label="Volver al inicio de RENAX">
-                <img src="logo-renax-transparente
+                <img src="logo-renax-transparente.png" alt="RENAX" class="footer-logo">
+            </a>
+            <span data-i18n="f-copy">© 2026 RENAX. Todos los derechos reservados.</span>
+            <a class="footer-contacto" href="contacto.html" data-i18n="f-contact-btn">CONTACTO ↗</a>
+        </div>
+    </footer>
+
+    <!-- Script JavaScript para gestionar la traducción al hacer clic en el botón -->
+    <script>
+        const translations = {
+            es: {
+                "nav-inicio": "Inicio",
+                "nav-nosotros": "Nosotros",
+                "nav-portafolio": "Portafolio",
+                "nav-servicios": "Servicios",
+                "nav-contacto": "Contáctanos",
+                "btn-login": "Iniciar sesión",
+                "hero-tag": "RENAX · PORTAFOLIO",
+                "hero-title": "PORTAFOLIO RENAX: IDENTIDAD, DISEÑO Y EVOLUCIÓN",
+                "hero-desc": "Explora proyectos donde renovamos identidades visuales sin perder la esencia de cada marca.",
+                "hero-btn": "Ver Proyectos",
+                "galeria-tag": "RENAX / PROYECTOS VISUALES",
+                "galeria-title": "Proyectos visuales",
+                "galeria-desc": "Una selección de identidades, conceptos y piezas desarrolladas.",
+                "gal-1-title": "Skenzi — Caso de Estudio",
+                "gal-1-sub": "Identidad visual · Diseño",
+                "gal-2-title": "DONUT'S BITES — Estudio Visual",
+                "gal-2-sub": "Branding · Packaging",
+                "gal-3-title": "Renzi — Diseño de Empaque",
+                "gal-3-sub": "Empaque · Identidad",
+                "gal-4-title": "Skenzi — Línea de Bolsas",
+                "gal-4-sub": "Merchandising · Diseño",
+                "gal-5-title": "DONUT'S — Vehículo Comercial",
+                "gal-5-sub": "Vehicular · Branding",
+                "gal-6-title": "DONUT'S BITES — Galería 01",
+                "gal-6-sub": "Concepto · Fotografía",
+                "gal-7-title": "RENAX — Proyecto Visual 01",
+                "gal-7-sub": "Identidad visual · Diseño",
+                "gal-8-title": "RENAX — Proyecto Visual 03",
+                "gal-8-sub": "Identidad visual · Diseño",
+                "proy-tag": "TRABAJO DESTACADO",
+                "proy-title": "Proyectos Destacados",
+                "proy-desc": "Explora los proyectos de RENAX y descubre cómo evoluciona cada identidad.",
+                "ver-proyecto": "Ver proyecto",
+                "p2-name": "Día de las Matemáticas",
+                "p3-name": "Día de las Especialidades",
+                "f-menu": "MENÚ",
+                "f-explora": "EXPLORA RENAX",
+                "f-c1-title": "INICIO",
+                "f-c1-l1": "Expertos en transformar marcas",
+                "f-c1-l2": "Vuelve a destacar sin perder tu esencia",
+                "f-c1-l3": "Tu historia merece una imagen que esté a su altura",
+                "f-c2-title": "NOSOTROS",
+                "f-c2-l1": "Quiénes somos",
+                "f-c2-l2": "Visión",
+                "f-c2-l3": "Misión",
+                "f-c2-l4": "¿Por qué RENAX?",
+                "f-c3-title": "PORTAFOLIO",
+                "f-c3-l1": "Proyectos y trabajos realizados",
+                "f-c3-l2": "Casos de estudio",
+                "f-c4-title": "SERVICIOS",
+                "f-c4-l1": "Diagnóstico de marca",
+                "f-c4-l2": "Identidad visual",
+                "f-c4-l3": "Comunicación",
+                "f-c4-l4": "Estrategia visual",
+                "f-c5-title": "CONTACTO",
+                "f-c5-l1": "Hablemos de tu proyecto",
+                "f-copy": "© 2026 RENAX. Todos los derechos reservados.",
+                "f-contact-btn": "CONTACTO ↗"
+            },
+            en: {
+                "nav-inicio": "Home",
+                "nav-nosotros": "About Us",
+                "nav-portafolio": "Portfolio",
+                "nav-servicios": "Services",
+                "nav-contacto": "Contact Us",
+                "btn-login": "Sign In",
+                "hero-tag": "RENAX · PORTFOLIO",
+                "hero-title": "RENAX PORTFOLIO: IDENTITY, DESIGN & EVOLUTION",
+                "hero-desc": "Explore projects where we renovate visual identities without losing the core essence of each brand.",
+                "hero-btn": "View Projects",
+                "galeria-tag": "RENAX / VISUAL PROJECTS",
+                "galeria-title": "Visual Projects",
+                "galeria-desc": "A selection of identities, concepts, and developed pieces.",
+                "gal-1-title": "Skenzi — Case Study",
+                "gal-1-sub": "Visual Identity · Design",
+                "gal-2-title": "DONUT'S BITES — Visual Studio",
+                "gal-2-sub": "Branding · Packaging",
+                "gal-3-title": "Renzi — Packaging Design",
+                "gal-3-sub": "Packaging · Identity",
+                "gal-4-title": "Skenzi — Bag Line",
+                "gal-4-sub": "Merchandising · Design",
+                "gal-5-title": "DONUT'S — Commercial Vehicle",
+                "gal-5-sub": "Vehicular · Branding",
+                "gal-6-title": "DONUT'S BITES — Gallery 01",
+                "gal-6-sub": "Concept · Photography",
+                "gal-7-title": "RENAX — Visual Project 01",
+                "gal-7-sub": "Visual Identity · Design",
+                "gal-8-title": "RENAX — Visual Project 03",
+                "gal-8-sub": "Visual Identity · Design",
+                "proy-tag": "FEATURED WORK",
+                "proy-title": "Featured Projects",
+                "proy-desc": "Explore RENAX projects and discover how each brand identity evolves.",
+                "ver-proyecto": "View project",
+                "p2-name": "Mathematics Day",
+                "p3-name": "Specialties Day",
+                "f-menu": "MENU",
+                "f-explora": "EXPLORE RENAX",
+                "f-c1-title": "HOME",
+                "f-c1-l1": "Experts in transforming brands",
+                "f-c1-l2": "Stand out again without losing your core",
+                "f-c1-l3": "Your story deserves an image that matches it",
+                "f-c2-title": "ABOUT US",
+                "f-c2-l1": "Who we are",
+                "f-c2-l2": "Vision",
+                "f-c2-l3": "Mission",
+                "f-c2-l4": "Why RENAX?",
+                "f-c3-title": "PORTFOLIO",
+                "f-c3-l1": "Projects and works completed",
+                "f-c3-l2": "Case studies",
+                "f-c4-title": "SERVICES",
+                "f-c4-l1": "Brand diagnosis",
+                "f-c4-l2": "Visual identity",
+                "f-c4-l3": "Communication",
+                "f-c4-l4": "Visual strategy",
+                "f-c5-title": "CONTACT",
+                "f-c5-l1": "Let's talk about your project",
+                "f-copy": "© 2026 RENAX. All rights reserved.",
+                "f-contact-btn": "CONTACT ↗"
+            }
+        };
+
+        let currentLang = 'es';
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            const btn = document.getElementById('langToggleBtn');
+            btn.textContent = currentLang === 'es' ? 'ESP' : 'ENG';
+
+            // Actualizar todos los elementos con atributo data-i18n
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.textContent = translations[currentLang][key];
+                }
+            });
+
+            // Cambiar atributo lang del HTML
+            document.documentElement.lang = currentLang;
+        }
+    </script>
+</body>
+</html>
