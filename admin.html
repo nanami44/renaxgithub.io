@@ -1,11 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración - RENAX</title>
-
     <style>
         * {
             box-sizing: border-box;
@@ -20,7 +18,7 @@
         }
 
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
 
@@ -42,13 +40,59 @@
             margin-top: 0;
         }
 
-        .chat-box {
+        /* Layout con Menú Lateral */
+        .admin-layout {
+            display: grid;
+            grid-template-columns: 260px 1fr;
+            gap: 20px;
+            min-height: 600px;
+        }
+
+        .sidebar-menu {
             background: #141414;
             border: 1px solid #333;
             border-radius: 12px;
-            padding: 20px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            height: fit-content;
         }
 
+        .menu-btn {
+            background: transparent;
+            color: #aaa;
+            border: none;
+            text-align: left;
+            padding: 12px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .menu-btn:hover, .menu-btn.active {
+            background: #e74c3c;
+            color: #fff;
+        }
+
+        .admin-content {
+            background: #141414;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 25px;
+        }
+
+        .panel-section {
+            display: none;
+        }
+
+        .panel-section.active {
+            display: block;
+        }
+
+        /* Estilos del Chat */
         #cliente-select {
             width: 100%;
             padding: 12px;
@@ -71,39 +115,6 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
-        }
-
-        input, button {
-            padding: 12px;
-            border-radius: 6px;
-            font-size: 14px;
-        }
-
-        input {
-            background: #0b0b0b;
-            border: 1px solid #333;
-            color: #fff;
-            flex: 1;
-            min-width: 0;
-        }
-
-        button {
-            background: #e74c3c;
-            color: #fff;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        button:disabled, input:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .enlace {
-            color: #aaa;
-            text-decoration: none;
-            font-size: 14px;
         }
 
         .mensaje {
@@ -132,139 +143,282 @@
             margin: 10px 0;
         }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 10px;
-            }
-
-            .header, .chat-box {
-                padding: 15px;
-            }
-
-            #admin-form {
-                flex-direction: column;
-            }
-
-            #admin-form button {
-                width: 100%;
-            }
-        }
-        <style>
-        /* Estilos generales mejorados para el panel */
-        .admin-layout {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-            min-height: 80vh;
-            gap: 20px;
-        }
-        .sidebar-menu {
-            background: #141414;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 15px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .menu-btn {
-            background: transparent;
-            color: #aaa;
-            border: none;
-            text-align: left;
+        /* Estilos generales para inputs y formularios */
+        input, select, textarea, button {
             padding: 12px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.2s;
+            border-radius: 6px;
+            font-size: 14px;
         }
-        .menu-btn:hover, .menu-btn.active {
+
+        input, textarea, select {
+            background: #0b0b0b;
+            border: 1px solid #333;
+            color: #fff;
+            width: 100%;
+            margin-bottom: 12px;
+        }
+
+        button.btn-main {
             background: #e74c3c;
             color: #fff;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
         }
-        .admin-content {
-            background: #141414;
+
+        button.btn-main:hover {
+            background: #c0392b;
+        }
+
+        .enlace {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .enlace:hover {
+            color: #fff;
+        }
+
+        /* Tarjetas de Recursos / Documentos */
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .doc-card {
+            background: #0b0b0b;
             border: 1px solid #333;
-            border-radius: 12px;
             padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .panel-section {
-            display: none;
+
+        .doc-card h4 {
+            color: #e74c3c;
+            margin-bottom: 10px;
         }
-        .panel-section.active {
-            display: block;
+
+        .doc-card a {
+            background: #222;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 13px;
+            border: 1px solid #444;
+            transition: 0.2s;
         }
+
+        .doc-card a:hover {
+            background: #e74c3c;
+            border-color: #e74c3c;
+        }
+
+        /* Generador de Comprobantes */
+        .doc-preview {
+            background: #fff;
+            color: #000;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .doc-preview h2 {
+            color: #0b0b0b;
+            border-bottom: 2px solid #e74c3c;
+            padding-bottom: 10px;
+        }
+
         @media (max-width: 768px) {
             .admin-layout {
                 grid-template-columns: 1fr;
             }
         }
     </style>
-    </style>
 </head>
 
 <body>
 <div class="container">
 
+    <!-- HEADER -->
     <div class="header">
-        <h2>RENAX - Panel de Administración</h2>
-        <a class="enlace" href="dashboard.html">Panel de cliente</a>
+        <div>
+            <h2>RENAX - Panel de Administración</h2>
+            <p id="estado" role="status" style="margin:0;">Verificando acceso...</p>
+        </div>
+        <a class="enlace" href="dashboard.html">Ir al Panel de cliente ➔</a>
     </div>
 
-    <div class="chat-box">
-        <h3>Conversaciones con clientes</h3>
-
-        <p style="font-size:13px;color:#aaa;">
-            Selecciona un cliente para consultar sus mensajes y responderle.
-        </p>
-
-        <label for="cliente-select">Clientes registrados:</label>
-        <select id="cliente-select" disabled>
-            <option value="">Verificando acceso...</option>
-        </select>
-
-        <p id="estado" role="status">Verificando acceso...</p>
-
-        <div id="messages-list" aria-live="polite">
-            <span style="color:#666;text-align:center;">
-                Selecciona un cliente para ver la conversación.
-            </span>
+    <!-- LAYOUT PRINCIPAL CON MENÚ LATERAL -->
+    <div class="admin-layout">
+        
+        <!-- MENÚ DE NAVEGACIÓN -->
+        <div class="sidebar-menu">
+            <button class="menu-btn active" onclick="cambiarSeccion('seccion-chats', this)">💬 Chats con Clientes</button>
+            <button class="menu-btn" onclick="cambiarSeccion('seccion-recursos', this)">📁 Portafolio y Brief</button>
+            <button class="menu-btn" onclick="cambiarSeccion('seccion-nomina', this)">👥 Nómina RENAX</button>
+            <button class="menu-btn" onclick="cambiarSeccion('seccion-comprobantes', this)">🧾 Cotización / Recibo</button>
+            <button class="menu-btn" onclick="cambiarSeccion('seccion-politicas', this)">🔒 Políticas de Privacidad</button>
         </div>
 
-        <form id="admin-form" style="display:flex;gap:10px;">
-            <input
-                type="text"
-                id="admin-input"
-                placeholder="Escribe tu respuesta como Asesor RENAX..."
-                maxlength="2000"
-                required
-                disabled
-            >
-            <button id="btn-responder" type="submit" disabled>
-                Responder
-            </button>
-        </form>
+        <!-- CONTENIDO DE LAS SECCIONES -->
+        <div class="admin-content">
+
+            <!-- SECCIÓN 1: CHATS -->
+            <div id="seccion-chats" class="panel-section active">
+                <h3>Conversaciones con Clientes</h3>
+                <p style="font-size:13px;color:#aaa;">Selecciona un cliente para consultar sus mensajes y responderle en tiempo real.</p>
+
+                <label for="cliente-select">Clientes registrados:</label>
+                <select id="cliente-select" disabled>
+                    <option value="">Verificando acceso...</option>
+                </select>
+
+                <div id="messages-list" aria-live="polite">
+                    <span style="color:#666;text-align:center; margin:auto;">Selecciona un cliente para ver la conversación.</span>
+                </div>
+
+                <form id="admin-form" style="display:flex; gap:10px;">
+                    <input type="text" id="admin-input" placeholder="Escribe tu respuesta como Asesor RENAX..." maxlength="2000" required disabled style="margin-bottom:0;">
+                    <button id="btn-responder" type="submit" class="btn-main" style="width: 140px;" disabled>Responder</button>
+                </form>
+            </div>
+
+            <!-- SECCIÓN 2: PORTAFOLIO Y RECURSOS -->
+            <div id="seccion-recursos" class="panel-section">
+                <h3>Documentos y Recursos de la Agencia</h3>
+                <p style="font-size:13px;color:#aaa;">Accede y descarga rápidamente los archivos oficiales de RENAX.</p>
+                
+                <div class="doc-grid">
+                    <div class="doc-card">
+                        <div>
+                            <h4>Portafolio</h4>
+                            <p style="font-size:12px; color:#aaa;">Catálogo completo de servicios creativos.</p>
+                        </div>
+                        <a href="portafolio de servicio.pdf" target="_blank">Abrir PDF ➔</a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div>
+                            <h4>Brief</h4>
+                            <p style="font-size:12px; color:#aaa;">Cuestionario para proyectos de clientes.</p>
+                        </div>
+                        <a href="brief-.pdf" target="_blank">Abrir PDF ➔</a>
+                    </div>
+
+                    <div class="doc-card">
+                        <div>
+                            <h4>Manual de Marca</h4>
+                            <p style="font-size:12px; color:#aaa;">Guía de identidad visual y logotipos.</p>
+                        </div>
+                        <a href="Manual de marca (1).pdf" target="_blank">Abrir PDF ➔</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: NÓMINA -->
+            <div id="seccion-nomina" class="panel-section">
+                <h3>Gestión de Nómina RENAX</h3>
+                <p style="font-size:13px;color:#aaa;">Consulta y administra la nómina actualizada del personal.</p>
+                
+                <div class="doc-card" style="max-width: 300px; text-align: left; margin-top: 15px;">
+                    <div>
+                        <h4 style="margin-bottom:5px;">📊 Archivo de Nómina</h4>
+                        <p style="font-size:12px; color:#aaa; margin-bottom:15px;">Nomina_RENAX_actualizada (2).xlsx</p>
+                    </div>
+                    <a href="Nomina_RENAX_actualizada (2).xlsx" download class="btn-main" style="text-align: center; display:block; text-decoration:none;">Descargar Excel 📥</a>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 4: COTIZACIÓN Y RECIBOS -->
+            <div id="seccion-comprobantes" class="panel-section">
+                <h3>Generador de Cotizaciones y Recibos</h3>
+                <p style="font-size:13px;color:#aaa;">Crea comprobantes formales con la imagen corporativa de RENAX.</p>
+                
+                <form id="form-comprobante" style="margin-top: 15px;">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+                        <input type="text" id="comp-cliente" placeholder="Nombre del Cliente / Empresa" required>
+                        <select id="comp-tipo">
+                            <option value="COTIZACIÓN">Cotización de Servicios</option>
+                            <option value="RECIBO DE PAGO">Recibo de Pago</option>
+                        </select>
+                    </div>
+                    <textarea id="comp-detalle" rows="3" placeholder="Detalle de los servicios (Ej: Diseño de marca + Campaña Ads...)" required></textarea>
+                    <input type="text" id="comp-valor" placeholder="Valor Total (Ej: $500.000 COP)" required>
+                    <button type="button" class="btn-main" onclick="generarComprobante()">Generar Vista Previa / Imprimir 🖨️</button>
+                </form>
+
+                <div id="area-impresion" style="display:none;" class="doc-preview">
+                    <div style="display:flex; justify-content:space-between; align-items:center;">
+                        <h2 style="margin:0;" id="print-titulo">RENAX - COTIZACIÓN</h2>
+                        <span style="font-weight:bold; color:#e74c3c;">AGENCIA CREATIVA</span>
+                    </div>
+                    <p style="margin: 15px 0 5px 0;"><strong>Fecha:</strong> <span id="print-fecha"></span></p>
+                    <p style="margin: 0 0 15px 0;"><strong>Cliente:</strong> <span id="print-cliente"></span></p>
+                    <hr style="border:0; border-top:1px solid #ccc; margin:15px 0;">
+                    <p><strong>Concepto / Servicios:</strong></p>
+                    <p id="print-detalle" style="background:#f9f9f9; padding:10px; border-radius:4px;"></p>
+                    <h3 style="text-align:right; margin-top:20px; color:#0b0b0b;">Total: <span id="print-valor"></span></h3>
+                    <button onclick="window.print()" class="menu-btn" style="background:#0b0b0b; color:#fff; width:100%; text-align:center; margin-top:20px;">Imprimir o Guardar como PDF</button>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 5: POLÍTICAS DE PRIVACIDAD -->
+            <div id="seccion-politicas" class="panel-section">
+                <h3>Políticas de Privacidad - RENAX</h3>
+                <div style="background:#0b0b0b; border:1px solid #333; padding:20px; border-radius:8px; font-size:13px; color:#ccc; line-height:1.6;">
+                    <p><strong>1. Protección de Datos:</strong> En RENAX nos comprometemos a proteger la información personal y corporativa suministrada por nuestros clientes y usuarios a través de esta plataforma.</p>
+                    <p><strong>2. Uso de la Información:</strong> Los datos recolectados (correos, teléfonos, nombres) son utilizados exclusivamente para la gestión interna de proyectos creativos, prestación de servicios y canales de atención mediante chat.</p>
+                    <p><strong>3. Confidencialidad:</strong> Los documentos institucionales, manuales de marca y archivos de nómina son estrictamente confidenciales y de uso exclusivo del personal autorizado de la agencia.</p>
+                </div>
+            </div>
+
+        </div>
     </div>
 </div>
 
+<!-- SCRIPT DE NAVEGACIÓN Y FIREFIREBASE -->
+<script>
+    function cambiarSeccion(idSeccion, boton) {
+        document.querySelectorAll('.panel-section').forEach(sec => sec.classList.remove('active'));
+        document.querySelectorAll('.menu-btn').forEach(btn => btn.classList.remove('active'));
+        
+        document.getElementById(idSeccion).classList.add('active');
+        boton.classList.add('active');
+    }
+
+    function generarComprobante() {
+        const cliente = document.getElementById('comp-cliente').value;
+        const tipo = document.getElementById('comp-tipo').value;
+        const detalle = document.getElementById('comp-detalle').value;
+        const valor = document.getElementById('comp-valor').value;
+
+        if(!cliente || !detalle || !valor) {
+            alert("Por favor completa todos los campos del comprobante.");
+            return;
+        }
+
+        document.getElementById('print-titulo').textContent = `RENAX - ${tipo}`;
+        document.getElementById('print-fecha').textContent = new Date().toLocaleDateString();
+        document.getElementById('print-cliente').textContent = cliente;
+        document.getElementById('print-detalle').textContent = detalle;
+        document.getElementById('print-valor').textContent = valor;
+
+        document.getElementById('area-impresion').style.display = 'block';
+    }
+</script>
+
 <script type="module">
-    import {
-        initializeApp
-    } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-
-    import {
-        getAuth,
-        onAuthStateChanged
-    } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
-
-    import {
-        getFirestore,
-        collection,
-        addDoc,
-        query,
-        orderBy,
-        onSnapshot,
-        serverTimestamp
-    } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+    import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
 
     const firebaseConfig = {
         apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
@@ -280,14 +434,8 @@
     const db = getFirestore(app);
 
     const ADMINISTRADORES = [
-        {
-            correo: "naoco2008@gmail.com",
-            uid: "3rriQaadVjT0ax84uZh5jNJrT0R2"
-        },
-        {
-            correo: "renaxcreativit@gmail.com",
-            uid: "RuBWW0PQuofpIK1uHlvY0LG1pXx1"
-        }
+        { correo: "naoco2008@gmail.com", uid: "3rriQaadVjT0ax84uZh5jNJrT0R2" },
+        { correo: "renaxcreativit@gmail.com", uid: "RuBWW0PQuofpIK1uHlvY0LG1pXx1" }
     ];
 
     const selector = document.getElementById("cliente-select");
@@ -302,24 +450,16 @@
     let detenerMensajes = null;
     let detenerUsuarios = null;
 
-    function mostrarEstado(texto) {
-        estado.textContent = texto;
-    }
-
-    function detenerChat() {
-        if (detenerMensajes) {
-            detenerMensajes();
-            detenerMensajes = null;
-        }
-    }
+    function mostrarEstado(texto) { estado.textContent = texto; }
+    function detenerChat() { if (detenerMensajes) { detenerMensajes(); detenerMensajes = null; } }
 
     function limpiarChat(texto) {
         detenerChat();
         messagesList.replaceChildren();
-
         const aviso = document.createElement("span");
         aviso.style.color = "#888";
         aviso.style.textAlign = "center";
+        aviso.style.margin = "auto";
         aviso.textContent = texto;
         messagesList.appendChild(aviso);
     }
@@ -327,148 +467,70 @@
     function cargarConversacion(uid) {
         detenerChat();
         clienteSeleccionado = uid;
-
         adminInput.disabled = true;
         btnResponder.disabled = true;
 
         if (!uid) {
             limpiarChat("Selecciona un cliente para ver sus mensajes.");
-            mostrarEstado("Selecciona un cliente.");
-            return;
-        }
-
-        if (!administradorAutorizado) {
-            limpiarChat("Acceso no autorizado.");
             return;
         }
 
         limpiarChat("Cargando conversación...");
-        mostrarEstado("Cargando mensajes...");
 
-        const mensajesRef = collection(
-            db, "chats", uid, "mensajes"
-        );
+        const mensajesRef = collection(db, "chats", uid, "mensajes");
+        const consulta = query(mensajesRef, orderBy("createdAt", "asc"));
 
-        const consulta = query(
-            mensajesRef,
-            orderBy("createdAt", "asc")
-        );
-
-        detenerMensajes = onSnapshot(
-            consulta,
-            (snapshot) => {
-                messagesList.replaceChildren();
-
-                if (snapshot.empty) {
-                    limpiarChat("Todavía no hay mensajes en esta conversación.");
-                } else {
-                    snapshot.forEach((documento) => {
-                        const data = documento.data();
-                        const mensaje = document.createElement("div");
-
-                        mensaje.className =
-                            "mensaje " +
-                            (data.remitente === "Asesor RENAX"
-                                ? "admin"
-                                : "cliente");
-
-                        mensaje.textContent =
-                            `${data.remitente || "Usuario"}: ${data.texto || ""}`;
-
-                        messagesList.appendChild(mensaje);
-                    });
-
-                    messagesList.scrollTop = messagesList.scrollHeight;
-                }
-
-                adminInput.disabled = false;
-                btnResponder.disabled = false;
-                mostrarEstado("Conversación actualizada.");
-            },
-            (error) => {
-                console.error("Error al cargar mensajes:", error);
-                limpiarChat("No se pudieron cargar los mensajes.");
-                mostrarEstado(
-                    "Error de permisos. Revisa las reglas de Firestore."
-                );
+        detenerMensajes = onSnapshot(consulta, (snapshot) => {
+            messagesList.replaceChildren();
+            if (snapshot.empty) {
+                limpiarChat("Todavía no hay mensajes en esta conversación.");
+            } else {
+                snapshot.forEach((documento) => {
+                    const data = documento.data();
+                    const mensaje = document.createElement("div");
+                    mensaje.className = "mensaje " + (data.remitente === "Asesor RENAX" ? "admin" : "cliente");
+                    mensaje.textContent = `${data.remitente || "Usuario"}: ${data.texto || ""}`;
+                    messagesList.appendChild(mensaje);
+                });
+                messagesList.scrollTop = messagesList.scrollHeight;
             }
-        );
+            adminInput.disabled = false;
+            btnResponder.disabled = false;
+        });
     }
 
-    selector.addEventListener("change", () => {
-        cargarConversacion(selector.value);
-    });
+    selector.addEventListener("change", () => cargarConversacion(selector.value));
 
     adminForm.addEventListener("submit", async (evento) => {
         evento.preventDefault();
-
         const texto = adminInput.value.trim();
         const uid = clienteSeleccionado;
 
-        if (!administradorAutorizado || !auth.currentUser) {
-            mostrarEstado("Debes iniciar sesión como administrador.");
-            return;
-        }
-
-        if (!uid) {
-            mostrarEstado("Selecciona primero un cliente.");
-            return;
-        }
-
-        if (!texto) return;
-
+        if (!texto || !uid) return;
         btnResponder.disabled = true;
 
         try {
-            const mensajesRef = collection(
-                db, "chats", uid, "mensajes"
-            );
-
-            await addDoc(mensajesRef, {
+            await addDoc(collection(db, "chats", uid, "mensajes"), {
                 texto,
                 remitente: "Asesor RENAX",
                 createdAt: serverTimestamp()
             });
-
             adminInput.value = "";
-            mostrarEstado("Respuesta enviada.");
         } catch (error) {
-            console.error("Error al enviar respuesta:", error);
-            mostrarEstado(
-                "No se pudo enviar. Verifica los permisos de Firestore."
-            );
+            console.error("Error al enviar:", error);
         } finally {
-            btnResponder.disabled = !clienteSeleccionado;
+            btnResponder.disabled = false;
         }
     });
 
     onAuthStateChanged(auth, (user) => {
-        administradorAutorizado = false;
-        detenerChat();
-
-        if (detenerUsuarios) {
-            detenerUsuarios();
-            detenerUsuarios = null;
-        }
-
-        selector.replaceChildren();
-        selector.disabled = true;
-        adminInput.disabled = true;
-        btnResponder.disabled = true;
-        clienteSeleccionado = "";
-
         if (!user) {
             window.location.replace("login.html");
             return;
         }
 
         const correo = (user.email || "").trim().toLowerCase();
-
-        const autorizado = ADMINISTRADORES.some(
-            admin =>
-                admin.correo === correo &&
-                admin.uid === user.uid
-        );
+        const autorizado = ADMINISTRADORES.some(admin => admin.correo === correo && admin.uid === user.uid);
 
         if (!autorizado) {
             window.location.replace("dashboard.html");
@@ -476,74 +538,29 @@
         }
 
         administradorAutorizado = true;
-        mostrarEstado("Cargando clientes registrados...");
+        mostrarEstado("Panel activo y seguro.");
 
-        const usuariosRef = collection(db, "usuarios");
+        detenerUsuarios = onSnapshot(collection(db, "usuarios"), (snapshot) => {
+            const uidAnterior = selector.value;
+            selector.replaceChildren();
 
-        detenerUsuarios = onSnapshot(
-            usuariosRef,
-            (snapshot) => {
-                const uidAnterior = selector.value;
-                selector.replaceChildren();
+            const opcionInicial = document.createElement("option");
+            opcionInicial.value = "";
+            opcionInicial.textContent = "Selecciona un cliente...";
+            selector.appendChild(opcionInicial);
 
-                const opcionInicial = document.createElement("option");
-                opcionInicial.value = "";
-                opcionInicial.textContent = "Selecciona un cliente...";
-                selector.appendChild(opcionInicial);
+            snapshot.forEach((documento) => {
+                const usuario = documento.data();
+                const opcion = document.createElement("option");
+                opcion.value = documento.id;
+                opcion.textContent = `${usuario.nombre || "Cliente"} — ${usuario.email || "Sin correo"}`;
+                selector.appendChild(opcion);
+            });
 
-                const usuarios = snapshot.docs
-                    .map(documento => ({
-                        uid: documento.id,
-                        ...documento.data()
-                    }))
-                    .sort((a, b) =>
-                        String(a.nombre || a.email || "")
-                            .localeCompare(
-                                String(b.nombre || b.email || ""),
-                                "es"
-                            )
-                    );
-
-                usuarios.forEach((usuario) => {
-                    const opcion = document.createElement("option");
-                    opcion.value = usuario.uid;
-
-                    const nombre = usuario.nombre || "Cliente";
-                    const email = usuario.email || "Sin correo";
-
-                    opcion.textContent = `${nombre} — ${email}`;
-                    selector.appendChild(opcion);
-                });
-
-                selector.disabled = false;
-
-                if (uidAnterior &&
-                    usuarios.some(usuario => usuario.uid === uidAnterior)) {
-                    selector.value = uidAnterior;
-                } else {
-                    selector.value = "";
-                }
-
-                if (selector.value) {
-                    cargarConversacion(selector.value);
-                } else {
-                    limpiarChat("Selecciona un cliente para ver sus mensajes.");
-                    mostrarEstado(
-                        usuarios.length
-                            ? `Clientes registrados: ${usuarios.length}.`
-                            : "No se encontraron perfiles en la colección usuarios."
-                    );
-                }
-            },
-            (error) => {
-                console.error("Error al cargar clientes:", error);
-                mostrarEstado(
-                    "No se pudo cargar la lista. Revisa los permisos de Firestore."
-                );
-            }
-        );
+            selector.disabled = false;
+            if (uidAnterior) selector.value = uidAnterior;
+        });
     });
 </script>
 </body>
 </html>
-
