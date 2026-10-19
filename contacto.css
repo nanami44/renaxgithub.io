@@ -2110,6 +2110,25 @@ h1, h2, h3,
     background-image: none !important;
 }
 
+/* TEXTO NEGRO EN EL FORMULARIO DE COTIZACIÓN */
+.contacto-conversacion .contacto-tarjeta-form,
+.contacto-conversacion .contacto-tarjeta-form h3,
+.contacto-conversacion .contacto-tarjeta-form p,
+.contacto-conversacion .contacto-tarjeta-form label,
+.contacto-conversacion .contacto-tarjeta-form span {
+    color: #111111 !important;
+}
+
+/* Etiqueta superior */
+.contacto-conversacion .contacto-tarjeta-etiqueta {
+    color: #111111 !important;
+}
+
+/* Texto del botón */
+.contacto-conversacion .contacto-boton-rojo {
+    color: #111111 !important;
+}
+
 /* ICONOS NEGROS AL PASAR EL MOUSE */
 .contacto-conversacion .contacto-info-item:hover i {
     -webkit-text-fill-color: #111111 !important;
