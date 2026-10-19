@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portafolio Estilo Landor</title>
+    <title>RENAX | Portafolio</title>
     <!-- Tailwind CSS para un diseño moderno y responsive -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -13,33 +13,167 @@
             background-color: #faf9f5;
             color: #111111;
         }
+
+        /* =========================================
+           RENAX PORTAFOLIO — IDENTIDAD VISUAL
+           Conserva la estructura de la plantilla
+           ========================================= */
+        :root { color-scheme: dark; }
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        body {
+            font-family: 'Montserrat', 'Inter', sans-serif;
+            background: #080808 !important;
+            color: #fff !important;
+        }
+        .renax-site-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            background: rgba(8,8,8,.96);
+            border-bottom: 1px solid #c8102e;
+            backdrop-filter: blur(14px);
+        }
+        .renax-nav-container {
+            width: min(100%, 1500px);
+            min-height: 76px;
+            margin: 0 auto;
+            padding: 12px clamp(18px, 4vw, 64px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+        }
+        .renax-logo-link { display: flex; align-items: center; flex-shrink: 0; }
+        .renax-nav-logo { display: block; width: 100px; max-height: 48px; object-fit: contain; }
+        .renax-nav-links { display: flex; align-items: center; justify-content: center; gap: clamp(14px, 2.2vw, 34px); }
+        .renax-nav-links a {
+            color: #f4f4f4; font-size: 13px; font-weight: 500;
+            text-decoration: none; transition: color .25s ease;
+        }
+        .renax-nav-links a:hover, .renax-nav-links a[aria-current="page"] { color: #ff304b; }
+        .renax-nav-actions { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+        .renax-lang-button {
+            border: 0; border-radius: 999px; padding: 8px 13px;
+            background: #fff; color: #080808; font-size: 11px; font-weight: 800;
+        }
+        .renax-login-button {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 11px 18px; border-radius: 999px; background: #ed0018;
+            color: #fff; font-size: 11px; font-weight: 800; text-transform: uppercase;
+            text-decoration: none; transition: background .25s ease, transform .25s ease;
+        }
+        .renax-login-button:hover { background: #c8102e; transform: translateY(-1px); }
+        #portada { min-height: 76vh; background: #050505 !important; }
+        #portada > div:first-child { position: relative; }
+        #portada span { color: #ff304b !important; }
+        #portada h1 { font-weight: 900; letter-spacing: -.045em; text-transform: uppercase; }
+        #portada p { color: #c4c4c4 !important; }
+        #portada a { background: #ed0018 !important; color: #fff !important; }
+        #portada a:hover { background: #c8102e !important; }
+        #galeria, #proyectos { max-width: 1500px; width: 100%; }
+        #galeria h2, #proyectos h2 { color: #fff; font-weight: 800; }
+        #galeria p, #proyectos p { color: #aaa; }
+        #galeria .text-red-600, #proyectos .text-red-600 { color: #ff304b !important; }
+        #galeria .bg-gray-200 { background: #151515 !important; border: 1px solid #292929; }
+        #galeria .text-gray-400 { color: #777 !important; }
+        #galeria h3 { color: #fff !important; }
+        #proyectos { border-color: #292929 !important; }
+        #proyectos a.group {
+            background: linear-gradient(145deg, #151515, #090909) !important;
+            border: 1px solid #292929 !important; border-radius: 24px;
+            color: #fff; text-decoration: none;
+        }
+        #proyectos a.group:hover { border-color: #c8102e !important; }
+        #proyectos h3 { color: #fff !important; }
+        #proyectos .text-gray-500 { color: #aaa !important; }
+
+        /* PIE DE PÁGINA — REFERENCIA VISUAL DE INICIO */
+        .renax-footer {
+            width: 100%; box-sizing: border-box;
+            padding: 54px clamp(24px, 3.2vw, 60px) 24px;
+            background: #050505; color: #fff; border-top: 1px solid #242424;
+        }
+        .footer-topbar {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 20px; padding-bottom: 22px; border-bottom: 1px solid #262626;
+        }
+        .footer-titulo {
+            color: #ed0018; font-size: 25px; line-height: 1.1;
+            font-weight: 900; letter-spacing: .02em;
+        }
+        .footer-explora {
+            color: #fff; font-size: 13px; font-weight: 800;
+            text-decoration: none; transition: color .2s ease;
+        }
+        .footer-explora:hover { color: #ff304b; }
+        .footer-secciones {
+            display: grid; grid-template-columns: 1.15fr 1.1fr 1.15fr 1.1fr 1.1fr;
+            gap: clamp(22px, 3.2vw, 60px); padding: 48px 0 52px;
+        }
+        .footer-column { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; min-width: 0; }
+        .footer-column-title { color: #fff; font-size: 14px; font-weight: 800; }
+        .footer-menu-links { display: flex; flex-direction: column; align-items: flex-start; gap: 13px; }
+        .footer-menu-links a {
+            color: #929292; font-size: 13px; line-height: 1.55;
+            text-decoration: none; transition: color .2s ease;
+        }
+        .footer-menu-links a:hover { color: #ff304b; }
+        .footer-bottom {
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 24px; min-height: 72px; padding-top: 24px;
+            border-top: 1px solid #262626; color: #858585; font-size: 11px;
+        }
+        .footer-logo-link { display: inline-flex; align-items: center; }
+        .footer-logo { display: block; width: 68px; max-height: 42px; object-fit: contain; }
+        .footer-contacto { color: #fff; font-size: 13px; font-weight: 800; text-decoration: none; white-space: nowrap; }
+        .footer-contacto:hover { color: #ff304b; }
+        @media (max-width: 900px) { .footer-secciones { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (max-width: 600px) {
+            .renax-footer { padding: 38px 22px 20px; }
+            .footer-secciones { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 20px; padding: 34px 0; }
+            .footer-bottom { flex-wrap: wrap; }
+            .footer-bottom > span { order: 3; width: 100%; }
+        }
+        @media (max-width: 850px) {
+            .renax-nav-container { flex-wrap: wrap; gap: 14px; }
+            .renax-nav-links { order: 3; width: 100%; flex-wrap: wrap; padding: 8px 0 4px; }
+            .renax-nav-actions { margin-left: auto; }
+            .footer-secciones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            #portada { min-height: 64vh; }
+        }
+        @media (max-width: 520px) {
+            .renax-nav-logo { width: 78px; }
+            .renax-login-button { padding: 9px 11px; font-size: 9px; }
+            .renax-nav-links { gap: 13px; }
+            .renax-nav-links a { font-size: 12px; }
+            .footer-secciones { grid-template-columns: 1fr 1fr; gap: 24px 16px; }
+            .footer-bottom { align-items: flex-start; flex-direction: column; }
+            #proyectos a.group { padding: 28px !important; }
+        }
+
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
-    <!-- 1. Menú de navegación superior (Navbar) con enlaces, botón de traducción e inicio de sesión -->
-    <header class="w-full border-b border-gray-200 bg-white/90 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Logo / Enlace Inicio -->
-            <a href="#portada" class="text-xl font-bold tracking-tighter uppercase">LANDOR</a>
+    <!-- MENÚ DE NAVEGACIÓN RENAX: coherente con Inicio -->
+    <header class="renax-site-header">
+        <div class="renax-nav-container">
+            <a href="index.html" class="renax-logo-link" aria-label="RENAX - Inicio">
+                <img src="logo-renax-transparente.png" alt="RENAX" class="renax-nav-logo">
+            </a>
 
-            <!-- Enlaces de navegación -->
-            <nav class="hidden md:flex space-x-8 text-sm font-medium text-gray-700">
-                <a href="#portada" class="hover:text-black transition-colors">Inicio</a>
-                <a href="#galeria" class="hover:text-black transition-colors">Galería</a>
-                <a href="#proyectos" class="hover:text-black transition-colors">Proyectos</a>
-                <a href="#contacto" class="hover:text-black transition-colors">Contacto</a>
+            <nav class="renax-nav-links" aria-label="Navegación principal">
+                <a href="index.html">Inicio</a>
+                <a href="nosotros.html">Nosotros</a>
+                <a href="portafolio.html" aria-current="page">Portafolio</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="contacto.html">Contáctanos</a>
             </nav>
 
-            <!-- Botones de traducción e inicio de sesión -->
-            <div class="flex items-center space-x-4">
-                <button class="text-xs font-semibold uppercase tracking-wider bg-gray-100 hover:bg-gray-200 px-3 py-2 rounded-full transition-colors flex items-center gap-1">
-                    <svg class="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path></svg>
-                    ES / EN
-                </button>
-                <a href="#login" class="text-xs font-semibold uppercase tracking-wider bg-black text-white hover:bg-gray-800 px-4 py-2 rounded-full transition-colors">
-                    Iniciar Sesión
-                </a>
+            <div class="renax-nav-actions">
+                <button class="renax-lang-button" type="button" aria-label="Idioma español">ESP</button>
+                <a href="contacto.html" class="renax-login-button">Iniciar sesión</a>
             </div>
         </div>
     </header>
@@ -50,9 +184,9 @@
         <!-- 2. Sección de Portada (Hero/Cover) grande y de ancho completo -->
         <section id="portada" class="w-full bg-black text-white py-32 md:py-48 px-6 flex items-center justify-center text-center relative overflow-hidden">
             <div class="max-w-4xl mx-auto space-y-6 z-10">
-                <span class="text-xs font-bold uppercase tracking-widest text-blue-400">Diseño & Innovación</span>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight">Creando Experiencias Visuales Únicas</h1>
-                <p class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto">Espacio de portada a ancho completo inspirado en referentes globales de diseño.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-blue-400">RENAX · PORTAFOLIO</span>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight">PORTAFOLIO RENAX: IDENTIDAD, DISEÑO Y EVOLUCIÓN</h1>
+                <p class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto">Explora proyectos donde renovamos identidades visuales sin perder la esencia de cada marca.</p>
                 <div class="pt-6">
                     <a href="#proyectos" class="inline-block bg-white text-black font-medium px-8 py-4 rounded-full hover:bg-gray-200 transition-colors text-sm uppercase tracking-wider shadow-lg">Ver Proyectos</a>
                 </div>
@@ -64,9 +198,9 @@
         <!-- 3. Sección de Galería (8 espacios grandes e imponentes para imágenes) -->
         <section id="galeria" class="max-w-7xl mx-auto px-6 py-24">
             <div class="mb-14 text-center md:text-left">
-                <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Visual Portfolio</span>
-                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-1">Galería de Imágenes</h2>
-                <p class="text-gray-500 text-sm mt-2">Espacios visuales amplios e imponentes.</p>
+                <span class="text-xs font-bold uppercase tracking-widest text-red-600">RENAX / PROYECTOS VISUALES</span>
+                <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-1">Proyectos visuales</h2>
+                <p class="text-gray-500 text-sm mt-2">Una selección de identidades, conceptos y piezas desarrolladas.</p>
             </div>
 
             <!-- Grid con 8 tarjetas grandes -->
@@ -75,73 +209,73 @@
                 <!-- Imagen 1 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Espacio para Imagen Grande 1</span>
+                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 1</span>
                     </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">Nombre de Imagen 1</h3>
-                    <p class="text-sm text-gray-500">Galería / Categoría</p>
+                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 1</h3>
+                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
 
                 <!-- Imagen 2 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Espacio para Imagen Grande 2</span>
+                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 2</span>
                     </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">Nombre de Imagen 2</h3>
-                    <p class="text-sm text-gray-500">Galería / Categoría</p>
+                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 2</h3>
+                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
 
                 <!-- Imagen 3 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Espacio para Imagen Grande 3</span>
+                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 3</span>
                     </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">Nombre de Imagen 3</h3>
-                    <p class="text-sm text-gray-500">Galería / Categoría</p>
+                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 3</h3>
+                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
 
                 <!-- Imagen 4 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Espacio para Imagen Grande 4</span>
+                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 4</span>
                     </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">Nombre de Imagen 4</h3>
-                    <p class="text-sm text-gray-500">Galería / Categoría</p>
+                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 4</h3>
+                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
 
                 <!-- Imagen 5 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Espacio para Imagen Grande 5</span>
+                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 5</span>
                     </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">Nombre de Imagen 5</h3>
-                    <p class="text-sm text-gray-500">Galería / Categoría</p>
+                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 5</h3>
+                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
 
                 <!-- Imagen 6 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Espacio para Imagen Grande 6</span>
+                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 6</span>
                     </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">Nombre de Imagen 6</h3>
-                    <p class="text-sm text-gray-500">Galería / Categoría</p>
+                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 6</h3>
+                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
 
                 <!-- Imagen 7 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Espacio para Imagen Grande 7</span>
+                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 7</span>
                     </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">Nombre de Imagen 7</h3>
-                    <p class="text-sm text-gray-500">Galería / Categoría</p>
+                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 7</h3>
+                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
 
                 <!-- Imagen 8 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
-                        <span class="text-gray-400 text-sm font-medium">Espacio para Imagen Grande 8</span>
+                        <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 8</span>
                     </div>
-                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-blue-600 transition-colors">Nombre de Imagen 8</h3>
-                    <p class="text-sm text-gray-500">Galería / Categoría</p>
+                    <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 8</h3>
+                    <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
 
             </div>
@@ -150,51 +284,51 @@
         <!-- 4. Sección de Proyectos (4 tarjetas grandes e interactivas) -->
         <section id="proyectos" class="max-w-7xl mx-auto px-6 py-24 border-t border-gray-200">
             <div class="mb-14">
-                <span class="text-xs font-bold uppercase tracking-widest text-blue-600">Featured Work</span>
+                <span class="text-xs font-bold uppercase tracking-widest text-red-600">TRABAJO DESTACADO</span>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-1">Proyectos Destacados</h2>
-                <p class="text-gray-500 text-sm mt-2">Haz clic en cada tarjeta para ir directamente al enlace del proyecto.</p>
+                <p class="text-gray-500 text-sm mt-2">Explora los proyectos de RENAX y descubre cómo evoluciona cada identidad.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                 
                 <!-- Tarjeta 1: Skenzi -->
-                <a href="https://tusitio.com/skenzi" target="_blank" rel="noopener noreferrer" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
+                <a href="#galeria" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
                     <div class="flex justify-between items-start mb-20">
-                        <span class="text-xs uppercase font-bold tracking-widest text-blue-600">Proyecto 01</span>
+                        <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 01</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors">Skenzi</h3>
-                    <p class="text-sm text-gray-500 mt-4">Explorar enlace del proyecto interactivo.</p>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-red-600 transition-colors">Skenzi</h3>
+                    <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
                 </a>
 
                 <!-- Tarjeta 2: Día de las Matemáticas -->
-                <a href="https://tusitio.com/matematicas" target="_blank" rel="noopener noreferrer" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
+                <a href="#galeria" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
                     <div class="flex justify-between items-start mb-20">
-                        <span class="text-xs uppercase font-bold tracking-widest text-blue-600">Proyecto 02</span>
+                        <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 02</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors">Día de las Matemáticas</h3>
-                    <p class="text-sm text-gray-500 mt-4">Explorar enlace del proyecto interactivo.</p>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-red-600 transition-colors">Día de las Matemáticas</h3>
+                    <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
                 </a>
 
                 <!-- Tarjeta 3: Día de las Especialidades -->
-                <a href="https://tusitio.com/especialidades" target="_blank" rel="noopener noreferrer" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
+                <a href="#galeria" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
                     <div class="flex justify-between items-start mb-20">
-                        <span class="text-xs uppercase font-bold tracking-widest text-blue-600">Proyecto 03</span>
+                        <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 03</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors">Día de las Especialidades</h3>
-                    <p class="text-sm text-gray-500 mt-4">Explorar enlace del proyecto interactivo.</p>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-red-600 transition-colors">Día de las Especialidades</h3>
+                    <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
                 </a>
 
                 <!-- Tarjeta 4: DONUT'S BITES -->
-                <a href="https://tusitio.com/donuts-bites" target="_blank" rel="noopener noreferrer" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
+                <a href="#galeria" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
                     <div class="flex justify-between items-start mb-20">
-                        <span class="text-xs uppercase font-bold tracking-widest text-blue-600">Proyecto 04</span>
+                        <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 04</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-blue-600 transition-colors">DONUT'S BITES</h3>
-                    <p class="text-sm text-gray-500 mt-4">Explorar enlace del proyecto interactivo.</p>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-red-600 transition-colors">DONUT'S BITES</h3>
+                    <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
                 </a>
 
             </div>
@@ -203,15 +337,61 @@
     </main>
 
     <!-- 5. Pie de página (Footer) con diseño limpio y enlaces -->
-    <footer id="contacto" class="bg-white border-t border-gray-200 py-16 px-6">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-            <p class="text-sm text-gray-500">© 2026 LANDOR. Todos los derechos reservados.</p>
-            <div class="flex space-x-8 text-sm font-medium text-gray-700">
-                <a href="#" class="hover:text-black transition-colors">Instagram</a>
-                <a href="#" class="hover:text-black transition-colors">LinkedIn</a>
-                <a href="#" class="hover:text-black transition-colors">Behance</a>
-                <a href="#" class="hover:text-black transition-colors">Contacto</a>
+        <!-- PIE DE PÁGINA RENAX — DISEÑO COHERENTE CON INDEX -->
+    <footer class="renax-footer" id="footer-renax">
+        <div class="footer-topbar">
+            <span class="footer-titulo">MENÚ</span>
+            <a class="footer-explora" href="index.html">EXPLORA RENAX <span aria-hidden="true">↘</span></a>
+        </div>
+
+        <div class="footer-secciones">
+            <div class="footer-column">
+                <span class="footer-column-title">INICIO</span>
+                <nav class="footer-menu-links" aria-label="Enlaces de Inicio">
+                    <a href="index.html">Expertos en transformar marcas</a>
+                    <a href="index.html#esencia-marca">Vuelve a destacar sin perder tu esencia</a>
+                    <a href="index.html#esencia-marca">Tu historia merece una imagen que esté a su altura</a>
+                </nav>
             </div>
+            <div class="footer-column">
+                <span class="footer-column-title">NOSOTROS</span>
+                <nav class="footer-menu-links" aria-label="Enlaces de Nosotros">
+                    <a href="nosotros.html">Quiénes somos</a>
+                    <a href="nosotros.html#vision">Visión</a>
+                    <a href="nosotros.html#mision">Misión</a>
+                    <a href="nosotros.html#porque-renax">¿Por qué RENAX?</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <span class="footer-column-title">PORTAFOLIO</span>
+                <nav class="footer-menu-links" aria-label="Enlaces de Portafolio">
+                    <a href="portafolio.html">Proyectos y trabajos realizados</a>
+                    <a href="portafolio.html#proyectos">Casos de estudio</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <span class="footer-column-title">SERVICIOS</span>
+                <nav class="footer-menu-links" aria-label="Enlaces de Servicios">
+                    <a href="servicios.html">Diagnóstico de marca</a>
+                    <a href="servicios.html">Identidad visual</a>
+                    <a href="servicios.html">Comunicación</a>
+                    <a href="servicios.html">Estrategia visual</a>
+                </nav>
+            </div>
+            <div class="footer-column">
+                <span class="footer-column-title">CONTACTO</span>
+                <nav class="footer-menu-links" aria-label="Enlaces de Contacto">
+                    <a href="contacto.html">Hablemos de tu proyecto</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="index.html" class="footer-logo-link" aria-label="Volver al inicio de RENAX">
+                <img src="logo-renax-transparente.png" alt="RENAX" class="footer-logo">
+            </a>
+            <span>© 2026 RENAX. Todos los derechos reservados.</span>
+            <a class="footer-contacto" href="contacto.html">CONTACTO ↗</a>
         </div>
     </footer>
 
