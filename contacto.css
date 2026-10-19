@@ -170,9 +170,11 @@ body.contacto-page {
    justify-content: center;
    position: relative;
    box-sizing: border-box;
-   background-image:
-       linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.20)),
-       url("fondo-contacto.png");
+   
+background-image:
+    linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.30)),
+    url("Cintas rojas.png");
+
    background-size: cover;
    background-position: center;
    background-repeat: no-repeat;
