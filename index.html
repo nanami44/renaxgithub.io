@@ -267,6 +267,136 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+        
+/* SECCIÓN VUELVE A DESTACAR */
+#sesion-1 {
+    width: 100%;
+    min-height: 90vh;
+    padding: 100px 5%;
+    margin-top: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f1f1;
+    border-bottom: none;
+}
+
+.esencia-renax {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 650px;
+
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr;
+    align-items: center;
+    gap: 45px;
+
+    padding: 55px 30px;
+    background: #050505;
+    color: #fff;
+
+    border: 2px solid #e50914;
+    border-radius: 55px;
+}
+
+.esencia-titulo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.esencia-fila {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+.esencia-fila span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(30px, 4vw, 65px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    white-space: nowrap;
+}
+
+.esencia-fila img {
+    width: clamp(90px, 15vw, 230px);
+    height: 90px;
+    object-fit: cover;
+    border-radius: 9px;
+    flex-shrink: 0;
+}
+
+.esencia-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+    padding: 15px;
+}
+
+.esencia-texto p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(18px, 2vw, 27px);
+    line-height: 1.5;
+    color: #fff;
+}
+
+.esencia-boton {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid #e50914;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.esencia-boton:hover {
+    background: #e50914;
+}
+
+@media (max-width: 900px) {
+    #sesion-1 {
+        min-height: auto;
+        padding: 65px 18px;
+        margin-top: 45px;
+    }
+
+    .esencia-renax {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 35px 22px;
+        border-radius: 30px;
+        gap: 35px;
+    }
+
+    .esencia-fila {
+        flex-wrap: wrap;
+    }
+
+    .esencia-fila span {
+        font-size: clamp(28px, 6vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .esencia-fila img {
+        width: 100px;
+        height: 65px;
+    }
+
+    .esencia-texto {
+        padding: 0;
+    }
+}
+
     </style>
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -328,7 +458,43 @@
 
         <!-- ================= SESIÓN 1 ================= -->
         <section class="seccion-base" id="sesion-1">
-            <!-- Espacio listo para diseñar la Sesión 1 -->
+           
+<div class="esencia-renax" id="esencia">
+    <div class="esencia-titulo">
+        <div class="esencia-fila">
+            <span>VUELVE</span>
+            <img src="imagen1.png" alt="Ilustración creativa">
+            <span>A</span>
+        </div>
+
+        <div class="esencia-fila">
+            <img src="imagen2.png" alt="Ilustración de ojos">
+            <span>DESTACAR</span>
+        </div>
+
+        <div class="esencia-fila">
+            <span>SIN</span>
+            <img src="imagen3.png" alt="Ilustración de personas">
+            <span>PERDER</span>
+        </div>
+
+        <div class="esencia-fila">
+            <span>TU ESENCIA</span>
+        </div>
+    </div>
+
+    <div class="esencia-texto">
+        <p>
+            Transformamos marcas con historia en identidades
+            actuales, sin perder aquello que las hace únicas.
+        </p>
+
+        <a href="servicios.html" class="esencia-boton">
+            TRANSFORMA TU MARCA →
+        </a>
+    </div>
+</div>
+ <!-- Espacio listo para diseñar la Sesión 1 -->
         </section>
 
         <!-- ================= SESIÓN 2 ================= -->
