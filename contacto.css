@@ -1501,3 +1501,14 @@ h1, h2, h3,
     box-sizing: border-box !important;
 }
 
+/* TÍTULO FINAL: TU HISTORIA MERECE EVOLUCIONAR */
+.renax-cta-titulo {
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+.renax-cta-titulo span,
+.renax-cta-titulo em {
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 900 !important;
+}
+
