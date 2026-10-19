@@ -1457,44 +1457,47 @@ h1, h2, h3,
     font-weight: 900 !important;
 }
 
-/* CENTRAR TÍTULO Y BOTONES DE CONTACTO */
+/* CORRECCIÓN: CENTRADO REAL DEL TÍTULO DE CANALES */
 .contacto-canales-seccion {
-    width: 100%;
+    width: 100% !important;
     box-sizing: border-box;
 }
 
 .contacto-canales-intro {
-    width: 100%;
-    text-align: center;
-    margin: 0 auto 30px;
-    padding: 0 20px;
-    box-sizing: border-box;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 30px !important;
+    padding: 0 20px !important;
+    box-sizing: border-box !important;
 }
 
 .contacto-canales-intro h2 {
-    width: 100%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto 18px !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
 }
 
 .contacto-canales-intro p {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100% !important;
+    max-width: 900px !important;
+    margin: 0 auto 28px !important;
+    text-align: center !important;
 }
 
 .contacto-logos-horizontal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 24px;
-    width: 100%;
-    margin: 0 auto 35px;
-    box-sizing: border-box;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin: 0 auto 35px !important;
+    gap: 24px !important;
+    box-sizing: border-box !important;
 }
 
-.contacto-logos-horizontal .logo-canal-item {
-    flex: 0 0 auto;
-}
