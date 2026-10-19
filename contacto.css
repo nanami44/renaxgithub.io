@@ -1907,167 +1907,24 @@ h1, h2, h3,
     margin-top: 0 !important;
 }
 
-/* =========================================
-   RENAX - PREGUNTAS FRECUENTES CON FONDO BLANCO
-   ========================================= */
+
+/* SOLO FONDO BLANCO A TODO EL ANCHO: PREGUNTAS FRECUENTES */
+.renax-faq-section {
+    background: #ffffff !important;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+}
+
+/* El fondo blanco llega de borde a borde de la pantalla */
+.contacto-main {
+    background: transparent;
+}
 
 .renax-faq-section {
     position: relative;
-    width: 100%;
-    max-width: none;
-    box-sizing: border-box;
-    padding: 90px 8%;
-    margin: 0;
-
-    background: #ffffff !important;
-    color: #171717 !important;
-}
-
-/* ENCABEZADO DE LA SECCIÓN */
-.renax-faq-section .renax-faq-intro {
-    max-width: 1250px;
-    margin: 0 auto 28px;
-}
-
-.renax-faq-section .renax-faq-intro h2 {
-    color: #111111 !important;
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(32px, 5vw, 64px);
-    font-weight: 900;
-    line-height: 1.1;
-    text-transform: uppercase;
-    margin: 0 0 20px;
-}
-
-.renax-faq-section .renax-faq-intro h2 em {
-    color: #c9233a !important;
-    font-style: normal;
-}
-
-.renax-faq-section .renax-faq-intro p {
-    color: #777777 !important;
-    font-size: 16px;
-    line-height: 1.7;
-    margin: 0;
-}
-
-/* CONTENEDOR DE PREGUNTAS */
-.renax-faq-section .renax-faq-lista {
-    max-width: 1250px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* TARJETAS BLANCAS */
-.renax-faq-section .renax-faq-card {
-    background: #ffffff !important;
-    border: 1px solid #d8d8dc !important;
-    border-radius: 22px;
-    overflow: hidden;
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.045);
-    transition: border-color 0.3s ease,
-                box-shadow 0.3s ease;
-}
-
-/* PREGUNTA Y BOTÓN + */
-.renax-faq-section .renax-faq-card summary {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding: 30px 35px;
-    color: #171717 !important;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 1.5;
-    cursor: pointer;
-    list-style: none;
-}
-
-/* Oculta el marcador predeterminado */
-.renax-faq-section .renax-faq-card summary::-webkit-details-marker {
-    display: none;
-}
-
-.renax-faq-section .renax-faq-card summary::marker {
-    content: "";
-}
-
-/* Círculo con símbolo + */
-.renax-faq-section .renax-faq-card summary::after {
-    content: "+";
-    flex: 0 0 42px;
-    width: 42px;
-    height: 42px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #fbe5e8;
-    color: #c9233a;
-    font-size: 24px;
-    font-weight: 500;
-    transition: transform 0.3s ease,
-                background 0.3s ease;
-}
-
-/* Cuando la pregunta está abierta */
-.renax-faq-section .renax-faq-card[open] {
-    border-color: #c9233a !important;
-    box-shadow: 0 8px 24px rgba(201, 35, 58, 0.08);
-}
-
-.renax-faq-section .renax-faq-card[open] summary::after {
-    content: "−";
-    background: #c9233a;
-    color: #ffffff;
-}
-
-/* RESPUESTA */
-.renax-faq-section .renax-faq-card > p {
-    color: #555555 !important;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    line-height: 1.8;
-    padding: 0 35px 28px;
-    margin: 0;
-}
-
-/* EFECTO AL PASAR EL CURSOR */
-.renax-faq-section .renax-faq-card summary:hover::after {
-    background: #c9233a;
-    color: #ffffff;
-}
-
-/* ADAPTACIÓN PARA CELULARES */
-@media (max-width: 768px) {
-    .renax-faq-section {
-        padding: 60px 6%;
-    }
-
-    .renax-faq-section .renax-faq-card {
-        border-radius: 16px;
-    }
-
-    .renax-faq-section .renax-faq-card summary {
-        padding: 22px 20px;
-        font-size: 15px;
-        gap: 12px;
-    }
-
-    .renax-faq-section .renax-faq-card summary::after {
-        flex-basis: 36px;
-        width: 36px;
-        height: 36px;
-        font-size: 21px;
-    }
-
-    .renax-faq-section .renax-faq-card > p {
-        padding: 0 20px 22px;
-        font-size: 14px;
-    }
+    left: 50%;
+    width: 100vw !important;
+    margin-left: -50vw !important;
 }
