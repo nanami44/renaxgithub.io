@@ -1352,3 +1352,23 @@ body.portafolio-renax .horizontal-item:hover {
     border-color: #ff2638 !important;
     box-shadow: 0 0 15px rgba(255, 38, 56, 0.22);
 }
+
+/* TARJETAS DE PROYECTOS: BORDE ROJO */
+body.portafolio-renax .renax-grid-card,
+body.portafolio-renax #proyectos .renax-grid-card {
+    border: 1px solid #ff2638 !important;
+    box-shadow: none !important;
+}
+
+/* FLECHAS DE LAS TARJETAS */
+body.portafolio-renax .renax-grid-card svg,
+body.portafolio-renax .renax-grid-card svg path {
+    color: #ff2638 !important;
+    stroke: #ff2638 !important;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+body.portafolio-renax .renax-grid-card:hover {
+    border-color: #ff2638 !important;
+    box-shadow: 0 0 18px rgba(255, 38, 56, 0.25) !important;
+}
