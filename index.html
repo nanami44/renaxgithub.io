@@ -3,279 +3,407 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RENAX - Expertos en Transformar Marcas</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="RENAX - Transformamos marcas sin borrar su historia.">
+    <title id="pageTitle">RENAX | Transformamos marcas sin borrar su historia</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="inicio.css?v=6">
 </head>
-<body>
 
-    <!-- MENÚ DE NAVEGACIÓN -->
-    <header class="navbar">
+<body class="inicio-renax">
+
+    <!-- ================= HEADER ================= -->
+    <header class="site-header">
         <div class="nav-container">
-            <div class="logo">
-                <a href="#inicio">
-                    <img src="renax-mirada.jpg" alt="Logo RENAX" style="height: 30px; border-radius: 4px;"> 
-                    <span>RENAX</span>
+            <a href="index.html">
+                <img src="logo-renax-transparente.png" alt="RENAX" class="logo-renax">
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active" data-nav="inicio">Inicio</a>
+                <a href="nosotros.html" class="nav-link" data-nav="nosotros">Nosotros</a>
+                <a href="portafolio.html" class="nav-link" data-nav="portafolio">Portafolio</a>
+                <a href="servicios.html" class="nav-link" data-nav="servicios">Servicios</a>
+                <a href="contacto.html" class="nav-link" data-nav="contacto">Contáctanos</a>
+            </nav>
+            <button class="language" id="languageBtn" type="button">ESP</button>
+            <a href="login.html" class="login-btn" id="navLoginBtn"><span>INICIAR SESIÓN</span></a>
+        </div>
+    </header>
+    
+    <!-- ================= CINTURÓN ANIMADO ================= -->
+    <div class="renax-cinturon-container" aria-label="RENAX">
+        <div class="renax-cinturon-fila fila-izquierda">
+            <div class="renax-pista">
+                <span data-cinturon-1>RENAX ✦ TRANSFORMAMOS MARCAS</span>
+                <span>✦</span>
+                <span data-cinturon-2>VUELVE A DESTACAR SIN PERDER TU ESENCIA</span>
+                <span>✦</span>
+                <span data-cinturon-1>RENAX ✦ TRANSFORMAMOS MARCAS</span>
+                <span>✦</span>
+                <span data-cinturon-2>VUELVE A DESTACAR SIN PERDER TU ESENCIA</span>
+                <span>✦</span>
+            </div>
+        </div>
+        <div class="renax-cinturon-fila fila-derecha">
+            <div class="renax-pista pista-inversa">
+                <span data-cinturon-3>TU HISTORIA MERECE UNA IMAGEN A SU ALTURA</span>
+                <span>✦</span>
+                <span data-cinturon-4>CONSERVAMOS LA ESENCIA DE TU NEGOCIO</span>
+                <span>✦</span>
+                <span data-cinturon-3>TU HISTORIA MERECE UNA IMAGEN A SU ALTURA</span>
+                <span>✦</span>
+                <span data-cinturon-4>CONSERVAMOS LA ESENCIA DE TU NEGOCIO</span>
+                <span>✦</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="inicio-fondo"></div>
+
+    <!-- ================= CONTENIDO PRINCIPAL (5 SESIONES + PORTADA) ================= -->
+    <main>
+        <!-- PORTADA / HERO -->
+        <section class="renax-hero" id="hero-inicio">
+            <div class="renax-hero-content">
+                <p class="hero-small-text" data-lang="heroSmall">HOLA, SOMOS</p>
+                <h1 class="hero-collage-title" data-lang="heroTitle">EXPERTOS EN<br>TRANSFORMAR<br>MARCAS</h1>
+                <p class="hero-subtitle" data-lang="heroText">Sin borrar la historia que las hace únicas</p>
+                <a href="portafolio.html" class="renax-button">
+                    <span data-lang="heroButton">Ver nuestro portafolio</span>
+                    <span>×</span>
                 </a>
             </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#inicio" class="nav-item active">Inicio</a></li>
-                    <li><a href="#nosotros" class="nav-item">Nosotros</a></li>
-                    <li><a href="#portafolio" class="nav-item">Portafolio</a></li>
-                    <li><a href="#servicios" class="nav-item">Servicios</a></li>
-                    <li><a href="#contacto" class="nav-item">Contáctanos</a></li>
-                </ul>
+        </section>
+
+        <!-- ================= SESIÓN 1: ESENCIA DE MARCA ================= -->
+        <section class="renax-statement" id="esencia-marca">
+            <div class="statement-main">
+                <h2 class="statement-title" data-lang="statement">
+                    <span class="statement-line">VUELVE A <img src="renax-persona.jpg" alt="RENAX" class="statement-img statement-img-persona"></span>
+                    <span class="statement-line">DESTACAR <img src="renax-rojo.jpg" alt="RENAX" class="statement-img statement-img-rojo"></span>
+                    <span class="statement-line">SIN <img src="renax-mirada.jpg" alt="RENAX" class="statement-img statement-img-mirada"> PERDER</span>
+                    <span class="statement-line">TU ESENCIA</span>
+                </h2>
+            </div>
+            <div class="statement-description">
+                <p data-lang="statementText">Transformamos marcas con historia en identidades actuales, sin perder aquello que las hace únicas</p>
+                <a href="contacto.html" class="renax-button small">
+                    <span data-lang="transformButton">TRANSFORMA TU MARCA</span> →
+                </a>
+            </div>
+        </section>
+
+        <!-- ================= SESIÓN 2: HISTORIA ================= -->
+        <section class="history-section" id="historia-marca">
+            <h2 data-lang="historyTitle">
+                TU HISTORIA MERECE<br>UNA IMAGEN QUE ESTÉ A<br>SU ALTURA
+            </h2>
+
+            <div class="history-cards">
+                <article>
+                    <h3 data-lang="history1">HISTORIA</h3>
+                    <p data-lang="historyText">Una marca que lleva años construyendo confianza tiene algo que una marca nueva todavía no posee: historia.</p>
+                </article>
+                <article>
+                    <h3 data-lang="history2">ESENCIA</h3>
+                    <p data-lang="essenceText">En RENAX no queremos borrarla. Queremos descubrir qué hace especial tu negocio y conservar su esencia.</p>
+                </article>
+                <article>
+                    <h3 data-lang="history3">EVOLUCIÓN</h3>
+                    <p data-lang="evolutionText">Convertimos esa esencia en una identidad visual moderna, coherente y preparada para el presente.</p>
+                </article>
+            </div>
+
+            <p class="history-bottom" data-lang="historyBottom">
+                Impulsamos la evolución de marcas con historia, conservando su esencia y proyectándolas hacia nuevas oportunidades.
+            </p>
+        </section>
+
+        <!-- ================= SESIÓN 3: PORTAFOLIO (WORK) ================= -->
+        <section class="renax-work" id="proyectos">
+            <div class="work-label" data-lang="workLabel" style="font-size: 11rem !important; line-height: 0.9;">WORK</div>
+            
+            <div class="work-content">
+                <div class="work-main-image">
+                    <img src="mate2.png" alt="Día de las Matemáticas" class="rect-math-img">
+                    <h3 data-lang="workMathTitle">Día de las Matemáticas</h3>
+                    <a href="dia-matematicas.html" class="renax-button centered" data-lang="workMathBtn">VER PROYECTO →</a>
+                </div>
+
+                <div class="work-side">
+                    <div class="work-card skenzi-card">
+                        <img src="skenzi.png" alt="Proyecto Skenzi">
+                        <h3 data-lang="skenziTitle">Skenzi</h3>
+                    </div>
+                    <div class="work-card design-card">
+                        <img src="iea-logo.png.jpeg" alt="Proyecto YDEAS">
+                        <h3 data-lang="donutTitle">DONUT’S BITES</h3>
+                    </div>
+                    <a href="portafolio.html" class="renax-button centered">
+                        <span data-lang="portfolioButton">VER NUESTRO PORTAFOLIO</span> →
+                    </a>
+                </div>
+            </div>
+
+            <div class="work-especialidades-bottom">
+                <img src="especialidades-9.jpeg" alt="Especialidades RENAX" class="especialidades-img-ajustada">
+            </div>
+        </section>
+
+        <!-- ================= SESIÓN 4: PREGUNTAS FRECUENTES ================= -->
+        <section class="renax-faq" id="preguntas-frecuentes">
+            <div class="faq-container">
+                <span class="faq-eyebrow" data-lang="faqEyebrow">RENAX · ACOMPAÑAMOS TU EVOLUCIÓN</span>
+                <h2 data-lang="faqTitle">Preguntas frecuentes<span>.</span></h2>
+                <p class="faq-intro" data-lang="faqIntro">Resolvemos tus dudas para dar el siguiente paso con tu marca.</p>
+
+                <div class="faq-list">
+                    <button class="faq-question" data-faq="0" type="button">
+                        <span data-lang="q1">¿Qué tipo de marcas trabaja RENAX?</span>
+                        <span class="faq-arrow"><img src="logo-renax-transparente.png" alt="RENAX"></span>
+                    </button>
+                    <button class="faq-question" data-faq="1" type="button">
+                        <span data-lang="q2">¿Cómo funciona el proceso de renovación de una marca?</span>
+                        <span class="faq-arrow"><img src="logo-renax-transparente.png" alt="RENAX"></span>
+                    </button>
+                    <button class="faq-question" data-faq="2" type="button">
+                        <span data-lang="q3">¿RENAX cambia completamente mi logo?</span>
+                        <span class="faq-arrow"><img src="logo-renax-transparente.png" alt="RENAX"></span>
+                    </button>
+                    <button class="faq-question" data-faq="3" type="button">
+                        <span data-lang="q4">¿Qué incluye un proyecto de identidad visual?</span>
+                        <span class="faq-arrow"><img src="logo-renax-transparente.png" alt="RENAX"></span>
+                    </button>
+                    <button class="faq-question" data-faq="4" type="button">
+                        <span data-lang="q5">¿Cómo sé qué servicio necesita mi marca?</span>
+                        <span class="faq-arrow"><img src="logo-renax-transparente.png" alt="RENAX"></span>
+                    </button>
+                    <button class="faq-question" data-faq="5" type="button">
+                        <span data-lang="q6">¿Puedo contratar solo diseño gráfico?</span>
+                        <span class="faq-arrow"><img src="logo-renax-transparente.png" alt="RENAX"></span>
+                    </button>
+                    <button class="faq-question" data-faq="6" type="button">
+                        <span data-lang="q7">¿Trabajan con marcas que ya tienen varios años?</span>
+                        <span class="faq-arrow"><img src="logo-renax-transparente.png" alt="RENAX"></span>
+                    </button>
+                    <button class="faq-question" data-faq="7" type="button">
+                        <span data-lang="q8">¿Cómo puedo iniciar un proyecto con RENAX?</span>
+                        <span class="faq-arrow"><img src="logo-renax-transparente.png" alt="RENAX"></span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- VENTANA DE RESPUESTAS (MODAL) -->
+        <div class="faq-modal" id="faqModal" aria-hidden="true">
+            <div class="faq-modal-card" role="dialog" aria-modal="true">
+                <div class="faq-modal-top">
+                    <button class="faq-back" id="faqBack" type="button" data-lang="backBtn">Volver</button>
+                </div>
+                <div class="faq-modal-content">
+                    <p id="faqAnswer" aria-live="polite"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ================= SESIÓN 5: CTA FINAL ================= -->
+        <section class="renax-final-cta">
+            <h2 data-lang="finalTitle">¿TU MARCA ESTÁ<br>LISTA?</h2>
+            <div style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
+                <a href="contacto.html" class="renax-button">
+                    <span data-lang="contactButton">HABLEMOS DE TU MARCA</span> →
+                </a>
+                <a href="https://www.canva.com/design/DAHOGJ8tLuc/b4Cc_XcdRbx-OImmCGWqTg/view" target="_blank" rel="noopener noreferrer" class="renax-button">
+                    <span data-lang="manualButton">MANUAL DE MARCA</span> ↗
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="renax-footer" id="footer-renax">
+        <div class="footer-topbar">
+            <h2 class="footer-titulo" data-lang="footerMenu">MENÚ</h2>
+            <a href="index.html" class="footer-explora">
+                <span data-lang="footerExplore">EXPLORA RENAX</span> <span>↘</span>
+            </a>
+        </div>
+
+        <div class="footer-secciones">
+            <nav class="footer-column">
+                <h3><a href="index.html" data-lang="footerInicio">INICIO</a></h3>
+                <div class="footer-menu-links">
+                    <a href="index.html#hero-inicio" data-lang="footerHomeHero">Expertos en transformar marcas</a>
+                    <a href="index.html#esencia-marca" data-lang="footerHomeEssence">Vuelve a destacar sin perder tu esencia</a>
+                    <a href="index.html#historia-marca" data-lang="footerHomeHistory">Tu historia merece una imagen que esté a su altura</a>
+                    <a href="index.html#preguntas-frecuentes" data-lang="footerHomeFAQ">Preguntas frecuentes</a>
+                </div>
             </nav>
-            <div class="nav-actions">
-                <button class="btn-esp">ESP</button>
-                <button class="btn-login">INICIAR SESIÓN</button>
-            </div>
-        </div>
-        <div class="nav-red-line"></div>
-    </header>
 
-    <!-- 1. SECCIÓN PORTADA -->
-    <section id="inicio" class="hero-section" style="background-image: url('portada inicio.jpeg');">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <div class="hero-text-block">
-                <span class="small-tag">HOLA, SOMOS</span>
-                <h1>EXPERTOS EN TRANSFORMAR MARCAS</h1>
-                <p>SIN BORRAR LA HISTORIA QUE LAS HACE ÚNICAS</p>
-                <a href="#portafolio" class="btn-outline">VER NUESTRO PORTAFOLIO ×</a>
-            </div>
-            <div class="hero-img-overlay">
-                <img src="luz2.jpg" alt="Luz Renax">
-            </div>
-        </div>
-    </section>
-
-    <!-- 2. SEGUNDA SECCIÓN -->
-    <section class="essence-section">
-        <div class="essence-container">
-            <div class="essence-title-area">
-                <h2>VUELVE A DESTACAR SIN PERDER TU ESENCIA</h2>
-                <div class="mini-images-grid">
-                    <img src="renax-persona.jpg" alt="Persona">
-                    <img src="renax-rojo.jpg" alt="Rojo">
-                    <img src="renax-mirada.jpg" alt="Mirada">
+            <nav class="footer-column">
+                <h3><a href="nosotros.html" data-lang="footerNosotros">NOSOTROS</a></h3>
+                <div class="footer-menu-links">
+                    <a href="nosotros.html#quienes-somos" data-lang="footerWho">Quiénes somos</a>
+                    <a href="nosotros.html#vision" data-lang="footerVision">Visión</a>
+                    <a href="nosotros.html#mision" data-lang="footerMission">Misión</a>
+                    <a href="nosotros.html#por-que-renax" data-lang="footerWhy">¿Por qué RENAX?</a>
                 </div>
-            </div>
-            <div class="essence-text-area">
-                <p>Transformamos marcas con historia en identidades actuales, sin perder aquello que las hace únicas.</p>
-                <a href="#contacto" class="btn-red">TRANSFORMA TU MARCA →</a>
-            </div>
-        </div>
-    </section>
+            </nav>
 
-    <!-- 3. SECCIÓN HISTORIA -->
-    <section id="nosotros" class="history-section">
-        <h2>TU HISTORIA MERECE UNA IMAGEN QUE ESTÉ A SU ALTURA</h2>
-        <div class="cards-grid">
-            <div class="history-card">
-                <h3>HISTORIA</h3>
-                <p>Una marca que lleva años construyendo confianza tiene algo que una marca nueva todavía no posee: historia.</p>
-            </div>
-            <div class="history-card">
-                <h3>ESENCIA</h3>
-                <p>En RENAX no queremos borrarla. Queremos descubrir qué hace especial tu negocio y conservar su esencia.</p>
-            </div>
-            <div class="history-card">
-                <h3>EVOLUCIÓN</h3>
-                <p>Convertimos esa esencia en una identidad visual moderna, coherente y preparada para el presente.</p>
-            </div>
-        </div>
-        <p class="history-footer-text">Impulsamos la evolución de marcas con historia, conservando su esencia y proyectándolas hacia nuevas oportunidades.</p>
-    </section>
-
-    <!-- 4. SECCIÓN PROYECTOS DESTACADOS (WORK) -->
-    <section id="portafolio" class="work-section">
-        <div class="work-title-col">
-            <h2 class="vertical-text">WORK</h2>
-        </div>
-        <div class="work-grid">
-            <div class="work-item main-work">
-                <img src="DONUT'S BITES-casos-estudio02.jpeg" alt="Donuts Bites">
-            </div>
-            <div class="work-item secondary-work">
-                <img src="Día-Matemáticas.png" alt="Día Matemáticas">
-                <div class="work-caption">
-                    <span class="brand-title">BUDWEISER</span>
-                    <span class="brand-subtitle">American Icons</span>
+            <nav class="footer-column">
+                <h3><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h3>
+                <div class="footer-menu-links">
+                    <a href="portafolio.html#proyectos" data-lang="footerProjects">Proyectos y trabajos realizados</a>
+                    <a href="portafolio.html#casos-estudio" data-lang="footerCases">Casos de estudio</a>
                 </div>
-            </div>
-            <div class="work-item third-work">
-                <img src="especialidades-9.jpeg" alt="Especialidades">
-            </div>
-            <div class="work-item fourth-work">
-                <img src="skenzi-identidad-anterior.png" alt="Skenzi">
-            </div>
-        </div>
-    </section>
+            </nav>
 
-    <!-- SECCIÓN PREGUNTAS FRECUENTES -->
-    <section class="faq-section">
-        <div class="faq-header">
-            <span class="sub-orange">RENAX · ACOMPAÑAMOS TU EVOLUCIÓN</span>
-            <h2>Preguntas frecuentes<span>.</span></h2>
-            <p>Resolvemos tus dudas para dar el siguiente paso con tu marca.</p>
+            <nav class="footer-column">
+                <h3><a href="servicios.html" data-lang="footerServices">SERVICIOS</a></h3>
+                <div class="footer-menu-links">
+                    <a href="servicios.html#diagnostico" data-lang="footerService1">Diagnóstico de marca</a>
+                    <a href="servicios.html#identidad" data-lang="footerService2">Identidad visual</a>
+                    <a href="servicios.html#comunicacion" data-lang="footerService3">Comunicación</a>
+                    <a href="servicios.html#estrategia" data-lang="footerService4">Estrategia visual</a>
+                </div>
+            </nav>
         </div>
 
-        <div class="faq-container">
-            <div class="faq-item">
-                <button class="faq-question">
-                    ¿Qué tipo de marcas trabaja RENAX?
-                    <span class="faq-icon">↩</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Trabajamos principalmente con marcas consolidadas, negocios con trayectoria y proyectos que ya poseen historia en el mercado pero necesitan modernizar su imagen visual sin perder su identidad original.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    ¿Cómo funciona el proceso de renovación de una marca?
-                    <span class="faq-icon">↩</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Comenzamos con un diagnóstico profundo de tu historia y valores actuales, identificamos qué elementos conservar y diseñamos una propuesta visual moderna alineada con tus objetivos comerciales.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    ¿RENAX cambia completamente mi logo?
-                    <span class="faq-icon">↩</span>
-                </button>
-                <div class="faq-answer">
-                    <p>No necesariamente. Realizamos una evolución inteligente. Podemos optimizar, rediseñar o estilizar tu logotipo actual para que luzca contemporáneo, manteniendo la esencia y el reconocimiento que ya has construido.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    ¿Qué incluye un proyecto de identidad visual?
-                    <span class="faq-icon">↩</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Incluye la optimización de tu logotipo, manual de marca, paleta de colores corporativos, tipografías, elementos gráficos aplicados y recursos listos para utilizar tanto en digital como en impresos.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    ¿Cómo sé qué servicio necesita mi marca?
-                    <span class="faq-icon">↩</span>
-                </button>
-                <div class="faq-answer">
-                    <p>A través de nuestro diagnóstico de marca inicial evaluamos tu situación actual y te orientamos sobre si requieres un refresh visual, estrategia de comunicación o identidad completa.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    ¿Puedo contratar solo diseño gráfico?
-                    <span class="faq-icon">↩</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Sí, ofrecemos soluciones modulares que se adaptan a las necesidades puntuales de diseño y comunicación que requiera tu empresa en momentos específicos.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    ¿Trabajan con marcas que ya tienen varios años?
-                    <span class="faq-icon">↩</span>
-                </button>
-                <div class="faq-answer">
-                    <p>¡Absolutamente! De hecho, nos especializamos en potenciar negocios con trayectoria, honrando sus años de experiencia y adaptándolos a las nuevas exigencias del mercado digital y visual.</p>
-                </div>
-            </div>
-
-            <div class="faq-item">
-                <button class="faq-question">
-                    ¿Cómo puedo iniciar un proyecto con RENAX?
-                    <span class="faq-icon">↩</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Solo debes hacer clic en el botón "Hablemos de tu marca" o "Iniciar sesión" en nuestra barra de navegación para ponerte en contacto directo con nuestro equipo creativo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SECCIÓN LLAMADO FINAL -->
-    <section id="contacto" class="cta-final">
-        <h2>¿TU MARCA ESTÁ LISTA?</h2>
-        <div class="cta-buttons">
-            <a href="#contacto" class="btn-red-outline">HABLEMOS DE TU MARCA →</a>
-            <a href="#contacto" class="btn-red-outline">MANUAL DE MARCA →</a>
-        </div>
-    </section>
-
-    <!-- PIE DE PÁGINA (FOOTER) -->
-    <footer class="site-footer">
-        <div class="footer-title">MENÚ</div>
-        <div class="footer-columns">
-            <div class="footer-col">
-                <h4>INICIO</h4>
-                <ul>
-                    <li><a href="#inicio">Expertos en transformar marcas</a></li>
-                    <li><a href="#inicio">Vuelve a destacar sin perder tu esencia</a></li>
-                    <li><a href="#nosotros">Tu historia merece una imagen que esté a su altura</a></li>
-                    <li><a href="#inicio">Preguntas frecuentes</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>NOSOTROS</h4>
-                <ul>
-                    <li><a href="#nosotros">Quiénes somos</a></li>
-                    <li><a href="#nosotros">Visión</a></li>
-                    <li><a href="#nosotros">Misión</a></li>
-                    <li><a href="#nosotros">¿Por qué RENAX?</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>PORTAFOLIO</h4>
-                <ul>
-                    <li><a href="#portafolio">Proyectos y trabajos realizados</a></li>
-                    <li><a href="#portafolio">Casos de estudio</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>SERVICIOS</h4>
-                <ul>
-                    <li><a href="#servicios">Diagnóstico de marca</a></li>
-                    <li><a href="#servicios">Identidad visual</a></li>
-                    <li><a href="#servicios">Comunicación</a></li>
-                    <li><a href="#servicios">Estrategia visual</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>CONTACTO</h4>
-                <ul>
-                    <li><a href="#contacto">Hablemos de tu proyecto</a></li>
-                </ul>
-            </div>
+        <div class="footer-bottom">
+            <a href="index.html" class="footer-logo-link">
+                <img src="logo-renax-transparente.png" alt="RENAX" class="footer-logo">
+            </a>
+            <a href="contacto.html" class="footer-contacto" data-lang="footerContact">
+                CONTACTO ↗
+            </a>
         </div>
     </footer>
 
-    <!-- Script para interactividad de acordeón y enlaces -->
+    <!-- ================= JAVASCRIPT: TRADUCCIÓN Y FUNCIONALIDADES ================= -->
     <script>
-        // Acordeón de Preguntas Frecuentes
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const item = button.parentElement;
-                item.classList.toggle('active');
+        // Menú móvil
+        const navToggle = document.getElementById("navToggle");
+        const navMenu = document.getElementById("navMenu");
+        if (navToggle && navMenu) {
+            navToggle.addEventListener("click", () => navMenu.classList.toggle("active"));
+        }
+
+        // Sistema de Traducción ESP / ENG
+        const translations = {
+            es: {
+                navInicio: "Inicio", navNosotros: "Nosotros", navPortafolio: "Portafolio", navServicios: "Servicios", navContacto: "Contáctanos", navLogin: "INICIAR SESIÓN",
+                heroSmall: "HOLA, SOMOS", heroTitle: "EXPERTOS EN<br>TRANSFORMAR<br>MARCAS", heroText: "Sin borrar la historia que las hace únicas", heroButton: "Ver nuestro portafolio",
+                statementText: "Transformamos marcas con historia en identidades actuales, sin perder aquello que las hace únicas", transformButton: "TRANSFORMA TU MARCA",
+                historyTitle: "TU HISTORIA MERECE<br>UNA IMAGEN QUE ESTÉ A<br>SU ALTURA", history1: "HISTORIA", historyText: "Una marca que lleva años construyendo confianza tiene algo que una marca nueva todavía no posee: historia.",
+                history2: "ESENCIA", essenceText: "En RENAX no queremos borrarla. Queremos descubrir qué hace especial tu negocio y conservar su esencia.",
+                history3: "EVOLUCIÓN", evolutionText: "Convertimos esa esencia en una identidad visual moderna, coherente y preparada para el presente.",
+                historyBottom: "Impulsamos la evolución de marcas con historia, conservando su esencia y proyectándolas hacia nuevas oportunidades.",
+                workLabel: "WORK", workMathTitle: "Día de las Matemáticas", workMathBtn: "VER PROYECTO →", skenziTitle: "Skenzi", donutTitle: "DONUT’S BITES", portfolioButton: "VER NUESTRO PORTAFOLIO",
+                faqEyebrow: "RENAX · ACOMPAÑAMOS TU EVOLUCIÓN", faqTitle: "Preguntas frecuentes<span>.</span>", faqIntro: "Resolvemos tus dudas para dar el siguiente paso con tu marca.",
+                q1: "¿Qué tipo de marcas trabaja RENAX?", q2: "¿Cómo funciona el proceso de renovación de una marca?", q3: "¿RENAX cambia completamente mi logo?", q4: "¿Qué incluye un proyecto de identidad visual?", q5: "¿Cómo sé qué servicio necesita mi marca?", q6: "¿Puedo contratar solo diseño gráfico?", q7: "¿Trabajan con marcas que ya tienen varios años?", q8: "¿Cómo puedo iniciar un proyecto con RENAX?",
+                backBtn: "Volver", finalTitle: "¿TU MARCA ESTÁ<br>LISTA?", contactButton: "HABLEMOS DE TU MARCA", manualButton: "MANUAL DE MARCA",
+                footerMenu: "MENÚ", footerExplore: "EXPLORA RENAX", footerInicio: "INICIO", footerNosotros: "NOSOTROS", footerPortfolio: "PORTAFOLIO", footerServices: "SERVICIOS",
+                footerHomeHero: "Expertos en transformar marcas", footerHomeEssence: "Vuelve a destacar sin perder tu esencia", footerHomeHistory: "Tu historia merece una imagen que esté a su altura", footerHomeFAQ: "Preguntas frecuentes",
+                footerWho: "Quiénes somos", footerVision: "Visión", footerMission: "Misión", footerWhy: "¿Por qué RENAX?",
+                footerProjects: "Proyectos y trabajos realizados", footerCases: "Casos de estudio",
+                footerService1: "Diagnóstico de marca", footerService2: "Identidad visual", footerService3: "Comunicación", footerService4: "Estrategia visual", footerContact: "CONTACTO ↗"
+            },
+            en: {
+                navInicio: "Home", navNosotros: "About Us", navPortafolio: "Portfolio", navServicios: "Services", navContacto: "Contact Us", navLogin: "LOG IN",
+                heroSmall: "HELLO, WE ARE", heroTitle: "EXPERTS IN<br>TRANSFORMING<br>BRANDS", heroText: "Without erasing the history that makes them unique", heroButton: "View our portfolio",
+                statementText: " আমরা transform historic brands into modern identities without losing what makes them unique", transformButton: "TRANSFORM YOUR BRAND",
+                historyTitle: "YOUR HISTORY DESERVES<br>AN IMAGE THAT LIVES UP<br>TO IT", history1: "HISTORY", historyText: "A brand that has spent years building trust has something a new brand doesn't yet possess: history.",
+                history2: "ESSENCE", essenceText: "At RENAX we don't want to erase it. We want to discover what makes your business special and preserve its essence.",
+                history3: "EVOLUTION", evolutionText: "We turn that essence into a modern, coherent visual identity prepared for the present.",
+                historyBottom: "We drive the evolution of historic brands, preserving their essence and projecting them toward new opportunities.",
+                workLabel: "WORK", workMathTitle: "Mathematics Day", workMathBtn: "VIEW PROJECT →", skenziTitle: "Skenzi", donutTitle: "DONUT’S BITES", portfolioButton: "VIEW OUR PORTFOLIO",
+                faqEyebrow: "RENAX · ACCOMPANYING YOUR EVOLUTION", faqTitle: "Frequently asked questions<span>.</span>", faqIntro: "We resolve your doubts to take the next step with your brand.",
+                q1: "What type of brands does RENAX work with?", q2: "How does the brand renewal process work?", q3: "Does RENAX completely change my logo?", q4: "What does a visual identity project include?", q5: "How do I know what service my brand needs?", q6: "Can I hire graphic design only?", q7: "Do you work with brands that have been around for years?", q8: "How can I start a project with RENAX?",
+                backBtn: "Back", finalTitle: "IS YOUR BRAND<br>READY?", contactButton: "LET'S TALK ABOUT YOUR BRAND", manualButton: "BRAND MANUAL",
+                footerMenu: "MENU", footerExplore: "EXPLORE RENAX", footerInicio: "HOME", footerNosotros: "ABOUT US", footerPortfolio: "PORTFOLIO", footerServices: "SERVICES",
+                footerHomeHero: "Experts in transforming brands", footerHomeEssence: "Stand out again without losing your essence", footerHomeHistory: "Your history deserves an image that lives up to it", footerHomeFAQ: "Frequently asked questions",
+                footerWho: "Who we are", footerVision: "Vision", footerMission: "Mission", footerWhy: "Why RENAX?",
+                footerProjects: "Projects and completed works", footerCases: "Case studies",
+                footerService1: "Brand diagnosis", footerService2: "Visual identity", footerService3: "Communication", footerService4: "Visual strategy", footerContact: "CONTACT ↗"
+            }
+        };
+
+        const responsesES = [
+            'RENAX trabaja con pequeñas y medianas empresas que desean modernizar su identidad visual, fortalecer su presencia y conservar la esencia de su marca.',
+            'Comenzamos conociendo la historia, los valores y la identidad actual de la marca. Después desarrollamos una propuesta visual que busca modernizarla sin borrar su historia.',
+            'No necesariamente. El objetivo es evaluar qué elementos deben conservarse y cuáles pueden actualizarse para lograr una identidad más clara, coherente y actual.',
+            'El contenido depende del servicio contratado y de las necesidades de cada marca. Antes de iniciar, definimos el alcance del proyecto.',
+            'Podemos revisar juntos la situación actual de tu marca y conversar sobre los objetivos que deseas alcanzar para identificar el servicio más adecuado.',
+            'Sí. Puedes consultar por un servicio específico de diseño gráfico, según las necesidades de tu negocio.',
+            'Sí. RENAX busca revitalizar marcas con trayectoria, respetando los elementos que forman parte de su historia y actualizando su identidad visual.',
+            'Puedes comunicarte con RENAX mediante la sección de contacto para conversar sobre tu marca y las necesidades de tu proyecto.'
+        ];
+
+        const responsesEN = [
+            'RENAX works with small and medium businesses that want to modernize their visual identity, strengthen their presence, and preserve their brand essence.',
+            'We start by understanding the history, values, and current identity of the brand. Then we develop a visual proposal to modernize it without erasing its history.',
+            'Not necessarily. The goal is to evaluate which elements should be kept and which can be updated for a clearer, more coherent identity.',
+            'Content depends on the contracted service and the needs of each brand. Before starting, we define the project scope.',
+            'We can review your brand’s current situation together and discuss your goals to identify the most suitable service.',
+            'Yes. You can inquire about a specific graphic design service based on your business needs.',
+            'Yes. RENAX seeks to revitalize established brands, respecting elements of their history while updating their visual identity.',
+            'You can contact RENAX through the contact section to discuss your brand and project needs.'
+        ];
+
+        let currentLang = 'es';
+        const langBtn = document.getElementById('languageBtn');
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            langBtn.textContent = lang === 'es' ? 'ESP' : 'ENG';
+            
+            // Traducir todos los elementos con atributo data-lang
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const key = el.getAttribute('data-lang');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
             });
+
+            // Traducir enlaces del menú superior
+            const navLinksData = ['navInicio', 'navNosotros', 'navPortafolio', 'navServicios', 'navContacto'];
+            document.querySelectorAll('.nav-link').forEach((link, idx) => {
+                link.textContent = translations[lang][navLinksData[idx]];
+            });
+
+            document.getElementById('navLoginBtn').querySelector('span').textContent = translations[lang].navLogin;
+        }
+
+        langBtn.addEventListener('click', () => {
+            setLanguage(currentLang === 'es' ? 'en' : 'es');
         });
 
-        // Cambiar color a rojo al hacer clic en enlaces del menú
-        document.querySelectorAll('.nav-item').forEach(link => {
-            link.addEventListener('click', function() {
-                document.querySelectorAll('.nav-item').forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
+        // Modal de Preguntas Frecuentes
+        document.addEventListener('DOMContentLoaded', function () {
+            const modal = document.getElementById('faqModal');
+            const answer = document.getElementById('faqAnswer');
+            const back = document.getElementById('faqBack');
+
+            function openAnswer(index) {
+                const respList = currentLang === 'es' ? responsesES : responsesEN;
+                answer.textContent = respList[index];
+                modal.classList.add('faq-modal-visible');
+            }
+
+            function closeAnswer() {
+                modal.classList.remove('faq-modal-visible');
+            }
+
+            document.querySelectorAll('.faq-question[data-faq]').forEach(button => {
+                button.addEventListener('click', () => openAnswer(Number(button.dataset.faq)));
             });
+
+            if(back) back.addEventListener('click', closeAnswer);
+            if(modal) modal.addEventListener('click', (e) => { if (e.target === modal) closeAnswer(); });
         });
     </script>
 </body>
