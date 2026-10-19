@@ -1373,52 +1373,7 @@ body.portafolio-renax .renax-grid-card:hover {
     box-shadow: 0 0 18px rgba(255, 38, 56, 0.25) !important;
 }
 
-/* RENAX - EFECTO NARANJA AL PASAR EL MOUSE */
-#proyectos a.group:hover {
-    background: #ff8c24 !important;
-    border-color: #000000 !important;
-    color: #000000 !important;
-    box-shadow: 0 0 22px rgba(255, 140, 36, 0.35);
-}
 
-/* TÍTULOS EN NEGRO */
-#proyectos a.group:hover h1,
-#proyectos a.group:hover h2,
-#proyectos a.group:hover h3,
-#proyectos a.group:hover h4 {
-    color: #000000 !important;
-}
-
-/* TEXTOS Y ENLACES EN NEGRO */
-#proyectos a.group:hover p,
-#proyectos a.group:hover span,
-#proyectos a.group:hover .text-gray-500,
-#proyectos a.group:hover .text-gray-400,
-#proyectos a.group:hover .text-gray-300 {
-    color: #000000 !important;
-}
-
-/* FLECHAS EN NEGRO */
-#proyectos a.group:hover svg,
-#proyectos a.group:hover svg path {
-    color: #000000 !important;
-    stroke: #000000 !important;
-}
-
-/* DETALLES ROJOS EN NEGRO */
-#proyectos a.group:hover .text-red-600,
-#proyectos a.group:hover .text-red-500,
-#proyectos a.group:hover .text-red-400 {
-    color: #000000 !important;
-}
-
-/* TRANSICIÓN SUAVE */
-#proyectos a.group {
-    transition: background 0.35s ease,
-                color 0.35s ease,
-                border-color 0.35s ease,
-                box-shadow 0.35s ease;
-}
 /* OCULTAR LOS TEXTOS DE LA PORTADA DEL PORTAFOLIO */
 body.portafolio-renax #portada > div {
     display: none !important;
