@@ -1456,3 +1456,45 @@ h1, h2, h3,
     font-family: 'Montserrat', sans-serif !important;
     font-weight: 900 !important;
 }
+
+/* CENTRAR TÍTULO Y BOTONES DE CONTACTO */
+.contacto-canales-seccion {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.contacto-canales-intro {
+    width: 100%;
+    text-align: center;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.contacto-canales-intro h2 {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contacto-canales-intro p {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contacto-logos-horizontal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    width: 100%;
+    margin: 0 auto 35px;
+    box-sizing: border-box;
+}
+
+.contacto-logos-horizontal .logo-canal-item {
+    flex: 0 0 auto;
+}
