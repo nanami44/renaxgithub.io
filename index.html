@@ -454,6 +454,94 @@
     color: #e50914 !important;
 }
 
+/* HISTORIA DE MARCA RENAX */
+
+.historia-renax {
+    width: 100%;
+    padding: 0 4.5% 45px;
+    background: #f1f1f1;
+    color: #fff;
+}
+
+.historia-titulo {
+    min-height: 330px;
+    padding: 55px 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: linear-gradient(
+        90deg,
+        #080808 0%,
+        #080808 50%,
+        #ed0000 50%,
+        #ed0000 100%
+    );
+
+    border-radius: 0 0 42px 42px;
+}
+
+.historia-titulo h2 {
+    max-width: 1100px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(38px, 5.2vw, 76px);
+    font-weight: 900;
+    line-height: 0.98;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.historia-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    padding-top: 75px;
+}
+
+.historia-tarjeta {
+    min-height: 235px;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    background: #050505;
+    border-radius: 26px;
+}
+
+.historia-tarjeta p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 1.45;
+    color: #fff;
+}
+
+@media (max-width: 800px) {
+    .historia-renax {
+        padding: 0 18px 30px;
+    }
+
+    .historia-titulo {
+        min-height: 250px;
+        padding: 40px 15px;
+    }
+
+    .historia-titulo h2 {
+        font-size: clamp(30px, 7vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .historia-tarjetas {
+        grid-template-columns: 1fr;
+        padding-top: 35px;
+        gap: 14px;
+    }
+
+    .historia-tarjeta {
+        min-height: 140px;
+    }
+}
+
     </style>
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -554,10 +642,44 @@
  <!-- Espacio listo para diseñar la Sesión 1 -->
         </section>
 
-        <!-- ================= SESIÓN 2 ================= -->
-        <section class="seccion-base" id="sesion-2">
-            <!-- Espacio listo para diseñar la Sesión 2 -->
-        </section>
+        
+<!-- ================= HISTORIA DE MARCA ================= -->
+<section class="historia-renax" id="historia">
+
+    <div class="historia-titulo">
+        <h2>
+            TU HISTORIA MERECE<br>
+            UNA IMAGEN QUE ESTÉ A<br>
+            SU ALTURA.
+        </h2>
+    </div>
+
+    <div class="historia-tarjetas">
+        <article class="historia-tarjeta">
+            <p>
+                Una marca que lleva años construyendo confianza
+                tiene algo que una marca nueva todavía no posee:
+                historia.
+            </p>
+        </article>
+
+        <article class="historia-tarjeta">
+            <p>
+                En RENAX no queremos borrarla. Queremos descubrir
+                qué hace especial tu negocio y conservar su esencia.
+            </p>
+        </article>
+
+        <article class="historia-tarjeta">
+            <p>
+                Convertimos esa esencia en una identidad visual
+                moderna, coherente y preparada para el presente.
+            </p>
+        </article>
+    </div>
+
+</section>
+
 
         <!-- ================= SESIÓN 3 ================= -->
         <section class="seccion-base" id="sesion-3">
