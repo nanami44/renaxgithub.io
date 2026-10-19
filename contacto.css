@@ -2133,3 +2133,19 @@ h1, h2, h3,
 .contacto-conversacion .contacto-info-item:hover i {
     -webkit-text-fill-color: #111111 !important;
 }
+
+/* BOTÓN ENVIAR SOLICITUD: NEGRO CON TEXTO BLANCO */
+.contacto-conversacion .contacto-tarjeta-form button {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+.contacto-conversacion .contacto-tarjeta-form button:hover {
+    background: #222222 !important;
+    color: #ffffff !important;
+}
+
