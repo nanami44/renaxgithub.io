@@ -2339,3 +2339,41 @@ body.contacto-page .contacto-hero-contenido {
     margin-right: auto;
     box-sizing: border-box;
 }
+
+/* =========================================
+   RENAX - PIE DE PÁGINA NEGRO DE LADO A LADO
+   ========================================= */
+
+.contacto-footer {
+    position: relative;
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    background: #000000 !important;
+    background-image: none !important;
+    border-radius: 0 !important;
+}
+
+/* El contenedor interior conserva el contenido */
+.contacto-footer .contacto-footer-contenedor {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 auto !important;
+    box-sizing: border-box;
+    background: transparent !important;
+}
+
+/* Mantener las columnas dentro de la pantalla */
+.contacto-footer .contacto-footer-grid,
+.contacto-footer .contacto-footer-top,
+.contacto-footer .contacto-footer-bottom {
+    box-sizing: border-box;
+}
+
+/* Evitar que el fondo decorativo del sitio tape el negro */
+.contacto-footer::before,
+.contacto-footer::after {
+    content: none !important;
+    display: none !important;
+}
