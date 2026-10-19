@@ -513,13 +513,24 @@ max-width: 850px;
             overflow: hidden !important;
         }
 
-        .renax-carousel-section .renax-carousel-track {
-            display: flex !important;
-            width: max-content !important;
-            gap: 24px !important;
-            align-items: stretch !important;
-            animation: renaxInfiniteScroll 30s linear infinite;
-        }
+       
+.renax-carousel-section .renax-carousel-track {
+    display: flex !important;
+    width: max-content !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+    animation: renaxInfiniteScroll 30s linear infinite;
+}
+
+@keyframes renaxInfiniteScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(-50% - 12px));
+    }
+}
+
 
         .renax-carousel-section .renax-carousel-card {
             flex: 0 0 420px !important;
