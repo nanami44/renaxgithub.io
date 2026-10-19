@@ -22,18 +22,17 @@
             overflow-x: hidden;
         }
 
-        /* FONDO LÍQUIDO ANIMADO GLOBAL CON fondo-rojo-renax.png */
+        /* FONDO LÍQUIDO ANIMADO GLOBAL */
         .fondo-liquido-renax {
             position: fixed;
-            inset: -5%;
+            inset: 0;
             z-index: -1;
             pointer-events: none;
             background:
                 linear-gradient(
                     120deg,
-                    rgba(0, 0, 0, .15),
-                    rgba(100, 0, 0, .08),
-                    rgba(0, 0, 0, .20)
+                    rgba(0, 0, 0, 0.2),
+                    rgba(150, 0, 0, 0.15)
                 ),
                 url("fondo-rojo-renax.png") center / cover no-repeat;
             animation: renaxFondoMovimiento 12s ease-in-out infinite alternate;
@@ -42,8 +41,8 @@
 
         @keyframes renaxFondoMovimiento {
             0% { transform: scale(1) translate3d(-1%, 0, 0); }
-            50% { transform: scale(1.08) translate3d(1%, -1%, 0); }
-            100% { transform: scale(1.13) translate3d(-1%, 1%, 0); }
+            50% { transform: scale(1.05) translate3d(1%, -1%, 0); }
+            100% { transform: scale(1.1) translate3d(-1%, 1%, 0); }
         }
 
         /* MENÚ DE NAVEGACIÓN SUPERIOR */
@@ -121,7 +120,6 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            background-color: #050505;
         }
         .portada-grid {
             width: 100%;
@@ -179,7 +177,7 @@
         #sesion-1 {
             width: 100%;
             min-height: 90vh;
-            padding: 100px 5%;
+            padding: 80px 3%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -187,16 +185,16 @@
         }
         .esencia-renax {
             width: 100%;
-            max-width: 1600px;
+            max-width: 98%;
             display: grid;
             grid-template-columns: 1.4fr 0.9fr;
             align-items: center;
             gap: 45px;
-            padding: 55px 30px;
-            background: rgba(5, 5, 5, 0.9);
+            padding: 60px 45px;
+            background: rgba(5, 5, 5, 0.85);
             color: #fff;
             border: 2px solid #e50914;
-            border-radius: 55px;
+            border-radius: 40px;
         }
         .esencia-titulo {
             display: flex;
@@ -246,27 +244,29 @@
             background: #e50914;
         }
 
-        /* HISTORIA DE MARCA */
+        /* HISTORIA DE MARCA - MÁS GRANDE Y CON EFECTO SCROLL ZOOM & LUZ ZAPOTE */
         .historia-renax {
             width: 100%;
-            padding: 0 4.5% 45px;
+            max-width: 98%;
+            margin: 0 auto;
+            padding: 0 2% 60px;
             background: transparent;
             color: #fff;
         }
         .historia-titulo {
-            min-height: 330px;
-            padding: 55px 4%;
+            min-height: 380px;
+            padding: 65px 4%;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            background: linear-gradient(90deg, rgba(8,8,8,0.95) 50%, rgba(237,0,0,0.9) 50%);
-            border-radius: 0 0 42px 42px;
+            background: linear-gradient(90deg, rgba(8,8,8,0.9) 50%, rgba(237,0,0,0.85) 50%);
+            border-radius: 0 0 45px 45px;
         }
         .historia-titulo h2 {
-            max-width: 1100px;
+            max-width: 1250px;
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(38px, 5.2vw, 76px);
+            font-size: clamp(42px, 5.8vw, 84px);
             font-weight: 900;
             line-height: 0.98;
             letter-spacing: -2px;
@@ -275,59 +275,39 @@
         .historia-tarjetas {
             display: grid;
             grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 8px;
-            padding-top: 75px;
+            gap: 20px;
+            padding-top: 85px;
         }
         .historia-tarjeta {
-            min-height: 235px;
-            padding: 25px 20px;
+            min-height: 280px;
+            padding: 35px 30px;
             display: flex;
             align-items: center;
-            background: rgba(5, 5, 5, 0.9);
-            border-radius: 26px;
-            border: 1px solid #222;
+            background: rgba(10, 10, 10, 0.92);
+            border-radius: 30px;
+            border: 2px solid #222;
+            color: #fff;
+            transform: scale(0.95);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .historia-tarjeta p {
-            font-size: 17px;
-            line-height: 1.45;
+            font-size: 19px;
+            line-height: 1.55;
+            transition: color 0.4s ease;
         }
 
-        /* PORTAFOLIO / GALERÍA */
-        .galeria-renax {
-            width: 100%;
-            padding: 75px 5% 85px;
-            background: transparent;
+        /* ESTADO ACTIVO AL HACER SCROLL (ROJO, ZOOM Y LUZ ZAPOTE / NARANJA BRILLANTE) */
+        .historia-tarjeta.scroll-active {
+            background: #e50914 !important;
+            border-color: #ff6600 !important; /* Borde luminoso zapote/naranja */
+            box-shadow: 0 0 35px rgba(255, 102, 0, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.3);
+            transform: scale(1.03); /* Efecto zoom */
+            color: #ffffff !important;
         }
-        .titulo-destacados {
-            width: 100%;
-            padding: 55px 3% 65px;
-            margin-bottom: 30px;
-        }
-        .destacados-superior {
-            display: block;
-            margin-bottom: 24px;
-            color: #ed1c24;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 4px;
-        }
-        .destacados-lineas h2 {
-            margin: 0;
-            color: #ed1c24;
-            font-family: Impact, sans-serif;
-            font-size: clamp(75px, 12.5vw, 185px);
-            font-weight: 900;
-            line-height: 0.78;
-            letter-spacing: -3px;
-            text-transform: uppercase;
-            white-space: nowrap;
-        }
-        .destacados-lineas .destacado-contorno {
-            margin-top: 8px;
-            color: transparent;
-            -webkit-text-stroke: 2px #ed1c24;
-            font-size: clamp(48px, 9vw, 132px);
+
+        /* GALERÍA Y RESTO DE SECCIONES */
+        .galeria-renax, .renax-final-cta {
+            background: transparent !important;
         }
         .galeria-asimetrica {
             display: grid;
@@ -518,8 +498,8 @@
 
         @media (max-width: 900px) {
             .footer-secciones { grid-template-columns: 1fr 1fr; }
-            .galeria-asimetrica { grid-template-columns: 1fr; grid-template-rows: auto; }
-            .esencia-renax { grid-template-columns: 1fr; }
+            .esencia-renax { grid-template-columns: 1fr; max-width: 95%; }
+            .historia-tarjetas { grid-template-columns: 1fr; }
         }
     </style>
     
@@ -603,7 +583,7 @@
             </div>
         </section>
 
-        <!-- HISTORIA DE MARCA -->
+        <!-- HISTORIA DE MARCA CON EFECTO SCROLL -->
         <section class="historia-renax" id="historia">
             <div class="historia-titulo">
                 <h2 data-lang="historiaTitulo">
@@ -672,7 +652,7 @@
         <!-- SESIÓN 4: CTA FINAL -->
         <section class="renax-final-cta" id="sesion-4">
             <div class="final-contenido">
-                <p class="final-etiqueta"></p>
+                <p class="final-etiqueta">PepsiThe Choice</p>
                 <h2 class="final-titulo">
                     <span class="final-interrogacion">¿</span>
                     <span class="final-tu">TU</span>
@@ -690,112 +670,4 @@
                 </a>
             </div>
         </section>
-    </main>
-
-    <!-- PIE DE PÁGINA -->
-    <footer class="renax-footer">
-        <div class="footer-topbar">
-            <h2 class="footer-titulo" data-lang="footerMenu">MENÚ</h2>
-            <a href="index.html" class="footer-explora"><span data-lang="footerExplore">EXPLORA RENAX</span> <span>↘</span></a>
-        </div>
-        <div class="footer-secciones">
-            <div class="footer-column">
-                <h3><a href="index.html" data-lang="fCol1Title">INICIO</a></h3>
-                <a href="index.html#hero" data-lang="fCol1_1">Expertos en transformar marcas</a>
-                <a href="index.html#esencia" data-lang="fCol1_2">Vuelve a destacar sin perder tu esencia</a>
-                <a href="index.html#historia" data-lang="fCol1_3">Tu historia merece una imagen que esté a su altura</a>
-            </div>
-            <div class="footer-column">
-                <h3><a href="nosotros.html" data-lang="fCol2Title">NOSOTROS</a></h3>
-                <a href="nosotros.html#quienes" data-lang="fCol2_1">Quiénes somos</a>
-                <a href="nosotros.html#vision" data-lang="fCol2_2">Visión</a>
-                <a href="nosotros.html#mision" data-lang="fCol2_3">Misión</a>
-                <a href="nosotros.html#porquerenax" data-lang="fCol2_4">¿Por qué RENAX?</a>
-            </div>
-            <div class="footer-column">
-                <h3><a href="portafolio.html" data-lang="fCol3Title">PORTAFOLIO</a></h3>
-                <a href="portafolio.html#proyectos" data-lang="fCol3_1">Proyectos y trabajos realizados</a>
-                <a href="portafolio.html#casos" data-lang="fCol3_2">Casos de estudio</a>
-            </div>
-            <div class="footer-column">
-                <h3><a href="servicios.html" data-lang="fCol4Title">SERVICIOS</a></h3>
-                <a href="servicios.html#diagnostico" data-lang="fCol4_1">Diagnóstico de marca</a>
-                <a href="servicios.html#identidad" data-lang="fCol4_2">Identidad visual</a>
-                <a href="servicios.html#comunicacion" data-lang="fCol4_3">Comunicación</a>
-                <a href="servicios.html#estrategia" data-lang="fCol4_4">Estrategia visual</a>
-            </div>
-            <div class="footer-column">
-                <h3><a href="contacto.html" data-lang="fCol5Title">CONTACTO</a></h3>
-                <a href="contacto.html" data-lang="fCol5_1">Hablemos de tu proyecto</a>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <a href="index.html"><img src="logo-renax-transparente.png" alt="RENAX" class="footer-logo"></a>
-            <a href="contacto.html" class="footer-contacto-link" data-lang="footerContact">CONTACTO ↗</a>
-        </div>
-    </footer>
-
-    <!-- SCRIPT DE TRADUCCIÓN Y BOTÓN ESP/ENG -->
-    <script>
-        const translations = {
-            es: {
-                navInicio: "Inicio", navNosotros: "Nosotros", navPortafolio: "Portafolio", navServicios: "Servicios", navContacto: "Contáctanos", navLogin: "INICIAR SESIÓN",
-                heroSaludo: "HOLA, SOMOS", heroTitulo: "EXPERTOS EN<br>TRANSFORMAR<br>MARCAS", heroSub: "Sin borrar la historia que las hace únicas.", heroBoton: "VER NUESTRO PORTAFOLIO ×",
-                esencia1: "VUELVE", esencia2: "A", esencia3: "DESTACAR", esencia4: "SIN", esencia5: "PERDER", esencia6: "TU ESENCIA",
-                esenciaDesc: "Transformamos marcas con historia en identidades actuales, sin perder aquello que las hace únicas.", esenciaBoton: "TRANSFORMA TU MARCA →",
-                historiaTitulo: "TU HISTORIA MERECE<br>UNA IMAGEN QUE ESTÉ A<br>SU ALTURA.",
-                historiaCard1: "Una marca que lleva años construyendo confianza tiene algo que una marca nueva todavía no posee: historia.",
-                historiaCard2: "En RENAX no queremos borrarla. Queremos descubrir qué hace especial tu negocio y conservar su esencia.",
-                historiaCard3: "Convertimos esa esencia en una identidad visual moderna, coherente y preparada para el presente.",
-                galeriaSup: "RENAX / SELECCIÓN DE PROYECTOS", galeriaL1: "LO MÁS", galeriaL2: "DESTACADO", galeriaEtiqueta: "IDENTIDAD · DISEÑO · EVOLUCIÓN",
-                galeriaPieText: "Conoce algunos de los proyectos en los que transformamos marcas sin perder su esencia.", galeriaPieBoton: "VER NUESTRO PORTAFOLIO ↗",
-                ctaText1: "MARCA ESTÁ", ctaText2: "LISTA", ctaSmall: "Para la evolución",
-                ctaDesc: "En RENAX analizamos la historia, los valores y la esencia de tu negocio para convertirlos en una identidad visual moderna, coherente y bien preparada.",
-                ctaBoton: "HABLEMOS DE TU MARCA ↗",
-                footerMenu: "MENÚ", footerExplore: "EXPLORA RENAX",
-                fCol1Title: "INICIO", fCol1_1: "Expertos en transformar marcas", fCol1_2: "Vuelve a destacar sin perder tu esencia", fCol1_3: "Tu historia merece una imagen que esté a su altura",
-                fCol2Title: "NOSOTROS", fCol2_1: "Quiénes somos", fCol2_2: "Visión", fCol2_3: "Misión", fCol2_4: "¿Por qué RENAX?",
-                fCol3Title: "PORTAFOLIO", fCol3_1: "Proyectos y trabajos realizados", fCol3_2: "Casos de estudio",
-                fCol4Title: "SERVICIOS", fCol4_1: "Diagnóstico de marca", fCol4_2: "Identidad visual", fCol4_3: "Comunicación", fCol4_4: "Estrategia visual",
-                fCol5Title: "CONTACTO", fCol5_1: "Hablemos de tu proyecto", footerContact: "CONTACTO ↗"
-            },
-            en: {
-                navInicio: "Home", navNosotros: "About Us", navPortafolio: "Portfolio", navServicios: "Services", navContacto: "Contact Us", navLogin: "LOG IN",
-                heroSaludo: "HELLO, WE ARE", heroTitulo: "EXPERTS IN<br>TRANSFORMING<br>BRANDS", heroSub: "Without erasing the history that makes them unique.", heroBoton: "VIEW OUR PORTFOLIO ×",
-                esencia1: "STAND", esencia2: "OUT", esencia3: "AGAIN", esencia4: "WITHOUT", esencia5: "LOSING", esencia6: "YOUR ESSENCE",
-                esenciaDesc: "We transform historic brands into modern identities without losing what makes them unique.", esenciaBoton: "TRANSFORM YOUR BRAND →",
-                historiaTitulo: "YOUR HISTORY DESERVES<br>AN IMAGE THAT LIVES UP<br>TO IT.",
-                historiaCard1: "A brand that has spent years building trust has something a new brand doesn't yet possess: history.",
-                historiaCard2: "At RENAX we don't want to erase it. We want to discover what makes your business special and preserve its essence.",
-                historiaCard3: "We turn that essence into a modern, coherent visual identity prepared for the present.",
-                galeriaSup: "RENAX / PROJECT SELECTION", galeriaL1: "MOST", galeriaL2: "FEATURED", galeriaEtiqueta: "IDENTITY · DESIGN · EVOLUTION",
-                galeriaPieText: "Discover some of the projects where we transform brands without losing their essence.", galeriaPieBoton: "VIEW OUR PORTFOLIO ↗",
-                ctaText1: "BRAND IS", ctaText2: "READY", ctaSmall: "For evolution",
-                ctaDesc: "At RENAX we analyze your business history, values, and essence to turn them into a modern, cohesive, and well-prepared visual identity.",
-                ctaBoton: "LET'S TALK ABOUT YOUR BRAND ↗",
-                footerMenu: "MENU", footerExplore: "EXPLORE RENAX",
-                fCol1Title: "HOME", fCol1_1: "Experts in transforming brands", fCol1_2: "Stand out again without losing your essence", fCol1_3: "Your history deserves an image that lives up to it",
-                fCol2Title: "ABOUT US", fCol2_1: "Who we are", fCol2_2: "Vision", fCol2_3: "Mission", fCol2_4: "Why RENAX?",
-                fCol3Title: "PORTFOLIO", fCol3_1: "Projects and completed works", fCol3_2: "Case studies",
-                fCol4Title: "SERVICES", fCol4_1: "Brand diagnosis", fCol4_2: "Visual identity", fCol4_3: "Communication", fCol4_4: "Visual strategy",
-                fCol5Title: "CONTACT", fCol5_1: "Let's talk about your project", footerContact: "CONTACT ↗"
-            }
-        };
-
-        const langBtn = document.getElementById('langBtn');
-        let currentLang = 'es';
-
-        langBtn.addEventListener('click', () => {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            langBtn.textContent = currentLang === 'es' ? 'ESP' : 'ENG';
-
-            document.querySelectorAll('[data-lang]').forEach(el => {
-                const key = el.getAttribute('data-lang');
-                if (translations[currentLang][key]) {
-                    el.innerHTML = translations[currentLang][key];
-                }
-            });
-        });
-    </script>
-</body>
-</html>
+    </
