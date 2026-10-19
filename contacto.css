@@ -1280,11 +1280,6 @@ body.contacto-page::before {
         #030303;
 }
 
-/* La portada ya no debe tener un fondo propio */
-body.contacto-page .contacto-hero.fondo-esferas-renax {
-    background: transparent !important;
-}
-
 /* La capa de esferas acompaña a toda la página */
 body.contacto-page .esferas-container {
     position: fixed !important;
@@ -2277,4 +2272,33 @@ h1, h2, h3,
     transition: background-color 0.35s ease,
                 color 0.35s ease,
                 border-color 0.35s ease;
+}
+
+/* ==================================================
+   PORTADA CONTACTO — IMAGEN CINTAS ROJAS
+   ================================================== */
+
+body.contacto-page .contacto-hero.fondo-esferas-renax {
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.20),
+            rgba(0, 0, 0, 0.30)
+        ),
+        url("./Cintas%20rojas.png") center center / cover no-repeat !important;
+
+    position: relative !important;
+    isolation: isolate;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Texto y título por encima de la imagen */
+body.contacto-page .contacto-hero-contenido {
+    position: relative;
+    z-index: 2 !important;
+}
+
+/* Indicador de portada por encima del fondo */
+body.contacto-page .contacto-hero-indice {
+    z-index: 2;
 }
