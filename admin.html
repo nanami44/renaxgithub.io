@@ -402,7 +402,7 @@
                     <p><strong>Servicios Seleccionados:</strong></p>
                     <ul id="print-lista-servicios" style="background:#f9f9f9; padding:15px 25px; border-radius:4px; color:#333; margin:0;"></ul>
                     <h3 style="text-align:right; margin-top:20px; color:#0b0b0b;">Total a Pagar: <span id="print-valor" style="color:#e74c3c;"></span></h3>
-                    <button onclick="window.print()" class="menu-btn" style="background:#0b0b0b; color:#fff; width:100%; text-align:center; margin-top:20px; border:none;">Imprimir o Guardar como PDF 📄</button>
+                    <button onclick="window.print()" class="menu-btn" style="background:#0b0b0b; color:#fff; width:100%; text-align:center; margin-top:20px; border:none; cursor:pointer;">Imprimir o Guardar como PDF 📄</button>
                 </div>
             </div>
 
@@ -420,7 +420,7 @@
     </div>
 </div>
 
-<!-- SCRIPT DE NAVEGACIÓN Y FIREFIREBASE -->
+<!-- SCRIPTS -->
 <script>
     function cambiarSeccion(idSeccion, boton) {
         document.querySelectorAll('.panel-section').forEach(sec => sec.classList.remove('active'));
@@ -430,24 +430,44 @@
         boton.classList.add('active');
     }
 
-    function generarComprobante() {
-        const cliente = document.getElementById('comp-cliente').value;
+    // Función global fuera de los módulos para que el botón la reconozca sin fallar
+    function generarComprobanteSeleccionado() {
+        const cliente = document.getElementById('comp-cliente').value.trim();
         const tipo = document.getElementById('comp-tipo').value;
-        const detalle = document.getElementById('comp-detalle').value;
-        const valor = document.getElementById('comp-valor').value;
+        const checkboxes = document.querySelectorAll('.servicio-chk:checked');
 
-        if(!cliente || !detalle || !valor) {
-            alert("Por favor completa todos los campos del comprobante.");
+        if (!cliente) {
+            alert("Por favor ingresa el nombre del cliente o empresa.");
             return;
         }
+
+        if (checkboxes.length === 0) {
+            alert("Por favor selecciona al menos un servicio de la lista.");
+            return;
+        }
+
+        let sumaTotal = 0;
+        const listaServiciosHTML = document.getElementById('print-lista-servicios');
+        listaServiciosHTML.replaceChildren();
+
+        checkboxes.forEach(chk => {
+            const precio = parseInt(chk.getAttribute('data-precio'));
+            sumaTotal += precio;
+
+            const li = document.createElement('li');
+            li.style.marginBottom = "5px";
+            li.textContent = `${chk.value} — $${precio.toLocaleString('es-CO')} COP`;
+            listaServiciosHTML.appendChild(li);
+        });
 
         document.getElementById('print-titulo').textContent = `RENAX - ${tipo}`;
         document.getElementById('print-fecha').textContent = new Date().toLocaleDateString();
         document.getElementById('print-cliente').textContent = cliente;
-        document.getElementById('print-detalle').textContent = detalle;
-        document.getElementById('print-valor').textContent = valor;
+        document.getElementById('print-valor').textContent = `$${sumaTotal.toLocaleString('es-CO')} COP`;
 
-        document.getElementById('area-impresion').style.display = 'block';
+        const areaImpresion = document.getElementById('area-impresion');
+        areaImpresion.style.display = 'block';
+        areaImpresion.scrollIntoView({ behavior: 'smooth' });
     }
 </script>
 
@@ -597,44 +617,6 @@
             if (uidAnterior) selector.value = uidAnterior;
         });
     });
-    function generarComprobanteSeleccionado() {
-        const cliente = document.getElementById('comp-cliente').value.trim();
-        const tipo = document.getElementById('comp-tipo').value;
-        const checkboxes = document.querySelectorAll('.servicio-chk:checked');
-
-        if (!cliente) {
-            alert("Por favor ingresa el nombre del cliente o empresa.");
-            return;
-        }
-
-        if (checkboxes.length === 0) {
-            alert("Por favor selecciona al menos un servicio de la lista.");
-            return;
-        }
-
-        let sumaTotal = 0;
-        const listaServiciosHTML = document.getElementById('print-lista-servicios');
-        listaServiciosHTML.replaceChildren(); // Limpiar lista anterior
-
-        checkboxes.forEach(chk => {
-            const precio = parseInt(chk.getAttribute('data-precio'));
-            sumaTotal += precio;
-
-            const li = document.createElement('li');
-            li.style.marginBottom = "5px";
-            li.textContent = `${chk.value} — $${precio.toLocaleString('es-CO')} COP`;
-            listaServiciosHTML.appendChild(li);
-        });
-
-        document.getElementById('print-titulo').textContent = `RENAX - ${tipo}`;
-        document.getElementById('print-fecha').textContent = new Date().toLocaleDateString();
-        document.getElementById('print-cliente').textContent = cliente;
-        document.getElementById('print-valor').textContent = `$${sumaTotal.toLocaleString('es-CO')} COP`;
-
-        const areaImpresion = document.getElementById('area-impresion');
-        areaImpresion.style.display = 'block';
-        areaImpresion.scrollIntoView({ behavior: 'smooth' });
-    }
 </script>
 </body>
 </html>
