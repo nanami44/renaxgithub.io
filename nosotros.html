@@ -711,10 +711,28 @@ max-width: 850px;
             }
         }
         
-/* BORDES ROJOS PARA LAS TARJETAS DE VISIÓN Y MISIÓN */
+
+/* BORDES ROJOS ILUMINADOS - VISIÓN Y MISIÓN */
 .vision-mission-container .card-box {
     border: 2px solid #ff2638 !important;
+    box-shadow:
+        0 0 8px rgba(255, 38, 56, 0.35),
+        0 0 18px rgba(255, 0, 30, 0.18);
+    transition:
+        box-shadow 0.35s ease,
+        border-color 0.35s ease,
+        transform 0.35s ease;
 }
+
+/* BRILLO ROJO MÁS INTENSO AL PASAR EL RATÓN */
+.vision-mission-container .card-box:hover {
+    border-color: #ff152f !important;
+    box-shadow:
+        0 0 10px rgba(255, 21, 47, 0.65),
+        0 0 25px rgba(255, 0, 30, 0.4),
+        0 0 40px rgba(255, 0, 30, 0.18);
+}
+
 
 /* PORTADA RENAX: MÁS ESPACIO DEBAJO DEL MENÚ */
 #portada {
