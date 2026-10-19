@@ -1419,3 +1419,7 @@ body.portafolio-renax .renax-grid-card:hover {
                 border-color 0.35s ease,
                 box-shadow 0.35s ease;
 }
+/* OCULTAR LOS TEXTOS DE LA PORTADA DEL PORTAFOLIO */
+body.portafolio-renax #portada > div {
+    display: none !important;
+}
