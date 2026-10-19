@@ -2156,3 +2156,31 @@ h1, h2, h3,
     color: #ffffff !important;
     -webkit-text-fill-color: #ffffff !important;
 }
+
+/* OCULTAR EL INDICADOR INFERIOR DEL ENCABEZADO */
+.contacto-hero-indice {
+    display: none !important;
+}
+
+/* BOTONES DE CONTACTO CON FONDO ROJO */
+.contacto-logos-horizontal .logo-canal-item {
+    background: #ff2638 !important;
+    border: 1px solid #ff2638 !important;
+    transition: background 0.3s ease,
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL MOUSE */
+.contacto-logos-horizontal .logo-canal-item:hover {
+    background: #d9142b !important;
+    border-color: #d9142b !important;
+    box-shadow: 0 0 20px rgba(255, 38, 56, 0.35);
+    transform: translateY(-4px);
+}
+
+/* CONSERVAR LOS ICONOS */
+.contacto-logos-horizontal .logo-canal-img {
+    position: relative;
+    z-index: 1;
+}
