@@ -22,17 +22,18 @@
             overflow-x: hidden;
         }
 
-        /* FONDO LÍQUIDO ANIMADO GLOBAL - VISIBLE */
+        /* FONDO LÍQUIDO ANIMADO GLOBAL CON fondo-rojo-renax.png */
         .fondo-liquido-renax {
             position: fixed;
-            inset: 0;
+            inset: -5%;
             z-index: -1;
             pointer-events: none;
             background:
                 linear-gradient(
                     120deg,
-                    rgba(0, 0, 0, 0.2),
-                    rgba(150, 0, 0, 0.15)
+                    rgba(0, 0, 0, .15),
+                    rgba(100, 0, 0, .08),
+                    rgba(0, 0, 0, .20)
                 ),
                 url("fondo-rojo-renax.png") center / cover no-repeat;
             animation: renaxFondoMovimiento 12s ease-in-out infinite alternate;
@@ -41,8 +42,8 @@
 
         @keyframes renaxFondoMovimiento {
             0% { transform: scale(1) translate3d(-1%, 0, 0); }
-            50% { transform: scale(1.05) translate3d(1%, -1%, 0); }
-            100% { transform: scale(1.1) translate3d(-1%, 1%, 0); }
+            50% { transform: scale(1.08) translate3d(1%, -1%, 0); }
+            100% { transform: scale(1.13) translate3d(-1%, 1%, 0); }
         }
 
         /* MENÚ DE NAVEGACIÓN SUPERIOR */
@@ -120,6 +121,7 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            background-color: #050505;
         }
         .portada-grid {
             width: 100%;
@@ -173,11 +175,11 @@
             background: #e50914;
         }
 
-        /* SECCIÓN 1: ESENCIA - EXPANDIDA A LO ANCHO */
+        /* SECCIÓN 1: ESENCIA */
         #sesion-1 {
             width: 100%;
             min-height: 90vh;
-            padding: 80px 3%;
+            padding: 100px 5%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -185,16 +187,16 @@
         }
         .esencia-renax {
             width: 100%;
-            max-width: 98%; /* Expandido casi al ancho completo de la pantalla */
+            max-width: 1600px;
             display: grid;
             grid-template-columns: 1.4fr 0.9fr;
             align-items: center;
             gap: 45px;
-            padding: 60px 45px;
-            background: rgba(5, 5, 5, 0.85); /* Fondo semitransparente para ver el fondo rojo */
+            padding: 55px 30px;
+            background: rgba(5, 5, 5, 0.9);
             color: #fff;
             border: 2px solid #e50914;
-            border-radius: 40px;
+            border-radius: 55px;
         }
         .esencia-titulo {
             display: flex;
@@ -244,16 +246,211 @@
             background: #e50914;
         }
 
-        /* RESTO DE SECCIONES CON FONDO TRANSPARENTE */
-        .historia-renax, .galeria-renax, .renax-final-cta {
-            background: transparent !important;
-        }
-        .historia-tarjeta, .esencia-renax {
-            background: rgba(5, 5, 5, 0.85) !important;
+        /* HISTORIA DE MARCA */
+        .historia-renax {
+            width: 100%;
+            padding: 0 4.5% 45px;
+            background: transparent;
+            color: #fff;
         }
         .historia-titulo {
-            background: linear-gradient(90deg, rgba(8,8,8,0.9) 50%, rgba(237,0,0,0.85) 50%) !important;
+            min-height: 330px;
+            padding: 55px 4%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(90deg, rgba(8,8,8,0.95) 50%, rgba(237,0,0,0.9) 50%);
+            border-radius: 0 0 42px 42px;
         }
+        .historia-titulo h2 {
+            max-width: 1100px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(38px, 5.2vw, 76px);
+            font-weight: 900;
+            line-height: 0.98;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+        }
+        .historia-tarjetas {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 8px;
+            padding-top: 75px;
+        }
+        .historia-tarjeta {
+            min-height: 235px;
+            padding: 25px 20px;
+            display: flex;
+            align-items: center;
+            background: rgba(5, 5, 5, 0.9);
+            border-radius: 26px;
+            border: 1px solid #222;
+        }
+        .historia-tarjeta p {
+            font-size: 17px;
+            line-height: 1.45;
+        }
+
+        /* PORTAFOLIO / GALERÍA */
+        .galeria-renax {
+            width: 100%;
+            padding: 75px 5% 85px;
+            background: transparent;
+        }
+        .titulo-destacados {
+            width: 100%;
+            padding: 55px 3% 65px;
+            margin-bottom: 30px;
+        }
+        .destacados-superior {
+            display: block;
+            margin-bottom: 24px;
+            color: #ed1c24;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 4px;
+        }
+        .destacados-lineas h2 {
+            margin: 0;
+            color: #ed1c24;
+            font-family: Impact, sans-serif;
+            font-size: clamp(75px, 12.5vw, 185px);
+            font-weight: 900;
+            line-height: 0.78;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+        .destacados-lineas .destacado-contorno {
+            margin-top: 8px;
+            color: transparent;
+            -webkit-text-stroke: 2px #ed1c24;
+            font-size: clamp(48px, 9vw, 132px);
+        }
+        .galeria-asimetrica {
+            display: grid;
+            grid-template-columns: 1.25fr 1fr 1fr;
+            grid-template-rows: 380px 320px 320px;
+            gap: 16px;
+        }
+        .proyecto {
+            position: relative;
+            overflow: hidden;
+            border-radius: 14px;
+            background: #171717;
+        }
+        .proyecto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .proyecto:hover img {
+            transform: scale(1.03);
+        }
+        .proyecto figcaption {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            padding: 35px 16px 15px;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            background: linear-gradient(transparent, rgba(0,0,0,.85));
+        }
+        .proyecto-principal { grid-column: 1; grid-row: 1 / 3; }
+        .proyecto-especialidades { grid-column: 2; grid-row: 1; }
+        .proyecto-skenzi { grid-column: 3; grid-row: 1 / 3; }
+        .proyecto-matematicas { grid-column: 2; grid-row: 2 / 4; }
+        .proyecto-renax { grid-column: 1; grid-row: 3; }
+
+        .galeria-pie {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            margin-top: 48px;
+            text-align: center;
+        }
+        .galeria-pie p {
+            font-size: clamp(18px, 2vw, 25px);
+        }
+        .boton-portafolio-renax {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            padding: 15px 24px;
+            border: 1px solid #ed1c24;
+            border-radius: 40px;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background .25s;
+        }
+        .boton-portafolio-renax:hover {
+            background: #ed1c24;
+        }
+
+        /* SESIÓN 4: CTA FINAL */
+        #sesion-4.renax-final-cta {
+            position: relative;
+            isolation: isolate;
+            width: 100%;
+            min-height: 620px;
+            padding: 75px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+        }
+        #sesion-4 .final-contenido {
+            position: relative;
+            z-index: 2;
+            max-width: 1100px;
+            text-align: center;
+        }
+        #sesion-4 .final-etiqueta {
+            margin-bottom: 75px;
+            font-size: 18px;
+            text-align: left;
+        }
+        #sesion-4 .final-titulo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(43px, 7.5vw, 88px);
+            font-weight: 900;
+            line-height: .88;
+            letter-spacing: -3px;
+            text-transform: uppercase;
+        }
+        #sesion-4 .final-descripcion {
+            max-width: 760px;
+            margin: 28px auto 30px;
+            font-size: clamp(16px, 2vw, 21px);
+            line-height: 1.5;
+        }
+        #sesion-4 .final-boton {
+            display: inline-flex;
+            align-items: center;
+            gap: 18px;
+            padding: 14px 24px;
+            border: 1px solid #ed1c24;
+            border-radius: 35px;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            transition: background .3s;
+        }
+        #sesion-4 .final-boton:hover {
+            background: #ed1c24;
+        }
+
+        /* FOOTER ANCHO */
         .renax-footer {
             width: 100%;
             background-color: rgba(5, 5, 5, 0.95);
@@ -321,7 +518,8 @@
 
         @media (max-width: 900px) {
             .footer-secciones { grid-template-columns: 1fr 1fr; }
-            .esencia-renax { grid-template-columns: 1fr; max-width: 95%; }
+            .galeria-asimetrica { grid-template-columns: 1fr; grid-template-rows: auto; }
+            .esencia-renax { grid-template-columns: 1fr; }
         }
     </style>
     
@@ -474,7 +672,7 @@
         <!-- SESIÓN 4: CTA FINAL -->
         <section class="renax-final-cta" id="sesion-4">
             <div class="final-contenido">
-                <p class="final-etiqueta">PepsiThe Choice</p>
+                <p class="final-etiqueta"></p>
                 <h2 class="final-titulo">
                     <span class="final-interrogacion">¿</span>
                     <span class="final-tu">TU</span>
