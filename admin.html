@@ -597,6 +597,44 @@
             if (uidAnterior) selector.value = uidAnterior;
         });
     });
+    function generarComprobanteSeleccionado() {
+        const cliente = document.getElementById('comp-cliente').value.trim();
+        const tipo = document.getElementById('comp-tipo').value;
+        const checkboxes = document.querySelectorAll('.servicio-chk:checked');
+
+        if (!cliente) {
+            alert("Por favor ingresa el nombre del cliente o empresa.");
+            return;
+        }
+
+        if (checkboxes.length === 0) {
+            alert("Por favor selecciona al menos un servicio de la lista.");
+            return;
+        }
+
+        let sumaTotal = 0;
+        const listaServiciosHTML = document.getElementById('print-lista-servicios');
+        listaServiciosHTML.replaceChildren(); // Limpiar lista anterior
+
+        checkboxes.forEach(chk => {
+            const precio = parseInt(chk.getAttribute('data-precio'));
+            sumaTotal += precio;
+
+            const li = document.createElement('li');
+            li.style.marginBottom = "5px";
+            li.textContent = `${chk.value} — $${precio.toLocaleString('es-CO')} COP`;
+            listaServiciosHTML.appendChild(li);
+        });
+
+        document.getElementById('print-titulo').textContent = `RENAX - ${tipo}`;
+        document.getElementById('print-fecha').textContent = new Date().toLocaleDateString();
+        document.getElementById('print-cliente').textContent = cliente;
+        document.getElementById('print-valor').textContent = `$${sumaTotal.toLocaleString('es-CO')} COP`;
+
+        const areaImpresion = document.getElementById('area-impresion');
+        areaImpresion.style.display = 'block';
+        areaImpresion.scrollIntoView({ behavior: 'smooth' });
+    }
 </script>
 </body>
 </html>
