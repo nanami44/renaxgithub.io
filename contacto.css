@@ -2070,3 +2070,52 @@ h1, h2, h3,
 .renax-faq-section .renax-faq-lista {
     margin-top: 15px !important;
 }
+
+/* =========================================
+   RENAX - TARJETAS DE INFORMACIÓN DE CONTACTO
+   ========================================= */
+
+/* Borde rojo para los dos cuadros */
+.contacto-main .info-card,
+.contacto-main .contacto-info-card,
+.contacto-main .tarjeta-info {
+    border: 1px solid #ff2638 !important;
+    transition: background 0.35s ease,
+                color 0.35s ease,
+                border-color 0.35s ease,
+                transform 0.35s ease;
+}
+
+/* PRIMER CUADRO: TIEMPO DE RESPUESTA */
+.contacto-main .info-card:first-of-type:hover,
+.contacto-main .contacto-info-card:first-of-type:hover,
+.contacto-main .tarjeta-info:first-of-type:hover {
+    background: #ff2638 !important;
+    border-color: #ff2638 !important;
+    transform: translateY(-3px);
+}
+
+/* SEGUNDO CUADRO: ASESORÍA INICIAL */
+.contacto-main .info-card:nth-of-type(2):hover,
+.contacto-main .contacto-info-card:nth-of-type(2):hover,
+.contacto-main .tarjeta-info:nth-of-type(2):hover {
+    background: #ff8c24 !important;
+    border-color: #ff8c24 !important;
+    transform: translateY(-3px);
+}
+
+/* Texto negro al pasar el mouse */
+.contacto-main .info-card:hover *,
+.contacto-main .contacto-info-card:hover *,
+.contacto-main .tarjeta-info:hover * {
+    color: #111111 !important;
+}
+
+/* Iconos también en negro al pasar el mouse */
+.contacto-main .info-card:hover svg,
+.contacto-main .contacto-info-card:hover svg,
+.contacto-main .tarjeta-info:hover svg {
+    color: #111111 !important;
+    stroke: #111111 !important;
+}
+
