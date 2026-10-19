@@ -2243,3 +2243,38 @@ h1, h2, h3,
 .contacto-resena-card:hover img {
     filter: none !important;
 }
+
+/* PREGUNTAS FRECUENTES: EFECTO NARANJA AL PASAR EL MOUSE */
+.renax-faq-section .renax-faq-card {
+    transition: background-color 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+/* FONDO NARANJA Y BORDE ROJO */
+.renax-faq-section .renax-faq-card:hover {
+    background-color: #ff8c24 !important;
+    border-color: #ff2638 !important;
+}
+
+/* TEXTO DE LA PREGUNTA EN NEGRO */
+.renax-faq-section .renax-faq-card:hover summary,
+.renax-faq-section .renax-faq-card:hover summary span,
+.renax-faq-section .renax-faq-card:hover > p {
+    color: #111111 !important;
+}
+
+/* BOTÓN NARANJA CON SÍMBOLO NEGRO */
+.renax-faq-section .renax-faq-card:hover summary::after {
+    background-color: #ff8c24 !important;
+    color: #111111 !important;
+    border-color: #111111 !important;
+}
+
+/* TRANSICIÓN SUAVE DEL TEXTO Y BOTÓN */
+.renax-faq-section .renax-faq-card summary,
+.renax-faq-section .renax-faq-card summary::after {
+    transition: background-color 0.35s ease,
+                color 0.35s ease,
+                border-color 0.35s ease;
+}
