@@ -954,6 +954,195 @@
     }
 }
 
+/* =========================================
+   SESIÓN 4 — ¿TU MARCA ESTÁ LISTA?
+   ========================================= */
+
+#sesion-4.renax-final-cta {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 620px;
+    padding: 75px 7%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+    border: none;
+    color: #fff;
+}
+
+#sesion-4 .final-contenido {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#sesion-4 .final-etiqueta {
+    margin-bottom: 75px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #fff;
+    text-align: left;
+}
+
+#sesion-4 .final-titulo {
+    position: relative;
+    margin: 0 auto 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(43px, 7.5vw, 88px);
+    font-weight: 900;
+    line-height: .88;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#sesion-4 .final-titulo > span {
+    display: inline-block;
+}
+
+#sesion-4 .final-interrogacion {
+    color: #fff;
+}
+
+#sesion-4 .final-tu {
+    color: #fff;
+    text-shadow: 0 0 25px rgba(255, 35, 15, .35);
+}
+
+#sesion-4 .final-segunda-linea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 4px;
+}
+
+#sesion-4 .final-interrogacion-cierre {
+    margin-left: 5px;
+}
+
+#sesion-4 .final-segunda-linea small {
+    font-family: Georgia, serif;
+    font-size: clamp(15px, 2vw, 23px);
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+#sesion-4 .final-descripcion {
+    max-width: 760px;
+    margin: 28px auto 30px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: clamp(16px, 2vw, 21px);
+    line-height: 1.5;
+}
+
+#sesion-4 .final-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 24px;
+    border: 1px solid #ed1c24;
+    border-radius: 35px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background .3s ease;
+}
+
+#sesion-4 .final-boton:hover {
+    background: #ed1c24;
+}
+
+#sesion-4 .final-luz {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 50%;
+    background: #ff210d;
+    filter: blur(42px);
+    opacity: .75;
+}
+
+#sesion-4 .final-luz-1 {
+    width: 95px;
+    height: 95px;
+    top: 25%;
+    left: 20%;
+    animation: renaxLuz 5s ease-in-out infinite alternate;
+}
+
+#sesion-4 .final-luz-2 {
+    width: 150px;
+    height: 150px;
+    right: 10%;
+    bottom: 5%;
+    opacity: .6;
+    animation: renaxLuz 6s ease-in-out infinite alternate-reverse;
+}
+
+#sesion-4 .final-luz-3 {
+    width: 70px;
+    height: 70px;
+    left: 5%;
+    bottom: 10%;
+    opacity: .45;
+    animation: renaxLuz 4s ease-in-out infinite alternate;
+}
+
+@keyframes renaxLuz {
+    from {
+        transform: scale(.85);
+        opacity: .35;
+    }
+    to {
+        transform: scale(1.25);
+        opacity: .8;
+    }
+}
+
+@media (max-width: 600px) {
+    #sesion-4.renax-final-cta {
+        min-height: 540px;
+        padding: 55px 20px;
+    }
+
+    #sesion-4 .final-etiqueta {
+        margin-bottom: 55px;
+        font-size: 15px;
+    }
+
+    #sesion-4 .final-titulo {
+        font-size: clamp(37px, 10vw, 58px);
+        letter-spacing: -2px;
+    }
+
+    #sesion-4 .final-segunda-linea {
+        gap: 8px;
+    }
+
+    #sesion-4 .final-segunda-linea small {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    #sesion-4 .final-descripcion {
+        font-size: 16px;
+    }
+}
+
     </style>
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1165,10 +1354,41 @@
 </section>
 
 
-        <!-- ================= SESIÓN 4 ================= -->
-        <section class="seccion-base" id="sesion-4">
-            <!-- Espacio listo para diseñar la Sesión 4 -->
-        </section>
+        
+<!-- ================= SESIÓN 4: CTA FINAL RENAX ================= -->
+<section class="renax-final-cta" id="sesion-4">
+
+    <div class="final-luz final-luz-1"></div>
+    <div class="final-luz final-luz-2"></div>
+    <div class="final-luz final-luz-3"></div>
+
+    <div class="final-contenido">
+
+        <p class="final-etiqueta">PepsiThe Choice</p>
+
+        <h2 class="final-titulo">
+            <span class="final-interrogacion">¿</span>
+            <span class="final-tu">TU</span>
+            <span>MARCA ESTÁ</span>
+            <span class="final-segunda-linea">
+                LISTA<span class="final-interrogacion-cierre">?</span>
+                <small>Para la evolución</small>
+            </span>
+        </h2>
+
+        <p class="final-descripcion">
+            En RENAX analizamos la historia, los valores y la esencia
+            de tu negocio para convertirlos en una identidad visual
+            moderna, coherente y bien preparada.
+        </p>
+
+        <a href="contacto.html" class="final-boton">
+            HABLEMOS DE TU MARCA <span>↗</span>
+        </a>
+
+    </div>
+</section>
+
 
         <!-- ================= SESIÓN 5 ================= -->
         <section class="seccion-base" id="sesion-5">
