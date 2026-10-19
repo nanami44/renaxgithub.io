@@ -3,140 +3,707 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Contáctanos - Ponte en contacto con nuestro equipo global de expertos en branding.">
-  <title>Contacto | Agencia de Branding & Marketing</title>
-  
-  <!-- FontAwesome v6 & CSS -->
+  <meta name="description" content="Contacta con RENAX. Transformamos marcas sin borrar su historia.">
+  <title>Contáctanos | RENAX</title>
+
+  <!-- Estilos independientes -->
+  <link rel="stylesheet" href="contacto.css">
+
+  <!-- Tipografías e Iconos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
 
-  <!-- HEADER GLOBAL -->
-  <header class="site-header">
-    <div class="nav-container">
-      <a href="inicio.html" class="brand-logo" aria-label="Página principal">
-        <svg width="32" height="32" viewBox="0 0 100 100" fill="white" aria-hidden="true">
-          <path d="M10 80 Q 50 10 90 80 Q 50 50 10 80 Z" />
-        </svg>
+<body class="contacto-page">
+
+  <!-- ENCABEZADO / NAVEGACIÓN -->
+  <header class="contacto-header">
+    <a class="contacto-logo" href="index.html" aria-label="RENAX, ir al inicio">
+      <img src="logo-renax-transparente.png" alt="RENAX">
+    </a>
+
+    <nav class="contacto-nav" id="contactoNav" aria-label="Menú principal">
+      <a href="index.html" data-lang="navHome">Inicio</a>
+      <a href="nosotros.html" data-lang="navAbout">Nosotros</a>
+      <a href="portafolio.html" data-lang="navPortfolio">Portafolio</a>
+      <a href="servicios.html" data-lang="navServices">Servicios</a>
+      <a href="contacto.html" class="activo" aria-current="page" data-lang="navContact">Contáctanos</a>
+    </nav>
+
+    <div class="contacto-header-acciones">
+      <button type="button" class="contacto-idioma" id="contactoIdioma" aria-label="Cambiar idioma">ESP</button>
+      <a href="login.html" class="contacto-login" id="navLoginBtn">
+  <span data-lang="loginButton">INICIAR SESIÓN</span>
+</a>
       </a>
-
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-
-      <nav class="nav-menu" id="navMenu" aria-label="Navegación principal">
-        <a href="inicio.html" class="nav-link">inicio</a>
-        <a href="portafolio.html" class="nav-link">portafolio</a>
-        <a href="nosotros.html" class="nav-link">nosotros</a>
-        <a href="servicios.html" class="nav-link">servicios</a>
-        <a href="contacto.html" class="nav-link active" aria-current="page">contáctanos</a>
-      </nav>
-
-      <button class="search-btn" aria-label="Buscar en el sitio">
-        <i class="fa-solid fa-magnifying-glass"></i>
+      <button class="contacto-menu-toggle" id="contactoMenuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="contactoNav">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
     </div>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <main id="main-content">
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contacto-main">
 
-    <!-- HERO CONTACTO -->
-    <section class="contact-hero">
-      <h1>CONTACTO</h1>
-      <p>Get in touch with our global team of branding experts to discuss your challenge.</p>
+    <!-- HERO / PORTADA -->
+<section class="contacto-hero fondo-esferas-renax" id="contacto-inicio" aria-labelledby="contactoHeroTitulo">
+    
+    <!-- Contenedor de las esferas luminosas -->
+    <div class="esferas-container">
+        <div class="esfera esfera-1"></div>
+        <div class="esfera esfera-2"></div>
+    </div>
+      <div class="contacto-hero-contenido">
+        <p class="contacto-eyebrow" data-lang="heroEyebrow"><span class="indicador-punto"></span> RENAX / CONTÁCTANOS</p>
+        
+      
+<h1 id="contactoHeroTitulo" class="titulo-do-more">
+  <span class="titulo-linea">
+    <span class="texto-solido" data-lang="contactTitle">HABLEMOS</span>
+  </span>
+  <span class="titulo-linea">
+    <span class="texto-contorno" data-lang="contactTitle2">DE TU</span>
+    <em class="texto-solido texto-rojo" data-lang="contactTitle3">MARCA.</em>
+  </span>
+</h1>
+
+
+        <p class="contacto-hero-texto" data-lang="contactDescription">
+          Cada marca tiene una historia que contar. Cuéntanos la tuya y exploremos cómo fortalecer su identidad, modernizar su imagen y proyectarla hacia nuevas oportunidades sin perder su esencia.
+        </p>
+
+        <a class="contacto-link-principal" href="#contacto-formulario">
+          <span data-lang="contactButton">INICIAR CONVERSACIÓN</span>
+          <span class="flecha-icono" aria-hidden="true">↘</span>
+        </a>
+      </div>
+
+      <div class="contacto-hero-indice" aria-hidden="true">
+        <span>RENAX</span>
+        <span class="contacto-hero-linea"></span>
+        <span data-lang="contactIndicator">01 / CONTACTO</span>
+      </div>
     </section>
 
-    <!-- FORMULARIO DE CONTACTO COMPLETO -->
-    <section class="contact-form-container">
-      <form id="fullContactForm" novalidate>
-        <div class="form-group-box">
-          <input type="text" class="form-input-box" id="firstName" placeholder="First Name" required>
-        </div>
+    <!-- SECCIÓN 01: FORMULARIO DINÁMICO DE CONTACTO -->
+    <section class="contacto-conversacion" id="contacto-formulario" aria-labelledby="contactoConversacionTitulo">
+      <div class="contacto-seccion-meta">
+        <span class="numero-paso">01</span>
+        <span class="etiqueta-paso" data-lang="firstStep">EL PRIMER PASO</span>
+      </div>
 
-        <div class="form-group-box">
-          <input type="text" class="form-input-box" id="lastName" placeholder="Last name" required>
-        </div>
+      <div class="contacto-conversacion-grid">
+        <div class="contacto-conversacion-texto">
+          <h2 id="contactoConversacionTitulo">
+            <span data-lang="conversationTitle">Toda transformación comienza con una</span>
+            <em data-lang="conversationWord">conversación.</em>
+          </h2>
+          <p data-lang="convP1">
+            En RENAX creemos que una marca no necesita olvidar su historia para avanzar. Queremos conocer tu negocio, entender tus objetivos y proyectar tu marca.
+          </p>
 
-        <div class="form-group-box">
-          <input type="email" class="form-input-box" id="email" placeholder="Email" required>
-        </div>
-
-        <div class="form-group-box">
-          <input type="text" class="form-input-box" placeholder="Company name (optional)">
-        </div>
-
-        <div class="form-group-box">
-          <input type="text" class="form-input-box" placeholder="Job title (optional)">
-        </div>
-
-        <div class="form-group-box">
-          <input type="text" class="form-input-box" placeholder="Country of residence (optional)">
-        </div>
-
-        <div style="margin-top: 3rem;">
-          <label class="form-label-title">DEJA UN MENSAJE</label>
-          <div class="form-group-box">
-            <textarea class="form-input-box" id="message" rows="5" placeholder="Escribe tu mensaje aquí..." required style="resize: vertical;"></textarea>
+          <!-- Tarjeta con tiempos e información clave -->
+          <div class="contacto-info-rapida">
+            <div class="contacto-info-item">
+              <i class="fa-regular fa-clock"></i>
+              <div>
+                <strong data-lang="responseTimeTitle">Tiempo de Respuesta</strong>
+                <p data-lang="responseTimeDesc">Respondemos en menos de 24 horas hábiles.</p>
+              </div>
+            </div>
+            <div class="contacto-info-item">
+              <i class="fa-regular fa-calendar-check"></i>
+              <div>
+                <strong data-lang="meetingTitle">Asesoría Inicial</strong>
+                <p data-lang="meetingDesc">Primera consulta diagnóstica sin compromiso.</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div style="text-align: center; margin-top: 2rem;">
-          <button type="submit" class="btn-pill" style="min-width: 180px;">Botón</button>
-        </div>
+        <!-- FORMULARIO DIRECTO -->
+        <aside class="contacto-tarjeta-form">
+          <span class="contacto-tarjeta-etiqueta" data-lang="formTag">SOLICITUD DE COTIZACIÓN</span>
+          <h3 data-lang="tellBrand">Cuéntanos sobre tu proyecto</h3>
 
-        <!-- Mensaje de Feedback -->
-        <div id="formStatus" class="form-status" aria-live="polite"></div>
-      </form>
+          <form class="contacto-form-element" action="https://formspree.io/f/xrperlgd" method="POST" id="formCotizacion">
+            <div class="form-group">
+              <input type="text" id="nombre" name="nombre" placeholder=" " required>
+              <label for="nombre" data-lang="labelName">Nombre completo *</label>
+            </div>
+
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder=" " required>
+              <label for="email" data-lang="labelEmail">Correo electrónico *</label>
+            </div>
+
+            <div class="form-group">
+              <input type="tel" id="telefono" name="telefono" placeholder=" ">
+              <label for="telefono" data-lang="labelPhone">Teléfono / WhatsApp</label>
+            </div>
+
+            <div class="form-group">
+              <select id="servicio" name="servicio" required>
+                <option value="" disabled selected hidden></option>
+                <option value="diagnostico" data-lang="opt1">Auditoría / Diagnóstico de marca</option>
+                <option value="renovacion" data-lang="opt2">Renovación de Identidad / Logo</option>
+                <option value="comunicacion" data-lang="opt3">Contenido y Redes Sociales</option>
+                <option value="estrategia" data-lang="opt4">Estrategia Visual Completa</option>
+                <option value="otro" data-lang="opt5">Otro servicio</option>
+              </select>
+              <label for="servicio" data-lang="labelService">¿Qué servicio te interesa? *</label>
+            </div>
+
+            <div class="form-group">
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder=" " required></textarea>
+              <label for="mensaje" data-lang="labelMessage">Detalles de tu proyecto *</label>
+            </div>
+
+            <button type="submit" class="contacto-boton contacto-boton-rojo">
+              <span data-lang="contactSubmit">ENVIAR SOLICITUD</span>
+              <span aria-hidden="true">→</span>
+            </button>
+          </form>
+
+          <p class="contacto-nota" data-lang="contactNote">
+            Tu información es 100% confidencial.
+          </p>
+        </aside>
+      </div>
     </section>
 
-    <!-- BLOQUES INFORMATIVOS / FOOTER INFO -->
-    <section class="contact-info-grid">
-      <div class="info-card-box">
-        <h3>Servicios Principales</h3>
-        <ul>
-          <li>Diseño de marca</li>
-          <li>Creación de nombre</li>
-          <li>Diseño de impresos</li>
-          <li>Modelación de negocios</li>
-          <li>Consultoría de marca</li>
-          <li>Talleres y conferencias</li>
-        </ul>
+    <!-- SECCIÓN 02: CANALES DE ATENCIÓN -->
+    <section class="contacto-canales-seccion">
+      <div class="contacto-seccion-meta">
+        <span class="numero-paso">02</span>
+        <span class="contacto-hero-linea"></span>
+        <span data-lang="channelsTag">CANALES DE ATENCIÓN</span>
       </div>
 
-      <div class="info-card-box" style="display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="text-align: center; margin-bottom: 1.5rem;">
-          <svg width="60" height="60" viewBox="0 0 100 100" fill="white">
-            <path d="M10 80 Q 50 10 90 80 Q 50 50 10 80 Z" />
-          </svg>
-          <p style="font-family: var(--font-heading); font-weight: 800; font-size: 0.9rem; letter-spacing: 2px; margin-top: 0.5rem;">RENAX</p>
-        </div>
-        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; text-align: center;">
-          Somos Fragtal Worldwide SAS es una consultora especializada en diseño, auditoría y posicionamiento de de marca.
+      <div class="contacto-canales-intro">
+        <h2 class="renax-titulo-pesado" data-lang="channelsTitle">
+          Conectemos con tu <em>próxima idea.</em>
+        </h2>
+        <p class="renax-canales-desc" data-lang="channelsDesc">
+          Elige la vía de comunicación que te resulte más cómoda. Respondemos con agilidad a cada solicitud.
         </p>
+      </div>
+
+      <div class="contacto-logos-horizontal">
+        <a href="https://wa.me/573246464290" target="_blank" class="logo-canal-item" title="WhatsApp Oficial">
+        <img src="whasap.png" alt="WhatsApp" class="logo-canal-img">
+    </a>
+        <a href="mailto:renaxcreativit@gmail.com" class="logo-canal-item" title="Correo Oficial">
+          <img src="Gmail.png" alt="Gmail" class="logo-canal-img">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61595122299004" target="_blank" class="logo-canal-item" title="Facebook Oficial">
+        <img src="Facebook.png" alt="Facebook" class="logo-canal-img">
+    </a>
+      </div>
+    </section>
+
+    <!-- SECCIÓN 03: RESEÑAS -->
+    <section class="contacto-resenas-seccion">
+      <div class="contacto-seccion-meta">
+        <span class="numero-paso">03</span>
+        <span class="contacto-hero-linea"></span>
+        <span data-lang="reviewsTag">LO QUE DICEN NUESTROS CLIENTES</span>
+      </div>
+
+      <div class="contacto-carrusel-contenedor">
+        <div class="contacto-carrusel-track">
+          <!-- Tarjeta 1: Luis -->
+          <div class="contacto-resena-card">
+            <div class="resena-header-top">
+              <div class="resena-estrellas">★★★★★</div>
+              <img src="luis.jpg" alt="Luis Ceballos" class="resena-avatar">
+            </div>
+            <p class="resena-texto">"Excelente atención y profesionalismo. Captaron perfectamente lo que necesitábamos para nuestra institución."</p>
+            <div class="resena-autor">
+              <strong>Luis Ceballos</strong>
+              <small>Docente de la Institucion Eustaquio Palacio</small>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Rosa -->
+          <div class="contacto-resena-card">
+            <div class="resena-header-top">
+              <div class="resena-estrellas">★★★★★</div>
+              <img src="rosa.jpg" alt="Rosa" class="resena-avatar">
+            </div>
+            <p class="resena-texto">"El cambio visual fue increíble. Muy recomendados por su compromiso y calidad."</p>
+            <div class="resena-autor">
+              <strong>Rosa</strong>
+              <small>Docente de la Institucion Eustaquio Palacio</small>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Sandra -->
+          <div class="contacto-resena-card">
+            <div class="resena-header-top">
+              <div class="resena-estrellas">★★★★★</div>
+              <img src="sandra.jpeg" alt="Sandra Ruiz" class="resena-avatar">
+            </div>
+            <p class="resena-texto">"Excelente atención por WhatsApp y entrega puntual. Rediseñaron nuestra marca, el cambio fue inmediato."</p>
+            <div class="resena-autor">
+              <strong>Sandra Ruiz</strong>
+              <small>Fundadora de Skenzi Home</small>
+            </div>
+          </div>
+
+          <!-- Duplicado exacto para el loop continuo -->
+          <div class="contacto-resena-card">
+            <div class="resena-header-top">
+              <div class="resena-estrellas">★★★★★</div>
+              <img src="luis.jpg" alt="Luis Ceballos" class="resena-avatar">
+            </div>
+            <p class="resena-texto">"Excelente atención y profesionalismo. Captaron perfectamente lo que necesitábamos para nuestra institución."</p>
+            <div class="resena-autor">
+              <strong>Luis Ceballos</strong>
+              <small>Docente de la Institucion Eustaquio Palacio</small>
+            </div>
+          </div>
+
+          <div class="contacto-resena-card">
+            <div class="resena-header-top">
+              <div class="resena-estrellas">★★★★★</div>
+              <img src="rosa.jpg" alt="Rosa" class="resena-avatar">
+            </div>
+            <p class="resena-texto">"El cambio visual fue increíble. Muy recomendados por su compromiso y calidad."</p>
+            <div class="resena-autor">
+              <strong>Rosa</strong>
+              <small>Docente de la Institucion Eustaquio Palacio</small>
+            </div>
+          </div>
+
+          <div class="contacto-resena-card">
+            <div class="resena-header-top">
+              <div class="resena-estrellas">★★★★★</div>
+              <img src="sandra.jpeg" alt="Sandra Ruiz" class="resena-avatar">
+            </div>
+            <p class="resena-texto">"Excelente atención por WhatsApp y entrega puntual. Rediseñaron nuestra marca, el cambio fue inmediato."</p>
+            <div class="resena-autor">
+              <strong>Sandra Ruiz</strong>
+              <small>Fundadora de Skenzi Home</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DEJA TU RESEÑA -->
+      <div class="deja-tu-resena-contenedor">
+        <div class="deja-resena-caja">
+          <h3 data-lang="reviewBoxTitle">Comparte tu experiencia con <em>RENAX</em></h3>
+          <p data-lang="reviewBoxDesc">¿Has trabajado con nosotros? Nos encantaría conocer tu opinión.</p>
+          
+          <form action="https://formspree.io/f/xyeklpye" method="POST" class="form-resena-grid">
+            <div class="form-group">
+              <input type="text" name="nombre" placeholder="Tu Nombre y Apellido" required class="input-estilo">
+            </div>
+            <div class="form-group">
+              <input type="text" name="cargo" placeholder="Cargo / Institución o Empresa" required class="input-estilo">
+            </div>
+            <div class="form-group full-width">
+              <textarea name="mensaje" rows="4" placeholder="Escribe tu reseña aquí..." required class="input-estilo"></textarea>
+            </div>
+            <div class="form-group full-width">
+              <button type="submit" class="contacto-link-principal btn-enviar-resena">
+                <span data-lang="reviewBtnSubmit">ENVIAR RESEÑA</span>
+                <span>↗</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+      
+    <!-- SECCIÓN 04: PREGUNTAS FRECUENTES (FAQ) -->
+    <section class="renax-faq-section">
+      <div class="contacto-seccion-meta">
+        <span class="numero-paso">04</span>
+        <span class="contacto-hero-linea"></span>
+        <span data-lang="faqTag">RESOLVEMOS TUS DUDAS</span>
+      </div>
+
+      <div class="renax-faq-intro">
+        <h2 data-lang="faqTitle">Preguntas <em>Frecuentes.</em></h2>
+        <p data-lang="faqDesc">Todo lo que necesitas saber sobre nuestros procesos de transformación visual...</p>
+      </div>
+
+      <div class="renax-faq-lista">
+        <details class="renax-faq-card">
+          <summary><span data-lang="faq1Q">¿Cuánto tiempo toma un proceso de renovación?</span></summary>
+          <p data-lang="faq1A">El tiempo varía según la magnitud del proyecto. Una auditoría o diagnóstico básico puede tomar de 1 a 2 semanas, mientras que una renovación integral de identidad visual y estrategia toma entre 3 y 5 semanas.</p>
+        </details>
+
+        <details class="renax-faq-card">
+          <summary><span data-lang="faq2Q">¿Cómo son los métodos de pago?</span></summary>
+          <p data-lang="faq2A">Trabajamos bajo un esquema fraccionado estándar: un anticipo inicial del 50% para iniciar la fase creativa y el 50% restante al finalizar y aprobar la identidad visual.</p>
+        </details>
+
+        <details class="renax-faq-card">
+          <summary><span data-lang="faq3Q">¿Trabajan con marcas fuera de la ciudad?</span></summary>
+          <p data-lang="faq3A">Sí, de manera totalmente digital y remota. Colaboramos con marcas, empresas e instituciones en diferentes ciudades y países mediante reuniones virtuales y entregas optimizadas.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- MAPA DE UBICACIÓN COMPACTO -->
+    <section class="renax-contacto-mapa" style="width: 100%; max-width: 700px; margin: 40px auto; padding: 0 20px; text-align: left;">
+      <div class="srv-seccion-meta" style="display: none;"><span>05</span><span>UBICACIÓN</span></div>
+      
+      <h2 style="font-size: clamp(22px, 3vw, 32px); font-weight: 900; color: #fff; margin-bottom: 15px; text-transform: uppercase;">
+        NUESTRA <span style="color: #ff2a2a;">UBICACIÓN</span>
+      </h2>
+      
+      <div class="renax-mapa-contenedor" style="width: 100%; height: 280px; border-radius: 10px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); background: #111; box-shadow: 0 5px 20px rgba(0,0,0,0.6);">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d15930.942699465102!2d-76.55915520206695!3d3.414468329300764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1seustaquio%20palacios!5e0!3m2!1ses-419!2sco!4v1792099953340!5m2!1ses-419!2sco" 
+          width="100%" 
+          height="100%" 
+          style="border:0; filter: invert(90%) hue-rotate(180deg) contrast(120%);" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="strict-origin-when-cross-origin">
+        </iframe>
+      </div>
+    </section>
+
+    <!-- SECCIÓN FINAL: LLAMADO A LA ACCIÓN (CTA) -->
+    <section class="renax-cta-section">
+      <div class="contacto-seccion-meta">
+        <span class="numero-paso">06</span>
+        <span class="contacto-hero-linea"></span>
+        <span data-lang="ctaTag">EL SIGUIENTE PASO</span>
+      </div>
+
+      <div class="renax-cta-contenido">
+        <h2 class="renax-titulo-pesado">
+          <span data-lang="ctaTitlePart1">TU HISTORIA</span><br>
+          <span data-lang="ctaTitlePart2">MERECE</span> <em data-lang="ctaTitlePart3">EVOLUCIONAR.</em>
+        </h2>
+        <p data-lang="ctaDesc">
+          Las marcas que evolucionan no tienen que renunciar a lo que las hace especiales. En RENAX trabajamos para que su historia siga creciendo.
+        </p>
+        <a href="contacto.html" class="contacto-link-principal">
+          <span data-lang="ctaBtn">COMENZAR AHORA</span>
+          <span>↗</span>
+        </a>
+      </div>
+
+      <div class="renax-cta-frase-final">
+        <span>RENAX — TRANSFORMAMOS MARCAS</span>
+        <span>SIN BORRAR SU HISTORIA.</span>
       </div>
     </section>
 
   </main>
 
-  <!-- FOOTER GLOBAL -->
-  <footer class="site-footer">
-    <div class="footer-content">
-      <p class="footer-contact-text">Contact us / Join us</p>
-      <div class="footer-socials">
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="#" target="_blank" rel="noopener">Instagram</a>
-        <a href="#" target="_blank" rel="noopener">X</a>
-        <a href="#" target="_blank" rel="noopener">Facebook</a>
-        <a href="#" target="_blank" rel="noopener">Glassdoor</a>
+  <!-- PIE DE PÁGINA (FOOTER) -->
+  <footer class="contacto-footer">
+    <div class="contacto-footer-contenedor">
+      <div class="contacto-footer-top">
+        <span class="contacto-footer-titulo-menu" data-lang="menuTitle">MENÚ</span>
+        <span class="contacto-footer-explora" data-lang="footerExplora">EXPLORA RENAX ↗</span>
       </div>
-      <div class="footer-bottom">
-        <p>&copy; 2026 MANTRA / BBDO Agency. Todos los derechos reservados.</p>
+
+      <div class="contacto-footer-grid">
+        <!-- Columna 1: INICIO -->
+        <div class="contacto-footer-col">
+          <h2><a href="index.html" data-lang="footerHome">INICIO</a></h2>
+          <a href="index.html#expertos" data-lang="subHome1">Expertos en transformar marcas</a>
+          <a href="index.html#destacar" data-lang="subHome2">Vuelve a destacar sin perder tu esencia</a>
+          <a href="index.html#altura" data-lang="subHome3">Tu historia merece una imagen que esté a su altura</a>
+          <a href="index.html#faq" data-lang="subHome4">Preguntas frecuentes</a>
+        </div>
+
+        <!-- Columna 2: NOSOTROS -->
+        <div class="contacto-footer-col">
+          <h2><a href="nosotros.html" data-lang="footerAbout">NOSOTROS</a></h2>
+          <a href="nosotros.html#quienes" data-lang="subAbout1">Quiénes somos</a>
+          <a href="nosotros.html#vision" data-lang="subAbout2">Visión</a>
+          <a href="nosotros.html#mision" data-lang="subAbout3">Misión</a>
+          <a href="nosotros.html#porque" data-lang="subAbout4">¿Por qué RENAX?</a>
+        </div>
+
+        <!-- Columna 3: PORTAFOLIO -->
+        <div class="contacto-footer-col">
+          <h2><a href="portafolio.html" data-lang="footerPortfolio">PORTAFOLIO</a></h2>
+          <a href="portafolio.html#proyectos" data-lang="subPort1">Proyectos y trabajos realizados</a>
+          <a href="portafolio.html#casos" data-lang="subPort2">Casos de estudio</a>
+        </div>
+
+        <!-- Columna 4: SERVICIOS -->
+        <div class="contacto-footer-col">
+          <h2><a href="servicios.html" data-lang="footerServices">SERVICIOS</a></h2>
+          <a href="servicios.html#diagnostico" data-lang="subServ1">Diagnóstico de marca</a>
+          <a href="servicios.html#renovacion" data-lang="subServ2">Identidad visual</a>
+          <a href="servicios.html#sociales" data-lang="subServ3">Comunicación</a>
+          <a href="servicios.html#estrategia" data-lang="subServ4">Estrategia visual</a>
+        </div>
+
+        <!-- Columna 5: CONTACTO -->
+        <div class="contacto-footer-col">
+          <h2><a href="contacto.html" data-lang="footerContact">CONTACTO</a></h2>
+          <a href="contacto.html#formContacto" data-lang="subContact1">Hablemos de tu proyecto</a>
+        </div>
+      </div>
+
+      <!-- Parte inferior con logotipo -->
+      <div class="contacto-footer-bottom">
+        <div class="contacto-footer-marca">
+          <a href="index.html">
+            <img src="logo-renax-transparente.png" alt="RENAX Logo" class="renax-logo-img">
+          </a>
+        </div>
       </div>
     </div>
   </footer>
 
-  <script src="main.js"></script>
+  <!-- SCRIPT CON TRADUCCIÓN E INTERACTIVIDAD -->
+  <script>
+    (() => {
+      // Menú desplegable móvil
+      const boton = document.getElementById("contactoMenuToggle");
+      const nav = document.getElementById("contactoNav");
+      if (boton && nav) {
+        boton.addEventListener("click", () => {
+          const abierto = nav.classList.toggle("abierto");
+          boton.setAttribute("aria-expanded", String(abierto));
+          boton.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
+          boton.innerHTML = abierto
+            ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
+            : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+        });
+
+        nav.querySelectorAll("a").forEach((enlace) => {
+          enlace.addEventListener("click", () => {
+            nav.classList.remove("abierto");
+            boton.setAttribute("aria-expanded", "false");
+            boton.setAttribute("aria-label", "Abrir menú");
+            boton.innerHTML = '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+          });
+        });
+      }
+
+      // Cambio de Idioma (ESP / ENG)
+      const botonIdioma = document.getElementById("contactoIdioma");
+      if (!botonIdioma) return;
+
+      const textos = {
+        "navHome": "Home",
+        "navAbout": "About Us",
+        "navPortfolio": "Portfolio",
+        "navServices": "Services",
+        "navContact": "Contact Us",
+        "loginButton": "LOG IN",
+        "heroEyebrow": "RENAX / CONTACT US",
+        "contactTitle": "LET'S TALK",
+        "contactTitle2": "ABOUT YOUR BRAND.",
+         "contactTitle3": "BRAND.",
+        "contactDescription": "Each brand has a story to tell. Tell us yours and let's explore how to strengthen its identity, modernize its image, and project it toward new opportunities without losing its essence.",
+        "contactButton": "START CONVERSATION",
+        "contactIndicator": "01 / CONTACT",
+        "firstStep": "THE FIRST STEP",
+        "conversationTitle": "Every transformation begins with a",
+        "conversationWord": "conversation.",
+        "convP1": "At RENAX, we believe a brand doesn't need to forget its history to move forward. We want to get to know your business, understand your goals, and project your brand.",
+        "responseTimeTitle": "Response Time",
+        "responseTimeDesc": "We respond in less than 24 business hours.",
+        "meetingTitle": "Initial Consultation",
+        "meetingDesc": "First diagnostic consultation with no commitment.",
+        "formTag": "QUOTE REQUEST",
+        "tellBrand": "Tell us about your project",
+        "labelName": "Full name *",
+        "labelEmail": "Email address *",
+        "labelPhone": "Phone / WhatsApp",
+        "labelService": "Which service interests you? *",
+        "opt1": "Brand Audit / Diagnosis",
+        "opt2": "Brand Renewal / Logo",
+        "opt3": "Content & Social Media",
+        "opt4": "Full Visual Strategy",
+        "opt5": "Other service",
+        "labelMessage": "Project details *",
+        "contactSubmit": "SEND REQUEST",
+        "contactNote": "Your information is 100% confidential.",
+        "channelsTag": "CUSTOMER SERVICE CHANNELS",
+        "channelsTitle": "Let's connect with your next idea.",
+        "channelsDesc": "Choose the communication channel that is most comfortable for you. We respond quickly to every request.",
+        "reviewsTag": "WHAT OUR CLIENTS SAY",
+        "reviewBoxTitle": "Share your experience with RENAX",
+        "reviewBoxDesc": "Have you worked with us? We would love to hear your thoughts.",
+        "reviewBtnSubmit": "SUBMIT REVIEW",
+        "faqTag": "WE ANSWER YOUR QUESTIONS",
+        "faqTitle": "Frequently Asked Questions.",
+        "faqDesc": "Everything you need to know about our visual transformation processes...",
+        "faq1Q": "How long does a brand renewal process take?",
+        "faq1A": "It depends on the scale. A diagnosis takes 3-5 business days, while a full visual identity takes 2-4 weeks.",
+        "faq2Q": "What are the payment methods?",
+        "faq2A": "We handle a 50% deposit at project start and 50% upon final delivery of editable files and manuals.",
+        "faq3Q": "Do you work with brands outside the city or country?",
+        "faq3A": "Yes! We work 100% remotely via Zoom or Google Meet meetings and continuous communication on WhatsApp and email.",
+        "ctaTag": "THE NEXT STEP",
+        "ctaTitlePart1": "YOUR STORY",
+        "ctaTitlePart2": "DESERVES TO",
+        "ctaTitlePart3": "EVOLVE.",
+        "ctaDesc": "Brands that evolve don't have to give up what makes them special. At RENAX, we work so that their story continues to grow.",
+        "ctaBtn": "START NOW",
+        "menuTitle": "MENU",
+        "footerExplora": "EXPLORE RENAX ↘",
+        "footerHome": "HOME",
+        "subHome1": "Experts in transforming brands",
+        "subHome2": "Stand out again without losing your essence",
+        "subHome3": "Your story deserves an image that lives up to it",
+        "subHome4": "Frequently asked questions",
+        "footerAbout": "ABOUT US",
+        "subAbout1": "Who we are",
+        "subAbout2": "Vision",
+        "subAbout3": "Mission",
+        "subAbout4": "Why RENAX?",
+        "footerPortfolio": "PORTFOLIO",
+        "subPort1": "Completed projects and works",
+        "subPort2": "Case studies",
+        "footerServices": "SERVICES",
+        "subServ1": "Brand diagnosis",
+        "subServ2": "Visual identity",
+        "subServ3": "Communication",
+        "subServ4": "Visual strategy",
+        "footerContact": "CONTACT",
+        "subContact1": "Let's talk about your project"
+      };
+
+      const elementos = [...document.querySelectorAll("[data-lang]")];
+      const originales = elementos.map(elemento => ({
+        elemento,
+        clave: elemento.getAttribute("data-lang"),
+        html: elemento.innerHTML
+      }));
+
+      let ingles = false;
+
+      botonIdioma.addEventListener("click", () => {
+        ingles = !ingles;
+        originales.forEach(({ elemento, clave, html }) => {
+          if (!ingles) {
+            elemento.innerHTML = html;
+          } else if (textos[clave]) {
+            elemento.textContent = textos[clave];
+          }
+        });
+
+        botonIdioma.textContent = ingles ? "ENG" : "ESP";
+        document.documentElement.lang = ingles ? "en" : "es";
+      });
+    })();
+  </script>
+
+  <!-- SCRIPT PARA EL CARRUSEL Y FORMULARIO -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const carruselContenedor = document.querySelector(".contacto-carrusel-contenedor");
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            carruselContenedor.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15
+      });
+
+      if (carruselContenedor) {
+        observer.observe(carruselContenedor);
+      }
+    });
+  </script>
+
+  <script>
+    document.getElementById('formCotizacion').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        
+        if (response.ok) {
+          alert('¡Solicitud enviada con éxito! Nos pondremos en contacto contigo pronto.');
+          form.reset();
+        } else {
+          alert('Hubo un problema al enviar la solicitud. Por favor, intenta de nuevo.');
+        }
+      } catch (error) {
+        alert('Error de conexión. Verifica tu red e inténtalo nuevamente.');
+      }
+    });
+  </script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
+        authDomain: "renax-auth.firebaseapp.com",
+        projectId: "renax-auth",
+        storageBucket: "renax-auth.firebasestorage.app",
+        messagingSenderId: "155645649809",
+        appId: "1:155645649809:web:3b203ccb729bfc8672b030"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    const navLoginBtn = document.getElementById('navLoginBtn');
+
+    onAuthStateChanged(auth, (user) => {
+        if (navLoginBtn) {
+            if (user) {
+                // Si ya inició sesión
+                navLoginBtn.href = "dashboard.html";
+                const span = navLoginBtn.querySelector('span');
+                if (span) span.textContent = "MI PANEL";
+            } else {
+                // Si no ha iniciado sesión
+                navLoginBtn.href = "login.html";
+                const span = navLoginBtn.querySelector('span');
+                if (span) span.textContent = "INICIAR SESIÓN";
+            }
+        }
+    });
+</script>
+ <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
+        authDomain: "renax-auth.firebaseapp.com",
+        projectId: "renax-auth",
+        storageBucket: "renax-auth.firebasestorage.app",
+        messagingSenderId: "155645649809",
+        appId: "1:155645649809:web:3b203ccb729bfc8672b030"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+            const emailInput = document.getElementById('email');
+            if (emailInput && user.email) {
+                emailInput.value = user.email; // Rellena el correo automáticamente
+                emailInput.readOnly = true;    // Opcional: Evita que lo cambien si ya está logueados
+            }
+        }
+    });
+</script>
 </body>
 </html>
