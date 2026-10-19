@@ -935,7 +935,7 @@ body.contacto-page {
 }
 
 .deja-resena-caja p {
-  color: var(--text-muted);
+ color: #444444 !important;
   font-size: 0.95rem;
   margin-bottom: 30px;
 }
