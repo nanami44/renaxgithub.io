@@ -1367,41 +1367,23 @@ body.portafolio-renax .renax-grid-card svg path {
     stroke: #ff2638 !important;
 }
 
-/* EFECTO AL PASAR EL MOUSE */
+/* EFECTO NARANJA AL PASAR EL MOUSE */
 body.portafolio-renax .renax-grid-card:hover {
-    border-color: #ff2638 !important;
-    box-shadow: 0 0 18px rgba(255, 38, 56, 0.25) !important;
-}
-
-
-/* OCULTAR LOS TEXTOS DE LA PORTADA DEL PORTAFOLIO */
-body.portafolio-renax #portada > div {
-    display: none !important;
-}
-#portada .max-w-4xl {
-    display: none !important;
-}
-
-
-/* RENAX: HOVER NARANJA PARA LAS TARJETAS */
-body.portafolio-renax .renax-grid-card:hover,
-body.portafolio-renax #proyectos .renax-grid-card:hover {
     background: #ff922b !important;
-    border: 1px solid #ff922b !important;
-    color: #000000 !important;
-    box-shadow: 0 0 22px rgba(255, 146, 43, 0.4) !important;
+    background-image: none !important;
+    border-color: #ff922b !important;
+    box-shadow: 0 0 18px rgba(255, 146, 43, 0.35) !important;
 }
 
-/* TÍTULOS, TEXTOS Y DETALLES */
+/* TEXTOS NEGROS AL PASAR EL MOUSE */
 body.portafolio-renax .renax-grid-card:hover h3,
-body.portafolio-renax .renax-grid-card:hover h3 span,
 body.portafolio-renax .renax-grid-card:hover p,
-body.portafolio-renax .renax-grid-card:hover a,
-body.portafolio-renax .renax-grid-card:hover span {
+body.portafolio-renax .renax-grid-card:hover span,
+body.portafolio-renax .renax-grid-card:hover a {
     color: #000000 !important;
 }
 
-/* FLECHAS E ICONOS */
+/* FLECHAS NEGRAS AL PASAR EL MOUSE */
 body.portafolio-renax .renax-grid-card:hover svg,
 body.portafolio-renax .renax-grid-card:hover svg path {
     color: #000000 !important;
