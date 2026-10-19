@@ -397,6 +397,58 @@
     }
 }
 
+/* AJUSTE DEFINITIVO DE LA PORTADA */
+
+.portada-section {
+    border: none !important;
+}
+
+.portada-grid {
+    border: none !important;
+    display: flex;
+    align-items: center;
+}
+
+.portada-bloque-1,
+.portada-bloque-2 {
+    border: none !important;
+    outline: none !important;
+}
+
+.portada-bloque-1 {
+    width: 100%;
+    padding-left: 7.5%;
+    padding-right: 4%;
+}
+
+.portada-titulo {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: clamp(60px, 6.5vw, 110px) !important;
+    font-weight: 900 !important;
+    line-height: 0.92 !important;
+    letter-spacing: -3px;
+    max-width: 900px;
+}
+
+.portada-saludo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.portada-subtitulo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .portada-titulo {
+        font-size: clamp(40px, 9vw, 65px) !important;
+        letter-spacing: -1px;
+    }
+}
+
     </style>
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
