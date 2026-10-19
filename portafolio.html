@@ -6,13 +6,117 @@
   <meta name="description" content="Portafolio de proyectos - Trabajos destacados de diseño, branding y estrategia.">
   <title>Portafolio | Agencia de Branding & Marketing</title>
   
-  <!-- Google Fonts: Montserrat Black -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+  <!-- Google Fonts: Montserrat Black & Inter/Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   
   <!-- FontAwesome v6 & CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="portafolio.css?v=5">
+
+  <style>
+    /* Estilos base estructura Landor limpios */
+    body {
+      background-color: #0b0b0b;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    /* Hero estilo Landor */
+    .landor-hero {
+      padding: 140px 5% 60px 5%;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .landor-hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: 1.1;
+      font-weight: 900;
+      letter-spacing: -1px;
+      margin: 0;
+      text-transform: uppercase;
+    }
+    .landor-hero h1 .red-text {
+      color: #e31b23; /* O el rojo característico de Renax */
+    }
+
+    /* Grid Asimétrico estilo Landor */
+    .landor-portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 24px;
+      max-width: 1400px;
+      margin: 0 auto 120px auto;
+      padding: 0 5%;
+    }
+
+    .landor-card {
+      position: relative;
+      background: #161616;
+      border-radius: 4px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+    .landor-card:hover {
+      transform: translateY(-4px);
+    }
+
+    /* Tamaños de tarjetas variables para romper la simetría tipo Landor */
+    .landor-card.col-8 { grid-column: span 8; }
+    .landor-card.col-4 { grid-column: span 4; }
+    .landor-card.col-6 { grid-column: span 6; }
+    .landor-card.col-12 { grid-column: span 12; }
+
+    .landor-card-img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #222;
+    }
+    .landor-card.tall .landor-card-img {
+      aspect-ratio: 4 / 5;
+    }
+    .landor-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .landor-card:hover .landor-card-img img {
+      transform: scale(1.03);
+    }
+
+    .landor-card-content {
+      padding: 20px 0;
+    }
+    .landor-card-content h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 900;
+      margin: 0 0 5px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .landor-card-content p {
+      color: #888;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
+    @media (max-width: 900px) {
+      .landor-card.col-8, .landor-card.col-4, .landor-card.col-6 {
+        grid-column: span 12;
+      }
+    }
+  </style>
 </head>
 <body class="portafolio-renax">
 
@@ -23,7 +127,7 @@
     </div>
   </div>
 
-  <!-- HEADER GLOBAL -->
+  <!-- HEADER GLOBAL (CONSERVADO EXACTO) -->
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand-logo" aria-label="Página principal">
@@ -47,172 +151,71 @@
     </div>
   </header>
 
-  <!-- PORTADA GRANDE (ESTÁTICA ARRIBA, ANCHO TOTAL) -->
-  <section class="renax-portfolio-cover-normal">
-    <img src="portafolio-final.png" alt="PORTAFOLIO RENAX">
+  <!-- SECCIÓN HERO (ESTILO LANDOR: MANIFIESTO / TÍTULO PRINCIPAL) -->
+  <section class="landor-hero">
+    <h1 data-lang="workBigTitle">
+      <span class="red-text">TRABAJO</span><br>
+      <span class="white-text">CON IDENTIDAD.</span>
+    </h1>
   </section>
-<!-- PORTADA GRANDE (ESTÁTICA ARRIBA, ANCHO TOTAL) -->
-  <section class="renax-portfolio-cover-normal">
-    <img src="portafolio-final.png" alt="PORTAFOLIO RENAX">
-  </section>
 
-  <!-- CARRUSEL HORIZONTAL DEBAJO DE LA PORTADA -->
-  <div class="renax-horizontal-ticker-wrapper">
-    <div class="renax-horizontal-ticker-track" id="horizontalTicker">
-      <div class="horizontal-item"><img src="skenzi-carrusel01.jpeg" alt="Skenzi"></div>
-      <div class="horizontal-item"><img src="Renax- carrusel 01.png" alt="RENAX"></div>
-      <div class="horizontal-item"><img src="Renax-carrusel02.png" alt="RENAX"></div>
-      <div class="horizontal-item"><img src="Día-Matemáticas.png" alt="Matemáticas"></div>
-      <div class="horizontal-item"><img src="sobre-renax.png.png" alt="Papelería"></div>
-      <div class="horizontal-item"><img src="renzi-fondo-verde.png" alt="Renzi"></div>
-      <div class="horizontal-item"><img src="donuts-bites.png.png" alt="Donuts"></div>
-      <!-- Duplicados automáticos o manuales para bucle continuo -->
-      <div class="horizontal-item"><img src="skenzi-carrusel01.jpeg" alt="Skenzi"></div>
-      <div class="horizontal-item"><img src="Renax- carrusel 01.png" alt="RENAX"></div>
-      <div class="horizontal-item"><img src="Renax-carrusel02.png" alt="RENAX"></div>
-      <div class="horizontal-item"><img src="Día-Matemáticas.png" alt="Matemáticas"></div>
-      <div class="horizontal-item"><img src="sobre-renax.png.png" alt="Papelería"></div>
-      <div class="horizontal-item"><img src="renzi-fondo-verde.png" alt="Renzi"></div>
-      <div class="horizontal-item"><img src="donuts-bites.png.png" alt="Donuts"></div>
-    </div>
-  </div>
+  <!-- CUADRÍCULA DE PROYECTOS (ESTRUCTURA PURA LANDOR - SIN CONTENIDO COMPLEJO, LISTO PARA RELLENAR) -->
+  <main class="landor-portfolio-grid" id="proyectos">
 
-        <!-- Elemento 1 (Grande Vertical) -->
-        <a href="proyecto-skenzi.html" class="renax-grid-card card-large">
-          <div class="renax-grid-img"><img src="renzi-fondo-verde.png" alt="Renzi"></div>
-          <h3>SKENZI <span>↗</span></h3>
-        </a>
-
-        <!-- Elemento 2 (Mediano) -->
-        <a href="dia-matematicas.html" class="renax-grid-card card-medium">
-          <div class="renax-grid-img"><img src="dia-matematicas.png.png" alt="Día de las Matemáticas"></div>
-          <h3 data-lang="itemMath">DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
-        </a>
-
-        <!-- Elemento 3 (Ancho) -->
-        <div class="renax-grid-card card-wide">
-          <div class="renax-grid-img"><img src="DONUT'S BITES-galeria 01.png" alt="DONUT'S BITES"></div>
-          <h3>DONUT'S BITES</h3>
-        </div>
-
-        <!-- Elemento 4 (Vertical) -->
-        <div class="renax-grid-card card-tall">
-          <div class="renax-grid-img"><img src="Renax-galeria01.png" alt="RENAX"></div>
-          <h3 data-lang="itemIdentity">IDENTIDAD RENAX</h3>
-        </div>
-
-        <!-- Elemento 5 (Mediano) -->
-        <div class="renax-grid-card card-medium">
-          <div class="renax-grid-img"><img src="renax-tarjeta-dos.png.png" alt="Diseño de marca"></div>
-          <h3 data-lang="itemBrand">DISEÑO DE MARCA</h3>
-        </div>
-
-        <!-- Elemento 6 (Ancho) -->
-        <div class="renax-grid-card card-wide">
-          <div class="renax-grid-img"><img src="sobre-renax.png.png" alt="Papelería corporativa"></div>
-          <h3 data-lang="itemStationery">PAPELERÍA CORPORATIVA</h3>
-        </div>
+    <!-- Proyecto 1 (Ancho Grande) -->
+    <a href="proyecto-skenzi.html" class="landor-card col-8">
+      <div class="landor-card-img">
+        <img src="skenzi-caso.png" alt="Proyecto Skenzi">
       </div>
-    </section>
-
-    
-<!-- NUEVA GALERÍA DE PROYECTOS RENAX -->
-<section class="renax-galeria-extra" id="galeria-proyectos">
- 
-
-  <div class="renax-galeria-grid">
-
-    <article class="renax-galeria-card">
-      <img src="DONUT'S BITES-casos-estudio02.jpeg"
-           alt="Donut's Bites - caso de estudio">
-      <h3>DONUT'S BITES · CASO DE ESTUDIO</h3>
-    </article>
-
-    <article class="renax-galeria-card">
-      <img src="DONUT'S BITES-carrusel01.png"
-           alt="Donut's Bites - carrusel">
-      <h3>DONUT'S BITES · CARRUSEL</h3>
-    </article>
-
-    <article class="renax-galeria-card">
-      <img src="DONUT'S BITES-galeria 01.png"
-           alt="Donut's Bites - galería">
-      <h3>DONUT'S BITES · DISEÑO GRÁFICO</h3>
-    </article>
-
-    <article class="renax-galeria-card">
-      <img src="Renax-galeria03.png" alt="Proyecto RENAX 03">
-      <h3>IDENTIDAD RENAX</h3>
-    </article>
-
-    <article class="renax-galeria-card">
-      <img src="Renax-galeria04.png" alt="Proyecto RENAX 04">
-      <h3>DISEÑO RENAX</h3>
-    </article>
-
-    <article class="renax-galeria-card">
-      <img src="skenzi-galeria03.png" alt="Proyecto Skenzi">
-      <h3>SKENZI · IDENTIDAD VISUAL</h3>
-    </article>
-
-    <article class="renax-galeria-card">
-      <img src="skenzi-hollas.png" alt="Diseño de hollas Skenzi">
-      <h3>SKENZI · DISEÑO DE PRODUCTO</h3>
-    </article>
-
-    <article class="renax-galeria-card">
-      <img src="skenzi-nueva-identidad.jpeg"
-           alt="Nueva identidad Skenzi">
-      <h3>SKENZI · NUEVA IDENTIDAD</h3>
-    </article>
-
-  </div>
-</section>
-
-
-    <!-- CASOS DE ESTUDIO -->
-    <section class="renax-editorial-section" id="casos-estudio">
-      <div class="renax-sticky-title">
-        <h2 class="renax-massive-title" data-lang="casesBigTitle">
-          <span class="red-text">MARCAS</span><br>
-          <span class="white-text">QUE HAN<br>EVOLUCIONADO.</span>
-        </h2>
+      <div class="landor-card-content">
+        <h3>SKENZI <span>↗</span></h3>
+        <p>Identidad visual y estrategia de marca</p>
       </div>
+    </a>
 
-      <div class="renax-asymmetric-grid">
-        <a href="proyecto-skenzi.html" class="renax-grid-card card-large">
-          <div class="renax-grid-img"><img src="skenzi-caso.png" alt="SKENZI"></div>
-          <h3>SKENZI <span>↗</span></h3>
-        </a>
-
-        <a href="dia-especialidades.html" class="renax-grid-card card-medium">
-          <div class="renax-grid-img"><img src="especialidades-9.jpeg" alt="Especialidades"></div>
-          <h3 data-lang="caseSpecialties">ESPECIALIDADES <span>↗</span></h3>
-        </a>
-
-        <a href="dia-matematicas.html" class="renax-grid-card card-wide">
-          <div class="renax-grid-img"><img src="mate2.png" alt="Día de las Matemáticas"></div>
-          <h3 data-lang="caseMath">DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
-        </a>
-
-        <a href="donuts-bites.html" class="renax-grid-card card-tall">
-          <div class="renax-grid-img"><img src="DONUT'S BITES-casos-estudio03.png" alt="Donut's Bites"></div>
-          <h3>DONUT'S BITES <span>↗</span></h3>
-        </a>
+    <!-- Proyecto 2 (Vertical Compacto) -->
+    <a href="dia-especialidades.html" class="landor-card col-4 tall">
+      <div class="landor-card-img">
+        <img src="especialidades-9.jpeg" alt="Especialidades">
       </div>
-    </section>
-
-    <!-- CIERRE DEL PORTAFOLIO -->
-    <section class="renax-portfolio-cierre">
-      <div class="portfolio-cierre-contenido">
-        <h2 class="portfolio-cierre-titulo" data-lang="closeTitle">
-          ¿TU MARCA ESTÁ<br>LISTA?
-        </h2>
-        <a href="contacto.html#contacto-formulario" class="portfolio-cierre-boton" data-lang="closeBtn">
-          HABLEMOS DE TU MARCA <span>→</span>
-        </a>
+      <div class="landor-card-content">
+        <h3>ESPECIALIDADES <span>↗</span></h3>
+        <p>Diseño corporativo</p>
       </div>
-    </section>
+    </a>
+
+    <!-- Proyecto 3 (Mediano) -->
+    <a href="dia-matematicas.html" class="landor-card col-6">
+      <div class="landor-card-img">
+        <img src="mate2.png" alt="Día de las Matemáticas">
+      </div>
+      <div class="landor-card-content">
+        <h3>DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
+        <p>Campaña y dirección de arte</p>
+      </div>
+    </a>
+
+    <!-- Proyecto 4 (Mediano) -->
+    <a href="donuts-bites.html" class="landor-card col-6 tall">
+      <div class="landor-card-img">
+        <img src="DONUT'S BITES-casos-estudio03.png" alt="Donut's Bites">
+      </div>
+      <div class="landor-card-content">
+        <h3>DONUT'S BITES <span>↗</span></h3>
+        <p>Packaging y branding gastronómico</p>
+      </div>
+    </a>
+
+    <!-- Proyecto 5 (Ancho total / Opcional) -->
+    <article class="landor-card col-12">
+      <div class="landor-card-img">
+        <img src="sobre-renax.png.png" alt="Papelería corporativa">
+      </div>
+      <div class="landor-card-content">
+        <h3>PAPELERÍA CORPORATIVA</h3>
+        <p>Sistema gráfico integral</p>
+      </div>
+    </article>
 
   </main>
 
@@ -226,7 +229,7 @@
     </a>
   </div>
 
-  <!-- PIE DE PÁGINA RENAX (ANCHO TOTAL Y DISEÑO EXACTO) -->
+  <!-- PIE DE PÁGINA RENAX (CONSERVADO EXACTO) -->
   <footer class="renax-footer">
     <div class="footer-wrapper">
       
@@ -240,9 +243,7 @@
 
         <!-- INICIO -->
         <div class="footer-column">
-         <h3>
-    <a class="footer-title-link" href="index.html" data-lang="footerHomeTitle">INICIO</a>
-</h3>
+         <h3><a class="footer-title-link" href="index.html" data-lang="footerHomeTitle">INICIO</a></h3>
           <div class="footer-menu-links">
             <a href="index.html#hero-inicio" data-lang="footerText1">Expertos en transformar marcas</a>
             <a href="index.html#esencia-marca" data-lang="footerText2">Vuelve a destacar sin perder tu esencia</a>
@@ -253,9 +254,7 @@
 
         <!-- NOSOTROS -->
         <div class="footer-column">
-        <h3>
-    <a class="footer-title-link" href="nosotros.html" data-lang="footerAboutTitle">NOSOTROS</a>
-</h3>
+        <h3><a class="footer-title-link" href="nosotros.html" data-lang="footerAboutTitle">NOSOTROS</a></h3>
           <div class="footer-menu-links">
             <a href="nosotros.html#quienes-somos" data-lang="footerWho">Quiénes somos</a>
             <a href="nosotros.html#vision" data-lang="footerVision">Visión</a>
@@ -286,7 +285,7 @@
 
         <!-- CONTACTO -->
         <div class="footer-column">
-  <h3><a class="footer-title-link" href="contacto.html" data-lang="footerContactTitle">CONTACTO</a></h3>
+          <h3><a class="footer-title-link" href="contacto.html" data-lang="footerContactTitle">CONTACTO</a></h3>
           <div class="footer-menu-links">
             <a href="contacto.html#contacto-formulario" data-lang="footerTalk">Hablemos de tu proyecto</a>
           </div>
@@ -302,9 +301,8 @@
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
+  <!-- SCRIPTS (TRANSICIÓN, MENÚ, IDIOMA Y FIREBASE) -->
   <script>
-    // 1. TRANSICIÓN DE PÁGINA
     window.addEventListener("load", () => {
       const transition = document.getElementById("renaxPageTransition");
       if (transition) {
@@ -312,26 +310,19 @@
       }
     });
 
-    // 2. MENÚ RESPONSIVO
     const navToggle = document.getElementById("navToggle");
     const navMenu = document.getElementById("navMenu");
     if (navToggle && navMenu) {
       navToggle.addEventListener("click", () => navMenu.classList.toggle("open"));
     }
 
-    // 3. CAMBIO DE IDIOMA (ESP / ENG)
     const languageBtn = document.getElementById("languageBtn");
     let english = false;
 
     const translations = {
       es: {
         navHome: "Inicio", navAbout: "Nosotros", navPortfolio: "Portafolio", navServices: "Servicios", navContact: "Contáctanos", loginBtn: "INICIAR SESIÓN",
-        workBigTitle: '<span class="red-text">TRABAJO</span><br><span class="white-text">CON<br>IDENTIDAD.</span>',
-        itemMath: "DÍA DE LAS MATEMÁTICAS <span>↗</span>", itemIdentity: "IDENTIDAD RENAX", itemBrand: "DISEÑO DE MARCA", itemStationery: "PAPELERÍA CORPORATIVA",
-        casesBigTitle: '<span class="red-text">MARCAS</span><br><span class="white-text">QUE HAN<br>EVOLUCIONADO.</span>',
-        casesDesc: "Conoce el proceso detrás de algunos de nuestros proyectos y descubre cómo RENAX transforma ideas en identidades visuales.",
-        caseSpecialties: "ESPECIALIDADES <span>↗</span>", caseMath: "DÍA DE LAS MATEMÁTICAS <span>↗</span>",
-        closeTitle: "¿TU MARCA ESTÁ<br>LISTA?", closeBtn: "HABLEMOS DE TU MARCA <span>→</span>",
+        workBigTitle: '<span class="red-text">TRABAJO</span><br><span class="white-text">CON IDENTIDAD.</span>',
         footerMenuTitle: "MENÚ",
         footerHomeTitle: "INICIO", footerText1: "Expertos en transformar marcas", footerText2: "Vuelve a destacar sin perder tu esencia", footerText3: "Tu historia merece una imagen que esté a su altura", footerText4: "Preguntas frecuentes",
         footerAboutTitle: "NOSOTROS", footerWho: "Quiénes somos", footerVision: "Visión", footerMission: "Misión", footerWhy: "¿Por qué RENAX?",
@@ -341,12 +332,7 @@
       },
       en: {
         navHome: "Home", navAbout: "About Us", navPortfolio: "Portfolio", navServices: "Services", navContact: "Contact Us", loginBtn: "LOG IN",
-        workBigTitle: '<span class="red-text">WORK</span><br><span class="white-text">WITH<br>IDENTITY.</span>',
-        itemMath: "MATHEMATICS DAY <span>↗</span>", itemIdentity: "RENAX IDENTITY", itemBrand: "BRAND DESIGN", itemStationery: "CORPORATE STATIONERY",
-        casesBigTitle: '<span class="red-text">BRANDS</span><br><span class="white-text">THAT HAVE<br>EVOLVED.</span>',
-        casesDesc: "Learn about the process behind some of our projects and discover how RENAX transforms ideas into visual identities.",
-        caseSpecialties: "SPECIALTIES <span>↗</span>", caseMath: "MATHEMATICS DAY <span>↗</span>",
-        closeTitle: "IS YOUR BRAND<br>READY?", closeBtn: "LET'S TALK ABOUT YOUR BRAND <span>→</span>",
+        workBigTitle: '<span class="red-text">WORK</span><br><span class="white-text">WITH IDENTITY.</span>',
         footerMenuTitle: "MENU",
         footerHomeTitle: "HOME", footerText1: "Brand transformation experts", footerText2: "Stand out again without losing your essence", footerText3: "Your story deserves an image to match it", footerText4: "Frequently asked questions",
         footerAboutTitle: "ABOUT US", footerWho: "About Us", footerVision: "Vision", footerMission: "Mission", footerWhy: "Why RENAX?",
@@ -402,131 +388,18 @@
             }
         }
     });
-
   </script>
+
   <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const carrusel = document.getElementById("verticalTicker");
-
-  if (!carrusel || carrusel.dataset.movimientoActivo === "true") return;
-
-  carrusel.dataset.movimientoActivo = "true";
-
-  // Guardamos y duplicamos las imágenes para crear el ciclo infinito.
-  const imagenesOriginales = Array.from(carrusel.children);
-
-  imagenesOriginales.forEach((imagen) => {
-    carrusel.appendChild(imagen.cloneNode(true));
-  });
-
-  let posicion = 0;
-  let ultimoTiempo = 0;
-  let alturaCiclo = 0;
-  let animacionId;
-  let pausado = false;
-
-  // Velocidad: suave, continua y moderadamente rápida.
-  const velocidad = 45; // píxeles por segundo
-
-  function calcularAltura() {
-    const espacio = parseFloat(getComputedStyle(carrusel).rowGap) || 0;
-
-    alturaCiclo = imagenesOriginales.reduce(
-      (total, imagen) => total + imagen.getBoundingClientRect().height,
-      0
-    ) + espacio * imagenesOriginales.length;
-  }
-
-  function mover(tiempo) {
-    if (!ultimoTiempo) ultimoTiempo = tiempo;
-
-    const segundos = Math.min((tiempo - ultimoTiempo) / 1000, 0.05);
-    ultimoTiempo = tiempo;
-
-    if (!pausado && alturaCiclo > 0) {
-      posicion += velocidad * segundos;
-
-      if (posicion >= alturaCiclo) {
-        posicion -= alturaCiclo;
-      }
-
-      carrusel.style.transform = `translate3d(0, -${posicion}px, 0)`;
-    }
-
-    animacionId = requestAnimationFrame(mover);
-  }
-
-  const contenedor = carrusel.closest(".vertical-ticker-container");
-
-  if (contenedor) {
-    contenedor.addEventListener("mouseenter", () => {
-      pausado = true;
-    });
-
-    contenedor.addEventListener("mouseleave", () => {
-      pausado = false;
-      ultimoTiempo = 0;
-    });
-  }
-
-  calcularAltura();
-  window.addEventListener("resize", calcularAltura);
-
-  animacionId = requestAnimationFrame(mover);
-});
-</script>
-  
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const currentPage = window.location.pathname
-        .split("/")
-        .pop()
-        .toLowerCase();
-
-    document.querySelectorAll(
-        ".renax-footer .footer-title-link"
-    ).forEach(link => {
-        const linkPage = link.getAttribute("href")
-            .split("#")[0]
-            .toLowerCase();
-
+    document.addEventListener("DOMContentLoaded", () => {
+      const currentPage = window.location.pathname.split("/").pop().toLowerCase();
+      document.querySelectorAll(".renax-footer .footer-title-link").forEach(link => {
+        const linkPage = link.getAttribute("href").split("#")[0].toLowerCase();
         if (linkPage === currentPage) {
-            link.classList.add("active");
+          link.classList.add("active");
         }
+      });
     });
-});
-</script>
-<script>
-  window.addEventListener("DOMContentLoaded", () => {
-    const horizontalTicker = document.getElementById("horizontalTicker");
-    if (!horizontalTicker) return;
-
-    // Duplicar elementos para asegurar un bucle horizontal infinito perfecto
-    if (!horizontalTicker.dataset.duplicated) {
-      horizontalTicker.innerHTML += horizontalTicker.innerHTML;
-      horizontalTicker.dataset.duplicated = "true";
-    }
-
-    let hScrollPos = 0;
-    const hSpeed = 0.8; // Velocidad de desplazamiento horizontal
-    let hAnimId;
-
-    function hStep() {
-      hScrollPos += hSpeed;
-      // Cuando la mitad del contenido se desplaza, reinicia suavemente a 0
-      if (hScrollPos >= horizontalTicker.scrollWidth / 2) {
-        hScrollPos = 0;
-      }
-      horizontalTicker.style.transform = `translateX(-${hScrollPos}px)`;
-      hAnimId = requestAnimationFrame(hStep);
-    }
-
-    horizontalTicker.addEventListener("mouseenter", () => cancelAnimationFrame(hAnimId));
-    hAnimId = requestAnimationFrame(hStep);
-    horizontalTicker.addEventListener("mouseleave", () => {
-      hAnimId = requestAnimationFrame(hStep);
-    });
-  });
-</script>
+  </script>
 </body>
 </html>
