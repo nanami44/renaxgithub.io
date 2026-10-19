@@ -1314,32 +1314,41 @@ object-fit: cover;
     padding-top: 20px !important;
 }
 
+
 /* RENAX - PORTAFOLIO: BORDES Y FLECHAS ROJAS */
 
-/* Borde rojo para las tarjetas de proyectos */
-.portafolio-section .project-card,
-.portafolio-section .proyecto-card,
-.portafolio-section .portfolio-card {
+/* Borde rojo de las tarjetas de proyectos */
+body.portafolio-renax .renax-grid-card {
     border: 1px solid #ff2638 !important;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.3s ease;
 }
 
-/* Flechas en color rojo */
-.portafolio-section .project-card svg,
-.portafolio-section .proyecto-card svg,
-.portafolio-section .portfolio-card svg,
-.portafolio-section .project-card .arrow,
-.portafolio-section .proyecto-card .arrow,
-.portafolio-section .portfolio-card .arrow {
+/* Iluminación roja al pasar el mouse */
+body.portafolio-renax .renax-grid-card:hover {
+    border-color: #ff2638 !important;
+    box-shadow: 0 0 16px rgba(255, 38, 56, 0.25);
+}
+
+/* Borde rojo de los cuadros del carrusel horizontal */
+body.portafolio-renax .horizontal-item {
+    border: 1px solid #ff2638 !important;
+    transition: border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* Flechas de los controles del portafolio */
+body.portafolio-renax .horizontal-item svg,
+body.portafolio-renax .renax-horizontal-ticker-wrapper button svg,
+body.portafolio-renax .renax-horizontal-ticker-wrapper .arrow {
     color: #ff2638 !important;
     stroke: #ff2638 !important;
 }
 
-/* Efecto sutil al pasar el mouse */
-.portafolio-section .project-card:hover,
-.portafolio-section .proyecto-card:hover,
-.portafolio-section .portfolio-card:hover {
+/* Iluminación roja en los cuadros del carrusel */
+body.portafolio-renax .horizontal-item:hover {
     border-color: #ff2638 !important;
-    box-shadow: 0 0 15px rgba(255, 38, 56, 0.16);
+    box-shadow: 0 0 15px rgba(255, 38, 56, 0.22);
 }
-
