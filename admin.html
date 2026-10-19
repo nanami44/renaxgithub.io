@@ -89,87 +89,154 @@
     </div>
 
     <!-- Lógica de Firebase para Admin -->
-    <script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-       import {
-    getAuth,
-    onAuthStateChanged,
-    signOut
-} from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
-        import { getFirestore, collection, addDoc, query, orderBy, onSnapshot, serverTimestamp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
+   
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
-            authDomain: "renax-auth.firebaseapp.com",
-            projectId: "renax-auth",
-            storageBucket: "renax-auth.firebasestorage.app",
-            messagingSenderId: "155645649809",
-            appId: "1:155645649809:web:3b203ccb729bfc8672b030"
-        };
+    import {
+        getAuth,
+        onAuthStateChanged,
+        signOut
+    } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+    import {
+        getFirestore,
+        collection,
+        addDoc,
+        query,
+        orderBy,
+        onSnapshot,
+        serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-firestore.js";
 
-const auth = getAuth(app);
+    const firebaseConfig = {
+        apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
+        authDomain: "renax-auth.firebaseapp.com",
+        projectId: "renax-auth",
+        storageBucket: "renax-auth.firebasestorage.app",
+        messagingSenderId: "155645649809",
+        appId: "1:155645649809:web:3b203ccb729bfc8672b030"
+    };
 
-const CORREOS_ADMINISTRADORES = [
-    "naoco2008@gmail.com",
-    "renaxcreativit@gmail.com"
-].map(correo => correo.trim().toLowerCase());
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
 
-onAuthStateChanged(auth, (user) => {
-    if (!user) {
-        window.location.replace("login.html");
-        return;
+    // Administradores autorizados
+    const ADMINISTRADORES = [
+        {
+            correo: "naoco2008@gmail.com",
+            uid: "3rriQaadVjT0ax84uZh5jNJrT0R2"
+        },
+        {
+            correo: "renaxcreativit@gmail.com",
+            uid: "RuBWW0PQuofpIK1uHlvY0LG1pXx1"
+        }
+    ];
+
+    const messagesList = document.getElementById("messages-list");
+    const adminForm = document.getElementById("admin-form");
+    const adminInput = document.getElementById("admin-input");
+
+    // UID del cliente cuya conversación se mostrará
+    const clienteUid = "P5dfJ7KHMKBxx1LkChDs9bBCOLI1";
+
+    let detenerMensajes = null;
+    let administradorAutorizado = false;
+
+    function mostrarEstado(mensaje) {
+        messagesList.textContent = mensaje;
     }
 
-    const correo = (user.email || "").trim().toLowerCase();
+    onAuthStateChanged(auth, (user) => {
+        if (detenerMensajes) {
+            detenerMensajes();
+            detenerMensajes = null;
+        }
 
-    if (!CORREOS_ADMINISTRADORES.includes(correo)) {
-        window.location.replace("dashboard.html");
-    }
-});
+        administradorAutorizado = false;
 
-        // OJO: Aquí colocas el UID del cliente cuyas conversaciones quieras revisar. 
-        // (Puedes copiar el UID largo que se genera en tu base de datos de Firestore dentro de la colección "chats").
-        const clienteUid = "P5dfJ7KHMKBxx1LkChDs9bBCOLI1"; 
+        if (!user) {
+            window.location.replace("login.html");
+            return;
+        }
 
-        const messagesList = document.getElementById('messages-list');
-        const adminForm = document.getElementById('admin-form');
-        const adminInput = document.getElementById('admin-input');
+        const correo = (user.email || "").trim().toLowerCase();
 
-        const mensajesRef = collection(db, `chats/${clienteUid}/mensajes`);
-        const q = query(mensajesRef, orderBy('createdAt', 'asc'));
+        const autorizado = ADMINISTRADORES.some(
+            admin =>
+                admin.correo === correo &&
+                admin.uid === user.uid
+        );
 
-        // Escuchar los mensajes en tiempo real
-        onSnapshot(q, (snapshot) => {
-            messagesList.innerHTML = '';
-            if (snapshot.empty) {
-                messagesList.innerHTML = '<span style="color: #666; font-size: 12px; text-align: center;">No hay mensajes en este chat.</span>';
+        if (!autorizado) {
+            window.location.replace("dashboard.html");
+            return;
+        }
+
+        administradorAutorizado = true;
+
+        const mensajesRef = collection(
+            db,
+            "chats",
+            clienteUid,
+            "mensajes"
+        );
+
+        const consulta = query(
+            mensajesRef,
+            orderBy("createdAt", "asc")
+        );
+
+        mostrarEstado("Cargando mensajes...");
+
+        detenerMensajes = onSnapshot(
+            consulta,
+            (snapshot) => {
+                messagesList.replaceChildren();
+
+                if (snapshot.empty) {
+                    mostrarEstado("No hay mensajes en esta conversación.");
+                    return;
+                }
+
+                snapshot.forEach((documento) => {
+                    const data = documento.data();
+                    const mensaje = document.createElement("div");
+
+                    mensaje.style.padding = "8px 12px";
+                    mensaje.style.borderRadius = "6px";
+                    mensaje.style.maxWidth = "80%";
+                    mensaje.style.fontSize = "13px";
+                    mensaje.style.backgroundColor = "#1f1f1f";
+                    mensaje.style.color = "#fff";
+
+                    mensaje.textContent =
+                        `${data.remitente || "Usuario"}: ${data.texto || ""}`;
+
+                    messagesList.appendChild(mensaje);
+                });
+
+                messagesList.scrollTop = messagesList.scrollHeight;
+            },
+            (error) => {
+                console.error("Error al cargar mensajes:", error);
+                mostrarEstado(
+                    "No se pudieron cargar los mensajes. Revisa los permisos de Firestore."
+                );
+            }
+        );
+
+        adminForm.onsubmit = async (evento) => {
+            evento.preventDefault();
+
+            if (!administradorAutorizado || !auth.currentUser) {
+                mostrarEstado("Debes iniciar sesión como administrador.");
                 return;
             }
 
-            snapshot.forEach((doc) => {
-                const data = doc.data();
-                const msgDiv = document.createElement('div');
-                msgDiv.style.padding = '8px 12px';
-                msgDiv.style.borderRadius = '6px';
-                msgDiv.style.maxWidth = '80%';
-                msgDiv.style.fontSize = '13px';
-                msgDiv.style.backgroundColor = '#1f1f1f';
-                msgDiv.style.color = '#fff';
-
-                msgDiv.textContent = `${data.remitente}: ${data.texto}`;
-                messagesList.appendChild(msgDiv);
-            });
-
-            messagesList.scrollTop = messagesList.scrollHeight;
-        });
-
-        // Enviar respuesta como Asesor
-        adminForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
             const texto = adminInput.value.trim();
+
             if (!texto) return;
 
             try {
@@ -178,11 +245,16 @@ onAuthStateChanged(auth, (user) => {
                     remitente: "Asesor RENAX",
                     createdAt: serverTimestamp()
                 });
-                adminInput.value = '';
+
+                adminInput.value = "";
             } catch (error) {
                 console.error("Error al enviar respuesta:", error);
+                alert("No se pudo enviar el mensaje. Revisa los permisos de Firestore.");
             }
-        });
+        };
+    });
+</script>
+
     </script>
 </body>
 </html>
