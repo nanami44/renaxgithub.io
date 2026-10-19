@@ -13,13 +13,14 @@ body {
 }
 
 /* MENÚ DE NAVEGACIÓN */
-.navbar {
+.site-header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: #0b0b0b;
     z-index: 1000;
+    border-bottom: 3px solid #e50914;
 }
 
 .nav-container {
@@ -31,213 +32,198 @@ body {
     padding: 15px 20px;
 }
 
-.logo a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
+.logo-renax {
+    height: 35px;
+    object-fit: contain;
 }
 
-.nav-links {
+.nav-menu {
     display: flex;
     list-style: none;
     gap: 30px;
 }
 
-.nav-links a {
+.nav-link {
     color: #fff;
     text-decoration: none;
     font-size: 0.95rem;
     transition: color 0.3s ease;
 }
 
-.nav-links a:hover, 
-.nav-links a.active {
-    color: #e50914; /* Rojo interactivo solicitado */
+.nav-link:hover, 
+.nav-link.active {
+    color: #e50914;
 }
 
-.nav-actions {
-    display: flex;
-    gap: 15px;
-    align-items: center;
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
-.btn-esp {
+.language {
     background: #fff;
     color: #000;
     border: none;
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
 }
 
-.btn-login {
+.login-btn {
     background: #e50914;
     color: #fff;
-    border: none;
+    text-decoration: none;
     padding: 8px 18px;
     border-radius: 20px;
     font-weight: bold;
-    cursor: pointer;
     transition: background 0.3s;
 }
 
-.btn-login:hover {
+.login-btn:hover {
     background: #b20710;
 }
 
-.nav-red-line {
-    height: 4px;
-    background-color: #e50914;
+/* CINTURÓN ANIMADO */
+.renax-cinturon-container {
+    background: #111;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 10px 0;
+    margin-top: 70px;
+    border-bottom: 1px solid #222;
+}
+
+.renax-cinturon-fila {
+    display: flex;
     width: 100%;
 }
 
-/* 1. SECCIÓN PORTADA */
-.hero-section {
+.renax-pista {
+    display: inline-block;
+    animation: marquee 25s linear infinite;
+    color: #888;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.pista-inversa {
+    animation-direction: reverse;
+    color: #e50914;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+/* HERO / PORTADA */
+.renax-hero {
     position: relative;
-    min-height: 90vh;
+    min-height: 85vh;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
-    padding-top: 80px;
+    justify-content: center;
+    text-align: center;
+    background-image: url('portada inicio.jpeg');
 }
 
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, rgba(0,0,0,0.9) 40%, rgba(229,9,20,0.3) 100%);
+.renax-hero-content {
+    max-width: 800px;
+    padding: 20px;
 }
 
-.hero-content {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-
-.hero-text-block {
-    max-width: 600px;
-}
-
-.small-tag {
-    font-size: 0.85rem;
-    letter-spacing: 2px;
+.hero-small-text {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
     color: #bbb;
-    margin-bottom: 10px;
-    display: block;
+    margin-bottom: 15px;
 }
 
-.hero-text-block h1 {
-    font-size: 3.5rem;
+.hero-collage-title {
+    font-size: 3.8rem;
     font-weight: 900;
     line-height: 1.1;
     margin-bottom: 20px;
     color: #ffffff;
 }
 
-.hero-text-block p {
-    font-size: 0.95rem;
+.hero-subtitle {
+    font-size: 1rem;
     letter-spacing: 1px;
     margin-bottom: 30px;
     color: #ddd;
 }
 
-.btn-outline {
-    display: inline-block;
+.renax-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     border: 1px solid #e50914;
     color: #fff;
-    padding: 12px 25px;
+    padding: 12px 28px;
     text-decoration: none;
     border-radius: 30px;
     font-size: 0.85rem;
     letter-spacing: 1px;
     transition: background 0.3s;
+    background: transparent;
+    cursor: pointer;
 }
 
-.btn-outline:hover {
+.renax-button:hover {
     background: #e50914;
 }
 
-.hero-img-overlay img {
-    max-width: 450px;
-    border-radius: 8px;
-    box-shadow: 0 10px 30px rgba(229,9,20,0.4);
-}
-
-/* 2. SEGUNDA SECCIÓN */
-.essence-section {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #0b0b0b 50%, #200204 100%);
-    border: 1px solid #331113;
+/* SESIÓN 1: ESENCIA */
+.renax-statement {
+    padding: 90px 20px;
     max-width: 1100px;
-    margin: 40px auto;
-    border-radius: 16px;
-}
-
-.essence-container {
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 40px;
     flex-wrap: wrap;
+    gap: 40px;
 }
 
-.essence-title-area h2 {
-    font-size: 2.5rem;
+.statement-title {
+    font-size: 3rem;
     font-weight: 900;
-    max-width: 500px;
-    line-height: 1.1;
-    margin-bottom: 20px;
+    line-height: 1.15;
 }
 
-.mini-images-grid {
-    display: flex;
-    gap: 10px;
+.statement-line {
+    display: block;
 }
 
-.mini-images-grid img {
-    width: 70px;
-    height: 50px;
+.statement-img {
+    width: 60px;
+    height: 40px;
     object-fit: cover;
     border-radius: 4px;
+    vertical-align: middle;
+    margin: 0 5px;
 }
 
-.essence-text-area {
-    max-width: 350px;
+.statement-description {
+    max-width: 380px;
 }
 
-.essence-text-area p {
-    font-size: 0.95rem;
+.statement-description p {
     color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
     margin-bottom: 20px;
-    line-height: 1.5;
 }
 
-.btn-red {
-    background: #e50914;
-    color: #fff;
-    padding: 12px 25px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    display: inline-block;
-    font-weight: bold;
-}
-
-/* 3. SECCIÓN HISTORIA */
+/* SESIÓN 2: HISTORIA */
 .history-section {
     max-width: 1100px;
     margin: 80px auto;
@@ -246,22 +232,20 @@ body {
 }
 
 .history-section h2 {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     font-weight: 900;
     margin-bottom: 50px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
+    line-height: 1.2;
 }
 
-.cards-grid {
+.history-cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     margin-bottom: 40px;
 }
 
-.history-card {
+.history-cards article {
     background-color: #121212;
     border: 1px solid #222;
     padding: 40px 30px;
@@ -270,115 +254,105 @@ body {
     transition: all 0.3s ease;
 }
 
-/* Efecto hover: cambia a blanco y letras negras como lo pediste */
-.history-card:hover {
+.history-cards article:hover {
     background-color: #ffffff;
     color: #000000;
     transform: translateY(-5px);
 }
 
-.history-card:hover h3 {
+.history-cards article:hover h3 {
     color: #e50914;
 }
 
-.history-card h3 {
+.history-cards h3 {
     color: #ff4d4d;
     font-size: 1.1rem;
     margin-bottom: 15px;
-    letter-spacing: 1px;
 }
 
-.history-card p {
+.history-cards p {
     font-size: 0.95rem;
     line-height: 1.6;
 }
 
-.history-footer-text {
-    font-size: 0.9rem;
+.history-bottom {
+    font-size: 0.95rem;
     color: #aaa;
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
 }
 
-/* 4. SECCIÓN PROYECTOS DESTACADOS (WORK) */
-.work-section {
+/* SESIÓN 3: PORTAFOLIO (WORK) */
+.renax-work {
     max-width: 1200px;
-    margin: 80px auto;
+    margin: 90px auto;
     padding: 0 20px;
     display: flex;
     gap: 30px;
 }
 
-.vertical-text {
+.work-label {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    font-size: 5rem;
+    font-size: 11rem;
     color: #e50914;
     font-weight: 900;
     letter-spacing: 5px;
 }
 
-.work-grid {
+.work-content {
     display: grid;
     grid-template-columns: 2fr 1.5fr;
     gap: 20px;
     width: 100%;
 }
 
-.work-item {
+.work-main-image, .work-card {
     background: #111;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
+    padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    min-height: 300px;
+    justify-content: space-between;
 }
 
-.work-item img {
+.work-main-image img, .work-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajustado al contenedor sin verse cortadas desproporcionadamente */
-    max-height: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+    max-height: 350px;
 }
 
-.main-work {
-    grid-row: span 2;
+.work-side {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-.work-caption {
-    padding: 15px;
+.work-especialidades-bottom {
+    margin-top: 30px;
     width: 100%;
-    background: #0f0f0f;
+    text-align: center;
 }
 
-.brand-title {
-    color: #e50914;
-    font-weight: 900;
-    display: block;
-    font-size: 1.1rem;
+.especialidades-img-ajustada {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    max-height: 400px;
+    object-fit: cover;
 }
 
-.brand-subtitle {
-    color: #aaa;
-    font-size: 0.85rem;
-}
-
-/* SECCIÓN PREGUNTAS FRECUENTES */
-.faq-section {
+/* SESIÓN 4: PREGUNTAS FRECUENTES */
+.renax-faq {
     max-width: 900px;
     margin: 100px auto;
     padding: 0 20px;
 }
 
-.faq-header {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.sub-orange {
+.faq-eyebrow {
     color: #ff5500;
     font-size: 0.85rem;
     letter-spacing: 1px;
@@ -386,41 +360,35 @@ body {
     margin-bottom: 10px;
 }
 
-.faq-header h2 {
+.renax-faq h2 {
     font-size: 2.5rem;
     font-weight: 900;
+    margin-bottom: 10px;
 }
 
-.faq-header h2 span {
+.renax-faq h2 span {
     color: #e50914;
 }
 
-.faq-header p {
+.faq-intro {
     color: #aaa;
     font-size: 0.95rem;
-    margin-top: 10px;
+    margin-bottom: 40px;
 }
 
-.faq-container {
+.faq-list {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.faq-item {
-    background: linear-gradient(90deg, #3a0305 0%, #100203 100%);
-    border: 1px solid #4a1012;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
 .faq-question {
     width: 100%;
-    background: none;
-    border: none;
+    background: linear-gradient(90deg, #3a0305 0%, #100203 100%);
+    border: 1px solid #4a1012;
     color: #fff;
     padding: 20px;
+    border-radius: 10px;
     text-align: left;
     font-size: 1rem;
     font-weight: bold;
@@ -428,75 +396,89 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: border-color 0.3s;
 }
 
-.faq-icon {
-    font-size: 1.2rem;
-    color: #e50914;
-    transition: transform 0.3s ease;
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    padding: 0 20px;
-    color: #ccc;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-.faq-item.active {
+.faq-question:hover {
     border-color: #e50914;
 }
 
-.faq-item.active .faq-answer {
-    max-height: 200px;
-    padding: 0 20px 20px 20px;
+.faq-arrow img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
 }
 
-.faq-item.active .faq-icon {
-    transform: rotate(180deg);
+/* VENTANA MODAL DE RESPUESTAS */
+.faq-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
-/* SECCIÓN LLAMADO FINAL */
-.cta-final {
+.faq-modal-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.faq-modal-card {
+    background: #160203;
+    border: 1px solid #e50914;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
+}
+
+.faq-modal-top {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.faq-back {
+    background: #e50914;
+    color: #fff;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.faq-modal-content p {
+    color: #ddd;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* SESIÓN 5: CTA FINAL */
+.renax-final-cta {
     text-align: center;
     padding: 100px 20px;
     background: radial-gradient(circle, rgba(229,9,20,0.2) 0%, rgba(11,11,11,1) 70%);
 }
 
-.cta-final h2 {
+.renax-final-cta h2 {
     font-size: 3rem;
     font-weight: 900;
     margin-bottom: 30px;
+    line-height: 1.15;
 }
 
-.cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.btn-red-outline {
-    border: 1px solid #e50914;
-    color: #fff;
-    padding: 12px 30px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-size: 0.85rem;
-    font-weight: bold;
-    letter-spacing: 1px;
-    transition: background 0.3s;
-}
-
-.btn-red-outline:hover {
-    background: #e50914;
-}
-
-/* PIE DE PÁGINA (FOOTER) */
-.site-footer {
+/* FOOTER */
+.renax-footer {
     background-color: #050505;
     border-top: 1px solid #222;
     padding: 60px 20px;
@@ -504,42 +486,113 @@ body {
     margin: 0 auto;
 }
 
-.footer-title {
-    text-align: center;
-    color: #e50914;
-    font-weight: 900;
-    letter-spacing: 2px;
+.footer-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
+    padding-bottom: 20px;
     margin-bottom: 40px;
 }
 
-.footer-columns {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
+.footer-titulo {
+    color: #e50914;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
-.footer-col h4 {
+.footer-explora {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-secciones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-column h3 a {
     color: #fff;
     font-size: 0.9rem;
     letter-spacing: 1px;
-    margin-bottom: 20px;
+    text-decoration: none;
+    margin-bottom: 15px;
+    display: block;
 }
 
-.footer-col ul {
-    list-style: none;
+.footer-menu-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.footer-col ul li {
-    margin-bottom: 12px;
-}
-
-.footer-col ul li a {
+.footer-menu-links a {
     color: #888;
     text-decoration: none;
-    font-size: 0.85srem;
+    font-size: 0.85rem;
     transition: color 0.3s;
 }
 
-.footer-col ul li a:hover {
+.footer-menu-links a:hover {
     color: #e50914;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+}
+
+.footer-logo {
+    height: 30px;
+}
+
+.footer-contacto {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #0b0b0b;
+        padding: 20px;
+        border-bottom: 2px solid #e50914;
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    .nav-toggle {
+        display: block;
+    }
+    .hero-collage-title {
+        font-size: 2.5rem;
+    }
+    .statement-title {
+        font-size: 2.2rem;
+    }
+    .work-section {
+        flex-direction: column;
+    }
+    .work-label {
+        writing-mode: horizontal-tb;
+        transform: none;
+        font-size: 3rem !important;
+        margin-bottom: 20px;
+    }
+    .work-content {
+        grid-template-columns: 1fr;
+    }
 }
