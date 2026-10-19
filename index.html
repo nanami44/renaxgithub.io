@@ -12,38 +12,49 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        html {
-            background: #000;
-        }
-        body {
-            position: relative;
-            background: #000;
-            color: #fff;
-            overflow-x: hidden;
-        }
+html {
+    background: #000;
+}
 
-        /* FONDO LÍQUIDO ANIMADO GLOBAL */
-        .fondo-liquido-renax {
-            position: fixed;
-            inset: 0;
-            z-index: -1;
-            pointer-events: none;
-            background:
-                linear-gradient(
-                    120deg,
-                    rgba(0, 0, 0, 0.2),
-                    rgba(150, 0, 0, 0.15)
-                ),
-                url("fondo-rojo-renax.png") center / cover no-repeat;
-            animation: renaxFondoMovimiento 12s ease-in-out infinite alternate;
-            will-change: transform;
-        }
+body {
+    position: relative;
+    background: #000;
+    color: #fff;
+    overflow-x: hidden;
+}
 
-        @keyframes renaxFondoMovimiento {
-            0% { transform: scale(1) translate3d(-1%, 0, 0); }
-            50% { transform: scale(1.05) translate3d(1%, -1%, 0); }
-            100% { transform: scale(1.1) translate3d(-1%, 1%, 0); }
-        }
+/* Fondo animado de toda la página */
+.fondo-liquido-renax {
+    position: fixed;
+    inset: -5%;
+   z-index: -1;
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(0, 0, 0, .15),
+            rgba(100, 0, 0, .08),
+            rgba(0, 0, 0, .20)
+        ),
+        url("fondo-rojo-renax.png") center / cover no-repeat;
+
+    animation: renaxFondoMovimiento 12s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+@keyframes renaxFondoMovimiento {
+    0% {
+        transform: scale(1) translate3d(-1%, 0, 0);
+    }
+    50% {
+        transform: scale(1.08) translate3d(1%, -1%, 0);
+    }
+    100% {
+        transform: scale(1.13) translate3d(-1%, 1%, 0);
+    }
+}
+
 
         /* MENÚ DE NAVEGACIÓN SUPERIOR */
         .site-header {
@@ -55,6 +66,7 @@
             z-index: 1000;
             border-bottom: 2px solid #e50914;
         }
+
         .nav-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -63,29 +75,35 @@
             align-items: center;
             padding: 15px 30px;
         }
+
         .logo-img {
             height: 35px;
             object-fit: contain;
         }
+
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 30px;
         }
+
         .nav-link {
             color: #fff;
             text-decoration: none;
             font-size: 0.95rem;
             transition: color 0.3s ease;
         }
+
         .nav-link:hover, .nav-link.active {
             color: #e50914;
         }
+
         .nav-actions {
             display: flex;
             gap: 15px;
             align-items: center;
         }
+
         .btn-esp {
             background: #fff;
             color: #000;
@@ -95,6 +113,7 @@
             font-weight: bold;
             cursor: pointer;
         }
+
         .btn-login {
             background: #e50914;
             color: #fff;
@@ -104,339 +123,102 @@
             font-weight: bold;
             transition: background 0.3s;
         }
+
         .btn-login:hover {
             background: #b20710;
         }
 
-        /* PORTADA RENAX */
-        .portada-section {
-            position: relative;
-            width: 100%;
-            min-height: 95vh;
-            padding-top: 80px;
-            background-image:
-                linear-gradient(90deg, rgba(0, 0, 0, 0.30), rgba(0, 0, 0, 0.05)),
-                url("luz2.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-        .portada-grid {
-            width: 100%;
-            min-height: calc(95vh - 80px);
-            display: flex;
-            align-items: center;
-        }
-        .portada-bloque-1 {
-            width: 100%;
-            padding: 50px 7.8%;
+
+/* PORTADA RENAX: IMAGEN A ANCHO COMPLETO */
+
+.portada-section {
+    position: relative;
+    width: 100%;
+    min-height: 95vh;
+    min-height: 95svh;
+    padding-top: 80px;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.05)
+        ),
+        url("luz2.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #050505;
+}
+
+.portada-grid {
+    width: 100%;
+    min-height: calc(95vh - 80px);
+    min-height: calc(95svh - 80px);
+
+    display: flex;
+    align-items: center;
+}
+
+/* UN SOLO BLOQUE DE CONTENIDO */
+.portada-bloque-1 {
+    width: 100%;
+    padding: 50px 7.8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border: none;
+    background: transparent;
+}
+
+.portada-bloque-2 {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .portada-section {
+        min-height: 80svh;
+        background-position: 58% center;
+    }
+
+    .portada-grid {
+        min-height: calc(80svh - 80px);
+    }
+
+    .portada-bloque-1 {
+        padding: 40px 22px;
+    }
+}
+
+
+
+        .portada-bloque-1, .portada-bloque-2 {
+            padding: 50px;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: flex-start;
-            background: transparent;
-        }
-        .portada-titulo {
-            font-family: 'Montserrat', sans-serif !important;
-            font-size: clamp(60px, 6.5vw, 110px) !important;
-            font-weight: 900 !important;
-            line-height: 0.92 !important;
-            letter-spacing: -3px;
-            max-width: 900px;
-        }
-        .portada-saludo {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 4px;
-        }
-        .portada-subtitulo {
-            font-family: Arial, Helvetica, sans-serif;
-            font-size: 20px;
-            margin-top: 15px;
-            margin-bottom: 25px;
-        }
-        .portada-boton {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            border: 1px solid #e50914;
-            color: #fff;
-            padding: 12px 28px;
-            text-decoration: none;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            transition: background 0.3s;
-        }
-        .portada-boton:hover {
-            background: #e50914;
+            border: 1px dashed #222; /* Línea guía visual para tus bloques */
         }
 
-        /* SECCIÓN 1: ESENCIA */
-        #sesion-1 {
+        /* LAS 5 SESIONES VACÍAS PARA DISEÑAR */
+        .seccion-base {
             width: 100%;
-            min-height: 90vh;
-            padding: 80px 3%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-        }
-        .esencia-renax {
-            width: 100%;
-            max-width: 98%;
-            display: grid;
-            grid-template-columns: 1.4fr 0.9fr;
-            align-items: center;
-            gap: 45px;
-            padding: 60px 45px;
-            background: rgba(5, 5, 5, 0.85);
-            color: #fff;
-            border: 2px solid #e50914;
-            border-radius: 40px;
-        }
-        .esencia-titulo {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-        .esencia-fila {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .esencia-fila span {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(30px, 4vw, 65px);
-            font-weight: 900;
-            line-height: 1;
-            letter-spacing: -2px;
-            color: #e50914 !important;
-        }
-        .esencia-fila img {
-            width: clamp(90px, 15vw, 230px);
-            height: 90px;
-            object-fit: cover;
-            border-radius: 9px;
-        }
-        .esencia-texto {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 35px;
-            padding: 15px;
-        }
-        .esencia-texto p {
-            font-size: clamp(18px, 2vw, 27px);
-            line-height: 1.5;
-        }
-        .esencia-boton {
-            display: inline-block;
-            padding: 12px 22px;
-            border: 1px solid #e50914;
-            border-radius: 30px;
-            color: #fff;
-            text-decoration: none;
-            font-weight: 700;
-        }
-        .esencia-boton:hover {
-            background: #e50914;
+            min-height: 70vh;
+            padding: 80px 50px;
+            border-bottom: 1px solid #1a1a1a;
+            background-color: #0b0b0b;
         }
 
-        /* HISTORIA DE MARCA - MÁS GRANDE Y CON EFECTO SCROLL ZOOM & LUZ ZAPOTE */
-        .historia-renax {
-            width: 100%;
-            max-width: 98%;
-            margin: 0 auto;
-            padding: 0 2% 60px;
-            background: transparent;
-            color: #fff;
-        }
-        .historia-titulo {
-            min-height: 380px;
-            padding: 65px 4%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            background: linear-gradient(90deg, rgba(8,8,8,0.9) 50%, rgba(237,0,0,0.85) 50%);
-            border-radius: 0 0 45px 45px;
-        }
-        .historia-titulo h2 {
-            max-width: 1250px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(42px, 5.8vw, 84px);
-            font-weight: 900;
-            line-height: 0.98;
-            letter-spacing: -2px;
-            text-transform: uppercase;
-        }
-        .historia-tarjetas {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
-            padding-top: 85px;
-        }
-        .historia-tarjeta {
-            min-height: 280px;
-            padding: 35px 30px;
-            display: flex;
-            align-items: center;
-            background: rgba(10, 10, 10, 0.92);
-            border-radius: 30px;
-            border: 2px solid #222;
-            color: #fff;
-            transform: scale(0.95);
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .historia-tarjeta p {
-            font-size: 19px;
-            line-height: 1.55;
-            transition: color 0.4s ease;
-        }
-
-        /* ESTADO ACTIVO AL HACER SCROLL (ROJO, ZOOM Y LUZ ZAPOTE / NARANJA BRILLANTE) */
-        .historia-tarjeta.scroll-active {
-            background: #e50914 !important;
-            border-color: #ff6600 !important; /* Borde luminoso zapote/naranja */
-            box-shadow: 0 0 35px rgba(255, 102, 0, 0.6), inset 0 0 15px rgba(255, 255, 255, 0.3);
-            transform: scale(1.03); /* Efecto zoom */
-            color: #ffffff !important;
-        }
-
-        /* GALERÍA Y RESTO DE SECCIONES */
-        .galeria-renax, .renax-final-cta {
-            background: transparent !important;
-        }
-        .galeria-asimetrica {
-            display: grid;
-            grid-template-columns: 1.25fr 1fr 1fr;
-            grid-template-rows: 380px 320px 320px;
-            gap: 16px;
-        }
-        .proyecto {
-            position: relative;
-            overflow: hidden;
-            border-radius: 14px;
-            background: #171717;
-        }
-        .proyecto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .proyecto:hover img {
-            transform: scale(1.03);
-        }
-        .proyecto figcaption {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            padding: 35px 16px 15px;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            background: linear-gradient(transparent, rgba(0,0,0,.85));
-        }
-        .proyecto-principal { grid-column: 1; grid-row: 1 / 3; }
-        .proyecto-especialidades { grid-column: 2; grid-row: 1; }
-        .proyecto-skenzi { grid-column: 3; grid-row: 1 / 3; }
-        .proyecto-matematicas { grid-column: 2; grid-row: 2 / 4; }
-        .proyecto-renax { grid-column: 1; grid-row: 3; }
-
-        .galeria-pie {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            margin-top: 48px;
-            text-align: center;
-        }
-        .galeria-pie p {
-            font-size: clamp(18px, 2vw, 25px);
-        }
-        .boton-portafolio-renax {
-            display: inline-flex;
-            align-items: center;
-            gap: 14px;
-            padding: 15px 24px;
-            border: 1px solid #ed1c24;
-            border-radius: 40px;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            text-decoration: none;
-            transition: background .25s;
-        }
-        .boton-portafolio-renax:hover {
-            background: #ed1c24;
-        }
-
-        /* SESIÓN 4: CTA FINAL */
-        #sesion-4.renax-final-cta {
-            position: relative;
-            isolation: isolate;
-            width: 100%;
-            min-height: 620px;
-            padding: 75px 7%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-        }
-        #sesion-4 .final-contenido {
-            position: relative;
-            z-index: 2;
-            max-width: 1100px;
-            text-align: center;
-        }
-        #sesion-4 .final-etiqueta {
-            margin-bottom: 75px;
-            font-size: 18px;
-            text-align: left;
-        }
-        #sesion-4 .final-titulo {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(43px, 7.5vw, 88px);
-            font-weight: 900;
-            line-height: .88;
-            letter-spacing: -3px;
-            text-transform: uppercase;
-        }
-        #sesion-4 .final-descripcion {
-            max-width: 760px;
-            margin: 28px auto 30px;
-            font-size: clamp(16px, 2vw, 21px);
-            line-height: 1.5;
-        }
-        #sesion-4 .final-boton {
-            display: inline-flex;
-            align-items: center;
-            gap: 18px;
-            padding: 14px 24px;
-            border: 1px solid #ed1c24;
-            border-radius: 35px;
-            color: #fff;
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            transition: background .3s;
-        }
-        #sesion-4 .final-boton:hover {
-            background: #ed1c24;
-        }
-
-        /* FOOTER ANCHO */
+        /* PIE DE PÁGINA (FOOTER ANCHO SEGÚN TU REFERENCIA) */
         .renax-footer {
             width: 100%;
-            background-color: rgba(5, 5, 5, 0.95);
+            background-color: #050505;
             border-top: 1px solid #222;
             padding: 60px 50px;
         }
+
         .footer-topbar {
             display: flex;
             justify-content: space-between;
@@ -445,41 +227,54 @@
             padding-bottom: 20px;
             margin-bottom: 40px;
         }
+
         .footer-titulo {
             color: #e50914;
             font-weight: 900;
             letter-spacing: 2px;
+            font-size: 1.2rem;
         }
+
         .footer-explora {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+            font-size: 0.95rem;
         }
+
         .footer-secciones {
             display: grid;
             grid-template-columns: repeat(5, 1fr);
             gap: 30px;
             margin-bottom: 50px;
         }
+
         .footer-column {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
+
         .footer-column h3 a {
             color: #fff;
             font-size: 0.95rem;
+            letter-spacing: 1px;
             text-decoration: none;
+            margin-bottom: 5px;
+            display: block;
         }
+
         .footer-column a {
             color: #888;
             text-decoration: none;
             font-size: 0.85rem;
             transition: color 0.3s;
         }
+
         .footer-column a:hover {
             color: #e50914;
         }
+
         .footer-bottom {
             display: flex;
             justify-content: space-between;
@@ -487,187 +282,1211 @@
             border-top: 1px solid #222;
             padding-top: 25px;
         }
+
         .footer-logo {
             height: 30px;
+            object-fit: contain;
         }
+
         .footer-contacto-link {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+            letter-spacing: 1px;
         }
 
+        /* RESPONSIVE */
         @media (max-width: 900px) {
-            .footer-secciones { grid-template-columns: 1fr 1fr; }
-            .esencia-renax { grid-template-columns: 1fr; max-width: 95%; }
-            .historia-tarjetas { grid-template-columns: 1fr; }
+            .portada-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-secciones {
+                grid-template-columns: 1fr 1fr;
+            }
         }
+        
+/* SECCIÓN VUELVE A DESTACAR */
+#sesion-1 {
+    width: 100%;
+    min-height: 90vh;
+    padding: 100px 5%;
+    margin-top: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f1f1f1;
+    border-bottom: none;
+}
+
+.esencia-renax {
+    width: 100%;
+    max-width: 1600px;
+    min-height: 650px;
+
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr;
+    align-items: center;
+    gap: 45px;
+
+    padding: 55px 30px;
+    background: #050505;
+    color: #fff;
+
+    border: 2px solid #e50914;
+    border-radius: 55px;
+}
+
+.esencia-titulo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.esencia-fila {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 12px;
+}
+
+.esencia-fila span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(30px, 4vw, 65px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -2px;
+    white-space: nowrap;
+}
+
+.esencia-fila img {
+    width: clamp(90px, 15vw, 230px);
+    height: 90px;
+    object-fit: cover;
+    border-radius: 9px;
+    flex-shrink: 0;
+}
+
+.esencia-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 35px;
+    padding: 15px;
+}
+
+.esencia-texto p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(18px, 2vw, 27px);
+    line-height: 1.5;
+    color: #fff;
+}
+
+.esencia-boton {
+    display: inline-block;
+    padding: 12px 22px;
+    border: 1px solid #e50914;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.esencia-boton:hover {
+    background: #e50914;
+}
+
+@media (max-width: 900px) {
+    #sesion-1 {
+        min-height: auto;
+        padding: 65px 18px;
+        margin-top: 45px;
+    }
+
+    .esencia-renax {
+        grid-template-columns: 1fr;
+        min-height: auto;
+        padding: 35px 22px;
+        border-radius: 30px;
+        gap: 35px;
+    }
+
+    .esencia-fila {
+        flex-wrap: wrap;
+    }
+
+    .esencia-fila span {
+        font-size: clamp(28px, 6vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .esencia-fila img {
+        width: 100px;
+        height: 65px;
+    }
+
+    .esencia-texto {
+        padding: 0;
+    }
+}
+
+/* AJUSTE DEFINITIVO DE LA PORTADA */
+
+.portada-section {
+    border: none !important;
+}
+
+.portada-grid {
+    border: none !important;
+    display: flex;
+    align-items: center;
+}
+
+.portada-bloque-1,
+.portada-bloque-2 {
+    border: none !important;
+    outline: none !important;
+}
+
+.portada-bloque-1 {
+    width: 100%;
+    padding-left: 7.5%;
+    padding-right: 4%;
+}
+
+.portada-titulo {
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: clamp(60px, 6.5vw, 110px) !important;
+    font-weight: 900 !important;
+    line-height: 0.92 !important;
+    letter-spacing: -3px;
+    max-width: 900px;
+}
+
+.portada-saludo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.portada-subtitulo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+@media (max-width: 768px) {
+    .portada-titulo {
+        font-size: clamp(40px, 9vw, 65px) !important;
+        letter-spacing: -1px;
+    }
+}
+
+/* TÍTULO ROJO RENAX */
+.esencia-fila span {
+    color: #e50914 !important;
+}
+
+/* HISTORIA DE MARCA RENAX */
+
+.historia-renax {
+    width: 100%;
+    padding: 0 4.5% 45px;
+    background: #f1f1f1;
+    color: #fff;
+}
+
+.historia-titulo {
+    min-height: 330px;
+    padding: 55px 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: linear-gradient(
+        90deg,
+        #080808 0%,
+        #080808 50%,
+        #ed0000 50%,
+        #ed0000 100%
+    );
+
+    border-radius: 0 0 42px 42px;
+}
+
+.historia-titulo h2 {
+    max-width: 1100px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(38px, 5.2vw, 76px);
+    font-weight: 900;
+    line-height: 0.98;
+    letter-spacing: -2px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.historia-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    padding-top: 75px;
+}
+
+.historia-tarjeta {
+    min-height: 235px;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+    background: #050505;
+    border-radius: 26px;
+}
+
+.historia-tarjeta p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 1.45;
+    color: #fff;
+}
+
+@media (max-width: 800px) {
+    .historia-renax {
+        padding: 0 18px 30px;
+    }
+
+    .historia-titulo {
+        min-height: 250px;
+        padding: 40px 15px;
+    }
+
+    .historia-titulo h2 {
+        font-size: clamp(30px, 7vw, 48px);
+        letter-spacing: -1px;
+    }
+
+    .historia-tarjetas {
+        grid-template-columns: 1fr;
+        padding-top: 35px;
+        gap: 14px;
+    }
+
+    .historia-tarjeta {
+        min-height: 140px;
+    }
+}
+
+/* ======================================
+   RENAX — TÍTULO EDITORIAL DE PORTAFOLIO
+   ====================================== */
+
+.titulo-destacados {
+    width: 100%;
+    padding: 55px 2.5% 40px;
+    background: #080808;
+    overflow: hidden;
+}
+
+.titulo-destacados .destacados-superior {
+    display: block;
+    margin-bottom: 18px;
+    color: #e50914;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.titulo-destacados .destacados-lineas {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.titulo-destacados h2 {
+    margin: 0;
+    color: #ed1c24;
+    font-family: Impact, 'Arial Narrow', sans-serif;
+    font-size: clamp(58px, 9.5vw, 150px);
+    font-weight: 900;
+    line-height: 0.82;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.titulo-destacados .destacado-contorno {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #ed1c24;
+    text-stroke: 1.5px #ed1c24;
+}
+
+.titulo-destacados .destacados-subtexto {
+    margin-top: 30px;
+    color: #bdbdbd;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .titulo-destacados {
+        padding: 42px 18px 30px;
+    }
+
+    .titulo-destacados .destacados-lineas {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .titulo-destacados h2 {
+        font-size: clamp(55px, 13vw, 95px);
+        letter-spacing: -2px;
+        white-space: normal;
+    }
+}
+
+/* =========================================
+   RENAX — GALERÍA ASIMÉTRICA DE PROYECTOS
+   ========================================= */
+
+.galeria-renax {
+    width: 100%;
+    padding: 75px 5% 85px;
+    overflow: hidden;
+    background: #080808;
+    color: #fff;
+}
+
+/* TÍTULO EDITORIAL */
+
+.titulo-destacados {
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+.destacados-superior {
+    display: block;
+    margin-bottom: 24px;
+    color: #ed1c24;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+
+
+.destacados-lineas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+    width: 100%;
+}
+
+
+
+/* TÍTULO EDITORIAL RENAX */
+
+.destacados-lineas h2 {
+    margin: 0;
+    color: #ed1c24;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(75px, 12.5vw, 185px);
+    font-weight: 900;
+    line-height: 0.78;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.destacados-lineas .destacado-contorno {
+    margin-top: 8px;
+    color: transparent;
+    -webkit-text-stroke: 2px #ed1c24;
+    text-stroke: 2px #ed1c24;
+    font-size: clamp(48px, 9vw, 132px);
+    line-height: 0.9;
+}
+
+.destacados-etiqueta {
+    margin-top: 25px;
+    color: #d0d0d0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
+
+.destacados-lineas .destacado-contorno {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #ed1c24;
+}
+
+.destacados-etiqueta {
+    margin-top: 25px;
+    color: #aaa;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+/* GALERÍA DE CINCO IMÁGENES */
+
+
+.galeria-asimetrica {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+
+    /* Más altura para mostrar mejor las imágenes */
+    grid-template-rows: 380px 320px 320px;
+
+    gap: 16px;
+}
+
+.proyecto {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #171717;
+}
+
+.proyecto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0;
+    transition: transform 0.5s ease;
+}
+
+.proyecto:hover img {
+    transform: scale(1.03);
+}
+
+
+.proyecto figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 35px 16px 15px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    background: linear-gradient(transparent, rgba(0,0,0,.85));
+}
+
+.proyecto-principal {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.proyecto-especialidades {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.proyecto-skenzi {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+.proyecto-matematicas {
+    grid-column: 2;
+    grid-row: 2 / 4;
+}
+
+.proyecto-renax {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+/* TEXTO Y BOTÓN */
+
+
+.galeria-pie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    margin-top: 48px;
+    text-align: center;
+}
+
+
+
+
+.galeria-pie p {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(18px, 2vw, 25px);
+    line-height: 1.5;
+}
+
+
+
+.boton-portafolio-renax {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 24px;
+    border: 1px solid #ed1c24;
+    border-radius: 40px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .25s ease;
+}
+
+.boton-portafolio-renax:hover {
+    background: #ed1c24;
+}
+
+/* ADAPTACIÓN A MÓVILES */
+
+@media (max-width: 800px) {
+    .galeria-renax {
+        padding: 55px 20px 60px;
+    }
+
+    .destacados-lineas {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+.destacados-lineas h2 {
+    margin: 0;
+    color: #ed1c24;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(75px, 12.5vw, 185px);
+    font-weight: 900;
+    line-height: 0.78;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.destacados-lineas .destacado-contorno {
+    margin-top: 8px;
+    color: transparent;
+    -webkit-text-stroke: 2px #ed1c24;
+    font-size: clamp(48px, 9vw, 132px);
+    line-height: 0.9;
+}
+
+
+
+.galeria-asimetrica {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 280px 240px 240px;
+    gap: 10px;
+}
+
+    .proyecto-principal {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .proyecto-especialidades {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .proyecto-skenzi {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .proyecto-matematicas {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .proyecto-renax {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .galeria-pie {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 35px;
+    }
+}
+
+/* AJUSTE FINAL DEL TITULAR */
+
+.titulo-destacados {
+    width: 100%;
+    padding: 55px 3% 65px;
+    margin-bottom: 30px;
+    overflow: visible;
+}
+
+.destacados-lineas {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
+}
+
+.destacados-lineas h2 {
+    width: 100%;
+    font-size: clamp(90px, 13vw, 190px) !important;
+    line-height: 0.82 !important;
+    letter-spacing: -4px;
+    white-space: nowrap;
+}
+
+.destacados-lineas .destacado-contorno {
+    margin-top: 8px;
+    font-size: clamp(55px, 9.5vw, 140px) !important;
+    line-height: 0.9 !important;
+    -webkit-text-stroke: 2px #ed1c24;
+}
+
+.destacados-etiqueta {
+    margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+    .titulo-destacados {
+        padding: 40px 18px 45px;
+    }
+
+    .destacados-lineas h2 {
+        font-size: clamp(58px, 13vw, 95px) !important;
+        letter-spacing: -2px;
+        white-space: normal;
+    }
+
+    .destacados-lineas .destacado-contorno {
+        font-size: clamp(36px, 9vw, 65px) !important;
+        -webkit-text-stroke: 1.5px #ed1c24;
+    }
+}
+
+/* =========================================
+   SESIÓN 4 — ¿TU MARCA ESTÁ LISTA?
+   ========================================= */
+
+#sesion-4.renax-final-cta {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 620px;
+    padding: 75px 7%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #000;
+    border: none;
+    color: #fff;
+}
+
+#sesion-4 .final-contenido {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#sesion-4 .final-etiqueta {
+    margin-bottom: 75px;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #fff;
+    text-align: left;
+}
+
+#sesion-4 .final-titulo {
+    position: relative;
+    margin: 0 auto 25px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(43px, 7.5vw, 88px);
+    font-weight: 900;
+    line-height: .88;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#sesion-4 .final-titulo > span {
+    display: inline-block;
+}
+
+#sesion-4 .final-interrogacion {
+    color: #fff;
+}
+
+#sesion-4 .final-tu {
+    color: #fff;
+    text-shadow: 0 0 25px rgba(255, 35, 15, .35);
+}
+
+#sesion-4 .final-segunda-linea {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 4px;
+}
+
+#sesion-4 .final-interrogacion-cierre {
+    margin-left: 5px;
+}
+
+#sesion-4 .final-segunda-linea small {
+    font-family: Georgia, serif;
+    font-size: clamp(15px, 2vw, 23px);
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
+}
+
+#sesion-4 .final-descripcion {
+    max-width: 760px;
+    margin: 28px auto 30px;
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: clamp(16px, 2vw, 21px);
+    line-height: 1.5;
+}
+
+#sesion-4 .final-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    padding: 14px 24px;
+    border: 1px solid #ed1c24;
+    border-radius: 35px;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background .3s ease;
+}
+
+#sesion-4 .final-boton:hover {
+    background: #ed1c24;
+}
+
+#sesion-4 .final-luz {
+    position: absolute;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 50%;
+    background: #ff210d;
+    filter: blur(42px);
+    opacity: .75;
+}
+
+#sesion-4 .final-luz-1 {
+    width: 95px;
+    height: 95px;
+    top: 25%;
+    left: 20%;
+    animation: renaxLuz 5s ease-in-out infinite alternate;
+}
+
+#sesion-4 .final-luz-2 {
+    width: 150px;
+    height: 150px;
+    right: 10%;
+    bottom: 5%;
+    opacity: .6;
+    animation: renaxLuz 6s ease-in-out infinite alternate-reverse;
+}
+
+#sesion-4 .final-luz-3 {
+    width: 70px;
+    height: 70px;
+    left: 5%;
+    bottom: 10%;
+    opacity: .45;
+    animation: renaxLuz 4s ease-in-out infinite alternate;
+}
+
+@keyframes renaxLuz {
+    from {
+        transform: scale(.85);
+        opacity: .35;
+    }
+    to {
+        transform: scale(1.25);
+        opacity: .8;
+    }
+}
+
+@media (max-width: 600px) {
+    #sesion-4.renax-final-cta {
+        min-height: 540px;
+        padding: 55px 20px;
+    }
+
+    #sesion-4 .final-etiqueta {
+        margin-bottom: 55px;
+        font-size: 15px;
+    }
+
+    #sesion-4 .final-titulo {
+        font-size: clamp(37px, 10vw, 58px);
+        letter-spacing: -2px;
+    }
+
+    #sesion-4 .final-segunda-linea {
+        gap: 8px;
+    }
+
+    #sesion-4 .final-segunda-linea small {
+        width: 100%;
+        margin-top: 8px;
+    }
+
+    #sesion-4 .final-descripcion {
+        font-size: 16px;
+    }
+}
+
     </style>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- FONDO ANIMADO GLOBAL RENAX -->
-    <div class="fondo-liquido-renax"></div>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <!-- MENÚ DE NAVEGACIÓN -->
+</head>
+    
+<body>
+<!-- FONDO ANIMADO GLOBAL RENAX -->
+<div class="fondo-liquido-renax"></div>
+    <!-- ================= MENÚ DE NAVEGACIÓN ================= -->
     <header class="site-header">
         <div class="nav-container">
             <a href="index.html" class="logo-container">
                 <img src="logo-renax-transparente.png" alt="RENAX" class="logo-img">
             </a>
             <nav class="nav-menu">
-                <a href="index.html" class="nav-link active" data-lang="navInicio">Inicio</a>
-                <a href="nosotros.html" class="nav-link" data-lang="navNosotros">Nosotros</a>
-                <a href="portafolio.html" class="nav-link" data-lang="navPortafolio">Portafolio</a>
-                <a href="servicios.html" class="nav-link" data-lang="navServicios">Servicios</a>
-                <a href="contacto.html" class="nav-link" data-lang="navContacto">Contáctanos</a>
+                <a href="index.html" class="nav-link active">Inicio</a>
+                <a href="nosotros.html" class="nav-link">Nosotros</a>
+                <a href="portafolio.html" class="nav-link">Portafolio</a>
+                <a href="servicios.html" class="nav-link">Servicios</a>
+                <a href="contacto.html" class="nav-link">Contáctanos</a>
             </nav>
             <div class="nav-actions">
                 <button id="langBtn" class="btn-esp">ESP</button>
-                <a href="login.html" class="btn-login" data-lang="navLogin">INICIAR SESIÓN</a>
+                <a href="login.html" class="btn-login">INICIAR SESIÓN</a>
             </div>
         </div>
     </header>
 
     <main>
-        <!-- PORTADA -->
+        <!-- ================= PORTADA (DOS BLOQUES - ANCHO DE PÁGINA) ================= -->
         <section class="portada-section">
             <div class="portada-grid">
-                <div class="portada-bloque-1">
-                    <p class="portada-saludo" data-lang="heroSaludo">HOLA, SOMOS</p>
-                    <h1 class="portada-titulo" data-lang="heroTitulo">
-                        EXPERTOS EN<br>TRANSFORMAR<br>MARCAS
-                    </h1>
-                    <p class="portada-subtitulo" data-lang="heroSub">
-                        Sin borrar la historia que las hace únicas.
-                    </p>
-                    <a href="portafolio.html" class="portada-boton" data-lang="heroBoton">
-                        VER NUESTRO PORTAFOLIO <span>×</span>
-                    </a>
-                </div>
+                <!-- Bloque 1: Espacio para tus títulos, textos y botones de portada -->
+                
+<div class="portada-bloque-1">
+    <p class="portada-saludo">HOLA, SOMOS</p>
+
+    <h1 class="portada-titulo">
+        EXPERTOS EN<br>
+        TRANSFORMAR<br>
+        MARCAS
+    </h1>
+
+    <p class="portada-subtitulo">
+        Sin borrar la historia que las hace únicas.
+    </p>
+
+    <a href="portafolio.html" class="portada-boton">
+        VER NUESTRO PORTAFOLIO <span>×</span>
+    </a>
+</div>
+
+                
+               
             </div>
         </section>
 
-        <!-- SESIÓN 1 -->
+        <!-- ================= SESIÓN 1 ================= -->
         <section class="seccion-base" id="sesion-1">
-            <div class="esencia-renax" id="esencia">
-                <div class="esencia-titulo">
-                    <div class="esencia-fila">
-                        <span data-lang="esencia1">VUELVE</span>
-                        <img src="renax-rojo.jpg" alt="Ilustración creativa">
-                        <span data-lang="esencia2">A</span>
-                    </div>
-                    <div class="esencia-fila">
-                        <img src="renax-persona.jpg" alt="Ilustración de personas">
-                        <span data-lang="esencia3">DESTACAR</span>
-                    </div>
-                    <div class="esencia-fila">
-                        <span data-lang="esencia4">SIN</span>
-                        <img src="renax-mirada.jpg" alt="Ilustración de ojos">
-                        <span data-lang="esencia5">PERDER</span>
-                    </div>
-                    <div class="esencia-fila">
-                        <span data-lang="esencia6">TU ESENCIA</span>
-                    </div>
-                </div>
-                <div class="esencia-texto">
-                    <p data-lang="esenciaDesc">
-                        Transformamos marcas con historia en identidades actuales, sin perder aquello que las hace únicas.
-                    </p>
-                    <a href="servicios.html" class="esencia-boton" data-lang="esenciaBoton">
-                        TRANSFORMA TU MARCA →
-                    </a>
-                </div>
-            </div>
+           
+<div class="esencia-renax" id="esencia">
+    <div class="esencia-titulo">
+        <div class="esencia-fila">
+            <span>VUELVE</span>
+           <img src="renax-rojo.jpg" alt="Ilustración creativa">
+            <span>A</span>
+        </div>
+
+        <div class="esencia-fila">
+           <img src="renax-persona.jpg" alt="Ilustración de personas">
+            <span>DESTACAR</span>
+        </div>
+
+        <div class="esencia-fila">
+            <span>SIN</span>
+           <img src="renax-mirada.jpg" alt="Ilustración de ojos">
+            <span>PERDER</span>
+        </div>
+
+        <div class="esencia-fila">
+            <span>TU ESENCIA</span>
+        </div>
+    </div>
+
+    <div class="esencia-texto">
+        <p>
+            Transformamos marcas con historia en identidades
+            actuales, sin perder aquello que las hace únicas.
+        </p>
+
+        <a href="servicios.html" class="esencia-boton">
+            TRANSFORMA TU MARCA →
+        </a>
+    </div>
+</div>
+ <!-- Espacio listo para diseñar la Sesión 1 -->
         </section>
 
-        <!-- HISTORIA DE MARCA CON EFECTO SCROLL -->
-        <section class="historia-renax" id="historia">
-            <div class="historia-titulo">
-                <h2 data-lang="historiaTitulo">
-                    TU HISTORIA MERECE<br>UNA IMAGEN QUE ESTÉ A<br>SU ALTURA.
-                </h2>
-            </div>
-            <div class="historia-tarjetas">
-                <article class="historia-tarjeta">
-                    <p data-lang="historiaCard1">
-                        Una marca que lleva años construyendo confianza tiene algo que una marca nueva todavía no posee: historia.
-                    </p>
-                </article>
-                <article class="historia-tarjeta">
-                    <p data-lang="historiaCard2">
-                        En RENAX no queremos borrarla. Queremos descubrir qué hace especial tu negocio y conservar su esencia.
-                    </p>
-                </article>
-                <article class="historia-tarjeta">
-                    <p data-lang="historiaCard3">
-                        Convertimos esa esencia en una identidad visual moderna, coherente y preparada para el presente.
-                    </p>
-                </article>
-            </div>
-        </section>
+        
+<!-- ================= HISTORIA DE MARCA ================= -->
+<section class="historia-renax" id="historia">
 
-        <!-- PORTAFOLIO DESTACADO -->
-        <section class="galeria-renax" id="proyectos-destacados">
-            <header class="titulo-destacados">
-                <span class="destacados-superior" data-lang="galeriaSup">RENAX / SELECCIÓN DE PROYECTOS</span>
-                <div class="destacados-lineas">
-                    <h2 data-lang="galeriaL1">LO MÁS</h2>
-                    <h2 class="destacado-contorno" data-lang="galeriaL2">DESTACADO</h2>
-                </div>
-                <p class="destacados-etiqueta" data-lang="galeriaEtiqueta">IDENTIDAD · DISEÑO · EVOLUCIÓN</p>
-            </header>
+    <div class="historia-titulo">
+        <h2>
+            TU HISTORIA MERECE<br>
+            UNA IMAGEN QUE ESTÉ A<br>
+            SU ALTURA.
+        </h2>
+    </div>
 
-            <div class="galeria-asimetrica">
-                <figure class="proyecto proyecto-principal">
-                    <img src="DONUT'S%20BITES-casos-estudio02.jpeg" alt="Donut's Bites">
-                    <figcaption>01 / DONUT'S BITES</figcaption>
-                </figure>
-                <figure class="proyecto proyecto-especialidades">
-                    <img src="especialidades-9.jpeg" alt="Especialidades">
-                    <figcaption>02 / ESPECIALIDADES</figcaption>
-                </figure>
-                <figure class="proyecto proyecto-skenzi">
-                    <img src="skenzi-productos.png" alt="Skenzi">
-                    <figcaption>03 / SKENZI HOME</figcaption>
-                </figure>
-                <figure class="proyecto proyecto-matematicas">
-                    <img src="dia-matematicas.png.png" alt="Matemáticas">
-                    <figcaption>04 / MATEMÁTICAS</figcaption>
-                </figure>
-                <figure class="proyecto proyecto-renax">
-                    <img src="Renax-%20carrusel%2001.png" alt="RENAX">
-                    <figcaption>05 / RENAX</figcaption>
-                </figure>
+    <div class="historia-tarjetas">
+        <article class="historia-tarjeta">
+            <p>
+                Una marca que lleva años construyendo confianza
+                tiene algo que una marca nueva todavía no posee:
+                historia.
+            </p>
+        </article>
+
+        <article class="historia-tarjeta">
+            <p>
+                En RENAX no queremos borrarla. Queremos descubrir
+                qué hace especial tu negocio y conservar su esencia.
+            </p>
+        </article>
+
+        <article class="historia-tarjeta">
+            <p>
+                Convertimos esa esencia en una identidad visual
+                moderna, coherente y preparada para el presente.
+            </p>
+        </article>
+    </div>
+
+</section>
+
+
+    
+<!-- =============== PORTAFOLIO DESTACADO RENAX =============== -->
+<section class="galeria-renax" id="proyectos-destacados">
+
+    <header class="titulo-destacados">
+        <span class="destacados-superior">
+            RENAX / SELECCIÓN DE PROYECTOS
+        </span>
+
+        <div class="destacados-lineas">
+            <h2>LO MÁS</h2>
+            <h2 class="destacado-contorno">DESTACADO</h2>
+        </div>
+
+        <p class="destacados-etiqueta">
+            IDENTIDAD · DISEÑO · EVOLUCIÓN
+        </p>
+    </header>
+
+    <div class="galeria-asimetrica">
+
+        <figure class="proyecto proyecto-principal">
+            <img
+                src="DONUT'S%20BITES-casos-estudio02.jpeg"
+                alt="Proyecto de identidad visual Donut's Bites">
+            <figcaption>01 / DONUT'S BITES</figcaption>
+        </figure>
+
+        <figure class="proyecto proyecto-especialidades">
+            <img
+                src="especialidades-9.jpeg"
+                alt="Proyecto Día de las Especialidades">
+            <figcaption>02 / ESPECIALIDADES</figcaption>
+        </figure>
+
+        <figure class="proyecto proyecto-skenzi">
+            <img
+                src="skenzi-productos.png"
+                alt="Proyecto de productos Skenzi">
+            <figcaption>03 / SKENZI HOME</figcaption>
+        </figure>
+
+        <figure class="proyecto proyecto-matematicas">
+            <img
+                src="dia-matematicas.png.png"
+                alt="Proyecto Día de las Matemáticas">
+            <figcaption>04 / MATEMÁTICAS</figcaption>
+        </figure>
+
+        <figure class="proyecto proyecto-renax">
+            <img
+                src="Renax-%20carrusel%2001.png"
+                alt="Proyecto creativo RENAX">
+            <figcaption>05 / RENAX</figcaption>
+        </figure>
+
+    </div>
+
+    <div class="galeria-pie">
+        <p>
+            Conoce algunos de los proyectos en los que transformamos
+            marcas sin perder su esencia.
+        </p>
+
+        <a href="portafolio.html" class="boton-portafolio-renax">
+            VER NUESTRO PORTAFOLIO <span>↗</span>
+        </a>
+    </div>
+
+</section>
+
+
+        
+<!-- ================= SESIÓN 4: CTA FINAL RENAX ================= -->
+<section class="renax-final-cta" id="sesion-4">
+
+    <div class="final-luz final-luz-1"></div>
+    <div class="final-luz final-luz-2"></div>
+    <div class="final-luz final-luz-3"></div>
+
+    <div class="final-contenido">
+
+        <p class="final-etiqueta">PepsiThe Choice</p>
+
+        <h2 class="final-titulo">
+            <span class="final-interrogacion">¿</span>
+            <span class="final-tu">TU</span>
+            <span>MARCA ESTÁ</span>
+            <span class="final-segunda-linea">
+                LISTA<span class="final-interrogacion-cierre">?</span>
+                <small>Para la evolución</small>
+            </span>
+        </h2>
+
+        <p class="final-descripcion">
+            En RENAX analizamos la historia, los valores y la esencia
+            de tu negocio para convertirlos en una identidad visual
+            moderna, coherente y bien preparada.
+        </p>
+
+        <a href="contacto.html" class="final-boton">
+            HABLEMOS DE TU MARCA <span>↗</span>
+        </a>
+
+    </div>
+</section>
+
+
+
+    <!-- ================= PIE DE PÁGINA (FOOTER ANCHO) ================= -->
+    <footer class="renax-footer">
+        <div class="footer-topbar">
+            <h2 class="footer-titulo">MENÚ</h2>
+            <a href="index.html" class="footer-explora">EXPLORA RENAX <span>↘</span></a>
+        </div>
+
+        <div class="footer-secciones">
+            <div class="footer-column">
+                <h3><a href="index.html">INICIO</a></h3>
+                <a href="index.html#hero">Expertos en transformar marcas</a>
+                <a href="index.html#esencia">Vuelve a destacar sin perder tu esencia</a>
+                <a href="index.html#historia">Tu historia merece una imagen que esté a su altura</a>
+                <a href="index.html#faq">Preguntas frecuentes</a>
             </div>
 
-            <div class="galeria-pie">
-                <p data-lang="galeriaPieText">Conoce algunos de los proyectos en los que transformamos marcas sin perder su esencia.</p>
-                <a href="portafolio.html" class="boton-portafolio-renax" data-lang="galeriaPieBoton">VER NUESTRO PORTAFOLIO <span>↗</span></a>
+            <div class="footer-column">
+                <h3><a href="nosotros.html">NOSOTROS</a></h3>
+                <a href="nosotros.html#quienes">Quiénes somos</a>
+                <a href="nosotros.html#vision">Visión</a>
+                <a href="nosotros.html#mision">Misión</a>
+                <a href="nosotros.html#porquerenax">¿Por qué RENAX?</a>
             </div>
-        </section>
 
-        <!-- SESIÓN 4: CTA FINAL -->
-        <section class="renax-final-cta" id="sesion-4">
-            <div class="final-contenido">
-                <p class="final-etiqueta">PepsiThe Choice</p>
-                <h2 class="final-titulo">
-                    <span class="final-interrogacion">¿</span>
-                    <span class="final-tu">TU</span>
-                    <span data-lang="ctaText1">MARCA ESTÁ</span>
-                    <span class="final-segunda-linea">
-                        <span data-lang="ctaText2">LISTA</span><span class="final-interrogacion-cierre">?</span>
-                        <small data-lang="ctaSmall">Para la evolución</small>
-                    </span>
-                </h2>
-                <p class="final-descripcion" data-lang="ctaDesc">
-                    En RENAX analizamos la historia, los valores y la esencia de tu negocio para convertirlos en una identidad visual moderna, coherente y bien preparada.
-                </p>
-                <a href="contacto.html" class="final-boton" data-lang="ctaBoton">
-                    HABLEMOS DE TU MARCA <span>↗</span>
-                </a>
+            <div class="footer-column">
+                <h3><a href="portafolio.html">PORTAFOLIO</a></h3>
+                <a href="portafolio.html#proyectos">Proyectos y trabajos realizados</a>
+                <a href="portafolio.html#casos">Casos de estudio</a>
             </div>
-        </section>
-    </
+
+            <div class="footer-column">
+                <h3><a href="servicios.html">SERVICIOS</a></h3>
+                <a href="servicios.html#diagnostico">Diagnóstico de marca</a>
+                <a href="servicios.html#identidad">Identidad visual</a>
+                <a href="servicios.html#comunicacion">Comunicación</a>
+                <a href="servicios.html#estrategia">Estrategia visual</a>
+            </div>
+
+            <div class="footer-column">
+                <h3><a href="contacto.html">CONTACTO</a></h3>
+                <a href="contacto.html">Hablemos de tu proyecto</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <a href="index.html"><img src="logo-renax-transparente.png" alt="RENAX" class="footer-logo"></a>
+            <a href="contacto.html" class="footer-contacto-link">CONTACTO ↗</a>
+        </div>
+    </footer>
+
+    <!-- Script básico para funcionalidad del botón ESP -->
+    <script>
+        const langBtn = document.getElementById('langBtn');
+        let currentLang = 'es';
+        langBtn.addEventListener('click', () => {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            langBtn.textContent = currentLang === 'es' ? 'ESP' : 'ENG';
+        });
+    </script>
+</body>
+</html>
