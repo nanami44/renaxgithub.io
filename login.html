@@ -204,7 +204,12 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
-        const CORREO_ADMINISTRADOR = "admin@renax.com";
+
+const CORREOS_ADMINISTRADORES = [
+    "naoco2008@gmail.com",
+    "renaxcreativit@gmail.com"
+].map(correo => correo.trim().toLowerCase());
+
 
         // Elementos visuales de cambio de vistas
         const secLogin = document.getElementById('section-login');
@@ -245,11 +250,17 @@
 
             try {
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
-                if (userCredential.user.email === CORREO_ADMINISTRADOR) {
-                    window.location.href = "admin.html";
-                } else {
-                    window.location.href = "dashboard.html";
-                }
+               
+const correoUsuario = (userCredential.user.email || "")
+    .trim()
+    .toLowerCase();
+
+if (CORREOS_ADMINISTRADORES.includes(correoUsuario)) {
+    window.location.href = "admin.html";
+} else {
+    window.location.href = "dashboard.html";
+}
+
             } catch (error) {
                 loginMsg.style.color = "#e74c3c";
                 if (error.code === 'auth/invalid-credential' || error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
