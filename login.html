@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión - RENAX</title>
+    <title>Acceso - RENAX</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,7 +14,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
         }
         .login-card {
             background-color: #141414;
@@ -29,6 +29,13 @@
             color: #e74c3c;
             text-align: center;
             margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .subtitle {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 20px;
         }
         .input-group {
             margin-bottom: 15px;
@@ -63,27 +70,45 @@
             font-weight: bold;
             cursor: pointer;
             font-size: 15px;
-            margin-top: 10px;
+            margin-top: 5px;
         }
         button:hover {
             background-color: #c0392b;
         }
-        #error-msg {
-            color: #e74c3c;
+        .msg-display {
             font-size: 13px;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 12px;
+        }
+        .links-container {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .action-link {
+            color: #e74c3c;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-decoration: underline;
+            font-size: 13px;
+            padding: 0;
+        }
+        .action-link:hover {
+            color: #ff5e4d;
         }
         .back-link {
-            display: block;
-            text-align: center;
-            margin-top: 15px;
             color: #aaa;
             text-decoration: none;
-            font-size: 13px;
         }
         .back-link:hover {
             color: #fff;
+        }
+        .hidden {
+            display: none !important;
         }
     </style>
 </head>
@@ -91,30 +116,82 @@
 
     <div class="login-card">
         <h2>RENAX</h2>
-        <p style="text-align: center; font-size: 13px; color: #888; margin-bottom: 20px;">Ingresa a tu cuenta</p>
         
-        <form id="login-form">
-            <div class="input-group">
-                <label>Correo Electrónico</label>
-                <input type="email" id="login-email" required placeholder="tucorreo@email.com">
-            </div>
-            
-            <div class="input-group">
-                <label>Contraseña</label>
-                <input type="password" id="login-password" required placeholder="••••••••">
-            </div>
-            
-            <button type="submit">Iniciar Sesión</button>
-            <div id="error-msg"></div>
-        </form>
+        <!-- VISTA 1: INICIAR SESIÓN -->
+        <div id="section-login">
+            <p class="subtitle">Ingresa a tu cuenta</p>
+            <form id="login-form">
+                <div class="input-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="login-email" required placeholder="tucorreo@email.com">
+                </div>
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="login-password" required placeholder="••••••••">
+                </div>
+                <button type="submit">Iniciar Sesión</button>
+                <div id="login-msg" class="msg-display" style="color: #e74c3c;"></div>
+            </form>
 
-        <a href="index.html" class="back-link">← Volver al inicio</a>
+            <div class="links-container">
+                <button type="button" class="action-link" id="to-register">¿No tienes cuenta? Regístrate aquí</button>
+                <button type="button" class="action-link" id="to-forgot">¿Olvidaste tu contraseña?</button>
+                <a href="index.html" class="back-link">← Volver al inicio</a>
+            </div>
+        </div>
+
+        <!-- VISTA 2: REGISTRO DE NUEVO USUARIO -->
+        <div id="section-register" class="hidden">
+            <p class="subtitle">Crea tu cuenta en RENAX</p>
+            <form id="register-form">
+                <div class="input-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="reg-email" required placeholder="tucorreo@email.com">
+                </div>
+                <div class="input-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="reg-password" required placeholder="Mínimo 6 caracteres">
+                </div>
+                <div class="input-group">
+                    <label>Ciudad</label>
+                    <input type="text" id="reg-ciudad" required placeholder="Ej. Bogotá">
+                </div>
+                <div class="input-group">
+                    <label>Celular / Teléfono</label>
+                    <input type="text" id="reg-telefono" required placeholder="Ej. 3001234567">
+                </div>
+                <button type="submit">Registrarse</button>
+                <div id="reg-msg" class="msg-display" style="color: #e74c3c;"></div>
+            </form>
+
+            <div class="links-container">
+                <button type="button" class="action-link" id="back-to-login-from-reg">¿Ya tienes cuenta? Inicia sesión</button>
+            </div>
+        </div>
+
+        <!-- VISTA 3: RECUPERAR CONTRASEÑA -->
+        <div id="section-forgot" class="hidden">
+            <p class="subtitle">Recupera tu acceso</p>
+            <p style="font-size: 12px; color: #aaa; text-align: center; margin-bottom: 15px;">Ingresa tu correo y te enviaremos un enlace para restablecer tu contraseña.</p>
+            <form id="forgot-form">
+                <div class="input-group">
+                    <label>Correo Electrónico</label>
+                    <input type="email" id="forgot-email" required placeholder="tucorreo@email.com">
+                </div>
+                <button type="submit">Enviar Enlace</button>
+                <div id="forgot-msg" class="msg-display" style="color: #25d366;"></div>
+            </form>
+
+            <div class="links-container">
+                <button type="button" class="action-link" id="back-to-login-from-forgot">← Volver al inicio de sesión</button>
+            </div>
+        </div>
     </div>
 
-    <!-- Lógica de Firebase para Login con redirección inteligente -->
+    <!-- Lógica de Firebase para Auth, Registro y Recuperación -->
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
-        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
         const firebaseConfig = {
             apiKey: "AIzaSyBRXZbIC0R2ltnc_xLVhpLo49sJTIY2cxA",
@@ -127,41 +204,123 @@
 
         const app = initializeApp(firebaseConfig);
         const auth = getAuth(app);
+        const CORREO_ADMINISTRADOR = "admin@renax.com";
 
+        // Elementos visuales de cambio de vistas
+        const secLogin = document.getElementById('section-login');
+        const secRegister = document.getElementById('section-register');
+        const secForgot = document.getElementById('section-forgot');
+
+        document.getElementById('to-register').addEventListener('click', () => {
+            secLogin.classList.add('hidden');
+            secRegister.classList.remove('hidden');
+        });
+
+        document.getElementById('back-to-login-from-reg').addEventListener('click', () => {
+            secRegister.classList.add('hidden');
+            secLogin.classList.remove('hidden');
+        });
+
+        document.getElementById('to-forgot').addEventListener('click', () => {
+            secLogin.classList.add('hidden');
+            secForgot.classList.remove('hidden');
+        });
+
+        document.getElementById('back-to-login-from-forgot').addEventListener('click', () => {
+            secForgot.classList.add('hidden');
+            secLogin.classList.remove('hidden');
+        });
+
+        // 1. Lógica de Inicio de Sesión
         const loginForm = document.getElementById('login-form');
-        const loginEmail = document.getElementById('login-email');
-        const loginPassword = document.getElementById('login-password');
-        const errorMsg = document.getElementById('error-msg');
-
-        // AQUÍ CAMBIAS ESTO por tu correo de administrador real de RENAX:
-        const CORREO_ADMINISTRADOR = "admin@renax.com"; 
+        const loginMsg = document.getElementById('login-msg');
 
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            errorMsg.textContent = "Iniciando sesión...";
+            loginMsg.style.color = "#aaa";
+            loginMsg.textContent = "Iniciando sesión...";
 
-            const email = loginEmail.value.trim();
-            const password = loginPassword.value.trim();
+            const email = document.getElementById('login-email').value.trim();
+            const password = document.getElementById('login-password').value.trim();
 
             try {
                 const userCredential = await signInWithEmailAndPassword(auth, email, password);
-                const user = userCredential.user;
-
-                // Verificación de rol basada en el correo electrónico
-                if (user.email === CORREO_ADMINISTRADOR) {
-                    // Es el administrador -> Redirigir al panel de Admin
+                if (userCredential.user.email === CORREO_ADMINISTRADOR) {
                     window.location.href = "admin.html";
                 } else {
-                    // Es un cliente normal -> Redirigir a su panel de usuario
                     window.location.href = "dashboard.html";
                 }
+            } catch (error) {
+                loginMsg.style.color = "#e74c3c";
+                if (error.code === 'auth/invalid-credential' || error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
+                    loginMsg.textContent = "Correo o contraseña incorrectos.";
+                } else {
+                    loginMsg.textContent = "Error al iniciar sesión. Inténtalo de nuevo.";
+                }
+            }
+        });
+
+        // 2. Lógica de Registro de Nuevos Usuarios
+        const registerForm = document.getElementById('register-form');
+        const regMsg = document.getElementById('reg-msg');
+
+        registerForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            regMsg.style.color = "#aaa";
+            regMsg.textContent = "Creando cuenta...";
+
+            const email = document.getElementById('reg-email').value.trim();
+            const password = document.getElementById('reg-password').value.trim();
+            const ciudad = document.getElementById('reg-ciudad').value.trim();
+            const telefono = document.getElementById('reg-telefono').value.trim();
+
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                
+                // Guardar datos adicionales en el LocalStorage para que el dashboard los lea
+                localStorage.setItem('renax_ciudad', ciudad);
+                localStorage.setItem('renax_telefono', telefono);
+
+                regMsg.style.color = "#25d366";
+                regMsg.textContent = "¡Cuenta creada con éxito! Redirigiendo...";
+
+                setTimeout(() => {
+                    window.location.href = "dashboard.html";
+                }, 1500);
 
             } catch (error) {
-                console.error("Error de login:", error);
-                if (error.code === 'auth/invalid-credential' || error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
-                    errorMsg.textContent = "Correo o contraseña incorrectos.";
+                regMsg.style.color = "#e74c3c";
+                if (error.code === 'auth/email-already-in-use') {
+                    regMsg.textContent = "Este correo ya está registrado.";
+                } else if (error.code === 'auth/weak-password') {
+                    regMsg.textContent = "La contraseña debe tener al menos 6 caracteres.";
                 } else {
-                    errorMsg.textContent = "Ocurrió un error. Inténtalo de nuevo.";
+                    regMsg.textContent = "Error al registrarse: " + error.message;
+                }
+            }
+        });
+
+        // 3. Lógica de Recuperación de Contraseña
+        const forgotForm = document.getElementById('forgot-form');
+        const forgotMsg = document.getElementById('forgot-msg');
+
+        forgotForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            forgotMsg.style.color = "#aaa";
+            forgotMsg.textContent = "Enviando enlace...";
+
+            const email = document.getElementById('forgot-email').value.trim();
+
+            try {
+                await sendPasswordResetEmail(auth, email);
+                forgotMsg.style.color = "#25d366";
+                forgotMsg.textContent = "¡Correo enviado! Revisa tu bandeja de entrada.";
+            } catch (error) {
+                forgotMsg.style.color = "#e74c3c";
+                if (error.code === 'auth/user-not-found') {
+                    forgotMsg.textContent = "No existe una cuenta con este correo.";
+                } else {
+                    forgotMsg.textContent = "Error al enviar el correo. Inténtalo de nuevo.";
                 }
             }
         });
