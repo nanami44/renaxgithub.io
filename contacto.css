@@ -2060,3 +2060,13 @@ h1, h2, h3,
 .renax-faq-section .renax-faq-card:hover {
     border-color: #ff2638 !important;
 }
+
+/* SEPARAR LA DESCRIPCIÓN DE LAS PREGUNTAS FRECUENTES */
+.renax-faq-section .renax-faq-intro {
+    margin-bottom: 35px !important;
+}
+
+/* UN POCO MÁS DE ESPACIO ENTRE EL TEXTO Y LOS CUADROS */
+.renax-faq-section .renax-faq-lista {
+    margin-top: 15px !important;
+}
