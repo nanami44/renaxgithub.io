@@ -720,6 +720,48 @@ max-width: 850px;
     }
 }
 
+/* TARJETAS ALTERNADAS RENAX */
+.tu-clase-de-tarjetas {
+    transition: background-color 0.3s ease,
+                color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.3s ease;
+}
+
+/* Tarjetas pares: blancas */
+.tu-clase-de-tarjetas:nth-child(even) {
+    background-color: #ffffff;
+    color: #111111;
+}
+
+/* Tarjetas impares: rojas */
+.tu-clase-de-tarjetas:nth-child(odd) {
+    background-color: #e60000;
+    color: #ffffff;
+}
+
+/* Texto de las tarjetas */
+.tu-clase-de-tarjetas h3,
+.tu-clase-de-tarjetas p {
+    color: inherit;
+}
+
+/* Al pasar el ratón: naranja */
+.tu-clase-de-tarjetas:nth-child(even):hover {
+    background-color: #ff6a00;
+    color: #ffffff;
+    box-shadow: 0 0 24px rgba(255, 106, 0, 0.55);
+    transform: translateY(-5px);
+}
+
+/* Al pasar el ratón: rojo intenso */
+.tu-clase-de-tarjetas:nth-child(odd):hover {
+    background-color: #ff1a1a;
+    color: #ffffff;
+    box-shadow: 0 0 24px rgba(255, 0, 0, 0.6);
+    transform: translateY(-5px);
+}
+
     </style>
 </head>
 <body>
