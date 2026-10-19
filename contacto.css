@@ -1882,3 +1882,27 @@ h1, h2, h3,
         animation: none;
     }
 }
+
+/* ELIMINAR ESPACIOS ALREDEDOR DEL CINTURÓN */
+.renax-contacto-mapa {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.renax-cinturon-ubicacion {
+    display: block;
+    margin: 0 !important;
+    padding-top: 21px;
+    padding-bottom: 21px;
+}
+
+/* PEGAR EL CINTURÓN AL MAPA MUNDIAL */
+.renax-cta-section {
+    margin-top: 0 !important;
+}
+
+/* EVITAR ESPACIOS GENERADOS POR LOS CONTENEDORES */
+.renax-contacto-mapa + .renax-cinturon-ubicacion,
+.renax-cinturon-ubicacion + .renax-cta-section {
+    margin-top: 0 !important;
+}
