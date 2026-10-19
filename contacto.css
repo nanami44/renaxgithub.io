@@ -2149,3 +2149,10 @@ h1, h2, h3,
     color: #ffffff !important;
 }
 
+
+/* TEXTO BLANCO DENTRO DEL BOTÓN NEGRO */
+.contacto-conversacion .contacto-tarjeta-form button,
+.contacto-conversacion .contacto-tarjeta-form button span {
+    color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
