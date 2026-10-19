@@ -12,8 +12,19 @@
   <!-- Tipografías e Iconos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Reglas tipográficas aplicadas estrictamente según lo solicitado */
+    body, p, span, a, input, select, textarea, label, button, small, strong {
+      font-family: 'Plus Jakarta Sans', sans-serif !important;
+    }
+    h1, h2, h3, h4, h5, h6, .renax-titulo-pesado, .titulo-do-more {
+      font-family: 'Montserrat', sans-serif !important;
+      font-weight: 900 !important;
+    }
+  </style>
 </head>
 
 <body class="contacto-page">
@@ -37,7 +48,6 @@
       <a href="login.html" class="contacto-login" id="navLoginBtn">
   <span data-lang="loginButton">INICIAR SESIÓN</span>
 </a>
-      </a>
       <button class="contacto-menu-toggle" id="contactoMenuToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="contactoNav">
         <i class="fa-solid fa-bars" aria-hidden="true"></i>
       </button>
