@@ -2003,3 +2003,28 @@ h1, h2, h3,
         border-radius: 25px !important;
     }
 }
+
+/* LIMPIAR EL FONDO EXTERIOR DEL CUADRO DE RESEÑAS */
+.contacto-resenas-seccion {
+    background: #000000 !important;
+    background-image: none !important;
+}
+
+/* ELIMINAR DECORACIONES EXTERIORES, SIN TOCAR EL CUADRO */
+.contacto-resenas-seccion::before,
+.contacto-resenas-seccion::after {
+    content: none !important;
+    display: none !important;
+}
+
+/* CONSERVAR EL CUADRO Y SU CONTENIDO */
+.contacto-resenas-seccion .deja-resena-caja {
+    background: #ffe8e8 !important;
+    border: 3px solid #ff2638 !important;
+    border-radius: 40px !important;
+}
+
+/* CONSERVAR EL MAPA PUNTEADO DENTRO DEL CUADRO */
+.contacto-resenas-seccion .deja-resena-caja::before {
+    display: block !important;
+}
