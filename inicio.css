@@ -1,676 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap');
+/* ==========================================================
+   PIE DE PÁGINA (FOOTER) - RENAX (COMPLETO Y CORREGIDO)
+   ========================================================== */
+
+footer.renax-footer,
+footer.renax-footer-nuevo,
+footer.servicios-footer-aislado {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    padding: 65px 5% 35px !important;
+    background: linear-gradient(180deg, #080808 0%, #300000 100%) !important;
+    color: #ffffff !important;
+    position: relative !important;
+    z-index: 10 !important;
+    clear: both !important;
+    overflow: hidden !important;
+}
+
+/* Contenedor principal del Footer adaptado a Grid flexible */
+footer.renax-footer .footer-container,
+footer.renax-footer:not(.renax-footer-nuevo) > .footer-container,
+.servicios-footer-aislado .servicios-footer-columnas {
+    display: grid !important;
+    grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+    gap: 30px !important;
+    width: 100% !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+    align-items: start !important;
+    box-sizing: border-box !important;
+}
+
+/* Columnas individuales */
+footer.renax-footer .footer-column,
+footer.renax-footer:not(.renax-footer-nuevo) > .footer-container > .footer-column,
+.servicios-footer-aislado .servicios-footer-columna {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+
+/* Títulos de las columnas del footer */
+footer.renax-footer .footer-column h3,
+footer.renax-footer:not(.renax-footer-nuevo) > .footer-container .footer-column h3,
+.servicios-footer-aislado .servicios-footer-columna h4 {
+    font-family: var(--font-heading, 'Montserrat', sans-serif) !important;
+    font-size: 1.1rem !important;
+    font-weight: 800 !important;
+    line-height: 1.4 !important;
+    margin: 0 0 20px !important;
+    color: #ffffff !important;
+    word-break: break-word !important;
+}
+
+/* Enlaces y títulos con borde inferior característico */
+footer.renax-footer .footer-column h3 a,
+footer.renax-footer .footer-menu-links a,
+.servicios-footer-aislado .servicios-footer-columna a {
+    display: block !important;
+    color: #cccccc !important;
+    text-decoration: none !important;
+    font-family: var(--font-body, 'Inter', sans-serif) !important;
+    font-size: 0.92rem !important;
+    line-height: 1.6 !important;
+    transition: color 0.2s ease !important;
+    word-break: break-word !important;
+}
+
+footer.renax-footer .footer-column h3 a {
+    color: #ffffff !important;
+    padding-bottom: 8px !important;
+    border-bottom: 3px solid #c8102e !important;
+}
+
+/* Contenedor de enlaces internos del menú */
+footer.renax-footer .footer-menu-links {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 14px !important;
+    width: 100% !important;
+}
+
+/* Efecto Hover en los enlaces del footer */
+footer.renax-footer .footer-column a:hover,
+footer.renax-footer .footer-menu-links a:hover,
+.servicios-footer-aislado .servicios-footer-columna a:hover,
+footer.renax-footer .footer-column h3 a:hover {
+    color: #ff3333 !important;
+}
 
 /* ==========================================================
-   RENAX · ESTILOS GENERALES Y DISEÑO AJUSTADO
+   RESPONSIVE (TABLETS Y MÓVILES)
    ========================================================== */
-.inicio-renax {
-    margin: 0;
-    background: #050505;
-    color: #ffffff;
-    overflow-x: hidden;
-}
 
-.inicio-fondo {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
-    background: #050505;
-}
-
-.inicio-fondo::before {
-    content: "";
-    position: absolute;
-    width: 75vw;
-    height: 180vh;
-    top: -45vh;
-    left: 48%;
-    background: linear-gradient(135deg, transparent 0%, transparent 20%, rgba(200,16,46,0.08) 30%, rgba(200,16,46,0.65) 45%, #c8102e 50%, rgba(200,16,46,0.55) 56%, rgba(200,16,46,0.08) 72%, transparent 82%);
-    filter: blur(8px);
-    animation: inicioRedMove 18s ease-in-out infinite alternate;
-}
-
-.inicio-fondo::after {
-    content: "";
-    position: absolute;
-    width: 55vw;
-    height: 150vh;
-    top: -25vh;
-    left: 58%;
-    background: linear-gradient(135deg, transparent 35%, rgba(200,16,46,0.25) 48%, rgba(200,16,46,0.05) 65%, transparent 75%);
-    filter: blur(25px);
-    animation: inicioRedGlow 14s ease-in-out infinite alternate;
-}
-
-@keyframes inicioRedMove {
-    0% { transform: translateX(-15vw) rotate(-8deg) scale(1); }
-    50% { transform: translateX(5vw) rotate(-3deg) scale(1.08); }
-    100% { transform: translateX(18vw) rotate(5deg) scale(1.12); }
-}
-
-@keyframes inicioRedGlow {
-    0% { transform: translateX(10vw) rotate(-5deg); }
-    100% { transform: translateX(-10vw) rotate(5deg); }
-}
-
-.inicio-renax main {
-    position: relative;
-    z-index: 1;
-    background: transparent !important;
-}
-
-/* ==========================================
-   CINTURÓN ANIMADO DOBLE (ENCONTRADOS)
-   ========================================== */
-.renax-cinturon-container {
-    background: #c8102e;
-    overflow: hidden;
-    position: relative;
-    z-index: 10;
-    padding: 8px 0;
-    box-shadow: 0 5px 25px rgba(200, 16, 46, 0.4);
-    transition: transform 0.4s ease;
-}
-
-.renax-cinturon-container:hover {
-    transform: scale(1.02);
-}
-
-.renax-cinturon-fila {
-    width: 100%;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 6px 0;
-    font-family: 'Baloo 2', sans-serif;
-    font-weight: 800;
-    font-size: 1.3rem;
-    letter-spacing: 2px;
-    color: #fff;
-}
-
-.renax-pista {
-    display: inline-block;
-    white-space: nowrap;
-}
-
-.fila-izquierda .renax-pista {
-    animation: moverIzquierdaDerecha 22s linear infinite;
-}
-
-.fila-derecha .pista-inversa {
-    animation: moverDerechaIzquierda 22s linear infinite;
-}
-
-.renax-pista span {
-    margin-right: 40px;
-}
-
-@keyframes moverIzquierdaDerecha {
-    0% { transform: translateX(-50%); }
-    100% { transform: translateX(0%); }
-}
-
-@keyframes moverDerechaIzquierda {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
-}
-
-/* ==========================================
-   SECCIÓN HISTORIA (TARJETAS HORIZONTALES)
-   ========================================== */
-.history-section {
-    padding: 80px 7%;
-    text-align: center;
-}
-
-
-.history-section h2 {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: clamp(38px, 5.2vw, 76px) !important;
-    font-weight: 900 !important;
-    line-height: 0.98 !important;
-    letter-spacing: -2.5px !important;
-    text-transform: uppercase !important;
-    color: #ffffff !important;
-    text-align: center;
-    max-width: 1100px;
-    margin: 0 auto 50px;
-}
-
-
-.history-cards {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-}
-
-.history-cards article {
-    background: linear-gradient(145deg, #101010, #050505);
-    border: 1px solid #382024;
-    border-radius: 16px;
-    padding: 30px;
-    flex: 1;
-    min-width: 280px;
-    max-width: 360px;
-    text-align: left;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
-
-.history-cards h3 {
-    color: #ff5a1f;
-    font-family: 'Baloo 2', sans-serif;
-    font-size: 20px;
-    margin-bottom: 12px;
-}
-
-.history-cards p {
-    color: #cecece;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-}
-
-.history-bottom {
-    color: #a0a0a0;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* ==========================================
-   SECCIÓN WORK (RECTANGULAR Y ESPECIALIDADES AJUSTADAS)
-   ========================================== */
-.renax-work {
-    padding: 80px 7%;
-    position: relative;
-}
-
-
-.work-label {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(110px, 18vw, 280px);
-    font-weight: 900;
-    letter-spacing: -0.07em;
-    line-height: 0.85;
-
-color: rgba(220, 0, 20, 0.85);
-
-    position: absolute;
-    top: 35px;
-    left: 0;
-
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-
-    z-index: 0;
-    pointer-events: none;
-    user-select: none;
-    white-space: nowrap;
-}
-
-
-.work-content {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.work-main-image {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-
-.rect-math-img {
-    display: block;
-    width: 100%;
-    max-width: 480px;
-    height: 380px;
-    object-fit: contain;
-    object-position: center;
-    background: #000;
-    border-radius: 16px;
-    border: 1px solid #382024;
-    margin-bottom: 20px;
-    box-shadow: 0 10px 30px rgba(200, 16, 46, 0.25);
-}
-
-
-.work-main-image h3 {
-    font-family: 'Baloo 2', sans-serif;
-    font-size: 24px;
-    margin-bottom: 15px;
-}
-
-.work-side {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-    justify-content: center;
-    background: transparent !important;
-}
-
-.work-card {
-    background: linear-gradient(145deg, #121212, #080808);
-    border: 1px solid #382024;
-    border-radius: 16px;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    transition: transform 0.3s ease;
-}
-
-.work-card:hover {
-    transform: translateY(-5px);
-    border-color: #ff5a1f;
-}
-
-.work-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 12px;
-}
-
-.work-card h3 {
-    font-family: 'Baloo 2', sans-serif;
-    font-size: 20px;
-    margin: 0;
-    color: #fff;
-}
-
-.work-especialidades-bottom {
-    margin-top: 60px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-
-
-.especialidades-img-ajustada {
-    display: block;
-    width: 85%;
-    max-width: 650px;
-    height: auto;
-    max-height: 350px;
-    object-fit: contain;
-    object-position: center;
-    margin: 0 auto;
-    border-radius: 16px;
-    border: 1px solid #382024;
-    background: #000;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-}
-
-
-/* ==========================================
-   PREGUNTAS FRECUENTES
-   ========================================== */
-.renax-faq {
-    position: relative;
-    padding: 100px 7%;
-    background: #050505;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
-}
-
-.faq-container {
-    max-width: 900px;
-    margin: auto;
-}
-
-.faq-eyebrow {
-    color: #ff5a1f;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 3px;
-}
-
-
-.renax-faq h2 {
-    margin: 14px 0 30px;
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: clamp(48px, 7vw, 96px) !important;
-    font-weight: 900 !important;
-    line-height: 0.95 !important;
-    letter-spacing: -3px !important;
-    text-transform: uppercase !important;
-    color: #ffffff !important;
-}
-
-
-.renax-faq h2 span {
-    color: #e0002b;
-}
-
-.faq-intro {
-    color: #bcbcbc;
-    font-size: 15px;
-    margin-bottom: 40px;
-}
-
-.faq-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.faq-question {
-    width: 100%;
-    padding: 20px 24px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    text-align: left;
-    color: #f7f7f7;
-    background: linear-gradient(110deg, #160709, #090909 65%);
-    border: 1px solid #382024;
-    border-radius: 14px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.faq-question:hover {
-    border-color: #ff5a1f;
-    background: linear-gradient(110deg, #310610, #100b0a 70%);
-    transform: translateY(-2px);
-}
-
-.faq-arrow {
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
-}
-
-.faq-arrow img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.faq-modal {
-    position: fixed;
-    inset: 0;
-    z-index: 99999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
-}
-
-.faq-modal.faq-modal-visible {
-    display: flex;
-}
-
-.faq-modal-card {
-    width: min(100%, 500px);
-    padding: 24px;
-    background: #101010;
-    border: 1px solid #ff5a1f;
-    border-radius: 18px;
-    box-shadow: 0 0 30px rgba(255, 90, 31, 0.3);
-}
-
-.faq-modal-top {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-}
-
-.faq-back {
-    background: #c8102e;
-    color: #fff;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.faq-modal-content p {
-    color: #dedede;
-    font-size: 15px;
-    line-height: 1.7;
-    margin: 0;
-}
-
-/* ==========================================
-   FOOTER RENAX - ESTRUCTURA HORIZONTAL
-   ========================================== */
-
-.renax-footer {
-    position: relative;
-    z-index: 5;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 50px 6.5% 35px;
-    color: #fff;
-    background: #080808;
-    border-top: 1px solid rgba(200, 16, 46, 0.4);
-}
-
-/* Cabecera superior */
-.footer-titulo {
-    margin: 0;
-    color: #fff;
-    font-size: 14px;
-    letter-spacing: 1.5px;
-    text-align: left;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-}
-
-/* Cuatro columnas horizontales */
-.footer-secciones {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 40px;
-    align-items: start;
-    width: 100%;
-    margin-top: 65px;
-    padding-top: 65px;
-    border-top: 1px solid #242424;
-    box-sizing: border-box;
-}
-
-.renax-footer .footer-column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: 0;
-}
-
-.renax-footer .footer-column h3 {
-    margin: 0 0 25px;
-    font-size: 18px;
-    letter-spacing: 1px;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 800;
-}
-
-.renax-footer .footer-column h3 a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.footer-menu-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    width: 100%;
-}
-
-.footer-menu-links a {
-    color: #aaa;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    line-height: 1.65;
-    text-decoration: none;
-    overflow-wrap: break-word;
-    transition: color 0.25s ease;
-}
-
-.footer-menu-links a:hover {
-    color: #ff304b;
-}
-
-.renax-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 28px;
-    background: #c8102e;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: 600;
-    font-family: 'Poppins', sans-serif;
-    transition: background 0.3s ease;
-}
-.renax-button:hover { background: #a50d25; }
-.renax-button.centered { margin: 15px auto 0; }
-
-/* CABECERA HORIZONTAL DEL FOOTER */
-.footer-topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    padding-bottom: 26px;
-    border-bottom: 1px solid #242424;
-}
-
-.renax-footer .footer-titulo {
-    margin: 0;
-    text-align: left;
-    color: #fff;
-}
-
-.footer-explora,
-.footer-contacto {
-    color: #fff;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.footer-explora:hover,
-.footer-contacto:hover {
-    color: #ff304b;
-}
-
-/* COLUMNAS */
-.renax-footer .footer-secciones {
-    margin-top: 0;
-    padding-top: 65px;
-    padding-bottom: 60px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 40px;
-    border-top: 0;
-    border-bottom: 1px solid #242424;
-}
-
-/* FRANJA INFERIOR */
-.footer-bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    padding-top: 30px;
-}
-
-.footer-logo {
-    display: block;
-    width: 100px;
-    max-height: 50px;
-    object-fit: contain;
-    object-position: left center;
-}
-
-@media (max-width: 768px) {
-    .renax-footer .footer-secciones {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 35px 24px;
-        padding-top: 40px;
-        padding-bottom: 40px;
+@media (max-width: 1024px) {
+    footer.renax-footer .footer-container,
+    footer.renax-footer:not(.renax-footer-nuevo) > .footer-container,
+    .servicios-footer-aislado .servicios-footer-columnas {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 30px 20px !important;
     }
 }
 
-@media (max-width: 480px) {
-    .renax-footer {
-        padding-left: 6%;
-        padding-right: 6%;
+@media (max-width: 680px) {
+    footer.renax-footer,
+    footer.renax-footer-nuevo,
+    footer.servicios-footer-aislado {
+        padding: 45px 6% 25px !important;
     }
 
-    .renax-footer .footer-secciones {
-        grid-template-columns: 1fr;
+    footer.renax-footer .footer-container,
+    footer.renax-footer:not(.renax-footer-nuevo) > .footer-container,
+    .servicios-footer-aislado .servicios-footer-columnas {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 25px 15px !important;
     }
 
-    .footer-explora,
-    .footer-contacto {
-        font-size: 11px;
+    footer.renax-footer .footer-column h3,
+    footer.renax-footer:not(.renax-footer-nuevo) > .footer-container .footer-column h3,
+    .servicios-footer-aislado .servicios-footer-columna h4 {
+        font-size: 0.95rem !important;
+        margin-bottom: 14px !important;
+    }
+
+    footer.renax-footer .footer-menu-links a,
+    .servicios-footer-aislado .servicios-footer-columna a {
+        font-size: 0.85rem !important;
     }
 }
-
-/* BOTÓN TRANSPARENTE CON BORDE ROJO EN EL INICIO */
-#hero-inicio a.renax-button {
-    background: transparent !important;
-    border: 2px solid #ff0000 !important;
-    color: #ffffff !important;
-    box-shadow: none;
-    transition: all 0.3s ease;
-}
-
-#hero-inicio a.renax-button:hover {
-    background: rgba(255, 0, 0, 0.12) !important;
-    border-color: #ff3030 !important;
-    box-shadow: 0 0 18px rgba(255, 0, 0, 0.45);
-    transform: translateY(-3px);
-}
-
-/* EFECTO BLANCO PARA LAS TARJETAS DE HISTORIA */
-
-.history-cards article {
-    transition: background 0.4s ease,
-                color 0.4s ease,
-                border-color 0.4s ease,
-                transform 0.4s ease,
-                box-shadow 0.4s ease;
-}
-
-.history-cards article:hover {
-    background: #ffffff !important;
-    border-color: #ffffff !important;
-    transform: translateY(-8px);
-    box-shadow: 0 12px 35px rgba(255, 255, 255, 0.20);
-}
-
-.history-cards article:hover h3,
-.history-cards article:hover p {
-    color: #000000 !important;
-}
-
