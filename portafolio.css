@@ -1423,3 +1423,6 @@ body.portafolio-renax .renax-grid-card:hover {
 body.portafolio-renax #portada > div {
     display: none !important;
 }
+#portada .max-w-4xl {
+    display: none !important;
+}
