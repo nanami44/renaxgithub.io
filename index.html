@@ -542,6 +542,304 @@
     }
 }
 
+/* ======================================
+   RENAX — TÍTULO EDITORIAL DE PORTAFOLIO
+   ====================================== */
+
+.titulo-destacados {
+    width: 100%;
+    padding: 55px 2.5% 40px;
+    background: #080808;
+    overflow: hidden;
+}
+
+.titulo-destacados .destacados-superior {
+    display: block;
+    margin-bottom: 18px;
+    color: #e50914;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.titulo-destacados .destacados-lineas {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.titulo-destacados h2 {
+    margin: 0;
+    color: #ed1c24;
+    font-family: Impact, 'Arial Narrow', sans-serif;
+    font-size: clamp(58px, 9.5vw, 150px);
+    font-weight: 900;
+    line-height: 0.82;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.titulo-destacados .destacado-contorno {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #ed1c24;
+    text-stroke: 1.5px #ed1c24;
+}
+
+.titulo-destacados .destacados-subtexto {
+    margin-top: 30px;
+    color: #bdbdbd;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+    .titulo-destacados {
+        padding: 42px 18px 30px;
+    }
+
+    .titulo-destacados .destacados-lineas {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .titulo-destacados h2 {
+        font-size: clamp(55px, 13vw, 95px);
+        letter-spacing: -2px;
+        white-space: normal;
+    }
+}
+
+/* =========================================
+   RENAX — GALERÍA ASIMÉTRICA DE PROYECTOS
+   ========================================= */
+
+.galeria-renax {
+    width: 100%;
+    padding: 75px 5% 85px;
+    overflow: hidden;
+    background: #080808;
+    color: #fff;
+}
+
+/* TÍTULO EDITORIAL */
+
+.titulo-destacados {
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+.destacados-superior {
+    display: block;
+    margin-bottom: 24px;
+    color: #ed1c24;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.destacados-lineas {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    align-items: center;
+    gap: 12px;
+}
+
+.destacados-lineas h2 {
+    margin: 0;
+    color: #ed1c24;
+    font-family: Impact, 'Arial Narrow', sans-serif;
+    font-size: clamp(58px, 9vw, 145px);
+    font-weight: 900;
+    line-height: 0.85;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+}
+
+.destacados-lineas .destacado-contorno {
+    color: transparent;
+    -webkit-text-stroke: 1.5px #ed1c24;
+}
+
+.destacados-etiqueta {
+    margin-top: 25px;
+    color: #aaa;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 3px;
+}
+
+/* GALERÍA DE CINCO IMÁGENES */
+
+.galeria-asimetrica {
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+    grid-template-rows: 250px 220px 220px;
+    gap: 16px;
+}
+
+.proyecto {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    overflow: hidden;
+    background: #171717;
+    border-radius: 12px;
+}
+
+.proyecto img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.proyecto:hover img {
+    transform: scale(1.04);
+}
+
+.proyecto figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 35px 16px 15px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    background: linear-gradient(transparent, rgba(0,0,0,.85));
+}
+
+.proyecto-principal {
+    grid-column: 1;
+    grid-row: 1 / 3;
+}
+
+.proyecto-especialidades {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.proyecto-skenzi {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+.proyecto-matematicas {
+    grid-column: 2;
+    grid-row: 2 / 4;
+}
+
+.proyecto-renax {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+/* TEXTO Y BOTÓN */
+
+.galeria-pie {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    margin-top: 48px;
+}
+
+.galeria-pie p {
+    max-width: 650px;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(18px, 2vw, 25px);
+    line-height: 1.5;
+}
+
+.boton-portafolio-renax {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 14px;
+    padding: 15px 24px;
+    border: 1px solid #ed1c24;
+    border-radius: 40px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .25s ease;
+}
+
+.boton-portafolio-renax:hover {
+    background: #ed1c24;
+}
+
+/* ADAPTACIÓN A MÓVILES */
+
+@media (max-width: 800px) {
+    .galeria-renax {
+        padding: 55px 20px 60px;
+    }
+
+    .destacados-lineas {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .destacados-lineas h2 {
+        font-size: clamp(55px, 12vw, 90px);
+        letter-spacing: -2px;
+    }
+
+    .galeria-asimetrica {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 240px 190px 190px;
+        gap: 10px;
+    }
+
+    .proyecto-principal {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .proyecto-especialidades {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .proyecto-skenzi {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .proyecto-matematicas {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .proyecto-renax {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .galeria-pie {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 24px;
+        margin-top: 35px;
+    }
+}
+
     </style>
     
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -681,10 +979,77 @@
 </section>
 
 
-        <!-- ================= SESIÓN 3 ================= -->
-        <section class="seccion-base" id="sesion-3">
-            <!-- Espacio listo para diseñar la Sesión 3 -->
-        </section>
+    
+<!-- =============== PORTAFOLIO DESTACADO RENAX =============== -->
+<section class="galeria-renax" id="proyectos-destacados">
+
+    <header class="titulo-destacados">
+        <span class="destacados-superior">
+            RENAX / SELECCIÓN DE PROYECTOS
+        </span>
+
+        <div class="destacados-lineas">
+            <h2>LO MÁS</h2>
+            <h2 class="destacado-contorno">DESTACADO</h2>
+        </div>
+
+        <p class="destacados-etiqueta">
+            IDENTIDAD · DISEÑO · EVOLUCIÓN
+        </p>
+    </header>
+
+    <div class="galeria-asimetrica">
+
+        <figure class="proyecto proyecto-principal">
+            <img
+                src="DONUT'S%20BITES-casos-estudio02.jpeg"
+                alt="Proyecto de identidad visual Donut's Bites">
+            <figcaption>01 / DONUT'S BITES</figcaption>
+        </figure>
+
+        <figure class="proyecto proyecto-especialidades">
+            <img
+                src="especialidades-9.jpeg"
+                alt="Proyecto Día de las Especialidades">
+            <figcaption>02 / ESPECIALIDADES</figcaption>
+        </figure>
+
+        <figure class="proyecto proyecto-skenzi">
+            <img
+                src="skenzi-productos.png"
+                alt="Proyecto de productos Skenzi">
+            <figcaption>03 / SKENZI HOME</figcaption>
+        </figure>
+
+        <figure class="proyecto proyecto-matematicas">
+            <img
+                src="dia-matematicas.png.png"
+                alt="Proyecto Día de las Matemáticas">
+            <figcaption>04 / MATEMÁTICAS</figcaption>
+        </figure>
+
+        <figure class="proyecto proyecto-renax">
+            <img
+                src="Renax-%20carrusel%2001.png"
+                alt="Proyecto creativo RENAX">
+            <figcaption>05 / RENAX</figcaption>
+        </figure>
+
+    </div>
+
+    <div class="galeria-pie">
+        <p>
+            Conoce algunos de los proyectos en los que transformamos
+            marcas sin perder su esencia.
+        </p>
+
+        <a href="portafolio.html" class="boton-portafolio-renax">
+            VER NUESTRO PORTAFOLIO <span>↗</span>
+        </a>
+    </div>
+
+</section>
+
 
         <!-- ================= SESIÓN 4 ================= -->
         <section class="seccion-base" id="sesion-4">
