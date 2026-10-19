@@ -1,23 +1,31 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel de Administración - RENAX</title>
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            background-color: #0b0b0b;
-            color: #ffffff;
+            background: #0b0b0b;
+            color: #fff;
             margin: 0;
             padding: 20px;
         }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
         }
+
         .header {
-            background-color: #141414;
+            background: #141414;
             border: 1px solid #e74c3c;
             border-radius: 12px;
             padding: 20px;
@@ -25,19 +33,38 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
-        h2 { color: #e74c3c; margin: 0; }
+
+        h2, h3 {
+            color: #e74c3c;
+            margin-top: 0;
+        }
+
         .chat-box {
-            background-color: #141414;
+            background: #141414;
             border: 1px solid #333;
             border-radius: 12px;
             padding: 20px;
         }
+
+        #cliente-select {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0 20px;
+            background: #0b0b0b;
+            color: #fff;
+            border: 1px solid #444;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
         #messages-list {
-            background-color: #0b0b0b;
+            background: #0b0b0b;
             border: 1px solid #333;
             border-radius: 8px;
-            height: 300px;
+            height: 350px;
             overflow-y: auto;
             padding: 15px;
             margin-bottom: 15px;
@@ -45,58 +72,138 @@
             flex-direction: column;
             gap: 10px;
         }
+
         input, button {
             padding: 12px;
             border-radius: 6px;
             font-size: 14px;
         }
+
         input {
             background: #0b0b0b;
             border: 1px solid #333;
             color: #fff;
             flex: 1;
+            min-width: 0;
         }
+
         button {
-            background-color: #e74c3c;
+            background: #e74c3c;
             color: #fff;
             border: none;
             font-weight: bold;
             cursor: pointer;
         }
+
+        button:disabled, input:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .enlace {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .mensaje {
+            padding: 10px 12px;
+            border-radius: 8px;
+            max-width: 85%;
+            overflow-wrap: anywhere;
+            font-size: 13px;
+            background: #1f1f1f;
+            color: #fff;
+        }
+
+        .mensaje.admin {
+            align-self: flex-end;
+            background: #692c25;
+        }
+
+        .mensaje.cliente {
+            align-self: flex-start;
+            background: #252525;
+        }
+
+        #estado {
+            color: #aaa;
+            font-size: 13px;
+            margin: 10px 0;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .header, .chat-box {
+                padding: 15px;
+            }
+
+            #admin-form {
+                flex-direction: column;
+            }
+
+            #admin-form button {
+                width: 100%;
+            }
+        }
     </style>
 </head>
+
 <body>
+<div class="container">
 
-    <div class="container">
-        <div class="header">
-            <h2>RENAX - Panel de Administración</h2>
-            <a href="dashboard.html" style="color: #aaa; text-decoration: none; font-size: 14px;">Ir al Panel de Cliente</a>
-        </div>
-
-        <div class="chat-box">
-            <h3>Conversación con el Cliente</h3>
-            <p style="font-size: 13px; color: #aaa;">Aquí puedes ver y responder los mensajes enviados por el usuario actual.</p>
-            
-            <div id="messages-list">
-                <span style="color: #666; font-size: 12px; text-align: center;">Cargando mensajes...</span>
-            </div>
-
-            <form id="admin-form" style="display: flex; gap: 10px;">
-                <input type="text" id="admin-input" placeholder="Escribe tu respuesta como Asesor..." required>
-                <button type="submit">Responder</button>
-            </form>
-        </div>
+    <div class="header">
+        <h2>RENAX - Panel de Administración</h2>
+        <a class="enlace" href="dashboard.html">Panel de cliente</a>
     </div>
 
-    <!-- Lógica de Firebase para Admin -->
-   
+    <div class="chat-box">
+        <h3>Conversaciones con clientes</h3>
+
+        <p style="font-size:13px;color:#aaa;">
+            Selecciona un cliente para consultar sus mensajes y responderle.
+        </p>
+
+        <label for="cliente-select">Clientes registrados:</label>
+        <select id="cliente-select" disabled>
+            <option value="">Verificando acceso...</option>
+        </select>
+
+        <p id="estado" role="status">Verificando acceso...</p>
+
+        <div id="messages-list" aria-live="polite">
+            <span style="color:#666;text-align:center;">
+                Selecciona un cliente para ver la conversación.
+            </span>
+        </div>
+
+        <form id="admin-form" style="display:flex;gap:10px;">
+            <input
+                type="text"
+                id="admin-input"
+                placeholder="Escribe tu respuesta como Asesor RENAX..."
+                maxlength="2000"
+                required
+                disabled
+            >
+            <button id="btn-responder" type="submit" disabled>
+                Responder
+            </button>
+        </form>
+    </div>
+</div>
+
 <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
+    import {
+        initializeApp
+    } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-app.js";
 
     import {
         getAuth,
-        onAuthStateChanged,
-        signOut
+        onAuthStateChanged
     } from "https://www.gstatic.com/firebasejs/13.0.0/firebase-auth.js";
 
     import {
@@ -122,7 +229,6 @@
     const auth = getAuth(app);
     const db = getFirestore(app);
 
-    // Administradores autorizados
     const ADMINISTRADORES = [
         {
             correo: "naoco2008@gmail.com",
@@ -134,27 +240,172 @@
         }
     ];
 
+    const selector = document.getElementById("cliente-select");
     const messagesList = document.getElementById("messages-list");
     const adminForm = document.getElementById("admin-form");
     const adminInput = document.getElementById("admin-input");
+    const btnResponder = document.getElementById("btn-responder");
+    const estado = document.getElementById("estado");
 
-    // UID del cliente cuya conversación se mostrará
-    const clienteUid = "P5dfJ7KHMKBxx1LkChDs9bBCOLI1";
-
-    let detenerMensajes = null;
     let administradorAutorizado = false;
+    let clienteSeleccionado = "";
+    let detenerMensajes = null;
+    let detenerUsuarios = null;
 
-    function mostrarEstado(mensaje) {
-        messagesList.textContent = mensaje;
+    function mostrarEstado(texto) {
+        estado.textContent = texto;
     }
 
-    onAuthStateChanged(auth, (user) => {
+    function detenerChat() {
         if (detenerMensajes) {
             detenerMensajes();
             detenerMensajes = null;
         }
+    }
 
+    function limpiarChat(texto) {
+        detenerChat();
+        messagesList.replaceChildren();
+
+        const aviso = document.createElement("span");
+        aviso.style.color = "#888";
+        aviso.style.textAlign = "center";
+        aviso.textContent = texto;
+        messagesList.appendChild(aviso);
+    }
+
+    function cargarConversacion(uid) {
+        detenerChat();
+        clienteSeleccionado = uid;
+
+        adminInput.disabled = true;
+        btnResponder.disabled = true;
+
+        if (!uid) {
+            limpiarChat("Selecciona un cliente para ver sus mensajes.");
+            mostrarEstado("Selecciona un cliente.");
+            return;
+        }
+
+        if (!administradorAutorizado) {
+            limpiarChat("Acceso no autorizado.");
+            return;
+        }
+
+        limpiarChat("Cargando conversación...");
+        mostrarEstado("Cargando mensajes...");
+
+        const mensajesRef = collection(
+            db, "chats", uid, "mensajes"
+        );
+
+        const consulta = query(
+            mensajesRef,
+            orderBy("createdAt", "asc")
+        );
+
+        detenerMensajes = onSnapshot(
+            consulta,
+            (snapshot) => {
+                messagesList.replaceChildren();
+
+                if (snapshot.empty) {
+                    limpiarChat("Todavía no hay mensajes en esta conversación.");
+                } else {
+                    snapshot.forEach((documento) => {
+                        const data = documento.data();
+                        const mensaje = document.createElement("div");
+
+                        mensaje.className =
+                            "mensaje " +
+                            (data.remitente === "Asesor RENAX"
+                                ? "admin"
+                                : "cliente");
+
+                        mensaje.textContent =
+                            `${data.remitente || "Usuario"}: ${data.texto || ""}`;
+
+                        messagesList.appendChild(mensaje);
+                    });
+
+                    messagesList.scrollTop = messagesList.scrollHeight;
+                }
+
+                adminInput.disabled = false;
+                btnResponder.disabled = false;
+                mostrarEstado("Conversación actualizada.");
+            },
+            (error) => {
+                console.error("Error al cargar mensajes:", error);
+                limpiarChat("No se pudieron cargar los mensajes.");
+                mostrarEstado(
+                    "Error de permisos. Revisa las reglas de Firestore."
+                );
+            }
+        );
+    }
+
+    selector.addEventListener("change", () => {
+        cargarConversacion(selector.value);
+    });
+
+    adminForm.addEventListener("submit", async (evento) => {
+        evento.preventDefault();
+
+        const texto = adminInput.value.trim();
+        const uid = clienteSeleccionado;
+
+        if (!administradorAutorizado || !auth.currentUser) {
+            mostrarEstado("Debes iniciar sesión como administrador.");
+            return;
+        }
+
+        if (!uid) {
+            mostrarEstado("Selecciona primero un cliente.");
+            return;
+        }
+
+        if (!texto) return;
+
+        btnResponder.disabled = true;
+
+        try {
+            const mensajesRef = collection(
+                db, "chats", uid, "mensajes"
+            );
+
+            await addDoc(mensajesRef, {
+                texto,
+                remitente: "Asesor RENAX",
+                createdAt: serverTimestamp()
+            });
+
+            adminInput.value = "";
+            mostrarEstado("Respuesta enviada.");
+        } catch (error) {
+            console.error("Error al enviar respuesta:", error);
+            mostrarEstado(
+                "No se pudo enviar. Verifica los permisos de Firestore."
+            );
+        } finally {
+            btnResponder.disabled = !clienteSeleccionado;
+        }
+    });
+
+    onAuthStateChanged(auth, (user) => {
         administradorAutorizado = false;
+        detenerChat();
+
+        if (detenerUsuarios) {
+            detenerUsuarios();
+            detenerUsuarios = null;
+        }
+
+        selector.replaceChildren();
+        selector.disabled = true;
+        adminInput.disabled = true;
+        btnResponder.disabled = true;
+        clienteSeleccionado = "";
 
         if (!user) {
             window.location.replace("login.html");
@@ -175,86 +426,74 @@
         }
 
         administradorAutorizado = true;
+        mostrarEstado("Cargando clientes registrados...");
 
-        const mensajesRef = collection(
-            db,
-            "chats",
-            clienteUid,
-            "mensajes"
-        );
+        const usuariosRef = collection(db, "usuarios");
 
-        const consulta = query(
-            mensajesRef,
-            orderBy("createdAt", "asc")
-        );
-
-        mostrarEstado("Cargando mensajes...");
-
-        detenerMensajes = onSnapshot(
-            consulta,
+        detenerUsuarios = onSnapshot(
+            usuariosRef,
             (snapshot) => {
-                messagesList.replaceChildren();
+                const uidAnterior = selector.value;
+                selector.replaceChildren();
 
-                if (snapshot.empty) {
-                    mostrarEstado("No hay mensajes en esta conversación.");
-                    return;
-                }
+                const opcionInicial = document.createElement("option");
+                opcionInicial.value = "";
+                opcionInicial.textContent = "Selecciona un cliente...";
+                selector.appendChild(opcionInicial);
 
-                snapshot.forEach((documento) => {
-                    const data = documento.data();
-                    const mensaje = document.createElement("div");
+                const usuarios = snapshot.docs
+                    .map(documento => ({
+                        uid: documento.id,
+                        ...documento.data()
+                    }))
+                    .sort((a, b) =>
+                        String(a.nombre || a.email || "")
+                            .localeCompare(
+                                String(b.nombre || b.email || ""),
+                                "es"
+                            )
+                    );
 
-                    mensaje.style.padding = "8px 12px";
-                    mensaje.style.borderRadius = "6px";
-                    mensaje.style.maxWidth = "80%";
-                    mensaje.style.fontSize = "13px";
-                    mensaje.style.backgroundColor = "#1f1f1f";
-                    mensaje.style.color = "#fff";
+                usuarios.forEach((usuario) => {
+                    const opcion = document.createElement("option");
+                    opcion.value = usuario.uid;
 
-                    mensaje.textContent =
-                        `${data.remitente || "Usuario"}: ${data.texto || ""}`;
+                    const nombre = usuario.nombre || "Cliente";
+                    const email = usuario.email || "Sin correo";
 
-                    messagesList.appendChild(mensaje);
+                    opcion.textContent = `${nombre} — ${email}`;
+                    selector.appendChild(opcion);
                 });
 
-                messagesList.scrollTop = messagesList.scrollHeight;
+                selector.disabled = false;
+
+                if (uidAnterior &&
+                    usuarios.some(usuario => usuario.uid === uidAnterior)) {
+                    selector.value = uidAnterior;
+                } else {
+                    selector.value = "";
+                }
+
+                if (selector.value) {
+                    cargarConversacion(selector.value);
+                } else {
+                    limpiarChat("Selecciona un cliente para ver sus mensajes.");
+                    mostrarEstado(
+                        usuarios.length
+                            ? `Clientes registrados: ${usuarios.length}.`
+                            : "No se encontraron perfiles en la colección usuarios."
+                    );
+                }
             },
             (error) => {
-                console.error("Error al cargar mensajes:", error);
+                console.error("Error al cargar clientes:", error);
                 mostrarEstado(
-                    "No se pudieron cargar los mensajes. Revisa los permisos de Firestore."
+                    "No se pudo cargar la lista. Revisa los permisos de Firestore."
                 );
             }
         );
-
-        adminForm.onsubmit = async (evento) => {
-            evento.preventDefault();
-
-            if (!administradorAutorizado || !auth.currentUser) {
-                mostrarEstado("Debes iniciar sesión como administrador.");
-                return;
-            }
-
-            const texto = adminInput.value.trim();
-
-            if (!texto) return;
-
-            try {
-                await addDoc(mensajesRef, {
-                    texto: texto,
-                    remitente: "Asesor RENAX",
-                    createdAt: serverTimestamp()
-                });
-
-                adminInput.value = "";
-            } catch (error) {
-                console.error("Error al enviar respuesta:", error);
-                alert("No se pudo enviar el mensaje. Revisa los permisos de Firestore.");
-            }
-        };
     });
 </script>
-
-    </script>
 </body>
 </html>
+```
