@@ -720,47 +720,56 @@ max-width: 850px;
     }
 }
 
-/* TARJETAS ALTERNADAS RENAX */
-.tu-clase-de-tarjetas {
-    transition: background-color 0.3s ease,
-                color 0.3s ease,
-                box-shadow 0.3s ease,
-                transform 0.3s ease;
+
+/* TARJETAS DEL CARRUSEL: BLANCO Y ROJO ALTERNADOS */
+.renax-carousel-section .renax-carousel-card {
+    background: #ffffff !important;
+    color: #111111 !important;
+    border: 2px solid #e60000 !important;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.30);
+    transition: background 0.35s ease,
+                color 0.35s ease,
+                box-shadow 0.35s ease,
+                transform 0.35s ease;
 }
 
-/* Tarjetas pares: blancas */
-.tu-clase-de-tarjetas:nth-child(even) {
-    background-color: #ffffff;
-    color: #111111;
+/* Segunda y cuarta tarjeta: rojas */
+.renax-carousel-section .renax-carousel-card:nth-child(2),
+.renax-carousel-section .renax-carousel-card:nth-child(4) {
+    background: #e60000 !important;
+    color: #ffffff !important;
 }
 
-/* Tarjetas impares: rojas */
-.tu-clase-de-tarjetas:nth-child(odd) {
-    background-color: #e60000;
-    color: #ffffff;
+/* Color del texto */
+.renax-carousel-section .renax-carousel-card h3,
+.renax-carousel-section .renax-carousel-card p {
+    color: inherit !important;
 }
 
-/* Texto de las tarjetas */
-.tu-clase-de-tarjetas h3,
-.tu-clase-de-tarjetas p {
-    color: inherit;
-}
-
-/* Al pasar el ratón: naranja */
-.tu-clase-de-tarjetas:nth-child(even):hover {
-    background-color: #ff6a00;
-    color: #ffffff;
-    box-shadow: 0 0 24px rgba(255, 106, 0, 0.55);
+/* Tarjetas blancas: al pasar el ratón, naranja */
+.renax-carousel-section .renax-carousel-card:nth-child(odd):hover {
+    background: #ff6a00 !important;
+    color: #ffffff !important;
+    border-color: #ff6a00 !important;
+    box-shadow: 0 0 25px rgba(255, 106, 0, 0.65);
     transform: translateY(-5px);
 }
 
-/* Al pasar el ratón: rojo intenso */
-.tu-clase-de-tarjetas:nth-child(odd):hover {
-    background-color: #ff1a1a;
-    color: #ffffff;
-    box-shadow: 0 0 24px rgba(255, 0, 0, 0.6);
+/* Tarjetas rojas: al pasar el ratón, rojo más intenso */
+.renax-carousel-section .renax-carousel-card:nth-child(even):hover {
+    background: #ff1a1a !important;
+    color: #ffffff !important;
+    border-color: #ff1a1a !important;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.65);
     transform: translateY(-5px);
 }
+
+/* Mantener el color del título y el párrafo al pasar el ratón */
+.renax-carousel-section .renax-carousel-card:hover h3,
+.renax-carousel-section .renax-carousel-card:hover p {
+    color: #ffffff !important;
+}
+
 
     </style>
 </head>
