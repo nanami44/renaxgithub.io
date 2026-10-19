@@ -1907,4 +1907,99 @@ h1, h2, h3,
     margin-top: 0 !important;
 }
 
+/* ==========================================
+   RENAX - CUADRO DE RESEÑAS CON BORDE ROJO
+   ========================================== */
 
+/* Fondo de la sección */
+.contacto-resenas-seccion {
+    position: relative;
+    background: #ffffff !important;
+    padding: 70px 5%;
+    box-sizing: border-box;
+}
+
+/* Cuadro grande con esquinas curvas */
+.contacto-resenas-seccion .deja-resena-caja {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    width: 100%;
+    max-width: 1500px;
+    box-sizing: border-box;
+    margin: 0 auto;
+
+    background: #ffffff !important;
+    border: 3px solid #ed1c24 !important;
+    border-radius: 40px !important;
+
+    padding: 50px;
+    box-shadow: 0 12px 35px rgba(237, 28, 36, 0.10);
+}
+
+/* Mapa mundial suave detrás del contenido */
+.contacto-resenas-seccion .deja-resena-caja::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        url("mapa-mundial-renax.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    opacity: 0.10;
+}
+
+/* Mantener el contenido por encima del mapa */
+.contacto-resenas-seccion .deja-resena-caja > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Título */
+.contacto-resenas-seccion .deja-resena-caja h3 {
+    color: #111111 !important;
+}
+
+.contacto-resenas-seccion .deja-resena-caja h3 em {
+    color: #c9233a !important;
+}
+
+/* Descripción */
+.contacto-resenas-seccion .deja-resena-caja > p {
+    color: #555555 !important;
+}
+
+/* Campos: conserva el estilo claro */
+.contacto-resenas-seccion .deja-resena-caja .input-estilo {
+    background: rgba(248, 248, 248, 0.94) !important;
+    color: #222222 !important;
+    border: 1px solid #d5d5d5 !important;
+    border-radius: 15px;
+}
+
+/* Botón rojo existente */
+.contacto-resenas-seccion .deja-resena-caja .btn-enviar-resena {
+    background: #ff2638 !important;
+    color: #ffffff !important;
+    border: 1px solid #ff2638 !important;
+    border-radius: 50px;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 768px) {
+    .contacto-resenas-seccion {
+        padding: 40px 5%;
+    }
+
+    .contacto-resenas-seccion .deja-resena-caja {
+        padding: 28px 20px;
+        border-radius: 25px !important;
+    }
+}
