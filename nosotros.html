@@ -436,39 +436,44 @@
         }
 
         /* ¿QUIÉNES SOMOS? */
-        .quienes-somos-section {
+       .quienes-somos-section {
     width: 100%;
     max-width: none;
+    min-height: 430px;
     padding: 60px 4%;
     box-sizing: border-box;
+
     background-image: url("fondo-nosotros.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-        }
 
-        .quienes-somos-box {
-            position: relative;
-            width: 100%;
-            margin: 60px auto;
-            padding: 65px 70px;
-            box-sizing: border-box;
-          background-color: rgba(8, 8, 8, 0.90);
-background-image: none;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            border: 1px solid rgba(255, 0, 0, 0.75);
-            border-radius: 28px;
-            box-shadow:
-                0 0 15px rgba(255, 0, 0, 0.25),
-                0 0 35px rgba(255, 0, 0, 0.15),
-                0 18px 45px rgba(0, 0, 0, 0.45);
-            text-align: left;
-            overflow: hidden;
-            isolation: isolate;
-        }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+        
+.quienes-somos-box {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 25px 32px;
+    box-sizing: border-box;
+
+    background-color: rgba(0, 0, 0, 0.78);
+    border: 1px solid rgba(255, 0, 0, 0.85);
+    border-radius: 14px;
+
+    box-shadow:
+        0 0 12px rgba(255, 0, 0, 0.25),
+        0 0 25px rgba(255, 0, 0, 0.12);
+
+    text-align: left;
+    overflow: hidden;
+    isolation: isolate;
+}
+        
 
         .quienes-somos-box h2 {
             font-family: 'Montserrat', sans-serif;
