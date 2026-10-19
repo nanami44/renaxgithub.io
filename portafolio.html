@@ -6,7 +6,7 @@
   <meta name="description" content="Portafolio de proyectos - Trabajos destacados de diseño, branding y estrategia.">
   <title>Portafolio | Agencia de Branding & Marketing</title>
   
-  <!-- Google Fonts: Montserrat Black & Inter/Sans -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   
   <!-- FontAwesome v6 & CSS -->
@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="portafolio.css?v=5">
 
   <style>
-    /* Estilos base estructura Landor limpios */
+    /* Estilos generales limpios estilo Landor */
     body {
       background-color: #0b0b0b;
       color: #ffffff;
@@ -23,40 +23,97 @@
       margin: 0;
       padding: 0;
     }
-    
-    /* Hero estilo Landor */
-    .landor-hero {
-      padding: 140px 5% 60px 5%;
+
+    /* 1. PORTADA ANCHO TOTAL */
+    .renax-full-cover {
+      width: 100%;
+      height: 70vh;
+      min-height: 400px;
+      background-color: #161616;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin-top: 80px; /* Espacio para el header fijo */
+    }
+    .renax-full-cover img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Contenedor general */
+    .landor-container {
       max-width: 1400px;
       margin: 0 auto;
+      padding: 80px 5%;
     }
-    .landor-hero h1 {
+
+    /* Títulos de sección */
+    .section-title {
       font-family: 'Montserrat', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 5rem);
-      line-height: 1.1;
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
       font-weight: 900;
-      letter-spacing: -1px;
-      margin: 0;
+      margin-bottom: 40px;
       text-transform: uppercase;
-    }
-    .landor-hero h1 .red-text {
-      color: #e31b23; /* O el rojo característico de Renax */
+      letter-spacing: -0.5px;
     }
 
-    /* Grid Asimétrico estilo Landor */
-    .landor-portfolio-grid {
+    /* 2. PRIMERA SECCIÓN: GALERÍA (8 imágenes con nombre abajo) */
+    .galeria-grid {
       display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 24px;
-      max-width: 1400px;
-      margin: 0 auto 120px auto;
-      padding: 0 5%;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 40px 24px;
+      margin-bottom: 100px;
     }
 
-    .landor-card {
+    .galeria-item {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .galeria-img-box {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background: #1a1a1a;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+
+    .galeria-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .galeria-item:hover .galeria-img-box img {
+      transform: scale(1.03);
+    }
+
+    .galeria-item h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0;
+      color: #f1f1f1;
+    }
+
+    /* 3. SEGUNDA SECCIÓN: PROYECTOS (4 tarjetas con enlaces) */
+    .proyectos-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-bottom: 80px;
+    }
+
+    .proyecto-card {
       position: relative;
       background: #161616;
-      border-radius: 4px;
+      border-radius: 6px;
       overflow: hidden;
       text-decoration: none;
       color: #fff;
@@ -64,56 +121,52 @@
       flex-direction: column;
       transition: transform 0.3s ease;
     }
-    .landor-card:hover {
-      transform: translateY(-4px);
+
+    .proyecto-card:hover {
+      transform: translateY(-6px);
     }
 
-    /* Tamaños de tarjetas variables para romper la simetría tipo Landor */
-    .landor-card.col-8 { grid-column: span 8; }
-    .landor-card.col-4 { grid-column: span 4; }
-    .landor-card.col-6 { grid-column: span 6; }
-    .landor-card.col-12 { grid-column: span 12; }
-
-    .landor-card-img {
+    .proyecto-img-box {
       width: 100%;
       aspect-ratio: 16 / 10;
-      overflow: hidden;
       background: #222;
+      overflow: hidden;
     }
-    .landor-card.tall .landor-card-img {
-      aspect-ratio: 4 / 5;
-    }
-    .landor-card-img img {
+
+    .proyecto-img-box img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.5s ease;
     }
-    .landor-card:hover .landor-card-img img {
+
+    .proyecto-card:hover .proyecto-img-box img {
       transform: scale(1.03);
     }
 
-    .landor-card-content {
-      padding: 20px 0;
+    .proyecto-info {
+      padding: 24px;
     }
-    .landor-card-content h3 {
+
+    .proyecto-info h3 {
       font-family: 'Montserrat', sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.4rem;
       font-weight: 900;
-      margin: 0 0 5px 0;
+      margin: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
-    }
-    .landor-card-content p {
-      color: #888;
-      font-size: 0.95rem;
-      margin: 0;
+      color: #fff;
     }
 
-    @media (max-width: 900px) {
-      .landor-card.col-8, .landor-card.col-4, .landor-card.col-6 {
-        grid-column: span 12;
+    .proyecto-info h3 span {
+      color: #e31b23;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .proyectos-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -127,7 +180,7 @@
     </div>
   </div>
 
-  <!-- HEADER GLOBAL (CONSERVADO EXACTO) -->
+  <!-- HEADER GLOBAL -->
   <header class="site-header">
     <div class="nav-container">
       <a href="index.html" class="brand-logo" aria-label="Página principal">
@@ -151,71 +204,102 @@
     </div>
   </header>
 
-  <!-- SECCIÓN HERO (ESTILO LANDOR: MANIFIESTO / TÍTULO PRINCIPAL) -->
-  <section class="landor-hero">
-    <h1 data-lang="workBigTitle">
-      <span class="red-text">TRABAJO</span><br>
-      <span class="white-text">CON IDENTIDAD.</span>
-    </h1>
+  <!-- ESPACIO PARA PORTADA (Ancho total) -->
+  <section class="renax-full-cover">
+    <img src="portafolio-final.png" alt="Portada Portafolio RENAX">
   </section>
 
-  <!-- CUADRÍCULA DE PROYECTOS (ESTRUCTURA PURA LANDOR - SIN CONTENIDO COMPLEJO, LISTO PARA RELLENAR) -->
-  <main class="landor-portfolio-grid" id="proyectos">
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="landor-container">
 
-    <!-- Proyecto 1 (Ancho Grande) -->
-    <a href="proyecto-skenzi.html" class="landor-card col-8">
-      <div class="landor-card-img">
-        <img src="skenzi-caso.png" alt="Proyecto Skenzi">
-      </div>
-      <div class="landor-card-content">
-        <h3>SKENZI <span>↗</span></h3>
-        <p>Identidad visual y estrategia de marca</p>
-      </div>
-    </a>
+    <!-- SECCIÓN 1: GALERÍA (8 ESPACIOS PARA IMÁGENES) -->
+    <section>
+      <h2 class="section-title">Galería de Trabajos</h2>
+      <div class="galeria-grid">
+        
+        <!-- Elemento 1 -->
+        <div class="galeria-item">
+          <div class="galeria-img-box"><img src="" alt="Imagen 1"></div>
+          <h4>Nombre de la Imagen 1</h4>
+        </div>
+        <!-- Elemento 2 -->
+        <div class="galeria-item">
+          <div class="galeria-img-box"><img src="" alt="Imagen 2"></div>
+          <h4>Nombre de la Imagen 2</h4>
+        </div>
+        <!-- Elemento 3 -->
+        <div class="galeria-item">
+          <div class="galeria-img-box"><img src="" alt="Imagen 3"></div>
+          <h4>Nombre de la Imagen 3</h4>
+        </div>
+        <!-- Elemento 4 -->
+        <div class="galeria-item">
+          <div class="galeria-img-box"><img src="" alt="Imagen 4"></div>
+          <h4>Nombre de la Imagen 4</h4>
+        </div>
+        <!-- Elemento 5 -->
+        <div class="galeria-item">
+          <div class="galeria-img-box"><img src="" alt="Imagen 5"></div>
+          <h4>Nombre de la Imagen 5</h4>
+        </div>
+        <!-- Elemento 6 -->
+        <div class="galeria-item">
+          <div class="galeria-img-box"><img src="" alt="Imagen 6"></div>
+          <h4>Nombre de la Imagen 6</h4>
+        </div>
+        <!-- Elemento 7 -->
+        <div class="galeria-item">
+          <div class="galeria-img-box"><img src="" alt="Imagen 7"></div>
+          <h4>Nombre de la Imagen 7</h4>
+        </div>
+        <!-- Elemento 8 -->
+        <div class="galeria-item">
+          <div class="galeria-img-box"><img src="" alt="Imagen 8"></div>
+          <h4>Nombre de la Imagen 8</h4>
+        </div>
 
-    <!-- Proyecto 2 (Vertical Compacto) -->
-    <a href="dia-especialidades.html" class="landor-card col-4 tall">
-      <div class="landor-card-img">
-        <img src="especialidades-9.jpeg" alt="Especialidades">
       </div>
-      <div class="landor-card-content">
-        <h3>ESPECIALIDADES <span>↗</span></h3>
-        <p>Diseño corporativo</p>
-      </div>
-    </a>
+    </section>
 
-    <!-- Proyecto 3 (Mediano) -->
-    <a href="dia-matematicas.html" class="landor-card col-6">
-      <div class="landor-card-img">
-        <img src="mate2.png" alt="Día de las Matemáticas">
-      </div>
-      <div class="landor-card-content">
-        <h3>DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
-        <p>Campaña y dirección de arte</p>
-      </div>
-    </a>
+    <!-- SECCIÓN 2: PROYECTOS (4 TARJETAS CON ENLACES) -->
+    <section id="proyectos">
+      <h2 class="section-title">Casos de Estudio y Proyectos</h2>
+      <div class="proyectos-grid">
 
-    <!-- Proyecto 4 (Mediano) -->
-    <a href="donuts-bites.html" class="landor-card col-6 tall">
-      <div class="landor-card-img">
-        <img src="DONUT'S BITES-casos-estudio03.png" alt="Donut's Bites">
-      </div>
-      <div class="landor-card-content">
-        <h3>DONUT'S BITES <span>↗</span></h3>
-        <p>Packaging y branding gastronómico</p>
-      </div>
-    </a>
+        <!-- Proyecto 1: SKENZI -->
+        <a href="proyecto-skenzi.html" class="proyecto-card">
+          <div class="proyecto-img-box"><img src="skenzi-caso.png" alt="Skenzi"></div>
+          <div class="proyecto-info">
+            <h3>SKENZI <span>↗</span></h3>
+          </div>
+        </a>
 
-    <!-- Proyecto 5 (Ancho total / Opcional) -->
-    <article class="landor-card col-12">
-      <div class="landor-card-img">
-        <img src="sobre-renax.png.png" alt="Papelería corporativa">
+        <!-- Proyecto 2: DÍA DE LAS MATEMÁTICAS -->
+        <a href="dia-matematicas.html" class="proyecto-card">
+          <div class="proyecto-img-box"><img src="mate2.png" alt="Día de las Matemáticas"></div>
+          <div class="proyecto-info">
+            <h3>DÍA DE LAS MATEMÁTICAS <span>↗</span></h3>
+          </div>
+        </a>
+
+        <!-- Proyecto 3: DÍA DE LAS ESPECIALIDADES -->
+        <a href="dia-especialidades.html" class="proyecto-card">
+          <div class="proyecto-img-box"><img src="especialidades-9.jpeg" alt="Especialidades"></div>
+          <div class="proyecto-info">
+            <h3>DÍA DE LAS ESPECIALIDADES <span>↗</span></h3>
+          </div>
+        </a>
+
+        <!-- Proyecto 4: DONUT'S BITES -->
+        <a href="donuts-bites.html" class="proyecto-card">
+          <div class="proyecto-img-box"><img src="DONUT'S BITES-casos-estudio03.png" alt="Donut's Bites"></div>
+          <div class="proyecto-info">
+            <h3>DONUT'S BITES <span>↗</span></h3>
+          </div>
+        </a>
+
       </div>
-      <div class="landor-card-content">
-        <h3>PAPELERÍA CORPORATIVA</h3>
-        <p>Sistema gráfico integral</p>
-      </div>
-    </article>
+    </section>
 
   </main>
 
@@ -229,7 +313,7 @@
     </a>
   </div>
 
-  <!-- PIE DE PÁGINA RENAX (CONSERVADO EXACTO) -->
+  <!-- PIE DE PÁGINA RENAX -->
   <footer class="renax-footer">
     <div class="footer-wrapper">
       
@@ -301,7 +385,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPTS (TRANSICIÓN, MENÚ, IDIOMA Y FIREBASE) -->
+  <!-- SCRIPTS -->
   <script>
     window.addEventListener("load", () => {
       const transition = document.getElementById("renaxPageTransition");
@@ -322,7 +406,6 @@
     const translations = {
       es: {
         navHome: "Inicio", navAbout: "Nosotros", navPortfolio: "Portafolio", navServices: "Servicios", navContact: "Contáctanos", loginBtn: "INICIAR SESIÓN",
-        workBigTitle: '<span class="red-text">TRABAJO</span><br><span class="white-text">CON IDENTIDAD.</span>',
         footerMenuTitle: "MENÚ",
         footerHomeTitle: "INICIO", footerText1: "Expertos en transformar marcas", footerText2: "Vuelve a destacar sin perder tu esencia", footerText3: "Tu historia merece una imagen que esté a su altura", footerText4: "Preguntas frecuentes",
         footerAboutTitle: "NOSOTROS", footerWho: "Quiénes somos", footerVision: "Visión", footerMission: "Misión", footerWhy: "¿Por qué RENAX?",
@@ -332,7 +415,6 @@
       },
       en: {
         navHome: "Home", navAbout: "About Us", navPortfolio: "Portfolio", navServices: "Services", navContact: "Contact Us", loginBtn: "LOG IN",
-        workBigTitle: '<span class="red-text">WORK</span><br><span class="white-text">WITH IDENTITY.</span>',
         footerMenuTitle: "MENU",
         footerHomeTitle: "HOME", footerText1: "Brand transformation experts", footerText2: "Stand out again without losing your essence", footerText3: "Your story deserves an image to match it", footerText4: "Frequently asked questions",
         footerAboutTitle: "ABOUT US", footerWho: "About Us", footerVision: "Vision", footerMission: "Mission", footerWhy: "Why RENAX?",
