@@ -2184,3 +2184,30 @@ h1, h2, h3,
     position: relative;
     z-index: 1;
 }
+
+/* BOTONES SOCIALES: BORDE BLANCO */
+.contacto-logos-horizontal .logo-canal-item {
+    background: #ff2638 !important;
+    border: 2px solid #ffffff !important;
+    box-shadow: none;
+    transition: box-shadow 0.35s ease,
+                border-color 0.35s ease,
+                transform 0.35s ease;
+}
+
+/* RESPLANDOR ROJO AL PASAR EL MOUSE */
+.contacto-logos-horizontal .logo-canal-item:hover {
+    background: #ff2638 !important;
+    border-color: #ffffff !important;
+    box-shadow:
+        0 0 10px rgba(255, 38, 56, 0.9),
+        0 0 25px rgba(255, 38, 56, 0.75),
+        0 0 45px rgba(255, 38, 56, 0.45) !important;
+    transform: translateY(-4px);
+}
+
+/* CONSERVAR LOS ICONOS ORIGINALES */
+.contacto-logos-horizontal .logo-canal-img {
+    position: relative;
+    z-index: 1;
+}
