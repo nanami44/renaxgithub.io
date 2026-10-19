@@ -91,8 +91,8 @@
             background: #b20710;
         }
 
-       
-/* ================= PORTADA PRINCIPAL RENAX ================= */
+
+/* PORTADA RENAX: IMAGEN A ANCHO COMPLETO */
 
 .portada-section {
     position: relative;
@@ -104,60 +104,57 @@
     background-image:
         linear-gradient(
             90deg,
-            rgba(0, 0, 0, 0.38) 0%,
-            rgba(0, 0, 0, 0.12) 60%,
-            rgba(0, 0, 0, 0.05) 100%
+            rgba(0, 0, 0, 0.30),
+            rgba(0, 0, 0, 0.05)
         ),
         url("luz2.jpg");
 
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #050505;
 }
 
 .portada-grid {
-    position: relative;
     width: 100%;
     min-height: calc(95vh - 80px);
     min-height: calc(95svh - 80px);
 
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    align-items: center;
 }
 
-.portada-bloque-1,
-.portada-bloque-2 {
-    min-width: 0;
-    padding: 50px;
-
+/* UN SOLO BLOQUE DE CONTENIDO */
+.portada-bloque-1 {
+    width: 100%;
+    padding: 50px 7.8%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+    align-items: flex-start;
     border: none;
     background: transparent;
 }
 
-/* ADAPTACIÓN A CELULARES */
-@media (max-width: 900px) {
+.portada-bloque-2 {
+    display: none;
+}
+
+@media (max-width: 768px) {
     .portada-section {
-        min-height: 80vh;
         min-height: 80svh;
         background-position: 58% center;
     }
 
     .portada-grid {
-        grid-template-columns: 1fr;
-        min-height: calc(80vh - 80px);
         min-height: calc(80svh - 80px);
     }
 
-    .portada-bloque-1,
-    .portada-bloque-2 {
-        padding: 30px 20px;
+    .portada-bloque-1 {
+        padding: 40px 22px;
     }
 }
+
 
 
         .portada-bloque-1, .portada-bloque-2 {
@@ -305,13 +302,27 @@
         <section class="portada-section">
             <div class="portada-grid">
                 <!-- Bloque 1: Espacio para tus títulos, textos y botones de portada -->
-                <div class="portada-bloque-1">
-                    <!-- Coloca aquí tu contenido -->
-                </div>
-                <!-- Bloque 2: Espacio para tu imagen o elemento visual principal -->
-                <div class="portada-bloque-2">
-                    <!-- Coloca aquí tu contenido -->
-                </div>
+                
+<div class="portada-bloque-1">
+    <p class="portada-saludo">HOLA, SOMOS</p>
+
+    <h1 class="portada-titulo">
+        EXPERTOS EN<br>
+        TRANSFORMAR<br>
+        MARCAS
+    </h1>
+
+    <p class="portada-subtitulo">
+        Sin borrar la historia que las hace únicas.
+    </p>
+
+    <a href="portafolio.html" class="portada-boton">
+        VER NUESTRO PORTAFOLIO <span>×</span>
+    </a>
+</div>
+
+                
+               
             </div>
         </section>
 
