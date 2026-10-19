@@ -8,22 +8,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #faf9f5;
-            color: #111111;
-        }
-
-        /* =========================================
-           RENAX PORTAFOLIO — IDENTIDAD VISUAL
-           Conserva la estructura de la plantilla
-           ========================================= */
         :root { color-scheme: dark; }
         html { scroll-behavior: smooth; scroll-padding-top: 100px; }
         body {
             font-family: 'Montserrat', 'Inter', sans-serif;
             background: #080808 !important;
             color: #fff !important;
+            margin: 0;
         }
         .renax-site-header {
             position: sticky;
@@ -56,6 +47,7 @@
         .renax-lang-button {
             border: 0; border-radius: 999px; padding: 8px 13px;
             background: #fff; color: #080808; font-size: 11px; font-weight: 800;
+            cursor: pointer;
         }
         .renax-login-button {
             display: inline-flex; align-items: center; justify-content: center;
@@ -64,14 +56,31 @@
             text-decoration: none; transition: background .25s ease, transform .25s ease;
         }
         .renax-login-button:hover { background: #c8102e; transform: translateY(-1px); }
-        #portada { min-height: 76vh; background: #050505 !important; }
-        #portada > div:first-child { position: relative; }
+
+        /* PORTADA DEL PORTAFOLIO RENAX CON IMAGEN DE FONDO */
+        #portada {
+            position: relative;
+            isolation: isolate;
+            width: 100%;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-sizing: border-box;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.65)),
+                url("Renax-carrusel02.png");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
         #portada span { color: #ff304b !important; }
         #portada h1 { font-weight: 900; letter-spacing: -.045em; text-transform: uppercase; }
         #portada p { color: #c4c4c4 !important; }
-        #portada a { background: #ed0018 !important; color: #fff !important; }
-        #portada a:hover { background: #c8102e !important; }
-        #galeria, #proyectos { max-width: 1500px; width: 100%; }
+        #portada a.btn-portada { background: #ed0018 !important; color: #fff !important; }
+        #portada a.btn-portada:hover { background: #c8102e !important; }
+
+        #galeria, #proyectos { max-width: 1500px; width: 100%; margin: 0 auto; }
         #galeria h2, #proyectos h2 { color: #fff; font-weight: 800; }
         #galeria p, #proyectos p { color: #aaa; }
         #galeria .text-red-600, #proyectos .text-red-600 { color: #ff304b !important; }
@@ -88,7 +97,7 @@
         #proyectos h3 { color: #fff !important; }
         #proyectos .text-gray-500 { color: #aaa !important; }
 
-        /* PIE DE PÁGINA — REFERENCIA VISUAL DE INICIO */
+        /* PIE DE PÁGINA */
         .renax-footer {
             width: 100%; box-sizing: border-box;
             padding: 54px clamp(24px, 3.2vw, 60px) 24px;
@@ -128,19 +137,20 @@
         .footer-logo { display: block; width: 68px; max-height: 42px; object-fit: contain; }
         .footer-contacto { color: #fff; font-size: 13px; font-weight: 800; text-decoration: none; white-space: nowrap; }
         .footer-contacto:hover { color: #ff304b; }
+
         @media (max-width: 900px) { .footer-secciones { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-        @media (max-width: 600px) {
-            .renax-footer { padding: 38px 22px 20px; }
-            .footer-secciones { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 20px; padding: 34px 0; }
-            .footer-bottom { flex-wrap: wrap; }
-            .footer-bottom > span { order: 3; width: 100%; }
-        }
         @media (max-width: 850px) {
             .renax-nav-container { flex-wrap: wrap; gap: 14px; }
             .renax-nav-links { order: 3; width: 100%; flex-wrap: wrap; padding: 8px 0 4px; }
             .renax-nav-actions { margin-left: auto; }
             .footer-secciones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             #portada { min-height: 64vh; }
+        }
+        @media (max-width: 600px) {
+            .renax-footer { padding: 38px 22px 20px; }
+            .footer-secciones { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px 20px; padding: 34px 0; }
+            .footer-bottom { flex-wrap: wrap; }
+            .footer-bottom > span { order: 3; width: 100%; }
         }
         @media (max-width: 520px) {
             .renax-nav-logo { width: 78px; }
@@ -149,35 +159,12 @@
             .renax-nav-links a { font-size: 12px; }
             .footer-secciones { grid-template-columns: 1fr 1fr; gap: 24px 16px; }
             .footer-bottom { align-items: flex-start; flex-direction: column; }
-            #proyectos a.group { padding: 28px !important; }
         }
-
-/* PORTADA DEL PORTAFOLIO RENAX */
-#portada {
-    position: relative;
-    isolation: isolate;
-    width: 100%;
-    max-width: none;
-    min-height: 85vh;
-    box-sizing: border-box;
-
-    background-image:
-        linear-gradient(
-            rgba(0, 0, 0, 0.35),
-            rgba(0, 0, 0, 0.50)
-        ),
-        url("Renax-carrusel02.png");
-
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
 
-    <!-- MENÚ DE NAVEGACIÓN RENAX: coherente con Inicio -->
+    <!-- MENÚ DE NAVEGACIÓN RENAX -->
     <header class="renax-site-header">
         <div class="renax-nav-container">
             <a href="index.html" class="renax-logo-link" aria-label="RENAX - Inicio">
@@ -202,38 +189,28 @@
     <!-- Contenido Principal -->
     <main class="flex-grow">
 
-        <!-- 2. Sección de Portada (Hero/Cover) grande y de ancho completo -->
-      
-<section id="portada"
-    class="w-full text-white py-32 md:py-48 px-6"
-  
-    style="background-image: linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.40)), url('./Renax-carrusel02.png'); background-size: cover; background-position: center; background-repeat: no-repeat;">
-
-    <div class="max-w-4xl mx-auto space-y-6 z-10">
-
-
-                <span class="text-xs font-bold uppercase tracking-widest text-blue-400">RENAX · PORTAFOLIO</span>
+        <!-- Sección de Portada con la imagen Renax-carrusel02.png integrada -->
+        <section id="portada" class="w-full text-white py-32 md:py-48 px-6 text-center">
+            <div class="max-w-4xl mx-auto space-y-6 z-10">
+                <span class="text-xs font-bold uppercase tracking-widest">RENAX · PORTAFOLIO</span>
                 <h1 class="text-4xl md:text-6xl lg:text-7xl font-light tracking-tight">PORTAFOLIO RENAX: IDENTIDAD, DISEÑO Y EVOLUCIÓN</h1>
                 <p class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto">Explora proyectos donde renovamos identidades visuales sin perder la esencia de cada marca.</p>
                 <div class="pt-6">
-                    <a href="#proyectos" class="inline-block bg-white text-black font-medium px-8 py-4 rounded-full hover:bg-gray-200 transition-colors text-sm uppercase tracking-wider shadow-lg">Ver Proyectos</a>
+                    <a href="#proyectos" class="btn-portada inline-block font-medium px-8 py-4 rounded-full transition-colors text-sm uppercase tracking-wider shadow-lg">Ver Proyectos</a>
                 </div>
             </div>
-            <!-- Fondo decorativo sutil -->
-           
+        </section>
 
-        <!-- 3. Sección de Galería (8 espacios grandes e imponentes para imágenes) -->
-        <section id="galeria" class="max-w-7xl mx-auto px-6 py-24">
+        <!-- Sección de Galería -->
+        <section id="galeria" class="px-6 py-24">
             <div class="mb-14 text-center md:text-left">
                 <span class="text-xs font-bold uppercase tracking-widest text-red-600">RENAX / PROYECTOS VISUALES</span>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-1">Proyectos visuales</h2>
                 <p class="text-gray-500 text-sm mt-2">Una selección de identidades, conceptos y piezas desarrolladas.</p>
             </div>
 
-            <!-- Grid con 8 tarjetas grandes -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                
-                <!-- Imagen 1 -->
+                <!-- Imagen 1 a 8 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
                         <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 1</span>
@@ -241,8 +218,6 @@
                     <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 1</h3>
                     <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
-
-                <!-- Imagen 2 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
                         <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 2</span>
@@ -250,8 +225,6 @@
                     <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 2</h3>
                     <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
-
-                <!-- Imagen 3 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
                         <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 3</span>
@@ -259,8 +232,6 @@
                     <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 3</h3>
                     <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
-
-                <!-- Imagen 4 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
                         <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 4</span>
@@ -268,8 +239,6 @@
                     <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 4</h3>
                     <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
-
-                <!-- Imagen 5 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
                         <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 5</span>
@@ -277,8 +246,6 @@
                     <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 5</h3>
                     <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
-
-                <!-- Imagen 6 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
                         <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 6</span>
@@ -286,8 +253,6 @@
                     <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 6</h3>
                     <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
-
-                <!-- Imagen 7 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
                         <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 7</span>
@@ -295,8 +260,6 @@
                     <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 7</h3>
                     <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
-
-                <!-- Imagen 8 -->
                 <div class="group cursor-pointer">
                     <div class="bg-gray-200 w-full aspect-[16/10] rounded-3xl overflow-hidden mb-4 relative shadow-md transition-all duration-300 group-hover:shadow-xl flex items-center justify-center">
                         <span class="text-gray-400 text-sm font-medium">Imagen del proyecto 8</span>
@@ -304,12 +267,11 @@
                     <h3 class="font-semibold text-lg text-gray-900 group-hover:text-red-600 transition-colors">Proyecto visual 8</h3>
                     <p class="text-sm text-gray-500">Identidad visual · Diseño</p>
                 </div>
-
             </div>
         </section>
 
-        <!-- 4. Sección de Proyectos (4 tarjetas grandes e interactivas) -->
-        <section id="proyectos" class="max-w-7xl mx-auto px-6 py-24 border-t border-gray-200">
+        <!-- Sección de Proyectos -->
+        <section id="proyectos" class="px-6 py-24 border-t border-gray-200">
             <div class="mb-14">
                 <span class="text-xs font-bold uppercase tracking-widest text-red-600">TRABAJO DESTACADO</span>
                 <h2 class="text-3xl md:text-4xl font-semibold tracking-tight mt-1">Proyectos Destacados</h2>
@@ -317,54 +279,44 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                
-                <!-- Tarjeta 1: Skenzi -->
-                <a href="#galeria" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
+                <a href="#galeria" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 01</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-red-600 transition-colors">Skenzi</h3>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight">Skenzi</h3>
                     <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
                 </a>
-
-                <!-- Tarjeta 2: Día de las Matemáticas -->
-                <a href="#galeria" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
+                <a href="#galeria" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 02</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-red-600 transition-colors">Día de las Matemáticas</h3>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight">Día de las Matemáticas</h3>
                     <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
                 </a>
-
-                <!-- Tarjeta 3: Día de las Especialidades -->
-                <a href="#galeria" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
+                <a href="#galeria" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 03</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-red-600 transition-colors">Día de las Especialidades</h3>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight">Día de las Especialidades</h3>
                     <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
                 </a>
-
-                <!-- Tarjeta 4: DONUT'S BITES -->
-                <a href="#galeria" class="group block bg-[#f3f2ee] p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative border border-transparent hover:border-gray-300">
+                <a href="#galeria" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 04</span>
                         <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
-                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight text-gray-900 group-hover:text-red-600 transition-colors">DONUT'S BITES</h3>
+                    <h3 class="text-3xl md:text-5xl font-bold tracking-tight">DONUT'S BITES</h3>
                     <p class="text-sm text-gray-500 mt-4">Ver proyecto</p>
                 </a>
-
             </div>
         </section>
 
     </main>
 
-    <!-- 5. Pie de página (Footer) con diseño limpio y enlaces -->
-        <!-- PIE DE PÁGINA RENAX — DISEÑO COHERENTE CON INDEX -->
+    <!-- Pie de página -->
     <footer class="renax-footer" id="footer-renax">
         <div class="footer-topbar">
             <span class="footer-titulo">MENÚ</span>
@@ -374,7 +326,7 @@
         <div class="footer-secciones">
             <div class="footer-column">
                 <span class="footer-column-title">INICIO</span>
-                <nav class="footer-menu-links" aria-label="Enlaces de Inicio">
+                <nav class="footer-menu-links">
                     <a href="index.html">Expertos en transformar marcas</a>
                     <a href="index.html#esencia-marca">Vuelve a destacar sin perder tu esencia</a>
                     <a href="index.html#esencia-marca">Tu historia merece una imagen que esté a su altura</a>
@@ -382,7 +334,7 @@
             </div>
             <div class="footer-column">
                 <span class="footer-column-title">NOSOTROS</span>
-                <nav class="footer-menu-links" aria-label="Enlaces de Nosotros">
+                <nav class="footer-menu-links">
                     <a href="nosotros.html">Quiénes somos</a>
                     <a href="nosotros.html#vision">Visión</a>
                     <a href="nosotros.html#mision">Misión</a>
@@ -391,14 +343,14 @@
             </div>
             <div class="footer-column">
                 <span class="footer-column-title">PORTAFOLIO</span>
-                <nav class="footer-menu-links" aria-label="Enlaces de Portafolio">
+                <nav class="footer-menu-links">
                     <a href="portafolio.html">Proyectos y trabajos realizados</a>
                     <a href="portafolio.html#proyectos">Casos de estudio</a>
                 </nav>
             </div>
             <div class="footer-column">
                 <span class="footer-column-title">SERVICIOS</span>
-                <nav class="footer-menu-links" aria-label="Enlaces de Servicios">
+                <nav class="footer-menu-links">
                     <a href="servicios.html">Diagnóstico de marca</a>
                     <a href="servicios.html">Identidad visual</a>
                     <a href="servicios.html">Comunicación</a>
@@ -407,7 +359,7 @@
             </div>
             <div class="footer-column">
                 <span class="footer-column-title">CONTACTO</span>
-                <nav class="footer-menu-links" aria-label="Enlaces de Contacto">
+                <nav class="footer-menu-links">
                     <a href="contacto.html">Hablemos de tu proyecto</a>
                 </nav>
             </div>
