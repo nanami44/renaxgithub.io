@@ -1908,23 +1908,3 @@ h1, h2, h3,
 }
 
 
-/* SOLO FONDO BLANCO A TODO EL ANCHO: PREGUNTAS FRECUENTES */
-.renax-faq-section {
-    background: #ffffff !important;
-    width: 100% !important;
-    max-width: none !important;
-    margin: 0 !important;
-    box-sizing: border-box;
-}
-
-/* El fondo blanco llega de borde a borde de la pantalla */
-.contacto-main {
-    background: transparent;
-}
-
-.renax-faq-section {
-    position: relative;
-    left: 50%;
-    width: 100vw !important;
-    margin-left: -50vw !important;
-}
