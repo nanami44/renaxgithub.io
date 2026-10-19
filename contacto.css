@@ -2104,6 +2104,12 @@ h1, h2, h3,
     color: #111111 !important;
 }
 
+/* FONDO NARANJA DEL FORMULARIO DE COTIZACIÓN */
+.contacto-conversacion .contacto-tarjeta-form {
+    background: #ff8c24 !important;
+    background-image: none !important;
+}
+
 /* ICONOS NEGROS AL PASAR EL MOUSE */
 .contacto-conversacion .contacto-info-item:hover i {
     -webkit-text-fill-color: #111111 !important;
