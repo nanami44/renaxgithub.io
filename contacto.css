@@ -854,9 +854,30 @@ body.contacto-page {
 /* ==========================================================
    SECCIÓN PARA DEJAR UNA NUEVA RESEÑA
    ========================================================== */
+
+/* FONDO DE LA SECCIÓN DE RESEÑAS */
 .deja-tu-resena-contenedor {
-  max-width: 800px;
-  margin: 80px auto 0;
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    margin: 0;
+    padding: 80px 5%;
+    box-sizing: border-box;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.08),
+            rgba(0, 0, 0, 0.08)
+        ),
+        url("fondo-resenas.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
