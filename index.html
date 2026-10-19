@@ -645,23 +645,47 @@
     letter-spacing: 4px;
 }
 
+
 .destacados-lineas {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    align-items: center;
-    gap: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 100%;
 }
+
+
+/* TÍTULO EDITORIAL RENAX */
 
 .destacados-lineas h2 {
     margin: 0;
     color: #ed1c24;
-    font-family: Impact, 'Arial Narrow', sans-serif;
-    font-size: clamp(58px, 9vw, 145px);
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(75px, 12.5vw, 185px);
     font-weight: 900;
-    line-height: 0.85;
+    line-height: 0.78;
     letter-spacing: -3px;
     text-transform: uppercase;
+    white-space: nowrap;
 }
+
+.destacados-lineas .destacado-contorno {
+    margin-top: 8px;
+    color: transparent;
+    -webkit-text-stroke: 2px #ed1c24;
+    text-stroke: 2px #ed1c24;
+    font-size: clamp(48px, 9vw, 132px);
+    line-height: 0.9;
+}
+
+.destacados-etiqueta {
+    margin-top: 25px;
+    color: #d0d0d0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+
 
 .destacados-lineas .destacado-contorno {
     color: transparent;
@@ -803,10 +827,27 @@
         gap: 8px;
     }
 
-    .destacados-lineas h2 {
-        font-size: clamp(55px, 12vw, 90px);
-        letter-spacing: -2px;
-    }
+.destacados-lineas h2 {
+    margin: 0;
+    color: #ed1c24;
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-size: clamp(75px, 12.5vw, 185px);
+    font-weight: 900;
+    line-height: 0.78;
+    letter-spacing: -3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.destacados-lineas .destacado-contorno {
+    margin-top: 8px;
+    color: transparent;
+    -webkit-text-stroke: 2px #ed1c24;
+    font-size: clamp(48px, 9vw, 132px);
+    line-height: 0.9;
+}
+
+
 
 .galeria-asimetrica {
     grid-template-columns: 1fr 1fr;
