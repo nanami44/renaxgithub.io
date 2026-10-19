@@ -521,6 +521,54 @@
             .galeria-asimetrica { grid-template-columns: 1fr; grid-template-rows: auto; }
             .esencia-renax { grid-template-columns: 1fr; }
         }
+        
+/* ==========================================
+   RENAX — TÍTULO CON VELO DE COLOR ANIMADO
+   ========================================== */
+
+.titulo-velo-color {
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ffffff 25%,
+        #f7a04a 40%,
+        #e85d26 50%,
+        #ff350f 60%,
+        #ffffff 75%,
+        #ffffff 100%
+    );
+
+    background-size: 100% 300%;
+    background-position: 50% 0%;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    animation: renaxVeloDescendente 5s ease-in-out infinite;
+}
+
+@keyframes renaxVeloDescendente {
+    0% {
+        background-position: 50% 0%;
+    }
+
+    50% {
+        background-position: 50% 100%;
+    }
+
+    100% {
+        background-position: 50% 0%;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .titulo-velo-color {
+        animation: none;
+    }
+}
+
     </style>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -673,7 +721,7 @@
         <section class="renax-final-cta" id="sesion-4">
             <div class="final-contenido">
                 <p class="final-etiqueta"></p>
-                <h2 class="final-titulo">
+               <h2 class="final-titulo titulo-velo-color">
                     <span class="final-interrogacion">¿</span>
                     <span class="final-tu">TU</span>
                     <span data-lang="ctaText1">MARCA ESTÁ</span>
