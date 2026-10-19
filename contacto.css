@@ -1654,3 +1654,32 @@ h1, h2, h3,
     text-decoration: none !important;
 }
 
+/* ==================================================
+   RENAX — UBICACIÓN A ANCHO COMPLETO
+   ================================================== */
+
+/* La sección de ubicación ocupa todo el ancho */
+.contacto-ubicacion,
+.ubicacion-section,
+.renax-ubicacion {
+    width: 100% !important;
+    max-width: none !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+}
+
+/* El mapa se extiende de extremo a extremo */
+.contacto-ubicacion iframe,
+.ubicacion-section iframe,
+.renax-ubicacion iframe {
+    display: block;
+    width: 100% !important;
+    max-width: none !important;
+    height: 600px !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+}
+
