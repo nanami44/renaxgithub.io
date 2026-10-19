@@ -274,9 +274,9 @@
 
         .vision-mission-container .card-box p {
             display: block;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
+            max-height: 500px;
+opacity: 1;
+overflow: visible;
             margin: 0 auto;
             text-align: center;
             padding: 0 28px;
@@ -319,6 +319,38 @@
             padding: 10px 28px 35px;
             transform: scale(1);
         }
+
+/* TARJETAS VISIÓN Y MISIÓN: ROJAS */
+.vision-mission-container .card-box {
+    background: #e60000 !important;
+    border: 2px solid #ff2638 !important;
+    box-shadow: 0 0 12px rgba(255, 0, 0, 0.35);
+    transition: background 0.35s ease,
+                box-shadow 0.35s ease,
+                transform 0.35s ease;
+}
+
+/* TEXTO BLANCO */
+.vision-mission-container .card-box h2,
+.vision-mission-container .card-box p {
+    color: #ffffff !important;
+}
+
+/* AL PASAR EL RATÓN: NARANJA */
+.vision-mission-container .card-box:hover {
+    background: #ff7518 !important;
+    border-color: #ff7518 !important;
+    box-shadow:
+        0 0 12px rgba(255, 117, 24, 0.75),
+        0 0 28px rgba(255, 117, 24, 0.45);
+    transform: scale(1.02);
+}
+
+/* MANTENER EL TEXTO BLANCO AL PASAR EL RATÓN */
+.vision-mission-container .card-box:hover h2,
+.vision-mission-container .card-box:hover p {
+    color: #ffffff !important;
+}
 
         /* SECCIÓN "HOLA, SOY KAROL" */
         .karol-section-full {
