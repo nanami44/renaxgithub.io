@@ -2302,3 +2302,22 @@ body.contacto-page .contacto-hero-contenido {
 body.contacto-page .contacto-hero-indice {
     z-index: 2;
 }
+
+/* ELIMINAR ESPACIO ENTRE EL MAPA MUNDIAL Y EL PIE DE PÁGINA */
+
+/* Quitar espacio inferior de la sección del mapa mundial */
+.renax-cta-section {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Quitar espacio superior del pie de página */
+footer {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Evitar separación entre ambas secciones */
+.renax-cta-section + footer {
+    margin-top: 0 !important;
+}
