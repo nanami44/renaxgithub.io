@@ -89,28 +89,34 @@
         #galeria h3 { color: #fff !important; }
         #proyectos { border-color: #292929 !important; }
 
-/* TARJETAS CON BORDES ROJOS */
-#proyectos a.group {
-    background: linear-gradient(145deg, #151515, #090909) !important;
-    border: 1px solid #ff2638 !important;
-    border-radius: 24px;
-    color: #fff;
-    text-decoration: none;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
+        /* TARJETAS CON BORDES ROJOS */
+        #proyectos a.group {
+            background: linear-gradient(145deg, #151515, #090909) !important;
+            border: 1px solid #ff2638 !important;
+            border-radius: 24px;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+        }
 
-/* EFECTO AL PASAR EL MOUSE */
-#proyectos a.group:hover {
-    border-color: #ff2638 !important;
-    box-shadow: 0 0 18px rgba(255, 38, 56, 0.25);
-}
+        /* EFECTO AL PASAR EL MOUSE: TARJETA ROJA Y TEXTOS/FLECHAS EN NEGRO */
+        #proyectos a.group:hover {
+            background: #ed0018 !important;
+            border-color: #ed0018 !important;
+            color: #000 !important;
+            box-shadow: 0 0 25px rgba(237, 0, 24, 0.4);
+        }
 
-/* FLECHAS ROJAS */
-#proyectos a.group svg {
-    color: #ff2638 !important;
-    stroke: #ff2638 !important;
-}
+        #proyectos a.group:hover span,
+        #proyectos a.group:hover h3,
+        #proyectos a.group:hover p {
+            color: #000 !important;
+        }
 
+        #proyectos a.group:hover svg {
+            color: #000 !important;
+            stroke: #000 !important;
+        }
         
         #proyectos h3 { color: #fff !important; }
         #proyectos .text-gray-500 { color: #aaa !important; }
@@ -179,9 +185,9 @@
             .footer-bottom { align-items: flex-start; flex-direction: column; }
         }
         /* OCULTAR SOLO LOS TEXTOS DE LA PORTADA */
-#portada .max-w-4xl {
-    display: none !important;
-}
+        #portada .max-w-4xl {
+            display: none !important;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
@@ -203,7 +209,8 @@
 
             <div class="renax-nav-actions">
                 <button id="langToggleBtn" class="renax-lang-button" type="button" aria-label="Cambiar idioma" onclick="toggleLanguage()">ESP</button>
-                <a href="contacto.html" class="renax-login-button" data-i18n="btn-login">Iniciar sesión</a>
+                <!-- ENLACE DE INICIO DE SESIÓN CORREGIDO -->
+                <a href="login.html" class="renax-login-button" data-i18n="btn-login">Iniciar sesión</a>
             </div>
         </div>
     </header>
@@ -320,7 +327,7 @@
                 <a href="proyecto-skenzi.html" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 01</span>
-                        <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <svg class="w-6 h-6 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
                     <h3 class="text-3xl md:text-5xl font-bold tracking-tight">Skenzi</h3>
                     <p class="text-sm text-gray-500 mt-4" data-i18n="ver-proyecto">Ver proyecto</p>
@@ -328,7 +335,7 @@
                 <a href="dia-matematicas.html" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 02</span>
-                        <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <svg class="w-6 h-6 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
                     <h3 class="text-3xl md:text-5xl font-bold tracking-tight" data-i18n="p2-name">Día de las Matemáticas</h3>
                     <p class="text-sm text-gray-500 mt-4" data-i18n="ver-proyecto">Ver proyecto</p>
@@ -336,7 +343,7 @@
                 <a href="dia-especialidades.html" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 03</span>
-                        <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <svg class="w-6 h-6 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
                     <h3 class="text-3xl md:text-5xl font-bold tracking-tight" data-i18n="p3-name">Día de las Especialidades</h3>
                     <p class="text-sm text-gray-500 mt-4" data-i18n="ver-proyecto">Ver proyecto</p>
@@ -344,7 +351,7 @@
                 <a href="donuts-bites.html" class="group block p-12 rounded-3xl transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 relative">
                     <div class="flex justify-between items-start mb-20">
                         <span class="text-xs uppercase font-bold tracking-widest text-red-600">Proyecto 04</span>
-                        <svg class="w-6 h-6 text-gray-400 group-hover:text-black transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        <svg class="w-6 h-6 text-gray-400 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                     </div>
                     <h3 class="text-3xl md:text-5xl font-bold tracking-tight">DONUT'S BITES</h3>
                     <p class="text-sm text-gray-500 mt-4" data-i18n="ver-proyecto">Ver proyecto</p>
@@ -412,7 +419,7 @@
         </div>
     </footer>
 
-    <!-- Script JavaScript para gestionar la traducción al hacer clic en el botón -->
+    <!-- Script JavaScript para gestionar la traducción y el cambio de idioma -->
     <script>
         const translations = {
             es: {
@@ -537,8 +544,7 @@
             }
         };
 
-       
-let currentLang = 'es';
+        let currentLang = 'es';
 
         function applyLanguage() {
             const btn = document.getElementById('langToggleBtn');
@@ -563,13 +569,6 @@ let currentLang = 'es';
             currentLang = currentLang === 'es' ? 'en' : 'es';
             applyLanguage();
         }
-    </script>
-</body>
-</html>
-
-
-            
-       
     </script>
 </body>
 </html>
