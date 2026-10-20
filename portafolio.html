@@ -15,6 +15,7 @@
             background: #080808 !important;
             color: #fff !important;
             margin: 0;
+            overflow-x: hidden; /* Evita desplazamiento lateral accidental en celulares */
         }
         .renax-site-header {
             position: sticky;
@@ -26,14 +27,16 @@
             backdrop-filter: blur(14px);
         }
         .renax-nav-container {
-            width: min(100%, 1500px);
+            width: 100%;
+            max-width: 1500px;
             min-height: 76px;
             margin: 0 auto;
-            padding: 12px clamp(18px, 4vw, 64px);
+            padding: 12px clamp(15px, 4vw, 64px);
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 28px;
+            box-sizing: border-box; /* Garantiza que el padding no rompa el ancho */
         }
         .renax-logo-link { display: flex; align-items: center; flex-shrink: 0; }
         .renax-nav-logo { display: block; width: 100px; max-height: 48px; object-fit: contain; }
@@ -81,7 +84,12 @@
         #portada a.btn-portada { background: #ed0018 !important; color: #fff !important; }
         #portada a.btn-portada:hover { background: #c8102e !important; }
 
-        #galeria, #proyectos { max-width: 1500px; width: 100%; margin: 0 auto; }
+        #galeria, #proyectos { 
+            max-width: 1500px; 
+            width: 100%; 
+            margin: 0 auto; 
+            box-sizing: border-box; /* Añadido para fluidez en tablets/celulares */
+        }
         #galeria h2, #proyectos h2 { color: #fff; font-weight: 800; }
         #galeria p, #proyectos p { color: #aaa; }
         #galeria .text-red-600, #proyectos .text-red-600 { color: #ff304b !important; }
@@ -165,7 +173,7 @@
         @media (max-width: 900px) { .footer-secciones { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
         @media (max-width: 850px) {
             .renax-nav-container { flex-wrap: wrap; gap: 14px; }
-            .renax-nav-links { order: 3; width: 100%; flex-wrap: wrap; padding: 8px 0 4px; }
+            .renax-nav-links { order: 3; width: 100%; flex-wrap: wrap; padding: 8px 0 4px; justify-content: center; }
             .renax-nav-actions { margin-left: auto; }
             .footer-secciones { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             #portada { min-height: 64vh; }
@@ -184,6 +192,17 @@
             .footer-secciones { grid-template-columns: 1fr 1fr; gap: 24px 16px; }
             .footer-bottom { align-items: flex-start; flex-direction: column; }
         }
+
+        /* REGLAS RESPONSIVAS ADICIONALES PARA GARANTIZAR QUE NADA SE ROMPA EN CELULARES/TABLETS */
+        @media (max-width: 768px) {
+            #galeria .grid, #proyectos .grid {
+                grid-template-columns: 1fr !important;
+            }
+            #proyectos a.group {
+                padding: 24px !important;
+            }
+        }
+
         /* OCULTAR SOLO LOS TEXTOS DE LA PORTADA */
         #portada .max-w-4xl {
             display: none !important;
@@ -440,135 +459,4 @@
                 "gal-1-sub": "Identidad visual · Diseño",
                 "gal-2-title": "DONUT'S BITES — Estudio Visual",
                 "gal-2-sub": "Branding · Packaging",
-                "gal-3-title": "Renzi — Diseño de Empaque",
-                "gal-3-sub": "Empaque · Identidad",
-                "gal-4-title": "Skenzi — Línea de Bolsas",
-                "gal-4-sub": "Merchandising · Diseño",
-                "gal-5-title": "DONUT'S — Vehículo Comercial",
-                "gal-5-sub": "Vehicular · Branding",
-                "gal-6-title": "DONUT'S BITES — Galería 01",
-                "gal-6-sub": "Concepto · Fotografía",
-                "gal-7-title": "RENAX — Proyecto Visual 01",
-                "gal-7-sub": "Identidad visual · Diseño",
-                "gal-8-title": "RENAX — Proyecto Visual 03",
-                "gal-8-sub": "Identidad visual · Diseño",
-                "proy-tag": "TRABAJO DESTACADO",
-                "proy-title": "Proyectos Destacados",
-                "proy-desc": "Explora los proyectos de RENAX y descubre cómo evoluciona cada identidad.",
-                "ver-proyecto": "Ver proyecto",
-                "p2-name": "Día de las Matemáticas",
-                "p3-name": "Día de las Especialidades",
-                "f-menu": "MENÚ",
-                "f-explora": "EXPLORA RENAX",
-                "f-c1-title": "INICIO",
-                "f-c1-l1": "Expertos en transformar marcas",
-                "f-c1-l2": "Vuelve a destacar sin perder tu esencia",
-                "f-c1-l3": "Tu historia merece una imagen que esté a su altura",
-                "f-c2-title": "NOSOTROS",
-                "f-c2-l1": "Quiénes somos",
-                "f-c2-l2": "Visión",
-                "f-c2-l3": "Misión",
-                "f-c2-l4": "¿Por qué RENAX?",
-                "f-c3-title": "PORTAFOLIO",
-                "f-c3-l1": "Proyectos y trabajos realizados",
-                "f-c3-l2": "Casos de estudio",
-                "f-c4-title": "SERVICIOS",
-                "f-c4-l1": "Diagnóstico de marca",
-                "f-c4-l2": "Identidad visual",
-                "f-c4-l3": "Comunicación",
-                "f-c4-l4": "Estrategia visual",
-                "f-c5-title": "CONTACTO",
-                "f-c5-l1": "Hablemos de tu proyecto",
-                "f-copy": "© 2026 RENAX. Todos los derechos reservados.",
-                "f-contact-btn": "CONTACTO ↗"
-            },
-            en: {
-                "nav-inicio": "Home",
-                "nav-nosotros": "About Us",
-                "nav-portafolio": "Portfolio",
-                "nav-servicios": "Services",
-                "nav-contacto": "Contact Us",
-                "btn-login": "Sign In",
-                "hero-tag": "RENAX · PORTFOLIO",
-                "hero-title": "RENAX PORTFOLIO: IDENTITY, DESIGN & EVOLUTION",
-                "hero-desc": "Explore projects where we renovate visual identities without losing the core essence of each brand.",
-                "hero-btn": "View Projects",
-                "galeria-tag": "RENAX / VISUAL PROJECTS",
-                "galeria-title": "Visual Projects",
-                "galeria-desc": "A selection of identities, concepts, and developed pieces.",
-                "gal-1-title": "Skenzi — Case Study",
-                "gal-1-sub": "Visual Identity · Design",
-                "gal-2-title": "DONUT'S BITES — Visual Studio",
-                "gal-2-sub": "Branding · Packaging",
-                "gal-3-title": "Renzi — Packaging Design",
-                "gal-3-sub": "Packaging · Identity",
-                "gal-4-title": "Skenzi — Bag Line",
-                "gal-4-sub": "Merchandising · Design",
-                "gal-5-title": "DONUT'S — Commercial Vehicle",
-                "gal-5-sub": "Vehicular · Branding",
-                "gal-6-title": "DONUT'S BITES — Gallery 01",
-                "gal-6-sub": "Concept · Photography",
-                "gal-7-title": "RENAX — Visual Project 01",
-                "gal-7-sub": "Visual Identity · Design",
-                "gal-8-title": "RENAX — Visual Project 03",
-                "gal-8-sub": "Visual Identity · Design",
-                "proy-tag": "FEATURED WORK",
-                "proy-title": "Featured Projects",
-                "proy-desc": "Explore RENAX projects and discover how each brand identity evolves.",
-                "ver-proyecto": "View project",
-                "p2-name": "Mathematics Day",
-                "p3-name": "Specialties Day",
-                "f-menu": "MENU",
-                "f-explora": "EXPLORE RENAX",
-                "f-c1-title": "HOME",
-                "f-c1-l1": "Experts in transforming brands",
-                "f-c1-l2": "Stand out again without losing your core",
-                "f-c1-l3": "Your story deserves an image that matches it",
-                "f-c2-title": "ABOUT US",
-                "f-c2-l1": "Who we are",
-                "f-c2-l2": "Vision",
-                "f-c2-l3": "Mission",
-                "f-c2-l4": "Why RENAX?",
-                "f-c3-title": "PORTFOLIO",
-                "f-c3-l1": "Projects and works completed",
-                "f-c3-l2": "Case studies",
-                "f-c4-title": "SERVICES",
-                "f-c4-l1": "Brand diagnosis",
-                "f-c4-l2": "Visual identity",
-                "f-c4-l3": "Communication",
-                "f-c4-l4": "Visual strategy",
-                "f-c5-title": "CONTACT",
-                "f-c5-l1": "Let's talk about your project",
-                "f-copy": "© 2026 RENAX. All rights reserved.",
-                "f-contact-btn": "CONTACT ↗"
-            }
-        };
-
-        let currentLang = 'es';
-
-        function applyLanguage() {
-            const btn = document.getElementById('langToggleBtn');
-
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                const translation = translations[currentLang][key];
-
-                if (translation !== undefined) {
-                    el.textContent = translation;
-                }
-            });
-
-            document.documentElement.lang = currentLang;
-
-            if (btn) {
-                btn.textContent = currentLang === 'es' ? 'ESP' : 'ENG';
-            }
-        }
-
-        function toggleLanguage() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            applyLanguage();
-        }
-    </script>
-</body>
-</html>
+                "gal-3-title": "
