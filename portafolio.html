@@ -178,6 +178,10 @@
             .footer-secciones { grid-template-columns: 1fr 1fr; gap: 24px 16px; }
             .footer-bottom { align-items: flex-start; flex-direction: column; }
         }
+        /* OCULTAR SOLO LOS TEXTOS DE LA PORTADA */
+#portada .max-w-4xl {
+    display: none !important;
+}
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
@@ -533,28 +537,38 @@
             }
         };
 
-        let currentLang = 'es';
+       
+let currentLang = 'es';
 
-        function toggleLanguage() {
-            currentLang = currentLang === 'es' ? 'en' : 'es';
-            const btn = document.getElementById('langToggleBtn');
-            btn.textContent = currentLang === 'es' ? 'ESP' : 'ENG';
+function applyLanguage() {
+    const btn = document.getElementById('langToggleBtn');
 
-            // Actualizar todos los elementos con atributo data-i18n
-            document.querySelectorAll('[data-i18n]').forEach(el => {
-                const key = el.getAttribute('data-i18n');
-                if (translations[currentLang][key]) {
-                    el.textContent = translations[currentLang][key];
-                }
-            });
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        const translation = translations[currentLang][key];
 
-            // Cambiar atributo lang del HTML
-            document.documentElement.lang = currentLang;
+        if (translation !== undefined) {
+            el.textContent = translation;
         }
-        /* OCULTAR SOLO LOS TEXTOS DE LA PORTADA */
-#portada .max-w-4xl {
-    display: none !important;
+    });
+
+    document.documentElement.lang = currentLang;
+
+    if (btn) {
+        btn.textContent = currentLang === 'es' ? 'ESP' : 'ENG';
+    }
 }
+
+function toggleLanguage() {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    applyLanguage();
+
+
+
+
+
+            
+       
     </script>
 </body>
 </html>
