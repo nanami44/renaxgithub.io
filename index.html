@@ -1149,6 +1149,115 @@ img {
     }
 }
 
+/* ==========================================
+   RENAX — TRANSICIÓN DE ENTRADA CON LOGO
+   Duración total: 3,2 segundos
+   ========================================== */
+
+#renaxPageTransition {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #101010;
+    opacity: 1;
+    visibility: visible;
+    animation: renaxSalida .7s ease-in-out 2.5s forwards;
+}
+
+#renaxPageTransition::before {
+    content: "";
+    position: absolute;
+    inset: -20%;
+    background:
+        radial-gradient(ellipse at 20% 25%,
+            rgba(190, 0, 20, .30), transparent 42%),
+        radial-gradient(ellipse at 80% 75%,
+            rgba(150, 150, 150, .18), transparent 40%);
+    filter: blur(35px);
+    animation: renaxLuces 2.5s ease-in-out infinite alternate;
+}
+
+.renax-transition-logo {
+    position: relative;
+    z-index: 1;
+    width: min(86vw, 1100px);
+    line-height: 0;
+}
+
+.renax-transition-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.transition-logo-base {
+    filter: grayscale(1) brightness(.55);
+    opacity: .85;
+}
+
+.transition-logo-rojo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    clip-path: inset(0 100% 0 0);
+    animation: renaxEncendido 2.1s ease-in-out .15s forwards;
+}
+
+@keyframes renaxEncendido {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes renaxLuces {
+    from {
+        transform: translate(-2%, -1%) scale(.98);
+    }
+    to {
+        transform: translate(2%, 1%) scale(1.04);
+    }
+}
+
+@keyframes renaxSalida {
+    to {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .renax-transition-logo {
+        width: 90vw;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #renaxPageTransition {
+        animation-duration: .2s;
+        animation-delay: 0s;
+    }
+
+    .transition-logo-rojo {
+        animation-duration: .2s;
+        animation-delay: 0s;
+    }
+
+    #renaxPageTransition::before {
+        animation: none;
+    }
+}
+
     </style>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1156,6 +1265,24 @@ img {
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+<!-- TRANSICIÓN DE ENTRADA RENAX -->
+<div id="renaxPageTransition" aria-hidden="true">
+    <div class="renax-transition-logo">
+        <img
+            src="logo-renax-transparente.png"
+            alt=""
+            class="transition-logo-base"
+        >
+
+        <img
+            src="logo-renax-transparente.png"
+            alt=""
+            class="transition-logo-rojo"
+        >
+    </div>
+</div>
+
     <!-- FONDO ANIMADO GLOBAL RENAX -->
     <div class="fondo-liquido-renax"></div>
 
