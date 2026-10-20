@@ -955,6 +955,262 @@ max-width: 850px;
         0 0 28px rgba(255, 117, 24, 0.60) !important;
 }
 
+/* ==========================================
+   RENAX | RESEÑA HISTÓRICA
+   Ventana emergente con efecto de velo
+   ========================================== */
+
+.renax-historia {
+    width: 100%;
+    max-width: 1200px;
+    margin: 35px auto;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+.renax-historia-tarjeta {
+    position: relative;
+    width: 100%;
+    max-width: 1050px;
+    min-height: 230px;
+    margin: 0 auto;
+    padding: 35px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #080808, #171717, #080808);
+    border: 1.5px solid #e32636;
+    border-radius: 22px;
+    box-shadow: 0 0 14px rgba(227, 38, 54, 0.20);
+    transition: box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.renax-historia-tarjeta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent 15%,
+        rgba(227, 38, 54, 0.12) 50%,
+        transparent 85%
+    );
+    pointer-events: none;
+}
+
+.renax-historia-tarjeta:hover {
+    border-color: #ff7518;
+    box-shadow:
+        0 0 16px rgba(255, 38, 54, 0.35),
+        0 0 30px rgba(255, 117, 24, 0.12);
+}
+
+.renax-historia-etiqueta {
+    position: relative;
+    color: #ff7518;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.renax-historia-boton {
+    position: relative;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(30px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.renax-historia-boton:hover {
+    color: #ff7518;
+    text-shadow: 0 0 18px rgba(255, 117, 24, 0.3);
+}
+
+.renax-historia-invitacion {
+    position: relative;
+    color: #d0d0d0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Ventana y velo oscuro */
+.renax-historia-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 20000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 22px;
+    background: rgba(0, 0, 0, 0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+.renax-historia-modal.abierto {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.renax-historia-ventana {
+    position: relative;
+    width: min(760px, 100%);
+    max-height: min(80vh, 720px);
+    overflow-y: auto;
+    padding: clamp(28px, 5vw, 52px);
+    color: #ffffff;
+    text-align: left;
+    border: 1.5px solid #e32636;
+    border-radius: 22px;
+    background: linear-gradient(
+        135deg,
+        #120609,
+        #360b13,
+        #64151b,
+        #8b3216,
+        #24100b
+    );
+    background-size: 300% 300%;
+    animation: renaxHistoriaColor 12s ease infinite;
+    box-shadow:
+        0 0 25px rgba(227, 38, 54, 0.25),
+        0 20px 70px rgba(0, 0, 0, 0.6);
+    transform: translateY(20px) scale(0.98);
+    transition: transform 0.35s ease;
+}
+
+.renax-historia-modal.abierto .renax-historia-ventana {
+    transform: translateY(0) scale(1);
+}
+
+@keyframes renaxHistoriaColor {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.renax-historia-cerrar {
+    position: sticky;
+    top: 0;
+    float: right;
+    width: 42px;
+    height: 42px;
+    margin: -12px -12px 10px 15px;
+    border: 1px solid rgba(255,255,255,0.45);
+    border-radius: 50%;
+    background: rgba(0,0,0,0.35);
+    color: #ffffff;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.renax-historia-cerrar:hover {
+    background: #ff7518;
+    color: #111111;
+}
+
+.renax-historia-modal-etiqueta {
+    color: #ffb078;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.renax-historia-ventana h2 {
+    margin: 14px 0 24px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(27px, 5vw, 43px);
+    font-weight: 900;
+    line-height: 1.15;
+}
+
+.renax-historia-ventana p {
+    margin: 0 0 18px;
+    color: #f4eeee;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.renax-historia-linea {
+    width: 75px;
+    height: 3px;
+    margin: 0 0 25px;
+    background: linear-gradient(90deg, #ff304b, #ff7518);
+    border-radius: 4px;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 600px) {
+    .renax-historia {
+        margin: 22px auto;
+        padding: 25px 16px;
+    }
+
+    .renax-historia-tarjeta {
+        min-height: 195px;
+        padding: 28px 18px;
+        border-radius: 17px;
+    }
+
+    .renax-historia-etiqueta {
+        font-size: 10px;
+        letter-spacing: 2.5px;
+    }
+
+    .renax-historia-invitacion {
+        font-size: 13px;
+    }
+
+    .renax-historia-modal {
+        padding: 14px;
+    }
+
+    .renax-historia-ventana {
+        max-height: 86vh;
+        padding: 25px 21px;
+        border-radius: 17px;
+    }
+
+    .renax-historia-ventana p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .renax-historia-cerrar {
+        width: 38px;
+        height: 38px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .renax-historia-ventana {
+        animation: none;
+    }
+
+    .renax-historia-modal,
+    .renax-historia-ventana {
+        transition: none;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -1001,6 +1257,99 @@ max-width: 850px;
             </iframe>
         </div>
     </div>
+
+<!-- 3. RESEÑA HISTÓRICA RENAX -->
+<section class="renax-historia" id="resena-historica">
+
+    <div class="renax-historia-tarjeta">
+
+        <p class="renax-historia-etiqueta"
+           data-es="NUESTRA HISTORIA"
+           data-en="OUR STORY">
+            NUESTRA HISTORIA
+        </p>
+
+        <button
+            type="button"
+            class="renax-historia-boton"
+            id="abrirHistoriaRenax"
+            aria-haspopup="dialog"
+            aria-controls="modalHistoriaRenax"
+            aria-expanded="false"
+            data-es="RESEÑA HISTÓRICA"
+            data-en="OUR HISTORY">
+            RESEÑA HISTÓRICA
+        </button>
+
+        <p class="renax-historia-invitacion"
+           data-es="Descubre la historia y el propósito detrás de RENAX."
+           data-en="Discover the story and purpose behind RENAX.">
+            Descubre la historia y el propósito detrás de RENAX.
+        </p>
+
+    </div>
+</section>
+
+<!-- VENTANA EMERGENTE DE LA RESEÑA -->
+<div
+    class="renax-historia-modal"
+    id="modalHistoriaRenax"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="tituloHistoriaRenax"
+    aria-hidden="true">
+
+    <div class="renax-historia-ventana">
+
+        <button
+            type="button"
+            class="renax-historia-cerrar"
+            id="cerrarHistoriaRenax"
+            aria-label="Cerrar ventana">
+            &times;
+        </button>
+
+        <p class="renax-historia-modal-etiqueta"
+           data-es="RENAX · NUESTRA HISTORIA"
+           data-en="RENAX · OUR STORY">
+            RENAX · NUESTRA HISTORIA
+        </p>
+
+        <h2 id="tituloHistoriaRenax"
+            data-es="Una marca que evoluciona sin olvidar su esencia"
+            data-en="A brand that evolves without forgetting its essence">
+            Una marca que evoluciona sin olvidar su esencia
+        </h2>
+
+        <div class="renax-historia-linea"></div>
+
+        <p
+            data-es="RENAX nace de la pasión por el diseño gráfico y de la convicción de que una marca puede evolucionar sin perder aquello que la hace única."
+            data-en="RENAX was born from a passion for graphic design and the belief that a brand can evolve without losing what makes it unique.">
+            RENAX nace de la pasión por el diseño gráfico y de la convicción
+            de que una marca puede evolucionar sin perder aquello que la hace única.
+        </p>
+
+        <p
+            data-es="Su propósito es acompañar a pequeñas y medianas empresas, especialmente a negocios con trayectoria, en la modernización de su identidad visual. Cada proyecto parte de reconocer la historia, los valores y la personalidad de la marca."
+            data-en="Its purpose is to support small and medium-sized businesses, especially established companies, as they modernize their visual identity. Every project begins by recognizing the brand's history, values, and personality.">
+            Su propósito es acompañar a pequeñas y medianas empresas,
+            especialmente a negocios con trayectoria, en la modernización
+            de su identidad visual. Cada proyecto parte de reconocer la
+            historia, los valores y la personalidad de la marca.
+        </p>
+
+        <p
+            data-es="Así, RENAX une estrategia y creatividad para construir identidades visuales actuales, coherentes y preparadas para nuevos retos, manteniendo siempre la esencia que les ha dado significado."
+            data-en="RENAX brings strategy and creativity together to build modern, consistent visual identities ready for new challenges, while preserving the essence that gives each brand its meaning.">
+            Así, RENAX une estrategia y creatividad para construir
+            identidades visuales actuales, coherentes y preparadas para
+            nuevos retos, manteniendo siempre la esencia que les ha dado significado.
+        </p>
+
+    </div>
+</div>
+<!-- FIN RESEÑA HISTÓRICA -->
 
     <!-- 3. VISIÓN Y MISIÓN -->
     <div class="vision-mission-full-wrapper">
@@ -1253,6 +1602,49 @@ max-width: 850px;
             }
             seccion.prepend(capa);
         });
+        
+/* ==========================================
+   VENTANA INTERACTIVA: RESEÑA HISTÓRICA
+   ========================================== */
+(function () {
+    const abrir = document.getElementById("abrirHistoriaRenax");
+    const modal = document.getElementById("modalHistoriaRenax");
+    const cerrar = document.getElementById("cerrarHistoriaRenax");
+
+    if (!abrir || !modal || !cerrar) return;
+
+    function abrirHistoria() {
+        modal.classList.add("abierto");
+        modal.setAttribute("aria-hidden", "false");
+        abrir.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+        cerrar.focus();
+    }
+
+    function cerrarHistoria() {
+        modal.classList.remove("abierto");
+        modal.setAttribute("aria-hidden", "true");
+        abrir.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+        abrir.focus();
+    }
+
+    abrir.addEventListener("click", abrirHistoria);
+    cerrar.addEventListener("click", cerrarHistoria);
+
+    modal.addEventListener("click", function (evento) {
+        if (evento.target === modal) {
+            cerrarHistoria();
+        }
+    });
+
+    document.addEventListener("keydown", function (evento) {
+        if (evento.key === "Escape" && modal.classList.contains("abierto")) {
+            cerrarHistoria();
+        }
+    });
+})();
+
     </script>
 </body>
 </html>
