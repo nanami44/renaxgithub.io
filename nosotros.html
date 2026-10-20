@@ -59,15 +59,44 @@
             border-bottom: 1px solid #222;
         }
 
-        .nav-container {
-            max-width: 1500px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 40px;
-            gap: 20px;
-        }
+.nav-container {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    gap: 28px;
+    box-sizing: border-box;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: auto;
+    margin-right: 8px;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+    flex-shrink: 0;
+}
+
+.language {
+    flex-shrink: 0;
+}
+
+.login-btn {
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+        
 
         .logo-renax {
             height: 35px;
