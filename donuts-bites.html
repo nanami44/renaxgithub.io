@@ -1021,7 +1021,61 @@ body > a {
     letter-spacing: 1.5px;
     line-height: 1.4;
 }
-      
+    /* =========================================
+   05 · GALERÍA COMPLEMENTARIA
+========================================= */
+
+.galeria-complementaria {
+    width: 100%;
+    padding: 80px 8%;
+    background: #ffffff;
+    color: #050505;
+}
+
+.galeria-complementaria-contenido {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.galeria-complementaria-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+}
+
+.galeria-complementaria-imagen {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 18px;
+}
+
+.galeria-complementaria-imagen img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    transition: transform 0.45s ease;
+}
+
+.galeria-complementaria-imagen:hover img {
+    transform: scale(1.03);
+}
+
+/* Adaptación para celulares y tabletas pequeñas */
+@media (max-width: 800px) {
+    .galeria-complementaria {
+        padding: 55px 7%;
+    }
+
+    .galeria-complementaria-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+}  
     </style>
 
 </head>
@@ -1564,7 +1618,39 @@ body > a {
         </div>
 
     </section>
+<!-- =========================================
+     05 · GALERÍA COMPLEMENTARIA
+========================================= -->
 
+<section class="galeria-complementaria">
+
+    <div class="galeria-complementaria-contenido">
+
+        <div class="galeria-complementaria-grid">
+
+            <!-- IMAGEN 1 -->
+            <div class="galeria-complementaria-imagen">
+                <img
+        src="DONUT'S BITES-casos-estudio02.jpeg"
+        alt="DONUT'S BITES - Caso de estudio 02"
+        loading="lazy"
+    >
+</div>
+
+            <!-- IMAGEN 2 -->
+            <div class="galeria-complementaria-imagen">
+                <img
+        src="Donut’s Bites antes.png"
+        alt="DONUT'S BITES - Diseño anterior"
+        loading="lazy"
+    >
+</div>
+
+        </div>
+
+    </div>
+
+</section>
 
     <!-- =========================
          CIERRE
