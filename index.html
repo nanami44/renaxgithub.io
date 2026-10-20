@@ -836,6 +836,78 @@
     }
 }
 
+/* ==========================================
+   RENAX | PREGUNTAS FRECUENTES
+   BORDE ROJO + EFECTO ROJO Y ZAPOTE
+   ========================================== */
+
+.faq-item {
+    border: 1.5px solid #e32636;
+    border-radius: 12px;
+    margin-bottom: 14px;
+    overflow: hidden;
+    background: rgba(15, 15, 18, 0.92);
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Preguntas impares: rojo */
+.faq-item:nth-child(odd):hover,
+.faq-item:nth-child(odd)[open] {
+    background: #e32636;
+    border-color: #e32636;
+    box-shadow: 0 0 18px rgba(227, 38, 54, 0.4);
+}
+
+/* Preguntas pares: zapote */
+.faq-item:nth-child(even):hover,
+.faq-item:nth-child(even)[open] {
+    background: #ff7518;
+    border-color: #ff7518;
+    box-shadow: 0 0 18px rgba(255, 117, 24, 0.4);
+}
+
+/* Texto de las preguntas */
+.faq-pregunta {
+    color: #ffffff;
+    padding: 20px 22px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+/* Al activar el efecto, las letras quedan negras */
+.faq-item:hover .faq-pregunta,
+.faq-item[open] .faq-pregunta {
+    color: #111111;
+}
+
+/* Respuestas */
+.faq-respuesta {
+    color: #f1f1f1;
+    padding: 0 22px 20px;
+    transition: color 0.3s ease;
+}
+
+.faq-item:hover .faq-respuesta,
+.faq-item[open] .faq-respuesta {
+    color: #111111;
+}
+
+/* Movimiento sutil */
+.faq-item:hover {
+    transform: translateY(-2px);
+}
+
+/* Accesibilidad: navegación con teclado */
+.faq-pregunta:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: -4px;
+}
+
     </style>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1011,133 +1083,125 @@
 
         </header>
 
-        <!-- LISTA DE PREGUNTAS -->
+    
+<!-- ==========================================
+     PREGUNTAS FRECUENTES RENAX
+     ========================================== -->
+
+<section class="faq-renax" id="preguntas-frecuentes">
+
+    <div class="faq-contenido">
+
+        <p class="faq-etiqueta" data-lang="faqEtiqueta">
+            RESOLVEMOS TUS DUDAS
+        </p>
+
+        <h2 class="faq-titulo" data-lang="faqTitulo">
+            PREGUNTAS FRECUENTES
+        </h2>
+
+        <p class="faq-introduccion" data-lang="faqIntroduccion">
+            Conoce más sobre RENAX, nuestros servicios y cómo podemos
+            ayudarte a fortalecer la identidad de tu marca.
+        </p>
 
         <div class="faq-lista">
 
-            <!-- 1. QUÉ ES RENAX -->
+            <!-- PREGUNTA 1 -->
             <details class="faq-item">
-                <summary class="faq-pregunta">
+                <summary class="faq-pregunta" data-lang="faqPregunta1">
                     ¿Qué es RENAX y cómo puede ayudar a mi empresa?
                 </summary>
 
-                <div class="faq-respuesta">
-                    RENAX es una agencia de diseño enfocada en
-                    transformar marcas sin borrar su historia.
-                    Ayudamos a las empresas a fortalecer su identidad
-                    visual, actualizar su imagen y comunicar mejor
-                    aquello que las hace únicas, conservando su
-                    esencia y los valores que han construido
-                    a lo largo del tiempo.
+                <div class="faq-respuesta" data-lang="faqRespuesta1">
+                    RENAX ayuda a las empresas a modernizar su identidad
+                    visual y fortalecer su marca sin perder su esencia.
                 </div>
             </details>
 
-            <!-- 2. CONSERVAR LA ESENCIA -->
+            <!-- PREGUNTA 2 -->
             <details class="faq-item">
-                <summary class="faq-pregunta">
+                <summary class="faq-pregunta" data-lang="faqPregunta2">
                     ¿RENAX cambia mi marca por completo o conserva su esencia?
                 </summary>
 
-                <div class="faq-respuesta">
-                    En RENAX creemos que evolucionar no significa
-                    empezar de cero. Analizamos la identidad actual
-                    de tu negocio para reconocer qué elementos
-                    merecen conservarse y cuáles pueden renovarse.
-                    Así construimos una imagen más actual, coherente
-                    y alineada con la personalidad de tu marca,
-                    sin perder su historia.
+                <div class="faq-respuesta" data-lang="faqRespuesta2">
+                    Nuestro objetivo es modernizar la marca respetando su
+                    historia, sus valores y los elementos que la hacen
+                    reconocible.
                 </div>
             </details>
 
-            <!-- 3. SERVICIOS -->
+            <!-- PREGUNTA 3 -->
             <details class="faq-item">
-                <summary class="faq-pregunta">
+                <summary class="faq-pregunta" data-lang="faqPregunta3">
                     ¿Qué servicios de diseño e identidad visual ofrecen?
                 </summary>
 
-                <div class="faq-respuesta">
-                    Ofrecemos servicios enfocados en la evolución
-                    y el fortalecimiento de las marcas, entre ellos:
-                    diagnóstico y análisis de marca, diseño y
-                    renovación de identidad visual, desarrollo
-                    de recursos gráficos y orientación estratégica
-                    para mantener una imagen visual coherente.
-                    Cada proyecto se aborda según las necesidades
-                    particulares de la empresa.
+                <div class="faq-respuesta" data-lang="faqRespuesta3">
+                    Ofrecemos soluciones de diseño e identidad visual
+                    orientadas a fortalecer y modernizar las marcas.
                 </div>
             </details>
 
-            <!-- 4. PROCESO DE TRABAJO -->
+            <!-- PREGUNTA 4 -->
             <details class="faq-item">
-                <summary class="faq-pregunta">
+                <summary class="faq-pregunta" data-lang="faqPregunta4">
                     ¿Cómo es el proceso de trabajo con RENAX?
                 </summary>
 
-                <div class="faq-respuesta">
-                    Nuestro proceso comienza conociendo tu empresa,
-                    su historia, sus valores y sus necesidades.
-                    Después analizamos su identidad visual,
-                    identificamos oportunidades de mejora y
-                    definimos una propuesta acorde con sus objetivos.
-                    Finalmente, desarrollamos la solución visual
-                    acordada para que tu marca evolucione
-                    conservando aquello que la hace reconocible.
+                <div class="faq-respuesta" data-lang="faqRespuesta4">
+                    Conocemos tu marca, identificamos sus necesidades y
+                    desarrollamos una propuesta de diseño acorde con
+                    sus objetivos.
                 </div>
             </details>
 
-            <!-- 5. TIPO DE EMPRESAS -->
+            <!-- PREGUNTA 5 -->
             <details class="faq-item">
-                <summary class="faq-pregunta">
+                <summary class="faq-pregunta" data-lang="faqPregunta5">
                     ¿RENAX trabaja con empresas pequeñas y negocios con trayectoria?
                 </summary>
 
-                <div class="faq-respuesta">
-                    Sí. RENAX está orientada especialmente a
-                    pequeños y medianos empresarios que desean
-                    fortalecer su imagen y mantener su marca vigente.
-                    Trabajamos con negocios que valoran su historia
-                    y buscan proyectarse hacia el futuro mediante
-                    una identidad visual más sólida, profesional
-                    y coherente.
+                <div class="faq-respuesta" data-lang="faqRespuesta5">
+                    Sí. RENAX está orientada a pequeñas y medianas empresas
+                    que desean fortalecer su identidad y mantener su esencia.
                 </div>
             </details>
 
-            <!-- 6. COTIZACIONES -->
+            <!-- PREGUNTA 6 -->
             <details class="faq-item">
-                <summary class="faq-pregunta">
+                <summary class="faq-pregunta" data-lang="faqPregunta6">
                     ¿Cómo puedo solicitar una cotización para mi marca?
                 </summary>
 
-                <div class="faq-respuesta">
-                    Contáctanos y cuéntanos sobre tu negocio,
-                    qué deseas mejorar y cuáles son tus objetivos.
-                    Con esta información podremos conocer mejor
-                    tus necesidades y orientarte sobre los servicios
-                    que podrían ajustarse a tu proyecto.
-                    El valor se determina según el alcance
-                    y los requerimientos del trabajo.
+                <div class="faq-respuesta" data-lang="faqRespuesta6">
+                    Puedes comunicarte con RENAX desde la sección de
+                    contacto para conversar sobre tu proyecto y solicitar
+                    una cotización.
                 </div>
             </details>
 
         </div>
 
-        <!-- LLAMADO A LA ACCIÓN -->
-        <div class="faq-contacto">
-
-            <p>
-                Tu marca tiene una historia.
-                Hagamos que siga evolucionando.
+        <div class="faq-pie">
+            <p data-lang="faqCierre">
+                ¿Tienes otra pregunta? Hablemos de tu marca.
             </p>
 
-            <a href="contacto.html" class="faq-boton">
-                HABLEMOS DE TU MARCA <span>↗</span>
+            <a href="contacto.html"
+               class="boton-portfolio-renax"
+               data-lang="faqBoton">
+                CONTACTAR A RENAX
             </a>
-
         </div>
 
     </div>
 
 </section>
+
+<!-- FIN PREGUNTAS FRECUENTES -->
+
 
         <!-- SESIÓN 4: CTA FINAL -->
         <section class="renax-final-cta" id="sesion-4">
