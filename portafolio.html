@@ -540,31 +540,32 @@
        
 let currentLang = 'es';
 
-function applyLanguage() {
-    const btn = document.getElementById('langToggleBtn');
+        function applyLanguage() {
+            const btn = document.getElementById('langToggleBtn');
 
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        const translation = translations[currentLang][key];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const translation = translations[currentLang][key];
 
-        if (translation !== undefined) {
-            el.textContent = translation;
+                if (translation !== undefined) {
+                    el.textContent = translation;
+                }
+            });
+
+            document.documentElement.lang = currentLang;
+
+            if (btn) {
+                btn.textContent = currentLang === 'es' ? 'ESP' : 'ENG';
+            }
         }
-    });
 
-    document.documentElement.lang = currentLang;
-
-    if (btn) {
-        btn.textContent = currentLang === 'es' ? 'ESP' : 'ENG';
-    }
-}
-
-function toggleLanguage() {
-    currentLang = currentLang === 'es' ? 'en' : 'es';
-    applyLanguage();
-
-
-
+        function toggleLanguage() {
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+            applyLanguage();
+        }
+    </script>
+</body>
+</html>
 
 
             
