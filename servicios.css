@@ -767,3 +767,670 @@ h1, h2, h3, h4, h5, h6,
 .srv-proceso-decoracion img {
   filter: brightness(0) invert(1) drop-shadow(0 0 25px rgba(255, 255, 255, 0.4)) !important;
 }
+
+/* ==========================================================
+   RENAX SERVICIOS — RESPONSIVE FINAL
+   Computadores · Tabletas · Celulares
+   ========================================================== */
+
+/* Evitar desbordamientos sin alterar la composición */
+html {
+  width: 100%;
+  max-width: 100%;
+  scroll-padding-top: 90px;
+}
+
+body.servicios-renax {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body.servicios-renax *,
+body.servicios-renax *::before,
+body.servicios-renax *::after {
+  box-sizing: border-box;
+}
+
+.srv-main,
+.srv-servicios,
+.srv-proceso,
+.srv-cierre,
+.srv-manifiesto-contenedor {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.srv-servicio-contenido,
+.srv-proceso-cabecera,
+.srv-pasos {
+  min-width: 0;
+}
+
+.srv-servicio-contenido p,
+.srv-paso p,
+.srv-cierre p {
+  overflow-wrap: anywhere;
+}
+
+.srv-servicio-imagen img,
+.srv-proceso-decoracion img,
+.srv-hero-imagen {
+  max-width: 100%;
+}
+
+/* COMPUTADORES: conservar el diseño en dos columnas */
+@media (min-width: 1200px) {
+  .srv-header {
+    padding-left: clamp(35px, 5vw, 85px);
+    padding-right: clamp(35px, 5vw, 85px);
+  }
+
+  .srv-nav {
+    gap: clamp(18px, 2vw, 30px);
+  }
+
+  .srv-servicio {
+    gap: clamp(35px, 4vw, 65px);
+  }
+
+  .srv-proceso {
+    gap: clamp(35px, 4vw, 60px) !important;
+  }
+}
+
+/* PORTÁTILES Y TABLETAS HORIZONTALES */
+@media (min-width: 901px) and (max-width: 1199px) {
+  .srv-header {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .srv-nav {
+    gap: clamp(12px, 1.5vw, 20px);
+  }
+
+  .srv-nav a {
+    font-size: 12px;
+  }
+
+  .srv-header-acciones {
+    gap: 9px;
+  }
+
+  .login-btn {
+    padding: 7px 12px;
+    font-size: 10px;
+  }
+
+  .srv-servicio {
+    gap: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .srv-servicio-imagen img {
+    height: clamp(280px, 32vw, 380px);
+  }
+
+  .srv-servicio-contenido h3 {
+    font-size: clamp(2rem, 3vw, 2.6rem);
+  }
+
+  .srv-proceso {
+    gap: 30px !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+
+  .srv-paso {
+    padding: 23px !important;
+    gap: 18px !important;
+  }
+
+  .srv-proceso-cabecera h2.srv-proceso-titulo-poster {
+    font-size: clamp(3rem, 5vw, 4.5rem) !important;
+  }
+}
+
+/* TABLETAS Y PANTALLAS MEDIANAS */
+@media (max-width: 900px) {
+  .srv-header {
+    height: 76px;
+    padding: 0 24px;
+  }
+
+  .srv-logo img {
+    height: 34px;
+  }
+
+  .srv-menu-boton {
+    display: block;
+    flex-shrink: 0;
+    padding: 8px;
+    order: 2;
+  }
+
+  .srv-header-acciones {
+    margin-left: auto;
+    gap: 10px;
+    order: 3;
+  }
+
+  .srv-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-height: calc(100dvh - 76px);
+    overflow-y: auto;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 12px 22px 20px;
+    background: rgba(3, 3, 3, 0.98);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    z-index: 101;
+  }
+
+  /* Coincide con la clase que añade el JavaScript existente */
+  .srv-nav.abierto {
+    display: flex;
+  }
+
+  .srv-nav a {
+    display: block;
+    width: 100%;
+    padding: 15px 8px;
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .srv-nav a.activo::after {
+    left: 50%;
+    width: 42px;
+    transform: translateX(-50%);
+  }
+
+  .srv-hero {
+    padding-top: 76px !important;
+  }
+
+  .srv-manifiesto-contenedor {
+    padding: 55px 5% !important;
+  }
+
+  .srv-manifiesto-contenedor h2 {
+    font-size: clamp(32px, 5.5vw, 52px) !important;
+  }
+
+  .srv-seccion-cabecera {
+    padding: 0 28px !important;
+    margin-bottom: 38px !important;
+  }
+
+  .srv-seccion-cabecera h2 {
+    font-size: clamp(2.4rem, 5.5vw, 3.3rem);
+  }
+
+  .srv-servicio,
+  .srv-servicio.invertido {
+    grid-template-columns: minmax(0, 1fr);
+    direction: ltr;
+    gap: 25px;
+    margin: 55px auto;
+    padding: 0 28px;
+  }
+
+  .srv-servicio-imagen img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+
+  .srv-servicio-contenido h3 {
+    font-size: clamp(2rem, 5vw, 2.7rem);
+  }
+
+  .srv-proceso {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 35px !important;
+    margin: 75px auto !important;
+    padding: 0 28px !important;
+  }
+
+  .srv-proceso-cabecera {
+    position: static !important;
+  }
+
+  .srv-proceso-cabecera h2.srv-proceso-titulo-poster {
+    font-size: clamp(3rem, 9vw, 5.3rem) !important;
+    line-height: 0.95 !important;
+  }
+
+  .srv-proceso-decoracion {
+    display: flex !important;
+  }
+
+  .srv-proceso-decoracion img {
+    max-width: 220px !important;
+  }
+
+  .srv-pasos {
+    gap: 18px !important;
+  }
+
+  .srv-paso {
+    padding: 25px !important;
+    gap: 20px !important;
+  }
+
+  .srv-cierre {
+    margin: 70px 24px 55px;
+    width: auto;
+    padding: 55px 28px;
+  }
+
+  .srv-cierre h2 {
+    font-size: clamp(2.2rem, 6vw, 3.5rem);
+  }
+
+  .srv-footer {
+    padding: 45px 28px 25px !important;
+  }
+
+  .srv-footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 28px !important;
+  }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+  .srv-header {
+    height: 68px;
+    padding: 0 12px;
+    gap: 6px;
+  }
+
+  .srv-logo img {
+    height: 29px;
+  }
+
+  .srv-menu-boton {
+    font-size: 21px;
+    padding: 7px;
+  }
+
+  .srv-header-acciones {
+    gap: 6px;
+  }
+
+  .language {
+    padding: 6px 9px;
+    font-size: 10px;
+  }
+
+  .login-btn {
+    padding: 7px 9px;
+    font-size: 9px;
+    white-space: nowrap;
+  }
+
+  .srv-nav {
+    max-height: calc(100dvh - 68px);
+    padding: 10px 16px 18px;
+  }
+
+  .srv-nav a {
+    padding: 13px 8px;
+    font-size: 13px;
+  }
+
+  .srv-hero {
+    padding-top: 68px !important;
+  }
+
+  .srv-hero-imagen {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+  }
+
+  .srv-manifiesto-contenedor {
+    padding: 38px 20px !important;
+  }
+
+  .srv-manifiesto-contenedor h2 {
+    font-size: clamp(28px, 8vw, 42px) !important;
+    line-height: 1.12 !important;
+    margin-bottom: 18px !important;
+  }
+
+  .srv-manifiesto-contenedor .srv-manifiesto-texto p {
+    font-size: 15px !important;
+    line-height: 1.75 !important;
+  }
+
+  .srv-servicios {
+    padding: 25px 0;
+  }
+
+  .srv-seccion-cabecera {
+    padding: 0 20px !important;
+    margin-bottom: 32px !important;
+  }
+
+  .srv-seccion-cabecera h2 {
+    font-size: clamp(2rem, 8vw, 2.8rem);
+    line-height: 1.1;
+  }
+
+  .srv-seccion-cabecera p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .srv-servicio,
+  .srv-servicio.invertido {
+    gap: 22px;
+    margin: 42px auto;
+    padding: 0 18px;
+  }
+
+  .srv-servicio-imagen {
+    margin: 0;
+    border-radius: 15px !important;
+  }
+
+  .srv-servicio-imagen img {
+    aspect-ratio: 4 / 3;
+    border-radius: 15px;
+  }
+
+  .srv-card-etiqueta {
+    font-size: 10px;
+    letter-spacing: 1.3px;
+    line-height: 1.6;
+  }
+
+  .srv-servicio-contenido h3 {
+    font-size: clamp(1.8rem, 8vw, 2.3rem);
+    line-height: 1.12;
+    margin-bottom: 15px;
+  }
+
+  .srv-servicio-contenido > p {
+    font-size: 15px;
+    line-height: 1.75;
+    margin-bottom: 20px;
+  }
+
+  .srv-servicio-contenido ul {
+    gap: 9px;
+  }
+
+  .srv-servicio-contenido ul li {
+    padding: 12px;
+    gap: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .srv-servicio-contenido ul li:hover {
+    transform: none;
+  }
+
+  .srv-proceso {
+    margin: 55px auto !important;
+    padding: 0 18px !important;
+    gap: 28px !important;
+  }
+
+  .srv-proceso-cabecera h2.srv-proceso-titulo-poster {
+    font-size: clamp(2.65rem, 11vw, 4rem) !important;
+    line-height: 0.98 !important;
+    letter-spacing: -0.025em !important;
+  }
+
+  .srv-proceso-cabecera h2.srv-proceso-titulo-poster span {
+    transform: none !important;
+    margin-bottom: 8px;
+  }
+
+  .srv-proceso-cabecera h2.srv-proceso-titulo-poster em {
+    transform: none !important;
+    margin-top: 5px;
+  }
+
+  .srv-proceso-cabecera p {
+    margin-top: 25px !important;
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+  }
+
+  .srv-proceso-decoracion {
+    justify-content: center !important;
+  }
+
+  .srv-proceso-decoracion img {
+    width: 70% !important;
+    max-width: 180px !important;
+  }
+
+  .srv-pasos {
+    gap: 14px !important;
+  }
+
+  .srv-paso {
+    padding: 19px !important;
+    gap: 14px !important;
+    border-radius: 14px !important;
+  }
+
+  .srv-paso-num {
+    font-size: 1.2rem !important;
+    flex-shrink: 0;
+  }
+
+  .srv-paso h3 {
+    font-size: 1rem !important;
+    line-height: 1.4;
+  }
+
+  .srv-paso p {
+    font-size: 13px !important;
+    line-height: 1.65 !important;
+  }
+
+  .srv-paso:hover {
+    transform: none !important;
+  }
+
+  .srv-cierre {
+    margin: 48px 14px 38px;
+    padding: 38px 19px;
+    border-radius: 20px;
+  }
+
+  .srv-cierre h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.15;
+  }
+
+  .srv-cierre p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .srv-cta {
+    max-width: 100%;
+    padding: 14px 18px;
+    gap: 9px;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  /* Ventana emergente en celular */
+  .srv-modal {
+    align-items: center;
+    padding: 12px;
+  }
+
+  .srv-modal-panel {
+    max-height: 88dvh;
+    padding: 32px 19px 22px;
+    border-radius: 17px;
+  }
+
+  .srv-modal-cerrar {
+    top: 10px;
+    right: 13px;
+    font-size: 27px;
+  }
+
+  .srv-modal-etiqueta {
+    padding-right: 20px;
+    font-size: 10px;
+    line-height: 1.6;
+    letter-spacing: 1.4px;
+  }
+
+  .srv-modal-panel h2 {
+    font-size: clamp(1.5rem, 7vw, 2rem);
+    line-height: 1.2;
+  }
+
+  .srv-modal-panel h3 {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .srv-modal-panel p,
+  .srv-modal-lista li {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .srv-modal-volver {
+    max-width: 100%;
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  /* Pie de página */
+  .srv-footer {
+    padding: 35px 18px 22px !important;
+  }
+
+  .srv-footer-wrapper {
+    width: 100%;
+  }
+
+  .srv-footer-top {
+    gap: 12px;
+    margin-bottom: 28px !important;
+  }
+
+  .srv-footer-top a {
+    font-size: 10px !important;
+    letter-spacing: 1px !important;
+    text-align: right;
+  }
+
+  .srv-footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 26px 16px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .srv-footer-col {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .srv-footer-col h3 {
+    font-size: 12px !important;
+    line-height: 1.5;
+  }
+
+  .srv-footer-col a {
+    font-size: 12px !important;
+    line-height: 1.65;
+  }
+
+  .srv-footer-bottom {
+    padding-top: 20px !important;
+  }
+
+  .srv-footer-bottom img {
+    max-width: 100%;
+    height: 28px !important;
+    object-fit: contain;
+  }
+}
+
+/* CELULARES MUY PEQUEÑOS */
+@media (max-width: 380px) {
+  .srv-header {
+    padding: 0 8px;
+  }
+
+  .srv-logo img {
+    height: 25px;
+  }
+
+  .srv-header-acciones {
+    gap: 4px;
+  }
+
+  .language {
+    padding: 6px 7px;
+    font-size: 9px;
+  }
+
+  .login-btn {
+    padding: 7px;
+    font-size: 8px;
+  }
+
+  .srv-menu-boton {
+    font-size: 19px;
+    padding: 5px;
+  }
+
+  .srv-servicio,
+  .srv-servicio.invertido {
+    padding: 0 14px;
+  }
+
+  .srv-paso {
+    padding: 15px !important;
+    gap: 11px !important;
+  }
+
+  .srv-footer-grid {
+    gap: 22px 12px !important;
+  }
+
+  .srv-footer-col a {
+    font-size: 11px !important;
+  }
+}
+
+/* RESPETAR LA PREFERENCIA DE REDUCIR ANIMACIONES */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .srv-servicio-imagen img,
+  .srv-paso,
+  .srv-cta {
+    transition: none !important;
+  }
+}
