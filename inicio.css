@@ -238,4 +238,18 @@ body {
     transform: translateY(-5px);
 }
 
+/* RENAX — TÍTULO LO MÁS DESTACADO EN COMPUTADORES Y TABLETAS */
+@media (min-width: 601px) {
+    #esencia-marca h1,
+    #esencia-marca h2,
+    #esencia-marca h3 {
+        word-break: normal;
+        overflow-wrap: normal;
+        hyphens: none;
+        line-height: 1.08;
+        letter-spacing: normal;
+        max-width: 100%;
+    }
+}
+
 
