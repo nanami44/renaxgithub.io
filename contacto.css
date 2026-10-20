@@ -1364,13 +1364,24 @@ body.contacto-page .esfera-2 {
 }
 
 /* Mantener el contenido por delante */
-body.contacto-page .contacto-header,
+
+/* Mantener el menú fijo y visible al desplazarse */
+body.contacto-page .contacto-header {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000 !important;
+}
+
+/* Mantener el contenido por delante del fondo */
 body.contacto-page .contacto-main,
 body.contacto-page .contacto-hero-contenido,
 body.contacto-page .contacto-hero-indice {
     position: relative;
     z-index: 1;
 }
+
 
 /* Movimiento suave y lento */
 @keyframes renaxFondoLento {
