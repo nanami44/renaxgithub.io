@@ -93,6 +93,150 @@
   button:hover {
     background: #a90000;
   }
+   
+/* ==========================================
+   RENAX - ACCESO RESPONSIVE
+   Celulares, tabletas y computadores
+   ========================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 24px;
+    overflow-x: hidden;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    min-width: 0;
+    margin: auto;
+    padding: 30px;
+    overflow-wrap: anywhere;
+}
+
+.login-card input,
+.login-card button {
+    max-width: 100%;
+    min-width: 0;
+}
+
+.login-card input {
+    min-height: 44px;
+}
+
+.login-card button {
+    min-height: 44px;
+    line-height: 1.4;
+}
+
+.login-card .action-link {
+    min-height: 36px;
+    padding: 6px 0;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.login-card .back-link {
+    display: inline-block;
+    padding: 6px 0;
+    line-height: 1.5;
+}
+
+.login-card .msg-display {
+    overflow-wrap: anywhere;
+    line-height: 1.5;
+}
+
+/* TABLETAS */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .login-card {
+        max-width: 440px;
+        padding: 28px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+        align-items: center;
+    }
+
+    .login-card {
+        max-width: 100%;
+        padding: 24px 20px;
+        border-radius: 12px;
+    }
+
+    h2 {
+        font-size: 25px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .login-card input {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .login-card button {
+        font-size: 14px;
+    }
+
+    .login-card .action-link,
+    .login-card .back-link {
+        font-size: 13px;
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 350px) {
+    body {
+        padding: 10px;
+    }
+
+    .login-card {
+        padding: 20px 15px;
+    }
+
+    .links-container {
+        gap: 10px;
+    }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 </style> 
 </head>
 
