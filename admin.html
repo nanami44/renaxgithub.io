@@ -241,6 +241,557 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+/* ==========================================================
+   RENAX — PANEL DE ADMINISTRACIÓN RESPONSIVE
+   Computadores · Tabletas · Celulares
+   Conserva la estructura y las funciones existentes
+   ========================================================== */
+
+/* AJUSTES GENERALES */
+html {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+    overflow-wrap: anywhere;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    min-width: 0;
+}
+
+.admin-layout,
+.admin-content,
+.panel-section,
+.header,
+.sidebar-menu {
+    min-width: 0;
+}
+
+.admin-content {
+    overflow-wrap: anywhere;
+}
+
+img,
+iframe,
+video {
+    max-width: 100%;
+}
+
+input,
+select,
+textarea,
+button {
+    max-width: 100%;
+}
+
+button {
+    touch-action: manipulation;
+}
+
+/* MENÚ Y BOTONES */
+.menu-btn {
+    width: 100%;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+}
+
+.menu-btn:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #e74c3c;
+    outline-offset: 3px;
+}
+
+/* CHAT */
+#cliente-select {
+    min-width: 0;
+}
+
+#messages-list {
+    min-width: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.mensaje {
+    width: fit-content;
+    max-width: 85%;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+#admin-form {
+    min-width: 0;
+    align-items: stretch;
+}
+
+#admin-input {
+    flex: 1 1 auto;
+    min-width: 0;
+}
+
+#btn-responder {
+    flex: 0 0 140px;
+}
+
+/* DOCUMENTOS Y RECURSOS */
+.doc-grid {
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(min(220px, 100%), 1fr)
+    );
+}
+
+.doc-card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.doc-card a {
+    display: block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+/* FORMULARIOS DE COTIZACIÓN */
+#form-comprobante > div:first-child {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+#form-comprobante .servicio-chk {
+    width: 17px !important;
+    min-width: 17px;
+    height: 17px;
+    margin: 0 8px 0 0;
+    padding: 0;
+    flex: 0 0 auto;
+    accent-color: #e74c3c;
+}
+
+#form-comprobante label {
+    display: flex;
+    align-items: flex-start;
+    gap: 3px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#form-comprobante label input[type="checkbox"] {
+    margin-top: 2px;
+}
+
+#form-comprobante > div:nth-of-type(2) {
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+#form-comprobante button {
+    line-height: 1.45;
+    white-space: normal;
+}
+
+/* VISTA PREVIA DEL DOCUMENTO */
+.doc-preview {
+    min-width: 0;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+.doc-preview > div:first-child {
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+#area-impresion h2 {
+    overflow-wrap: anywhere;
+}
+
+#print-lista-servicios {
+    padding-left: 28px !important;
+    overflow-wrap: anywhere;
+}
+
+#print-valor {
+    overflow-wrap: anywhere;
+}
+
+/* TABLETAS Y PORTÁTILES PEQUEÑOS */
+@media (min-width: 769px) and (max-width: 1050px) {
+    body {
+        padding: 16px;
+    }
+
+    .admin-layout {
+        grid-template-columns: 215px minmax(0, 1fr);
+        gap: 15px;
+    }
+
+    .sidebar-menu {
+        padding: 12px;
+    }
+
+    .menu-btn {
+        padding: 11px 10px;
+        font-size: 12px;
+    }
+
+    .admin-content {
+        padding: 20px;
+    }
+
+    .header h2 {
+        font-size: 22px;
+    }
+
+    #admin-form {
+        flex-wrap: wrap;
+    }
+
+    #admin-input {
+        flex-basis: 100%;
+    }
+
+    #btn-responder {
+        flex-basis: 100%;
+        width: 100%;
+    }
+}
+
+/* TABLETAS VERTICALES Y CELULARES */
+@media (max-width: 768px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* ENCABEZADO */
+    .header {
+        padding: 16px;
+        gap: 12px;
+        align-items: flex-start;
+    }
+
+    .header > div {
+        flex: 1 1 220px;
+        min-width: 0;
+    }
+
+    .header h2 {
+        font-size: clamp(18px, 4vw, 24px);
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+    }
+
+    #btn-cerrar-sesion {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    /* MENÚ: BOTONES EN FILAS ADAPTABLES */
+    .admin-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        min-height: 0;
+    }
+
+    .sidebar-menu {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        width: 100%;
+        padding: 12px;
+    }
+
+    .menu-btn {
+        min-height: 46px;
+        padding: 10px;
+        font-size: 12px;
+        text-align: center;
+        line-height: 1.4;
+    }
+
+    .admin-content {
+        width: 100%;
+        padding: clamp(15px, 4vw, 24px);
+    }
+
+    .admin-content h3 {
+        font-size: clamp(18px, 4vw, 23px);
+        line-height: 1.35;
+    }
+
+    /* CHAT */
+    #messages-list {
+        height: clamp(260px, 48vh, 380px);
+        padding: 12px;
+    }
+
+    .mensaje {
+        max-width: 92%;
+        font-size: 13px;
+    }
+
+    #admin-form {
+        display: flex !important;
+        flex-direction: column;
+        gap: 10px !important;
+    }
+
+    #admin-input {
+        width: 100%;
+        min-height: 46px;
+        margin-bottom: 0;
+    }
+
+    #btn-responder {
+        flex: 0 0 auto;
+        width: 100% !important;
+        min-height: 44px;
+    }
+
+    /* TARJETAS DE DOCUMENTOS */
+    .doc-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .doc-card {
+        padding: 15px;
+    }
+
+    .doc-card h4 {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .doc-card p {
+        overflow-wrap: anywhere;
+    }
+
+    /* DATOS DEL CLIENTE Y TIPO DE DOCUMENTO */
+    #form-comprobante > div:first-child {
+        grid-template-columns: minmax(0, 1fr) !important;
+        gap: 10px !important;
+    }
+
+    #comp-cliente,
+    #comp-tipo {
+        width: 100%;
+        min-width: 0;
+    }
+
+    /* LISTA DE SERVICIOS */
+    #form-comprobante > div:nth-of-type(2) {
+        padding: 12px !important;
+        max-height: 300px !important;
+    }
+
+    #form-comprobante label {
+        font-size: 12px !important;
+    }
+
+    #form-comprobante button {
+        width: 100%;
+    }
+
+    /* COTIZACIÓN Y RECIBO */
+    .doc-preview {
+        padding: clamp(15px, 4vw, 25px);
+    }
+
+    .doc-preview > div:first-child {
+        align-items: flex-start !important;
+    }
+
+    .doc-preview > div:first-child h2 {
+        font-size: 20px;
+    }
+
+    .doc-preview > div:first-child span {
+        font-size: 12px;
+    }
+
+    #area-impresion h3 {
+        font-size: 17px;
+        line-height: 1.5;
+    }
+
+    /* POLÍTICAS DE PRIVACIDAD */
+    #seccion-politicas > div {
+        padding: 16px !important;
+    }
+}
+
+/* CELULARES ESTRECHOS */
+@media (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
+    .header {
+        padding: 13px;
+    }
+
+    .header h2 {
+        font-size: 18px;
+    }
+
+    #btn-cerrar-sesion {
+        width: 100%;
+        font-size: 12px;
+    }
+
+    .sidebar-menu {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 10px;
+    }
+
+    .menu-btn {
+        text-align: left;
+        padding: 12px;
+        font-size: 13px;
+    }
+
+    .admin-content {
+        padding: 14px 12px;
+    }
+
+    #messages-list {
+        height: 300px;
+        padding: 9px;
+    }
+
+    .mensaje {
+        max-width: 96%;
+        font-size: 12px;
+    }
+
+    .doc-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .doc-card {
+        padding: 16px;
+        gap: 14px;
+    }
+
+    #form-comprobante > div:nth-of-type(2) {
+        padding: 10px !important;
+    }
+
+    #form-comprobante label {
+        font-size: 11px !important;
+    }
+
+    .doc-preview {
+        padding: 12px;
+        border-radius: 6px;
+    }
+
+    .doc-preview > div:first-child h2 {
+        font-size: 17px;
+    }
+
+    #print-lista-servicios {
+        padding: 12px 12px 12px 28px !important;
+        font-size: 12px;
+    }
+
+    #area-impresion button {
+        font-size: 12px;
+    }
+}
+
+/* IMPRESIÓN Y GUARDADO COMO PDF */
+@media print {
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+
+    body {
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #fff !important;
+        color: #000 !important;
+        overflow: visible !important;
+    }
+
+    body * {
+        visibility: hidden !important;
+    }
+
+    #area-impresion,
+    #area-impresion * {
+        visibility: visible !important;
+    }
+
+    #area-impresion {
+        display: block !important;
+        position: absolute;
+        inset: 0 auto auto 0;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        border: none !important;
+        overflow: visible !important;
+    }
+
+    #area-impresion h2,
+    #area-impresion h3,
+    #area-impresion p,
+    #area-impresion li,
+    #area-impresion span {
+        color: #000 !important;
+    }
+
+    #area-impresion button {
+        display: none !important;
+    }
+
+    #area-impresion ul {
+        break-inside: avoid;
+    }
+}
+
+/* RESPETAR LA PREFERENCIA DE MOVIMIENTO REDUCIDO */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
     </style>
 </head>
 
