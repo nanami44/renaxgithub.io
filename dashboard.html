@@ -89,6 +89,213 @@
                 grid-template-columns: 1fr;
             }
         }
+        
+/* ==========================================
+   RENAX — PANEL DE CLIENTE RESPONSIVE
+   Adaptación para computador, tableta y móvil
+   ========================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: clip;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: clip;
+    overflow-wrap: anywhere;
+}
+
+.container {
+    width: 100%;
+    min-width: 0;
+}
+
+.welcome-card,
+.card {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.welcome-card::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.btn-logout {
+    max-width: 100%;
+}
+
+.grid {
+    align-items: stretch;
+}
+
+.grid > .card {
+    min-width: 0;
+}
+
+table {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+th,
+td {
+    overflow-wrap: anywhere;
+}
+
+.btn-download {
+    max-width: 100%;
+    text-align: center;
+    white-space: normal;
+}
+
+a {
+    overflow-wrap: anywhere;
+}
+
+/* TABLETAS Y PANTALLAS MEDIANAS */
+@media (max-width: 900px) {
+    body {
+        padding: 18px;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+    }
+
+    .welcome-card {
+        padding: 22px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
+
+    .grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+        margin-bottom: 14px;
+    }
+
+    .welcome-card {
+        padding: 18px;
+        margin-bottom: 14px;
+    }
+
+    .welcome-card h2 {
+        font-size: 21px;
+        line-height: 1.35;
+        margin-top: 14px;
+    }
+
+    .welcome-card p {
+        line-height: 1.6;
+    }
+
+    .btn-logout {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-bottom: 12px;
+        padding: 9px 12px;
+    }
+
+    .card {
+        padding: 16px;
+        border-radius: 10px;
+    }
+
+    .card h3 {
+        font-size: 17px;
+        line-height: 1.4;
+    }
+
+    .card p {
+        line-height: 1.6;
+    }
+
+    .card a[style*="background-color: #25d366"] {
+        max-width: 100%;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    table {
+        font-size: 12px;
+    }
+
+    th,
+    td {
+        padding: 9px 7px;
+    }
+
+    .btn-download {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 380px) {
+    body {
+        padding: 9px;
+    }
+
+    .welcome-card,
+    .card {
+        padding: 13px;
+    }
+
+    .welcome-card h2 {
+        font-size: 19px;
+    }
+
+    .card h3 {
+        font-size: 16px;
+    }
+
+    th,
+    td {
+        padding: 8px 5px;
+        font-size: 11px;
+    }
+}
+
+/* RESPETAR LA PREFERENCIA DE MOVIMIENTO REDUCIDO */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
     </style>
 </head>
 <body>
