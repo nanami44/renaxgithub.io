@@ -224,20 +224,76 @@
 
        
 /* CONTENEDOR AMPLIO PARA VISIÓN Y MISIÓN */
+
+/* CONTENEDOR ESTABLE PARA VISIÓN Y MISIÓN */
 .vision-mission-container {
     width: 100%;
     max-width: 1500px;
+    min-width: 0;
     margin: 0 auto;
-    padding: 35px 45px;
+    padding: 25px clamp(12px, 2.5vw, 35px);
     box-sizing: border-box;
 
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 60px;
+    gap: clamp(18px, 3vw, 40px);
 
-    /* Espacio reservado para el efecto de ampliación */
+    align-items: stretch;
     overflow: visible;
 }
+
+/* TARJETAS: SIN DESBORDAMIENTOS */
+.vision-mission-container .card-box {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 320px;
+    height: auto;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+}
+
+/* TÍTULOS: ALTURA FLEXIBLE */
+.vision-mission-container .card-box h2 {
+    width: 100%;
+    min-height: clamp(110px, 12vw, 170px);
+    box-sizing: border-box;
+    font-size: clamp(30px, 3.2vw, 48px);
+}
+
+/* TEXTO: SE ADAPTA AL ANCHO DISPONIBLE */
+.vision-mission-container .card-box p {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    font-size: clamp(14px, 1.15vw, 17px);
+}
+
+/* EN ZOOM ALTO O PANTALLAS ESTRECHAS */
+@media (max-width: 900px) {
+    .vision-mission-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 25px;
+        padding-inline: 16px;
+    }
+
+    .vision-mission-container .card-box {
+        min-height: 280px;
+    }
+
+    .vision-mission-container .card-box h2 {
+        min-height: 120px;
+    }
+}
+
+/* EVITAR QUE EL EFECTO HOVER DESPLACE LAS TARJETAS */
+@media (hover: none) {
+    .vision-mission-container .card-box:hover {
+        transform: none;
+    }
+}
+
 
 
         .vision-mission-container .card-box {
