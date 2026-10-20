@@ -59,6 +59,118 @@
       background: #a90000;
       transform: scale(1.05);
     }
+    
+/* ==========================================
+   RENAX — PÁGINA DE AGRADECIMIENTO RESPONSIVE
+========================================== */
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: clip;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: clamp(16px, 4vw, 30px);
+}
+
+.gracias-container {
+    width: 100%;
+    max-width: 700px;
+    padding: clamp(28px, 6vw, 60px) clamp(20px, 5vw, 40px);
+    overflow-wrap: anywhere;
+}
+
+.gracias-container h1 {
+    font-size: clamp(2.2rem, 7vw, 3rem);
+    line-height: 1.15;
+    overflow-wrap: break-word;
+}
+
+.gracias-container p {
+    font-size: clamp(1rem, 2.5vw, 1.15rem);
+    line-height: 1.7;
+}
+
+.btn-inicio {
+    max-width: 100%;
+    padding: 14px 24px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+/* TABLETAS */
+@media (max-width: 768px) {
+    .gracias-container {
+        max-width: 600px;
+        border-radius: 20px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 480px) {
+    body {
+        padding: 16px;
+    }
+
+    .gracias-container {
+        padding: 32px 20px;
+        border-width: 1px;
+        border-radius: 16px;
+        box-shadow: 0 0 25px rgba(200, 16, 46, 0.2);
+    }
+
+    .gracias-container h1 {
+        font-size: 2.2rem;
+        margin-top: 0;
+        margin-bottom: 18px;
+    }
+
+    .gracias-container p {
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 28px;
+    }
+
+    .btn-inicio {
+        display: block;
+        width: 100%;
+        padding: 13px 16px;
+        box-sizing: border-box;
+        font-size: 13px;
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+@media (max-width: 350px) {
+    .gracias-container {
+        padding: 26px 15px;
+    }
+
+    .gracias-container h1 {
+        font-size: 1.9rem;
+    }
+
+    .gracias-container p {
+        font-size: 0.95rem;
+    }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    .btn-inicio {
+        transition: none;
+    }
+
+    .btn-inicio:hover {
+        transform: none;
+    }
+}
+
   </style>
 </head>
 
