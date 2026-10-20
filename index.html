@@ -1101,6 +1101,54 @@ img {
     }
 }
    
+/* CORRECCIÓN DEL BOTÓN CONTACTAR EN LA SECCIÓN FAQ */
+.faq-pie a.boton-portfolio-renax,
+.faq-pie a.boton-portfolio-renax:link,
+.faq-pie a.boton-portfolio-renax:visited {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 24px !important;
+    background: transparent !important;
+    background-color: transparent !important;
+
+    border: 1.5px solid #c8102e !important;
+    border-radius: 25px !important;
+
+    color: #ffffff !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 13px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+
+    text-decoration: none !important;
+    box-shadow: none;
+    cursor: pointer;
+
+    transition: background-color 0.3s ease,
+                border-color 0.3s ease,
+                box-shadow 0.3s ease,
+                transform 0.3s ease;
+}
+
+.faq-pie a.boton-portfolio-renax:hover,
+.faq-pie a.boton-portfolio-renax:focus-visible {
+    background: rgba(200, 16, 46, 0.12) !important;
+    border-color: #ff304b !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    box-shadow: 0 0 14px rgba(200, 16, 46, 0.3);
+}
+
+@media (max-width: 600px) {
+    .faq-pie a.boton-portfolio-renax {
+        max-width: 100%;
+        padding: 11px 18px !important;
+        font-size: 12px !important;
+    }
+}
+
     </style>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
