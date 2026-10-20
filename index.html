@@ -1052,7 +1052,55 @@ img {
         scroll-behavior: auto;
     }
 }
-      
+   
+/* BOTÓN CONTACTAR - ESTILO RENAX */
+.btn-renax-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+
+    background: transparent !important;
+    border: 1.5px solid #c8102e;
+    border-radius: 25px;
+
+    color: #ffffff !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-align: center;
+    text-decoration: none !important;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+.btn-renax-outline:hover {
+    background: rgba(200, 16, 46, 0.12) !important;
+    border-color: #ff304b;
+    color: #ffffff !important;
+    box-shadow: 0 0 14px rgba(200, 16, 46, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-renax-outline:focus-visible {
+    outline: 2px solid #ff304b;
+    outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+    .btn-renax-outline {
+        max-width: 100%;
+        padding: 11px 18px;
+        font-size: 12px;
+        letter-spacing: 0.8px;
+    }
+}
+   
     </style>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
