@@ -188,6 +188,366 @@
         #portada .max-w-4xl {
             display: none !important;
         }
+        
+/* ==========================================================
+   RENAX PORTAFOLIO — ADAPTACIÓN RESPONSIVE
+   CELULARES · TABLETAS · COMPUTADORES
+   Conserva el diseño original
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+img,
+svg {
+    max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+/* PORTADA */
+#portada {
+    width: 100%;
+    min-width: 0;
+    padding-left: clamp(16px, 4vw, 60px);
+    padding-right: clamp(16px, 4vw, 60px);
+    scroll-margin-top: 90px;
+}
+
+#portada .max-w-4xl {
+    width: 100%;
+    max-width: 900px;
+    min-width: 0;
+}
+
+#portada h1 {
+    font-size: clamp(2rem, 5.2vw, 5rem);
+    line-height: 1.08;
+    overflow-wrap: anywhere;
+}
+
+#portada p {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* GALERÍA Y PROYECTOS */
+#galeria,
+#proyectos {
+    width: 100%;
+    max-width: 1500px;
+    min-width: 0;
+    padding-left: clamp(16px, 4vw, 60px);
+    padding-right: clamp(16px, 4vw, 60px);
+}
+
+#galeria > div,
+#proyectos > div {
+    min-width: 0;
+}
+
+#galeria img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#galeria .card-galeria {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+}
+
+#galeria .group,
+#proyectos a.group {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+#proyectos a.group {
+    padding: clamp(22px, 4vw, 48px);
+}
+
+#proyectos a.group > div:first-child {
+    margin-bottom: clamp(35px, 6vw, 80px);
+}
+
+#proyectos h3 {
+    font-size: clamp(1.6rem, 3.5vw, 3rem);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+/* PIE DE PÁGINA */
+.renax-footer {
+    width: 100%;
+    min-width: 0;
+    padding-left: clamp(16px, 4vw, 60px);
+    padding-right: clamp(16px, 4vw, 60px);
+}
+
+.footer-secciones {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.footer-column {
+    min-width: 0;
+}
+
+.footer-menu-links a {
+    overflow-wrap: anywhere;
+}
+
+/* TABLETAS Y PORTÁTILES PEQUEÑOS */
+@media (max-width: 900px) {
+    .renax-nav-container {
+        flex-wrap: wrap;
+        gap: 14px 20px;
+        padding: 12px 22px;
+    }
+
+    .renax-nav-links {
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 24px;
+        padding: 8px 0 4px;
+    }
+
+    .renax-nav-actions {
+        margin-left: auto;
+    }
+
+    #portada {
+        min-height: 64vh;
+    }
+
+    #galeria,
+    #proyectos {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .footer-secciones {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px 22px;
+    }
+}
+
+/* CELULARES */
+@media (max-width: 600px) {
+    .renax-nav-container {
+        padding: 10px 14px;
+        gap: 10px;
+    }
+
+    .renax-nav-logo {
+        width: 76px;
+        max-height: 40px;
+    }
+
+    .renax-nav-links {
+        gap: 10px 17px;
+        justify-content: center;
+    }
+
+    .renax-nav-links a {
+        font-size: 12px;
+    }
+
+    .renax-nav-actions {
+        gap: 7px;
+    }
+
+    .renax-lang-button {
+        padding: 7px 10px;
+        font-size: 10px;
+    }
+
+    .renax-login-button {
+        padding: 9px 10px;
+        font-size: 9px;
+    }
+
+    #portada {
+        min-height: 58vh;
+        padding-top: 55px;
+        padding-bottom: 55px;
+        background-position: center;
+    }
+
+    #portada h1 {
+        font-size: clamp(1.9rem, 8vw, 3rem);
+        letter-spacing: -0.025em;
+    }
+
+    #portada p {
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    #galeria,
+    #proyectos {
+        padding: 48px 16px;
+    }
+
+    #galeria > div:first-child,
+    #proyectos > div:first-child {
+        margin-bottom: 32px;
+    }
+
+    #galeria .grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+    }
+
+    #galeria .card-galeria {
+        border-radius: 18px;
+    }
+
+    #galeria h3 {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    #proyectos .grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    #proyectos a.group {
+        padding: 24px 20px;
+        border-radius: 19px;
+    }
+
+    #proyectos a.group > div:first-child {
+        margin-bottom: 42px;
+    }
+
+    #proyectos h3 {
+        font-size: clamp(1.65rem, 7vw, 2.3rem);
+    }
+
+    .footer-topbar {
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .footer-titulo {
+        font-size: 21px;
+    }
+
+    .footer-explora {
+        font-size: 11px;
+        text-align: right;
+    }
+
+    .footer-secciones {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 26px 18px;
+        padding: 30px 0;
+    }
+
+    .footer-column-title {
+        font-size: 12px;
+    }
+
+    .footer-menu-links {
+        gap: 10px;
+    }
+
+    .footer-menu-links a {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 16px;
+        padding-top: 22px;
+    }
+
+    .footer-bottom > span {
+        order: initial;
+        width: 100%;
+        line-height: 1.6;
+    }
+}
+
+/* CELULARES ESTRECHOS */
+@media (max-width: 380px) {
+    .renax-nav-container {
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+
+    .renax-nav-links {
+        gap: 10px 13px;
+    }
+
+    .renax-nav-links a {
+        font-size: 11px;
+    }
+
+    .renax-login-button {
+        padding: 8px;
+        font-size: 8px;
+    }
+
+    #galeria,
+    #proyectos {
+        padding-left: 13px;
+        padding-right: 13px;
+    }
+
+    .footer-secciones {
+        gap: 24px 12px;
+    }
+
+    .footer-menu-links a {
+        font-size: 11px;
+    }
+}
+
+/* DISPOSITIVOS TÁCTILES: EVITAR EFECTOS EXAGERADOS */
+@media (hover: none) {
+    #proyectos a.group:hover {
+        transform: none;
+    }
+}
+
+/* ACCESIBILIDAD */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
     </style>
 </head>
 <body class="min-h-screen flex flex-col justify-between">
