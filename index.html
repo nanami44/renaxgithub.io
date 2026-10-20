@@ -911,6 +911,141 @@
 #sesion-1 .esencia-titulo span {
     color: #ffffff !important;
 }
+  
+/* ==================================================
+   RENAX — RESPONSIVE SEGURO
+   Conserva la estructura, los colores y los efectos
+   ================================================== */
+
+/* Evitar desbordamientos sin cambiar el diseño */
+html {
+    max-width: 100%;
+    overflow-x: clip;
+    scroll-behavior: smooth;
+}
+
+body {
+    max-width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+img,
+video,
+iframe {
+    max-width: 100%;
+}
+
+/* Evitar que textos largos rompan el contenedor */
+h1,
+h2,
+h3,
+p,
+a,
+button,
+span {
+    overflow-wrap: break-word;
+}
+
+/* Imágenes: respetar proporciones originales */
+img {
+    height: auto;
+}
+
+/* ==========================
+   TABLETAS
+   ========================== */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+
+    /* Reducir ligeramente los espacios laterales */
+    section {
+        scroll-margin-top: 90px;
+    }
+
+    /* Las imágenes no deben exceder su contenedor */
+    section img {
+        max-width: 100%;
+    }
+
+    /* Evitar que botones anchos se salgan */
+    button,
+    a {
+        max-width: 100%;
+    }
+}
+
+/* ==========================
+   CELULARES
+   ========================== */
+@media screen and (max-width: 600px) {
+
+    /* Imágenes y vídeos dentro de la pantalla */
+    img,
+    video,
+    iframe {
+        max-width: 100%;
+    }
+
+    /* Títulos adaptables sin imponer un tamaño fijo */
+    h1 {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+        line-height: 1.12;
+    }
+
+    h2 {
+        font-size: clamp(1.45rem, 6vw, 2.2rem);
+        line-height: 1.2;
+    }
+
+    /* Evitar que los botones excedan el ancho disponible */
+    button,
+    .boton-portfolio-renax {
+        max-width: 100%;
+        white-space: normal;
+    }
+
+    /* La sección de esencia mantiene su estructura,
+       pero sus imágenes no exceden el espacio disponible */
+    #sesion-1 .esencia-renax,
+    #sesion-1 .esencia-titulo {
+        max-width: 100%;
+    }
+
+    #sesion-1 .esencia-titulo img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Preguntas frecuentes */
+    .faq-renax {
+        max-width: 100%;
+    }
+
+    .faq-item {
+        max-width: 100%;
+    }
+
+    .faq-pregunta,
+    .faq-respuesta {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* ==========================
+   ACCESIBILIDAD
+   ========================== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+      
     </style>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
