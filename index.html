@@ -1478,6 +1478,45 @@ img {
     }
 }
         
+/* BOTÓN PORTADA RENAX — ROJO LUMINOSO */
+a.boton-portfolio-renax,
+a.boton-portfolio-renax:link,
+a.boton-portfolio-renax:visited {
+    background: #e50914 !important;
+    background-color: #e50914 !important;
+    color: #ffffff !important;
+    border: 1px solid #ff2638 !important;
+    border-radius: 30px !important;
+
+    box-shadow:
+        0 0 12px rgba(229, 9, 20, 0.65),
+        0 0 28px rgba(229, 9, 20, 0.35) !important;
+
+    transition:
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* BRILLO MÁS INTENSO AL PASAR EL CURSOR */
+a.boton-portfolio-renax:hover,
+a.boton-portfolio-renax:focus-visible {
+    background: #ff1726 !important;
+    border-color: #ff5260 !important;
+    color: #ffffff !important;
+
+    box-shadow:
+        0 0 18px rgba(255, 20, 35, 0.85),
+        0 0 38px rgba(229, 9, 20, 0.55) !important;
+
+    transform: translateY(-3px);
+}
+
+/* CLIC */
+a.boton-portfolio-renax:active {
+    transform: scale(0.97);
+}
+
 
     </style>
     
