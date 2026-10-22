@@ -548,19 +548,20 @@ img {
     }
 }
 
+
 /* ==========================================
    RENAX — FONDO NEÓN DE PROYECTOS
-   Corrección de capas y visibilidad
+   CORRECCIÓN PARA EL HTML ACTUAL
    ========================================== */
 
-body.portafolio-renax #proyectos {
+#proyectos {
     position: relative !important;
     isolation: isolate;
     background: transparent !important;
 }
 
-/* Imagen de fondo de ancho completo */
-body.portafolio-renax #proyectos::before {
+/* Cinta de neón como fondo, a todo el ancho */
+#proyectos::before {
     content: "";
     position: absolute;
     top: 0;
@@ -569,7 +570,7 @@ body.portafolio-renax #proyectos::before {
     width: 100vw;
 
     transform: translateX(-50%);
-    z-index: 0;
+    z-index: -1;
     pointer-events: none;
 
     background-image:
@@ -584,18 +585,18 @@ body.portafolio-renax #proyectos::before {
     background-repeat: no-repeat;
 }
 
-/* Mantener el encabezado y las tarjetas delante del fondo */
-body.portafolio-renax #proyectos > .renax-work-heading,
-body.portafolio-renax #proyectos > .renax-work-layout,
-body.portafolio-renax #proyectos > .renax-asymmetric-grid {
+/* Conservar las tarjetas y su contenido delante del fondo */
+#proyectos > div {
     position: relative;
     z-index: 1;
 }
 
-/* Si el título usa la clase sticky, conservar su comportamiento */
-body.portafolio-renax #proyectos > .renax-sticky-title {
+/* Mantener intactos los enlaces de los proyectos */
+#proyectos a.group {
+    position: relative;
     z-index: 1;
 }
+
 
     </style>
 </head>
