@@ -562,15 +562,22 @@ overflow: visible;
             to   { transform: translateX(25vw); }
         }
 
-        /* ¿QUIÉNES SOMOS? */
-       .quienes-somos-section {
+     /* ¿QUIÉNES SOMOS? — FONDO DE SERPIENTE NEÓN */
+.quienes-somos-section {
     width: 100%;
     max-width: none;
     min-height: 430px;
+
     padding: 60px 4%;
     box-sizing: border-box;
 
-    background-image: url("fondo-nosotros.jpg");
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.12),
+            rgba(0, 0, 0, 0.20)
+        ),
+        url("serpiente.png");
+
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -578,7 +585,8 @@ overflow: visible;
     display: flex;
     align-items: center;
     justify-content: center;
-}
+} 
+      
         
 .quienes-somos-box {
     position: relative;
