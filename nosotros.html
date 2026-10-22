@@ -2107,6 +2107,221 @@ button {
         0 0 20px rgba(0, 0, 0, 0.35) !important;
 }
 
+/* =====================================================
+   RENAX — NUESTRA HISTORIA
+   DISEÑO CINEMATOGRÁFICO NEGRO, ROJO Y NARANJA
+   Solo diseño: conserva texto, estructura y funciones
+   ===================================================== */
+
+/* Fondo oscuro detrás de la ventana */
+.renax-historia-modal {
+    background: rgba(0, 0, 0, 0.88) !important;
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+}
+
+/* Tarjeta histórica: conserva su distribución original */
+.renax-historia-ventana {
+    position: relative;
+    isolation: isolate;
+
+    background:
+        radial-gradient(
+            ellipse at 78% 100%,
+            rgba(220, 48, 0, 0.30),
+            transparent 38%
+        ),
+        radial-gradient(
+            ellipse at 100% 0%,
+            rgba(180, 20, 0, 0.20),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #080808 0%,
+            #15100f 55%,
+            #210c08 100%
+        ) !important;
+
+    color: #f4f4f4 !important;
+    border: 1px solid #ff4a24 !important;
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 0 1px rgba(255, 100, 40, 0.12),
+        0 0 18px rgba(255, 45, 15, 0.25),
+        0 0 42px rgba(255, 45, 15, 0.12),
+        0 24px 65px rgba(0, 0, 0, 0.75) !important;
+
+    /* Conserva el desplazamiento y el tamaño de la tarjeta */
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+/* Cuadrícula técnica decorativa */
+.renax-historia-ventana::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.035) 1px,
+            transparent 1px
+        );
+
+    background-size: 72px 72px;
+    opacity: 0.5;
+}
+
+/* Brillo cinematográfico al abrir */
+.renax-historia-modal.abierto .renax-historia-ventana {
+    animation: renaxEntradaCinematografica 0.65s ease-out both;
+}
+
+/* Reflejo naranja y rojo que cruza la tarjeta */
+.renax-historia-ventana::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 45%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+
+    background: linear-gradient(
+        110deg,
+        transparent 0%,
+        rgba(255, 70, 20, 0.04) 35%,
+        rgba(255, 85, 35, 0.19) 50%,
+        rgba(255, 255, 255, 0.12) 55%,
+        transparent 100%
+    );
+
+    transform: skewX(-18deg);
+}
+
+.renax-historia-modal.abierto
+.renax-historia-ventana::before {
+    animation: renaxReflejoCinematografico 1s ease-out 0.1s both;
+}
+
+/* Entrada suave con destello rojo */
+@keyframes renaxEntradaCinematografica {
+    0% {
+        opacity: 0.75;
+        transform: translateY(12px) scale(0.99);
+        box-shadow: 0 0 0 rgba(255, 45, 15, 0);
+    }
+
+    45% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        box-shadow:
+            0 0 32px rgba(255, 45, 15, 0.5),
+            0 24px 65px rgba(0, 0, 0, 0.75);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        box-shadow:
+            0 0 18px rgba(255, 45, 15, 0.25),
+            0 24px 65px rgba(0, 0, 0, 0.75);
+    }
+}
+
+@keyframes renaxReflejoCinematografico {
+    from {
+        left: -150%;
+    }
+
+    to {
+        left: 160%;
+    }
+}
+
+/* Etiqueta superior */
+.renax-historia-modal-etiqueta {
+    color: #ff6738 !important;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* Título histórico */
+.renax-historia-ventana h2 {
+    color: #ffffff !important;
+    text-shadow: 0 0 18px rgba(255, 70, 25, 0.12);
+}
+
+/* Conserva los párrafos y mejora su legibilidad */
+.renax-historia-ventana p {
+    color: #dedede !important;
+    line-height: 1.9;
+}
+
+/* Línea decorativa */
+.renax-historia-linea {
+    background: linear-gradient(
+        90deg,
+        #ff3b20,
+        #ff7518,
+        rgba(255, 117, 24, 0.08)
+    ) !important;
+
+    box-shadow: 0 0 12px rgba(255, 65, 25, 0.4);
+}
+
+/* Botón X: solo cambia su apariencia */
+.renax-historia-cerrar {
+    background: rgba(10, 10, 10, 0.92) !important;
+    color: #ffffff !important;
+    border: 1px solid #ff4a24 !important;
+    box-shadow: 0 0 12px rgba(255, 55, 20, 0.24);
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.renax-historia-cerrar:hover {
+    background: #e9361c !important;
+    color: #ffffff !important;
+    box-shadow: 0 0 18px rgba(255, 55, 20, 0.55);
+}
+
+/* Adaptación a celulares sin cambiar la estructura */
+@media (max-width: 600px) {
+    .renax-historia-ventana {
+        border-radius: 12px;
+    }
+
+    .renax-historia-ventana p {
+        line-height: 1.8;
+    }
+}
+
+/* Respeta la preferencia de reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    .renax-historia-modal.abierto
+    .renax-historia-ventana,
+    .renax-historia-modal.abierto
+    .renax-historia-ventana::before {
+        animation: none !important;
+    }
+}
+
 
     </style>
 </head>
