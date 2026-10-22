@@ -1425,3 +1425,52 @@ body.portafolio-renax #proyectos::before {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+/* ==========================================
+   RENAX — FONDO NEÓN DE PROYECTOS
+   Corrección de capas y visibilidad
+   ========================================== */
+
+body.portafolio-renax #proyectos {
+    position: relative !important;
+    isolation: isolate;
+    background: transparent !important;
+}
+
+/* Imagen de fondo de ancho completo */
+body.portafolio-renax #proyectos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+
+    transform: translateX(-50%);
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.18),
+            rgba(0, 0, 0, 0.32)
+        ),
+        url("fondo-portafolio.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Mantener el encabezado y las tarjetas delante del fondo */
+body.portafolio-renax #proyectos > .renax-work-heading,
+body.portafolio-renax #proyectos > .renax-work-layout,
+body.portafolio-renax #proyectos > .renax-asymmetric-grid {
+    position: relative;
+    z-index: 1;
+}
+
+/* Si el título usa la clase sticky, conservar su comportamiento */
+body.portafolio-renax #proyectos > .renax-sticky-title {
+    z-index: 1;
+}
