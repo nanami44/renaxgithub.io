@@ -2051,6 +2051,62 @@ button {
     }
 }
 
+/* ==========================================
+   RENAX — TARJETA HISTÓRICA BLANCA
+   ========================================== */
+
+.renax-historia-tarjeta {
+    background: #ffffff !important;
+    background-image: none !important;
+    border: 1.5px solid #d9d9d9 !important;
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.85),
+        0 5px 15px rgba(0, 0, 0, 0.55),
+        0 0 18px rgba(0, 0, 0, 0.35) !important;
+
+    color: #000000 !important;
+}
+
+/* Eliminar el velo rojizo de la tarjeta */
+.renax-historia-tarjeta::before {
+    display: none !important;
+}
+
+/* Etiqueta: NUESTRA HISTORIA */
+.renax-historia-tarjeta .renax-historia-etiqueta {
+    color: #000000 !important;
+}
+
+/* Título: RESEÑA HISTÓRICA */
+.renax-historia-tarjeta .renax-historia-boton {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+/* Texto descriptivo */
+.renax-historia-tarjeta .renax-historia-invitacion {
+    color: #000000 !important;
+}
+
+/* Mantener los textos negros al pasar el cursor */
+.renax-historia-tarjeta:hover .renax-historia-etiqueta,
+.renax-historia-tarjeta:hover .renax-historia-boton,
+.renax-historia-tarjeta:hover .renax-historia-invitacion {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+/* Sombra más marcada al pasar el cursor */
+.renax-historia-tarjeta:hover {
+    background: #ffffff !important;
+    border-color: #bdbdbd !important;
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.9),
+        0 0 20px rgba(0, 0, 0, 0.35) !important;
+}
+
     </style>
 </head>
 <body>
