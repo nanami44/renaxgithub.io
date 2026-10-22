@@ -1295,7 +1295,10 @@ img {
     letter-spacing: 1px;
 
     text-decoration: none !important;
-    box-shadow: none;
+    box-shadow:
+    0 0 12px rgba(229, 9, 20, 0.65),
+    0 0 28px rgba(229, 9, 20, 0.35),
+    inset 0 0 10px rgba(255, 255, 255, 0.08) !important;
     cursor: pointer;
 
     transition: background-color 0.3s ease,
@@ -1303,7 +1306,18 @@ img {
                 box-shadow 0.3s ease,
                 transform 0.3s ease;
 }
-
+/* ILUMINACIÓN ROJA PERMANENTE */
+.faq-pie a.boton-portfolio-renax,
+.faq-pie a.boton-portfolio-renax:link,
+.faq-pie a.boton-portfolio-renax:visited {
+    background: #e50914 !important;
+    background-color: #e50914 !important;
+    color: #ffffff !important;
+    border-color: #ff2638 !important;
+    box-shadow:
+        0 0 12px rgba(229, 9, 20, 0.65),
+        0 0 28px rgba(229, 9, 20, 0.35) !important;
+}
 .faq-pie a.boton-portfolio-renax:hover,
 .faq-pie a.boton-portfolio-renax:focus-visible {
     background: #b20710 !important;
