@@ -301,23 +301,74 @@
     box-sizing: border-box;
 }
 
-/* TARJETAS */
+
+/* TARJETAS RENAX — DEGRADADO ROJO PREMIUM */
 .historia-tarjeta {
-    min-width: 0;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
     min-height: 235px;
     padding: 25px 20px;
     display: flex;
     align-items: center;
-    background: rgba(5, 5, 5, 0.9);
-    border-radius: 26px;
-    border: 1px solid #222;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 12%,
+            rgba(255, 20, 0, 0.95) 0%,
+            rgba(230, 20, 0, 0.72) 18%,
+            rgba(145, 12, 4, 0.40) 38%,
+            rgba(35, 5, 4, 0.18) 58%,
+            transparent 76%
+        ),
+        linear-gradient(
+            145deg,
+            #240503 0%,
+            #0b0505 52%,
+            #030303 100%
+        ) !important;
+
+    border: 1px solid #ed1c24 !important;
+    border-radius: 30px;
+    color: #ffffff !important;
+    box-shadow: inset 0 0 30px rgba(255, 25, 0, 0.08),
+                0 8px 28px rgba(0, 0, 0, 0.35);
+    transition: transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+/* BRILLO ROJO INTERIOR */
+.historia-tarjeta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at 30% 30%,
+        rgba(255, 50, 20, 0.24),
+        transparent 48%
+    );
 }
 
 /* TEXTO DE LAS TARJETAS */
 .historia-tarjeta p {
+    position: relative;
+    z-index: 1;
+    color: #ffffff !important;
     font-size: 17px;
     line-height: 1.6;
 }
+
+/* EFECTO AL PASAR EL CURSOR */
+.historia-tarjeta:hover {
+    border-color: #ff332b !important;
+    box-shadow: inset 0 0 38px rgba(255, 20, 0, 0.15),
+                0 0 25px rgba(237, 28, 36, 0.22);
+    transform: translateY(-4px);
+}
+
 
 /* TABLETAS Y CELULARES */
 @media (max-width: 900px) {
@@ -344,19 +395,74 @@
 }
 
       
-        .historia-tarjeta {
-            min-height: 235px;
-            padding: 25px 20px;
-            display: flex;
-            align-items: center;
-            background: rgba(5, 5, 5, 0.9);
-            border-radius: 26px;
-            border: 1px solid #222;
-        }
-        .historia-tarjeta p {
-            font-size: 17px;
-            line-height: 1.45;
-        }
+        
+/* TARJETAS RENAX — DEGRADADO ROJO PREMIUM */
+.historia-tarjeta {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 235px;
+    padding: 25px 20px;
+    display: flex;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            ellipse at 15% 12%,
+            rgba(255, 20, 0, 0.95) 0%,
+            rgba(230, 20, 0, 0.72) 18%,
+            rgba(145, 12, 4, 0.40) 38%,
+            rgba(35, 5, 4, 0.18) 58%,
+            transparent 76%
+        ),
+        linear-gradient(
+            145deg,
+            #240503 0%,
+            #0b0505 52%,
+            #030303 100%
+        ) !important;
+
+    border: 1px solid #ed1c24 !important;
+    border-radius: 30px;
+    color: #ffffff !important;
+    box-shadow: inset 0 0 30px rgba(255, 25, 0, 0.08),
+                0 8px 28px rgba(0, 0, 0, 0.35);
+    transition: transform 0.35s ease,
+                border-color 0.35s ease,
+                box-shadow 0.35s ease;
+}
+
+/* BRILLO ROJO INTERIOR */
+.historia-tarjeta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at 30% 30%,
+        rgba(255, 50, 20, 0.24),
+        transparent 48%
+    );
+}
+
+/* TEXTO DE LAS TARJETAS */
+.historia-tarjeta p {
+    position: relative;
+    z-index: 1;
+    color: #ffffff !important;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+.historia-tarjeta:hover {
+    border-color: #ff332b !important;
+    box-shadow: inset 0 0 38px rgba(255, 20, 0, 0.15),
+                0 0 25px rgba(237, 28, 36, 0.22);
+    transform: translateY(-4px);
+}
+
 
         /* PORTAFOLIO / GALERÍA */
         .galeria-renax {
