@@ -386,18 +386,7 @@ overflow: visible;
            transform: scale(1.03);
             z-index: 10;
         }
-        .vision-mission-container .card-box:nth-child(1):hover h2,
-        .vision-mission-container .card-box:nth-child(1):hover p {
-            color: #ffffff !important;
-        }
-
-        .vision-mission-container .card-box:nth-child(2):hover {
-            background: #cc0000 !important;
-            border-color: #000000;
-            box-shadow: 0 15px 40px rgba(204, 0, 0, 0.6);
-         transform: scale(1.03);
-            z-index: 10;
-        }
+        
         .vision-mission-container .card-box:nth-child(2):hover h2,
         .vision-mission-container .card-box:nth-child(2):hover p {
             color: #ffffff !important;
@@ -2320,6 +2309,31 @@ button {
     .renax-historia-ventana::before {
         animation: none !important;
     }
+}
+
+/* ==========================================
+   RENAX — MISIÓN SOLAMENTE
+   Fondo naranja al pasar el mouse
+   Mantener borde rojo y texto blanco
+   ========================================== */
+
+.vision-mission-container .card-box:nth-child(2):hover {
+    background: #ff7518 !important;
+    background-color: #ff7518 !important;
+    background-image: none !important;
+
+    /* Impide que las reglas generales vuelvan
+       a pintar el borde de naranja */
+    border-color: #ff2638 !important;
+
+    box-shadow:
+        0 0 12px rgba(255, 117, 24, 0.65),
+        0 0 24px rgba(255, 117, 24, 0.25) !important;
+}
+
+.vision-mission-container .card-box:nth-child(2):hover h2,
+.vision-mission-container .card-box:nth-child(2):hover p {
+    color: #ffffff !important;
 }
 
 
