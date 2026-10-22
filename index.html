@@ -1478,7 +1478,8 @@ img {
     }
 }
         
-/* BOTÓN PORTADA RENAX — ROJO LUMINOSO */
+
+/* BOTÓN PORTADA RENAX — ROJO CON ILUMINACIÓN PERMANENTE */
 a.boton-portfolio-renax,
 a.boton-portfolio-renax:link,
 a.boton-portfolio-renax:visited {
@@ -1489,30 +1490,33 @@ a.boton-portfolio-renax:visited {
     border-radius: 30px !important;
 
     box-shadow:
-        0 0 12px rgba(229, 9, 20, 0.65),
-        0 0 28px rgba(229, 9, 20, 0.35) !important;
+        0 0 12px rgba(229, 9, 20, 0.75),
+        0 0 28px rgba(229, 9, 20, 0.55),
+        0 0 45px rgba(229, 9, 20, 0.25) !important;
 
     transition:
-        background 0.3s ease,
+        background-color 0.3s ease,
         box-shadow 0.3s ease,
         transform 0.3s ease;
 }
 
-/* BRILLO MÁS INTENSO AL PASAR EL CURSOR */
+/* MÁS BRILLO AL PASAR EL CURSOR */
 a.boton-portfolio-renax:hover,
 a.boton-portfolio-renax:focus-visible {
     background: #ff1726 !important;
-    border-color: #ff5260 !important;
+    background-color: #ff1726 !important;
     color: #ffffff !important;
+    border-color: #ff5260 !important;
 
     box-shadow:
-        0 0 18px rgba(255, 20, 35, 0.85),
-        0 0 38px rgba(229, 9, 20, 0.55) !important;
+        0 0 16px rgba(255, 20, 35, 0.95),
+        0 0 35px rgba(229, 9, 20, 0.75),
+        0 0 55px rgba(229, 9, 20, 0.40) !important;
 
     transform: translateY(-3px);
 }
 
-/* CLIC */
+/* EFECTO AL HACER CLIC */
 a.boton-portfolio-renax:active {
     transform: scale(0.97);
 }
