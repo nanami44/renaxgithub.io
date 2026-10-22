@@ -1389,3 +1389,39 @@ body.portafolio-renax .renax-grid-card:hover svg path {
     color: #000000 !important;
     stroke: #000000 !important;
 }
+
+/* ==========================================
+   RENAX — FONDO NEÓN DE LA SECCIÓN PROYECTOS
+   No modifica las tarjetas ni sus enlaces
+   ========================================== */
+
+body.portafolio-renax #proyectos {
+    position: relative;
+    isolation: isolate;
+    background: transparent !important;
+}
+
+/* Fondo de ancho completo detrás de los proyectos */
+body.portafolio-renax #proyectos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 100vw;
+
+    transform: translateX(-50%);
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(
+            rgba(0, 0, 0, 0.28),
+            rgba(0, 0, 0, 0.42)
+        ),
+        url("fondo-portafolio.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
