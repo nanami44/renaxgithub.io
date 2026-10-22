@@ -1258,6 +1258,40 @@ img {
     }
 }
 
+/* ==========================================
+   RENAX — SECCIÓN HISTORIA A TODO EL ANCHO
+   ========================================== */
+
+/* Bloque de la imagen y el título */
+#historia-marca {
+    width: 100% !important;
+    max-width: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    box-sizing: border-box;
+}
+
+/* Imagen de fondo extendida */
+#historia-marca img {
+    max-width: 100%;
+}
+
+/* Eliminar el espacio entre el título y las tarjetas */
+#historia-marca + section {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+}
+
+/* Adaptación para tabletas y celulares */
+@media (max-width: 900px) {
+    #historia-marca {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
     </style>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
