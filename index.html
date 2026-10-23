@@ -2223,19 +2223,16 @@ document.addEventListener('DOMContentLoaded', () => {
         indice = (indice + 1) % fotogramas.length;
         ave.src = fotogramas[indice];
     }, 110);
-// Reproducir el sonido del aleteo durante la transición.
+// Reproducir el aleteo durante la transición.
 if (sonido) {
-    sonido.loop = false;
-    sonido.volume = 1;
+    sonido.loop = true;
+    sonido.volume = 0.8;
     sonido.currentTime = 0;
 
-    const reproduccion = sonido.play();
-
-    if (reproduccion) {
-        reproduccion.catch(error => {
-            console.warn("El navegador bloqueó el sonido:", error);
-        });
-    }
+    sonido.play().catch(() => {
+        console.warn("El navegador bloqueó el sonido automático.");
+    });
+}
 }
 
    // Finalizar el vuelo, mostrar RENAX y abrir Inicio.
