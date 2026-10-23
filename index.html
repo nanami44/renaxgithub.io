@@ -508,63 +508,69 @@ letter-spacing: 1.5px;
     line-height: 0.95;
     letter-spacing: -1px;
 }
+/* ==========================================
+   GALERÍA RENAX — DOS PROYECTOS DEL MISMO TAMAÑO
+   ========================================== */
 
-       
 .galeria-asimetrica {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: 420px;
-    gap: 24px;
-    width: 100%;
-    max-width: 1400px;
-    margin: 0 auto;
-    align-items: stretch;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important; /* Dos columnas iguales */
+    gap: 30px !important;
+    width: 100% !important;
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    align-items: center !important;
 }
 
-        .proyecto {
-            position: relative;
-            overflow: hidden;
-            border-radius: 14px;
-            background: #171717;
-        }
-        .proyecto img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        .proyecto:hover img {
-            transform: scale(1.03);
-        }
-        .proyecto figcaption {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            padding: 35px 16px 15px;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            font-weight: 700;
-            background: linear-gradient(transparent, rgba(0,0,0,.85));
-        }
-        .proyecto-principal { grid-column: 1; grid-row: 1 / 3; }
-        .proyecto-especialidades { grid-column: 2; grid-row: 1; }
-        .proyecto-skenzi { grid-column: 3; grid-row: 1 / 3; }
-        .proyecto-matematicas { grid-column: 2; grid-row: 2 / 4; }
-        .proyecto-renax { grid-column: 1; grid-row: 3; }
+.galeria-asimetrica .proyecto {
+    width: 100% !important;
+    height: 400px !important; /* Altura fija para que ambas midan exactamente lo mismo */
+    min-height: 400px !important;
+    position: relative !important;
+    overflow: hidden !important;
+    border-radius: 14px !important;
+    background: #171717 !important;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4) !important;
+}
 
-        .galeria-pie {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            margin-top: 48px;
-            text-align: center;
-        }
-        .galeria-pie p {
-            font-size: clamp(18px, 2vw, 25px);
-        }
+.galeria-asimetrica .proyecto img {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Rellena el espacio perfectamente sin deformar la imagen */
+    object-position: center !important;
+    transition: transform 0.5s ease !important;
+}
+
+.galeria-asimetrica .proyecto:hover img {
+    transform: scale(1.03);
+}
+
+.galeria-asimetrica figcaption {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 35px 16px 15px;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    background: linear-gradient(transparent, rgba(0,0,0,.85));
+}
+
+/* Adaptación automática para celulares */
+@media (max-width: 768px) {
+    .galeria-asimetrica {
+        grid-template-columns: 1fr !important; /* Se apilan en pantallas pequeñas */
+    }
+    .galeria-asimetrica .proyecto {
+        height: 320px !important;
+        min-height: 320px !important;
+    }
+}
+       
+        
         .boton-portafolio-renax {
             display: inline-flex;
             align-items: center;
