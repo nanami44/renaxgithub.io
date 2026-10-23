@@ -1351,7 +1351,7 @@ img {
     justify-content: center;
     overflow: hidden;
     isolation: isolate;
-    background: #030303;
+  background: #111111;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -1385,8 +1385,8 @@ img {
     z-index: 3;
     left: -20%;
     top: 75%;
-    width: clamp(170px, 27vw, 390px);
-    aspect-ratio: auto;
+   width: clamp(280px, 40vw, 600px);
+   aspect-ratio: 1 / 1;
     opacity: 0;
     pointer-events: none;
     animation: renaxAveRecorrido 4.8s cubic-bezier(.22, .68, .18, 1) both;
@@ -1403,7 +1403,7 @@ img {
 
 /* Estela luminosa detrás del ave */
 .renax-ave-vuelo::before {
-    content: "";
+   content: none;
     position: absolute;
     z-index: 1;
     right: 65%;
@@ -1480,7 +1480,7 @@ img {
     text-align: center;
     white-space: nowrap;
     font-family: 'Montserrat', 'Segoe UI', sans-serif;
-    font-size: clamp(54px, 14vw, 170px);
+   font-size: clamp(90px, 16vw, 220px);
     font-weight: 900;
     line-height: 1;
     letter-spacing: .12em;
@@ -2201,22 +2201,35 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Terminar la transición y mostrar Inicio.
+   // Finalizar el vuelo, mostrar RENAX y abrir Inicio.
+setTimeout(() => {
+    clearInterval(animarAlas);
+
+    if (sonido) {
+        sonido.pause();
+        sonido.currentTime = 0;
+    }
+
+    // Ocultar el ave al terminar su recorrido.
+    ave.style.opacity = '0';
+
+    // Mostrar la palabra RENAX.
+    const palabraRenax = transicion.querySelector('.renax-wordmark');
+    if (palabraRenax) {
+        palabraRenax.classList.add('renax-word-visible');
+    }
+
+    // Dejar visible RENAX un momento y abrir Inicio.
     setTimeout(() => {
-        clearInterval(animarAlas);
-
-        if (sonido) {
-            sonido.pause();
-            sonido.currentTime = 0;
-        }
-
         transicion.classList.add('renax-transition-fade');
 
         setTimeout(() => {
             transicion.style.display = 'none';
             document.body.style.overflow = '';
         }, 1000);
-    }, 5600);
+    }, 1600);
+
+}, 5600);
 });
 </script>
 
