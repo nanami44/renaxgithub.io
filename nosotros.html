@@ -210,32 +210,31 @@
 
         /* VIDEO CORPORATIVO RENAX CON FONDO NEGRO PURO */
         .video-wrapper-section {
-            width: 100%;
-            box-sizing: border-box;
-            background-color: #050505;
-            padding: 80px 5%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 40px 0;
-            position: relative;
-            isolation: isolate;
-            overflow: hidden;
-        }
+    width: 100vw !important;
+    max-width: none !important;
+    margin: 40px 0 40px calc(50% - 50vw) !important;
+    box-sizing: border-box;
+    background-color: #050505;
+    padding: 80px 0 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
 
-        .video-section {
-            width: 100%;
-            max-width: 1100px;
-            height: 600px;
-            background-color: #111;
-            border: 1px solid #222;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.6);
-        }
+       .video-section {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    aspect-ratio: 16 / 9;
+    background-color: #111;
+    border: 1px solid #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}S
 
         .video-section iframe {
             width: 100%;
@@ -2384,7 +2383,7 @@ button {
     <div class="video-wrapper-section">
         <div class="video-section">
             <iframe
-                src="https://www.youtube-nocookie.com/embed/PIPt26J40WE"
+               src="https://www.youtube-nocookie.com/embed/PIPt26J4OWE?autoplay=1&amp;mute=1&amp;playsinline=1"
                 title="Video institucional de RENAX"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowfullscreen>
