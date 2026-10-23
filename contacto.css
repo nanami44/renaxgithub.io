@@ -3059,3 +3059,47 @@ body.contacto-page {
 .contacto-page .contacto-hero .contacto-link-principal:hover span {
     color: #000000 !important;
 }
+/* ==========================================
+   RENAX — PREGUNTAS FRECUENTES ALTERNADAS
+   ROJO / NEGRO / ROJO / NEGRO
+   ========================================== */
+
+/* Cuadros impares: fondo rojo */
+.renax-faq-lista > .renax-faq-card:nth-child(odd),
+.renax-faq-lista > .renax-faq-card:nth-child(odd)[open] {
+    background: #e92238 !important;
+    border-color: #e92238 !important;
+}
+
+/* Texto negro en los cuadros rojos */
+.renax-faq-lista > .renax-faq-card:nth-child(odd) summary,
+.renax-faq-lista > .renax-faq-card:nth-child(odd) p {
+    color: #000000 !important;
+}
+
+/* Signo + negro en los cuadros rojos */
+.renax-faq-lista > .renax-faq-card:nth-child(odd) summary::after {
+    color: #000000 !important;
+    border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+/* Cuadros pares: conservar fondo oscuro */
+.renax-faq-lista > .renax-faq-card:nth-child(even),
+.renax-faq-lista > .renax-faq-card:nth-child(even)[open] {
+    background: #101010 !important;
+    border-color: #c8102e !important;
+}
+
+/* Texto blanco en los cuadros oscuros */
+.renax-faq-lista > .renax-faq-card:nth-child(even) summary {
+    color: #ffffff !important;
+}
+
+.renax-faq-lista > .renax-faq-card:nth-child(even) p {
+    color: #bdbdbd !important;
+}
+
+/* Signo + rojo en los cuadros oscuros */
+.renax-faq-lista > .renax-faq-card:nth-child(even) summary::after {
+    color: #ff2a3d !important;
+}
