@@ -509,12 +509,18 @@ letter-spacing: 1.5px;
     letter-spacing: -1px;
 }
 
-        .galeria-asimetrica {
-            display: grid;
-            grid-template-columns: 1.25fr 1fr 1fr;
-            grid-template-rows: 380px 320px 320px;
-            gap: 16px;
-        }
+       
+.galeria-asimetrica {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 420px;
+    gap: 24px;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: stretch;
+}
+
         .proyecto {
             position: relative;
             overflow: hidden;
@@ -1739,7 +1745,29 @@ a.boton-portfolio-renax:active {
         min-height: 320px !important;
     }
 }
+/* INICIO: DOS PROYECTOS DEL MISMO TAMAÑO */
+.galeria-asimetrica {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    grid-template-rows: 420px !important;
+    gap: 24px !important;
+    width: 100% !important;
+    max-width: 1400px;
+    margin: 0 auto;
+}
 
+.galeria-asimetrica > .proyecto {
+    width: 100%;
+    height: 420px;
+    min-width: 0;
+}
+
+.galeria-asimetrica > .proyecto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* FIN: DOS PROYECTOS DEL MISMO TAMAÑO */
     </style>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
