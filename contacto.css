@@ -3051,3 +3051,11 @@ body.contacto-page {
 .contacto-page .contacto-hero .contacto-link-principal:hover span {
     color: #c8102e !important;
 }
+/* BOTÓN INICIAR CONVERSACIÓN — LETRAS NEGRAS */
+
+.contacto-page .contacto-hero .contacto-link-principal,
+.contacto-page .contacto-hero .contacto-link-principal span,
+.contacto-page .contacto-hero .contacto-link-principal:hover,
+.contacto-page .contacto-hero .contacto-link-principal:hover span {
+    color: #000000 !important;
+}
