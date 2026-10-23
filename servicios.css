@@ -1458,3 +1458,53 @@ body.servicios-renax *::after {
     background-position: center center;
     background-repeat: no-repeat;
 }
+/* ==========================================
+   RENAX — AJUSTE FINAL DE SERVICIOS
+   TEXTO BLANCO Y BOTÓN BLANCO CON ROJO
+   ========================================== */
+
+/* Título completamente blanco */
+.srv-cierre h2,
+.srv-cierre h2 *,
+.renax-final-cta .final-titulo,
+.renax-final-cta .final-titulo * {
+    color: #ffffff !important;
+}
+
+/* Texto descriptivo blanco */
+.srv-cierre p,
+.renax-final-cta .final-descripcion {
+    color: #ffffff !important;
+}
+
+/* Botón blanco con borde y letras rojas */
+.srv-cierre .srv-cta,
+.srv-cierre .srv-boton,
+.renax-final-cta .renax-button,
+#sesion-4 .renax-button {
+    background: #ffffff !important;
+    color: #c8102e !important;
+    border: 2px solid #c8102e !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease;
+}
+
+/* Mantener también en rojo el texto y la flecha del botón */
+.srv-cierre .srv-cta *,
+.srv-cierre .srv-boton *,
+.renax-final-cta .renax-button *,
+#sesion-4 .renax-button * {
+    color: #c8102e !important;
+}
+
+/* Efecto suave al pasar el cursor */
+.srv-cierre .srv-cta:hover,
+.srv-cierre .srv-boton:hover,
+.renax-final-cta .renax-button:hover,
+#sesion-4 .renax-button:hover {
+    background: #ffffff !important;
+    color: #c8102e !important;
+    border-color: #ff304b !important;
+    box-shadow: 0 0 18px rgba(200, 16, 46, 0.3);
+}
