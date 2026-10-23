@@ -1474,3 +1474,18 @@ body.portafolio-renax #proyectos > .renax-asymmetric-grid {
 body.portafolio-renax #proyectos > .renax-sticky-title {
     z-index: 1;
 }
+/* ==========================================
+   SKENZI — TIPOGRAFÍA FUERTE PARA TÍTULOS
+   ========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Anton', Impact, sans-serif !important;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
