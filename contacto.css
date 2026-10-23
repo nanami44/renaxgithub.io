@@ -3027,3 +3027,27 @@ body.contacto-page {
     }
 }
 
+/* BOTÓN INICIAR CONVERSACIÓN — BLANCO CON LETRAS ROJAS */
+
+.contacto-page .contacto-hero .contacto-link-principal {
+    background: #ffffff !important;
+    background-image: none !important;
+    color: #c8102e !important;
+    border: 1.5px solid #c8102e !important;
+}
+
+/* Texto y flecha en rojo */
+.contacto-page .contacto-hero .contacto-link-principal span {
+    color: #c8102e !important;
+}
+
+/* Mantener los colores al pasar el cursor */
+.contacto-page .contacto-hero .contacto-link-principal:hover {
+    background: #ffffff !important;
+    color: #c8102e !important;
+    border-color: #c8102e !important;
+}
+
+.contacto-page .contacto-hero .contacto-link-principal:hover span {
+    color: #c8102e !important;
+}
