@@ -2191,15 +2191,20 @@ document.addEventListener('DOMContentLoaded', () => {
         indice = (indice + 1) % fotogramas.length;
         ave.src = fotogramas[indice];
     }, 110);
+// Reproducir el sonido del aleteo durante la transición.
+if (sonido) {
+    sonido.loop = false;
+    sonido.volume = 1;
+    sonido.currentTime = 0;
 
-    // Intentar reproducir el sonido.
-    if (sonido) {
-        sonido.loop = true;
-        sonido.volume = 0.8;
-        sonido.play().catch(() => {
-            console.warn('El navegador bloqueó el sonido automático.');
+    const reproduccion = sonido.play();
+
+    if (reproduccion) {
+        reproduccion.catch(error => {
+            console.warn("El navegador bloqueó el sonido:", error);
         });
     }
+}
 
    // Finalizar el vuelo, mostrar RENAX y abrir Inicio.
 setTimeout(() => {
@@ -2219,15 +2224,26 @@ setTimeout(() => {
         palabraRenax.classList.add('renax-word-visible');
     }
 
-    // Dejar visible RENAX un momento y abrir Inicio.
-    setTimeout(() => {
-        transicion.classList.add('renax-transition-fade');
+   // Mostrar RENAX y después abrir Inicio.
+const palabraFinal = transicion.querySelector('.renax-wordmark');
 
-        setTimeout(() => {
-            transicion.style.display = 'none';
-            document.body.style.overflow = '';
-        }, 1000);
-    }, 1600);
+if (palabraFinal) {
+    palabraFinal.classList.add('renax-word-visible');
+    palabraFinal.style.opacity = '1';
+    palabraFinal.style.visibility = 'visible';
+    palabraFinal.style.filter = 'blur(0)';
+    palabraFinal.style.transform = 'translate(-50%, -50%) scale(1)';
+}
+
+// Mantener RENAX visible durante 3 segundos.
+setTimeout(() => {
+    transicion.classList.add('renax-transition-fade');
+
+    setTimeout(() => {
+        transicion.style.display = 'none';
+        document.body.style.overflow = '';
+    }, 1000);
+}, 3000);
 
 }, 5600);
 });
