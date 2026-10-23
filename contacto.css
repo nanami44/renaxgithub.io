@@ -203,9 +203,11 @@ body.contacto-page {
    justify-content: center;
    position: relative;
    box-sizing: border-box;
-   
 background-image:
-    linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.30)),
+    linear-gradient(
+        rgba(0, 0, 0, 0.02),
+        rgba(0, 0, 0, 0.06)
+    ),
     url("Cintas rojas.png");
 
    background-size: cover;
