@@ -1508,3 +1508,31 @@ body.servicios-renax *::after {
     border-color: #ff304b !important;
     box-shadow: 0 0 18px rgba(200, 16, 46, 0.3);
 }
+/* BOTÓN ROJO CON LETRAS BLANCAS — RENAX */
+
+.srv-cierre .srv-cta,
+.srv-cierre .srv-boton,
+.renax-final-cta .renax-button,
+#sesion-4 .renax-button {
+    background: #c8102e !important;
+    color: #ffffff !important;
+    border: 2px solid #c8102e !important;
+}
+
+/* Texto y flecha blancos */
+.srv-cierre .srv-cta *,
+.srv-cierre .srv-boton *,
+.renax-final-cta .renax-button *,
+#sesion-4 .renax-button * {
+    color: #ffffff !important;
+}
+
+/* Efecto al pasar el cursor */
+.srv-cierre .srv-cta:hover,
+.srv-cierre .srv-boton:hover,
+.renax-final-cta .renax-button:hover,
+#sesion-4 .renax-button:hover {
+    background: #a60020 !important;
+    border-color: #a60020 !important;
+    color: #ffffff !important;
+}
