@@ -1699,6 +1699,47 @@ a.boton-portfolio-renax:active {
     pointer-events: none !important;
 }
 
+/* =========================================
+   INICIO RENAX — DOS PROYECTOS UNIFORMES
+   ========================================= */
+
+.galeria-asimetrica {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+    align-items: stretch !important;
+}
+
+.galeria-asimetrica .proyecto {
+    width: 100% !important;
+    height: 420px !important;
+    min-height: 420px !important;
+    margin: 0 !important;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.galeria-asimetrica .proyecto img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center;
+}
+
+/* Adaptación para celulares */
+@media (max-width: 700px) {
+    .galeria-asimetrica {
+        grid-template-columns: 1fr !important;
+    }
+
+    .galeria-asimetrica .proyecto {
+        height: 320px !important;
+        min-height: 320px !important;
+    }
+}
+
     </style>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1850,22 +1891,13 @@ a.boton-portfolio-renax:active {
                     <img src="DONUT'S%20BITES-casos-estudio02.jpeg" alt="Donut's Bites">
                     <figcaption>01 / DONUT'S BITES</figcaption>
                 </figure>
-                <figure class="proyecto proyecto-especialidades">
-                    <img src="especialidades-9.jpeg" alt="Especialidades">
-                    <figcaption>02 / ESPECIALIDADES</figcaption>
-                </figure>
+                
                 <figure class="proyecto proyecto-skenzi">
                     <img src="skenzi-productos.png" alt="Skenzi">
                     <figcaption>03 / SKENZI HOME</figcaption>
                 </figure>
-                <figure class="proyecto proyecto-matematicas">
-                    <img src="dia-matematicas.png.png" alt="Matemáticas">
-                    <figcaption>04 / MATEMÁTICAS</figcaption>
-                </figure>
-                <figure class="proyecto proyecto-renax">
-                    <img src="Renax-%20carrusel%2001.png" alt="RENAX">
-                    <figcaption>05 / RENAX</figcaption>
-                </figure>
+                
+                
             </div>
 
             <div class="galeria-pie">
