@@ -1386,19 +1386,18 @@ img {
     left: -20%;
     top: 75%;
     width: clamp(170px, 27vw, 390px);
-    aspect-ratio: 1 / 1;
+    aspect-ratio: auto;
     opacity: 0;
     pointer-events: none;
     animation: renaxAveRecorrido 4.8s cubic-bezier(.22, .68, .18, 1) both;
 }
 
 .renax-ave-vuelo img {
-    position: relative;
-    z-index: 2;
     display: block;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
+    animation: renaxAlas 0.66s steps(1) infinite;
     filter: drop-shadow(0 0 18px rgba(255, 15, 40, .65));
 }
 
@@ -1689,7 +1688,16 @@ a.boton-portfolio-renax:focus-visible {
 a.boton-portfolio-renax:active {
     transform: scale(0.97);
 }
+@keyframes renaxAlas {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .88; }
+}
 
+#renaxPageTransition.renax-transition-fade {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
 
     </style>
     
@@ -1716,16 +1724,7 @@ a.boton-portfolio-renax:active {
         RENA<span>X</span>
     </div>
 
-    <button
-        type="button"
-        id="renaxSonidoToggle"
-        class="renax-sonido-toggle"
-        aria-pressed="false"
-        aria-label="Activar sonido del aleteo"
-    >
-        <span class="renax-sonido-icono" aria-hidden="true">🔇</span>
-        <span class="renax-sonido-texto">Activar sonido</span>
-    </button>
+  
 
     <audio id="renaxAleteo" preload="auto">
         <source src="aleteo.mp3" type="audio/mpeg">
