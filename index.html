@@ -1336,9 +1336,10 @@ img {
     }
 }
 
+
+
 /* ==========================================
-   RENAX — TRANSICIÓN DE ENTRADA CON LOGO
-   Duración total: 3,2 segundos
+   RENAX — TRANSICIÓN CINEMATOGRÁFICA DEL AVE
    ========================================== */
 
 #renaxPageTransition {
@@ -1349,99 +1350,266 @@ img {
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    background: #101010;
+    isolation: isolate;
+    background: #030303;
     opacity: 1;
     visibility: visible;
-    animation: renaxSalida .7s ease-in-out 2.5s forwards;
+    pointer-events: auto;
+    transition: opacity .9s ease, visibility 0s linear .9s;
 }
 
 #renaxPageTransition::before {
     content: "";
     position: absolute;
-    inset: -20%;
+    inset: -15%;
+    z-index: 0;
     background:
-        radial-gradient(ellipse at 20% 25%,
-            rgba(190, 0, 20, .30), transparent 42%),
-        radial-gradient(ellipse at 80% 75%,
-            rgba(150, 150, 150, .18), transparent 40%);
+        radial-gradient(
+            ellipse at 20% 25%,
+            rgba(210, 0, 25, .32),
+            transparent 43%
+        ),
+        radial-gradient(
+            ellipse at 80% 75%,
+            rgba(150, 0, 25, .25),
+            transparent 45%
+        );
     filter: blur(35px);
-    animation: renaxLuces 2.5s ease-in-out infinite alternate;
+    animation: renaxIntroGlow 5s ease-in-out infinite alternate;
+    pointer-events: none;
 }
 
-.renax-transition-logo {
-    position: relative;
-    z-index: 1;
-    width: min(86vw, 1100px);
-    line-height: 0;
-}
-
-.renax-transition-logo img {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-.transition-logo-base {
-    filter: grayscale(1) brightness(.55);
-    opacity: .85;
-}
-
-.transition-logo-rojo {
+/* Ave animada en varios cambios de dirección */
+.renax-ave-vuelo {
     position: absolute;
-    inset: 0;
+    z-index: 3;
+    left: -20%;
+    top: 75%;
+    width: clamp(170px, 27vw, 390px);
+    aspect-ratio: 1 / 1;
+    opacity: 0;
+    pointer-events: none;
+    animation: renaxAveRecorrido 4.8s cubic-bezier(.22, .68, .18, 1) both;
+}
+
+.renax-ave-vuelo img {
+    position: relative;
+    z-index: 2;
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
-    clip-path: inset(0 100% 0 0);
-    animation: renaxEncendido 2.1s ease-in-out .15s forwards;
+    filter: drop-shadow(0 0 18px rgba(255, 15, 40, .65));
 }
 
-@keyframes renaxEncendido {
+/* Estela luminosa detrás del ave */
+.renax-ave-vuelo::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    right: 65%;
+    top: 50%;
+    width: 85%;
+    height: 4px;
+    border-radius: 50%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 25, 40, .35),
+        #ff263f
+    );
+    box-shadow:
+        0 0 12px rgba(255, 0, 35, .75),
+        0 0 26px rgba(255, 0, 35, .35);
+    transform: rotate(-8deg);
+}
+
+/* Entrada, recorrido ondulado y salida por el borde */
+@keyframes renaxAveRecorrido {
     0% {
-        clip-path: inset(0 100% 0 0);
+        left: -20%;
+        top: 76%;
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(-14deg) scale(.50);
+    }
+    8% {
+        opacity: 1;
+    }
+    25% {
+        left: 22%;
+        top: 27%;
+        transform: translate(-50%, -50%) rotate(10deg) scale(.82);
+    }
+    44% {
+        left: 42%;
+        top: 65%;
+        transform: translate(-50%, -50%) rotate(-8deg) scale(1);
+    }
+    62% {
+        left: 63%;
+        top: 25%;
+        transform: translate(-50%, -50%) rotate(8deg) scale(.86);
+    }
+    80% {
+        left: 83%;
+        top: 48%;
+        transform: translate(-50%, -50%) rotate(-3deg) scale(.72);
+    }
+    93% {
+        left: 105%;
+        top: 17%;
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(12deg) scale(.58);
     }
     100% {
-        clip-path: inset(0 0 0 0);
-    }
-}
-
-@keyframes renaxLuces {
-    from {
-        transform: translate(-2%, -1%) scale(.98);
-    }
-    to {
-        transform: translate(2%, 1%) scale(1.04);
-    }
-}
-
-@keyframes renaxSalida {
-    to {
+        left: 123%;
+        top: 10%;
         opacity: 0;
-        visibility: hidden;
-        pointer-events: none;
+        transform: translate(-50%, -50%) rotate(15deg) scale(.40);
     }
+}
+
+/* RENAX aparece después del recorrido */
+.renax-wordmark {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding: 0 12px;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    font-family: 'Montserrat', 'Segoe UI', sans-serif;
+    font-size: clamp(54px, 14vw, 170px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: .12em;
+    opacity: 0;
+    filter: blur(10px);
+    text-shadow: 0 0 30px rgba(255, 0, 35, .35);
+    transform: translate(-50%, -50%) scale(.72);
+    pointer-events: none;
+}
+
+.renax-wordmark span {
+    color: #ff263f;
+    text-shadow: 0 0 28px rgba(255, 20, 50, .7);
+}
+
+.renax-wordmark::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -.28em;
+    width: 0;
+    height: 3px;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #e50914,
+        #ff304b,
+        transparent
+    );
+    box-shadow: 0 0 18px rgba(255, 0, 35, .7);
+    transition: width .8s ease .2s;
+}
+
+#renaxPageTransition.renax-word-visible .renax-wordmark {
+    animation: renaxWordAppear 1s cubic-bezier(.2, .75, .2, 1) both;
+}
+
+#renaxPageTransition.renax-word-visible .renax-wordmark::after {
+    width: 78%;
+}
+
+@keyframes renaxWordAppear {
+    0% {
+        opacity: 0;
+        filter: blur(10px);
+        transform: translate(-50%, -50%) scale(.72);
+        letter-spacing: .22em;
+    }
+    60% {
+        opacity: 1;
+        filter: blur(0);
+    }
+    100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translate(-50%, -50%) scale(1);
+        letter-spacing: .08em;
+    }
+}
+
+@keyframes renaxIntroGlow {
+    from { transform: translate(-2%, -1%) scale(.98); }
+    to { transform: translate(2%, 1%) scale(1.04); }
+}
+
+/* El contenido de Inicio aparece al terminar la introducción */
+#renaxPageTransition.renax-transition-fade {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 }
 
 @media (max-width: 600px) {
-    .renax-transition-logo {
-        width: 90vw;
+    .renax-ave-vuelo {
+        width: min(70vw, 280px);
+    }
+
+    .renax-wordmark {
+        font-size: clamp(44px, 15vw, 86px);
+        letter-spacing: .06em;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    #renaxPageTransition {
-        animation-duration: .2s;
-        animation-delay: 0s;
-    }
-
-    .transition-logo-rojo {
-        animation-duration: .2s;
-        animation-delay: 0s;
-    }
-
     #renaxPageTransition::before {
         animation: none;
+    }
+
+    .renax-ave-vuelo {
+        animation-duration: 1s;
+    }
+
+    #renaxPageTransition.renax-word-visible .renax-wordmark {
+        animation-duration: .5s;
+    }
+}
+
+/* Control del sonido durante la introducción */
+.renax-sonido-toggle {
+    position: absolute;
+    z-index: 5;
+    top: 18px;
+    right: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255, 255, 255, .38);
+    border-radius: 999px;
+    background: rgba(15, 15, 15, .82);
+    color: #fff;
+    font: 600 13px/1.2 'Montserrat', sans-serif;
+    cursor: pointer;
+}
+
+.renax-sonido-toggle .renax-sonido-icono {
+    color: #ff304b;
+    font-size: 17px;
+}
+
+@media (max-width: 600px) {
+    .renax-sonido-toggle {
+        top: 12px;
+        right: 12px;
+        padding: 9px 11px;
+        font-size: 11px;
     }
 }
 
@@ -1531,22 +1699,40 @@ a.boton-portfolio-renax:active {
 </head>
 <body>
     
-<!-- TRANSICIÓN DE ENTRADA RENAX -->
-<div id="renaxPageTransition" aria-hidden="true">
-    <div class="renax-transition-logo">
-        <img
-            src="logo-renax-transparente.png"
-            alt=""
-            class="transition-logo-base"
-        >
 
+<!-- TRANSICIÓN CINEMATOGRÁFICA RENAX -->
+<div id="renaxPageTransition" aria-label="Animación de entrada RENAX">
+
+    <div class="renax-ave-vuelo" aria-hidden="true">
         <img
-            src="logo-renax-transparente.png"
+            id="renaxAveFrame"
+            src="ave-01.png"
             alt=""
-            class="transition-logo-rojo"
+            decoding="async"
         >
     </div>
+
+    <div class="renax-wordmark" aria-hidden="true">
+        RENA<span>X</span>
+    </div>
+
+    <button
+        type="button"
+        id="renaxSonidoToggle"
+        class="renax-sonido-toggle"
+        aria-pressed="false"
+        aria-label="Activar sonido del aleteo"
+    >
+        <span class="renax-sonido-icono" aria-hidden="true">🔇</span>
+        <span class="renax-sonido-texto">Activar sonido</span>
+    </button>
+
+    <audio id="renaxAleteo" preload="auto">
+        <source src="aleteo.mp3" type="audio/mpeg">
+    </audio>
+
 </div>
+
 
     <!-- FONDO ANIMADO GLOBAL RENAX -->
     <div class="fondo-liquido-renax"></div>
