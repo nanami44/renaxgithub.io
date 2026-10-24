@@ -2419,7 +2419,7 @@ button {
     <div class="video-section video-hover-container" id="videoContainer">
         <iframe
             id="renaxVideo"
-            src="https://www.youtube.com/embed/PIPt26J40WE?enablejsapi=1&amp;autoplay=1&amp;mute=1&amp;playsinline=1"
+            src="https://www.youtube.com/embed/PIPt26J40WE?enablejsapi=1&autoplay=1&mute=1&playsinline=1&loop=1&playlist=PIPt26J40WE"
             title="Video institucional de RENAX"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen>
@@ -2814,53 +2814,35 @@ button {
     });
 })();
 
-    </script>
-    <script>
-    // Control de video por Hover y Scroll
-    const videoContainer = document.getElementById('videoContainer');
-    const iframe = document.getElementById('renaxVideo');
 
-    // Función auxiliar para enviar comandos al reproductor de YouTube via postMessage
-    function sendYouTubeCommand(action, args = []) {
-        if (iframe && iframe.contentWindow) {
-            iframe.contentWindow.postMessage(JSON.stringify({
+
+</script>
+    <script>
+    const renaxIframe = document.getElementById('renaxVideo');
+
+    function sendPlayerCommand(funcName) {
+        if (renaxIframe && renaxIframe.contentWindow) {
+            renaxIframe.contentWindow.postMessage(JSON.stringify({
                 event: 'command',
-                func: action,
-                args: args
+                func: funcName,
+                args: []
             }), '*');
         }
     }
 
-    // Al pasar el mouse por encima (Hover) -> Reproducir y Activar Sonido
-    if (videoContainer) {
-        videoContainer.addEventListener('mouseenter', () => {
-            sendYouTubeCommand('unMute');
-            sendYouTubeCommand('playVideo');
-        });
+    // Inicia la reproducción apenas carga la página
+    window.addEventListener('load', () => {
+        sendPlayerCommand('playVideo');
+    });
 
-        // Al retirar el mouse -> Silenciar
-        videoContainer.addEventListener('mouseleave', () => {
-            sendYouTubeCommand('mute');
-        });
-    }
-
-    // Al hacer scroll en la página -> Silenciar por seguridad y evitar molestias
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-        // Silencia de inmediato al hacer scroll
-        sendYouTubeCommand('mute');
-
-        // Opcional: Si prefieres que también se pause al hacer scroll, descomenta la siguiente línea:
-        // sendYouTubeCommand('pauseVideo');
-
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-            // Acciones al detener el scroll (si el mouse sigue encima, vuelve a activar)
-            if (videoContainer && videoContainer.matches(':hover')) {
-                sendYouTubeCommand('unMute');
-            }
-        }, 150);
-    }, { passive: true });
+    // Pausa el video únicamente si el usuario cambia de pestaña, minimiza el navegador o cierra la página
+    document.addEventListener('visibilitychange', () => {
+        if (document.hidden) {
+            sendPlayerCommand('pauseVideo');
+        } else {
+            sendPlayerCommand('playVideo');
+        }
+    });
 </script>
 </body>
 </html>
