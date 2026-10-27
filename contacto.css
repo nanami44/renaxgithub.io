@@ -3103,3 +3103,56 @@ body.contacto-page {
 .renax-faq-lista > .renax-faq-card:nth-child(even) summary::after {
     color: #ff2a3d !important;
 }
+
+/* =========================================
+   RENAX - AJUSTE RESPONSIVE DE CONTACTO
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+  .contacto-conversacion-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 30px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .contacto-conversacion,
+  .contacto-conversacion-texto,
+  .contacto-tarjeta-form {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .contacto-tarjeta-form {
+    padding: 24px 20px !important;
+    margin: 0 auto !important;
+  }
+
+  .contacto-tarjeta-etiqueta {
+    display: block !important;
+    max-width: 100% !important;
+    overflow-wrap: anywhere !important;
+    box-sizing: border-box !important;
+  }
+
+  .contacto-tarjeta-form input,
+  .contacto-tarjeta-form select,
+  .contacto-tarjeta-form textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #contactoConversacionTitulo,
+  .contacto-conversacion-texto h2 {
+    max-width: 100% !important;
+    overflow-wrap: normal !important;
+    word-break: normal !important;
+  }
+}
