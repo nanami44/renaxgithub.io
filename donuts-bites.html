@@ -1421,7 +1421,41 @@ body {
         animation: none !important;
     }
 }
+/* BOTÓN VOLVER A PROYECTOS DESTACADOS */
+.renax-back-proyecto {
+    position: fixed;
+    top: 30px;
+    left: 35px;
+    z-index: 9998;
+    display: inline-block;
+    padding: 12px 18px;
+    background: rgba(5, 5, 5, 0.88);
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 6px;
+    transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
 
+.renax-back-proyecto:hover {
+    background: #c8102e;
+    border-color: #c8102e;
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .renax-back-proyecto {
+        top: 18px;
+        left: 18px;
+        padding: 10px 12px;
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+}
     </style>
 
 </head>
